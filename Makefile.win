@@ -1,0 +1,48 @@
+# Project: Eureka
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = obj/Eureka_private.res
+OBJ  = obj/main.o obj/win32_winstuff.o obj/win32_main.o obj/win32_opengl.o obj/win32_opengl2.o obj/imageloader.o $(RES)
+LINKOBJ  = obj/main.o obj/win32_winstuff.o obj/win32_main.o obj/win32_opengl.o obj/win32_opengl2.o obj/imageloader.o $(RES)
+LIBS =  -L"C:/MinGW/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/MinGW/lib/gcc/mingw32/3.4.5/include"  -I"C:/MinGW/include/c++/3.4.5/backward"  -I"C:/MinGW/include/c++/3.4.5/mingw32"  -I"C:/MinGW/include/c++/3.4.5"  -I"C:/MinGW/include" 
+BIN  = bin/Eureka.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bin/Eureka.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "bin\Eureka.exe" $(LIBS)
+
+obj/main.o: main.cpp
+	$(CPP) -c main.cpp -o obj/main.o $(CXXFLAGS)
+
+obj/win32_winstuff.o: win32_winstuff.cpp
+	$(CPP) -c win32_winstuff.cpp -o obj/win32_winstuff.o $(CXXFLAGS)
+
+obj/win32_main.o: win32_main.cpp
+	$(CPP) -c win32_main.cpp -o obj/win32_main.o $(CXXFLAGS)
+
+obj/win32_opengl.o: win32_opengl.cpp
+	$(CPP) -c win32_opengl.cpp -o obj/win32_opengl.o $(CXXFLAGS)
+
+obj/win32_opengl2.o: win32_opengl2.cpp
+	$(CPP) -c win32_opengl2.cpp -o obj/win32_opengl2.o $(CXXFLAGS)
+
+obj/imageloader.o: imageloader.cpp
+	$(CPP) -c imageloader.cpp -o obj/imageloader.o $(CXXFLAGS)
+
+obj/Eureka_private.res: Eureka_private.rc 
+	$(WINDRES) -i Eureka_private.rc --input-format=rc -o obj/Eureka_private.res -O coff 

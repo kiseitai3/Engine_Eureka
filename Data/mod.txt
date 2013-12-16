@@ -1,0 +1,12 @@
+mod_number = 1;
+selected_mod = campaign;
+mod1 = campaign;
+root = Data;
+frames_per_second = 60;
+screen_width = 1280;
+screen_height = 800;
+screen_bpp = 32;
+blit_levels = 20;
+frequency = 22050;
+channels = 2;
+chunk_size = 4096;

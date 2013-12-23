@@ -1,0 +1,3 @@
+--Implement accessibility options on the engine level!
+--Create crossplatform level designer project.
+--Create Launcher project.

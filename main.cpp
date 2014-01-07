@@ -16,6 +16,7 @@
 #include "globals.h"
 #include "ui.h"
 #include "data_base.h"
+#include <unistd.h>
 
 using namespace std;
 //constants
@@ -123,6 +124,12 @@ bool init()
     //Start timer(s)
     fps.start();
 
+    std::string tmp = ROOTDATA;
+    tmp += MOD;
+    if(chdir(tmp.c_str()) == ERROR)
+    {
+        return false;
+    }
     //If everything initialized fine
     return true;
 }

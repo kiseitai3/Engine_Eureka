@@ -72,45 +72,45 @@
 1326114594 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl-1.2.15\include\sdl\sdl_config_win32.h
 	"SDL_platform.h"
 
-1341010380 c:\program files\codeblocks\mingw\include\sys\types.h
+1341006780 c:\program files\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
 
-1341010370 c:\program files\codeblocks\mingw\include\_mingw.h
+1341006770 c:\program files\codeblocks\mingw\include\_mingw.h
 
-1341010376 c:\program files\codeblocks\mingw\include\stdio.h
+1341006776 c:\program files\codeblocks\mingw\include\stdio.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
 	<sys/types.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\stdlib.h
+1341006776 c:\program files\codeblocks\mingw\include\stdlib.h
 	<_mingw.h>
 	<stddef.h>
 
-1341010374 c:\program files\codeblocks\mingw\include\malloc.h
+1341006774 c:\program files\codeblocks\mingw\include\malloc.h
 	<_mingw.h>
 	<stdlib.h>
 
-1341010374 c:\program files\codeblocks\mingw\include\memory.h
+1341006774 c:\program files\codeblocks\mingw\include\memory.h
 	<string.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\string.h
+1341006776 c:\program files\codeblocks\mingw\include\string.h
 	<_mingw.h>
 	<stddef.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\strings.h
+1341006776 c:\program files\codeblocks\mingw\include\strings.h
 	<string.h>
 
-1341010372 c:\program files\codeblocks\mingw\include\inttypes.h
+1341006772 c:\program files\codeblocks\mingw\include\inttypes.h
 	<_mingw.h>
 	<stdint.h>
 	<stddef.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\stdint.h
+1341006776 c:\program files\codeblocks\mingw\include\stdint.h
 	<stddef.h>
 
-1341010370 c:\program files\codeblocks\mingw\include\ctype.h
+1341006770 c:\program files\codeblocks\mingw\include\ctype.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -153,7 +153,7 @@
 	<process.h>
 	"close_code.h"
 
-1341010374 c:\program files\codeblocks\mingw\include\process.h
+1341006774 c:\program files\codeblocks\mingw\include\process.h
 	<_mingw.h>
 	<sys/types.h>
 	<stdint.h>
@@ -257,7 +257,7 @@
 	<sstream>
 	"tinystr.h"
 
-1341010370 c:\program files\codeblocks\mingw\include\assert.h
+1341006770 c:\program files\codeblocks\mingw\include\assert.h
 	<_mingw.h>
 
 1343243843 c:\users\kiseitai2\documents\dev-cpp projects\engine_eureka\tinystr.h
@@ -343,7 +343,7 @@
 
 1301111162 c:\program files\codeblocks\mingw\include\winerror.h
 
-1301111148 c:\program files\codeblocks\mingw\include\basetsd.h
+1301107548 c:\program files\codeblocks\mingw\include\basetsd.h
 
 1301111156 c:\program files\codeblocks\mingw\include\pshpack4.h
 
@@ -501,7 +501,7 @@
 	<vector>
 	"libPywrap/conversion.h"
 
-1341010374 c:\program files\codeblocks\mingw\include\math.h
+1341006774 c:\program files\codeblocks\mingw\include\math.h
 	<_mingw.h>
 
 1345050345 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl_mixer-1.2.12\include\sdl_mixer.h
@@ -658,28 +658,28 @@
 	<io.h>
 	<stdio.h>
 
-1341010374 c:\program files\codeblocks\mingw\include\io.h
+1341006774 c:\program files\codeblocks\mingw\include\io.h
 	<_mingw.h>
 	<sys/types.h>
 
-1341010372 c:\program files\codeblocks\mingw\include\float.h
+1341006772 c:\program files\codeblocks\mingw\include\float.h
 	<_mingw.h>
 
 1306749232 c:\program files\codeblocks\mingw\include\python\pymacconfig.h
 
-1341010374 c:\program files\codeblocks\mingw\include\limits.h
+1341006774 c:\program files\codeblocks\mingw\include\limits.h
 	<_mingw.h>
 
-1341010372 c:\program files\codeblocks\mingw\include\errno.h
+1341006772 c:\program files\codeblocks\mingw\include\errno.h
 	<_mingw.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\unistd.h
+1341006776 c:\program files\codeblocks\mingw\include\unistd.h
 	<io.h>
 	<process.h>
 	<getopt.h>
 	<sys/types.h>
 
-1341010372 c:\program files\codeblocks\mingw\include\getopt.h
+1341006772 c:\program files\codeblocks\mingw\include\getopt.h
 	<_mingw.h>
 
 1364004198 c:\program files\codeblocks\mingw\include\python\pyport.h
@@ -706,19 +706,19 @@
 	<ctype.h>
 	<wctype.h>
 
-1341010380 c:\program files\codeblocks\mingw\include\sys\time.h
+1341006780 c:\program files\codeblocks\mingw\include\sys\time.h
 	<time.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\time.h
+1341006776 c:\program files\codeblocks\mingw\include\time.h
 	<_mingw.h>
 	<stddef.h>
 
-1341010378 c:\program files\codeblocks\mingw\include\sys\stat.h
+1341006778 c:\program files\codeblocks\mingw\include\sys\stat.h
 	<_mingw.h>
 	<stddef.h>
 	<sys/types.h>
 
-1341010378 c:\program files\codeblocks\mingw\include\wctype.h
+1341006778 c:\program files\codeblocks\mingw\include\wctype.h
 	<_mingw.h>
 	<stddef.h>
 
@@ -742,7 +742,7 @@
 	<wchar.h>
 	<wctype.h>
 
-1341010378 c:\program files\codeblocks\mingw\include\wchar.h
+1341006778 c:\program files\codeblocks\mingw\include\wchar.h
 	<_mingw.h>
 	<stddef.h>
 	<stdarg.h>
@@ -860,10 +860,10 @@
 	<setjmp.h>
 	<math.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\signal.h
+1341006776 c:\program files\codeblocks\mingw\include\signal.h
 	<_mingw.h>
 
-1341010376 c:\program files\codeblocks\mingw\include\setjmp.h
+1341006776 c:\program files\codeblocks\mingw\include\setjmp.h
 	<_mingw.h>
 
 1264400496 c:\boost-1.41.0\include\boost-1_41\boost\python.hpp
@@ -6044,7 +6044,7 @@
 	<boost/python/detail/value_arg.hpp>
 	<boost/mpl/assert.hpp>
 
-1299595392 c:\python27\include\python.h
+1299591792 c:\python27\include\python.h
 	"patchlevel.h"
 	"pyconfig.h"
 	"pymacconfig.h"
@@ -6114,9 +6114,9 @@
 	"pyfpe.h"
 	<pth.h>
 
-1368672070 c:\python27\include\patchlevel.h
+1368668470 c:\python27\include\patchlevel.h
 
-1343829446 c:\python27\include\pyconfig.h
+1343825846 c:\python27\include\pyconfig.h
 	<io.h>
 	<stdlib.h>
 	<float.h>
@@ -6124,9 +6124,9 @@
 	<io.h>
 	<stdio.h>
 
-1306749232 c:\python27\include\pymacconfig.h
+1306745632 c:\python27\include\pymacconfig.h
 
-1364004198 c:\python27\include\pyport.h
+1364000598 c:\python27\include\pyport.h
 	"pyconfig.h"
 	<inttypes.h>
 	<stdint.h>
@@ -6150,130 +6150,130 @@
 	<ctype.h>
 	<wctype.h>
 
-1299595392 c:\python27\include\pymath.h
+1299591792 c:\python27\include\pymath.h
 	"pyconfig.h"
 
-1299595392 c:\python27\include\pymem.h
+1299591792 c:\python27\include\pymem.h
 	"pyport.h"
 
-1368672070 c:\python27\include\object.h
+1368668470 c:\python27\include\object.h
 
-1299595392 c:\python27\include\objimpl.h
+1299591792 c:\python27\include\objimpl.h
 	"pymem.h"
 
-1330138700 c:\python27\include\pydebug.h
+1330135100 c:\python27\include\pydebug.h
 
-1299595392 c:\python27\include\unicodeobject.h
+1299591792 c:\python27\include\unicodeobject.h
 	<stdarg.h>
 	<ctype.h>
 	<time.h>
 	<wchar.h>
 	<wctype.h>
 
-1364004198 c:\python27\include\intobject.h
+1364000598 c:\python27\include\intobject.h
 
-1299595392 c:\python27\include\boolobject.h
+1299591792 c:\python27\include\boolobject.h
 
-1364004198 c:\python27\include\longobject.h
+1364000598 c:\python27\include\longobject.h
 
-1299595392 c:\python27\include\floatobject.h
+1299591792 c:\python27\include\floatobject.h
 
-1299595392 c:\python27\include\complexobject.h
+1299591792 c:\python27\include\complexobject.h
 
-1299595392 c:\python27\include\rangeobject.h
+1299591792 c:\python27\include\rangeobject.h
 
-1299595392 c:\python27\include\stringobject.h
+1299591792 c:\python27\include\stringobject.h
 	<stdarg.h>
 
-1299595392 c:\python27\include\memoryobject.h
+1299591792 c:\python27\include\memoryobject.h
 
-1299595392 c:\python27\include\bufferobject.h
+1299591792 c:\python27\include\bufferobject.h
 
-1299595392 c:\python27\include\bytesobject.h
+1299591792 c:\python27\include\bytesobject.h
 
-1299595392 c:\python27\include\bytearrayobject.h
+1299591792 c:\python27\include\bytearrayobject.h
 	<stdarg.h>
 
-1299595392 c:\python27\include\tupleobject.h
+1299591792 c:\python27\include\tupleobject.h
 
-1299595392 c:\python27\include\listobject.h
+1299591792 c:\python27\include\listobject.h
 
-1299595392 c:\python27\include\dictobject.h
+1299591792 c:\python27\include\dictobject.h
 
-1299595176 c:\python27\include\enumobject.h
+1299591576 c:\python27\include\enumobject.h
 
-1299595392 c:\python27\include\setobject.h
+1299591792 c:\python27\include\setobject.h
 
-1299595392 c:\python27\include\methodobject.h
+1299591792 c:\python27\include\methodobject.h
 
-1299595392 c:\python27\include\moduleobject.h
+1299591792 c:\python27\include\moduleobject.h
 
-1299595392 c:\python27\include\funcobject.h
+1299591792 c:\python27\include\funcobject.h
 
-1299595392 c:\python27\include\classobject.h
+1299591792 c:\python27\include\classobject.h
 
-1330138700 c:\python27\include\fileobject.h
+1330135100 c:\python27\include\fileobject.h
 
-1299595392 c:\python27\include\cobject.h
+1299591792 c:\python27\include\cobject.h
 
-1299595392 c:\python27\include\pycapsule.h
+1299591792 c:\python27\include\pycapsule.h
 
-1299595392 c:\python27\include\traceback.h
+1299591792 c:\python27\include\traceback.h
 
-1299595392 c:\python27\include\sliceobject.h
+1299591792 c:\python27\include\sliceobject.h
 
-1299595392 c:\python27\include\cellobject.h
+1299591792 c:\python27\include\cellobject.h
 
-1299595392 c:\python27\include\iterobject.h
+1299591792 c:\python27\include\iterobject.h
 
-1299595392 c:\python27\include\genobject.h
+1299591792 c:\python27\include\genobject.h
 
-1299595392 c:\python27\include\descrobject.h
+1299591792 c:\python27\include\descrobject.h
 
-1299595392 c:\python27\include\warnings.h
+1299591792 c:\python27\include\warnings.h
 
-1364004198 c:\python27\include\weakrefobject.h
+1364000598 c:\python27\include\weakrefobject.h
 
-1299595392 c:\python27\include\codecs.h
+1299591792 c:\python27\include\codecs.h
 
-1299595392 c:\python27\include\pyerrors.h
+1299591792 c:\python27\include\pyerrors.h
 	<stdarg.h>
 
-1364004198 c:\python27\include\pystate.h
+1364000598 c:\python27\include\pystate.h
 
-1299595392 c:\python27\include\pyarena.h
+1299591792 c:\python27\include\pyarena.h
 
-1299595392 c:\python27\include\modsupport.h
+1299591792 c:\python27\include\modsupport.h
 	<stdarg.h>
 
-1330138700 c:\python27\include\pythonrun.h
+1330135100 c:\python27\include\pythonrun.h
 
-1299595392 c:\python27\include\ceval.h
+1299591792 c:\python27\include\ceval.h
 
-1364004198 c:\python27\include\sysmodule.h
+1364000598 c:\python27\include\sysmodule.h
 
-1299595176 c:\python27\include\intrcheck.h
+1299591576 c:\python27\include\intrcheck.h
 
-1299595392 c:\python27\include\import.h
+1299591792 c:\python27\include\import.h
 
-1306749232 c:\python27\include\abstract.h
+1306745632 c:\python27\include\abstract.h
 
-1299595392 c:\python27\include\compile.h
+1299591792 c:\python27\include\compile.h
 	"code.h"
 
-1299595392 c:\python27\include\code.h
+1299591792 c:\python27\include\code.h
 
-1299595392 c:\python27\include\eval.h
+1299591792 c:\python27\include\eval.h
 
-1330138700 c:\python27\include\pyctype.h
+1330135100 c:\python27\include\pyctype.h
 
-1299595392 c:\python27\include\pystrtod.h
+1299591792 c:\python27\include\pystrtod.h
 
-1299595392 c:\python27\include\pystrcmp.h
+1299591792 c:\python27\include\pystrcmp.h
 
-1299595392 c:\python27\include\dtoa.h
+1299591792 c:\python27\include\dtoa.h
 
-1364004198 c:\python27\include\pyfpe.h
+1364000598 c:\python27\include\pyfpe.h
 	<signal.h>
 	<setjmp.h>
 	<math.h>
@@ -12941,16 +12941,16 @@
 	<string.h>
 	<boost/python.hpp>
 
-1380501213 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
+1380497613 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
 	<string>
 	"conversion.h"
 	"data_base.h"
 
-1380559990 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
+1380556390 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
 	<string>
 
-1380487107 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
+1380483507 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
 	<fstream>
 	<string>
 	"conversion.h"
@@ -12977,13 +12977,13 @@
 	"ui.h"
 	"data_base.h"
 
-1380563238 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
+1380559638 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
 	"data_base.h"
 	<string>
 	<SDL.h>
 	<vector>
 
-1377197433 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
+1377193833 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
 	"data_base.h"
 	<string>
 	<SDL.h>
@@ -12997,20 +12997,20 @@
 	<string>
 	<boost\python.hpp>
 
-1378947824 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
+1378944224 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
 	<iostream>
 	<string>
 
-1377362100 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
+1377358500 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
 	<Python.h>
 	"pywrap.h"
 	<string>
 	"conversion.h"
 	<iostream>
 
-1377196749 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1377193149 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 
@@ -18694,13 +18694,13 @@
 	<vector>
 	<SDL.h>
 
-1376947262 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
+1376943662 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1381553712 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
+1381550112 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
@@ -18715,7 +18715,7 @@
 	<list>
 	"progressbar.h"
 
-1381554990 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
+1381551390 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
@@ -18726,19 +18726,19 @@
 	"Timer.h"
 	<list>
 
-1381196539 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
+1381192939 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<SDL_mixer.h>
 	"physics.h"
 
-1381104091 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
+1381100491 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	"data_base.h"
 	<string>
 
-1381109956 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
+1381106356 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -18746,7 +18746,7 @@
 	<iostream>
 	"draw_base.h"
 
-1380257418 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
+1380253818 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -18757,14 +18757,14 @@
 	"physics.h"
 	"sound_base.h"
 
-1375733526 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
+1375729926 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
 
-1325814794 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
+1325811194 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1380301091 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
+1382644667 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18774,9 +18774,9 @@
 	"textbox.h"
 	"ui.h"
 
-1381551542 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
+1381547942 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
 
-1382648267 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
+1382644667 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18784,7 +18784,7 @@
 	<SDL.h>
 	<SDL_ttf.h>
 
-1375823284 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
+1375819684 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
 	"Timer.h"
 	<SDL.h>
 
@@ -18794,20 +18794,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1380230365 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
+1380226765 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1380293043 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
+1380289443 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
 	<list>
 	<map>
 	<string>
 	<SDL.h>
 	"textbox.h"
 
-1380301296 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
+1380297696 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
 	<string>
 	<iostream>
 	<SDL.h>
@@ -18815,30 +18815,30 @@
 	<map>
 	"pywrap.h"
 
-1381198646 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
+1381195046 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
 	"progressbar.h"
 	"physics.h"
 	"draw_base.h"
 	<SDL.h>
 	<SDL_image.h>
 
-1381198646 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
+1381195046 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
 	"physics.h"
 	<SDL.h>
 
-1378939728 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
+1378936128 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
 	"unit.h"
 	"trigger.h"
 	"physics.h"
 
-1378935803 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
+1378932203 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
 	"data_base.h"
 	"pywrap.h"
 	"unit.h"
 
-1380300763 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
+1380297163 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
 	<list>
 	<string>
 	<SDL.h>
@@ -18852,7 +18852,7 @@
 	<string>
 	"ui.h"
 
-1380220303 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
+1380216703 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
 	"textbox.h"
 	"button.h"
 	<string>
@@ -18866,7 +18866,7 @@
 	"data_base.h"
 	<SDL_image.h>
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -18896,12 +18896,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_main.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -18928,26 +18928,26 @@
 	<stdlib.h>
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_config.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\begin_code.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\begin_code.h
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\close_code.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\close_code.h
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_assert.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
@@ -18955,7 +18955,7 @@
 	<libkern/OSAtomic.h>
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_audio.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -18965,24 +18965,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_error.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_endian.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_thread.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -18991,18 +18991,18 @@
 	<process.h>
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -19014,7 +19014,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_events.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -19028,7 +19028,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_video.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -19036,11 +19036,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_pixels.h
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rect.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -19048,7 +19048,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_surface.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -19057,11 +19057,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -19069,38 +19069,38 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_quit.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -19108,79 +19108,79 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_touch.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_hints.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_log.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_power.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_render.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_system.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"SDL_keyboard.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_timer.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_version.h
+1376272757 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376156342 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2_image-2.0.0\i686-w64-mingw32\include\sdl2\sdl_image.h
+1376152742 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2_image-2.0.0\i686-w64-mingw32\include\sdl2\sdl_image.h
 	"SDL.h"
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
 
-1376156425 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2_mixer-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+1376152825 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2_mixer-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
@@ -19195,7 +19195,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1380563275 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
+1380559675 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -19218,13 +19218,13 @@
 	<float.h>
 	<math.h>
 
-1380561419 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_baseb.h
+1380557819 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_baseb.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<SDL_mixer.h>
 
-1381555569 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
+1381551969 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
 	<SDL.h>
 	<list>
 	<string>
@@ -19242,7 +19242,7 @@
 	"ui.h"
 	<iostream>
 
-1381553242 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
+1381549642 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
 	<SDL.h>
 	<list>
 	<string>

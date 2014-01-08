@@ -1,5 +1,7 @@
 #include <fstream>
 #include <string>
+#include <string.h>
+#include <sstream>
 #include "conversion.h"
 #include "data_base.h"
 
@@ -113,8 +115,35 @@
         output.open(location, std::ios::out | std::ios::app);
         buffer = "";
     }
+  void data_base::OpenBinFileForQuickWrite(const char* location)
+    {
+        /*Will open the output stream in bin mode. It assumes you just want to ad some new stuff to the file immediately.*/
+        if(output.is_open())//we don't want to leak handles or anything
+        {
+            output.close();
+        }
+        output.open(location, std::ios::out | std::ios::binary);
+        buffer = "";
+    }
 
-    double data_base::GetValueFromDataWithLine(std::string search, int instanceIndex)
+     std::string data_base::OpenFileAndGetBinBuffer(const char* location)
+{
+    if(file.is_open())
+    {
+        file.close();
+    }
+    file.open(location, std::ios::in | std::ios::binary);
+    file.seekg(0);
+    std::cout << file.tellg();
+    std::string line, buff;
+    while(std::getline(file, line))
+    {
+        buff+=line + "\n";
+    }
+    file.close();
+    return buff;
+}
+   double data_base::GetValueFromDataWithLine(std::string search, int instanceIndex)
     {
          /*Note: instanceIndex is the number of times a search word can be found in the target file. i.e. value = 1; value = 3;
         has 2 instances, so if inctanceIndex is 1 the result will be 1 and if instanceIndex is 2 the result will be 3.

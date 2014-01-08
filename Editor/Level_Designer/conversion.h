@@ -9,6 +9,7 @@ int charToInt(const char buffer);//Get numbers out of chars
 int cStrToInt(const char buffer[]);//Get full numbers out of character strings
 std::string intToStr (const int num); //Converts a single number into a string equivalent
 double cStrToNum(const char buffer[]);
+std::string numToStr(const double num);
 int searchCharIndex(const char character,std::string buffer, int start = 0);
 bool searchChar(const char character, const char buffer[]);
 int findString(const char target[], const char stringSource[], int pos = 0);
@@ -23,5 +24,15 @@ int searchCharIndex(char character, char buffer[]);
 std::string sliceStr(std::string input, int start, int end);
 int numToInt(double value);
 std::string fuseStrs(std::string Str1, std::string Str2);
-
+template <typename N> N compareValues(N numA, N numB)
+{
+    if(numA > numB)
+    {
+        return numA;
+    }
+    return numB;
+}
+double round(double value, int precision);
+int iround(double value, int precision);
+bool changeProgramWorkingDirectory(const char* newPath);
 #endif // CONVERSION_H_INCLUDED

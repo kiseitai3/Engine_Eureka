@@ -3,8 +3,9 @@
 #include <vector>
 #include <string>
 
-//vars
-const char* MOD = NULL;
-const char* projName = NULL;
-const char* rel_MODPATH = NULL;
+//functions
+void setBasicSettings(std::string _projDirectory = "", std::string _projName = "", std::string _MOD = "");
+std::string getProjectDirectory();
+std::string getProjectName();
+std::string getMODPath();
 #endif // GLOBALS_H

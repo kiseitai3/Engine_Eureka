@@ -22,6 +22,10 @@ private slots:
 
   void on_buttonBox_accepted();
 
+  void on_leName_textChanged(const QString &arg1);
+
+  void on_buttonBox_rejected();
+
 private:
   Ui::Startup *ui;
 };

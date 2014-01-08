@@ -1,8 +1,12 @@
 #define ERROR -1
 #include "conversion.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <math.h>
+#include <unistd.h>
 int charToInt(const char buffer)
 {
     /*Base function that converts a single character into a number. This function is the heart of the string conversion functions.*/
@@ -13,7 +17,8 @@ int charToInt(const char buffer)
 std::string intToStr (const int num)
 {
     char buffer[33];
-    return std::string(itoa(num, buffer, 10));
+    snprintf(buffer, 33, "%d", num);//convert and store in buffer. this function used to be done with itoa but it wasn't standard so I changed it (MinGW vs. Cygwin capabilities).
+    return std::string(buffer);
 }
 
 int cStrToInt(const char buffer[])
@@ -163,6 +168,10 @@ pChar* slice(char* const input, int start, int end)
 
 std::string sliceStr(std::string input, int start, int end)
 {
+    if(input == "")
+    {
+      return "";
+    }
     /*This function takes a string and returns a slice from the start position to the desired end position*/
     char answer[end - start + 1];
     answer[end-start] = '\0'; //Append end of string character so the string is not misdisplayed or misused later on.
@@ -205,4 +214,36 @@ std::string fuseStrs(std::string Str1, std::string Str2)
     return Str1 + Str2;
 }
 
+double round(double value, int precision)
+{
+    int precisionFactor = 10 ^ precision;
+    double tmpValue = value * precisionFactor;
+    double decimals = tmpValue - (int)(tmpValue);
+    if(decimals > 0.5)
+    {
+        return ceil(tmpValue) / precisionFactor;
+    }
+    return floor(tmpValue) / precisionFactor;
+}
 
+int iround(double value, int precision)
+{
+    return (int)(round(value, precision));
+}
+
+std::string numToStr(const double num)
+{
+    std::stringstream s;
+    s << num;
+    return s.str();
+}
+
+bool changeProgramWorkingDirectory(const char* newPath)
+{
+    //This function allows the calling program to change the current working directory
+    if(chdir(newPath) == ERROR)
+    {
+        return false;
+    }
+    return true;
+}

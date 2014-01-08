@@ -33,8 +33,10 @@ class data_base
     double GetValueFromDataWithLine(std::string search, int lineIndex);
     std::string GetStrFromDataWithLine(std::string search, int lineIndex);
     bool GetStateOfInternalBuffer();
+    std::string OpenFileAndGetBinBuffer(const char* location);
     void OpenFile(const char* location, bool readMode = true);
     void OpenFileForQuickWrite(const char* location);// Will open the output stream in append mode. It assumes you just want to ad some new stuff to the file immediately.
+    void OpenBinFileForQuickWrite(const char* location); //Will open a file in binary mode
     void CloseFile(std::string streamsToClose = "all");
     bool GetMode();
     void WriteValue(std::string value, std::string search = "");

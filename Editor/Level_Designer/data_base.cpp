@@ -23,7 +23,7 @@
     void data_base::LoadStringBuffer(bool closeFile)
     {
         /*Loads file into internal string buffer line by line*/
-        std::string temp = "";
+        /*std::string temp = "";
         if (file.is_open())
         {
             while ( file.good() )
@@ -33,7 +33,17 @@
                 buffer += temp;
                 lines++;
             }
-        }
+        }*/
+      /*Above solution is depracated because of a bug. I'm currently using the
+       *steps below!
+       */
+        file.seekg(0, std::ios::end);
+        size_t s = file.tellg();
+        char* buff = new char[s];
+        file.seekg(0, std::ios::beg);
+        file.read(buff, s);
+        buffer = buff;
+        delete[] buff;
         if(closeFile)
         {
             file.close();
@@ -337,6 +347,122 @@ bool data_base::SearchTermExists(std::string search)
             output.close();
         }
     }
+
+    void data_base::RestoreFileContents()
+    {
+      /*This method should be called immediately after opening a file in write mode
+       *so the contents are kept in the file for other processes that may be using it.
+       */
+      //CleanFileContentsOfArtifacts();
+      TrimEndOfFile();
+      FlushData();
+    }
+
+    void data_base::RefreshFile()
+    {
+      /*This method should be called periodically after opening a file in read mode.
+       *The purpose of this method is to reload the file contents to the internal
+       *buffer when the file is expected to change.
+       **/
+      LoadStringBuffer(false);
+    }
+
+    void data_base::CleanFileContentsOfArtifacts()
+    {
+      /*This method will erase all excess of newline and return characters!
+       *I noticed that the way I have this class set up introduces excess
+       *of these characters when the file is repeatedly opened in write
+       *mode. I term this excess artifacts.
+       **/
+      unsigned short newLineInstances, returnInstances = 0;
+      for(size_t i = 0; i < buffer.size(); i++)
+      {
+         if(buffer[i] == '\n')
+          {
+            newLineInstances++;
+           }
+         if(buffer[i] == '\r')
+          {
+            returnInstances++;
+           }
+         if(buffer[i] != '\n' && newLineInstances > 0)
+           {
+             newLineInstances--;
+            }
+          if(buffer[i] != '\r' && returnInstances > 0)
+            {
+              returnInstances--;
+             }
+          if(newLineInstances > 1)
+           {
+             buffer.replace(i, 1, "");
+             newLineInstances--;
+            }
+          if(returnInstances > 1)
+           {
+             buffer.replace(i, 1, "");
+              returnInstances--;
+            }
+      }
+    }
+
+    void data_base::TrimEndOfFile()
+    {
+      /*The generated files receive an excess chunk after it is opened in write mode
+       *multiple times. This makes the file progressively larger with crap.
+       */
+      size_t lastMarker = 0;
+      for(size_t i = 0; i < buffer.size(); i++)
+        {
+          if(buffer[i] == ';' || buffer[i] == '\n')
+            {
+              lastMarker = i;
+            }
+          if(buffer[i] == 26)
+            {
+              lastMarker = i;
+              break;//Break a leg! We just reached EOF
+            }
+        }
+      if(findString(":EOF:", buffer.c_str()) > 0)
+        {
+          //Optional way to end the file. Takes priority over the other markers.
+          lastMarker = (size_t)findString(":EOF:", buffer.c_str()) - 1;
+        }
+      buffer = sliceStr(buffer, 0, lastMarker + 1);
+    }
+
+    void data_base::CreateNewFile(const char* location)
+    {
+      /*This method empties the file if location = "" (you are assuming the file was already opened; see FileClear for
+       *more information), or creates an empty file in the designated location.
+       **/
+      if(location == "")
+        {
+          FileClear();
+        }
+      else
+        {
+          lastOutputLocation = location;
+          output.open(location, std::ios::out | std::ios::trunc);
+          FileClear();//Make sure I make a new file.
+        }
+      //Let's close the file since we only want to create a new file.
+      if(output.is_open())
+        {
+            output.close();
+        }
+    }
+
+    void data_base::CreateNewFile_static(const char* location)
+    {
+      /*Static version of CreateNewFile
+       **/
+      std::ofstream out;
+      out.open(location, std::ios::out | std::ios::trunc);
+      out.close();
+    }
+
     data_base::data_base(const char location[], bool read)
     {
         /*Constructor. This class will be used for reading files by default. However, changing the read flag to false will
@@ -353,12 +479,13 @@ bool data_base::SearchTermExists(std::string search)
                 writeMode = true;
                 LoadStringBuffer();//Get an internal copy of the contents in the file and close the file
                 LoadData(location, read);//Reopen the same file but in output mode, which erases all previous data.
+                isBufferLoaded = true;//sets this flag true so other processes know the task was successful!
                 }
             break;
             default:
             if(LoadData(location))//Checks if internal file buffer was properly started.
             {
-                LoadStringBuffer();//reads the file buffer into the internal string buffer
+                LoadStringBuffer(false);//reads the file buffer into the internal string buffer
                 isBufferLoaded = true;//sets this flag true so other processes know the task was successful!
             }
         }
@@ -370,5 +497,9 @@ bool data_base::SearchTermExists(std::string search)
         {
             file.close();
         }
-
+        if(output.is_open())
+        {
+            FlushData();
+            output.close();
+        }
     }

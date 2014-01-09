@@ -23,6 +23,8 @@ class data_base
     void FlushData();
     int GetLineIndex(std::string search, int lineNum);
     void FileClear();
+    void CleanFileContentsOfArtifacts();
+    void TrimEndOfFile();
     public:
     //methods
     data_base(const char location[]="", bool read = true);
@@ -45,6 +47,10 @@ class data_base
     int GetLineCount();
     int GetNumInstances(std::string search);
     bool SearchTermExists(std::string search);
+    void RestoreFileContents();
+    void RefreshFile();
+    void CreateNewFile(const char* location = "");
+    static void CreateNewFile_static(const char* location);
     ~data_base();
 };
 

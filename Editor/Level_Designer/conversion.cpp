@@ -69,16 +69,16 @@ int searchCharIndex(const char character, std::string buffer, int start)
     return ERROR;
 }
 
-bool searchChar(const char character, const char buffer[]){
+bool searchChar(const char character, std::string buffer){
 /*This function will search for a character and tell me if it exists.*/
-for(unsigned int i =0; i < sizeof(buffer)-1; i++)
+  for(unsigned int i =0; i < buffer.size() -1; i++)
 {
     if(character == buffer[i])
     {
-        return 1;
+        return true;
     }
 }
-return 0;
+return false;
 }
 
 int findString(const char target[], const char stringSource[], int pos)
@@ -246,4 +246,28 @@ bool changeProgramWorkingDirectory(const char* newPath)
         return false;
     }
     return true;
+}
+
+char capitalizeChar(const char character)
+{
+  /*This function takes a character and returns the upper case version. This
+   *conversion is based on the ASCII table. Because it uses the symmetry of the
+   *table, you can actually input other characters and receive not the upper case,
+   *but another character (example, [ -> ;). Warning: it shouldn't work with
+   *other character standards unless they share the same symmetry as the ASCII
+   *table.
+   **/
+  return character - 0x20;
+}
+
+char lowerCaseChar(const char character)
+{
+  /*This function takes a character and returns the lower case version. This
+   *conversion is based on the ASCII table. Because it uses the symmetry of the
+   *table, you can actually input other characters and receive not the lower case,
+   *but another character (example, ; -> [). Warning: it shouldn't work with
+   *other character standards unless they share the same symmetry as the ASCII
+   *table.
+   **/
+  return character + 0x20;
 }

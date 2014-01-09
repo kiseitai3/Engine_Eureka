@@ -3,5 +3,6 @@ proj_name = .pr;
 texture_count = 0;
 sound_count = 0;
 script_count = 0;
+mod_install_loc = ;
+mod_description = ;
 
-this_is_a_project_file = ;

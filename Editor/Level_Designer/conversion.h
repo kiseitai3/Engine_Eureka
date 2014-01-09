@@ -11,7 +11,7 @@ std::string intToStr (const int num); //Converts a single number into a string e
 double cStrToNum(const char buffer[]);
 std::string numToStr(const double num);
 int searchCharIndex(const char character,std::string buffer, int start = 0);
-bool searchChar(const char character, const char buffer[]);
+bool searchChar(const char character, std::string buffer);
 int findString(const char target[], const char stringSource[], int pos = 0);
 pChar* slice(char* const input, int start, int end);
 pChar* shiftArrayLeft(char* const input, int size);
@@ -35,4 +35,6 @@ template <typename N> N compareValues(N numA, N numB)
 double round(double value, int precision);
 int iround(double value, int precision);
 bool changeProgramWorkingDirectory(const char* newPath);
+char capitalizeChar(const char character);
+char lowerCaseChar(const char character);
 #endif // CONVERSION_H_INCLUDED

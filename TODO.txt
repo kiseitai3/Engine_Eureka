@@ -1,3 +1,5 @@
 --Implement accessibility options on the engine level!
 --Create crossplatform level designer project.
+   --Finish asset registration tab
+   --Create unit and tile creation tabs
 --Create Launcher project.

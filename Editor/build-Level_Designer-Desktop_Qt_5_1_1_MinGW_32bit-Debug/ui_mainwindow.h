@@ -22,6 +22,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
@@ -53,6 +54,24 @@ public:
     QTextEdit *teModDescription;
     QPushButton *pbModSave;
     QWidget *tabRegisterAssets;
+    QGroupBox *groupBox_3;
+    QPushButton *pbTextureBrowse;
+    QLineEdit *leTexturePath;
+    QLabel *label_5;
+    QSpinBox *sbHeight;
+    QLabel *label_6;
+    QSpinBox *sbWidth;
+    QLabel *label_7;
+    QSpinBox *sbFrames;
+    QLabel *label_8;
+    QSpinBox *sbAnimCounter;
+    QLabel *label_9;
+    QSpinBox *sbTimePerFrame;
+    QLabel *label_10;
+    QSpinBox *sbAnimNum;
+    QLabel *label_11;
+    QSpinBox *spinBox;
+    QPushButton *pbRegTexture;
     QWidget *tabDesigner;
     QMenuBar *menuBar;
     QMenu *menu_File;
@@ -122,6 +141,61 @@ public:
         twTabs->addTab(tabGeneral, QString());
         tabRegisterAssets = new QWidget();
         tabRegisterAssets->setObjectName(QStringLiteral("tabRegisterAssets"));
+        groupBox_3 = new QGroupBox(tabRegisterAssets);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(0, 0, 411, 221));
+        pbTextureBrowse = new QPushButton(groupBox_3);
+        pbTextureBrowse->setObjectName(QStringLiteral("pbTextureBrowse"));
+        pbTextureBrowse->setGeometry(QRect(320, 20, 75, 23));
+        leTexturePath = new QLineEdit(groupBox_3);
+        leTexturePath->setObjectName(QStringLiteral("leTexturePath"));
+        leTexturePath->setGeometry(QRect(10, 20, 291, 20));
+        label_5 = new QLabel(groupBox_3);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(20, 50, 201, 16));
+        sbHeight = new QSpinBox(groupBox_3);
+        sbHeight->setObjectName(QStringLiteral("sbHeight"));
+        sbHeight->setGeometry(QRect(240, 50, 42, 22));
+        label_6 = new QLabel(groupBox_3);
+        label_6->setObjectName(QStringLiteral("label_6"));
+        label_6->setGeometry(QRect(290, 50, 16, 16));
+        sbWidth = new QSpinBox(groupBox_3);
+        sbWidth->setObjectName(QStringLiteral("sbWidth"));
+        sbWidth->setGeometry(QRect(310, 50, 42, 22));
+        label_7 = new QLabel(groupBox_3);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(20, 90, 61, 16));
+        sbFrames = new QSpinBox(groupBox_3);
+        sbFrames->setObjectName(QStringLiteral("sbFrames"));
+        sbFrames->setGeometry(QRect(90, 90, 42, 22));
+        label_8 = new QLabel(groupBox_3);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(150, 90, 191, 16));
+        sbAnimCounter = new QSpinBox(groupBox_3);
+        sbAnimCounter->setObjectName(QStringLiteral("sbAnimCounter"));
+        sbAnimCounter->setGeometry(QRect(350, 90, 42, 22));
+        label_9 = new QLabel(groupBox_3);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(20, 120, 191, 16));
+        sbTimePerFrame = new QSpinBox(groupBox_3);
+        sbTimePerFrame->setObjectName(QStringLiteral("sbTimePerFrame"));
+        sbTimePerFrame->setGeometry(QRect(220, 120, 42, 22));
+        label_10 = new QLabel(groupBox_3);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(20, 150, 161, 16));
+        sbAnimNum = new QSpinBox(groupBox_3);
+        sbAnimNum->setObjectName(QStringLiteral("sbAnimNum"));
+        sbAnimNum->setGeometry(QRect(190, 150, 42, 22));
+        label_11 = new QLabel(groupBox_3);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(20, 180, 151, 16));
+        spinBox = new QSpinBox(groupBox_3);
+        spinBox->setObjectName(QStringLiteral("spinBox"));
+        spinBox->setGeometry(QRect(170, 180, 42, 22));
+        spinBox->setMaximum(1);
+        pbRegTexture = new QPushButton(groupBox_3);
+        pbRegTexture->setObjectName(QStringLiteral("pbRegTexture"));
+        pbRegTexture->setGeometry(QRect(320, 190, 75, 23));
         twTabs->addTab(tabRegisterAssets, QString());
         tabDesigner = new QWidget();
         tabDesigner->setObjectName(QStringLiteral("tabDesigner"));
@@ -148,7 +222,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        twTabs->setCurrentIndex(0);
+        twTabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -168,6 +242,19 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "Mod Description:", 0));
         pbModSave->setText(QApplication::translate("MainWindow", "Save Settings", 0));
         twTabs->setTabText(twTabs->indexOf(tabGeneral), QApplication::translate("MainWindow", "Mod Settings", 0));
+        groupBox_3->setTitle(QApplication::translate("MainWindow", "Texture", 0));
+        pbTextureBrowse->setText(QApplication::translate("MainWindow", "Browse", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Size of placeholding rectangle (h * w):", 0));
+        label_6->setText(QApplication::translate("MainWindow", "X", 0));
+        label_7->setText(QApplication::translate("MainWindow", "# of frames:", 0));
+        label_8->setText(QApplication::translate("MainWindow", "# of animations in spritesheet/texture:", 0));
+        label_9->setText(QApplication::translate("MainWindow", "Time per frame (cycles for each frame):", 0));
+#ifndef QT_NO_TOOLTIP
+        label_10->setToolTip(QApplication::translate("MainWindow", "Useful for multianimation textures! It allows you to select the animation from the file!", 0));
+#endif // QT_NO_TOOLTIP
+        label_10->setText(QApplication::translate("MainWindow", "Selected animation (0-indexed):", 0));
+        label_11->setText(QApplication::translate("MainWindow", "Looping animation? (1 = yes):", 0));
+        pbRegTexture->setText(QApplication::translate("MainWindow", "Register", 0));
         twTabs->setTabText(twTabs->indexOf(tabRegisterAssets), QApplication::translate("MainWindow", "Register Assets", 0));
         twTabs->setTabText(twTabs->indexOf(tabDesigner), QApplication::translate("MainWindow", "Level Designer", 0));
         menu_File->setTitle(QApplication::translate("MainWindow", "&File", 0));

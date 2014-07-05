@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     {
       //Let's parse the file and set the settings in the main window!
       setBasicSettings(getProjectDirectory(), getProjectName(), DOM->GetStrFromData("mod_loc").c_str());
-      changeProgramWorkingDirectory(getMODPath().c_str());
       ui->leMod->setText(DOM->GetStrFromData("mod_loc").c_str());
       ui->leModInstall->setText(DOM->GetStrFromData("mod_install_loc").c_str());
       ui->leModName->setText(DOM->GetStrFromData("mod_name").c_str());
@@ -63,8 +62,8 @@ MainWindow::MainWindow(QWidget *parent) :
   open = new QFileDialog(this);
   DOMWriter = new data_base(tmpPath.c_str(), false);
   //QMessageBox::information(NULL,"test", DOMWriter->GetStrBuffer().c_str());
-  this->thread()->wait(500);
   DOMWriter->RestoreFileContents();
+  changeProgramWorkingDirectory(getMODPath().c_str());
 }
 
 MainWindow::~MainWindow()
@@ -131,3 +130,51 @@ void MainWindow::on_MainWindow_destroyed()
 }
 
 
+
+void MainWindow::on_pbTextureBrowse_clicked()
+{
+    open->setFileMode(QFileDialog::AnyFile);
+    std::string tmp = open->getOpenFileName(NULL, "Select Texture","" ,"Textures (*.png *.tiff *.tex *.bmp *.jpg *.jpeg)").toStdString();
+    tmp = tmp.replace(0, getMODPath().size(),"");
+    ui->leTexturePath->setText(tmp.c_str());
+}
+
+void MainWindow::on_pbRegTexture_clicked()
+{
+  if(ui->leTexName->text() == "" || ui->leTexturePath->text() == "")
+    {
+      QMessageBox::critical(this, "Error!", "Error: Either the filename or the object name was not specified. Fill the missing fields and try again!");
+    }
+  else
+    {
+      data_base tmp;
+      //First, we need to build the file path we need for this io operation!
+      std::string path = "Textures/";
+      path += ui->leTexName->text().toStdString();
+      path += ".txt";
+      //Now, we create a new and empty file!
+      tmp.CreateNewFile(path.c_str());
+      //Now, let's generate the data fields in the file!
+      tmp.OpenFileForQuickWrite(path.c_str());
+      tmp.WriteValueAndFlush("tex_texture = ;\n");
+      tmp.WriteValueAndFlush("tex_frames = 1;\n");
+      tmp.WriteValueAndFlush("tex_height = 0;\n");
+      tmp.WriteValueAndFlush("tex_width = 0;\n");
+      tmp.WriteValueAndFlush("tex_anim_counter = 0;\n");
+      tmp.WriteValueAndFlush("tex_anim_num = 0;\n");
+      tmp.WriteValueAndFlush("tex_time_on_frames = 0;\n");
+      tmp.WriteValueAndFlush("tex_noloop = 0;\n");
+      //Now, let's initialize the fields!
+      tmp.CloseFile();
+      tmp.OpenFile(path.c_str());
+      tmp.WriteValue(ui->leTexturePath->text().toStdString(), "tex_texture");
+      tmp.WriteValue(intToStr(ui->sbFrames->value()), "tex_frames");
+      tmp.WriteValue(intToStr(ui->sbHeight->value()), "tex_height");
+      tmp.WriteValue(intToStr(ui->sbWidth->value()), "tex_width");
+      tmp.WriteValue(intToStr(ui->sbAnimCounter->value()), "tex_anim_counter");
+      tmp.WriteValue(intToStr(ui->sbAnimNum->value()), "tex_anim_num");
+      tmp.WriteValue(intToStr(ui->sbTimePerFrame->value()), "tex_time_on_frames");
+      tmp.WriteValue(!ui->sbLoop->value(), "tex_noloop");
+      tmp.CloseFile();
+    }
+}

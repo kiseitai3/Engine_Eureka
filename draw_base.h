@@ -8,7 +8,7 @@
 class draw_base
 {
     public:
-    void Load_Texture(const char* source, SDL_Renderer* ren);
+    void Load_Texture(const char* source, SDL_Renderer* ren, int fps = 30);
     void apply_surface( int x, int y, SDL_Renderer* destination);
     int GetHeightOfMainRect();
     int GetWidthOfMainRect();

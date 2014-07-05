@@ -29,6 +29,10 @@ private slots:
 
   void on_MainWindow_destroyed();
 
+  void on_pbTextureBrowse_clicked();
+
+  void on_pbRegTexture_clicked();
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;

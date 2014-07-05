@@ -13,10 +13,11 @@ class data_base
     bool isBufferLoaded;
     bool writeMode;
     int lines;
+    size_t s;
     std::fstream file;
     std::string buffer;
     std::ofstream output;
-    std::string lastOutputLocation;
+    std::string lastLocation;
     //methods
     bool LoadData(const char* location, bool readMode = true);
     void LoadStringBuffer(bool closeFile = true);

@@ -12,11 +12,12 @@
         if(readMode)
         {
             file.open(location, std::fstream::in);
+            lastLocation = location;
         }
         else
         {
             output.open(location, std::ios::out | std::ios::trunc);
-            lastOutputLocation = location;
+            lastLocation = location;
         }
         return file.is_open();
     }
@@ -38,12 +39,20 @@
        *steps below!
        */
         file.seekg(0, std::ios::end);
-        size_t s = file.tellg();
+        s = file.tellg();
         char* buff = new char[s];
         file.seekg(0, std::ios::beg);
         file.read(buff, s);
         buffer = buff;
         delete[] buff;
+        for(size_t i = 0; i <buffer.size(); i++)
+          {
+            if(buffer[i] == '\n')
+              {
+                lines++;
+              }
+          }
+        lines++;
         if(closeFile)
         {
             file.close();
@@ -310,7 +319,7 @@ bool data_base::SearchTermExists(std::string search)
             {
                 output.close();
             }
-            output.open(lastOutputLocation.c_str(), std::ios::out | std::ios::trunc);
+            output.open(lastLocation.c_str(), std::ios::out | std::ios::trunc);
         }
     }
 
@@ -353,7 +362,7 @@ bool data_base::SearchTermExists(std::string search)
       /*This method should be called immediately after opening a file in write mode
        *so the contents are kept in the file for other processes that may be using it.
        */
-      //CleanFileContentsOfArtifacts();
+      CleanFileContentsOfArtifacts();
       TrimEndOfFile();
       FlushData();
     }
@@ -364,7 +373,8 @@ bool data_base::SearchTermExists(std::string search)
        *The purpose of this method is to reload the file contents to the internal
        *buffer when the file is expected to change.
        **/
-      LoadStringBuffer(false);
+      CloseFile();
+      OpenFile(lastLocation.c_str());
     }
 
     void data_base::CleanFileContentsOfArtifacts()
@@ -374,7 +384,8 @@ bool data_base::SearchTermExists(std::string search)
        *of these characters when the file is repeatedly opened in write
        *mode. I term this excess artifacts.
        **/
-      unsigned short newLineInstances, returnInstances = 0;
+      unsigned short newLineInstances = 0;
+      unsigned short returnInstances = 0;
       for(size_t i = 0; i < buffer.size(); i++)
       {
          if(buffer[i] == '\n')
@@ -443,7 +454,7 @@ bool data_base::SearchTermExists(std::string search)
         }
       else
         {
-          lastOutputLocation = location;
+          lastLocation = location;
           output.open(location, std::ios::out | std::ios::trunc);
           FileClear();//Make sure I make a new file.
         }
@@ -471,6 +482,7 @@ bool data_base::SearchTermExists(std::string search)
         writeMode = false;
         buffer = "";
         lines = 0;
+        s = 0;
         switch(read)
         {
             case false:

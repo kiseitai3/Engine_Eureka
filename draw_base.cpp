@@ -4,8 +4,9 @@
 #include <string>
 #include <iostream>
 #include "draw_base.h"
+#include "conversion.h"
 
-void draw_base::Load_Texture(const char* source, SDL_Renderer* ren)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
+void draw_base::Load_Texture(const char* source, SDL_Renderer* ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
     animDOM = new data_base(source);
     if(animDOM)
@@ -22,12 +23,16 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer* ren)// animName i
             SDL_FreeSurface(tmp);
         }
         frames = animDOM->GetIntFromData("tex_frames");
-        height = animDOM->GetIntFromData("tex_height");
+        height = animDOM->GetIntFromData("tex_height");//Size of placeholding rectangle
         width = animDOM->GetIntFromData("tex_width");
         animNum = animDOM->GetIntFromData("tex_anim_num");
         animCounter = animDOM->GetIntFromData("tex_anim_counter");
         noLoop = animDOM->GetIntFromData("tex_noloop");
         timeBetweenFrames = animDOM->GetIntFromData("tex_time_on_frames");
+        if(timeBetweenFrames == 0)
+        {
+            timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
+        }
         src.h = height;
         src.w = width;
         target.h = height;

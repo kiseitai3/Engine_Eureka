@@ -11,7 +11,7 @@
 #include "data_base.h"
 #include <SDL_image.h>
 
-Button::Button(std::string msg, const char *file, SDL_Renderer *ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
+Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
 {
     script = 0;
     if(!GetDOM())

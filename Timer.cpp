@@ -60,7 +60,7 @@ void Timer::unpause()
     }
 }
 
-int Timer::get_ticks()
+int Timer::get_ticks() const
 {
     //If the timer is running
     if( started == true )
@@ -82,12 +82,12 @@ int Timer::get_ticks()
     return 0;
 }
 
-bool Timer::is_started()
+bool Timer::is_started() const
 {
     return started;
 }
 
-bool Timer::is_paused()
+bool Timer::is_paused() const
 {
     return paused;
 }

@@ -54,7 +54,7 @@ template <typename N> N compareValues(N numA, N numB)
 }
 double round(double value, int precision);
 int iround(double value, int precision);
-bool changeProgramWorkingDirectory(const char* newPath);
+bool changeProgramWorkingDirectory(char* newPath);
 char capitalizeChar(const char character);
 char lowerCaseChar(const char character);
 std::string scientificFormat(const std::string& num, size_t precision = 3);

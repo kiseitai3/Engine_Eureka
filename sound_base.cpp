@@ -232,7 +232,7 @@ void sound_base::SetVol(int volume)
     Mix_VolumeMusic(volume);
 }
 
-bool sound_base::isPlaying()
+bool sound_base::isPlaying() const
 {
     return Mix_PlayingMusic();
 }
@@ -254,7 +254,7 @@ bool sound_base::PlayEffect(int soundLoops)
     return true;
 }
 
-bool sound_base::isLoopingEffect()
+bool sound_base::isLoopingEffect() const
 {
     return loopingEffect;
 }

@@ -80,7 +80,7 @@ void data_base::LoadStringBuffer(bool closeFile)
     {
         return buffer;
     }
-    double data_base::GetValueFromData(std::string search) const
+    double data_base::GetValueFromData(const std::string& search) const
     {
         /*This function takes a search string (aka. keyword) and looks for the index of the beginning of the keyword.
         Then, it slices the internal buffer and cleans it of non-numeric characters that are known to be in the internal string buffer.
@@ -95,7 +95,7 @@ void data_base::LoadStringBuffer(bool closeFile)
         numberStr = removeCharFromStr('=', numberStr.c_str());
         return cStrToNum(numberStr.c_str());
     }
-    std::string data_base::GetStrFromData(std::string search) const
+    std::string data_base::GetStrFromData(const std::string& search) const
     {
         /* Extracts the string in much the same way the GetValueFromData does.*/
         int start = findString((char*)search.c_str(), buffer.c_str())+ search.length();
@@ -112,7 +112,7 @@ void data_base::LoadStringBuffer(bool closeFile)
         }
         return Str;
     }
-    int data_base::GetIntFromData(std::string search) const
+    int data_base::GetIntFromData(const std::string& search) const
     {
         return numToInt(GetValueFromData(search));
     }
@@ -163,7 +163,7 @@ void data_base::LoadStringBuffer(bool closeFile)
         buffer = "";
     }
 
-     std::string data_base::OpenFileAndGetBinBuffer(const char* location)
+     std::string data_base::OpenFileAndGetBinBuffer(char* location)
 {
     if(file.is_open())
     {
@@ -180,7 +180,7 @@ void data_base::LoadStringBuffer(bool closeFile)
     file.close();
     return buff;
 }
-   double data_base::GetValueFromDataWithLine(std::string search, int instanceIndex) const
+   double data_base::GetValueFromDataWithLine(const std::string& search, int instanceIndex) const
     {
          /*Note: instanceIndex is the number of times a search word can be found in the target file. i.e. value = 1; value = 3;
         has 2 instances, so if inctanceIndex is 1 the result will be 1 and if instanceIndex is 2 the result will be 3.
@@ -196,7 +196,7 @@ void data_base::LoadStringBuffer(bool closeFile)
         return cStrToNum(numberStr.c_str());
     }
 
-    std::string data_base::GetStrFromDataWithLine(std::string search, int instanceIndex) const
+    std::string data_base::GetStrFromDataWithLine(const std::string& search, int instanceIndex) const
     {
         /*Note: instanceIndex is the number of times a search word can be found in the target file. i.e. value = 1; value = 3;
         has 2 instances, so if inctanceIndex is 1 the result will be 1 and if instanceIndex is 2 the result will be 3.
@@ -216,7 +216,7 @@ void data_base::LoadStringBuffer(bool closeFile)
         return Str;
     }
 
-bool data_base::SearchTermExists(std::string search) const
+bool data_base::SearchTermExists(const std::string& search) const
 {
     if(static_cast<size_t>(findString(search.c_str(), GetStrBuffer().c_str())) == std::string::npos)
     {
@@ -232,7 +232,7 @@ bool data_base::SearchTermExists(std::string search) const
         output.flush();//flush the stream into the storage device so that the file is updated
     }
 
-    void data_base::WriteValue(std::string value, std::string search)
+    void data_base::WriteValue(const std::string& value, const std::string& search)
     {
         /*Writes value into an specific 'tag' in file. i.e. value = 3; [search = value, value = 5] -> value = 5;*/
         if(buffer != "" && search != "")
@@ -254,7 +254,7 @@ bool data_base::SearchTermExists(std::string search) const
         }
     }
 
-    void data_base::WriteValueWithLineIndex(std::string value, std::string search, int instanceIndex)
+    void data_base::WriteValueWithLineIndex(const std::string& value, const std::string& search, int instanceIndex)
     {
         /*This methods find the instance of a keyword and modifies its value. i.e. value = 3;\nvalue = 4 [mod line 2 with 3] -> value = 3;\nvalue = 3.*/
         int start = GetLineIndex(search, instanceIndex) + 3;
@@ -271,7 +271,7 @@ bool data_base::SearchTermExists(std::string search) const
         }
     }
 
-    void data_base::WriteValueAndFlush(std::string value)
+    void data_base::WriteValueAndFlush(const std::string& value)
     {
         /*Meant to be used with OpenFileForQuickWrite(). Unlike in the regular output mode, value will contain a manually
         created string. In other words, this function will not edit search terms within the file.*/
@@ -284,7 +284,7 @@ bool data_base::SearchTermExists(std::string search) const
     {
         return lines;
     }
-    int data_base::GetNumInstances(std::string search) const
+    int data_base::GetNumInstances(const std::string& search) const
     {
         /*Searches for the search keyword until and increments the instance count (line count) each time it finds the search word.
         Then, the method returns this number.*/
@@ -309,7 +309,7 @@ bool data_base::SearchTermExists(std::string search) const
     {
         return isBufferLoaded;
     }
-    int data_base::GetLineIndex(std::string search, int lineNum) const
+    int data_base::GetLineIndex(const std::string& search, int lineNum) const
     {
         int index = 0;
         int line = 0;
@@ -360,7 +360,7 @@ bool data_base::SearchTermExists(std::string search) const
         return false;
     }
 
-    void data_base::CloseFile(std::string streamsToClose)
+    void data_base::CloseFile(const std::string& streamsToClose)
     {
         /*streamsToClose flags are all for all stream, in for input stream, and out for output stream. the flag is set to all by default.
         This method makes some checks*/
@@ -549,7 +549,7 @@ bool data_base::SearchTermExists(std::string search) const
         }
     }
 
-bool copyfile(const std::string& source, const std::string destination, bool binary)
+bool copyfile(const std::string& source, const std::string& destination, bool binary)
 {
     /* This is my file copy function. It is a supporting function for the data_base class, since this class has the purpose
     of handling file operations!*/

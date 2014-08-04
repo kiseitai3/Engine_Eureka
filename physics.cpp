@@ -8,6 +8,20 @@
 #include "conversion.h"
 #include "physics.h"
 
+//Let's define some basic physics constants
+/*This part is a bit dirty, but such is the world of physics. I normally name my constants with upper case, but the scientist
+in me is used to using upper and lower cases for specific physics constants. Sorry if it makes you feel dirty, it makes
+me feel dirty. Now, let's heal our wounds and move on! :P
+*/
+const double Physics::G =6.67*pow(10.0,-11.0);
+const double Physics::c =3.00*pow(10.0,8.0);
+const double Physics::e =1.60*pow(10.0,-19.0);
+const double Physics::pi =3.14159;
+const double Physics::epsilon0 =8.85*pow(10.0,-12.0);
+const double Physics::mu0 =(4*pi)*pow(10.0,-7.0);
+const double Physics::k = 9*pow(10.0,9.0);
+/*End of dirty section. */
+
     bool Physics::Load_Physics(const char* location)// physData is the variable that will contain the name of the tag name in the xml file containing the physics details of especific objects (i.e. The hero's animation would have the tag name <hero>).
 {
     unmovable = 0;
@@ -197,12 +211,12 @@
     }
 
     //Some math functions
-    double Physics::math_CalculateDirectionDegrees(int sourceX, int sourceY)
+    double Physics::math_CalculateDirectionDegrees(int sourceX, int sourceY) const
     {
         //Calculates the direction from point A to point B using point A (the class' internal location) as the center of an imaginary Cartician plane.
         return atan((double)((loc.Y-sourceY)/(loc.X-sourceX)));
     }
-    int Physics::math_Sign(Physics *forceProducer, bool x)
+    int Physics::math_Sign(Physics *forceProducer, bool x) const
     {
         /*This method calculates the degrees in a cartician coorinate system. In other words, if points A & B form a vector with direction towards the
         3rd quadrant, then their degrees are between 180 and 270. This method gets the x or y component of a unit vector bearing the same
@@ -226,7 +240,7 @@
         }
         return sign;
     }
-    int Physics::math_Sign(Physics *forceProducer, const char axis)
+    int Physics::math_Sign(Physics *forceProducer, const char axis) const
     {
         /*This method calculates the degrees in a cartician coorinate system. In other words, if points A & B form a vector with direction towards the
         3rd quadrant, then their degrees are between 180 and 270. This method gets the x or y component of a unit vector bearing the same
@@ -250,40 +264,40 @@
         }
         return sign;
     }
-    double Physics::GetDistance(math_point source)
+    double Physics::GetDistance(math_point source) const
     {
         return sqrt((pow((double)(loc.Y-source.Y),2))+(pow((double)(loc.X-source.X),2)));
     }
-    double Physics::GetBMagnitude()
+    double Physics::GetBMagnitude() const
     {
         return magneticFieldMagnitude;
     }
-    std::string Physics::GetB2DDirection()
+    std::string Physics::GetB2DDirection() const
     {
         return B;
     }
 
-    bool Physics::isUnmovable()
+    bool Physics::isUnmovable() const
     {
         return unmovable;
     }
     //Electricity
-    double Physics::math_CalculateForceFromChargedParticles(double Q2, math_point source)
+    double Physics::math_CalculateForceFromChargedParticles(double Q2, math_point source) const
     {
         int Force=0;
         Force = k*((Q2*C)/pow(GetDistance(source),2));
         return Force;
     }
-    double Physics::math_CalculateEField(math_point source)
+    double Physics::math_CalculateEField(math_point source) const
     {
         return (k*(C))/pow(GetDistance(source), 2);
     }
-    double Physics::math_CalculateEField(int ForceCount)//The difference is that this functions plays on the relationship between force on electric field. This function can only get the electric field produced by a single-point charged particle.
+    double Physics::math_CalculateEField(int ForceCount) const//The difference is that this functions plays on the relationship between force on electric field. This function can only get the electric field produced by a single-point charged particle.
     {
         return ((double)(ForceCount))/C;
     }
 
-    double Physics::math_CalculateForceFromMagneticField(std::string MagneticField, double magnitude)
+    double Physics::math_CalculateForceFromMagneticField(std::string MagneticField, double magnitude) const
     {
         if(MagneticField == "out" )
         {
@@ -295,7 +309,7 @@
         }
 }
 
-    void Physics::math_CalculateMomentum(Physics *actor, Physics *target)
+    void Physics::math_CalculateMomentum(Physics *actor, Physics *target) const
     {
         double tmpVA, tmpVB = 0;
         //X axis
@@ -312,12 +326,12 @@
     }
 
     //Get & Set functions
-    math_point Physics::GetLoc()
+    math_point Physics::GetLoc() const
     {
         return loc;
     }
 
-    double Physics::GetVelocity(const char axis)
+    double Physics::GetVelocity(const char axis) const
     {
         if(axis == 'x')
         {
@@ -338,12 +352,12 @@
         }
     }
 
-    double Physics::GetElasticity()
+    double Physics::GetElasticity() const
     {
         return elasticity;
     }
 
-    double Physics::GetForceCount(const char axis)
+    double Physics::GetForceCount(const char axis) const
     {
         if(axis == 'x')
         {
@@ -384,7 +398,7 @@
             ForceCountY += force;
         }
     }
-    double Physics::GetMU()
+    double Physics::GetMU() const
     {
         return mu;
     }
@@ -393,33 +407,25 @@
         g = G;
     }
 
-    double Physics::GetGravity()
+    double Physics::GetGravity() const
     {
         return g;
     }
 
-    double Physics::GetCharge()
+    double Physics::GetCharge() const
     {
         return C;
     }
 
-    double Physics::GetMass()
+    double Physics::GetMass() const
     {
         return mass;
     }
 
     Physics::Physics(const char* location)
     {
-    //Let's define some basic physics constants
-     g =9.80;
-     G =6.67*pow(10.0,-11.0);
-     c =3.00*pow(10.0,8.0);
-     e =1.60*pow(10.0,-19.0);
-     pi =3.14159;
-     epsilon0 =8.85*pow(10.0,-12.0);
-     mu0 =(4*pi)*pow(10.0,-7.0);
-     k = 9*pow(10.0,9.0);
-     Load_Physics(location);
+         g = 9.80;
+         Load_Physics(location);
     }
 
      void Physics::rel_CalculateForce(const char axis, bool relativity)

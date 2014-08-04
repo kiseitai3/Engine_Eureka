@@ -14,12 +14,12 @@ private:
     SDL_Rect src, target;
 
 public:
-    ProgressBar(const char *file, int *num, math_point loc, SDL_Renderer *ren, int blitOrderI = 10);
+    ProgressBar(const char *file, int *num, math_point loc, SDL_Renderer& ren, int blitOrderI = 10);
     void Update(int x, int y);
-    void Draw(SDL_Renderer *ren);
+    void Draw(const SDL_Renderer& ren);
     void SetRectangleDimensions(int w, int h);
-    int GetRectangleHeight();
-    int GetRectangleWidth();
+    int GetRectangleHeight() const;
+    int GetRectangleWidth() const;
     ~ProgressBar();
 };
 

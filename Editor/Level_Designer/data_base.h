@@ -39,7 +39,7 @@ class data_base
     bool LoadData(const char* location, bool readMode = true);
     void LoadStringBuffer(bool closeFile = true);
     void FlushData();
-    int GetLineIndex(std::string search, int lineNum) const;
+    int GetLineIndex(const std::string& search, int lineNum) const;
     void FileClear();
     void CleanFileContentsOfArtifacts();
     void TrimEndOfFile();
@@ -47,26 +47,26 @@ class data_base
     //methods
     data_base(const char location[]="", bool read = true);
     std::string GetStrBuffer() const;
-    double GetValueFromData(std::string search) const;
-    std::string GetStrFromData(std::string search) const;
-    int GetIntFromData(std::string search) const;
-    double GetValueFromDataWithLine(std::string search, int lineIndex) const;
-    std::string GetStrFromDataWithLine(std::string search, int lineIndex) const;
+    double GetValueFromData(const std::string& search) const;
+    std::string GetStrFromData(const std::string& search) const;
+    int GetIntFromData(const std::string& search) const;
+    double GetValueFromDataWithLine(const std::string& search, int lineIndex) const;
+    std::string GetStrFromDataWithLine(const std::string& search, int lineIndex) const;
     bool GetStateOfInternalBuffer() const;
-    std::string OpenFileAndGetBinBuffer(const char* location);
+    std::string OpenFileAndGetBinBuffer(char* location);
     void OpenFile(const char* location, bool readMode = true);
     void OpenFileForQuickWrite(const char* location);// Will open the output stream in append mode. It assumes you just want to ad some new stuff to the file immediately.
     void OpenBinFileForQuickWrite(const char* location); //Will open a file in binary mode
-    void CloseFile(std::string streamsToClose = "all");
+    void CloseFile(const std::string& streamsToClose = "all");
     bool GetMode() const;
-    void WriteValue(std::string value, std::string search = "");
-    void WriteValueWithLineIndex (std::string value, std::string search, int lineIndex);
-    void WriteValueAndFlush(std::string value);//Meant to be used with OpenFileForQuickWrite
+    void WriteValue(const std::string& value, const std::string& search = "");
+    void WriteValueWithLineIndex (const std::string& value, const std::string& search, int lineIndex);
+    void WriteValueAndFlush(const std::string& value);//Meant to be used with OpenFileForQuickWrite
     int GetLineCount() const;
-    int GetNumInstances(std::string search) const;
+    int GetNumInstances(const std::string& search) const;
     std::string GetLastOutput() const;
     bool isOutputOpen() const;
-    bool SearchTermExists(std::string search) const;
+    bool SearchTermExists(const std::string& search) const;
     void RestoreFileContents();
     void RefreshFile();
     void CreateNewFile(const char* location = "");
@@ -74,5 +74,5 @@ class data_base
     ~data_base();
 };
 
-bool copyfile(const std::string& source, const std::string destination, bool binary = true);
+bool copyfile(const std::string& source, const std::string& destination, bool binary = true);
 #endif // DATA_BASE_H_INCLUDED

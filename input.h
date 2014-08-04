@@ -18,8 +18,8 @@ class inputMouse
         bool UpdateProcessedCoordinates();
         bool ChangeCoordinates(int x, int y);
         void buttonPress();
-        int getButtonState();
-        unsigned int GetButton();
+        int getButtonState() const;
+        unsigned int GetButton() const;
 
 };
 
@@ -37,7 +37,7 @@ class inputKeyboard
     void setInputText();
     void toggleTextMode();
     std::string getText();
-    std::string GetKey();
+    char GetKey() const;
 };
 
 

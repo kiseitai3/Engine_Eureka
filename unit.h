@@ -17,12 +17,13 @@ class Unit
 {
     public:
         /** Default constructor */
-        Unit(int BlitOrder, std::string path, math_point loc, SDL_Renderer *screen, Timer *t, bool hero = false, bool hasPBar = false);//PBar = progressbar
+        Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer &screen, Timer& t, bool hero = false, bool hasPBar = false);//PBar = progressbar
         /** Default destructor */
         ~Unit();
         //Question methods
-        bool isMelee();
+        bool isMelee() const;
         //AI methods
+        void LoadScript(Pywrap *script, const char *file);
         void MoveAI();
         void LoadAI(const char *file);
         void AttackAI(Unit* target);
@@ -33,23 +34,22 @@ class Unit
         void SetTimer(Timer* timerI);
         void Update_NewTime();
         void Update_OldTime();
-        double GetTimeChange();
+        double GetTimeChange() const;
 
         //General getters and setters
-        std::string GetName();
-        int GetVRange();
-        Physics *GetPhysics();
+        std::string GetName() const;
+        Physics *GetPhysics() const;
         draw_base *GetDefaultDrawObject();
         void ToggleMelee();
-        int GetHP();
-        int GetAD();
-        int GetAP();
-        int GetAttackSpeed();
-        int GetRange();
-        int GetVisionRange();
-        unsigned int GetID();
-        double GetMovementSpeed();
-        std::string GetType();
+        int GetHP() const;
+        int GetAD() const;
+        int GetAP() const;
+        int GetAttackSpeed() const;
+        int GetRange() const;
+        int GetVisionRange() const;
+        unsigned int GetID() const;
+        double GetMovementSpeed() const;
+        std::string GetType() const;
         void SetHP(int val);
         void SetAD(int val);
         void SetAP(int val);
@@ -58,7 +58,7 @@ class Unit
         void SetVisionRange(int val);
         void SetMovementSpeed(double val);
         void SetID(unsigned int id);
-        bool GetDeath();
+        bool GetDeath() const;
         void ToggleDeath();
 
         //Handle assets
@@ -67,14 +67,13 @@ class Unit
         //Handle buffs
         void AddBuff(std::string buffName);
         void RemoveBuff(std::string buffName);
-        bool BuffExists(std::string buffName);
+        bool BuffExists(std::string buffName);//Do not make const.
         void ApplyBuffs();
 
         //Physics handling
         std::string isColliding(Unit *target);
         void Update_Physics(Unit *target);
         void OnCollision(Unit *target, std::string side);
-        void LoadScript(Pywrap *script, const char *file);
 
         //Player controls and behavior
         void ProcessKeyEvent(std::string key);
@@ -83,7 +82,6 @@ class Unit
         void ProcessMouseMovement(int x, int y);
         void ProcessMouseKey(unsigned int mouseButton, int x, int y);
 
-    protected:
     private:
         //structs
         struct movementTracker
@@ -109,7 +107,7 @@ class Unit
         data_base *DOM, *KeyDOM; //!< Member variable "dom"
         Physics *phys; //!< Member variable "phys"
         Pywrap *AI, *KeyScripts, *GeneralScripts, *BuffScripts;
-        SDL_Renderer *ren;
+        SDL_Renderer* ren;
         movementTracker movement;
         Timer *gameTime;
         ProgressBar *manaB, *hpB;

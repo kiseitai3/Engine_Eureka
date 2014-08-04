@@ -12,7 +12,7 @@
 #include <list>
 #include "progressbar.h"
 
-Unit::Unit(int BlitOrder, std::string path, math_point loc, SDL_Renderer *screen, Timer *t, bool hero, bool hasPBar)
+Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, Timer& t, bool hero, bool hasPBar)
 {
     DOM = NULL;
     DOM = new data_base(path.c_str());
@@ -72,10 +72,10 @@ Unit::Unit(int BlitOrder, std::string path, math_point loc, SDL_Renderer *screen
             LoadScript(BuffScripts, DOM->GetStrFromData("unit_buffscripts").c_str());
         }
         //Grab parameters
-        ren = screen;
+        ren = &screen;
         blitOrder = BlitOrder;
         mapPoint = loc;
-        gameTime = t;
+        gameTime = &t;
         //Initializing internal variables
         name = DOM->GetStrFromData("unit_name");
         drawImage = "default";
@@ -208,13 +208,13 @@ void Unit::Update_NewTime()
     t = gameTime->get_ticks();
 }
 
-double Unit::GetTimeChange()//based on seconds. Remember that .get_ticks() is based on milliseconds
+double Unit::GetTimeChange() const//based on seconds. Remember that .get_ticks() is based on milliseconds
 {
     return (double)(t - oldTime) / 1000;
 }
 
 //Question methods
-bool Unit::isMelee()
+bool Unit::isMelee() const
 {
     return melee;
 }
@@ -386,17 +386,12 @@ void Unit::ProcessMouseKey(unsigned int mouseButton, int x, int y)
 }
 
 //General getters and Setters
-std::string Unit::GetName()
+std::string Unit::GetName() const
 {
     return name;
 }
 
-int Unit::GetVRange()
-{
-    return vRange;
-}
-
-Physics *Unit::GetPhysics()
+Physics *Unit::GetPhysics() const
 {
     return phys;
 }
@@ -418,47 +413,47 @@ void Unit::ToggleMelee()
     }
 }
 
-int Unit::GetHP()
+int Unit::GetHP() const
 {
     return hp;
 }
 
-int Unit::GetAD()
+int Unit::GetAD() const
 {
     return ad;
 }
 
-int Unit::GetAP()
+int Unit::GetAP() const
 {
     return ap;
 }
 
-int Unit::GetAttackSpeed()
+int Unit::GetAttackSpeed() const
 {
     return aSpeed;
 }
 
-int Unit::GetRange()
+int Unit::GetRange() const
 {
     return range;
 }
 
-int Unit::GetVisionRange()
+int Unit::GetVisionRange() const
 {
     return vRange;
 }
 
-unsigned int Unit::GetID()
+unsigned int Unit::GetID() const
 {
     return ID;
 }
 
-double Unit::GetMovementSpeed()
+double Unit::GetMovementSpeed() const
 {
     return mSpeed;
 }
 
-std::string Unit::GetType()
+std::string Unit::GetType() const
 {
     return type;
 }
@@ -503,7 +498,7 @@ void Unit::SetID(unsigned int id)
     ID = id;
 }
 
-bool Unit::GetDeath()
+bool Unit::GetDeath() const
 {
     return dead;
 }
@@ -678,7 +673,7 @@ void Unit::UpdateAssets(int soundLoops, Unit *hero)
     tmpImage = images["default"];
     dx = tmpImage->GetWidthOfMainRect() / 2;
     dy = tmpImage->GetHeightOfMainRect() / 2;
-    tmpImage->apply_surface(phys->GetLoc().X - dx, phys->GetLoc().Y + dy, ren);
+    tmpImage->apply_surface(phys->GetLoc().X - dx, phys->GetLoc().Y + dy, *ren);
 }
 
 

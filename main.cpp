@@ -17,6 +17,7 @@
 #include "ui.h"
 #include "data_base.h"
 #include <unistd.h>
+#define ERROR -1
 
 using namespace std;
 //constants
@@ -147,19 +148,19 @@ void SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file,
 {
     if(type == 'u')//it's a game unit!
     {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, screen, &fps, hero, hasBars);
+        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps, hero, hasBars);
         gameUnits.push_back(pUnit);
     }
 
     if(type == 'p')//it's a game projectile!
     {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, screen, &fps);
+        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps);
         gameProjectiles.push_back(pUnit);
     }
 
     if(type == 'o')//it's a game environment object!
     {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, screen, &fps);
+        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps);
         gameObjects.push_back(pUnit);
     }
 }
@@ -175,7 +176,7 @@ PyObject *FindNearbyUnit(PyObject *unit)
         {
             tmp = gameUnits[i];
             int d = pUnit->GetPhysics()->GetDistance(tmp->GetPhysics()->GetLoc());
-            if(abs(d) < (pUnit->GetVRange() * 2))
+            if(abs(d) < (pUnit->GetVisionRange() * 2))
             {
                 if(!old)
                 {
@@ -203,7 +204,7 @@ Unit *FindNearbyUnit(Unit *pUnit)
         {
             tmp = gameUnits[i];
             int d = pUnit->GetPhysics()->GetDistance(tmp->GetPhysics()->GetLoc());
-            if(abs(d) < (pUnit->GetVRange() * 2))
+            if(abs(d) < (pUnit->GetVisionRange() * 2))
             {
                 if(!old)
                 {
@@ -292,7 +293,7 @@ void gameSave()
     Pywrap saveScript = Pywrap((std::string(ROOTDATA) + std::string(MOD) + "Scripts/save\0").c_str());
 }
 
-data_base *loadFile(const char* fileName)
+data_base *loadFile(char* fileName)
 {
     data_base *tmp = new data_base((std::string(SAVELOC) + std::string(fileName)).c_str());
     if(!tmp)

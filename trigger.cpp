@@ -38,7 +38,7 @@ Trigger::~Trigger()
 }
 
 //Getters and setters
-int Trigger::GetID()
+int Trigger::GetID() const
 {
     return ID;
 }
@@ -49,7 +49,7 @@ void Trigger::SetID(int id)
 }
 
 //Behavior
-bool Trigger::isUnitOnTrigger(Unit *target)
+bool Trigger::isUnitOnTrigger(Unit *target) const
 {
     math_point tLoc = target->GetPhysics()->GetLoc();//Grab target's position
     if(tLoc.X >= x && tLoc.X <= (x + width))
@@ -69,7 +69,7 @@ void Trigger::ConsumeTrigger(Unit *target)
     Scripts->executeNoReturnF("Trigger");
 }
 
-bool Trigger::GetDeath()
+bool Trigger::GetDeath() const
 {
     return death;
 }

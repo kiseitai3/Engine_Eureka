@@ -22,7 +22,19 @@ class Pywrap
     std::string path;
     bool fileLoaded;
     //methods
-
+    //Py Conversion Functions with overloads
+    /*All functions in this block takes care of the extraction of a C type from a generalized python object
+    or list! :D*/
+    int py_extractInt(PyObject *results);
+    char py_extractChar(PyObject *results);
+    std::string py_extractStr(PyObject *results);
+    double py_extractDouble(PyObject *results);
+    void *py_extractPtr(PyObject *results);
+    int py_extractIntFromList(PyObject *results, unsigned int index);
+    std::string py_extractStrFromList(PyObject *results, unsigned int index);
+    char py_extractCharFromList(PyObject *results, unsigned int index);
+    double py_extractDoubleFromList(PyObject *results, unsigned int index);
+    void *py_extractPtrFromList(PyObject *results, unsigned int index);
 
     public:
         //methods
@@ -37,10 +49,10 @@ class Pywrap
     void DecreaseRef(PyObject *obj);
     void IncreaseRef(PyObject *obj);
     void DisplayInternalVars();
-    unsigned int GetSizeOfArgs();
+    unsigned int GetSizeOfArgs() const;
     PyObject *CreateObjFromPtr(void *classT);
     void CleanCPyObjInArgs();
-    bool isFileLoaded();
+    bool isFileLoaded() const;
     ~Pywrap();//destructor
     //Oveloads
     void AddArgument (int argument, unsigned int index);
@@ -49,19 +61,7 @@ class Pywrap
     void AddArgument (double argument, unsigned int index);
     void AddArgument (PyObject *argument, unsigned int index);
     void AddArgument(unsigned int argument, unsigned int index);
-    //Py Conversion Functions with overloads
-    /*All functions in this block takes care of the extraction of a C type from a generalized boost python object
-    or list! :D*/
-    int py_extractInt(PyObject *results);
-    char py_extractChar(PyObject *results);
-    std::string py_extractStr(PyObject *results);
-    double py_extractDouble(PyObject *results);
-    void *py_extractPtr(PyObject *results);
-    int py_extractIntFromList(PyObject *results, unsigned int index);
-    std::string py_extractStrFromList(PyObject *results, unsigned int index);
-    char py_extractCharFromList(PyObject *results, unsigned int index);
-    double py_extractDoubleFromList(PyObject *results, unsigned int index);
-    void *py_extractPtrFromList(PyObject *results, unsigned int index);
+
 };
 void InitPy();
 void EndPy();

@@ -23,17 +23,17 @@ private:
     draw_base *background;
     data_base *uiDOM;
     math_point loc;
-    SDL_Renderer *screen;
+    SDL_Renderer* screen;
     bool keyDown;
     bool visibility;
 
 
 public:
-    UI(const char *file, SDL_Renderer *ren);
+    UI(const char *file, SDL_Renderer& ren);
     ~UI();
 
     //Getters and setters
-    bool isVisible();
+    bool isVisible() const;
     void toggleVisibility();
     //Updaters
     void Update();

@@ -8,7 +8,7 @@
 #include "textbox.h"
 #include "ui.h"
 
-textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer *ren, int blitOrderI)
+textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer& ren, int blitOrderI)
 {
 	screen = NULL;
     data = new data_base(textboxFile);
@@ -48,7 +48,7 @@ textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer *ren, in
             }
             else
             {
-               message = SDL_CreateTextureFromSurface(ren, tmp);
+               message = SDL_CreateTextureFromSurface(&ren, tmp);
                if(!message)
                {
                    std::cout<< "Error: Could not create texture for textbox object!\n\r";
@@ -67,7 +67,7 @@ textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer *ren, in
     }
     dead = false;
     blitOrder = blitOrderI;
-	screen = ren;
+	screen = &ren;
 }
 
 void textbox::SetLoc(int x, int y)
@@ -76,48 +76,48 @@ void textbox::SetLoc(int x, int y)
     loc.Y = y;
 }
 
-void textbox::Draw(SDL_Renderer *ren)
+void textbox::Draw(SDL_Renderer& ren)
 {
     background->apply_surface(loc.X, loc.Y, ren);
-    apply_surface(loc.X - 5, loc.Y - 5, ren, message, background->GetHeightOfMainRect()- 10, background->GetWidthOfMainRect() - 10);
+    apply_surface(loc.X - 5, loc.Y - 5, ren, *message, background->GetHeightOfMainRect()- 10, background->GetWidthOfMainRect() - 10);
 }
 
-int textbox::GetBlitOrder()
+int textbox::GetBlitOrder() const
 {
     return blitOrder;
 }
 
-std::string textbox::GetType()
+std::string textbox::GetType() const
 {
     return type;
 }
 
-bool textbox::GetDeath()
+bool textbox::GetDeath() const
 {
     return dead;
 }
 
-UI *textbox::GetOwner()
+UI *textbox::GetOwner() const
 {
     return owner;
 }
 
-std::string textbox::GetText()
+std::string textbox::GetText() const
 {
     return text;
 }
 
-math_point textbox::GetLoc()
+math_point textbox::GetLoc() const
 {
     return loc;
 }
 
-data_base *textbox::GetDOM()
+data_base *textbox::GetDOM() const
 {
     return data;
 }
 
-SDL_Renderer *textbox::GetRenderer()
+SDL_Renderer *textbox::GetRenderer() const
 {
     return screen;
 }
@@ -139,7 +139,7 @@ void textbox::SetOwner(UI *ui)
     owner = ui;
 }
 
-bool textbox::isInside(unsigned int x, unsigned int y)
+bool textbox::isInside(unsigned int x, unsigned int y) const
 {
     //Check to see if coordinates are within this object's rectangle
     int h = background->GetHeightOfMainRect();
@@ -154,7 +154,7 @@ bool textbox::isInside(unsigned int x, unsigned int y)
     return false;
 }
 
-bool textbox::isWritable()
+bool textbox::isWritable() const
 {
     return writable;
 }
@@ -188,7 +188,7 @@ void textbox::changeColor(int r, int g, int b)
     color = {r, g, b};
 }
 
-void textbox::changeFont(const char* fontFile)
+void textbox::changeFont(char* fontFile)
 {
     font = TTF_OpenFont(fontFile, fontSize);//Load the font!
 }
@@ -198,7 +198,7 @@ void textbox::changeFontSize(int val)
     fontSize = val;
 }
 
-draw_base *textbox::GetDrawObject()
+draw_base *textbox::GetDrawObject() const
 {
     return background;
 }
@@ -216,7 +216,7 @@ textbox::~textbox()
     }
 }
 
-void grabText(textbox *pTextbox, SDL_Event *e)
+void grabText(textbox *pTextbox, const SDL_Event& e)
 {
     if(pTextbox != NULL)
     {
@@ -226,22 +226,22 @@ void grabText(textbox *pTextbox, SDL_Event *e)
             do
             {
                 //Loop until the text input events are done.
-                if(SDL_PollEvent(e))
+                if(SDL_PollEvent((SDL_Event*)&e))
                 {
                     //check the input events
-                    switch(e->type)
+                    switch(e.type)
                     {
                         case SDL_TEXTINPUT:
-                            if(e->text.text != "")
+                            if(e.text.text != "")
                             {
                                 //If the text is not empty, we want to display it.
-                                pTextbox->changeMsg(pTextbox->GetText() + std::string(e->text.text), pTextbox->GetRenderer());
-                                pTextbox->Draw(pTextbox->GetRenderer());
+                                pTextbox->changeMsg(pTextbox->GetText() + std::string(e.text.text), pTextbox->GetRenderer());
+                                pTextbox->Draw(*pTextbox->GetRenderer());
                             }
                     }
                 }
 
-            }while(e->key.keysym.scancode != SDL_SCANCODE_RETURN);
+            }while(e.key.keysym.scancode != SDL_SCANCODE_RETURN);
             SDL_StopTextInput();
         }
     }

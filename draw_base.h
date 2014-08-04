@@ -8,19 +8,20 @@
 class draw_base
 {
     public:
-    void Load_Texture(const char* source, SDL_Renderer* ren);
-    void apply_surface( int x, int y, SDL_Renderer* destination);
-    int GetHeightOfMainRect();
-    int GetWidthOfMainRect();
-    int GetAnimCounter();
-    data_base *GetDOM();
-    bool isNoLoop();
-    SDL_Texture *GetTexture();
+    void Load_Texture(const char* source, SDL_Renderer& ren, int fps = 30);
+    void apply_surface( int x, int y, SDL_Renderer& destination);
+    int GetHeightOfMainRect() const;
+    int GetWidthOfMainRect() const;
+    int GetAnimCounter() const;
+    data_base *GetDOM() const;
+    bool isNoLoop() const;
+    SDL_Texture& GetTexture() const;
     void setColor( Uint8 red, Uint8 green, Uint8 blue );
     void setBlendMode( SDL_BlendMode blending );
     void setAlpha( Uint8 alpha );
     void ClearTexture();
-    void SetTextureFromPointer(SDL_Texture *ptr);
+    void SetTextureFromPointer(SDL_Texture* ptr);
+    void SetTextureFromRef(SDL_Texture& tex);
     draw_base();
     ~draw_base();
 
@@ -40,6 +41,6 @@ class draw_base
 
 };
 
-void apply_surface( int x, int y, SDL_Renderer* destination, SDL_Texture *SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function
-SDL_Texture *LoadTexture(const char* file, SDL_Renderer* ren);//Non-class loadingg function
+void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function
+SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren);//Non-class loading function
 #endif // DRAW_BASE_H_INCLUDED

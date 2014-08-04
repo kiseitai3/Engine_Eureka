@@ -25,44 +25,44 @@
 
     public:
     //methods
-    double NewtonianForce(const char axis = 'x');
-    double Relativity(const char axis = 'x');
-    double rel_NewtonianForce(const char axis = 'x');// Functions that employ relativity will have a rel_ prefix. These functions will be available in case I do physics calculations on objects moving really fast!
+    double NewtonianForce(char axis = 'x');
+    double Relativity(char axis = 'x');
+    double rel_NewtonianForce(char axis = 'x');// Functions that employ relativity will have a rel_ prefix. These functions will be available in case I do physics calculations on objects moving really fast!
     double rel_CalculateForceB(bool relativity);// Overload of previous function
     void Impulse (math_VECTOR inputVector);//Basically, I want to take a vector, change its relative direction relative to an imaginary circle in the background, and use the new direction to update the point that describes its new position.
     double Friction(double targetMU, bool relativity);
     void Update_Velocity(double secondsPassed);
     void UpdateForce(Physics* forceProducers, int force_type, bool relativity = false);//IndexSize should be simple to get.
     void Update_Acceleration();
-    double math_CalculateDirectionDegrees(int sourceX, int sourceY);
-    double GetDistance(math_point source);
-    math_point GetLoc();
-    double GetMU();
-    double GetMass();
-    std::string GetB2DDirection();
-    double GetBMagnitude();
-    double GetGravity();
-    double GetVelocity(const char axis);
-    double GetElasticity();
-    double math_CalculateForceFromChargedParticles(double Q2, math_point source);
-    double math_CalculateEField(math_point source);
-    double math_CalculateEField(int ForceCount);
-    int math_Sign(Physics *forceProducer, bool x);
-    int math_Sign(Physics *forceProducer, const char axis);
-    void math_CalculateMomentum(Physics *actor, Physics *target);
-    double math_CalculateForceFromMagneticField(std::string MagneticField, double magnitude);
+    double math_CalculateDirectionDegrees(int sourceX, int sourceY) const;
+    double GetDistance(math_point source) const;
+    math_point GetLoc() const;
+    double GetMU() const;
+    double GetMass() const;
+    std::string GetB2DDirection() const;
+    double GetBMagnitude() const;
+    double GetGravity() const;
+    double GetVelocity(char axis) const;
+    double GetElasticity() const;
+    double math_CalculateForceFromChargedParticles(double Q2, math_point source) const;
+    double math_CalculateEField(math_point source) const;
+    double math_CalculateEField(int ForceCount) const;
+    int math_Sign(Physics *forceProducer, bool x) const;
+    int math_Sign(Physics *forceProducer, char axis) const;
+    void math_CalculateMomentum(Physics *actor, Physics *target) const;
+    double math_CalculateForceFromMagneticField(std::string MagneticField, double magnitude) const;
     //math_VECTOR GetInternalVector();
-    double GetForceCount(const char axis);
-    bool isUnmovable();
-    void SetForceCount(int force, const char axis);
-    void SetForceCount(double force, const char axis);
-    void SetVelocity(double velocity, const char axis);
-    void AddForce(double force, const char axis = 'x');
+    double GetForceCount(char axis) const;
+    bool isUnmovable() const;
+    void SetForceCount(int force, char axis);
+    void SetForceCount(double force, char axis);
+    void SetVelocity(double velocity, char axis);
+    void AddForce(double force, char axis = 'x');
     Physics(const char* location = "");
     void Update_Position(double secondsPassed);//Since physics differ for a ship in space vs. a man walking on a rock with a strong gravitational pull, I need the spaceType flag to update the position of the object in an appropriate manner. True= space; False= rock!
     void ChangePlanetGravitationalConstant(double g);//Although I defined g as Earth gravity, I want to keep the engine as flexible as possible so I want to give a way to redefine g for other worlds :).
     bool Load_Physics(const char* physData);
-    double GetCharge();
+    double GetCharge() const;
 
 
     private:
@@ -78,20 +78,20 @@
     double magneticFieldMagnitude;
     double C;
     double elasticity;
+    double g;
     data_base physDOM;
     math_point loc;
     std::string B;
     //Let's define some basic physics constants
-    double g;
-    double G;
-    double c;
-    double e;
-    double pi;
-    double epsilon0;
-    double mu0;
-    double k;
+    static const double G;
+    static const double c;
+    static const double e;
+    static const double pi;
+    static const double epsilon0;
+    static const double mu0;
+    static const double k;
     //methods
-    void rel_CalculateForce(const char axis = 'x', bool relativity = false);
+    void rel_CalculateForce(char axis = 'x', bool relativity = false);
 };
 
 int CalculateDistance(math_point A, math_point B);

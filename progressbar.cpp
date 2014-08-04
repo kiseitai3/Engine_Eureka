@@ -4,11 +4,11 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-ProgressBar::ProgressBar(const char *file, int *num, math_point loc, SDL_Renderer *ren, int blitOrderI)//file must be the texture path
+ProgressBar::ProgressBar(const char *file, int *num, math_point loc, SDL_Renderer& ren, int blitOrderI)//file must be the texture path
 {
     if(file > "")
     {
-        bar = LoadTexture(file, ren);
+        bar = LoadTexture(file, (SDL_Renderer&)ren);
     }
     src.x = loc.X;
     src.y = loc.Y;
@@ -26,9 +26,9 @@ void ProgressBar::Update(int x, int y)
     target.w = (int)((*currentVal / ((float)(maxVal))) * maxVal);
 }
 
-void ProgressBar::Draw(SDL_Renderer *ren)
+void ProgressBar::Draw(const SDL_Renderer& ren)
 {
-    SDL_RenderCopy( ren, bar, &src, &target );
+    SDL_RenderCopy( (SDL_Renderer*)&ren, bar, &src, &target );
 }
 
 void ProgressBar::SetRectangleDimensions(int w, int h)
@@ -39,12 +39,12 @@ void ProgressBar::SetRectangleDimensions(int w, int h)
     target.h = h;
 }
 
-int ProgressBar::GetRectangleHeight()
+int ProgressBar::GetRectangleHeight() const
 {
     return target.h;
 }
 
-int ProgressBar::GetRectangleWidth()
+int ProgressBar::GetRectangleWidth() const
 {
     return target.w;
 }

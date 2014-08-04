@@ -12,9 +12,9 @@
 #include "ui.h"
 
 //Constructor and destructor
-UI::UI(const char *file, SDL_Renderer *ren)
+UI::UI(const char *file, SDL_Renderer& ren)
 {
-    screen = ren;
+    screen = &ren;
     background = new draw_base();
     if(!background)
     {
@@ -23,7 +23,7 @@ UI::UI(const char *file, SDL_Renderer *ren)
     else
     {
         //Send settings to background
-        background->Load_Texture(file, screen);
+        background->Load_Texture(file, *screen);
         //Recycle the background's DOM object as it contains the settings for the UI in general.
         //This prevents duplication of the same piece of memory! In other words, we save ourselves a couple of bytes.
         uiDOM = background->GetDOM();
@@ -33,7 +33,7 @@ UI::UI(const char *file, SDL_Renderer *ren)
         loc.Y = uiDOM->GetIntFromData("ui_y");
 
         //Build exit button
-        exit = new Button("X", uiDOM->GetStrFromData("ui_exit_file").c_str(), screen, 10);
+        exit = new Button("X", uiDOM->GetStrFromData("ui_exit_file").c_str(), *screen, 10);
         if(!exit)
         {
             std::cout<<"Error: Could not build Exit button for this UI!\n\r";
@@ -49,7 +49,7 @@ UI::UI(const char *file, SDL_Renderer *ren)
         for(int i = 0; i < uiDOM->GetIntFromData("ui_text_num"); i++)
         {
             name = "ui_text_" + intToStr(i);
-            textbox *tmp = new textbox(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), screen, 1);
+            textbox *tmp = new textbox(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             texts.push_back(tmp);
@@ -60,7 +60,7 @@ UI::UI(const char *file, SDL_Renderer *ren)
         for(int i = 0; i < uiDOM->GetIntFromData("ui_button_num"); i++)
         {
             name = "ui_button_" + intToStr(i);
-            Button *tmp = new Button(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), screen, 1);
+            Button *tmp = new Button(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             buttons.push_back(tmp);
@@ -76,7 +76,7 @@ UI::UI(const char *file, SDL_Renderer *ren)
             tempPoint.X = uiDOM->GetIntFromData(name + "_x");
             tempPoint.Y = uiDOM->GetIntFromData(name + "_y");
             int tmpPB = pBNums[uiDOM->GetStrFromData(name + "name")];
-            ProgressBar *tmp = new ProgressBar(uiDOM->GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, screen);
+            ProgressBar *tmp = new ProgressBar(uiDOM->GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, *screen);
             pBars.push_back(tmp);
         }
 
@@ -91,26 +91,26 @@ UI::UI(const char *file, SDL_Renderer *ren)
 void UI::Draw()
 {
     //Draw exit button
-    exit->Draw(screen);
+    exit->Draw(*screen);
     //Draw textboxs
     for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
     {
         textbox* tmp = *it;
-        tmp->Draw(screen);
+        tmp->Draw(*screen);
     }
 
     //Draw buttons
     for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
     {
         Button* tmp = *it;
-        tmp->Draw(screen);
+        tmp->Draw(*screen);
     }
 
     //Draw Progress Bars
     for(std::list<ProgressBar*>::iterator it = pBars.begin(); it != pBars.end(); it++)
     {
         ProgressBar* tmp = *it;
-        tmp->Draw(screen);
+        tmp->Draw(*screen);
     }
 }
 
@@ -221,7 +221,7 @@ void UI::toggleVisibility()
     }
 }
 
-bool UI::isVisible()
+bool UI::isVisible() const
 {
     return visibility;
 }

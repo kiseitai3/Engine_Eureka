@@ -27,31 +27,31 @@ private:
     bool dead, writable;
 
 public:
-    textbox(std::string msg, const char *textboxFile, SDL_Renderer *ren, int blitOrderI = 10);//the I is so it doesn't overshadow the internal variable
+    textbox(std::string msg, const char *textboxFile, SDL_Renderer& ren, int blitOrderI = 10);//the I is so it doesn't overshadow the internal variable
     ~textbox();
-    void Draw(SDL_Renderer *ren);
+    void Draw(SDL_Renderer& ren);
     //Getters and setters
     void SetLoc(int x, int y);
-    std::string GetType();
-    bool GetDeath();
-    int GetBlitOrder();//Gets the blit order assigned to this object. This number tells the renderer to draw this object only when it reaches the blit number in blitOrder.
+    std::string GetType() const;
+    bool GetDeath() const;
+    int GetBlitOrder() const;//Gets the blit order assigned to this object. This number tells the renderer to draw this object only when it reaches the blit number in blitOrder.
     void ToggleDeath();
     void SetOwner(UI *ui);
-    UI *GetOwner();
-    std::string GetText();
-    math_point GetLoc();
-    data_base *GetDOM();//Document object model
-    draw_base *GetDrawObject();
-	SDL_Renderer *GetRenderer();
-    bool isInside(unsigned int x, unsigned int y);
+    UI *GetOwner() const;
+    std::string GetText() const;
+    math_point GetLoc() const;
+    data_base *GetDOM() const;//Document object model
+    draw_base *GetDrawObject() const;
+	SDL_Renderer *GetRenderer() const;
+    bool isInside(unsigned int x, unsigned int y) const;
     void changeMsg(std::string msg, SDL_Renderer *ren);
-    void changeFont(const char* fontFile);
+    void changeFont(char* fontFile);
     void changeColor(int r, int g, int b);
     void changeFontSize(int val);
-    bool isWritable();
+    bool isWritable() const;
 };
 
 //Global functions
-void grabText(textbox *pTextbox, SDL_Event *e);
+void grabText(textbox *pTextbox, const SDL_Event& e);
 
 #endif // TEXTBOX_H_INCLUDED

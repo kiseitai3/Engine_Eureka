@@ -4,8 +4,9 @@
 #include <string>
 #include <iostream>
 #include "draw_base.h"
+#include "conversion.h"
 
-void draw_base::Load_Texture(const char* source, SDL_Renderer* ren)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
+void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
     animDOM = new data_base(source);
     if(animDOM)
@@ -18,16 +19,20 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer* ren)// animName i
         else
         {
             SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
-            SpriteSheet = SDL_CreateTextureFromSurface(ren, tmp);
+            SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
             SDL_FreeSurface(tmp);
         }
         frames = animDOM->GetIntFromData("tex_frames");
-        height = animDOM->GetIntFromData("tex_height");
+        height = animDOM->GetIntFromData("tex_height");//Size of placeholding rectangle
         width = animDOM->GetIntFromData("tex_width");
         animNum = animDOM->GetIntFromData("tex_anim_num");
         animCounter = animDOM->GetIntFromData("tex_anim_counter");
         noLoop = animDOM->GetIntFromData("tex_noloop");
         timeBetweenFrames = animDOM->GetIntFromData("tex_time_on_frames");
+        if(timeBetweenFrames == 0)
+        {
+            timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
+        }
         src.h = height;
         src.w = width;
         target.h = height;
@@ -39,12 +44,12 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer* ren)// animName i
     }
 }
 
-bool draw_base::isNoLoop()
+bool draw_base::isNoLoop() const
 {
     return noLoop;
 }
 
-void draw_base::apply_surface( int x, int y, SDL_Renderer* destination)
+void draw_base::apply_surface( int x, int y, SDL_Renderer& destination)
 {
     //Holds the clip rectangle that will cycle through the spritesheet!
     src.x = width * frame;
@@ -55,7 +60,7 @@ void draw_base::apply_surface( int x, int y, SDL_Renderer* destination)
     target.y = y;
 
     //Blit
-    SDL_RenderCopy(destination, SpriteSheet, &src, &target);
+    SDL_RenderCopy(&destination, SpriteSheet, &src, &target);
     if(frame != frames && !noLoop)
     {
         if(timeSpentOnFrame == timeBetweenFrames)
@@ -73,28 +78,28 @@ void draw_base::apply_surface( int x, int y, SDL_Renderer* destination)
         frame = 0;
     }
 }
-int draw_base::GetHeightOfMainRect()//This function is here in case I need some data for pixel detection in my physics class (coming up next! :))
+int draw_base::GetHeightOfMainRect() const//This function is here in case I need some data for pixel detection in my physics class (coming up next! :))
 {
     return height;
 }
-int draw_base::GetWidthOfMainRect()//This function is here in case I need some data for pixel detection in my physics class (coming up next! :))
+int draw_base::GetWidthOfMainRect() const//This function is here in case I need some data for pixel detection in my physics class (coming up next! :))
 {
     return width;
 }
 
-int draw_base::GetAnimCounter()
+int draw_base::GetAnimCounter() const
 {
     return animCounter;
 }
 
-data_base *draw_base::GetDOM()
+data_base *draw_base::GetDOM() const
 {
     return animDOM;
 }
 
-SDL_Texture *draw_base::GetTexture()
+SDL_Texture& draw_base::GetTexture() const
 {
-    return SpriteSheet;
+    return *SpriteSheet;
 }
 
 void draw_base::ClearTexture()
@@ -106,6 +111,11 @@ void draw_base::ClearTexture()
 void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 {
     SpriteSheet = ptr;
+}
+
+void draw_base::SetTextureFromRef(SDL_Texture& tex)
+{
+    SpriteSheet = &tex;
 }
 
 void draw_base::setColor( Uint8 red, Uint8 green, Uint8 blue )
@@ -145,7 +155,7 @@ draw_base::~draw_base()
 }
 
 
-void apply_surface( int x, int y, SDL_Renderer* destination, SDL_Texture *SpriteSheet, int height, int width)
+void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height, int width)
 {
 //Holds the clip rectangle that will cycle through the spritesheet!
     SDL_Rect clip;
@@ -164,11 +174,11 @@ void apply_surface( int x, int y, SDL_Renderer* destination, SDL_Texture *Sprite
     offset.w = width;
 
     //Blit
-    SDL_RenderCopy( destination, SpriteSheet, &clip, &offset );
+    SDL_RenderCopy( &destination, &SpriteSheet, &clip, &offset );
 
  }
 
-SDL_Texture *LoadTexture(const char* file, SDL_Renderer* ren)
+SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren)
 {
     SDL_Texture* SpriteSheet;
     SDL_Surface* tmp = IMG_Load(file);
@@ -179,7 +189,7 @@ SDL_Texture *LoadTexture(const char* file, SDL_Renderer* ren)
     else
     {
         SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
-        SpriteSheet = SDL_CreateTextureFromSurface(ren, tmp);
+        SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
         SDL_FreeSurface(tmp);
     }
     if(!SpriteSheet)

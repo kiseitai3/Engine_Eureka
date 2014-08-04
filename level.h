@@ -29,24 +29,24 @@ private:
     std::list<Unit*> gameProjectiles;
     std::list<UI*> gameUI;
     std::list<Trigger*> gameTriggers;
-    Timer *timer;
+    Timer* timer;
     bool backgroundFixed;
     std::string mapName;
 public:
     //Constructors and Destructors
-    Level(const char* file, const char *saveFile, SDL_Renderer *ren, Timer* t, std::size_t loadRate = 20);
+    Level(const char* file, const char *saveFile, SDL_Renderer& ren, Timer& t, std::size_t loadRate = 20);
     ~Level();
 
     //Game logic functions
     void Update(Unit *hero);
-    void Draw(SDL_Renderer *ren);
-    void ProcessEvents(SDL_Event *event);
-    void LoadingDraw(SDL_Renderer *ren);
+    void Draw(const SDL_Renderer& ren);
+    void ProcessEvents(const SDL_Event& event);
+    void LoadingDraw(SDL_Renderer& ren);
 
     //Getters
-    std::list<Unit*>* GetObjectList(std::string listName);
-    std::list<UI*>* GetUIList();
-    data_base *GetDOM();
+    std::list<Unit*>* GetObjectList(std::string listName) const;
+    std::list<UI*>* GetUIList() const;
+    data_base *GetDOM() const;
 
     //Extra cleaning methods
     void ScreenClear();

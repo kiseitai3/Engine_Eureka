@@ -17,12 +17,12 @@ public:
     Trigger(const char *file);
     ~Trigger();
     //Getters and setters
-    int GetID();
+    int GetID() const;
     void SetID(int id);
     //Behavior
-    bool isUnitOnTrigger(Unit *target);
+    bool isUnitOnTrigger(Unit *target) const;
     void ConsumeTrigger(Unit *target);
-    bool GetDeath();
+    bool GetDeath() const;
     void ToggleDeath();
 };
 

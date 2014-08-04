@@ -9,6 +9,9 @@
 class sound_base
 {
   public:
+      /*Somewhat depracated section. My physics professor told me that all random data buffers will yield noise.
+      Thus, use this feature only if you need to generate a noise effect!
+      */
   void writeEndianSpecificBytes(void *data2write,int size,void *data);
 int  writeWavHeader(FILE *inFile);
 void wavReadnDisplayHeader(void);
@@ -35,6 +38,7 @@ typedef struct  wavHeaderInfo
     char                Subchunk2ID[4]; /* "data"  string   */
     unsigned long       Subchunk2Size;  /* Sampled data length    */
 } wavHeader;
+/*End of depracated section.*/
 //Beginning of functions and types related to normal audio systems in games
 /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
 This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
@@ -43,9 +47,9 @@ bool Load_Sound(unsigned char* buffer);
 void Play(int loops = 0);
 void Pause();
 void Stop();
-bool isPlaying();
+bool isPlaying() const;
 bool PlayEffect(int soundLoops);
-bool isLoopingEffect();
+bool isLoopingEffect() const;
 void FadeOut(int ms);
 void SetVol(int volume);
 const char SoundType();

@@ -12941,23 +12941,25 @@
 	<string.h>
 	<boost/python.hpp>
 
-1380501213 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
+1407113714 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
 	<string>
+	<string.h>
+	<sstream>
 	"conversion.h"
 	"data_base.h"
 
-1380559990 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
+1407103352 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
 	<string>
 
-1380487107 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
+1407105504 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
 	<fstream>
 	<string>
 	"conversion.h"
 	"data_base.h"
 	<iostream>
 
-1381552332 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
+1407114658 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
 	<Python.h>
 	<SDL.h>
 	<SDL_mixer.h>
@@ -12976,14 +12978,15 @@
 	"globals.h"
 	"ui.h"
 	"data_base.h"
+	<unistd.h>
 
-1380563238 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
+1407107947 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
 	"data_base.h"
 	<string>
 	<SDL.h>
 	<vector>
 
-1377197433 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
+1407108298 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
 	"data_base.h"
 	<string>
 	<SDL.h>
@@ -12997,20 +13000,24 @@
 	<string>
 	<boost\python.hpp>
 
-1378947824 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
+1398833988 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
+	<stdio.h>
 	<iostream>
 	<string>
+	<sstream>
+	<math.h>
+	<unistd.h>
 
-1377362100 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
+1407108586 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
 	<Python.h>
 	"pywrap.h"
 	<string>
 	"conversion.h"
 	<iostream>
 
-1377196749 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1407105181 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 
@@ -18694,13 +18701,13 @@
 	<vector>
 	<SDL.h>
 
-1376947262 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
+1407106236 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1381553712 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
+1407110299 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
@@ -18715,7 +18722,7 @@
 	<list>
 	"progressbar.h"
 
-1381554990 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
+1407110471 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
@@ -18726,27 +18733,28 @@
 	"Timer.h"
 	<list>
 
-1381196539 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
+1407106877 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<SDL_mixer.h>
 	"physics.h"
 
-1381104091 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
+1407113845 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	"data_base.h"
 	<string>
 
-1381109956 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
+1407113830 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
 	<string>
 	<iostream>
 	"draw_base.h"
+	"conversion.h"
 
-1380257418 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
+1407108586 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -18757,14 +18765,14 @@
 	"physics.h"
 	"sound_base.h"
 
-1375733526 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
+1407103951 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
 
 1325814794 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1380301091 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
+1407114073 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18774,9 +18782,9 @@
 	"textbox.h"
 	"ui.h"
 
-1381551542 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
+1407103352 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
 
-1382648267 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
+1407109121 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18784,7 +18792,7 @@
 	<SDL.h>
 	<SDL_ttf.h>
 
-1375823284 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
+1407109202 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
 	"Timer.h"
 	<SDL.h>
 
@@ -18794,20 +18802,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1380230365 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
+1407106207 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1380293043 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
+1407109318 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
 	<list>
 	<map>
 	<string>
 	<SDL.h>
 	"textbox.h"
 
-1380301296 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
+1407114371 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
 	<string>
 	<iostream>
 	<SDL.h>
@@ -18815,30 +18823,30 @@
 	<map>
 	"pywrap.h"
 
-1381198646 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
+1407108835 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
 	"progressbar.h"
 	"physics.h"
 	"draw_base.h"
 	<SDL.h>
 	<SDL_image.h>
 
-1381198646 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
+1407108811 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
 	"physics.h"
 	<SDL.h>
 
-1378939728 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
+1407109221 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
 	"unit.h"
 	"trigger.h"
 	"physics.h"
 
-1378935803 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
+1407106858 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
 	"data_base.h"
 	"pywrap.h"
 	"unit.h"
 
-1380300763 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
+1407109546 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
 	<list>
 	<string>
 	<SDL.h>
@@ -18852,7 +18860,7 @@
 	<string>
 	"ui.h"
 
-1380220303 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
+1407109479 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
 	"textbox.h"
 	"button.h"
 	<string>
@@ -19195,7 +19203,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1380563275 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
+1407114386 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -19214,9 +19222,13 @@
 	"globals.h"
 	"conversion.h"
 	"input.h"
+	"scriptwrap.h"
+	"plugin.h"
+	"game.h"
 	<limits.h>
 	<float.h>
 	<math.h>
+	<ieeefp.h>
 
 1380561419 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_baseb.h
 	<stdio.h>
@@ -19224,7 +19236,7 @@
 	<string.h>
 	<SDL_mixer.h>
 
-1381555569 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
+1407109738 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
 	<SDL.h>
 	<list>
 	<string>
@@ -19242,9 +19254,21 @@
 	"ui.h"
 	<iostream>
 
-1381553242 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
+1407109754 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
 	<SDL.h>
 	<list>
 	<string>
 	"globals.h"
+
+1407107505 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
+
+1407107591 source:c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.cpp
+
+1407113351 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
+
+1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
+
+1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
+
+1407113352 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
 

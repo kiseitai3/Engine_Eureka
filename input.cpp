@@ -60,12 +60,12 @@
         }
     }
 
-    int inputMouse::getButtonState()
+    int inputMouse::getButtonState() const
     {
         return mouseButton;
     }
 
-unsigned int inputMouse::GetButton()
+unsigned int inputMouse::GetButton() const
 {
     return event->button.button;
 }
@@ -126,8 +126,8 @@ unsigned int inputMouse::GetButton()
         }
     }
 
-   std::string inputKeyboard::GetKey()
+   char inputKeyboard::GetKey() const
    {
-       return std::string(SDL_GetKeyName(event->key.keysym.sym));
+       return (char)*SDL_GetKeyName(event->key.keysym.sym);
    }
 

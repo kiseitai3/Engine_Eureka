@@ -16,6 +16,9 @@
 #include "globals.h"
 #include "conversion.h"
 #include "input.h"
+#include "scriptwrap.h"
+#include "plugin.h"
+#include "game.h"
 %}
 
 /* Let's just grab the original header file here */
@@ -33,3 +36,6 @@
 %include "globals.h"
 %include "conversion.h"
 %include "input.h"
+%include "scriptwrap.h"
+%include "plugin.h"
+%include "game.h"

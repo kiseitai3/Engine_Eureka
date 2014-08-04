@@ -169,7 +169,7 @@ Physics_swigregister(Physics)
 def CalculateDistance(*args):
   return _Eureka.CalculateDistance(*args)
 CalculateDistance = _Eureka.CalculateDistance
-ERROR = _Eureka.ERROR
+ENDOFFILE = _Eureka.ENDOFFILE
 class data_base(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, data_base, name, value)
@@ -187,8 +187,10 @@ class data_base(_object):
     def GetValueFromDataWithLine(self, *args): return _Eureka.data_base_GetValueFromDataWithLine(self, *args)
     def GetStrFromDataWithLine(self, *args): return _Eureka.data_base_GetStrFromDataWithLine(self, *args)
     def GetStateOfInternalBuffer(self): return _Eureka.data_base_GetStateOfInternalBuffer(self)
+    def OpenFileAndGetBinBuffer(self, *args): return _Eureka.data_base_OpenFileAndGetBinBuffer(self, *args)
     def OpenFile(self, *args): return _Eureka.data_base_OpenFile(self, *args)
     def OpenFileForQuickWrite(self, *args): return _Eureka.data_base_OpenFileForQuickWrite(self, *args)
+    def OpenBinFileForQuickWrite(self, *args): return _Eureka.data_base_OpenBinFileForQuickWrite(self, *args)
     def CloseFile(self, streamsToClose="all"): return _Eureka.data_base_CloseFile(self, streamsToClose)
     def GetMode(self): return _Eureka.data_base_GetMode(self)
     def WriteValue(self, *args): return _Eureka.data_base_WriteValue(self, *args)
@@ -196,12 +198,27 @@ class data_base(_object):
     def WriteValueAndFlush(self, *args): return _Eureka.data_base_WriteValueAndFlush(self, *args)
     def GetLineCount(self): return _Eureka.data_base_GetLineCount(self)
     def GetNumInstances(self, *args): return _Eureka.data_base_GetNumInstances(self, *args)
+    def GetLastOutput(self): return _Eureka.data_base_GetLastOutput(self)
+    def isOutputOpen(self): return _Eureka.data_base_isOutputOpen(self)
     def SearchTermExists(self, *args): return _Eureka.data_base_SearchTermExists(self, *args)
+    def RestoreFileContents(self): return _Eureka.data_base_RestoreFileContents(self)
+    def RefreshFile(self): return _Eureka.data_base_RefreshFile(self)
+    def CreateNewFile(self, location=""): return _Eureka.data_base_CreateNewFile(self, location)
+    __swig_getmethods__["CreateNewFile_static"] = lambda x: _Eureka.data_base_CreateNewFile_static
+    if _newclass:CreateNewFile_static = staticmethod(_Eureka.data_base_CreateNewFile_static)
     __swig_destroy__ = _Eureka.delete_data_base
     __del__ = lambda self : None;
 data_base_swigregister = _Eureka.data_base_swigregister
 data_base_swigregister(data_base)
 
+def data_base_CreateNewFile_static(*args):
+  return _Eureka.data_base_CreateNewFile_static(*args)
+data_base_CreateNewFile_static = _Eureka.data_base_CreateNewFile_static
+
+
+def copyfile(*args):
+  return _Eureka.copyfile(*args)
+copyfile = _Eureka.copyfile
 class draw_base(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, draw_base, name, value)
@@ -221,6 +238,7 @@ class draw_base(_object):
     def setAlpha(self, *args): return _Eureka.draw_base_setAlpha(self, *args)
     def ClearTexture(self): return _Eureka.draw_base_ClearTexture(self)
     def SetTextureFromPointer(self, *args): return _Eureka.draw_base_SetTextureFromPointer(self, *args)
+    def SetTextureFromRef(self, *args): return _Eureka.draw_base_SetTextureFromRef(self, *args)
     def __init__(self): 
         this = _Eureka.new_draw_base()
         try: self.this.append(this)
@@ -272,6 +290,7 @@ class Unit(_object):
     __swig_destroy__ = _Eureka.delete_Unit
     __del__ = lambda self : None;
     def isMelee(self): return _Eureka.Unit_isMelee(self)
+    def LoadScript(self, *args): return _Eureka.Unit_LoadScript(self, *args)
     def MoveAI(self): return _Eureka.Unit_MoveAI(self)
     def LoadAI(self, *args): return _Eureka.Unit_LoadAI(self, *args)
     def AttackAI(self, *args): return _Eureka.Unit_AttackAI(self, *args)
@@ -282,7 +301,6 @@ class Unit(_object):
     def Update_OldTime(self): return _Eureka.Unit_Update_OldTime(self)
     def GetTimeChange(self): return _Eureka.Unit_GetTimeChange(self)
     def GetName(self): return _Eureka.Unit_GetName(self)
-    def GetVRange(self): return _Eureka.Unit_GetVRange(self)
     def GetPhysics(self): return _Eureka.Unit_GetPhysics(self)
     def GetDefaultDrawObject(self): return _Eureka.Unit_GetDefaultDrawObject(self)
     def ToggleMelee(self): return _Eureka.Unit_ToggleMelee(self)
@@ -292,7 +310,9 @@ class Unit(_object):
     def GetAttackSpeed(self): return _Eureka.Unit_GetAttackSpeed(self)
     def GetRange(self): return _Eureka.Unit_GetRange(self)
     def GetVisionRange(self): return _Eureka.Unit_GetVisionRange(self)
+    def GetID(self): return _Eureka.Unit_GetID(self)
     def GetMovementSpeed(self): return _Eureka.Unit_GetMovementSpeed(self)
+    def GetType(self): return _Eureka.Unit_GetType(self)
     def SetHP(self, *args): return _Eureka.Unit_SetHP(self, *args)
     def SetAD(self, *args): return _Eureka.Unit_SetAD(self, *args)
     def SetAP(self, *args): return _Eureka.Unit_SetAP(self, *args)
@@ -300,16 +320,17 @@ class Unit(_object):
     def SetRange(self, *args): return _Eureka.Unit_SetRange(self, *args)
     def SetVisionRange(self, *args): return _Eureka.Unit_SetVisionRange(self, *args)
     def SetMovementSpeed(self, *args): return _Eureka.Unit_SetMovementSpeed(self, *args)
+    def SetID(self, *args): return _Eureka.Unit_SetID(self, *args)
     def GetDeath(self): return _Eureka.Unit_GetDeath(self)
     def ToggleDeath(self): return _Eureka.Unit_ToggleDeath(self)
     def UpdateAssets(self, *args): return _Eureka.Unit_UpdateAssets(self, *args)
     def AddBuff(self, *args): return _Eureka.Unit_AddBuff(self, *args)
     def RemoveBuff(self, *args): return _Eureka.Unit_RemoveBuff(self, *args)
+    def BuffExists(self, *args): return _Eureka.Unit_BuffExists(self, *args)
     def ApplyBuffs(self): return _Eureka.Unit_ApplyBuffs(self)
     def isColliding(self, *args): return _Eureka.Unit_isColliding(self, *args)
     def Update_Physics(self, *args): return _Eureka.Unit_Update_Physics(self, *args)
     def OnCollision(self, *args): return _Eureka.Unit_OnCollision(self, *args)
-    def LoadScript(self, *args): return _Eureka.Unit_LoadScript(self, *args)
     def ProcessKeyEvent(self, *args): return _Eureka.Unit_ProcessKeyEvent(self, *args)
     def LoadKeyScript(self, *args): return _Eureka.Unit_LoadKeyScript(self, *args)
     def LoadKeyBindings(self, *args): return _Eureka.Unit_LoadKeyBindings(self, *args)
@@ -342,6 +363,7 @@ class textbox(_object):
     def GetLoc(self): return _Eureka.textbox_GetLoc(self)
     def GetDOM(self): return _Eureka.textbox_GetDOM(self)
     def GetDrawObject(self): return _Eureka.textbox_GetDrawObject(self)
+    def GetRenderer(self): return _Eureka.textbox_GetRenderer(self)
     def isInside(self, *args): return _Eureka.textbox_isInside(self, *args)
     def changeMsg(self, *args): return _Eureka.textbox_changeMsg(self, *args)
     def changeFont(self, *args): return _Eureka.textbox_changeFont(self, *args)
@@ -351,6 +373,10 @@ class textbox(_object):
 textbox_swigregister = _Eureka.textbox_swigregister
 textbox_swigregister(textbox)
 
+
+def grabText(*args):
+  return _Eureka.grabText(*args)
+grabText = _Eureka.grabText
 class Button(textbox):
     __swig_setmethods__ = {}
     for _s in [textbox]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
@@ -489,6 +515,14 @@ loadGameConstants = _Eureka.loadGameConstants
 def GetRenderer():
   return _Eureka.GetRenderer()
 GetRenderer = _Eureka.GetRenderer
+
+def saveToFile(*args):
+  return _Eureka.saveToFile(*args)
+saveToFile = _Eureka.saveToFile
+
+def loadFile(*args):
+  return _Eureka.loadFile(*args)
+loadFile = _Eureka.loadFile
 class pChar(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, pChar, name, value)
@@ -526,6 +560,10 @@ intToStr = _Eureka.intToStr
 def cStrToNum(*args):
   return _Eureka.cStrToNum(*args)
 cStrToNum = _Eureka.cStrToNum
+
+def numToStr(*args):
+  return _Eureka.numToStr(*args)
+numToStr = _Eureka.numToStr
 
 def searchChar(*args):
   return _Eureka.searchChar(*args)
@@ -574,6 +612,42 @@ numToInt = _Eureka.numToInt
 def fuseStrs(*args):
   return _Eureka.fuseStrs(*args)
 fuseStrs = _Eureka.fuseStrs
+
+def capitalizeStr(*args):
+  return _Eureka.capitalizeStr(*args)
+capitalizeStr = _Eureka.capitalizeStr
+
+def replaceCharInStr(*args):
+  return _Eureka.replaceCharInStr(*args)
+replaceCharInStr = _Eureka.replaceCharInStr
+
+def getCharArrayFromConstArray(*args):
+  return _Eureka.getCharArrayFromConstArray(*args)
+getCharArrayFromConstArray = _Eureka.getCharArrayFromConstArray
+
+def round(*args):
+  return _Eureka.round(*args)
+round = _Eureka.round
+
+def iround(*args):
+  return _Eureka.iround(*args)
+iround = _Eureka.iround
+
+def changeProgramWorkingDirectory(*args):
+  return _Eureka.changeProgramWorkingDirectory(*args)
+changeProgramWorkingDirectory = _Eureka.changeProgramWorkingDirectory
+
+def capitalizeChar(*args):
+  return _Eureka.capitalizeChar(*args)
+capitalizeChar = _Eureka.capitalizeChar
+
+def lowerCaseChar(*args):
+  return _Eureka.lowerCaseChar(*args)
+lowerCaseChar = _Eureka.lowerCaseChar
+
+def scientificFormat(*args):
+  return _Eureka.scientificFormat(*args)
+scientificFormat = _Eureka.scientificFormat
 class inputMouse(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, inputMouse, name, value)

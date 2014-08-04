@@ -26,11 +26,11 @@ class Timer
     void unpause();
 
     //Gets the timer's time
-    int get_ticks();
+    int get_ticks() const;
 
     //Checks the status of the timer
-    bool is_started();
-    bool is_paused();
+    bool is_started() const;
+    bool is_paused() const;
 };
 
 #endif // TIMER_H_INCLUDED

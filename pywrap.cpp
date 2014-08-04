@@ -37,7 +37,7 @@ Pywrap::Pywrap(const char* file, unsigned int arg_size)
     sizeT = arg_size;
 }
 
-bool Pywrap::isFileLoaded()
+bool Pywrap::isFileLoaded() const
 {
     return fileLoaded;
 }
@@ -193,7 +193,7 @@ Pywrap::~Pywrap()
     ClearPyObjects();
 }
 
-unsigned int Pywrap::GetSizeOfArgs()
+unsigned int Pywrap::GetSizeOfArgs() const
 {
     return sizeT;
 }

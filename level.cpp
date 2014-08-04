@@ -17,11 +17,11 @@
 
 //Methods
 //Constructors and Destructors
-Level::Level(const char* file, const char *saveFile, SDL_Renderer *ren, Timer* t, std::size_t loadRate)
+Level::Level(const char* file, const char *saveFile, SDL_Renderer& ren, Timer& t, std::size_t loadRate)
 {
     int status = 1;
     lvlDOM, saveFileDOM, lvlBackground, lvlBackgroundMusic, loadingText, loadingBar = NULL;//Set all critical pointersto NULL in case they fail to be set properly!
-    timer = t;
+    timer = &t;
     lvlDOM = new data_base(file);
     saveFileDOM = new data_base(saveFile);
     if(!lvlDOM || !saveFileDOM)
@@ -42,7 +42,7 @@ Level::Level(const char* file, const char *saveFile, SDL_Renderer *ren, Timer* t
         mapName = lvlDOM->GetStrFromData("lvl_name");
         lvlBackground = new draw_base();
         lvlBackground->Load_Texture(lvlDOM->GetStrFromData("lvl_background").c_str(),ren);
-        if(!lvlBackground || !lvlBackground->GetTexture())
+        if(!lvlBackground || !&lvlBackground->GetTexture())
         {
             std::cout<<"Error: Failed to load background texture for this level. Stage 1 failure! \n\r";
         }
@@ -58,7 +58,7 @@ Level::Level(const char* file, const char *saveFile, SDL_Renderer *ren, Timer* t
             nameString += intToStr(i);
             unitLoc.X = lvlDOM->GetIntFromData(nameString + "_x");
             unitLoc.Y = lvlDOM->GetIntFromData(nameString + "_y");
-            Unit *pUnit = new Unit(lvlDOM->GetIntFromData(nameString + "_blitorder"), lvlDOM->GetStrFromData(nameString), unitLoc, ren, timer, lvlDOM->GetIntFromData(nameString + "_hero"), lvlDOM->GetIntFromData(nameString + "_bars"));
+            Unit *pUnit = new Unit(lvlDOM->GetIntFromData(nameString + "_blitorder"), lvlDOM->GetStrFromData(nameString), unitLoc, ren, *timer, lvlDOM->GetIntFromData(nameString + "_hero"), lvlDOM->GetIntFromData(nameString + "_bars"));
             if(!pUnit)
             {
                 std::cout<<"Error: Failed to load unit type object during stage 2. Error at "<<nameString<<"!\n\r";
@@ -175,12 +175,12 @@ Level::~Level()
 
 }
 
-void Level::LoadingDraw(SDL_Renderer *ren)
+void Level::LoadingDraw(SDL_Renderer &ren)
 {
     //Draw to screen the components that show the level is loading!
-    SDL_SetRenderDrawColor(ren, 0, 0, 0, 255);
-    SDL_RenderClear(ren);
+    SDL_SetRenderDrawColor((SDL_Renderer*)&ren, 0, 0, 0, 255);
+    SDL_RenderClear((SDL_Renderer*)&ren);
     loadingBar->Draw(ren);
     loadingText->Draw(ren);
-    SDL_RenderPresent(ren);
+    SDL_RenderPresent((SDL_Renderer*)&ren);
 }

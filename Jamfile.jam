@@ -1,0 +1,2 @@
+using gcc ;
+exe bin\Eureka : conversion.cpp main.cpp data_base.cpp physics.cpp ;

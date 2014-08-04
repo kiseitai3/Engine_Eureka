@@ -7,7 +7,7 @@
 #include <map>
 #include "pywrap.h"
 class textbox;
-SDL_Texture *LoadTexture(const char *file, SDL_Renderer *ren);
+SDL_Texture *LoadTexture(const char *file, SDL_Renderer& ren);
 class Button: public textbox
 {
 private:
@@ -17,7 +17,7 @@ private:
     bool selected;
 
 public:
-    Button(std::string msg, const char *file, SDL_Renderer *ren, int blitOrderI);
+    Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI);
     ~Button();
     void ProcessMouseLoc(int x, int y);
     void MouseClick(unsigned int button, int x, int y, bool down);

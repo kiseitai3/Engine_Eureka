@@ -1,4 +1,5 @@
 #include "luawrap.h"
+#include <cmath>
 
 LuaWrap::LuaWrap(const char* file)
 {
@@ -11,17 +12,18 @@ LuaWrap::LuaWrap(const char* file)
     {
         std::cout << "Error loading Lua Script: " << file << std::endl;
     }
-    argCount = 0;
+    path = file;
 }
 
 
 LuaWrap::~LuaWrap()
 {
-    //Let's delete the Lua State pointer
+    //Let's delete the Lua State and Argument Stack pointers
     if(Lua)
-    {
         lua_close(Lua);
-    }
+
+    if(argStack)
+        delete argStack;
 }
 
 bool LuaWrap::executeFunction(const std::string& funcName)
@@ -118,6 +120,154 @@ void LuaWrap::AddArgument(bool argument)
     tmp.answer = argument;
     tmp.flag = 'b';
     argStack.push(tmp);
+}
+
+int LuaWrap::lua_extractInt(lua_State* results) const
+{
+    if(lua_isnumber(results, LUA_TOPITEM))
+        return lua_tointeger(results, LUA_TOPITEM);
+    std::cout << "Warning: Lua result is not an integer. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0;
+}
+
+double LuaWrap::lua_extractDouble(lua_State* results) const
+{
+    if(lua_isnumber(results, LUA_TOPITEM))
+        return lua_tonumber(results, LUA_TOPITEM);
+    std::cout << "Warning: Lua result is not a double. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0.0f;
+}
+
+char LuaWrap::lua_extractChar(lua_State* results) const
+{
+    if(lua_isstring(results, LUA_TOPITEM))
+        return lua_tostring(results, LUA_TOPITEM)[0];
+    std::cout << "Warning: Lua result is not a char. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0;
+}
+
+std::string LuaWrap::lua_extractStr(lua_State* results) const
+{
+    if(lua_isstring(results, LUA_TOPITEM))
+        return lua_tostring(results, LUA_TOPITEM);
+    std::cout << "Warning: Lua result is not a string. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return "";
+}
+
+bool LuaWrap::lua_extractBool(lua_State* results) const
+{
+    if(lua_isboolean(results, LUA_TOPITEM))
+        return bool(lua_tointeger(results, LUA_TOPITEM));
+    std::cout << "Warning: Lua result is not boolean. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return false
+}
+
+void* LuaWrap::lua_extractPtr(lua_State* results) const
+{
+    return lua_topointer(results, LUA_TOPITEM);
+}
+
+int LuaWrap::lua_extractIntFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return lua_tointeger(results, lua_gettop(Lua) - index);
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0;
+}
+
+bool LuaWrap::lua_extractBoolFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return bool(lua_tointeger(results, lua_gettop(Lua) - index));
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return false;
+}
+
+char LuaWrap::lua_extractCharFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return lua_tostring(results, lua_gettop(Lua) - index)[0];
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0;
+}
+
+double LuaWrap::lua_extractDoubleFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return lua_tonumber(results, lua_gettop(Lua) - index);
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return 0.0f;
+}
+
+int LuaWrap::lua_extractStrFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return lua_tostring(results, lua_gettop(Lua) - index);
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return "";
+}
+
+void* LuaWrap::lua_extractPtrFromList(lua_State* results, unsigned int index) const
+{
+    if(lua_istable(results, LUA_TOPITEM))
+        return lua_topointer(results, lua_gettop(Lua) - index);
+    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return NULL;
+}
+
+bool LuaWrap::isResultVoid() const
+{
+    return lua_isnoneornil(Lua, lua_gettop(Lua));
+}
+
+char LuaWrap::getResultType(size_t& length = 0) const
+{
+    if(lua_isboolean(Lua))
+        return 'b';
+
+    if(lua_isnumber(Lua))
+    {
+        if(lua_tonumber(Lua, LUA_TOPITEM)/round(lua_tonumber(Lua, LUA_TOPITEM)))
+            return 'i';
+        else
+            return 'd';
+    }
+
+    if(lua_isstring(Lua, LUA_TOPITEM))
+    {
+        length = std::string(lua_tostring(Lua, LUA_TOPITEM)).length();
+        return 's';
+    }
+
+    return 'v';
+}
+
+bool LuaWrap::ClearArgs(int n)
+{
+    //Here I pop all of the elements in the Argument Stack!
+    size_t stackSize = argStack->size();
+    while(!argStack->empty() && (stackSize - n) != argStack->size())
+    {
+        argStack->pop();
+    }
+}
+
+void LuaWrap::ClearResult()
+{
+    //This method is a just-in-case method. It may never get used.
+    //This method will pop the result from the lua state stack!
+    lua_pop(Lua, LUA_TOPITEM);
 }
 
 //Private methods

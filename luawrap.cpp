@@ -35,11 +35,6 @@ bool LuaWrap::executeFunction(const std::string& funcName)
         ClearResult();
     }
 
-    if(argStack->size())
-    {
-        ClearArgs(LUA_ERASE_ALL);
-    }
-
     //Now, let's set the function!
     lua_setglobal(Lua, funcName.c_str());
     if(lua_isfunction(L, LUA_TOPITEM))
@@ -71,6 +66,7 @@ bool LuaWrap::executeFunction(const std::string& funcName)
 
     //Check status code
     ErrF(Lua, errStatus);
+    return true;
 }
 
 //Argument methods
@@ -172,58 +168,55 @@ void* LuaWrap::lua_extractPtr(lua_State* results) const
     return lua_topointer(results, LUA_TOPITEM);
 }
 
-int LuaWrap::lua_extractIntFromList(lua_State* results, unsigned int index) const
+std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
 {
-    if(lua_istable(results, LUA_TOPITEM))
-        return lua_tointeger(results, lua_gettop(Lua) - index);
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return 0;
-}
+    /*If I read the documentation correctly, lua_next empties the table and I end up cleaning the pushed key-value
+    pairs, so I will flag this method as a single use method that calls clean stack and resets the state of result!
+    Make sure you limit your script-engine communication such that this method is called once or the spawning
+    script function is called multiple times!
+    */
+    std::vector<fuzzy_obj> tmp;
+    size_t t = lua_gettable(Lua, LUA_TOPITEM);//index of table
+    if(lua_isnil(Lua, LUA_TOPITEM))//check the table is valid
+        return tmp;
 
-bool LuaWrap::lua_extractBoolFromList(lua_State* results, unsigned int index) const
-{
-    if(lua_istable(results, LUA_TOPITEM))
-        return bool(lua_tointeger(results, lua_gettop(Lua) - index));
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return false;
-}
+    lua_pushnil(Lua);//Push top key? http://pgl.yoyo.org/luai/i/lua_next
+    while(lua_next(Lua, t))//Obtain key-value pairs
+    {
+        fuzzy_obj obj;
+        obj.flag = GetResultType(Lua);
+        switch(obj.flag)
+        {
+        case 'i':
+            obj.number = lua_extractInt(obj);
+            break;
+        case 'd':
+            obj.decimal = lua_extractDouble(obj);
+            break;
+        case 'b':
+            obj.answer = lua_extractBool(obj);
+            break;
+        case 'c':
+            obj.c = lua_extractChar(obj);
+            break;
+        case 's':
+            obj.str = lua_extractStr(obj);
+            break;
+        case 'v':
+            obj.ptr = lua_extractPtr(obj);
+            break;
+        default:
+            std::cout << "Error: Argument from array returned by script function is not a valid type! "
+            << "Wow, the cake is a lie!" << std::endl;
+        }
+        tmp.push_back(obj);
+    }
 
-char LuaWrap::lua_extractCharFromList(lua_State* results, unsigned int index) const
-{
-    if(lua_istable(results, LUA_TOPITEM))
-        return lua_tostring(results, lua_gettop(Lua) - index)[0];
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return 0;
-}
-
-double LuaWrap::lua_extractDoubleFromList(lua_State* results, unsigned int index) const
-{
-    if(lua_istable(results, LUA_TOPITEM))
-        return lua_tonumber(results, lua_gettop(Lua) - index);
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return 0.0f;
-}
-
-int LuaWrap::lua_extractStrFromList(lua_State* results, unsigned int index) const
-{
-    if(lua_istable(results, LUA_TOPITEM))
-        return lua_tostring(results, lua_gettop(Lua) - index);
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return "";
-}
-
-void* LuaWrap::lua_extractPtrFromList(lua_State* results, unsigned int index) const
-{
-    if(lua_istable(results, LUA_TOPITEM))
-        return lua_topointer(results, lua_gettop(Lua) - index);
-    std::cout << "Warning: Lua result is not an array. Undefined behavior may occur! Warning in script: " << path
-            << std::endl;
-    return NULL;
+    //Let's clean the stack from the new items
+    ClearResult();
+    hasResult = false;//Flag the result as destroyed
+    //Return copy of the vector!
+    return tmp;
 }
 
 bool LuaWrap::isResultVoid() const
@@ -231,22 +224,22 @@ bool LuaWrap::isResultVoid() const
     return lua_isnoneornil(Lua, lua_gettop(Lua));
 }
 
-char LuaWrap::getResultType(size_t& length = 0) const
+char LuaWrap::GetResultType(lua_State* result, size_t& length) const
 {
-    if(lua_isboolean(Lua))
+    if(lua_isboolean(result))
         return 'b';
 
-    if(lua_isnumber(Lua))
+    if(lua_isnumber(result))
     {
-        if(lua_tonumber(Lua, LUA_TOPITEM)/round(lua_tonumber(Lua, LUA_TOPITEM)))
+        if(lua_tonumber(result, LUA_TOPITEM)/round(lua_tonumber(result, LUA_TOPITEM)))
             return 'i';
         else
             return 'd';
     }
 
-    if(lua_isstring(Lua, LUA_TOPITEM))
+    if(lua_isstring(result, LUA_TOPITEM))
     {
-        length = std::string(lua_tostring(Lua, LUA_TOPITEM)).length();
+        length = std::string(lua_tostring(result, LUA_TOPITEM)).length();
         return 's';
     }
 
@@ -267,7 +260,15 @@ void LuaWrap::ClearResult()
 {
     //This method is a just-in-case method. It may never get used.
     //This method will pop the result from the lua state stack!
-    lua_pop(Lua, LUA_TOPITEM);
+    //This method also clears all other items from the stack!
+    lua_pop(Lua, lua_gettop(Lua));
+}
+
+size_t LuaWrap::GetResultSize()
+{
+    //This method is not 100% safe if the lua table conforms to some special cases
+    //(http://stackoverflow.com/questions/4815588/request-a-lua-table-size-in-c-before-iterating-it)!
+    return lua_objlen(Lua, LUA_TOPITEM);
 }
 
 //Private methods

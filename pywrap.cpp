@@ -48,7 +48,7 @@ bool Pywrap::isResultVoid(PyObject* result) const
     return result == Py_None;
 }
 
-char Pywrap::getReturnType(PyObject* result, size_t& length = 0) const
+char Pywrap::GetResultType(PyObject* result, size_t& length = 0) const
 {
     if(PyFloat_Check(result))
         return 'd';
@@ -161,6 +161,18 @@ PyObject *Pywrap::executeReturnF(const char* funcName)
         return value;
     }
     return func;
+}
+
+size_t Pywrap::GetSizeOfResult(PyObject* result)
+{
+    return PyTuple_GET_SIZE(result);
+}
+
+PyObject *Pywrap::GetItemFromResultList(PyObject* result, size_t i)//i = index
+{
+    if(PyTuple_Check(result))
+        return PyTuple_GetItem(result, i);
+    return NULL;
 }
 
 void InitPy()

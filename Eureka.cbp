@@ -175,6 +175,10 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="typedefs.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="ui.cpp" />
 		<Unit filename="ui.h">
 			<Option target="Release" />

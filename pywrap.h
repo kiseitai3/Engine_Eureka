@@ -36,7 +36,9 @@ class Pywrap
     void CleanCPyObjInArgs();
     bool isFileLoaded() const;
     bool isResultVoid(PyObject* result) const;
-    char getReturnType(PyObject* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
+    char GetResultType(PyObject* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
+    size_t GetSizeOfResult(PyObject* result);
+    PyObject *GetItemFromResultList(PyObject* result, size_t i);
     ~Pywrap();//destructor
     //Oveloads
     void AddArgument (int argument, unsigned int index);

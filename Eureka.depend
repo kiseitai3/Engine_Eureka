@@ -12941,7 +12941,7 @@
 	<string.h>
 	<boost/python.hpp>
 
-1407113714 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
 	<string>
 	<string.h>
@@ -12949,17 +12949,17 @@
 	"conversion.h"
 	"data_base.h"
 
-1407103352 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
 	<string>
 
-1407105504 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
 	<fstream>
 	<string>
 	"conversion.h"
 	"data_base.h"
 	<iostream>
 
-1407114658 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
 	<Python.h>
 	<SDL.h>
 	<SDL_mixer.h>
@@ -12980,13 +12980,13 @@
 	"data_base.h"
 	<unistd.h>
 
-1407107947 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\physics.h
 	"data_base.h"
 	<string>
 	<SDL.h>
 	<vector>
 
-1407108298 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\physics.cpp
 	"data_base.h"
 	<string>
 	<SDL.h>
@@ -13000,7 +13000,7 @@
 	<string>
 	<boost\python.hpp>
 
-1398833988 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
 	<stdio.h>
@@ -13017,7 +13017,7 @@
 	"conversion.h"
 	<iostream>
 
-1407105181 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1407613045 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 
@@ -18701,13 +18701,13 @@
 	<vector>
 	<SDL.h>
 
-1407106236 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\input.cpp
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1407110299 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
@@ -18722,7 +18722,7 @@
 	<list>
 	"progressbar.h"
 
-1407110471 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
@@ -18733,19 +18733,19 @@
 	"Timer.h"
 	<list>
 
-1407106877 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<SDL_mixer.h>
 	"physics.h"
 
-1407113845 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	"data_base.h"
 	<string>
 
-1407113830 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -18754,7 +18754,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1407108586 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -18765,14 +18765,14 @@
 	"physics.h"
 	"sound_base.h"
 
-1407103951 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\timer.h
 
 1325814794 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1407114073 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.cpp
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18782,9 +18782,9 @@
 	"textbox.h"
 	"ui.h"
 
-1407103352 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
+1407356116 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
 
-1407109121 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -18792,7 +18792,7 @@
 	<SDL.h>
 	<SDL_ttf.h>
 
-1407109202 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
+1407117979 source:c:\users\kiseitai2\documents\devcb\engine_eureka\timer.cpp
 	"Timer.h"
 	<SDL.h>
 
@@ -18802,20 +18802,20 @@
 	"begin_code.h"
 	"close_code.h"
 
-1407106207 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\input.h
 	<SDL.h>
 	<string>
 	"physics.h"
 	"input.h"
 
-1407109318 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\ui.h
 	<list>
 	<map>
 	<string>
 	<SDL.h>
 	"textbox.h"
 
-1407114371 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
 	<string>
 	<iostream>
 	<SDL.h>
@@ -18823,30 +18823,30 @@
 	<map>
 	"pywrap.h"
 
-1407108835 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
 	"progressbar.h"
 	"physics.h"
 	"draw_base.h"
 	<SDL.h>
 	<SDL_image.h>
 
-1407108811 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.h
 	"physics.h"
 	<SDL.h>
 
-1407109221 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
 	"unit.h"
 	"trigger.h"
 	"physics.h"
 
-1407106858 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
 	"data_base.h"
 	"pywrap.h"
 	"unit.h"
 
-1407109546 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
 	<list>
 	<string>
 	<SDL.h>
@@ -18860,7 +18860,7 @@
 	<string>
 	"ui.h"
 
-1407109479 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
 	"textbox.h"
 	"button.h"
 	<string>
@@ -19236,7 +19236,7 @@
 	<string.h>
 	<SDL_mixer.h>
 
-1407109738 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\level.cpp
 	<SDL.h>
 	<list>
 	<string>
@@ -19254,21 +19254,349 @@
 	"ui.h"
 	<iostream>
 
-1407109754 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\level.h
 	<SDL.h>
 	<list>
 	<string>
 	"globals.h"
 
-1407107505 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
 
 1407107591 source:c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.cpp
 
-1407113351 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
+1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
 
 1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
 
 1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
 
 1407113352 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\close_code.h
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<intrin.h>
+	<libkern/OSAtomic.h>
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836718 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836723 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836723 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2_image-2.0.0\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1387836723 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2_mixer-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
 

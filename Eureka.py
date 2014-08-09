@@ -691,6 +691,24 @@ class inputKeyboard(_object):
 inputKeyboard_swigregister = _Eureka.inputKeyboard_swigregister
 inputKeyboard_swigregister(inputKeyboard)
 
+class ScriptWrap(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ScriptWrap, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ScriptWrap, name)
+    __repr__ = _swig_repr
+    def __init__(self, *args): 
+        this = _Eureka.new_ScriptWrap(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def executeFunction(self, *args): return _Eureka.ScriptWrap_executeFunction(self, *args)
+    def isInitialized(self): return _Eureka.ScriptWrap_isInitialized(self)
+    __swig_destroy__ = _Eureka.delete_ScriptWrap
+    __del__ = lambda self : None;
+ScriptWrap_swigregister = _Eureka.ScriptWrap_swigregister
+ScriptWrap_swigregister(ScriptWrap)
+
+NONE = _Eureka.NONE
 VAR = _Eureka.VAR
 XML = _Eureka.XML
 LUA = _Eureka.LUA
@@ -722,6 +740,9 @@ class unknown_return(_object):
     __swig_setmethods__["c"] = _Eureka.unknown_return_c_set
     __swig_getmethods__["c"] = _Eureka.unknown_return_c_get
     if _newclass:c = _swig_property(_Eureka.unknown_return_c_get, _Eureka.unknown_return_c_set)
+    __swig_setmethods__["ptr"] = _Eureka.unknown_return_ptr_set
+    __swig_getmethods__["ptr"] = _Eureka.unknown_return_ptr_get
+    if _newclass:ptr = _swig_property(_Eureka.unknown_return_ptr_get, _Eureka.unknown_return_ptr_set)
     def __init__(self): 
         this = _Eureka.new_unknown_return()
         try: self.this.append(this)
@@ -730,39 +751,6 @@ class unknown_return(_object):
     __del__ = lambda self : None;
 unknown_return_swigregister = _Eureka.unknown_return_swigregister
 unknown_return_swigregister(unknown_return)
-
-LUA_TOPITEM = _Eureka.LUA_TOPITEM
-LUA_ERASE_ALL = _Eureka.LUA_ERASE_ALL
-class LuaWrap(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, LuaWrap, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, LuaWrap, name)
-    __repr__ = _swig_repr
-    def __init__(self, *args): 
-        this = _Eureka.new_LuaWrap(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    def executeFunction(self, *args): return _Eureka.LuaWrap_executeFunction(self, *args)
-    def ClearArgs(self, *args): return _Eureka.LuaWrap_ClearArgs(self, *args)
-    def ClearResult(self): return _Eureka.LuaWrap_ClearResult(self)
-    def GetInternalState(self): return _Eureka.LuaWrap_GetInternalState(self)
-    def GetArgCount(self): return _Eureka.LuaWrap_GetArgCount(self)
-    __swig_destroy__ = _Eureka.delete_LuaWrap
-    __del__ = lambda self : None;
-    def lua_extractInt(self, *args): return _Eureka.LuaWrap_lua_extractInt(self, *args)
-    def lua_extractChar(self, *args): return _Eureka.LuaWrap_lua_extractChar(self, *args)
-    def lua_extractStr(self, *args): return _Eureka.LuaWrap_lua_extractStr(self, *args)
-    def lua_extractDouble(self, *args): return _Eureka.LuaWrap_lua_extractDouble(self, *args)
-    def lua_extractPtr(self, *args): return _Eureka.LuaWrap_lua_extractPtr(self, *args)
-    def lua_extractIntFromList(self, *args): return _Eureka.LuaWrap_lua_extractIntFromList(self, *args)
-    def lua_extractStrFromList(self, *args): return _Eureka.LuaWrap_lua_extractStrFromList(self, *args)
-    def lua_extractCharFromList(self, *args): return _Eureka.LuaWrap_lua_extractCharFromList(self, *args)
-    def lua_extractDoubleFromList(self, *args): return _Eureka.LuaWrap_lua_extractDoubleFromList(self, *args)
-    def lua_extractPtrFromList(self, *args): return _Eureka.LuaWrap_lua_extractPtrFromList(self, *args)
-    def AddArgument(self, *args): return _Eureka.LuaWrap_AddArgument(self, *args)
-LuaWrap_swigregister = _Eureka.LuaWrap_swigregister
-LuaWrap_swigregister(LuaWrap)
 
 # This file is compatible with both classic and new-style classes.
 

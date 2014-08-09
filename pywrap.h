@@ -12,6 +12,7 @@ class Pywrap
     PyObject *module, *name_space, *dict, *func;
     PyObject *args, *value, *result;
     unsigned int sizeT;
+    size_t index;
     std::string path;
     bool fileLoaded;
     //methods
@@ -34,6 +35,8 @@ class Pywrap
     PyObject *CreateObjFromPtr(void *classT);
     void CleanCPyObjInArgs();
     bool isFileLoaded() const;
+    bool isResultVoid(PyObject* result) const;
+    char getReturnType(PyObject* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
     ~Pywrap();//destructor
     //Oveloads
     void AddArgument (int argument, unsigned int index);
@@ -46,16 +49,18 @@ class Pywrap
     //Py Conversion Functions with overloads
     /*All functions in this block take care of the extraction of a C type from a generalized object
     or list! :D*/
-    int py_extractInt(PyObject *results);
-    char py_extractChar(PyObject *results);
-    std::string py_extractStr(PyObject *results);
-    double py_extractDouble(PyObject *results);
-    void *py_extractPtr(PyObject *results);
-    int py_extractIntFromList(PyObject *results, unsigned int index);
-    std::string py_extractStrFromList(PyObject *results, unsigned int index);
-    char py_extractCharFromList(PyObject *results, unsigned int index);
-    double py_extractDoubleFromList(PyObject *results, unsigned int index);
-    void *py_extractPtrFromList(PyObject *results, unsigned int index);
+    int py_extractInt(PyObject *results) const;
+    char py_extractChar(PyObject *results) const;
+    std::string py_extractStr(PyObject *results) const;
+    double py_extractDouble(PyObject *results) const;
+    bool py_extractBool(PyObject *results) const;
+    void *py_extractPtr(PyObject *results) const;
+    int py_extractIntFromList(PyObject *results, unsigned int index) const;
+    std::string py_extractStrFromList(PyObject *results, unsigned int index) const;
+    char py_extractCharFromList(PyObject *results, unsigned int index) const;
+    double py_extractDoubleFromList(PyObject *results, unsigned int index) const;
+    void *py_extractPtrFromList(PyObject *results, unsigned int index) const;
+    bool py_extractBoolFromList(PyObject *results, unsigned int index) const;
 };
 void InitPy();
 void EndPy();

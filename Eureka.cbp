@@ -65,6 +65,10 @@
 			<Add directory="Dependencies and tools/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies and tools/lua-5.2.3/src" />
 		</Linker>
+		<Unit filename="Eureka_lua.cxx">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Eureka_wrap.cxx" />
 		<Unit filename="Timer.cpp" />
 		<Unit filename="Timer.h">

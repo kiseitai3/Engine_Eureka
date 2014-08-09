@@ -2935,14 +2935,14 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Button swig_types[0]
-#define SWIGTYPE_p_LuaWrap swig_types[1]
-#define SWIGTYPE_p_Physics swig_types[2]
-#define SWIGTYPE_p_ProgressBar swig_types[3]
-#define SWIGTYPE_p_Pywrap swig_types[4]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[5]
-#define SWIGTYPE_p_SDL_Event swig_types[6]
-#define SWIGTYPE_p_SDL_Renderer swig_types[7]
-#define SWIGTYPE_p_SDL_Texture swig_types[8]
+#define SWIGTYPE_p_Physics swig_types[1]
+#define SWIGTYPE_p_ProgressBar swig_types[2]
+#define SWIGTYPE_p_Pywrap swig_types[3]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[4]
+#define SWIGTYPE_p_SDL_Event swig_types[5]
+#define SWIGTYPE_p_SDL_Renderer swig_types[6]
+#define SWIGTYPE_p_SDL_Texture swig_types[7]
+#define SWIGTYPE_p_ScriptWrap swig_types[8]
 #define SWIGTYPE_p_Timer swig_types[9]
 #define SWIGTYPE_p_Trigger swig_types[10]
 #define SWIGTYPE_p_UI swig_types[11]
@@ -2955,14 +2955,14 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_inputKeyboard swig_types[18]
 #define SWIGTYPE_p_inputMouse swig_types[19]
 #define SWIGTYPE_p_int swig_types[20]
-#define SWIGTYPE_p_lua_State swig_types[21]
-#define SWIGTYPE_p_math_VECTOR swig_types[22]
-#define SWIGTYPE_p_math_point swig_types[23]
-#define SWIGTYPE_p_pChar swig_types[24]
-#define SWIGTYPE_p_psudo_type swig_types[25]
-#define SWIGTYPE_p_sound_base swig_types[26]
-#define SWIGTYPE_p_std__stackT_fuzzy_obj_t swig_types[27]
-#define SWIGTYPE_p_std__string swig_types[28]
+#define SWIGTYPE_p_math_VECTOR swig_types[21]
+#define SWIGTYPE_p_math_point swig_types[22]
+#define SWIGTYPE_p_pChar swig_types[23]
+#define SWIGTYPE_p_psudo_type swig_types[24]
+#define SWIGTYPE_p_sound_base swig_types[25]
+#define SWIGTYPE_p_std__stackT_fuzzy_obj_t swig_types[26]
+#define SWIGTYPE_p_std__string swig_types[27]
+#define SWIGTYPE_p_std__vectorT_fuzzy_obj_t swig_types[28]
 #define SWIGTYPE_p_textbox swig_types[29]
 #define SWIGTYPE_p_unsigned_char swig_types[30]
 #define SWIGTYPE_p_void swig_types[31]
@@ -3081,7 +3081,6 @@ namespace swig {
 #include "scriptwrap.h"
 #include "plugin.h"
 #include "game.h"
-#include "luawrap.h"
 
 
 #include <limits.h>
@@ -3553,24 +3552,6 @@ SWIG_AsVal_float (PyObject * obj, float *val)
     }
   }  
   return res;
-}
-
-
-  #define SWIG_From_long   PyLong_FromLong 
-
-
-SWIGINTERNINLINE PyObject* 
-SWIG_From_unsigned_SS_long  (unsigned long value)
-{
-  return (value > LONG_MAX) ?
-    PyLong_FromUnsignedLong(value) : PyLong_FromLong(static_cast< long >(value)); 
-}
-
-
-SWIGINTERNINLINE PyObject *
-SWIG_From_size_t  (size_t value)
-{    
-  return SWIG_From_unsigned_SS_long  (static_cast< unsigned long >(value));
 }
 
 #ifdef __cplusplus
@@ -15239,6 +15220,226 @@ SWIGINTERN PyObject *inputKeyboard_swigregister(PyObject *SWIGUNUSEDPARM(self), 
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_ScriptWrap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  char *arg1 = (char *) 0 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  PyObject * obj0 = 0 ;
+  ScriptWrap *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_ScriptWrap",&obj0)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_ScriptWrap" "', argument " "1"" of type '" "char const *""'");
+  }
+  arg1 = reinterpret_cast< char * >(buf1);
+  result = (ScriptWrap *)new ScriptWrap((char const *)arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ScriptWrap, SWIG_POINTER_NEW |  0 );
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_fuzzy_obj_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  (arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  void *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_fuzzy_obj_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  result = (void *)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_ScriptWrap_executeFunction__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_ScriptWrap_executeFunction__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ScriptWrap_executeFunction'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_isInitialized(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScriptWrap_isInitialized",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_isInitialized" "', argument " "1"" of type '" "ScriptWrap const *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  result = (bool)((ScriptWrap const *)arg1)->isInitialized();
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_ScriptWrap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_ScriptWrap",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_ScriptWrap" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *ScriptWrap_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_ScriptWrap, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_unknown_return_flag_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   psudo_type *arg1 = (psudo_type *) 0 ;
@@ -15611,6 +15812,56 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_unknown_return_ptr_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  psudo_type *arg1 = (psudo_type *) 0 ;
+  void *arg2 = (void *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:unknown_return_ptr_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_psudo_type, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "unknown_return_ptr_set" "', argument " "1"" of type '" "psudo_type *""'"); 
+  }
+  arg1 = reinterpret_cast< psudo_type * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "unknown_return_ptr_set" "', argument " "2"" of type '" "void *""'"); 
+  }
+  if (arg1) (arg1)->ptr = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_unknown_return_ptr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  psudo_type *arg1 = (psudo_type *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  void *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:unknown_return_ptr_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_psudo_type, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "unknown_return_ptr_get" "', argument " "1"" of type '" "psudo_type *""'"); 
+  }
+  arg1 = reinterpret_cast< psudo_type * >(argp1);
+  result = (void *) ((arg1)->ptr);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_unknown_return(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   psudo_type *result = 0 ;
@@ -15649,839 +15900,6 @@ SWIGINTERN PyObject *unknown_return_swigregister(PyObject *SWIGUNUSEDPARM(self),
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_psudo_type, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_new_LuaWrap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  char *arg1 = (char *) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
-  PyObject * obj0 = 0 ;
-  LuaWrap *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_LuaWrap",&obj0)) SWIG_fail;
-  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_LuaWrap" "', argument " "1"" of type '" "char const *""'");
-  }
-  arg1 = reinterpret_cast< char * >(buf1);
-  result = (LuaWrap *)new LuaWrap((char const *)arg1);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LuaWrap, SWIG_POINTER_NEW |  0 );
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return resultobj;
-fail:
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_executeFunction(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  std::string *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_executeFunction",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_executeFunction" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LuaWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  arg2 = reinterpret_cast< std::string * >(argp2);
-  result = (bool)(arg1)->executeFunction((std::string const &)*arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_ClearArgs(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_ClearArgs",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_ClearArgs" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_ClearArgs" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  result = (bool)(arg1)->ClearArgs(arg2);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_ClearResult(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LuaWrap_ClearResult",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_ClearResult" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  (arg1)->ClearResult();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_GetInternalState(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  lua_State *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LuaWrap_GetInternalState",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_GetInternalState" "', argument " "1"" of type '" "LuaWrap const *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  result = (lua_State *)((LuaWrap const *)arg1)->GetInternalState();
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_lua_State, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_GetArgCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  size_t result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:LuaWrap_GetArgCount",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_GetArgCount" "', argument " "1"" of type '" "LuaWrap const *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  result = ((LuaWrap const *)arg1)->GetArgCount();
-  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_LuaWrap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_LuaWrap",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LuaWrap" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractInt(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_lua_extractInt",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractInt" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractInt" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  result = (int)(arg1)->lua_extractInt(arg2);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractChar(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  char result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_lua_extractChar",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractChar" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractChar" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  result = (char)(arg1)->lua_extractChar(arg2);
-  resultobj = SWIG_From_char(static_cast< char >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractStr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_lua_extractStr",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractStr" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractStr" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  result = (arg1)->lua_extractStr(arg2);
-  resultobj = SWIG_NewPointerObj((new std::string(static_cast< const std::string& >(result))), SWIGTYPE_p_std__string, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractDouble(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_lua_extractDouble",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractDouble" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractDouble" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  result = (double)(arg1)->lua_extractDouble(arg2);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractPtr(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  void *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_lua_extractPtr",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractPtr" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractPtr" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  result = (void *)(arg1)->lua_extractPtr(arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractIntFromList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  unsigned int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LuaWrap_lua_extractIntFromList",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractIntFromList" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractIntFromList" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "LuaWrap_lua_extractIntFromList" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  result = (int)(arg1)->lua_extractIntFromList(arg2,arg3);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractStrFromList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  unsigned int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  std::string result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LuaWrap_lua_extractStrFromList",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractStrFromList" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractStrFromList" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "LuaWrap_lua_extractStrFromList" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  result = (arg1)->lua_extractStrFromList(arg2,arg3);
-  resultobj = SWIG_NewPointerObj((new std::string(static_cast< const std::string& >(result))), SWIGTYPE_p_std__string, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractCharFromList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  unsigned int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  char result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LuaWrap_lua_extractCharFromList",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractCharFromList" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractCharFromList" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "LuaWrap_lua_extractCharFromList" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  result = (char)(arg1)->lua_extractCharFromList(arg2,arg3);
-  resultobj = SWIG_From_char(static_cast< char >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractDoubleFromList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  unsigned int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LuaWrap_lua_extractDoubleFromList",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractDoubleFromList" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractDoubleFromList" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "LuaWrap_lua_extractDoubleFromList" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  result = (double)(arg1)->lua_extractDoubleFromList(arg2,arg3);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_lua_extractPtrFromList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  lua_State *arg2 = (lua_State *) 0 ;
-  unsigned int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  void *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:LuaWrap_lua_extractPtrFromList",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_lua_extractPtrFromList" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_lua_State, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_lua_extractPtrFromList" "', argument " "2"" of type '" "lua_State *""'"); 
-  }
-  arg2 = reinterpret_cast< lua_State * >(argp2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "LuaWrap_lua_extractPtrFromList" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  result = (void *)(arg1)->lua_extractPtrFromList(arg2,arg3);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  (arg1)->AddArgument(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  std::string *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "std::string const &""'"); 
-  }
-  arg2 = reinterpret_cast< std::string * >(argp2);
-  (arg1)->AddArgument((std::string const &)*arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  char arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_char(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "char""'");
-  } 
-  arg2 = static_cast< char >(val2);
-  (arg1)->AddArgument(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  (arg1)->AddArgument(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  (arg1)->AddArgument(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LuaWrap *arg1 = (LuaWrap *) 0 ;
-  bool arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  bool val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:LuaWrap_AddArgument",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LuaWrap, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LuaWrap_AddArgument" "', argument " "1"" of type '" "LuaWrap *""'"); 
-  }
-  arg1 = reinterpret_cast< LuaWrap * >(argp1);
-  ecode2 = SWIG_AsVal_bool(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LuaWrap_AddArgument" "', argument " "2"" of type '" "bool""'");
-  } 
-  arg2 = static_cast< bool >(val2);
-  (arg1)->AddArgument(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_LuaWrap_AddArgument(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[3];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_1(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_unsigned_SS_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_4(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_0(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_double(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_3(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_char(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_2(self, args);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LuaWrap, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_bool(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_LuaWrap_AddArgument__SWIG_5(self, args);
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'LuaWrap_AddArgument'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    LuaWrap::AddArgument(int)\n"
-    "    LuaWrap::AddArgument(std::string const &)\n"
-    "    LuaWrap::AddArgument(char)\n"
-    "    LuaWrap::AddArgument(double)\n"
-    "    LuaWrap::AddArgument(unsigned int)\n"
-    "    LuaWrap::AddArgument(bool)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *LuaWrap_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_LuaWrap, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -16778,6 +16196,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"inputKeyboard_GetKey", _wrap_inputKeyboard_GetKey, METH_VARARGS, NULL},
 	 { (char *)"delete_inputKeyboard", _wrap_delete_inputKeyboard, METH_VARARGS, NULL},
 	 { (char *)"inputKeyboard_swigregister", inputKeyboard_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_ScriptWrap", _wrap_new_ScriptWrap, METH_VARARGS, NULL},
+	 { (char *)"ScriptWrap_executeFunction", _wrap_ScriptWrap_executeFunction, METH_VARARGS, NULL},
+	 { (char *)"ScriptWrap_isInitialized", _wrap_ScriptWrap_isInitialized, METH_VARARGS, NULL},
+	 { (char *)"delete_ScriptWrap", _wrap_delete_ScriptWrap, METH_VARARGS, NULL},
+	 { (char *)"ScriptWrap_swigregister", ScriptWrap_swigregister, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_flag_set", _wrap_unknown_return_flag_set, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_flag_get", _wrap_unknown_return_flag_get, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_number_set", _wrap_unknown_return_number_set, METH_VARARGS, NULL},
@@ -16792,28 +16215,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"unknown_return_str_get", _wrap_unknown_return_str_get, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_c_set", _wrap_unknown_return_c_set, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_c_get", _wrap_unknown_return_c_get, METH_VARARGS, NULL},
+	 { (char *)"unknown_return_ptr_set", _wrap_unknown_return_ptr_set, METH_VARARGS, NULL},
+	 { (char *)"unknown_return_ptr_get", _wrap_unknown_return_ptr_get, METH_VARARGS, NULL},
 	 { (char *)"new_unknown_return", _wrap_new_unknown_return, METH_VARARGS, NULL},
 	 { (char *)"delete_unknown_return", _wrap_delete_unknown_return, METH_VARARGS, NULL},
 	 { (char *)"unknown_return_swigregister", unknown_return_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_LuaWrap", _wrap_new_LuaWrap, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_executeFunction", _wrap_LuaWrap_executeFunction, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_ClearArgs", _wrap_LuaWrap_ClearArgs, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_ClearResult", _wrap_LuaWrap_ClearResult, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_GetInternalState", _wrap_LuaWrap_GetInternalState, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_GetArgCount", _wrap_LuaWrap_GetArgCount, METH_VARARGS, NULL},
-	 { (char *)"delete_LuaWrap", _wrap_delete_LuaWrap, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractInt", _wrap_LuaWrap_lua_extractInt, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractChar", _wrap_LuaWrap_lua_extractChar, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractStr", _wrap_LuaWrap_lua_extractStr, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractDouble", _wrap_LuaWrap_lua_extractDouble, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractPtr", _wrap_LuaWrap_lua_extractPtr, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractIntFromList", _wrap_LuaWrap_lua_extractIntFromList, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractStrFromList", _wrap_LuaWrap_lua_extractStrFromList, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractCharFromList", _wrap_LuaWrap_lua_extractCharFromList, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractDoubleFromList", _wrap_LuaWrap_lua_extractDoubleFromList, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_lua_extractPtrFromList", _wrap_LuaWrap_lua_extractPtrFromList, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_AddArgument", _wrap_LuaWrap_AddArgument, METH_VARARGS, NULL},
-	 { (char *)"LuaWrap_swigregister", LuaWrap_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -16824,7 +16230,6 @@ static void *_p_ButtonTo_p_textbox(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((textbox *)  ((Button *) x));
 }
 static swig_type_info _swigt__p_Button = {"_p_Button", "Button *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_LuaWrap = {"_p_LuaWrap", "LuaWrap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Physics = {"_p_Physics", "Physics *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ProgressBar = {"_p_ProgressBar", "ProgressBar *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Pywrap = {"_p_Pywrap", "Pywrap *", 0, 0, (void*)0, 0};
@@ -16832,6 +16237,7 @@ static swig_type_info _swigt__p_SDL_BlendMode = {"_p_SDL_BlendMode", "SDL_BlendM
 static swig_type_info _swigt__p_SDL_Event = {"_p_SDL_Event", "SDL_Event *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Renderer = {"_p_SDL_Renderer", "SDL_Renderer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Texture = {"_p_SDL_Texture", "SDL_Texture *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_ScriptWrap = {"_p_ScriptWrap", "ScriptWrap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Timer = {"_p_Timer", "Timer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Trigger = {"_p_Trigger", "Trigger *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_UI = {"_p_UI", "UI *", 0, 0, (void*)0, 0};
@@ -16844,7 +16250,6 @@ static swig_type_info _swigt__p_fuzzy_obj = {"_p_fuzzy_obj", "fuzzy_obj *", 0, 0
 static swig_type_info _swigt__p_inputKeyboard = {"_p_inputKeyboard", "inputKeyboard *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_inputMouse = {"_p_inputMouse", "inputMouse *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_lua_State = {"_p_lua_State", "lua_State *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_math_VECTOR = {"_p_math_VECTOR", "math_VECTOR *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_math_point = {"_p_math_point", "math_point *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pChar = {"_p_pChar", "pChar *", 0, 0, (void*)0, 0};
@@ -16852,13 +16257,13 @@ static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unk
 static swig_type_info _swigt__p_sound_base = {"_p_sound_base", "sound_base *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__stackT_fuzzy_obj_t = {"_p_std__stackT_fuzzy_obj_t", "std::stack< fuzzy_obj > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_fuzzy_obj_t = {"_p_std__vectorT_fuzzy_obj_t", "std::vector< fuzzy_obj > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_textbox = {"_p_textbox", "textbox *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Button,
-  &_swigt__p_LuaWrap,
   &_swigt__p_Physics,
   &_swigt__p_ProgressBar,
   &_swigt__p_Pywrap,
@@ -16866,6 +16271,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_SDL_Event,
   &_swigt__p_SDL_Renderer,
   &_swigt__p_SDL_Texture,
+  &_swigt__p_ScriptWrap,
   &_swigt__p_Timer,
   &_swigt__p_Trigger,
   &_swigt__p_UI,
@@ -16878,7 +16284,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_inputKeyboard,
   &_swigt__p_inputMouse,
   &_swigt__p_int,
-  &_swigt__p_lua_State,
   &_swigt__p_math_VECTOR,
   &_swigt__p_math_point,
   &_swigt__p_pChar,
@@ -16886,13 +16291,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_sound_base,
   &_swigt__p_std__stackT_fuzzy_obj_t,
   &_swigt__p_std__string,
+  &_swigt__p_std__vectorT_fuzzy_obj_t,
   &_swigt__p_textbox,
   &_swigt__p_unsigned_char,
   &_swigt__p_void,
 };
 
 static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_Button, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_LuaWrap[] = {  {&_swigt__p_LuaWrap, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Physics[] = {  {&_swigt__p_Physics, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ProgressBar[] = {  {&_swigt__p_ProgressBar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Pywrap[] = {  {&_swigt__p_Pywrap, 0, 0, 0},{0, 0, 0, 0}};
@@ -16900,6 +16305,7 @@ static swig_cast_info _swigc__p_SDL_BlendMode[] = {  {&_swigt__p_SDL_BlendMode, 
 static swig_cast_info _swigc__p_SDL_Event[] = {  {&_swigt__p_SDL_Event, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Renderer[] = {  {&_swigt__p_SDL_Renderer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Texture[] = {  {&_swigt__p_SDL_Texture, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ScriptWrap[] = {  {&_swigt__p_ScriptWrap, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Timer[] = {  {&_swigt__p_Timer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Trigger[] = {  {&_swigt__p_Trigger, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_UI[] = {  {&_swigt__p_UI, 0, 0, 0},{0, 0, 0, 0}};
@@ -16912,7 +16318,6 @@ static swig_cast_info _swigc__p_fuzzy_obj[] = {  {&_swigt__p_fuzzy_obj, 0, 0, 0}
 static swig_cast_info _swigc__p_inputKeyboard[] = {  {&_swigt__p_inputKeyboard, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_inputMouse[] = {  {&_swigt__p_inputMouse, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_lua_State[] = {  {&_swigt__p_lua_State, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_math_VECTOR[] = {  {&_swigt__p_math_VECTOR, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
@@ -16920,13 +16325,13 @@ static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 
 static swig_cast_info _swigc__p_sound_base[] = {  {&_swigt__p_sound_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__stackT_fuzzy_obj_t[] = {  {&_swigt__p_std__stackT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_fuzzy_obj_t[] = {  {&_swigt__p_std__vectorT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_textbox[] = {  {&_swigt__p_textbox, 0, 0, 0},  {&_swigt__p_Button, _p_ButtonTo_p_textbox, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Button,
-  _swigc__p_LuaWrap,
   _swigc__p_Physics,
   _swigc__p_ProgressBar,
   _swigc__p_Pywrap,
@@ -16934,6 +16339,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_SDL_Event,
   _swigc__p_SDL_Renderer,
   _swigc__p_SDL_Texture,
+  _swigc__p_ScriptWrap,
   _swigc__p_Timer,
   _swigc__p_Trigger,
   _swigc__p_UI,
@@ -16946,7 +16352,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_inputKeyboard,
   _swigc__p_inputMouse,
   _swigc__p_int,
-  _swigc__p_lua_State,
   _swigc__p_math_VECTOR,
   _swigc__p_math_point,
   _swigc__p_pChar,
@@ -16954,6 +16359,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_sound_base,
   _swigc__p_std__stackT_fuzzy_obj_t,
   _swigc__p_std__string,
+  _swigc__p_std__vectorT_fuzzy_obj_t,
   _swigc__p_textbox,
   _swigc__p_unsigned_char,
   _swigc__p_void,
@@ -17642,12 +17048,11 @@ SWIG_init(void) {
   SWIG_InstallConstants(d,swig_const_table);
   
   SWIG_Python_SetConstant(d, "ENDOFFILE",SWIG_From_int(static_cast< int >(-1)));
+  SWIG_Python_SetConstant(d, "NONE",SWIG_From_int(static_cast< int >(NONE)));
   SWIG_Python_SetConstant(d, "VAR",SWIG_From_int(static_cast< int >(VAR)));
   SWIG_Python_SetConstant(d, "XML",SWIG_From_int(static_cast< int >(XML)));
   SWIG_Python_SetConstant(d, "LUA",SWIG_From_int(static_cast< int >(LUA)));
   SWIG_Python_SetConstant(d, "PYTHON",SWIG_From_int(static_cast< int >(PYTHON)));
-  SWIG_Python_SetConstant(d, "LUA_TOPITEM",SWIG_From_int(static_cast< int >(-1)));
-  SWIG_Python_SetConstant(d, "LUA_ERASE_ALL",SWIG_From_int(static_cast< int >(-1)));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

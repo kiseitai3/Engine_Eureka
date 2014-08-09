@@ -17,10 +17,12 @@ public:
     bool executeFunction(const std::string& funcName);
     bool ClearArgs(int n);
     bool isResultVoid() const;
-    char getResultType(size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
+    char GetResultType(lua_State* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
     void ClearResult();
     lua_State* GetInternalState() const;
     size_t GetArgCount() const;
+    size_t GetResultSize() const;
+
     ~LuaWrap();
 
     //return value extraction methods
@@ -32,12 +34,7 @@ public:
     std::string lua_extractStr(lua_State *results) const;
     double lua_extractDouble(lua_State *results) const;
     void *lua_extractPtr(lua_State *results) const;
-    int lua_extractIntFromList(lua_State *results, unsigned int index) const;
-    bool lua_extractBoolFromList(lua_State *results, unsigned int index) const;
-    std::string lua_extractStrFromList(lua_State *results, unsigned int index) const;
-    char lua_extractCharFromList(lua_State *results, unsigned int index) const;
-    double lua_extractDoubleFromList(lua_State *results, unsigned int index) const;
-    void *lua_extractPtrFromList(lua_State *results, unsigned int index) const;
+    std::vector<fuzzy_obj> GenerateListFromLuaTable();
 
     //Argument methods
     void AddArgument (int argument);

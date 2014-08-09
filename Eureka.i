@@ -19,7 +19,6 @@
 #include "scriptwrap.h"
 #include "plugin.h"
 #include "game.h"
-#include "luawrap.h"
 %}
 
 /* Let's just grab the original header file here */
@@ -40,4 +39,3 @@
 %include "scriptwrap.h"
 %include "plugin.h"
 %include "game.h"
-%include "luawrap.h"

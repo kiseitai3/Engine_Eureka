@@ -48,7 +48,50 @@ bool Pywrap::isResultVoid(PyObject* result) const
     return result == Py_None;
 }
 
-char Pywrap::GetResultType(PyObject* result, size_t& length = 0) const
+int Pywrap::GenerateListFromPyTuple(PyObject* obj, std::vector<fuzzy_obj>& response)
+{
+    /*Works like the method in the Lua API, but does not imply the destruction of the result data.
+    It's one of the differences between the underlying APIs of Python and Lua!
+    */
+    size_t s = GetSizeOfResult(obj);
+    int status = 0;
+    std::vector<fuzzy_obj> tmp;
+    for(size_t i = 0; i < s; i++)
+    {
+        fuzzy_obj n;
+        n.flag = GetResultType(GetItemFromResultList(obj, i));
+        switch(n.flag)
+        {
+        case 'i':
+            n.number = py_extractIntFromList(obj, i);
+            break;
+        case 'd':
+            n.decimal = py_extractDoubleFromList(obj, i);
+            break;
+        case 'b':
+            n.answer = py_extractBoolFromList(obj, i);
+            break;
+        case 'c':
+            n.c = py_extractCharFromList(obj, i);
+            break;
+        case 's':
+            n.str = py_extractStrFromList(obj, i);
+            break;
+        case 'v':
+            n.ptr = py_extractPtrFromList(obj, i);
+            break;
+        default:
+            std::cout << "Error: Argument from array returned by script function is not a valid type! "
+            << "Wow, the cake is a lie!" << std::endl;
+            status = 1;
+        }
+        tmp.push_back(n);
+    }
+    response = tmp;
+    return status;
+}
+
+char Pywrap::GetResultType(PyObject* result, size_t length) const
 {
     if(PyFloat_Check(result))
         return 'd';

@@ -13017,9 +13017,11 @@
 	"conversion.h"
 	<iostream>
 
-1407613045 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1407635665 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
+	<vector>
+	"game.h"
 
 1374252744 c:\users\kiseitai2\documents\dev-cpp projects\include\boost\python.hpp
 	<boost/python/args.hpp>
@@ -18782,7 +18784,9 @@
 	"textbox.h"
 	"ui.h"
 
-1407356116 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
+1407625936 c:\users\kiseitai2\documents\devcb\engine_eureka\globals.h
+	<stack>
+	"game.h"
 
 1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\textbox.h
 	<iostream>
@@ -19203,7 +19207,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1407114386 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
+1407619791 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -19266,11 +19270,17 @@
 
 1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
 
-1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
+1407633394 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
+	<vector>
+	"game.h"
+	"pywrap.h"
+	"luawrap.h"
+	"typedefs.h"
 
-1407107760 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
+1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
 
-1407113352 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+1407625902 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+	<iostream>
 
 1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -19599,4 +19609,63 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1407619792 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_lua.cxx
+	<string.h>
+	"lua.h"
+	"lauxlib.h"
+	<stdlib.h>
+	<assert.h>
+	"physics.h"
+	"data_base.h"
+	"draw_base.h"
+	"ui.h"
+	"unit.h"
+	"textbox.h"
+	"button.h"
+	"trigger.h"
+	"sound_baseB.h"
+	"Timer.h"
+	"progressbar.h"
+	"globals.h"
+	"conversion.h"
+	"input.h"
+	"scriptwrap.h"
+	"plugin.h"
+	"game.h"
+
+1384175356 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lua.h
+	<stdarg.h>
+	<stddef.h>
+	"luaconf.h"
+
+1365792527 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\luaconf.h
+	<limits.h>
+	<stddef.h>
+	<stdio.h>
+	<math.h>
+
+1365792527 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lauxlib.h
+	<stddef.h>
+	<stdio.h>
+	"lua.h"
+
+1407625979 c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.h
+	<lua.hpp>
+	<string>
+	<iostream>
+	<stack>
+	<vector>
+	"game.h"
+	"globals.h"
+
+1103766784 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lua.hpp
+	"lua.h"
+	"lualib.h"
+	"lauxlib.h"
+
+1365792527 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lualib.h
+	"lua.h"
+
+1407630058 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
 

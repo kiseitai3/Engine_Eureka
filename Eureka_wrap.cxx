@@ -2948,10 +2948,10 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_UI swig_types[11]
 #define SWIGTYPE_p_Uint8 swig_types[12]
 #define SWIGTYPE_p_Unit swig_types[13]
-#define SWIGTYPE_p_char swig_types[14]
-#define SWIGTYPE_p_data_base swig_types[15]
-#define SWIGTYPE_p_draw_base swig_types[16]
-#define SWIGTYPE_p_fuzzy_obj swig_types[17]
+#define SWIGTYPE_p_bool swig_types[14]
+#define SWIGTYPE_p_char swig_types[15]
+#define SWIGTYPE_p_data_base swig_types[16]
+#define SWIGTYPE_p_draw_base swig_types[17]
 #define SWIGTYPE_p_inputKeyboard swig_types[18]
 #define SWIGTYPE_p_inputMouse swig_types[19]
 #define SWIGTYPE_p_int swig_types[20]
@@ -2960,14 +2960,15 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_pChar swig_types[23]
 #define SWIGTYPE_p_psudo_type swig_types[24]
 #define SWIGTYPE_p_sound_base swig_types[25]
-#define SWIGTYPE_p_std__stackT_fuzzy_obj_t swig_types[26]
+#define SWIGTYPE_p_std__stackT_psudo_type_t swig_types[26]
 #define SWIGTYPE_p_std__string swig_types[27]
-#define SWIGTYPE_p_std__vectorT_fuzzy_obj_t swig_types[28]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[28]
 #define SWIGTYPE_p_textbox swig_types[29]
 #define SWIGTYPE_p_unsigned_char swig_types[30]
 #define SWIGTYPE_p_void swig_types[31]
-static swig_type_info *swig_types[33];
-static swig_module_info swig_module = {swig_types, 32, 0, 0, 0, 0};
+#define SWIGTYPE_p_void_ptr swig_types[32]
+static swig_type_info *swig_types[34];
+static swig_module_info swig_module = {swig_types, 33, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -13296,10 +13297,10 @@ SWIGINTERN PyObject *_wrap_reverseOrderStack(PyObject *SWIGUNUSEDPARM(self), PyO
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  SwigValueWrapper< std::stack< fuzzy_obj > > result;
+  SwigValueWrapper< std::stack< psudo_type > > result;
   
   if (!PyArg_ParseTuple(args,(char *)"O:reverseOrderStack",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__stackT_fuzzy_obj_t,  0  | 0);
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_std__stackT_psudo_type_t,  0  | 0);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "reverseOrderStack" "', argument " "1"" of type '" "std::stack< fuzzy_obj > const &""'"); 
   }
@@ -13307,8 +13308,8 @@ SWIGINTERN PyObject *_wrap_reverseOrderStack(PyObject *SWIGUNUSEDPARM(self), PyO
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "reverseOrderStack" "', argument " "1"" of type '" "std::stack< fuzzy_obj > const &""'"); 
   }
   arg1 = reinterpret_cast< std::stack< fuzzy_obj > * >(argp1);
-  result = reverseOrderStack((std::stack< fuzzy_obj > const &)*arg1);
-  resultobj = SWIG_NewPointerObj((new std::stack< fuzzy_obj >(static_cast< const std::stack< fuzzy_obj >& >(result))), SWIGTYPE_p_std__stackT_fuzzy_obj_t, SWIG_POINTER_OWN |  0 );
+  result = reverseOrderStack((std::stack< psudo_type > const &)*arg1);
+  resultobj = SWIG_NewPointerObj((new std::stack< fuzzy_obj >(static_cast< const std::stack< fuzzy_obj >& >(result))), SWIGTYPE_p_std__stackT_psudo_type_t, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -15259,6 +15260,7 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_0(PyObject *SWIGUNUS
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  int result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
@@ -15274,7 +15276,7 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_0(PyObject *SWIGUNUS
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
   }
   arg2 = reinterpret_cast< std::string * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_fuzzy_obj_t,  0  | 0);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
   if (!SWIG_IsOK(res3)) {
     SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
   }
@@ -15282,8 +15284,8 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_0(PyObject *SWIGUNUS
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
   }
   arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
-  (arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
-  resultobj = SWIG_Py_Void();
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -15295,18 +15297,22 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_1(PyObject *SWIGUNUS
   ScriptWrap *arg1 = (ScriptWrap *) 0 ;
   std::string *arg2 = 0 ;
   std::vector< fuzzy_obj > *arg3 = 0 ;
+  int *arg4 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   void *argp3 = 0 ;
   int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
-  void *result = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
@@ -15320,7 +15326,7 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_1(PyObject *SWIGUNUS
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
   }
   arg2 = reinterpret_cast< std::string * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_fuzzy_obj_t,  0  | 0);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
   if (!SWIG_IsOK(res3)) {
     SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
   }
@@ -15328,8 +15334,306 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_1(PyObject *SWIGUNUS
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
   }
   arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
-  result = (void *)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "int &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "int &""'"); 
+  }
+  arg4 = reinterpret_cast< int * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  bool *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_bool,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "bool &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "bool &""'"); 
+  }
+  arg4 = reinterpret_cast< bool * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  char *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_char,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "char &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "char &""'"); 
+  }
+  arg4 = reinterpret_cast< char * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__string,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "std::string &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "std::string &""'"); 
+  }
+  arg4 = reinterpret_cast< std::string * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  void_ptr *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_void_ptr,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "void_ptr &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "void_ptr &""'"); 
+  }
+  arg4 = reinterpret_cast< void_ptr * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  std::vector< fuzzy_obj > *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:ScriptWrap_executeFunction",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScriptWrap, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScriptWrap_executeFunction" "', argument " "1"" of type '" "ScriptWrap *""'"); 
+  }
+  arg1 = reinterpret_cast< ScriptWrap * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "2"" of type '" "std::string const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_psudo_type_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "3"" of type '" "std::vector< fuzzy_obj > const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_std__vectorT_psudo_type_t,  0 );
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "std::vector< fuzzy_obj > &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScriptWrap_executeFunction" "', argument " "4"" of type '" "std::vector< fuzzy_obj > &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< fuzzy_obj > * >(argp4);
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -15338,12 +15642,12 @@ fail:
 
 SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[4];
+  PyObject *argv[5];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 3) {
@@ -15355,7 +15659,7 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction(PyObject *self, PyObject *
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0);
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
           return _wrap_ScriptWrap_executeFunction__SWIG_0(self, args);
@@ -15363,7 +15667,7 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction(PyObject *self, PyObject *
       }
     }
   }
-  if (argc == 3) {
+  if (argc == 4) {
     int _v;
     void *vptr = 0;
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
@@ -15372,10 +15676,125 @@ SWIGINTERN PyObject *_wrap_ScriptWrap_executeFunction(PyObject *self, PyObject *
       int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0);
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_ScriptWrap_executeFunction__SWIG_1(self, args);
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_int, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_1(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_bool, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_2(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_char, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_3(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_std__string, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_4(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_void_ptr, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_5(self, args);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScriptWrap, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_std__string, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          void *vptr = 0;
+          int res = SWIG_ConvertPtr(argv[3], &vptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_6(self, args);
+          }
         }
       }
     }
@@ -15385,7 +15804,12 @@ fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ScriptWrap_executeFunction'.\n"
     "  Possible C/C++ prototypes are:\n"
     "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n"
-    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n");
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,int &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,bool &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,char &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,std::string &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,void_ptr &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,std::vector< fuzzy_obj > &)\n");
   return 0;
 }
 
@@ -16243,24 +16667,25 @@ static swig_type_info _swigt__p_Trigger = {"_p_Trigger", "Trigger *", 0, 0, (voi
 static swig_type_info _swigt__p_UI = {"_p_UI", "UI *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Uint8 = {"_p_Uint8", "Uint8 *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Unit = {"_p_Unit", "Unit *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_bool = {"_p_bool", "bool *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_data_base = {"_p_data_base", "data_base *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_draw_base = {"_p_draw_base", "draw_base *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_fuzzy_obj = {"_p_fuzzy_obj", "fuzzy_obj *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_inputKeyboard = {"_p_inputKeyboard", "inputKeyboard *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_inputMouse = {"_p_inputMouse", "inputMouse *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_math_VECTOR = {"_p_math_VECTOR", "math_VECTOR *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_math_point = {"_p_math_point", "math_point *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pChar = {"_p_pChar", "pChar *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *|fuzzy_obj *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_sound_base = {"_p_sound_base", "sound_base *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__stackT_fuzzy_obj_t = {"_p_std__stackT_fuzzy_obj_t", "std::stack< fuzzy_obj > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__stackT_psudo_type_t = {"_p_std__stackT_psudo_type_t", "std::stack< fuzzy_obj > *|std::stack< psudo_type > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_fuzzy_obj_t = {"_p_std__vectorT_fuzzy_obj_t", "std::vector< fuzzy_obj > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_psudo_type_t = {"_p_std__vectorT_psudo_type_t", "std::vector< fuzzy_obj > *|std::vector< psudo_type > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_textbox = {"_p_textbox", "textbox *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_void_ptr = {"_p_void_ptr", "void_ptr *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Button,
@@ -16277,10 +16702,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_UI,
   &_swigt__p_Uint8,
   &_swigt__p_Unit,
+  &_swigt__p_bool,
   &_swigt__p_char,
   &_swigt__p_data_base,
   &_swigt__p_draw_base,
-  &_swigt__p_fuzzy_obj,
   &_swigt__p_inputKeyboard,
   &_swigt__p_inputMouse,
   &_swigt__p_int,
@@ -16289,12 +16714,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_pChar,
   &_swigt__p_psudo_type,
   &_swigt__p_sound_base,
-  &_swigt__p_std__stackT_fuzzy_obj_t,
+  &_swigt__p_std__stackT_psudo_type_t,
   &_swigt__p_std__string,
-  &_swigt__p_std__vectorT_fuzzy_obj_t,
+  &_swigt__p_std__vectorT_psudo_type_t,
   &_swigt__p_textbox,
   &_swigt__p_unsigned_char,
   &_swigt__p_void,
+  &_swigt__p_void_ptr,
 };
 
 static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_Button, 0, 0, 0},{0, 0, 0, 0}};
@@ -16311,10 +16737,10 @@ static swig_cast_info _swigc__p_Trigger[] = {  {&_swigt__p_Trigger, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_UI[] = {  {&_swigt__p_UI, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Uint8[] = {  {&_swigt__p_Uint8, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Unit[] = {  {&_swigt__p_Unit, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_bool[] = {  {&_swigt__p_bool, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_data_base[] = {  {&_swigt__p_data_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_draw_base[] = {  {&_swigt__p_draw_base, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_fuzzy_obj[] = {  {&_swigt__p_fuzzy_obj, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_inputKeyboard[] = {  {&_swigt__p_inputKeyboard, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_inputMouse[] = {  {&_swigt__p_inputMouse, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
@@ -16323,12 +16749,13 @@ static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sound_base[] = {  {&_swigt__p_sound_base, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__stackT_fuzzy_obj_t[] = {  {&_swigt__p_std__stackT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__stackT_psudo_type_t[] = {  {&_swigt__p_std__stackT_psudo_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_fuzzy_obj_t[] = {  {&_swigt__p_std__vectorT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_psudo_type_t[] = {  {&_swigt__p_std__vectorT_psudo_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_textbox[] = {  {&_swigt__p_textbox, 0, 0, 0},  {&_swigt__p_Button, _p_ButtonTo_p_textbox, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_void_ptr[] = {  {&_swigt__p_void_ptr, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Button,
@@ -16345,10 +16772,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_UI,
   _swigc__p_Uint8,
   _swigc__p_Unit,
+  _swigc__p_bool,
   _swigc__p_char,
   _swigc__p_data_base,
   _swigc__p_draw_base,
-  _swigc__p_fuzzy_obj,
   _swigc__p_inputKeyboard,
   _swigc__p_inputMouse,
   _swigc__p_int,
@@ -16357,12 +16784,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_pChar,
   _swigc__p_psudo_type,
   _swigc__p_sound_base,
-  _swigc__p_std__stackT_fuzzy_obj_t,
+  _swigc__p_std__stackT_psudo_type_t,
   _swigc__p_std__string,
-  _swigc__p_std__vectorT_fuzzy_obj_t,
+  _swigc__p_std__vectorT_psudo_type_t,
   _swigc__p_textbox,
   _swigc__p_unsigned_char,
   _swigc__p_void,
+  _swigc__p_void_ptr,
 };
 
 
@@ -17048,6 +17476,10 @@ SWIG_init(void) {
   SWIG_InstallConstants(d,swig_const_table);
   
   SWIG_Python_SetConstant(d, "ENDOFFILE",SWIG_From_int(static_cast< int >(-1)));
+  SWIG_Python_SetConstant(d, "ERROR_EXEC_FAILURE",SWIG_From_int(static_cast< int >(1)));
+  SWIG_Python_SetConstant(d, "ERROR_UNKNOWN_ARG",SWIG_From_int(static_cast< int >(2)));
+  SWIG_Python_SetConstant(d, "ERROR_NOT_A_SCRIPT",SWIG_From_int(static_cast< int >(3)));
+  SWIG_Python_SetConstant(d, "EXIT_SUCCESS",SWIG_From_int(static_cast< int >(0)));
   SWIG_Python_SetConstant(d, "NONE",SWIG_From_int(static_cast< int >(NONE)));
   SWIG_Python_SetConstant(d, "VAR",SWIG_From_int(static_cast< int >(VAR)));
   SWIG_Python_SetConstant(d, "XML",SWIG_From_int(static_cast< int >(XML)));

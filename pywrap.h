@@ -3,6 +3,8 @@
 //Includes
 #include <Python.h>
 #include <string>
+#include <vector>
+#include "game.h"
 
 //class
 class Pywrap
@@ -36,17 +38,18 @@ class Pywrap
     void CleanCPyObjInArgs();
     bool isFileLoaded() const;
     bool isResultVoid(PyObject* result) const;
-    char GetResultType(PyObject* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
+    char GetResultType(PyObject* result, size_t length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
     size_t GetSizeOfResult(PyObject* result);
     PyObject *GetItemFromResultList(PyObject* result, size_t i);
+    int GenerateListFromPyTuple(PyObject* obj, std::vector<fuzzy_obj>& response);//This method is not as dangerous as the one in the Lua API!
     ~Pywrap();//destructor
     //Oveloads
-    void AddArgument (int argument, unsigned int index);
-    void AddArgument (std::string argument, unsigned int index);
-    void AddArgument (char argument, unsigned int index);
-    void AddArgument (double argument, unsigned int index);
-    void AddArgument (PyObject *argument, unsigned int index);
-    void AddArgument(unsigned int argument, unsigned int index);
+    void AddArgument (int argument);
+    void AddArgument (std::string argument);
+    void AddArgument (char argument);
+    void AddArgument (double argument);
+    void AddArgument (PyObject *argument);
+    void AddArgument(unsigned int argument);
 
     //Py Conversion Functions with overloads
     /*All functions in this block take care of the extraction of a C type from a generalized object

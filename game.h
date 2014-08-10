@@ -1,5 +1,6 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+#include <iostream>
 
 enum FileTypes
 {
@@ -18,7 +19,7 @@ typedef struct psudo_type{
         psudo_type()
         {
             flag = 'n';
-            number = 0; answer = false; char = 0; str = ""; uNumber = 0; decimal = 0.0f; ptr = NULL;// var init!
+            number = 0; answer = false; c = 0; str = ""; uNumber = 0; decimal = 0.0f; ptr = NULL;// var init!
         }
     }unknown_return, fuzzy_obj;//The purpose of this struct is to have a type in which I can store an unknown return from a python or lua function without having to write overloads for each c++ functions that will handle a return from python.
 

@@ -691,6 +691,10 @@ class inputKeyboard(_object):
 inputKeyboard_swigregister = _Eureka.inputKeyboard_swigregister
 inputKeyboard_swigregister(inputKeyboard)
 
+ERROR_EXEC_FAILURE = _Eureka.ERROR_EXEC_FAILURE
+ERROR_UNKNOWN_ARG = _Eureka.ERROR_UNKNOWN_ARG
+ERROR_NOT_A_SCRIPT = _Eureka.ERROR_NOT_A_SCRIPT
+EXIT_SUCCESS = _Eureka.EXIT_SUCCESS
 class ScriptWrap(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ScriptWrap, name, value)

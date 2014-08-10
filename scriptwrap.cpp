@@ -38,10 +38,10 @@ bool ScriptWrap::isInitialized() const
     return scriptMode != NONE;
 }
 
-void ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -75,6 +75,7 @@ void ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
@@ -112,6 +113,7 @@ void ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
@@ -122,14 +124,15 @@ void ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
         << "Program will continue as normal but may result in undefined behavior!"
         << std::endl;
-        execSuccess = false;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, int& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -163,13 +166,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractInt(luaScript->GetInternalState());
+            response = luaScript->lua_extractInt(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return 0;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -203,25 +207,28 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        return pyScript->py_extractInt(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractInt(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return 0;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-double ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, double& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -255,13 +262,14 @@ double ScriptWrap::executeFunction(const std::string& name, const std::vector<fu
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractDouble(luaScript->GetInternalState());
+            response = luaScript->lua_extractDouble(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return 0;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -295,25 +303,28 @@ double ScriptWrap::executeFunction(const std::string& name, const std::vector<fu
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        return pyScript->py_extractDouble(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractDouble(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return 0;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-char ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, char& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -347,13 +358,14 @@ char ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractChar(luaScript->GetInternalState());
+            response = luaScript->lua_extractChar(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return 0;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -387,25 +399,28 @@ char ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        return pyScript->py_extractChar(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractChar(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return 0;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-bool ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, bool& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -439,13 +454,14 @@ bool ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractBool(luaScript->GetInternalState());
+            response = luaScript->lua_extractBool(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return false;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -479,25 +495,28 @@ bool ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        return pyScript->py_extractBool(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractBool(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return false;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-std::string ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::string& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -531,13 +550,14 @@ std::string ScriptWrap::executeFunction(const std::string& name, const std::vect
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractStr(luaScript->GetInternalState());
+            response = luaScript->lua_extractStr(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return "";
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -571,26 +591,28 @@ std::string ScriptWrap::executeFunction(const std::string& name, const std::vect
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        return pyScript->py_extractStr(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractStr(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return "";
-
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-void* ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, void_ptr& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -624,13 +646,14 @@ void* ScriptWrap::executeFunction(const std::string& name, const std::vector<fuz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                        execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         if(luaScript->executeFunction(name))
-            return luaScript->lua_extractPtr(luaScript->GetInternalState());
+            response = luaScript->lua_extractPtr(luaScript->GetInternalState());
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
-        return NULL;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -664,26 +687,28 @@ void* ScriptWrap::executeFunction(const std::string& name, const std::vector<fuz
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG
                 }
             }
         }
-        return pyScript->py_extractPtr(pyScript->executeReturnF(name.c_str()));
+        PyObject* obj = pyScript->executeReturnF(name.c_str());
+        response = pyScript->py_extractPtr(obj);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return NULL;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
-std::vector<fuzzy_obj> ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args)
+int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::vector<fuzzy_obj>& response)
 {
     size_t argCount = args.size();
-    execSuccess = true;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
-    std::vector<fuzzy_obj> tmp;
+    size_t execStatus = EXIT_SUCCESS;//Set the flag here in anticipation of success. It will be changed if the method fails to execute the script!
     switch(scriptMode)
     {
     case LUA:
@@ -717,11 +742,14 @@ std::vector<fuzzy_obj> ScriptWrap::executeFunction(const std::string& name, cons
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
-        luaScript->executeFunction(name.c_str()));
-        return luaScript->GenerateListFromLuaTable();
+        if(luaScript->executeFunction(name.c_str()))
+            response = luaScript->GenerateListFromLuaTable();
+        std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
+        execStatus = ERROR_EXEC_FAILURE;
         break;
 
     case PYTHON:
@@ -755,50 +783,22 @@ std::vector<fuzzy_obj> ScriptWrap::executeFunction(const std::string& name, cons
                         << "undefined behavior! Argument Flag:" << args[i].flag << " Argument Values: " << args[i].number << "; "
                         << args[i].uNumber << "; " << args[i].c << "; " << args[i].answer << "; " << args[i].str << "; "
                         << std::endl;
+                    execStatus = ERROR_UNKNOWN_ARG;
                 }
             }
         }
         PyObject* obj = pyScript->executeReturnF(name.c_str()));
-        size_t s = pyScript->GetSizeOfResult(obj);
-        for(size_t i = 0; i < s; i++)
-        {
-            fuzzy_obj n;
-            n.flag = pyScript->GetResultType(pyScript->GetItemFromResultList(obj, i));
-            switch(n.flag)
-            {
-            case 'i':
-                 tmp.push_back(pyScript->py_extractIntFromList(obj, i));
-                 break;
-            case 'd':
-                tmp.push_back(pyScript->py_extractDoubleFromList(obj, i));
-                break;
-            case 'b':
-                tmp.push_back(pyScript->py_extractBoolFromList(obj, i));
-                break;
-            case 'c':
-                tmp.push_back(pyScript->py_extractCharFromList(obj, i));
-                break;
-            case 's':
-                tmp.push_back(pyScript->py_extractStrFromList(obj, i));
-                break;
-            case 'v':
-                tmp.push_back(pyScript->py_extractPtrFromList(obj, i));
-                break;
-            default:
-                std::cout << "Error: Argument from array returned by script function is not a valid type! "
-                    << "Wow, the cake is a lie!" << std::endl;
-            }
-        }
-        return tmp;
+        pyScript->GenerateListFromPyTuple(obj, response);
+        pyScript->DecreaseRef(obj);
         break;
 
     default:
         std::cout << "Warning: Program tried to execute function when no script was initialized! "
             << "Program will continue as normal but may result in undefined behavior!"
             << std::endl;
-        execSuccess = false;
-        return tmp;
+        execStatus = ERROR_NOT_A_SCRIPT;
     }
+    return execStatus;
 }
 
 ScriptWrap::~ScriptWrap()

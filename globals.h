@@ -1,9 +1,13 @@
 #ifndef GLOBALS_H_INCLUDED
 #define GLOBALS_H_INCLUDED
+#include <stack>
+#include "game.h"
+
+
 class data_base;
 class Unit;
 struct math_point;
-struct fuzzy_obj;
+class SDL_Renderer;
 bool init();
 void FrameCapper();
 void SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero = false, bool hasBars = false);

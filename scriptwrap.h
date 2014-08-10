@@ -6,18 +6,26 @@
 #include "luawrap.h"
 #include "typedefs.h"
 
+#define ERROR_EXEC_FAILURE 1
+#define ERROR_UNKNOWN_ARG 2
+#define ERROR_NOT_A_SCRIPT 3
+
+#ifndef EXIT_SUCCESS
+#define EXIT_SUCCESS 0
+#endif
+
 class ScriptWrap
 {
 public:
     ScriptWrap(const char* file);
     //Execution methods with all of the overload that are necessary to execute most script functions.
-    void executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
-    bool executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
-    char executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
-    std::string executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
-    void* executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
-    std::vector<fuzzy_obj> executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, int& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, bool& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, char& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::string& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, void_ptr& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::vector<fuzzy_obj>& response);
 
     bool isInitialized() const;
     ~ScriptWrap();
@@ -25,7 +33,6 @@ public:
 private:
     Pywrap* pyScript;
     LuaWrap* luaScript;
-    bool execSuccess;
     byte scriptMode;//Uses the FileTypes enum to set the mode. This
 };
 

@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <stack>
+#include <vector>
 #include "game.h"
 #include "globals.h"
 
@@ -17,7 +18,7 @@ public:
     bool executeFunction(const std::string& funcName);
     bool ClearArgs(int n);
     bool isResultVoid() const;
-    char GetResultType(lua_State* result, size_t& length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
+    char GetResultType(lua_State* result, size_t length = 0) const;//Returns i, b, d, s for int, boolean, double, and string. Use the length parameter to distinguish between char and string.
     void ClearResult();
     lua_State* GetInternalState() const;
     size_t GetArgCount() const;

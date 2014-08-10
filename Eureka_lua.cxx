@@ -1876,25 +1876,27 @@ SWIG_Lua_dostring(lua_State *L, const char* str) {
 #define SWIGTYPE_p_UI swig_types[11]
 #define SWIGTYPE_p_Uint8 swig_types[12]
 #define SWIGTYPE_p_Unit swig_types[13]
-#define SWIGTYPE_p_data_base swig_types[14]
-#define SWIGTYPE_p_draw_base swig_types[15]
-#define SWIGTYPE_p_fuzzy_obj swig_types[16]
-#define SWIGTYPE_p_inputKeyboard swig_types[17]
-#define SWIGTYPE_p_inputMouse swig_types[18]
-#define SWIGTYPE_p_int swig_types[19]
-#define SWIGTYPE_p_math_VECTOR swig_types[20]
-#define SWIGTYPE_p_math_point swig_types[21]
-#define SWIGTYPE_p_pChar swig_types[22]
-#define SWIGTYPE_p_psudo_type swig_types[23]
-#define SWIGTYPE_p_sound_base swig_types[24]
-#define SWIGTYPE_p_std__stackT_fuzzy_obj_t swig_types[25]
-#define SWIGTYPE_p_std__string swig_types[26]
-#define SWIGTYPE_p_std__vectorT_fuzzy_obj_t swig_types[27]
-#define SWIGTYPE_p_textbox swig_types[28]
-#define SWIGTYPE_p_unsigned_char swig_types[29]
-#define SWIGTYPE_p_void swig_types[30]
-static swig_type_info *swig_types[32];
-static swig_module_info swig_module = {swig_types, 31, 0, 0, 0, 0};
+#define SWIGTYPE_p_bool swig_types[14]
+#define SWIGTYPE_p_char swig_types[15]
+#define SWIGTYPE_p_data_base swig_types[16]
+#define SWIGTYPE_p_draw_base swig_types[17]
+#define SWIGTYPE_p_inputKeyboard swig_types[18]
+#define SWIGTYPE_p_inputMouse swig_types[19]
+#define SWIGTYPE_p_int swig_types[20]
+#define SWIGTYPE_p_math_VECTOR swig_types[21]
+#define SWIGTYPE_p_math_point swig_types[22]
+#define SWIGTYPE_p_pChar swig_types[23]
+#define SWIGTYPE_p_psudo_type swig_types[24]
+#define SWIGTYPE_p_sound_base swig_types[25]
+#define SWIGTYPE_p_std__stackT_psudo_type_t swig_types[26]
+#define SWIGTYPE_p_std__string swig_types[27]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[28]
+#define SWIGTYPE_p_textbox swig_types[29]
+#define SWIGTYPE_p_unsigned_char swig_types[30]
+#define SWIGTYPE_p_void swig_types[31]
+#define SWIGTYPE_p_void_ptr swig_types[32]
+static swig_type_info *swig_types[34];
+static swig_module_info swig_module = {swig_types, 33, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -11184,19 +11186,19 @@ fail:
 static int _wrap_reverseOrderStack(lua_State* L) {
   int SWIG_arg = 0;
   std::stack< fuzzy_obj > *arg1 = 0 ;
-  SwigValueWrapper< std::stack< fuzzy_obj > > result;
+  SwigValueWrapper< std::stack< psudo_type > > result;
   
   SWIG_check_num_args("reverseOrderStack",1,1)
   if(!lua_isuserdata(L,1)) SWIG_fail_arg("reverseOrderStack",1,"std::stack< fuzzy_obj > const &");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__stackT_fuzzy_obj_t,0))){
-    SWIG_fail_ptr("reverseOrderStack",1,SWIGTYPE_p_std__stackT_fuzzy_obj_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_std__stackT_psudo_type_t,0))){
+    SWIG_fail_ptr("reverseOrderStack",1,SWIGTYPE_p_std__stackT_psudo_type_t);
   }
   
-  result = reverseOrderStack((std::stack< fuzzy_obj > const &)*arg1);
+  result = reverseOrderStack((std::stack< psudo_type > const &)*arg1);
   {
     std::stack< fuzzy_obj > * resultptr = new std::stack< fuzzy_obj >((const std::stack< fuzzy_obj > &) result);
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__stackT_fuzzy_obj_t,1); SWIG_arg++;
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__stackT_psudo_type_t,1); SWIG_arg++;
   }
   return SWIG_arg;
   
@@ -12899,6 +12901,7 @@ static int _wrap_ScriptWrap_executeFunction__SWIG_0(lua_State* L) {
   ScriptWrap *arg1 = (ScriptWrap *) 0 ;
   std::string *arg2 = 0 ;
   std::vector< fuzzy_obj > *arg3 = 0 ;
+  int result;
   
   SWIG_check_num_args("ScriptWrap::executeFunction",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
@@ -12915,12 +12918,12 @@ static int _wrap_ScriptWrap_executeFunction__SWIG_0(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_fuzzy_obj_t,0))){
-    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_fuzzy_obj_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
   }
   
-  (arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
-  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -12936,12 +12939,14 @@ static int _wrap_ScriptWrap_executeFunction__SWIG_1(lua_State* L) {
   ScriptWrap *arg1 = (ScriptWrap *) 0 ;
   std::string *arg2 = 0 ;
   std::vector< fuzzy_obj > *arg3 = 0 ;
-  void *result = 0 ;
+  int *arg4 = 0 ;
+  int result;
   
-  SWIG_check_num_args("ScriptWrap::executeFunction",3,3)
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
   if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
   if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"int &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
     SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
@@ -12953,12 +12958,242 @@ static int _wrap_ScriptWrap_executeFunction__SWIG_1(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_fuzzy_obj_t,0))){
-    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_fuzzy_obj_t);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
   }
   
-  result = (void *)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_void,0); SWIG_arg++; 
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_int,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_int);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_executeFunction__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  bool *arg4 = 0 ;
+  int result;
+  
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"bool &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",2,SWIGTYPE_p_std__string);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_bool,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_bool);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_executeFunction__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  char *arg4 = 0 ;
+  int result;
+  
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"char &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",2,SWIGTYPE_p_std__string);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_char,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_char);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_executeFunction__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  int result;
+  
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"std::string &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",2,SWIGTYPE_p_std__string);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_std__string);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_executeFunction__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  void_ptr *arg4 = 0 ;
+  int result;
+  
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"void_ptr &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",2,SWIGTYPE_p_std__string);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_void_ptr,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_void_ptr);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_executeFunction__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  std::vector< fuzzy_obj > *arg3 = 0 ;
+  std::vector< fuzzy_obj > *arg4 = 0 ;
+  int result;
+  
+  SWIG_check_num_args("ScriptWrap::executeFunction",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::executeFunction",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::executeFunction",2,"std::string const &");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("ScriptWrap::executeFunction",3,"std::vector< fuzzy_obj > const &");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("ScriptWrap::executeFunction",4,"std::vector< fuzzy_obj > &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",2,SWIGTYPE_p_std__string);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",3,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_std__vectorT_psudo_type_t,0))){
+    SWIG_fail_ptr("ScriptWrap_executeFunction",4,SWIGTYPE_p_std__vectorT_psudo_type_t);
+  }
+  
+  result = (int)(arg1)->executeFunction((std::string const &)*arg2,(std::vector< fuzzy_obj > const &)*arg3,*arg4);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -12971,8 +13206,8 @@ fail:
 
 static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
   int argc;
-  int argv[4]={
-    1,2,3,4
+  int argv[5]={
+    1,2,3,4,5
   };
   
   argc = lua_gettop(L);
@@ -12998,7 +13233,7 @@ static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
       if (_v) {
         {
           void *ptr;
-          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0)) {
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
             _v = 0;
           } else {
             _v = 1;
@@ -13010,7 +13245,7 @@ static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
       }
     }
   }
-  if (argc == 3) {
+  if (argc == 4) {
     int _v;
     {
       void *ptr;
@@ -13032,14 +13267,244 @@ static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
       if (_v) {
         {
           void *ptr;
-          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_fuzzy_obj_t, 0)) {
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
             _v = 0;
           } else {
             _v = 1;
           }
         }
         if (_v) {
-          return _wrap_ScriptWrap_executeFunction__SWIG_1(L);
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_int, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_bool, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_2(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_char, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_3(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_4(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_void_ptr, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_5(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (lua_isuserdata(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            void *ptr;
+            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0)) {
+              _v = 0;
+            } else {
+              _v = 1;
+            }
+          }
+          if (_v) {
+            return _wrap_ScriptWrap_executeFunction__SWIG_6(L);
+          }
         }
       }
     }
@@ -13048,7 +13513,12 @@ static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'ScriptWrap_executeFunction'\n"
     "  Possible C/C++ prototypes are:\n"
     "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n"
-    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &)\n");
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,int &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,bool &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,char &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,std::string &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,void_ptr &)\n"
+    "    ScriptWrap::executeFunction(std::string const &,std::vector< fuzzy_obj > const &,std::vector< fuzzy_obj > &)\n");
   lua_error(L);return 0;
 }
 
@@ -13616,6 +14086,10 @@ static swig_lua_var_info swig_variables[] = {
 
 static swig_lua_const_info swig_constants[] = {
     {SWIG_LUA_CONSTTAB_INT("ENDOFFILE", -1)},
+    {SWIG_LUA_CONSTTAB_INT("ERROR_EXEC_FAILURE", 1)},
+    {SWIG_LUA_CONSTTAB_INT("ERROR_UNKNOWN_ARG", 2)},
+    {SWIG_LUA_CONSTTAB_INT("ERROR_NOT_A_SCRIPT", 3)},
+    {SWIG_LUA_CONSTTAB_INT("EXIT_SUCCESS", 0)},
     {SWIG_LUA_CONSTTAB_INT("NONE", NONE)},
     {SWIG_LUA_CONSTTAB_INT("VAR", VAR)},
     {SWIG_LUA_CONSTTAB_INT("XML", XML)},
@@ -13643,23 +14117,25 @@ static swig_type_info _swigt__p_Trigger = {"_p_Trigger", "Trigger *", 0, 0, (voi
 static swig_type_info _swigt__p_UI = {"_p_UI", "UI *", 0, 0, (void*)&_wrap_class_UI, 0};
 static swig_type_info _swigt__p_Uint8 = {"_p_Uint8", "Uint8 *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Unit = {"_p_Unit", "Unit *", 0, 0, (void*)&_wrap_class_Unit, 0};
+static swig_type_info _swigt__p_bool = {"_p_bool", "bool *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_data_base = {"_p_data_base", "data_base *", 0, 0, (void*)&_wrap_class_data_base, 0};
 static swig_type_info _swigt__p_draw_base = {"_p_draw_base", "draw_base *", 0, 0, (void*)&_wrap_class_draw_base, 0};
-static swig_type_info _swigt__p_fuzzy_obj = {"_p_fuzzy_obj", "fuzzy_obj *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_inputKeyboard = {"_p_inputKeyboard", "inputKeyboard *", 0, 0, (void*)&_wrap_class_inputKeyboard, 0};
 static swig_type_info _swigt__p_inputMouse = {"_p_inputMouse", "inputMouse *", 0, 0, (void*)&_wrap_class_inputMouse, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_math_VECTOR = {"_p_math_VECTOR", "math_VECTOR *", 0, 0, (void*)&_wrap_class_math_VECTOR, 0};
 static swig_type_info _swigt__p_math_point = {"_p_math_point", "math_point *", 0, 0, (void*)&_wrap_class_math_point, 0};
 static swig_type_info _swigt__p_pChar = {"_p_pChar", "pChar *", 0, 0, (void*)&_wrap_class_pChar, 0};
-static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *", 0, 0, (void*)&_wrap_class_psudo_type, 0};
+static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *|fuzzy_obj *", 0, 0, (void*)&_wrap_class_psudo_type, 0};
 static swig_type_info _swigt__p_sound_base = {"_p_sound_base", "sound_base *", 0, 0, (void*)&_wrap_class_sound_base, 0};
-static swig_type_info _swigt__p_std__stackT_fuzzy_obj_t = {"_p_std__stackT_fuzzy_obj_t", "std::stack< fuzzy_obj > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__stackT_psudo_type_t = {"_p_std__stackT_psudo_type_t", "std::stack< fuzzy_obj > *|std::stack< psudo_type > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_fuzzy_obj_t = {"_p_std__vectorT_fuzzy_obj_t", "std::vector< fuzzy_obj > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_psudo_type_t = {"_p_std__vectorT_psudo_type_t", "std::vector< fuzzy_obj > *|std::vector< psudo_type > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_textbox = {"_p_textbox", "textbox *", 0, 0, (void*)&_wrap_class_textbox, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_void_ptr = {"_p_void_ptr", "void_ptr *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Button,
@@ -13676,9 +14152,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_UI,
   &_swigt__p_Uint8,
   &_swigt__p_Unit,
+  &_swigt__p_bool,
+  &_swigt__p_char,
   &_swigt__p_data_base,
   &_swigt__p_draw_base,
-  &_swigt__p_fuzzy_obj,
   &_swigt__p_inputKeyboard,
   &_swigt__p_inputMouse,
   &_swigt__p_int,
@@ -13687,12 +14164,13 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_pChar,
   &_swigt__p_psudo_type,
   &_swigt__p_sound_base,
-  &_swigt__p_std__stackT_fuzzy_obj_t,
+  &_swigt__p_std__stackT_psudo_type_t,
   &_swigt__p_std__string,
-  &_swigt__p_std__vectorT_fuzzy_obj_t,
+  &_swigt__p_std__vectorT_psudo_type_t,
   &_swigt__p_textbox,
   &_swigt__p_unsigned_char,
   &_swigt__p_void,
+  &_swigt__p_void_ptr,
 };
 
 static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_Button, 0, 0, 0},{0, 0, 0, 0}};
@@ -13709,9 +14187,10 @@ static swig_cast_info _swigc__p_Trigger[] = {  {&_swigt__p_Trigger, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_UI[] = {  {&_swigt__p_UI, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Uint8[] = {  {&_swigt__p_Uint8, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Unit[] = {  {&_swigt__p_Unit, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_bool[] = {  {&_swigt__p_bool, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_data_base[] = {  {&_swigt__p_data_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_draw_base[] = {  {&_swigt__p_draw_base, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_fuzzy_obj[] = {  {&_swigt__p_fuzzy_obj, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_inputKeyboard[] = {  {&_swigt__p_inputKeyboard, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_inputMouse[] = {  {&_swigt__p_inputMouse, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
@@ -13720,12 +14199,13 @@ static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_sound_base[] = {  {&_swigt__p_sound_base, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__stackT_fuzzy_obj_t[] = {  {&_swigt__p_std__stackT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__stackT_psudo_type_t[] = {  {&_swigt__p_std__stackT_psudo_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_fuzzy_obj_t[] = {  {&_swigt__p_std__vectorT_fuzzy_obj_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_psudo_type_t[] = {  {&_swigt__p_std__vectorT_psudo_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_textbox[] = {  {&_swigt__p_textbox, 0, 0, 0},  {&_swigt__p_Button, _p_ButtonTo_p_textbox, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_void_ptr[] = {  {&_swigt__p_void_ptr, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Button,
@@ -13742,9 +14222,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_UI,
   _swigc__p_Uint8,
   _swigc__p_Unit,
+  _swigc__p_bool,
+  _swigc__p_char,
   _swigc__p_data_base,
   _swigc__p_draw_base,
-  _swigc__p_fuzzy_obj,
   _swigc__p_inputKeyboard,
   _swigc__p_inputMouse,
   _swigc__p_int,
@@ -13753,12 +14234,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_pChar,
   _swigc__p_psudo_type,
   _swigc__p_sound_base,
-  _swigc__p_std__stackT_fuzzy_obj_t,
+  _swigc__p_std__stackT_psudo_type_t,
   _swigc__p_std__string,
-  _swigc__p_std__vectorT_fuzzy_obj_t,
+  _swigc__p_std__vectorT_psudo_type_t,
   _swigc__p_textbox,
   _swigc__p_unsigned_char,
   _swigc__p_void,
+  _swigc__p_void_ptr,
 };
 
 

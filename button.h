@@ -5,13 +5,16 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <map>
-#include "pywrap.h"
+#include "scriptwrap.h"
+
 class textbox;
 SDL_Texture *LoadTexture(const char *file, SDL_Renderer& ren);
+
+
 class Button: public textbox
 {
 private:
-    Pywrap *script;
+    ScriptWrap *script;
     std::map<std::string, SDL_Texture*> textures;
     bool buttonPressedBefore;
     bool selected;

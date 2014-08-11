@@ -3,5 +3,6 @@
 --Create Launcher project.
 --Add dynamic library loader for plugin activation and use in the engine. (Implement a scheduler Thread and define entrypoints for the libraries)
 --Add XML parsing hooks
---Add LUA and PawnScript interpreters/hooks
+--Create a Game class
+--Put everything together
 --Update Physics class

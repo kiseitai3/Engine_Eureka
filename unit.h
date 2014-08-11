@@ -6,7 +6,7 @@
 #include "physics.h"
 #include "sound_base.h"
 #include "draw_base.h"
-#include "pywrap.h"
+#include "scriptwrap.h"
 #include "Timer.h"
 #include <list>
 
@@ -23,7 +23,7 @@ class Unit
         //Question methods
         bool isMelee() const;
         //AI methods
-        void LoadScript(Pywrap *script, const char *file);
+        void LoadScript(ScriptWrap *script, const char *file);
         void MoveAI();
         void LoadAI(const char *file);
         void AttackAI(Unit* target);
@@ -106,7 +106,7 @@ class Unit
         math_point mapPoint, locBar; //mapPoint holds center point.
         data_base *DOM, *KeyDOM; //!< Member variable "dom"
         Physics *phys; //!< Member variable "phys"
-        Pywrap *AI, *KeyScripts, *GeneralScripts, *BuffScripts;
+        ScriptWrap *AI, *KeyScripts, *GeneralScripts, *BuffScripts;
         SDL_Renderer* ren;
         movementTracker movement;
         Timer *gameTime;

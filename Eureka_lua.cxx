@@ -1865,38 +1865,36 @@ SWIG_Lua_dostring(lua_State *L, const char* str) {
 #define SWIGTYPE_p_Button swig_types[0]
 #define SWIGTYPE_p_Physics swig_types[1]
 #define SWIGTYPE_p_ProgressBar swig_types[2]
-#define SWIGTYPE_p_Pywrap swig_types[3]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[4]
-#define SWIGTYPE_p_SDL_Event swig_types[5]
-#define SWIGTYPE_p_SDL_Renderer swig_types[6]
-#define SWIGTYPE_p_SDL_Texture swig_types[7]
-#define SWIGTYPE_p_ScriptWrap swig_types[8]
-#define SWIGTYPE_p_Timer swig_types[9]
-#define SWIGTYPE_p_Trigger swig_types[10]
-#define SWIGTYPE_p_UI swig_types[11]
-#define SWIGTYPE_p_Uint8 swig_types[12]
-#define SWIGTYPE_p_Unit swig_types[13]
-#define SWIGTYPE_p_bool swig_types[14]
-#define SWIGTYPE_p_char swig_types[15]
-#define SWIGTYPE_p_data_base swig_types[16]
-#define SWIGTYPE_p_draw_base swig_types[17]
-#define SWIGTYPE_p_inputKeyboard swig_types[18]
-#define SWIGTYPE_p_inputMouse swig_types[19]
-#define SWIGTYPE_p_int swig_types[20]
-#define SWIGTYPE_p_math_VECTOR swig_types[21]
-#define SWIGTYPE_p_math_point swig_types[22]
-#define SWIGTYPE_p_pChar swig_types[23]
-#define SWIGTYPE_p_psudo_type swig_types[24]
-#define SWIGTYPE_p_sound_base swig_types[25]
-#define SWIGTYPE_p_std__stackT_psudo_type_t swig_types[26]
-#define SWIGTYPE_p_std__string swig_types[27]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[28]
-#define SWIGTYPE_p_textbox swig_types[29]
-#define SWIGTYPE_p_unsigned_char swig_types[30]
-#define SWIGTYPE_p_void swig_types[31]
-#define SWIGTYPE_p_void_ptr swig_types[32]
-static swig_type_info *swig_types[34];
-static swig_module_info swig_module = {swig_types, 33, 0, 0, 0, 0};
+#define SWIGTYPE_p_SDL_BlendMode swig_types[3]
+#define SWIGTYPE_p_SDL_Event swig_types[4]
+#define SWIGTYPE_p_SDL_Renderer swig_types[5]
+#define SWIGTYPE_p_SDL_Texture swig_types[6]
+#define SWIGTYPE_p_ScriptWrap swig_types[7]
+#define SWIGTYPE_p_Timer swig_types[8]
+#define SWIGTYPE_p_Trigger swig_types[9]
+#define SWIGTYPE_p_UI swig_types[10]
+#define SWIGTYPE_p_Uint8 swig_types[11]
+#define SWIGTYPE_p_Unit swig_types[12]
+#define SWIGTYPE_p_bool swig_types[13]
+#define SWIGTYPE_p_char swig_types[14]
+#define SWIGTYPE_p_data_base swig_types[15]
+#define SWIGTYPE_p_draw_base swig_types[16]
+#define SWIGTYPE_p_inputKeyboard swig_types[17]
+#define SWIGTYPE_p_inputMouse swig_types[18]
+#define SWIGTYPE_p_int swig_types[19]
+#define SWIGTYPE_p_math_VECTOR swig_types[20]
+#define SWIGTYPE_p_math_point swig_types[21]
+#define SWIGTYPE_p_pChar swig_types[22]
+#define SWIGTYPE_p_psudo_type swig_types[23]
+#define SWIGTYPE_p_sound_base swig_types[24]
+#define SWIGTYPE_p_std__stackT_psudo_type_t swig_types[25]
+#define SWIGTYPE_p_std__string swig_types[26]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[27]
+#define SWIGTYPE_p_textbox swig_types[28]
+#define SWIGTYPE_p_unsigned_char swig_types[29]
+#define SWIGTYPE_p_void_ptr swig_types[30]
+static swig_type_info *swig_types[32];
+static swig_module_info swig_module = {swig_types, 31, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -6900,12 +6898,12 @@ fail:
 static int _wrap_Unit_LoadScript(lua_State* L) {
   int SWIG_arg = 0;
   Unit *arg1 = (Unit *) 0 ;
-  Pywrap *arg2 = (Pywrap *) 0 ;
+  ScriptWrap *arg2 = (ScriptWrap *) 0 ;
   char *arg3 = (char *) 0 ;
   
   SWIG_check_num_args("Unit::LoadScript",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Unit::LoadScript",1,"Unit *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Unit::LoadScript",2,"Pywrap *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Unit::LoadScript",2,"ScriptWrap *");
   if(!SWIG_lua_isnilstring(L,3)) SWIG_fail_arg("Unit::LoadScript",3,"char const *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Unit,0))){
@@ -6913,8 +6911,8 @@ static int _wrap_Unit_LoadScript(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Pywrap,0))){
-    SWIG_fail_ptr("Unit_LoadScript",2,SWIGTYPE_p_Pywrap);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("Unit_LoadScript",2,SWIGTYPE_p_ScriptWrap);
   }
   
   arg3 = (char *)lua_tostring(L, 3);
@@ -13523,6 +13521,390 @@ static int _wrap_ScriptWrap_executeFunction(lua_State* L) {
 }
 
 
+static int _wrap_ScriptWrap_AddArgument__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  std::string *arg2 = 0 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_std__string,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",2,SWIGTYPE_p_std__string);
+  }
+  
+  (arg1)->AddArgument((std::string const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  char arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"char");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  arg2 = (lua_tostring(L, 2))[0];
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_3(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  unsigned int arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"unsigned int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (unsigned int)lua_tonumber(L, 2);
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  void_ptr arg2 ;
+  void_ptr *argp2 ;
+  
+  SWIG_check_num_args("ScriptWrap::AddArgument",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::AddArgument",1,"ScriptWrap *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("ScriptWrap::AddArgument",2,"void_ptr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_void_ptr,0))){
+    SWIG_fail_ptr("ScriptWrap_AddArgument",2,SWIGTYPE_p_void_ptr);
+  }
+  arg2 = *argp2;
+  
+  (arg1)->AddArgument(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ScriptWrap_AddArgument(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_std__string, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (lua_isuserdata(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_void_ptr, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_6(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isboolean(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_5(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_4(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_0(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_3(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_ScriptWrap, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]) && (lua_rawlen(L,argv[1])==1);
+      }
+      if (_v) {
+        return _wrap_ScriptWrap_AddArgument__SWIG_2(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'ScriptWrap_AddArgument'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ScriptWrap::AddArgument(int)\n"
+    "    ScriptWrap::AddArgument(std::string const &)\n"
+    "    ScriptWrap::AddArgument(char)\n"
+    "    ScriptWrap::AddArgument(double)\n"
+    "    ScriptWrap::AddArgument(unsigned int)\n"
+    "    ScriptWrap::AddArgument(bool)\n"
+    "    ScriptWrap::AddArgument(void_ptr)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_ScriptWrap_ClearArgs(lua_State* L) {
+  int SWIG_arg = 0;
+  ScriptWrap *arg1 = (ScriptWrap *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("ScriptWrap::ClearArgs",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScriptWrap::ClearArgs",1,"ScriptWrap *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ScriptWrap::ClearArgs",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScriptWrap,0))){
+    SWIG_fail_ptr("ScriptWrap_ClearArgs",1,SWIGTYPE_p_ScriptWrap);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->ClearArgs(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ScriptWrap_isInitialized(lua_State* L) {
   int SWIG_arg = 0;
   ScriptWrap *arg1 = (ScriptWrap *) 0 ;
@@ -13547,12 +13929,31 @@ fail:
 }
 
 
+static int _wrap_ScriptWrap_NO_ARGS_get(lua_State* L) {
+  int SWIG_arg = 0;
+  std::vector< fuzzy_obj > *result = 0 ;
+  
+  SWIG_check_num_args("ScriptWrap::NO_ARGS",0,0)
+  result = (std::vector< fuzzy_obj > *)&ScriptWrap::NO_ARGS;
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_std__vectorT_psudo_type_t,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_ScriptWrap(void *obj) {
 ScriptWrap *arg1 = (ScriptWrap *) obj;
 delete arg1;
 }
 static swig_lua_method swig_ScriptWrap_methods[] = {
     {"executeFunction", _wrap_ScriptWrap_executeFunction}, 
+    {"AddArgument", _wrap_ScriptWrap_AddArgument}, 
+    {"ClearArgs", _wrap_ScriptWrap_ClearArgs}, 
     {"isInitialized", _wrap_ScriptWrap_isInitialized}, 
     {0,0}
 };
@@ -13560,6 +13961,7 @@ static swig_lua_attribute swig_ScriptWrap_attributes[] = {
     {0,0,0}
 };
 static swig_lua_attribute swig_ScriptWrap_cls_attributes[] = {
+    { "NO_ARGS", _wrap_ScriptWrap_NO_ARGS_get, SWIG_Lua_set_immutable},
     {0,0,0}
 };
 static swig_lua_method swig_ScriptWrap_cls_methods[] = {
@@ -13935,17 +14337,23 @@ fail:
 static int _wrap_unknown_return_ptr_set(lua_State* L) {
   int SWIG_arg = 0;
   psudo_type *arg1 = (psudo_type *) 0 ;
-  void *arg2 = (void *) 0 ;
+  void_ptr arg2 ;
+  void_ptr *argp2 ;
   
   SWIG_check_num_args("psudo_type::ptr",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("psudo_type::ptr",1,"psudo_type *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("psudo_type::ptr",2,"void *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("psudo_type::ptr",2,"void_ptr");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_psudo_type,0))){
     SWIG_fail_ptr("unknown_return_ptr_set",1,SWIGTYPE_p_psudo_type);
   }
   
-  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"unknown_return_ptr_set");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_void_ptr,0))){
+    SWIG_fail_ptr("unknown_return_ptr_set",2,SWIGTYPE_p_void_ptr);
+  }
+  arg2 = *argp2;
+  
   if (arg1) (arg1)->ptr = arg2;
   
   return SWIG_arg;
@@ -13961,7 +14369,7 @@ fail:
 static int _wrap_unknown_return_ptr_get(lua_State* L) {
   int SWIG_arg = 0;
   psudo_type *arg1 = (psudo_type *) 0 ;
-  void *result = 0 ;
+  void_ptr result;
   
   SWIG_check_num_args("psudo_type::ptr",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("psudo_type::ptr",1,"psudo_type *");
@@ -13970,8 +14378,11 @@ static int _wrap_unknown_return_ptr_get(lua_State* L) {
     SWIG_fail_ptr("unknown_return_ptr_get",1,SWIGTYPE_p_psudo_type);
   }
   
-  result = (void *) ((arg1)->ptr);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_void,0); SWIG_arg++; 
+  result =  ((arg1)->ptr);
+  {
+    void_ptr * resultptr = new void_ptr((const void_ptr &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_void_ptr,1); SWIG_arg++;
+  }
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -14081,6 +14492,7 @@ static const struct luaL_Reg swig_commands[] = {
 };
 
 static swig_lua_var_info swig_variables[] = {
+    { "ScriptWrap_NO_ARGS", _wrap_ScriptWrap_NO_ARGS_get, SWIG_Lua_set_immutable },
     {0,0,0}
 };
 
@@ -14106,7 +14518,6 @@ static void *_p_ButtonTo_p_textbox(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static swig_type_info _swigt__p_Button = {"_p_Button", "Button *", 0, 0, (void*)&_wrap_class_Button, 0};
 static swig_type_info _swigt__p_Physics = {"_p_Physics", "Physics *", 0, 0, (void*)&_wrap_class_Physics, 0};
 static swig_type_info _swigt__p_ProgressBar = {"_p_ProgressBar", "ProgressBar *", 0, 0, (void*)&_wrap_class_ProgressBar, 0};
-static swig_type_info _swigt__p_Pywrap = {"_p_Pywrap", "Pywrap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_BlendMode = {"_p_SDL_BlendMode", "SDL_BlendMode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Event = {"_p_SDL_Event", "SDL_Event *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Renderer = {"_p_SDL_Renderer", "SDL_Renderer *", 0, 0, (void*)0, 0};
@@ -14134,14 +14545,12 @@ static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *"
 static swig_type_info _swigt__p_std__vectorT_psudo_type_t = {"_p_std__vectorT_psudo_type_t", "std::vector< fuzzy_obj > *|std::vector< psudo_type > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_textbox = {"_p_textbox", "textbox *", 0, 0, (void*)&_wrap_class_textbox, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_void_ptr = {"_p_void_ptr", "void_ptr *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Button,
   &_swigt__p_Physics,
   &_swigt__p_ProgressBar,
-  &_swigt__p_Pywrap,
   &_swigt__p_SDL_BlendMode,
   &_swigt__p_SDL_Event,
   &_swigt__p_SDL_Renderer,
@@ -14169,14 +14578,12 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__vectorT_psudo_type_t,
   &_swigt__p_textbox,
   &_swigt__p_unsigned_char,
-  &_swigt__p_void,
   &_swigt__p_void_ptr,
 };
 
 static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_Button, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Physics[] = {  {&_swigt__p_Physics, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ProgressBar[] = {  {&_swigt__p_ProgressBar, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Pywrap[] = {  {&_swigt__p_Pywrap, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_BlendMode[] = {  {&_swigt__p_SDL_BlendMode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Event[] = {  {&_swigt__p_SDL_Event, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Renderer[] = {  {&_swigt__p_SDL_Renderer, 0, 0, 0},{0, 0, 0, 0}};
@@ -14204,14 +14611,12 @@ static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0
 static swig_cast_info _swigc__p_std__vectorT_psudo_type_t[] = {  {&_swigt__p_std__vectorT_psudo_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_textbox[] = {  {&_swigt__p_textbox, 0, 0, 0},  {&_swigt__p_Button, _p_ButtonTo_p_textbox, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_void_ptr[] = {  {&_swigt__p_void_ptr, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Button,
   _swigc__p_Physics,
   _swigc__p_ProgressBar,
-  _swigc__p_Pywrap,
   _swigc__p_SDL_BlendMode,
   _swigc__p_SDL_Event,
   _swigc__p_SDL_Renderer,
@@ -14239,7 +14644,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__vectorT_psudo_type_t,
   _swigc__p_textbox,
   _swigc__p_unsigned_char,
-  _swigc__p_void,
   _swigc__p_void_ptr,
 };
 

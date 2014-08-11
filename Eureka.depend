@@ -12959,7 +12959,7 @@
 	"data_base.h"
 	<iostream>
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
+1407789204 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
 	<Python.h>
 	<SDL.h>
 	<SDL_mixer.h>
@@ -13010,14 +13010,14 @@
 	<math.h>
 	<unistd.h>
 
-1407108586 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
+1407782665 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
 	<Python.h>
 	"pywrap.h"
 	<string>
 	"conversion.h"
 	<iostream>
 
-1407635665 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1407773658 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 	<vector>
@@ -18709,7 +18709,7 @@
 	"physics.h"
 	"input.h"
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
+1407785009 source:c:\users\kiseitai2\documents\devcb\engine_eureka\unit.cpp
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
@@ -18724,18 +18724,18 @@
 	<list>
 	"progressbar.h"
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
+1407782979 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
 	"physics.h"
 	"sound_base.h"
 	"draw_base.h"
-	"pywrap.h"
+	"scriptwrap.h"
 	"Timer.h"
 	<list>
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
+1407774073 c:\users\kiseitai2\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -18819,13 +18819,13 @@
 	<SDL.h>
 	"textbox.h"
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
+1407773811 c:\users\kiseitai2\documents\devcb\engine_eureka\button.h
 	<string>
 	<iostream>
 	<SDL.h>
 	<SDL_ttf.h>
 	<map>
-	"pywrap.h"
+	"scriptwrap.h"
 
 1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\progressbar.cpp
 	"progressbar.h"
@@ -18838,16 +18838,16 @@
 	"physics.h"
 	<SDL.h>
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
+1407785009 source:c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
 	"unit.h"
 	"trigger.h"
 	"physics.h"
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
+1407774073 c:\users\kiseitai2\documents\devcb\engine_eureka\trigger.h
 	"data_base.h"
-	"pywrap.h"
+	"scriptwrap.h"
 	"unit.h"
 
 1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\ui.cpp
@@ -18864,7 +18864,7 @@
 	<string>
 	"ui.h"
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
+1407787375 source:c:\users\kiseitai2\documents\devcb\engine_eureka\button.cpp
 	"textbox.h"
 	"button.h"
 	<string>
@@ -18873,10 +18873,11 @@
 	"physics.h"
 	<SDL.h>
 	<SDL_ttf.h>
-	"pywrap.h"
+	"scriptwrap.h"
 	<map>
 	"data_base.h"
 	<SDL_image.h>
+	"globals.h"
 
 1376276357 c:\users\kiseitai2\documents\dev-cpp projects\dev. libs\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -19207,7 +19208,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1407619791 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
+1407785279 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -19266,11 +19267,12 @@
 
 1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
 
-1407107591 source:c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.cpp
+1407788081 source:c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.cpp
+	"scriptwrap.h"
 
 1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
 
-1407633394 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
+1407788081 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
 	<vector>
 	"game.h"
 	"pywrap.h"
@@ -19279,8 +19281,9 @@
 
 1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
 
-1407625902 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+1407773730 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
 	<iostream>
+	"typedefs.h"
 
 1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -19610,7 +19613,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1407619792 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_lua.cxx
+1407785280 source:c:\users\kiseitai2\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -19650,7 +19653,7 @@
 	<stdio.h>
 	"lua.h"
 
-1407625979 c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.h
+1407784197 c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.h
 	<lua.hpp>
 	<string>
 	<iostream>
@@ -19668,4 +19671,8 @@
 	"lua.h"
 
 1407630058 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
+
+1407787611 source:c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.cpp
+	"luawrap.h"
+	<cmath>
 

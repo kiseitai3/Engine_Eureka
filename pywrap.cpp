@@ -273,7 +273,7 @@ unsigned int Pywrap::GetSizeOfArgs() const
     return sizeT;
 }
 
-PyObject *Pywrap::CreateObjFromPtr(void *classT)
+PyObject *Pywrap::CreateObjFromPtr(void_ptr classT)
 {
     return PyCObject_FromVoidPtr(classT, NULL);
 }
@@ -310,7 +310,7 @@ void Pywrap::AddArgument (std::string argument)
 
 void Pywrap::AddArgument (char argument)
 {
-    AddArgument(args, index, argument);
+    PyTuple_SetItem(args, index, PyString_FromString(&argument));
     index++;
 }
 
@@ -324,6 +324,11 @@ void Pywrap::AddArgument (PyObject *argument)
 {
     PyTuple_SetItem(args, index, argument);
     index++;
+}
+
+void Pywrap::AddArgument(void_ptr argument)
+{
+    AddArgument(CreateObjFromPtr(argument));
 }
 //Py Conversion Functions with overloads
 int Pywrap::py_extractInt(PyObject *results) const
@@ -399,6 +404,17 @@ int Pywrap::py_extractIntFromList(PyObject *results, unsigned int index) const
     std::cout << "Warning: PyObject is not a Tuple. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return 0;
+}
+
+bool Pywrap::py_extractBoolFromList(PyObject *results, unsigned int index) const
+{
+    if(PyTuple_Check(results))
+    {
+        return py_extractBool(PyTuple_GetItem(results, index));
+    }
+    std::cout << "Warning: PyObject is not a Tuple. Undefined behavior may occur! Warning in script: " << path
+            << std::endl;
+    return false;
 }
 
 std::string Pywrap::py_extractStrFromList(PyObject *results, unsigned int index) const

@@ -184,13 +184,13 @@ void Unit::LoadAI(const char *file)
 {
     if(file != "")
     {
-        AI = new Pywrap(file);
+        AI = new ScriptWrap(file);
         if(!AI)
         {
             hasAI = false;
             std::cout<<"Error: AI for this object was unable to load!\n\r";
         }
-        else if(AI->isFileLoaded())
+        else if(AI->isInitialized())
         {
             hasAI = true;
         }
@@ -225,8 +225,8 @@ void Unit::MoveAI()
     if(hasAI)
     {
         AI->ClearArgs(1);//Make sure previous arguments have been released and create a new set
-        AI->AddArgument(AI->CreateObjFromPtr((void *)this), 0);//Compile new argument list
-        AI->executeNoReturnF("Move");
+        AI->AddArgument(this);//Compile new argument list
+        AI->executeFunction("Move", AI->NO_ARGS);
     }
 }
 
@@ -235,10 +235,10 @@ void Unit::MoveTowardsAI(double force, const char axis)
     if(hasAI)
     {
         AI->ClearArgs(3);//Make sure previous arguments have been released and create a new set
-        AI->AddArgument(AI->CreateObjFromPtr((void *)this), 0);//Compile new argument list
-        AI->AddArgument(force, 1);//Compile new argument list
-        AI->AddArgument(axis, 2);//Compile new argument list
-        AI->executeNoReturnF("MoveTowards");
+        AI->AddArgument(this);//Compile new argument list
+        AI->AddArgument(force);//Compile new argument list
+        AI->AddArgument(axis);//Compile new argument list
+        AI->executeFunction("MoveTowards", AI->NO_ARGS);
     }
 }
 
@@ -247,9 +247,9 @@ void Unit::AttackAI(Unit *target)
     if(hasAI)
     {
         AI->ClearArgs(2);//Make sure previous arguments have been released and create a new set
-        AI->AddArgument(AI->CreateObjFromPtr((void *)this), 0);//Compile new argument list
-        AI->AddArgument(AI->CreateObjFromPtr((void *)target), 0);//Compile new argument list
-        AI->executeNoReturnF("Attack");
+        AI->AddArgument(this);//Compile new argument list
+        AI->AddArgument(target);//Compile new argument list
+        AI->executeFunction("Attack", AI->NO_ARGS);
     }
 }
 
@@ -329,8 +329,8 @@ void Unit::ProcessKeyEvent(std::string key)
     if(KeyDOM->SearchTermExists(key))
     {
         KeyScripts->ClearArgs(1);
-        KeyScripts->AddArgument(KeyScripts->CreateObjFromPtr(this), 0);
-        KeyScripts->executeNoReturnF(KeyDOM->GetStrFromData(key).c_str());
+        KeyScripts->AddArgument(this);
+        KeyScripts->executeFunction(KeyDOM->GetStrFromData(key).c_str(), KeyScripts->NO_ARGS);
     }
 }
 
@@ -338,7 +338,7 @@ void Unit::LoadKeyScript(const char *file)
 {
     if(file != "")
     {
-        KeyScripts = new Pywrap(file);
+        KeyScripts = new ScriptWrap(file);
         if(!KeyScripts)
         {
             std::cout<<"Error: Keyboard scripts file for this object was unable to load!\n\r";
@@ -358,10 +358,10 @@ void Unit::LoadKeyBindings(const char *file)
 void Unit::ProcessMouseMovement(int x, int y)
 {
     KeyScripts->ClearArgs(3);
-    KeyScripts->AddArgument(KeyScripts->CreateObjFromPtr(this), 0);
-    KeyScripts->AddArgument(x, 1);
-    KeyScripts->AddArgument(y, 2);
-    KeyScripts->executeNoReturnF("ProcessMouseMovement");
+    KeyScripts->AddArgument(this);
+    KeyScripts->AddArgument(x);
+    KeyScripts->AddArgument(y);
+    KeyScripts->executeFunction("ProcessMouseMovement", KeyScripts->NO_ARGS);
 }
 
 void Unit::ProcessMouseKey(unsigned int mouseButton, int x, int y)
@@ -369,19 +369,19 @@ void Unit::ProcessMouseKey(unsigned int mouseButton, int x, int y)
     if(KeyDOM->SearchTermExists(intToStr(mouseButton)))
     {
         KeyScripts->ClearArgs(3);
-        KeyScripts->AddArgument(KeyScripts->CreateObjFromPtr(this), 0);
-        KeyScripts->AddArgument(x,1);
-        KeyScripts->AddArgument(y, 2);
-        KeyScripts->executeNoReturnF(KeyDOM->GetStrFromData(intToStr(mouseButton)).c_str());
+        KeyScripts->AddArgument(this);
+        KeyScripts->AddArgument(x);
+        KeyScripts->AddArgument(y);
+        KeyScripts->executeFunction(KeyDOM->GetStrFromData(intToStr(mouseButton)).c_str(), KeyScripts->NO_ARGS);
     }
     else
     {
         KeyScripts->ClearArgs(4);
-        KeyScripts->AddArgument(KeyScripts->CreateObjFromPtr(this), 0);
-        KeyScripts->AddArgument(mouseButton, 1);
-        KeyScripts->AddArgument(x, 2);
-        KeyScripts->AddArgument(y, 3);
-        KeyScripts->executeNoReturnF("ProcessMouseKey");
+        KeyScripts->AddArgument(this);
+        KeyScripts->AddArgument(mouseButton);
+        KeyScripts->AddArgument(x);
+        KeyScripts->AddArgument(y);
+        KeyScripts->executeFunction("ProcessMouseKey", KeyScripts->NO_ARGS);
     }
 }
 
@@ -595,16 +595,17 @@ void Unit::Update_Physics(Unit *target)
 void Unit::OnCollision(Unit *target, std::string side)
 {
     GeneralScripts->ClearArgs(3);
-    GeneralScripts->AddArgument(GeneralScripts->CreateObjFromPtr(this), 0);
-    GeneralScripts->AddArgument(GeneralScripts->CreateObjFromPtr(target), 1);
-    GeneralScripts->AddArgument(side, 2);
+    GeneralScripts->AddArgument(this);
+    GeneralScripts->AddArgument(target);
+    GeneralScripts->AddArgument(side);
+    GeneralScripts->executeFunction("OnCollision", GeneralScripts->NO_ARGS);
 }
 
-void Unit::LoadScript(Pywrap* script, const char *file)
+void Unit::LoadScript(ScriptWrap* script, const char *file)
 {
     if(file != "")
     {
-        script = new Pywrap(file);
+        script = new ScriptWrap(file);
         if(!script)
         {
             std::cout<<"Error: Scripts file for this object was unable to load!\n\r";
@@ -639,11 +640,11 @@ bool Unit::BuffExists(std::string buffName)
 void Unit::ApplyBuffs()
 {
     BuffScripts->ClearArgs(1);
-    BuffScripts->AddArgument(BuffScripts->CreateObjFromPtr(this), 0);
+    BuffScripts->AddArgument(this);
     for(std::list<std::string>::iterator it = buffs.begin(); it != buffs.end(); it++)
     {
         std::string names = *it;
-        BuffScripts->executeNoReturnF(names.c_str());
+        BuffScripts->executeFunction(names.c_str(), BuffScripts->NO_ARGS);
     }
 }
 

@@ -6,10 +6,11 @@
 #include "physics.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
-#include "pywrap.h"
+#include "scriptwrap.h"
 #include <map>
 #include "data_base.h"
 #include <SDL_image.h>
+#include "globals.h"
 
 Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
 {
@@ -25,7 +26,7 @@ Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrd
         textures["idle"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_idle").c_str(), ren);
         textures["selected"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_selected").c_str(), ren);
         textures["down"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_down").c_str(), ren);
-        script = new Pywrap(GetDOM()->GetStrFromData("button_script").c_str());
+        script = new ScriptWrap(GetDOM()->GetStrFromData("button_script").c_str());
         if(!script)
         {
             std::cout<<"Error: Failed to load scripts for this button! :( \n\r";
@@ -84,11 +85,11 @@ void Button::MouseClick(unsigned int button, int x, int y, bool down)
             if(buttonPressedBefore && !down || buttonPressedBefore && !down)
             {
                 script->ClearArgs(4);
-                script->AddArgument(button, 0);
-                script->AddArgument(x, 1);
-                script->AddArgument(y, 2);
-                script->AddArgument(script->CreateObjFromPtr(GetOwner()), 3);
-                script->executeNoReturnF("MouseClick");
+                script->AddArgument(button);
+                script->AddArgument(x);
+                script->AddArgument(y);
+                script->AddArgument((void_ptr)GetOwner());
+                script->executeFunction("MouseClick", script->NO_ARGS);
             }
         }
     }

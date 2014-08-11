@@ -118,6 +118,14 @@ void LuaWrap::AddArgument(bool argument)
     argStack->push(tmp);
 }
 
+void LuaWrap::AddArgument(void_ptr argument)
+{
+    fuzzy_obj tmp;
+    tmp.ptr = argument;
+    tmp.flag = 'v';
+    argStack->push(tmp);
+}
+
 int LuaWrap::lua_extractInt(lua_State* results) const
 {
     if(lua_isnumber(results, LUA_TOPITEM))
@@ -160,12 +168,12 @@ bool LuaWrap::lua_extractBool(lua_State* results) const
         return bool(lua_tointeger(results, LUA_TOPITEM));
     std::cout << "Warning: Lua result is not boolean. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
-    return false
+    return false;
 }
 
-void* LuaWrap::lua_extractPtr(lua_State* results) const
+void_ptr LuaWrap::lua_extractPtr(lua_State* results) const
 {
-    return lua_topointer(results, LUA_TOPITEM);
+    return (void_ptr)lua_topointer(results, LUA_TOPITEM);
 }
 
 std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
@@ -176,7 +184,8 @@ std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
     script function is called multiple times!
     */
     std::vector<fuzzy_obj> tmp;
-    size_t t = lua_gettable(Lua, LUA_TOPITEM);//index of table
+    lua_gettable(Lua, LUA_TOPITEM);//index of table
+    size_t t = lua_tointeger(Lua, 2);
     if(lua_isnil(Lua, LUA_TOPITEM))//check the table is valid
         return tmp;
 
@@ -188,22 +197,22 @@ std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
         switch(obj.flag)
         {
         case 'i':
-            obj.number = lua_extractInt(obj);
+            obj.number = lua_extractInt(Lua);
             break;
         case 'd':
-            obj.decimal = lua_extractDouble(obj);
+            obj.decimal = lua_extractDouble(Lua);
             break;
         case 'b':
-            obj.answer = lua_extractBool(obj);
+            obj.answer = lua_extractBool(Lua);
             break;
         case 'c':
-            obj.c = lua_extractChar(obj);
+            obj.c = lua_extractChar(Lua);
             break;
         case 's':
-            obj.str = lua_extractStr(obj);
+            obj.str = lua_extractStr(Lua);
             break;
         case 'v':
-            obj.ptr = lua_extractPtr(obj);
+            obj.ptr = lua_extractPtr(Lua);
             break;
         default:
             std::cout << "Error: Argument from array returned by script function is not a valid type! "
@@ -224,7 +233,7 @@ bool LuaWrap::isResultVoid() const
     return lua_isnoneornil(Lua, lua_gettop(Lua));
 }
 
-char LuaWrap::GetResultType(lua_State* result, size_t& length) const
+char LuaWrap::GetResultType(lua_State* result) const
 {
     if(lua_isboolean(result, LUA_TOPITEM))
         return 'b';
@@ -239,16 +248,23 @@ char LuaWrap::GetResultType(lua_State* result, size_t& length) const
 
     if(lua_isstring(result, LUA_TOPITEM))
     {
-        length = std::string(lua_tostring(result, LUA_TOPITEM)).length();
+        if(std::string(lua_tostring(result, LUA_TOPITEM)).length() == 1)
+            return 'c';
         return 's';
     }
 
     return 'v';
 }
 
+lua_State* LuaWrap::GetInternalState() const
+{
+    return Lua;
+}
+
 bool LuaWrap::ClearArgs(int n)
 {
     //Here I pop all of the elements in the Argument Stack!
+    //Passing -1 should yield a full stack cleanup because stackSize + n != argStack->size()--; use LUA_ERASE_ALL
     size_t stackSize = argStack->size();
     while(!argStack->empty() && (stackSize - n) != argStack->size())
     {
@@ -264,11 +280,11 @@ void LuaWrap::ClearResult()
     lua_pop(Lua, lua_gettop(Lua));
 }
 
-size_t LuaWrap::GetResultSize()
+size_t LuaWrap::GetResultSize() const
 {
     //This method is not 100% safe if the lua table conforms to some special cases
     //(http://stackoverflow.com/questions/4815588/request-a-lua-table-size-in-c-before-iterating-it)!
-    return lua_objlen(Lua, LUA_TOPITEM);
+    return lua_rawlen(Lua, LUA_TOPITEM);
 }
 
 //Private methods
@@ -277,26 +293,27 @@ int LuaWrap::traceback(lua_State* lua)
     /*This method was built using the different responses to a stack overflow question!
     http://stackoverflow.com/questions/12256455/print-stacktrace-from-c-code-with-embedded-lua
     */
-    if (!lua_isstring(L, 1))  /* 'message' not a string? */
+    if (!lua_isstring(lua, 1))  /* 'message' not a string? */
         return 1;  /* keep it intact */
-    lua_getfield(L, LUA_GLOBALSINDEX, "debug");
-    if (!lua_istable(L, -1))
+    lua_getfield(lua, LUA_REGISTRYINDEX, "debug");//LUA_GLOBALINDEX for lua 5.1 and LUA_REGISTRYINDEX for > 5.2
+                                    //http://stackoverflow.com/questions/10087226/lua-5-2-lua-globalsindex-alternative
+    if (!lua_istable(lua, -1))
     {
-        std::cerr << lua_tostring(Lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
-        lua_pop(L, 1);
+        std::cerr << lua_tostring(lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
+        lua_pop(lua, 1);
         return 1;
     }
-    lua_getfield(L, -1, "traceback");
-    if (!lua_isfunction(L, -1))
+    lua_getfield(lua, -1, "traceback");
+    if (!lua_isfunction(lua, -1))
     {
-        std::cerr << lua_tostring(Lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
-        lua_pop(L, 2);
+        std::cerr << lua_tostring(lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
+        lua_pop(lua, 2);
         return 1;
     }
-    lua_pushvalue(L, 1);  /* pass error message */
-    lua_pushinteger(L, 2);  /* skip this function and traceback */
-    lua_call(L, 2, 1);  /* call debug.traceback */
-    std::cerr << lua_tostring(Lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
+    lua_pushvalue(lua, 1);  /* pass error message */
+    lua_pushinteger(lua, 2);  /* skip this function and traceback */
+    lua_call(lua, 2, 1);  /* call debug.traceback */
+    std::cerr << lua_tostring(lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
     return 1;
 }
 
@@ -336,7 +353,7 @@ void LuaWrap::PushToLua(lua_State* lua, const fuzzy_obj& obj)
         lua_pushinteger(Lua, (int)obj.c);
         break;
     case 'u':
-        lua_pushinteger(Lua, reinterpret_cast<unsigned integer>(obj.uNumber));
+        lua_pushinteger(Lua, reinterpret_cast<unsigned int>(obj.uNumber));
         break;
     default:
         std::cout << "Warning: Argument object does not contain a valid flag or is empty (flag = 'n')! This object has the flag "

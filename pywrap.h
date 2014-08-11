@@ -34,7 +34,7 @@ class Pywrap
     void IncreaseRef(PyObject *obj);
     void DisplayInternalVars();
     unsigned int GetSizeOfArgs() const;
-    PyObject *CreateObjFromPtr(void *classT);
+    PyObject *CreateObjFromPtr(void_ptr classT);
     void CleanCPyObjInArgs();
     bool isFileLoaded() const;
     bool isResultVoid(PyObject* result) const;
@@ -50,6 +50,7 @@ class Pywrap
     void AddArgument (double argument);
     void AddArgument (PyObject *argument);
     void AddArgument(unsigned int argument);
+    void AddArgument (void_ptr argument);
 
     //Py Conversion Functions with overloads
     /*All functions in this block take care of the extraction of a C type from a generalized object

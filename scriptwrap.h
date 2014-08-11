@@ -23,17 +23,36 @@ public:
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, int& response);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, bool& response);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, char& response);
+    int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, double& response);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::string& response);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, void_ptr& response);
     int executeFunction(const std::string& name, const std::vector<fuzzy_obj>& args, std::vector<fuzzy_obj>& response);
 
+    //The following methods are a way for users to add arguments manually instead of having to pass a prebuilt vector of
+    //fuzzy_objs!
+    //Argument methods
+    void AddArgument (int argument);
+    void AddArgument (const std::string& argument);
+    void AddArgument (char argument);
+    void AddArgument (double argument);
+    void AddArgument(unsigned int argument);
+    void AddArgument (bool argument);
+    void AddArgument (void_ptr argument);
+
+    void ClearArgs(size_t arg_size);
     bool isInitialized() const;
     ~ScriptWrap();
+
+    //Static variables/ Dummy variables
+    static const std::vector<fuzzy_obj> NO_ARGS;
+
+    //Operator overloads
+    //void operator=(const Pywrap)
 
 private:
     Pywrap* pyScript;
     LuaWrap* luaScript;
-    byte scriptMode;//Uses the FileTypes enum to set the mode. This
+    byte scriptMode;//Uses the FileTypes enum to set the mode.
 };
 
 #endif // SCRIPTWRAP_H_INCLUDED

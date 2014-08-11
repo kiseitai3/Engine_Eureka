@@ -4,3 +4,11 @@
 -Dummy files for upcoming 
 features and scheduled cleanup
 
+********8/11/2014******
+-Completed ScriptWrap and updated
+all files using scripts
+-ScriptWrap effectively encapsulate
+the Lua and Python wrapper 
+APIs.
+-Fixed silly mistakes
+

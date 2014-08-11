@@ -706,11 +706,15 @@ class ScriptWrap(_object):
         try: self.this.append(this)
         except: self.this = this
     def executeFunction(self, *args): return _Eureka.ScriptWrap_executeFunction(self, *args)
+    def AddArgument(self, *args): return _Eureka.ScriptWrap_AddArgument(self, *args)
+    def ClearArgs(self, *args): return _Eureka.ScriptWrap_ClearArgs(self, *args)
     def isInitialized(self): return _Eureka.ScriptWrap_isInitialized(self)
     __swig_destroy__ = _Eureka.delete_ScriptWrap
     __del__ = lambda self : None;
 ScriptWrap_swigregister = _Eureka.ScriptWrap_swigregister
 ScriptWrap_swigregister(ScriptWrap)
+cvar = _Eureka.cvar
+ScriptWrap.NO_ARGS = _Eureka.cvar.ScriptWrap_NO_ARGS
 
 NONE = _Eureka.NONE
 VAR = _Eureka.VAR

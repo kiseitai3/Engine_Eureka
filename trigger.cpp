@@ -21,7 +21,7 @@ Trigger::Trigger(const char *file)
         y = TriggerDOM->GetIntFromData("trigger_y");
         duration = TriggerDOM->GetIntFromData("trigger_duration");
         death = false;
-        Scripts = new Pywrap(TriggerDOM->GetStrFromData("trigger_script").c_str());
+        Scripts = new ScriptWrap(TriggerDOM->GetStrFromData("trigger_script").c_str());
         if(!Scripts)
         {
             std::cout<<"Error: could not load this Trigger's script!\n\r";
@@ -65,8 +65,8 @@ bool Trigger::isUnitOnTrigger(Unit *target) const
 void Trigger::ConsumeTrigger(Unit *target)
 {
     Scripts->ClearArgs(1);
-    Scripts->AddArgument(Scripts->CreateObjFromPtr(target), 0);
-    Scripts->executeNoReturnF("Trigger");
+    Scripts->AddArgument(target);
+    Scripts->executeFunction("Trigger", Scripts->NO_ARGS);
 }
 
 bool Trigger::GetDeath() const

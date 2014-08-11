@@ -1,7 +1,7 @@
 #ifndef TRIGGER_H_INCLUDED
 #define TRIGGER_H_INCLUDED
 #include "data_base.h"
-#include "pywrap.h"
+#include "scriptwrap.h"
 #include "unit.h"
 
 class Trigger
@@ -11,7 +11,7 @@ private:
     SDL_Rect rect;
     int height, width, x, y, ID, duration;
     bool death;
-    Pywrap *Scripts;
+    ScriptWrap *Scripts;
 
 public:
     Trigger(const char *file);

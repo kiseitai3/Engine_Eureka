@@ -306,3 +306,15 @@ data_base *loadFile(char* fileName)
         return tmp;
     }
 }
+
+std::stack<fuzzy_obj> reverseOrderStack(const std::stack<fuzzy_obj>& in)
+{
+    std::stack<fuzzy_obj> out;
+    std::stack<fuzzy_obj> In = in;
+    while(!in.empty())
+    {
+        out.push(In.top());
+        In.pop();
+    }
+    return out;
+}

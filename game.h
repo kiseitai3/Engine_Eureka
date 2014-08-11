@@ -1,6 +1,7 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 #include <iostream>
+#include "typedefs.h"
 
 enum FileTypes
 {
@@ -15,7 +16,7 @@ typedef struct psudo_type{
         bool answer;//can store the answer of a boolean function (true or false)
         std::string str;//can store a string or character array
         char c;
-        void* ptr;
+        void_ptr ptr;
         psudo_type()
         {
             flag = 'n';

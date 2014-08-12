@@ -129,6 +129,14 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="modadapter.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="modadapter.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="physics.cpp" />
 		<Unit filename="physics.h">
 			<Option target="Release" />

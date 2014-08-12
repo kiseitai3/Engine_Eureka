@@ -13010,7 +13010,7 @@
 	<math.h>
 	<unistd.h>
 
-1407782665 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
+1407789327 source:c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.cpp
 	<Python.h>
 	"pywrap.h"
 	<string>
@@ -19265,7 +19265,8 @@
 	<string>
 	"globals.h"
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
+1407809750 source:c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.cpp
+	"plugin.h"
 
 1407788081 source:c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.cpp
 	"scriptwrap.h"
@@ -19279,7 +19280,13 @@
 	"luawrap.h"
 	"typedefs.h"
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
+1407809843 c:\users\kiseitai2\documents\devcb\engine_eureka\plugin.h
+	<iostream>
+	<string>
+	"typedefs.h"
+	<dlfcn.h>
+	<dlfcn.h>
+	<windows.h>
 
 1407773730 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
 	<iostream>

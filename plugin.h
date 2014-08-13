@@ -35,7 +35,6 @@
 class Plugin
 {
 public:
-    typedef void (*func_ptr)(...);
     Plugin(const char* file);//Load the module!
     func_ptr GetFunction(const std::string& name);//Extract a pointer to a function within the library!
     bool isLoaded() const;//Let us know if the library loaded!

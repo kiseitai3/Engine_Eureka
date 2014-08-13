@@ -10,7 +10,7 @@ Plugin::Plugin(const char* file)
             << "on your Operating System and/or program settings!" << std::endl;
 }
 
-Plugin::func_ptr Plugin::GetFunction(const std::string& name)
+func_ptr Plugin::GetFunction(const std::string& name)
 {
     /*This method will extract a pointer to a function. Since func_ptr is already defined as a
     pointer to a function with a variable number of arguments, I do not have to define what those

@@ -286,7 +286,6 @@ size_t LuaWrap::GetResultSize() const
     //(http://stackoverflow.com/questions/4815588/request-a-lua-table-size-in-c-before-iterating-it)!
     return lua_rawlen(Lua, LUA_TOPITEM);
 }
-
 //Private methods
 int LuaWrap::traceback(lua_State* lua)
 {

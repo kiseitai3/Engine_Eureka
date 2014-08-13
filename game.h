@@ -24,6 +24,13 @@ typedef struct psudo_type{
         }
     }unknown_return, fuzzy_obj;//The purpose of this struct is to have a type in which I can store an unknown return from a python or lua function without having to write overloads for each c++ functions that will handle a return from python.
 
+class Game
+{
+public:
+
+private:
+
+};
 //Global functions
 
 

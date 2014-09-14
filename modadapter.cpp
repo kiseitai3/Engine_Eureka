@@ -5,14 +5,17 @@ ModAdapter::ModAdapter(const char* file)
     std::string tmp = file;
     dlModule = NULL;
     sModule = NULL;
-    if(tmp.rfind(".dll") || tmp.rfind(".so") || tmp.rfind(".dylib") || tmp.rfind(".plg"))
-        dlModule = new Plugin(file);
+    if(tmp.rfind(".dll") || tmp.rfind(".so") || tmp.rfind(".dylib") || tmp.rfind(".plg"))//Check if we have a binary plugin
+        dlModule = new Plugin(file);//Initialize the plugin loader
     else
-        sModule = new ScriptWrap(file);
+        sModule = new ScriptWrap(file);//Otherwise, initialize the plugin as a regular script. Good for scripted plugins.
 }
 
 bool ModAdapter::isFuncRegistered(const std::string& name) const
 {
+    /*This method checks if the function name matches any in the function list. If it does, bingo, we already registered
+    the plugin and nothing else should be done!
+    */
     for(size_t i = 0; i < fList.size(); i++)
     {
         if(fList[i].Name == name)
@@ -23,6 +26,7 @@ bool ModAdapter::isFuncRegistered(const std::string& name) const
 
 void ModAdapter::RegisterFunction(const std::string& name)
 {
+    //Register a single function
     if(isFuncRegistered(name))
     {
         std::cout << "Warning: Function is already registered. Skipping execution! Function Name: " << name << std::endl;
@@ -37,6 +41,7 @@ void ModAdapter::RegisterFunction(const std::string& name)
 
 void ModAdapter::RegisterFunctionFromFile(const char* file)
 {
+    //Read a settings file that has a series of functions to register! These functions must be present in the plugin!
     data_base settings(file);
     size_t fCount = settings.GetIntFromData("func_count");
     for(size_t i = 0; i < fCount; i++)
@@ -50,19 +55,23 @@ void ModAdapter::RegisterFunctionFromFile(const char* file)
 
 int ModAdapter::RunFunctions(Game* owner) const
 {
+    //Execute functions!
     for(size_t i = 0; i < fList.size(); i++)
     {
         if(sModule)
         {
             sModule->AddArgument(owner);
             sModule->executeFunction(fList[i].Name, ScriptWrap::NO_ARGS);
+            return EXIT_SUCCESS;
         }
         else if(dlModule)
         {
             fList[i].Ptr(owner);
+            return EXIT_SUCCESS;
         }
-
     }
+    std::cout << "Error: The plugin function failed to execute!" << std::endl;
+    return EXIT_FAILURE;
 }
 
 ModAdapter::~ModAdapter()

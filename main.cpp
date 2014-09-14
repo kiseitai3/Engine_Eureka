@@ -1,3 +1,4 @@
+#include "mysql.h"
 #include <Python.h>
 #include <SDL.h>
 #include <SDL_mixer.h>
@@ -18,6 +19,7 @@
 #include "data_base.h"
 #include <unistd.h>
 #define ERROR -1
+
 
 using namespace std;
 //constants
@@ -49,7 +51,8 @@ int mainGame(int argc, char* argv[]);
 
 int main(int argc, char* argv[]){
     //Call runing function or test function here
-
+    MySQL db;
+    db.connect("test", "t", "343249", "localhost");
     return 0;
 }
 void displayTest(const char* const input, int size)

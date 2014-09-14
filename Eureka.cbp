@@ -35,6 +35,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++0x" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -42,11 +43,16 @@
 		<Compiler>
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/include" />
 			<Add directory="c:/Python27/include" />
-			<Add directory="Dependencies and tools/SDL2-2.0.0/i686-w64-mingw32/include/SDL2" />
-			<Add directory="Dependencies and tools/SDL_ttf-2.0.11/SDL_ttf-2.0.11/include" />
-			<Add directory="Dependencies and tools/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
-			<Add directory="Dependencies and tools/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
-			<Add directory="Dependencies and tools/lua-5.2.3/src" />
+			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/include" />
+			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/lua-5.2.3/src" />
+			<Add directory="Dependencies/sqlite3" />
+			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/include" />
+			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/include" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/include/boost" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
 		</Compiler>
 		<Linker>
 			<Add library="libmingw32" />
@@ -57,13 +63,19 @@
 			<Add library="SDL_ttf" />
 			<Add library="SDL2_image" />
 			<Add library="lua" />
+			<Add library="sqlite3" />
+			<Add library="mysqlcppconn" />
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
-			<Add directory="Dependencies and tools/SDL2-2.0.0/i686-w64-mingw32/lib" />
-			<Add directory="Dependencies and tools/SDL_ttf-2.0.11/SDL_ttf-2.0.11/lib/x86" />
-			<Add directory="Dependencies and tools/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
-			<Add directory="Dependencies and tools/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
-			<Add directory="Dependencies and tools/lua-5.2.3/src" />
+			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/lib/x86" />
+			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/lua-5.2.3/src" />
+			<Add directory="Dependencies/sqlite3/win32_lib" />
+			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/lib" />
+			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/lib" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 		</Linker>
 		<Unit filename="Eureka_lua.cxx">
 			<Option target="Release" />
@@ -137,6 +149,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="mysql.cpp" />
+		<Unit filename="mysql.h" />
 		<Unit filename="physics.cpp" />
 		<Unit filename="physics.h">
 			<Option target="Release" />
@@ -173,6 +187,16 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="sqlitewrap.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="sqlitewrap.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="sqlkeywords.cpp" />
+		<Unit filename="sqlkeywords.h" />
 		<Unit filename="textbox.cpp" />
 		<Unit filename="textbox.h">
 			<Option target="Release" />

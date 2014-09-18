@@ -112,6 +112,10 @@ static std::map<word, std::string> Keywords{
 
 typedef struct SQLGenerator//SQL Query Generator. It's a nice helping structure!
 {
+    enum DataTypes
+    {
+        INT, DOUBLE, BOOL, STRING, CHAR,
+    };
     static const std::string WILDCARD;
     std::string prepareStatement(const std::string& table, const std::string& columns = WILDCARD, const std::string& criteria = WILDCARD, const std::string& pattern = WILDCARD, const std::string& pattern2 = WILDCARD, size_t statementType = SELECT);
 }SQLQuery;

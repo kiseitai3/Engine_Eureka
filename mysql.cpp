@@ -185,6 +185,38 @@ void MySQL::getResult(char& response)
     response = tmp;
 }
 
+std::vector<fuzzy_obj> MySQL::getResults(size_t dataType)
+{
+    std::vector<fuzzy_obj> resList;//Place holder
+    while(res->next())
+    {
+        fuzzy_obj tmp;
+        switch(dataType)
+        {
+        case INT:
+            getResult(tmp.number);
+            break;
+        case DOUBLE:
+            getResult(tmp.decimal);
+            break;
+        case STRING:
+            getResult(tmp.str);
+            break;
+        case BOOL:
+            getResult(tmp.answer);
+            break;
+        case CHAR:
+            getResult(tmp.c);
+            break;
+        default:
+            std::cout << "Error: MySQL object was asked to prepare a list of results, but the type specified is incorrect! ";
+            std::cout << "Error in getResults()." << std::endl;
+        }
+        resList.push_back(tmp);//Add result to the list
+    }
+    return resList; //Return the list of results
+}
+
 void MySQL::getResult(double& response)
 {
     double tmp;

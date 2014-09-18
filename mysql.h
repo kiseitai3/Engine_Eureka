@@ -25,6 +25,7 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include "sqlkeywords.h"
+#include "typedefs.h"
 
 
 class MySQL : public SQLGenerator
@@ -47,9 +48,11 @@ public:
     void getResult(std::string& response);
     void getResult(bool& response);
     void getResult(double& response);
+    std::vector<fuzzy_obj> getResults(size_t dataType = STRING);
     /*Status of the class.*/
     bool getStatus() const;
     ~MySQL();
+
 private:
     bool status;
     sql::Connection* conn;

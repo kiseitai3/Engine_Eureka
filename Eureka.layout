@@ -1,98 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="ui.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="691" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="modadapter.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2492" topLine="69" />
-		</Cursor>
-	</File>
-	<File name="unit.cpp" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="17632" topLine="624" />
-		</Cursor>
-	</File>
-	<File name="unit.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2183" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="Eureka_lua.cxx" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="22402" topLine="722" />
-		</Cursor>
-	</File>
-	<File name="Eureka_wrap.cxx" open="0" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="492035" topLine="14637" />
-		</Cursor>
-	</File>
-	<File name="Timer.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1593" topLine="71" />
-		</Cursor>
-	</File>
-	<File name="mysql.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1130" topLine="22" />
-		</Cursor>
-	</File>
-	<File name="physics.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="916" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="physics.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3645" topLine="76" />
-		</Cursor>
-	</File>
-	<File name="plugin.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="588" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="3" />
-			<Collapse line="13" />
-		</Folding>
-	</File>
-	<File name="plugin.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="347" topLine="5" />
-		</Cursor>
-	</File>
-	<File name="Timer.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="596" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="progressbar.cpp" open="0" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="185" topLine="1" />
-		</Cursor>
-		<Folding>
-			<Collapse line="22" />
-		</Folding>
-	</File>
-	<File name="button.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2928" topLine="75" />
-		</Cursor>
-	</File>
-	<File name="progressbar.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="106" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="button.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="243" topLine="5" />
-		</Cursor>
-	</File>
 	<File name="pywrap.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="8760" topLine="115" />
@@ -117,9 +25,9 @@
 			<Cursor1 position="1452" topLine="35" />
 		</Cursor>
 	</File>
-	<File name="conversion.h" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="conversion.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1265" topLine="24" />
+			<Cursor1 position="4117" topLine="81" />
 		</Cursor>
 	</File>
 	<File name="scriptwrap.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -147,6 +55,21 @@
 			<Cursor1 position="7883" topLine="251" />
 		</Cursor>
 	</File>
+	<File name="Eureka_lua.cxx" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="22402" topLine="722" />
+		</Cursor>
+	</File>
+	<File name="sound_base.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2233" topLine="44" />
+		</Cursor>
+	</File>
+	<File name="Eureka_wrap.cxx" open="0" top="0" tabpos="36" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="492035" topLine="14637" />
+		</Cursor>
+	</File>
 	<File name="draw_base.cpp" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4637" topLine="164" />
@@ -156,9 +79,9 @@
 			<Collapse line="76" />
 		</Folding>
 	</File>
-	<File name="sound_base.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Timer.cpp" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2233" topLine="44" />
+			<Cursor1 position="1593" topLine="71" />
 		</Cursor>
 	</File>
 	<File name="draw_base.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -166,29 +89,39 @@
 			<Cursor1 position="468" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="sqlitewrap.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="typedefs.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="523" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="sqlitewrap.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="332" topLine="10" />
+			<Cursor1 position="863" topLine="4" />
 		</Cursor>
 	</File>
 	<File name="game.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1145" topLine="19" />
+			<Cursor1 position="196" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ui.cpp" open="0" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6842" topLine="218" />
 		</Cursor>
 	</File>
 	<File name="globals.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="300" topLine="0" />
+			<Cursor1 position="784" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="sqlkeywords.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="sqlitewrap.cpp" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4598" topLine="98" />
+			<Cursor1 position="3007" topLine="42" />
+		</Cursor>
+		<Folding>
+			<Collapse line="5" />
+			<Collapse line="20" />
+			<Collapse line="28" />
+		</Folding>
+	</File>
+	<File name="ui.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="691" topLine="22" />
 		</Cursor>
 	</File>
 	<File name="input.cpp" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -199,9 +132,14 @@
 			<Collapse line="32" />
 		</Folding>
 	</File>
-	<File name="textbox.cpp" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="sqlitewrap.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="964" topLine="29" />
+			<Cursor1 position="1110" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="unit.cpp" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="17632" topLine="624" />
 		</Cursor>
 	</File>
 	<File name="input.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -209,9 +147,9 @@
 			<Cursor1 position="1053" topLine="22" />
 		</Cursor>
 	</File>
-	<File name="textbox.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="unit.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1055" topLine="34" />
+			<Cursor1 position="2183" topLine="65" />
 		</Cursor>
 	</File>
 	<File name="level.cpp" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -219,9 +157,9 @@
 			<Cursor1 position="385" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="trigger.cpp" open="0" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="sqlkeywords.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1683" topLine="65" />
+			<Cursor1 position="4598" topLine="98" />
 		</Cursor>
 	</File>
 	<File name="level.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -229,9 +167,9 @@
 			<Cursor1 position="859" topLine="33" />
 		</Cursor>
 	</File>
-	<File name="trigger.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="textbox.cpp" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="355" topLine="4" />
+			<Cursor1 position="964" topLine="29" />
 		</Cursor>
 	</File>
 	<File name="luawrap.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -257,9 +195,9 @@
 			<Collapse line="290" />
 		</Folding>
 	</File>
-	<File name="typedefs.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="textbox.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="56" topLine="0" />
+			<Cursor1 position="1055" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="luawrap.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -267,14 +205,91 @@
 			<Cursor1 position="56" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ui.cpp" open="0" top="0" tabpos="39" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="trigger.cpp" open="0" top="0" tabpos="35" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6842" topLine="218" />
+			<Cursor1 position="1683" topLine="65" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="7961" topLine="286" />
+		</Cursor>
+	</File>
+	<File name="trigger.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="355" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="modadapter.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2492" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="mysql.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3605" topLine="37" />
+		</Cursor>
+		<Folding>
+			<Collapse line="23" />
+			<Collapse line="38" />
+			<Collapse line="54" />
+		</Folding>
+	</File>
+	<File name="mysql.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1692" topLine="43" />
+		</Cursor>
+	</File>
+	<File name="physics.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="916" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="physics.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3645" topLine="76" />
+		</Cursor>
+	</File>
+	<File name="plugin.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="588" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="3" />
+			<Collapse line="13" />
+		</Folding>
+	</File>
+	<File name="Timer.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="596" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="plugin.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="347" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="button.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2928" topLine="75" />
+		</Cursor>
+	</File>
+	<File name="progressbar.cpp" open="0" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="185" topLine="1" />
+		</Cursor>
+		<Folding>
+			<Collapse line="22" />
+		</Folding>
+	</File>
+	<File name="button.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="243" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="progressbar.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="106" topLine="2" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

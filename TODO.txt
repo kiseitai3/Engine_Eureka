@@ -1,9 +1,20 @@
 --Implement accessibility options on the engine level!
 --Create crossplatform level designer project.
+<<<<<<< HEAD
 --Create Launcher project.
 --Add a unifying database API that will consolidate
 the MySQL and SQLite3 APIs in the engine!
 --Add XML parsing hooks
+<<<<<<< HEAD
 --Create a Game class
 --Put everything together
 --Update Physics class
+=======
+--Add LUA and PawnScript interpreters/hooks
+--Update Physics class
+=======
+   --Finish asset registration tab
+   --Create unit and tile creation tabs
+--Create Launcher project.
+>>>>>>> 1003aa5886226098c82517f7ae9b6217c1a45b3b
+>>>>>>> origin/master

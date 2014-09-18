@@ -25,6 +25,7 @@
 #include <math.h>
 #include <unistd.h>
 
+
 //Prototypes
 void shiftLeadingExponentZeroes(char* source, size_t index);
 
@@ -505,3 +506,60 @@ std::string replaceCharInStr(std::string source, char target, char replacement, 
     }
     return source;
 }
+
+#ifdef UTF8_NEEDED
+bool checkUTF8String(const std::string& buffer)
+{
+    return utf8::is_valid(buffer.begin(), buffer.end());
+}
+
+std::string convertASCII2UTF8(const std::string& ascii)
+{
+    //create temporary buffer
+    std::string tmp;
+    //Ask utfcpp to look for invalid utf8 portions and replace them with utf8!
+    utf8::replace_invalid(ascii.begin(), ascii.end(), back_inserter(tmp));
+    //Return the newly formed string
+    return tmp;
+}
+
+std::string convertUTF82UTF16(const std::string& utf8)
+{
+    //create temporary buffer
+    std::string tmp;
+    //Ask utfcpp to convert the utf8 string into a utf16 string!
+    utf8::utf8to16(utf8.begin(), utf8.end(), back_inserter(tmp));
+    //Return the newly formed string
+    return tmp;
+}
+
+std::string convertUTF162UTF8(const std::string& utf16)
+{
+    //create temporary buffer
+    std::string tmp;
+    //Ask utfcpp to convert the utf16 string into a utf8 string!
+    utf8::utf16to8(utf16.begin(), utf16.end(), back_inserter(tmp));
+    //Return the newly formed string
+    return tmp;
+}
+
+std::string convertUTF82UTF32(const std::string& utf8)
+{
+    //create temporary buffer
+    std::string tmp;
+    //Ask utfcpp to convert the utf8 string into a utf16 string!
+    utf8::utf8to32(utf8.begin(), utf8.end(), back_inserter(tmp));
+    //Return the newly formed string
+    return tmp;
+}
+
+std::string convertUTF322UTF8(const std::string& utf32)
+{
+    //create temporary buffer
+    std::string tmp;
+    //Ask utfcpp to convert the utf16 string into a utf8 string!
+    utf8::utf32to8(utf32.begin(), utf32.end(), back_inserter(tmp));
+    //Return the newly formed string
+    return tmp;
+}
+#endif // UTF8_NEEDED

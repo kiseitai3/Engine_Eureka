@@ -92,6 +92,7 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="config.h" />
 		<Unit filename="conversion.cpp" />
 		<Unit filename="conversion.h">
 			<Option target="Release" />
@@ -187,6 +188,10 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="sqlite_error.cpp" />
+		<Unit filename="sqlite_error.h" />
+		<Unit filename="sqlite_row.cpp" />
+		<Unit filename="sqlite_row.h" />
 		<Unit filename="sqlitewrap.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -221,6 +226,10 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="utf8.h" />
+		<Unit filename="utf8/checked.h" />
+		<Unit filename="utf8/core.h" />
+		<Unit filename="utf8/unchecked.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

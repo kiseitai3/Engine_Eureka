@@ -1,0 +1,6 @@
+#ifndef CONFIG_H_INCLUDED
+#define CONFIG_H_INCLUDED
+
+#define UTF8_NEEDED
+
+#endif // CONFIG_H_INCLUDED

@@ -12949,8 +12949,10 @@
 	"conversion.h"
 	"data_base.h"
 
-1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
+1411032098 c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.h
 	<string>
+	"config.h"
+	"utf8.h"
 
 1407117980 c:\users\kiseitai2\documents\devcb\engine_eureka\data_base.h
 	<fstream>
@@ -13001,7 +13003,7 @@
 	<string>
 	<boost\python.hpp>
 
-1407117980 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
+1410804615 source:c:\users\kiseitai2\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
 	<stdio.h>
@@ -19289,7 +19291,7 @@
 	<dlfcn.h>
 	<windows.h>
 
-1407882234 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+1410806513 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
 	<iostream>
 	"typedefs.h"
 
@@ -19678,7 +19680,7 @@
 1365792527 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lualib.h
 	"lua.h"
 
-1407887625 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
+1411015596 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
 
 1407851693 source:c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.cpp
 	"luawrap.h"
@@ -20049,34 +20051,38 @@
 	<vector>
 	<string>
 
-1410647149 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlitewrap.cpp
+1411034844 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlitewrap.cpp
 	"sqlitewrap.h"
+	"conversion.h"
 
 1410395866 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.cpp
 	"sqlkeywords.h"
 
-1410396012 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.h
+1410831806 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.h
 	<string>
 	<map>
 	<iostream>
 	"typedefs.h"
 
-1410647104 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlitewrap.h
+1411035021 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlitewrap.h
 	<sqlite3.h>
 	<iostream>
 	<string>
 	<vector>
+	<stack>
 	"game.h"
 	"data_base.h"
 	"sqlkeywords.h"
+	"sqlite_error.h"
+	"sqlite_row.h"
 
 1401891697 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies\sqlite3\sqlite3.h
 	<stdarg.h>
 
-1410395876 source:c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.cpp
+1411034956 source:c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.cpp
 	"mysql.h"
 
-1410650090 c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.h
+1411034997 c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.h
 	<iostream>
 	<string>
 	<cppconn/driver.h>
@@ -20084,6 +20090,7 @@
 	<cppconn/resultset.h>
 	<cppconn/statement.h>
 	"sqlkeywords.h"
+	"typedefs.h"
 
 1406742096 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies\mysql-connector-c++-noinstall-1.1.4-win32\include\cppconn\driver.h
 	"connection.h"
@@ -23237,4 +23244,35 @@
 	"config.h"
 	"resultset.h"
 	<string>
+
+1410796070 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlite_error.h
+	<sqlite3.h>
+	<iostream>
+
+1410804921 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlite_error.cpp
+	"sqlite_error.h"
+
+1360455912 c:\users\kiseitai2\documents\devcb\engine_eureka\utf8.h
+	"utf8/checked.h"
+	"utf8/unchecked.h"
+
+1361140536 c:\users\kiseitai2\documents\devcb\engine_eureka\utf8\checked.h
+	"core.h"
+	<stdexcept>
+
+1360455912 c:\users\kiseitai2\documents\devcb\engine_eureka\utf8\core.h
+	<iterator>
+
+1360455912 c:\users\kiseitai2\documents\devcb\engine_eureka\utf8\unchecked.h
+	"core.h"
+
+1410804538 c:\users\kiseitai2\documents\devcb\engine_eureka\config.h
+
+1411033398 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlite_row.cpp
+	"sqlite_row.h"
+
+1411033398 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlite_row.h
+	<vector>
+	<iostream>
+	"typedefs.h"
 

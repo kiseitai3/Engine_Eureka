@@ -1,7 +1,8 @@
 --Implement accessibility options on the engine level!
 --Create crossplatform level designer project.
 --Create Launcher project.
---Add dynamic library loader for plugin activation and use in the engine. (Implement a scheduler Thread and define entrypoints for the libraries)
+--Add a unifying database API that will consolidate
+the MySQL and SQLite3 APIs in the engine!
 --Add XML parsing hooks
 --Create a Game class
 --Put everything together

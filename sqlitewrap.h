@@ -34,6 +34,8 @@ public:
     void popRow();
     void popRows();
     void ClearResults();
+    /*Ask for the validity of a database file!*/
+    static bool isSQLiteDB(const char* file);
     ~SQLiteWrap();
 private:
     sqlite3 *hDB; //Database handle!

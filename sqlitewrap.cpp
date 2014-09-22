@@ -236,6 +236,20 @@ size_t SQLiteWrap::stepThroughRow(sqlite3_stmt* stmt)
     return err;
 }
 
+bool SQLiteWrap::isSQLiteDB(const char* file)
+{
+    sqlite3* DB;
+    int err = sqlite3_open(file, &DB);
+    if(err == SQLITE_OK)//See if the database engine opened the file without issues
+    {
+        sqlite3_close(DB);//Close the database
+        return true;
+    }
+
+    sqlite3_close(DB);//Close the database
+    return false;
+}
+
 SQLiteWrap::~SQLiteWrap()
 {
     closeConnection();

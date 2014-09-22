@@ -3,12 +3,6 @@
 #include <iostream>
 #include "typedefs.h"
 
-enum FileTypes
-{
-    NONE, VAR, XML, LUA, PYTHON
-};
-
-
 class Game
 {
 public:

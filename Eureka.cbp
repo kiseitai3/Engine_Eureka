@@ -103,6 +103,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="database.cpp" />
+		<Unit filename="database.h" />
 		<Unit filename="draw_base.cpp" />
 		<Unit filename="draw_base.h">
 			<Option target="Release" />

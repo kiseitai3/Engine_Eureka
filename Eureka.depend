@@ -12961,7 +12961,7 @@
 	"data_base.h"
 	<iostream>
 
-1411089088 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
+1411765017 source:c:\users\kiseitai2\documents\devcb\engine_eureka\main.cpp
 	"mysql.h"
 	<Python.h>
 	<SDL.h>
@@ -13020,11 +13020,11 @@
 	"conversion.h"
 	<iostream>
 
-1411088998 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
+1411773943 c:\users\kiseitai2\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 	<vector>
-	"game.h"
+	"typedefs.h"
 
 1374252744 c:\users\kiseitai2\documents\dev-cpp projects\include\boost\python.hpp
 	<boost/python/args.hpp>
@@ -18727,7 +18727,7 @@
 	<list>
 	"progressbar.h"
 
-1411088998 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
+1411764496 c:\users\kiseitai2\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
@@ -19276,9 +19276,8 @@
 
 1411085221 source:c:\users\kiseitai2\documents\devcb\engine_eureka\game.cpp
 
-1411088998 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
+1411764716 c:\users\kiseitai2\documents\devcb\engine_eureka\scriptwrap.h
 	<vector>
-	"game.h"
 	"pywrap.h"
 	"luawrap.h"
 	"typedefs.h"
@@ -19291,9 +19290,20 @@
 	<dlfcn.h>
 	<windows.h>
 
-1411265327 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+1411773734 c:\users\kiseitai2\documents\devcb\engine_eureka\game.h
+	"scriptwrap.h"
 	<iostream>
+	<queue>
+	<map>
+	<vector>
+	<stack>
+	<list>
 	"typedefs.h"
+	"info.h"
+	"ui.h"
+	"unit.h"
+	"plugin.h"
+	"Timer.h"
 
 1387836717 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -19663,14 +19673,13 @@
 	<stdio.h>
 	"lua.h"
 
-1411088998 c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.h
+1411765136 c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.h
 	<lua.hpp>
 	<string>
 	<iostream>
 	<stack>
 	<vector>
-	"game.h"
-	"globals.h"
+	"typedefs.h"
 
 1103766784 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lua.hpp
 	"lua.h"
@@ -19680,11 +19689,12 @@
 1365792527 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies and tools\lua-5.2.3\src\lualib.h
 	"lua.h"
 
-1411266788 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
+1411653770 c:\users\kiseitai2\documents\devcb\engine_eureka\typedefs.h
 
-1411089010 source:c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.cpp
+1411765327 source:c:\users\kiseitai2\documents\devcb\engine_eureka\luawrap.cpp
 	"luawrap.h"
 	<cmath>
+	"conversion.h"
 
 1411089134 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -20058,7 +20068,7 @@
 1411089088 source:c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.cpp
 	"sqlkeywords.h"
 
-1411089257 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.h
+1411778478 c:\users\kiseitai2\documents\devcb\engine_eureka\sqlkeywords.h
 	<string>
 	<map>
 	<iostream>
@@ -20079,7 +20089,7 @@
 1411089168 c:\users\kiseitai2\documents\devcb\engine_eureka\dependencies\sqlite3\sqlite3.h
 	<stdarg.h>
 
-1411089257 source:c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.cpp
+1411351447 source:c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.cpp
 	"mysql.h"
 
 1411089257 c:\users\kiseitai2\documents\devcb\engine_eureka\mysql.h
@@ -23276,11 +23286,18 @@
 	<iostream>
 	"typedefs.h"
 
-1411351434 source:c:\users\kiseitai2\documents\devcb\engine_eureka\database.cpp
+1411650685 source:c:\users\kiseitai2\documents\devcb\engine_eureka\database.cpp
 	"database.h"
 
 1411351434 c:\users\kiseitai2\documents\devcb\engine_eureka\database.h
 	"sqlitewrap.h"
 	"mysql.h"
 	<string>
+
+1411761340 c:\users\kiseitai2\documents\devcb\engine_eureka\info.h
+	<iostream>
+	<string>
+
+1411758549 source:c:\users\kiseitai2\documents\devcb\engine_eureka\info.cpp
+	"info.h"
 

@@ -18,7 +18,7 @@
 #include "ui.h"
 #include "data_base.h"
 #include <unistd.h>
-#define ERROR -1
+//#define ERROR -1
 
 
 using namespace std;
@@ -30,7 +30,7 @@ int FRAMES_PER_SECOND = 60;
 int SCREEN_WIDTH = 640;
 int SCREEN_HEIGHT = 480;
 int SCREEN_BPP = 32;
-int BLITLEVELS = 20;
+int BLITLEVELS = 50;
 int FREQUENCY = 22050;
 int CHANNELS = 2;
 int CHUNKSIZE = 4096;

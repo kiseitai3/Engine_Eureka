@@ -14,6 +14,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O3" />
+					<Add option="-std=c++0x" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -122,6 +123,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="info.cpp" />
+		<Unit filename="info.h" />
 		<Unit filename="input.cpp" />
 		<Unit filename="input.h">
 			<Option target="Release" />

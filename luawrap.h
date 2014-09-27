@@ -5,8 +5,7 @@
 #include <iostream>
 #include <stack>
 #include <vector>
-#include "game.h"
-#include "globals.h"
+#include "typedefs.h"
 
 #define LUA_TOPITEM -1
 #define LUA_ERASE_ALL -1

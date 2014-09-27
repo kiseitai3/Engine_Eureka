@@ -4,7 +4,7 @@
 #include <Python.h>
 #include <string>
 #include <vector>
-#include "game.h"
+#include "typedefs.h"
 
 //class
 class Pywrap

@@ -1,5 +1,6 @@
 #include "luawrap.h"
 #include <cmath>
+#include "conversion.h"
 
 LuaWrap::LuaWrap(const char* file)
 {
@@ -48,7 +49,7 @@ bool LuaWrap::executeFunction(const std::string& funcName)
     if(!argStack->empty())
     {
         //Let's reverse the order of the stack. A queue would have done the same job, but I like stacks!
-        *argStack = reverseOrderStack(*argStack);
+        *argStack = reverseStackOrder(*argStack);
         argCount = argStack->size();
         while(!argStack->empty())
         {

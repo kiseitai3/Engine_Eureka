@@ -12,6 +12,7 @@
 
 //Forward declarations
 class ProgressBar;
+class ScriptWrap;
 
 class Unit
 {

@@ -4,6 +4,7 @@
 typedef unsigned char byte;
 typedef void* void_ptr;
 typedef void (*func_ptr)(...);
+typedef const char* cstr;
 
 //Struct
 typedef struct psudo_type{

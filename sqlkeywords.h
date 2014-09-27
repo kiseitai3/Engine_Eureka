@@ -36,6 +36,8 @@ in the generator multiple keywords in the format x|y|z. Thus, the SQL statement 
 whether statementType = SELECT | FROM. Since this is a binary OR evaluation, you obtain a value that is a merged version of
 SELECT and FROM binary values! :D
 */
+#undef DELETE
+#undef IN
 enum StatementTypes
 {
     CREATETABLE =   0b0000000000000001,
@@ -73,7 +75,6 @@ enum StatementTypes
     INTO_SELECT =   INTO | SELECT | CALL,
     UNION =         AS | LIKE | INTO,
 };
-
 /*The following map is used by the generators to quickly generate the query statement while using as little memory as
 possible. In other words, the compiler doesn't have to add assembly code every time I write SELECT in the switch statement.
 The program doesn't have to allocate memory for each SELECT either! The users can also use this map in their custom

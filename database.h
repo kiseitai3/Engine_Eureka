@@ -1,7 +1,7 @@
 #ifndef DATABASE_H_INCLUDED
 #define DATABASE_H_INCLUDED
-#include "sqlitewrap.h"
 #include "mysql.h"
+#include "sqlitewrap.h"
 #include <string>
 
 class DataBase : public SQLGenerator

@@ -2,6 +2,8 @@
 
 DataBase::DataBase(const char* file)
 {
+    db_lite = NULL;
+    db = NULL;
     connect(file);
 }
 
@@ -142,4 +144,9 @@ size_t DataBase::GetDBType() const
 bool DataBase::isConnected() const
 {
     return connected;
+}
+
+DataBase::~DataBase()
+{
+    disconnect();
 }

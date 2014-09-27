@@ -1,10 +1,12 @@
 #ifndef SCRIPTWRAP_H_INCLUDED
 #define SCRIPTWRAP_H_INCLUDED
 #include <vector>
-#include "game.h"
 #include "pywrap.h"
 #include "luawrap.h"
 #include "typedefs.h"
+
+class LuaWrap;
+class Pywrap;
 
 #define ERROR_EXEC_FAILURE 1
 #define ERROR_UNKNOWN_ARG 2

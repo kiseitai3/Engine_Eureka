@@ -25,34 +25,36 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include "sqlkeywords.h"
-#include "typedefs.h"
 
 
 class MySQL : public SQLGenerator
 {
 public:
+    //Typedefs and static vars
     typedef const char* cstr;
     static cstr DEFAULT_HOST;
+    static const int DEFAULT_COL_INDEX;
+    //Ctors
     MySQL(cstr database = NULL, cstr username = NULL, cstr password = NULL, cstr host = MySQL::DEFAULT_HOST);
-    /*Connection methods*/
+    //Main interface
     void connect(cstr database, cstr username, cstr password, cstr host);
     void disconnect();
     void queryDB(const std::string& query);
     void CleanResults();
-    void ClearStatus();
-    /*Getter methods. These methods are used to extract the result
-    from the query. Each method calls the appropriate conversion
-    function from the MySQL API!*/
-    void getResult(int& response);
-    void getResult(char& response);
-    void getResult(std::string& response);
-    void getResult(bool& response);
-    void getResult(double& response);
-    std::vector<fuzzy_obj> getResults(size_t dataType = STRING);
-    /*Status of the class.*/
+    /*Results getters*/
+    void getResult(int& response, const std::string& col_name);
+    void getResult(char& response, const std::string& col_name);
+    void getResult(std::string& response, const std::string& col_name);
+    void getResult(bool& response, const std::string& col_name);
+    void getResult(double& response, const std::string& col_name);
+    void getResult(int& response, size_t col_index = DEFAULT_COL_INDEX);
+    void getResult(char& response, size_t col_index = DEFAULT_COL_INDEX);
+    void getResult(std::string& response, size_t col_index = DEFAULT_COL_INDEX);
+    void getResult(bool& response, size_t col_index = DEFAULT_COL_INDEX);
+    void getResult(double& response, size_t col_index = DEFAULT_COL_INDEX);
     bool getStatus() const;
+    //Dtors
     ~MySQL();
-
 private:
     bool status;
     sql::Connection* conn;
@@ -61,7 +63,7 @@ private:
     sql::Statement* statement;
 
     //methods
-    void error_log(sql::SQLException& err);// This method outputs the specific error.
+    void error_log(sql::SQLException& err);
 };
 
 #endif // MYSQL_H_INCLUDED

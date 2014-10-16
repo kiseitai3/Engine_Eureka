@@ -19,6 +19,7 @@
 
 
 MySQL::cstr MySQL::DEFAULT_HOST = "localhost";
+const int MySQL::DEFAULT_COL_INDEX = 1;
 
 MySQL::MySQL(cstr database, cstr username, cstr password, cstr host)
 {
@@ -32,6 +33,7 @@ MySQL::MySQL(cstr database, cstr username, cstr password, cstr host)
             << "information is present!" << std::endl;
     else
         connect(database, username, password, host);
+
     status = false;//False = everything is fine
 }
 
@@ -121,17 +123,18 @@ bool MySQL::getStatus() const
     return status;
 }
 
-void MySQL::ClearStatus()
-{
-    status = false;
-}
-
-void MySQL::getResult(bool& response)
+void MySQL::getResult(bool& response, const std::string& col_name)
 {
     bool tmp;
     try
     {
-        tmp = res->getBoolean("_reply");
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getBoolean(col_name);
     }
     catch (sql::SQLException& e)
     {
@@ -140,12 +143,18 @@ void MySQL::getResult(bool& response)
     response = tmp;
 }
 
-void MySQL::getResult(int& response)
+void MySQL::getResult(int& response, const std::string& col_name)
 {
     int tmp;
     try
     {
-        tmp = res->getInt("_reply");
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getInt(col_name);
     }
     catch (sql::SQLException& e)
     {
@@ -155,12 +164,18 @@ void MySQL::getResult(int& response)
     response = tmp;
 }
 
-void MySQL::getResult(std::string& response)
+void MySQL::getResult(std::string& response, const std::string& col_name)
 {
     std::string tmp;
     try
     {
-        tmp = res->getString("_reply");
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getString(col_name);
     }
     catch (sql::SQLException& e)
     {
@@ -170,12 +185,18 @@ void MySQL::getResult(std::string& response)
     response = tmp;
 }
 
-void MySQL::getResult(char& response)
+void MySQL::getResult(char& response, const std::string& col_name)
 {
     char tmp;
     try
     {
-        tmp = res->getString("_reply")[0];
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getString(col_name)[0];
     }
     catch (sql::SQLException& e)
     {
@@ -185,44 +206,122 @@ void MySQL::getResult(char& response)
     response = tmp;
 }
 
-std::vector<fuzzy_obj> MySQL::getResults(size_t dataType)
-{
-    std::vector<fuzzy_obj> resList;//Place holder
-    while(res->next())
-    {
-        fuzzy_obj tmp;
-        switch(dataType)
-        {
-        case INT:
-            getResult(tmp.number);
-            break;
-        case DOUBLE:
-            getResult(tmp.decimal);
-            break;
-        case STRING:
-            getResult(tmp.str);
-            break;
-        case BOOL:
-            getResult(tmp.answer);
-            break;
-        case CHAR:
-            getResult(tmp.c);
-            break;
-        default:
-            std::cout << "Error: MySQL object was asked to prepare a list of results, but the type specified is incorrect! ";
-            std::cout << "Error in getResults()." << std::endl;
-        }
-        resList.push_back(tmp);//Add result to the list
-    }
-    return resList; //Return the list of results
-}
-
-void MySQL::getResult(double& response)
+void MySQL::getResult(double& response, const std::string& col_name)
 {
     double tmp;
     try
     {
-        tmp = res->getDouble("_reply");
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getDouble(col_name);
+    }
+    catch (sql::SQLException& e)
+    {
+        error_log(e);
+    }
+
+    response = tmp;
+}
+
+void MySQL::getResult(bool& response, size_t col_index)
+{
+    bool tmp;
+    try
+    {
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getBoolean(col_index);
+    }
+    catch (sql::SQLException& e)
+    {
+        error_log(e);
+    }
+    response = tmp;
+}
+
+void MySQL::getResult(int& response, size_t col_index)
+{
+    int tmp;
+    try
+    {
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getInt(col_index);
+    }
+    catch (sql::SQLException& e)
+    {
+        error_log(e);
+    }
+
+    response = tmp;
+}
+
+void MySQL::getResult(std::string& response, size_t col_index)
+{
+    std::string tmp;
+    try
+    {
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getString(col_index);
+    }
+    catch (sql::SQLException& e)
+    {
+        error_log(e);
+    }
+
+    response = tmp;
+}
+
+void MySQL::getResult(char& response, size_t col_index)
+{
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+    char tmp;
+    try
+    {
+        tmp = res->getString(col_index)[0];
+    }
+    catch (sql::SQLException& e)
+    {
+        error_log(e);
+    }
+
+    response = tmp;
+}
+
+void MySQL::getResult(double& response, size_t col_index)
+{
+    double tmp;
+    try
+    {
+        if(!res->next())
+        {
+            std::cout << "Error: Either the resultset is empty or something is wrong with the query string!"
+            << " No results were obtained from the previous query!" << std::endl;
+            return;
+        }
+        tmp = res->getDouble(col_index);
     }
     catch (sql::SQLException& e)
     {

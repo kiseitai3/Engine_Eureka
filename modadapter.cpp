@@ -1,6 +1,6 @@
 #include "modadapter.h"
 
-ModAdapter::ModAdapter(const char* file)
+ModAdapter::ModAdapter(const char* file, Game& owner)
 {
     std::string tmp = file;
     dlModule = NULL;
@@ -9,6 +9,9 @@ ModAdapter::ModAdapter(const char* file)
         dlModule = new Plugin(file);//Initialize the plugin loader
     else
         sModule = new ScriptWrap(file);//Otherwise, initialize the plugin as a regular script. Good for scripted plugins.
+
+    if(!owner_ref && !(owner_ref == &owner))
+        owner_ref = &owner;
 }
 
 bool ModAdapter::isFuncRegistered(const std::string& name) const
@@ -53,20 +56,20 @@ void ModAdapter::RegisterFunctionFromFile(const char* file)
     }
 }
 
-int ModAdapter::RunFunctions(Game* owner) const
+int ModAdapter::RunFunctions() const
 {
     //Execute functions!
     for(size_t i = 0; i < fList.size(); i++)
     {
         if(sModule)
         {
-            sModule->AddArgument(owner);
+            sModule->AddArgument(owner_ref);
             sModule->executeFunction(fList[i].Name, ScriptWrap::NO_ARGS);
             return EXIT_SUCCESS;
         }
         else if(dlModule)
         {
-            fList[i].Ptr(owner);
+            fList[i].Ptr(owner_ref);
             return EXIT_SUCCESS;
         }
     }
@@ -88,3 +91,7 @@ Node::Node(const std::string& name, func_ptr ptr)
     Ptr = ptr;
 }
 
+void_ptr helperModFunction(void_ptr obj)
+{
+    ((ModAdapter*)obj)->RunFunctions();
+}

@@ -13,7 +13,6 @@ class draw_base
     int GetHeightOfMainRect() const;
     int GetWidthOfMainRect() const;
     int GetAnimCounter() const;
-    data_base *GetDOM() const;
     bool isNoLoop() const;
     SDL_Texture& GetTexture() const;
     void setColor( Uint8 red, Uint8 green, Uint8 blue );
@@ -36,7 +35,6 @@ class draw_base
     int timeSpentOnFrame; //Keeps track of how draw cycles have passed on the frame.
     SDL_Texture* SpriteSheet;
     SDL_Rect src, target;
-    data_base *animDOM;
     int noLoop;
 
 };

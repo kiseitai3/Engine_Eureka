@@ -7,6 +7,8 @@
 #include <vector>
 #include <stack>
 #include <list>
+#include <cstdlib>
+#include <random>
 #include <pthread.h>
 #include "typedefs.h"
 #include "info.h"
@@ -14,51 +16,61 @@
 #include "unit.h"
 #include "plugin.h"
 #include "Timer.h"
-#include "modadapter.h"
+#include "modules.h"
+#include "threading.h"
 
 class ScriptWrap;
 class Unit;
 
-class Game : public GameInfo
+class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem
 {
 public:
-    typedef (void*)(*func)(void* data) thread_func;
-    typedef (void) (*func)(void* data) func;
-
     Game();
     Game(cstr file);
 
     /*Init*/
     void LoadGameConstants(cstr file);
     bool init();
+
     /*Queues*/
     void QueueGlobalScript(const ScriptWrap& script);
-    void QueueGlobalModule(const ModAdapter& plugin);
+
     /*Other setters*/
     size_t AddUI(const UI& ui);
-    size_t SpawnUnit(char type, math_point loc, cstr file, bool hero, bool hasBars);
-    size_t SpawnThread(thread_func target);
-    size_t SpawnThread(func target);//This one uses the reentrant helperMethod()
 
     //Level
     bool loadLevel(cstr file);
     void endTopLevel();
     Level& GetCurrentLevel();
+    Timer& GetTimer();
 
+    /*Getters*/
+    SDL_Renderer& GetRenderer() const;
+    bool isMultithreaded() const;
+    size_t GetDefaultUnitCount() const;
+
+    //Delete
     void removeUnit(const std::string& name);
     void removeUnit(size_t id);
+
     /*Save methods*/
-    void loadData();
-    void saveData();
+    void loadData(const std::string& name);
+    void saveData(const std::string& name);
+
+    //static members
+    static size_t hasher();//Spews out a random number as the key for an element
+
     /*Frame adjustment*/
     void FrameCapper();
+
     /*Below are the methods that will be called by the main thread or independent threads (if in multithreaded mode).*/
     void drawWorld();
     void playSounds();
     void executePlugins();
     void executeScripts();
-    void run();
-    void stop();//This method will halt all of the threads
+    void runPhysics();
+    void run(int id = -1);//This method will run all of the threads unless an specific thread id is specified
+    void stop(int id = -1);//This method will halt all of the threads unless an specific thread id is specified
     /*Let's remove game objects*/
 
 
@@ -68,8 +80,6 @@ private:
     std::stack<Unit*> soundStack;
     std::stack<Level*> levelStack;
     std::list<ScriptWrap*> scripts;
-    std::list<ModAdapter*> modules;
-    std::list<pthread_t*> threads;
     std::vector<UI*> uis;
 
     //Timer and renderer
@@ -85,8 +95,13 @@ private:
     //Other variables
     Level *current;
 
-    //Methods
-    void* helperMethod_r(func target);//Feed it a void function for execution in a pthread!
+    //Memory
+    uint64_t currentMemory;
+    uint64_t maxMemAllowed;
+    uint64_t maxMem;
+
+    //Global Unit Allocation Count
+    size_t defaultUnitCount;
 };
 //Global functions
 

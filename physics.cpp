@@ -25,7 +25,7 @@ const double Physics::k = 9*pow(10.0,9.0);
     bool Physics::Load_Physics(const char* location)// physData is the variable that will contain the name of the tag name in the xml file containing the physics details of especific objects (i.e. The hero's animation would have the tag name <hero>).
 {
     unmovable = 0;
-    physDOM.OpenFile(location);
+    data_base physDOM(location);
     if(physDOM.GetStateOfInternalBuffer())
     {
        mass = physDOM.GetValueFromData("mass");//in kilograms
@@ -264,7 +264,7 @@ const double Physics::k = 9*pow(10.0,9.0);
         }
         return sign;
     }
-    double Physics::GetDistance(math_point source) const
+    double Physics::GetDistance(const math_point& source) const
     {
         return sqrt((pow((double)(loc.Y-source.Y),2))+(pow((double)(loc.X-source.X),2)));
     }
@@ -282,13 +282,13 @@ const double Physics::k = 9*pow(10.0,9.0);
         return unmovable;
     }
     //Electricity
-    double Physics::math_CalculateForceFromChargedParticles(double Q2, math_point source) const
+    double Physics::math_CalculateForceFromChargedParticles(double Q2, const math_point& source) const
     {
         int Force=0;
         Force = k*((Q2*C)/pow(GetDistance(source),2));
         return Force;
     }
-    double Physics::math_CalculateEField(math_point source) const
+    double Physics::math_CalculateEField(const math_point& source) const
     {
         return (k*(C))/pow(GetDistance(source), 2);
     }
@@ -448,8 +448,8 @@ const double Physics::k = 9*pow(10.0,9.0);
         }
     }
 
-    int CalculateDistance(math_point A, math_point B)
+    size_t CalculateDistance(const math_point& A, const math_point& B)
     {
-        return (int)sqrt((pow((double)(A.Y-B.Y),2))+(pow((double)(A.X-B.X),2)));
+        return (size_t)sqrt((pow((double)(A.Y-B.Y),2))+(pow((double)(A.X-B.X),2)));
     }
 

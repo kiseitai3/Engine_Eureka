@@ -40,9 +40,6 @@ const char *ICON = NULL;
 Timer fps;
 SDL_Renderer *screen;
 SDL_Window *win;
-vector<Unit*> gameObjects;
-vector<Unit*> gameUnits;
-vector<Unit*> gameProjectiles;
 vector<UI*> gameUI;
 ///run
 //Prototypes
@@ -147,26 +144,6 @@ void FrameCapper()
     }
 }
 
-void SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars)
-{
-    if(type == 'u')//it's a game unit!
-    {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps, hero, hasBars);
-        gameUnits.push_back(pUnit);
-    }
-
-    if(type == 'p')//it's a game projectile!
-    {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps);
-        gameProjectiles.push_back(pUnit);
-    }
-
-    if(type == 'o')//it's a game environment object!
-    {
-        Unit *pUnit = new Unit(BlitOrder, file, loc, *screen, fps);
-        gameObjects.push_back(pUnit);
-    }
-}
 
 PyObject *FindNearbyUnit(PyObject *unit)
 {
@@ -197,33 +174,6 @@ PyObject *FindNearbyUnit(PyObject *unit)
         }
         return PyCObject_FromVoidPtr((void *)old, NULL);
     }
-}
-
-Unit *FindNearbyUnit(Unit *pUnit)
-{
-    Unit *tmp = 0;
-        Unit *old = 0;
-        for(int i = 0; i < gameUnits.size(); i++)
-        {
-            tmp = gameUnits[i];
-            int d = pUnit->GetPhysics()->GetDistance(tmp->GetPhysics()->GetLoc());
-            if(abs(d) < (pUnit->GetVisionRange() * 2))
-            {
-                if(!old)
-                {
-                    old = tmp;
-                }
-                else
-                {
-                    int d2 = pUnit->GetPhysics()->GetDistance(old->GetPhysics()->GetLoc());
-                    if(d < d2)
-                    {
-                        old = tmp;
-                    }
-                }
-            }
-        }
-        return old;
 }
 
 Unit *FindUnitByName(std::string name)

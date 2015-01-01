@@ -78,6 +78,8 @@
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/lib" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 		</Linker>
+		<Unit filename="BST.cc" />
+		<Unit filename="BST.h" />
 		<Unit filename="Eureka_lua.cxx">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -155,8 +157,12 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="modules.cpp" />
+		<Unit filename="modules.h" />
 		<Unit filename="mysql.cpp" />
 		<Unit filename="mysql.h" />
+		<Unit filename="particlesystem.cpp" />
+		<Unit filename="particlesystem.h" />
 		<Unit filename="physics.cpp" />
 		<Unit filename="physics.h">
 			<Option target="Release" />
@@ -212,6 +218,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="threading.cpp" />
+		<Unit filename="threading.h" />
 		<Unit filename="trigger.cpp" />
 		<Unit filename="trigger.h">
 			<Option target="Release" />

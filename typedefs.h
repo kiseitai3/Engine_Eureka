@@ -5,6 +5,8 @@ typedef unsigned char byte;
 typedef void* void_ptr;
 typedef void (*func_ptr)(...);
 typedef const char* cstr;
+typedef (void*)(*func)(void* data) thread_func;
+typedef (void) (*func)(void* data) func;
 
 //Struct
 typedef struct psudo_type{
@@ -23,6 +25,23 @@ typedef struct psudo_type{
             number = 0; answer = false; c = 0; str = ""; blob = ""; uNumber = 0; decimal = 0.0f; ptr = NULL;// var init!
         }
     }unknown_return, fuzzy_obj;//The purpose of this struct is to have a type in which I can store an unknown return from a python or lua function without having to write overloads for each c++ functions that will handle a return from python.
+
+//mathy structs
+ struct math_VECTOR// The math prefix will remind me this is a basic math unit
+    {
+         public:
+        int endX;
+        int endY;
+        double direction; //I'm gonna use the degrees in a circle as the general direction in the screen
+        int magnitude;
+    };
+
+  struct math_point
+  {
+      int X;
+      int Y;
+      int Z;
+  };
 
 //Enums
 enum FileTypes

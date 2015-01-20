@@ -53,6 +53,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
                 std::cout<<"Error: Failed to load spritesheets or sounds into this instance of the unit class!\n\r";
             }
         }
+        soundLoops = DOM->GetIntFromData("sound_loops");
         images["default"] = images[DOM->GetStrFromData(DOM->GetStrFromData("unit_texture_default"))];
         sounds["default"] = sounds[DOM->GetStrFromData(DOM->GetStrFromData("unit_sound_default"))];
         phys = new Physics(DOM->GetStrFromData("unit_physics").c_str());
@@ -458,6 +459,11 @@ std::string Unit::GetType() const
     return type;
 }
 
+int Unit::GetBlitOrder() const
+{
+    return blitOrder;
+}
+
 void Unit::SetHP(int val)
 {
     hp = val;
@@ -496,6 +502,11 @@ void Unit::SetMovementSpeed(double val)
 void Unit::SetID(unsigned int id)
 {
     ID = id;
+}
+
+void Unit::SetOwner(Game& owner)
+{
+    owner_ref = &owner;
 }
 
 bool Unit::GetDeath() const
@@ -548,53 +559,46 @@ std::string Unit::isColliding(Unit *target)
     {
         return "right";
     }
+    return "";
 }
 
 void Unit::Update_Physics(Unit *target)
 {
+    /*Before updating this unit's physics, let's make sure it is movable! In the engine, I allow for
+    certain units to be marked as unmovable no matter what! Since this will be a property more often
+    applied to environment objects and these objects are numerous, I can terminate the method's
+    execution and thus save some processing time!
+    */
+    if(GetPhysics()->isUnmovable())
+        return;
+    //Process collisions
     std::string collisionSide = isColliding(target);
-    if(phys->GetGravity() == 0)
+    if(collisionSide != "")
     {
+        if(collisionSide == "bottom" || collisionSide == "top")
+        {
+            phys->UpdateForce(target->GetPhysics(), 3, owner_ref->GetRelativity(), 'x');
+        }
+        else if(collisionSide == "right" || collisionSide == "left")
+        {
+            phys->UpdateForce(target->GetPhysics(), 3, owner_ref->GetRelativity(), 'y');
+        }
+        OnCollision(target, collisionSide);
+    }
+    //Process Newtonian forces
+    if(blitOrder == target->GetBlitOrder())
         phys->UpdateForce(target->GetPhysics(), 1);
-        phys->Update_Position(GetTimeChange());
-        if(collisionSide != "")
-        {
-            OnCollision(target, collisionSide);
-        }
-        else
-        {
-            phys->UpdateForce(target->GetPhysics(), 2);
-            phys->UpdateForce(target->GetPhysics(), 0);
-        }
-    }
-    else if(phys->GetGravity() > 0)
-    {
-        if(collisionSide != "")
-        {
-            if(collisionSide == "bottom" && target->GetPhysics()->isUnmovable())
-            {
-                phys->UpdateForce(target->GetPhysics(), 3);
-                phys->Update_Position(GetTimeChange());
-                phys->SetForceCount(0, 'y');
-            }
-            else
-            {
-                phys->UpdateForce(target->GetPhysics(), 1);
-                phys->Update_Position(GetTimeChange());
-            }
-            OnCollision(target, collisionSide);
-        }
-        else
-        {
-            phys->UpdateForce(target->GetPhysics(), 2);
-            phys->UpdateForce(target->GetPhysics(), 0);
-        }
-    }
+    //process the other forces
+    phys->UpdateForce(target->GetPhysics(), 2);//electric forces
+    phys->UpdateForce(target->GetPhysics(), 0);//magnetic forces
+    //Update the object's position
+    phys->Update_Position(GetTimeChange());
 }
 
 void Unit::OnCollision(Unit *target, std::string side)
 {
     GeneralScripts->ClearArgs(3);
+    GeneralScripts->AddArgument(owner_ref);
     GeneralScripts->AddArgument(this);
     GeneralScripts->AddArgument(target);
     GeneralScripts->AddArgument(side);
@@ -640,6 +644,7 @@ bool Unit::BuffExists(std::string buffName)
 void Unit::ApplyBuffs()
 {
     BuffScripts->ClearArgs(1);
+    BuffScripts->AddArgument(owner_ref);
     BuffScripts->AddArgument(this);
     for(std::list<std::string>::iterator it = buffs.begin(); it != buffs.end(); it++)
     {
@@ -650,15 +655,9 @@ void Unit::ApplyBuffs()
 
 
 //Handle assets
-void Unit::UpdateAssets(int soundLoops, Unit *hero)
+void Unit::PlaySounds(const math_point& screenLoc)
 {
     sound_base *tmp = sounds["default"];
-    draw_base *tmpImage;
-    int dx, dy; //Offsets from center point
-    if(images["default"] != images[drawImage])
-    {
-        images["default"] = images[drawImage];
-    }
     if(sounds["default"] != sounds[soundName])
     {
         tmp->FadeOut(100);
@@ -666,17 +665,26 @@ void Unit::UpdateAssets(int soundLoops, Unit *hero)
     }
     tmp = sounds["default"];
     tmp->Update_Sound_Position(phys->GetLoc().X, phys->GetLoc().Y);
-    tmp->Update_Sound_Distance(hero->GetPhysics()->GetLoc());
+    tmp->Update_Sound_Distance(screenLoc);
     if(tmp->SoundType()=='e' || tmp->SoundType() == 'a')
     {
         tmp->PlayEffect(soundLoops);
     }
+}
+
+void Unit::DrawImages()
+{
+    draw_base *tmpImage;
+    int dx, dy; //Offsets from center point
+    if(images["default"] != images[drawImage])
+    {
+        images["default"] = images[drawImage];
+    }
     tmpImage = images["default"];
     dx = tmpImage->GetWidthOfMainRect() / 2;
     dy = tmpImage->GetHeightOfMainRect() / 2;
-    tmpImage->apply_surface(phys->GetLoc().X - dx, phys->GetLoc().Y + dy, *ren);
+    tmpImage->apply_surface(phys->GetLoc().X - dx, phys->GetLoc().Y - dy, *ren);
 }
-
 
 
 

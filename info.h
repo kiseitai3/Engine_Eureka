@@ -2,6 +2,7 @@
 #define INFO_H_INCLUDED
 #include <iostream>
 #include <string>
+#include "typedefs.h"
 
 class ScreenInfo
 {
@@ -13,9 +14,11 @@ class ScreenInfo
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
      size_t GetScreenHeight() const;
+     math_point& GetScreenLoc() const;
      size_t GetScreenBPP() const;
  private:
     size_t m_frames_per_second, m_screen_width, m_screen_height, m_screen_bpp;
+    math_point screenLoc;
 };
 
 class SoundInfo
@@ -41,6 +44,7 @@ public:
             const std::string& name = EMPTY, const std::string& icon = EMPTY, const std::string& renderQuality = EMPTY,
             size_t frames_per_second = 60, size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32,
             size_t blitlevels = 50, size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096);
+    void SetScreenLoc(int x = 0, int y = 0);
     /*Getters*/
     std::string GetRootDirectory() const;
     std::string GetModName() const;

@@ -1,6 +1,9 @@
 #ifndef TYPEDEFS_H_INCLUDED
 #define TYPEDEFS_H_INCLUDED
 
+#define ENGINE_NAMESPACE namespace\32Eureka{
+#define ENGINE_NAMESPACE_END }
+
 typedef unsigned char byte;
 typedef void* void_ptr;
 typedef void (*func_ptr)(...);
@@ -43,9 +46,25 @@ typedef struct psudo_type{
       int Z;
   };
 
+  struct Range
+  {
+      size_t i;//Initial number
+      size_t f;//Final number
+      Range(size_t I = 0, size_t F = 1000)
+      {
+          i = I;
+          f = F;
+      }
+  };
+
 //Enums
 enum FileTypes
 {
     NONE, VAR, XML, LUA, PYTHON, SQLITE, MYSQL
+};
+
+enum Statistics
+{
+    SKEWLEFT, SKEWRIGHT, SKEWBOTH
 };
 #endif // TYPEDEFS_H_INCLUDED

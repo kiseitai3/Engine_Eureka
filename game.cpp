@@ -6,5 +6,26 @@ size_t Game::hasher()
     max_t--;
     std::mt19937 engine(time(NULL));
     std::normal_distribution<size_t> distribution(0, max_t);
-    return normal_distribution(engine);
+    return distribution(engine);
+}
+
+size_t Game::randNormal(Range limits)
+{
+    std::mt19937 engine(time(NULL));
+    std::normal_distribution<size_t> distribution(limits.i, limits.f);
+    return distribution(engine);
+}
+
+size_t Game::randUniform(Range limits)
+{
+    std::mt19937 engine(time(NULL));
+    std::uniform_int_distribution<size_t> distribution(limits.i, limits.f);
+    return distribution(engine);
+}
+
+size_t Game::randBinomial(Range limits)
+{
+    std::mt19937 engine(time(NULL));
+    std::binomial_distribution<size_t> distribution(limits.i, limits.f);
+    return distribution(engine);
 }

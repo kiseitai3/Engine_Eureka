@@ -18,7 +18,7 @@
     void Impulse (math_VECTOR inputVector);//Basically, I want to take a vector, change its relative direction relative to an imaginary circle in the background, and use the new direction to update the point that describes its new position.
     double Friction(double targetMU, bool relativity);
     void Update_Velocity(double secondsPassed);
-    void UpdateForce(Physics* forceProducer, int force_type, bool relativity = false);//IndexSize should be simple to get.
+    void UpdateForce(Physics* forceProducer, int force_type, bool relativity = false, char axis = 'x');//IndexSize should be simple to get.
     void Update_Acceleration();
     double math_CalculateDirectionDegrees(int sourceX, int sourceY) const;
     double GetDistance(const math_point& source) const;

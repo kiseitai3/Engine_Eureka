@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include <SDL.h>
+#include "game.h"
 #include "physics.h"
 #include "sound_base.h"
 #include "draw_base.h"
@@ -51,6 +52,7 @@ class Unit
         unsigned int GetID() const;
         double GetMovementSpeed() const;
         std::string GetType() const;
+        int GetBlitOrder() const;
         void SetHP(int val);
         void SetAD(int val);
         void SetAP(int val);
@@ -59,11 +61,13 @@ class Unit
         void SetVisionRange(int val);
         void SetMovementSpeed(double val);
         void SetID(unsigned int id);
+        void SetOwner(Game& game);
         bool GetDeath() const;
         void ToggleDeath();
 
         //Handle assets
-        void UpdateAssets(int soundLoops, Unit *hero);
+        void PlaySounds(const math_point& screenLoc);
+        void DrawImages();
 
         //Handle buffs
         void AddBuff(std::string buffName);
@@ -92,7 +96,7 @@ class Unit
         };
 
         int blitOrder;
-        int anim_counter; //!< Member variable "anim_counter"
+        int anim_counter, soundLoops; //!< Member variable "anim_counter"
         int hp, ad, ap, aSpeed, range, vRange, mana;//vRange is vision range. It's used for mobs and such. Can be used for fog of war
         int oldTime, t;//The first is the previous time. The second is the current new time.
         unsigned int ID; //Only used to check whether a unit was deleted from a level.
@@ -112,6 +116,7 @@ class Unit
         movementTracker movement;
         Timer *gameTime;
         ProgressBar *manaB, *hpB;
+        Game* owner_ref;
 
 
 };

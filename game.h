@@ -18,11 +18,13 @@
 #include "Timer.h"
 #include "modules.h"
 #include "threading.h"
+#include "unitmanager.h"
+#include "iomanager.h"
 
 class ScriptWrap;
 class Unit;
 
-class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem
+class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager
 {
 public:
     Game();
@@ -48,6 +50,8 @@ public:
     SDL_Renderer& GetRenderer() const;
     bool isMultithreaded() const;
     size_t GetDefaultUnitCount() const;
+    bool GetRelativity() const;
+    bool isEngineClosing() const;
 
     //Delete
     void removeUnit(const std::string& name);
@@ -58,7 +62,10 @@ public:
     void saveData(const std::string& name);
 
     //static members
-    static size_t hasher();//Spews out a random number as the key for an element
+    static size_t hasher();//Spews out a random number as the key for an element using a bellshape distribution
+    static size_t randUniform(Range limits = Range());//Generates random numbers that form a uniform distribution with a defined range.
+    static size_t randBinomial(Range limits = Range());//Generates random numbers using the binomial distribution and a defined range.
+    static size_t randNormal(Range limits = Range());//Generates random numbers using the bellshape distribution and a defined range.
 
     /*Frame adjustment*/
     void FrameCapper();
@@ -91,6 +98,8 @@ private:
     //Flags
     bool frameCapped;
     bool multithreaded;
+    bool relativity;
+    bool closeEngine;
 
     //Other variables
     Level *current;
@@ -102,6 +111,7 @@ private:
 
     //Global Unit Allocation Count
     size_t defaultUnitCount;
+
 };
 //Global functions
 

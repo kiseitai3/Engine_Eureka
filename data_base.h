@@ -43,6 +43,7 @@ class data_base
     void FileClear();
     void CleanFileContentsOfArtifacts();
     void TrimEndOfFile();
+
     public:
     //methods
     data_base(const char location[]="", bool read = true);

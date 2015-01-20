@@ -8,6 +8,7 @@ struct UnitNode
 {
     Unit* pData;
     char Type;
+    size_t id;
 
     //ctor
     UnitNode(Game& owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars);
@@ -22,8 +23,8 @@ public:
     ~UnitManager();
 
     //Setters
-    size_t SpawnUnit(char type, math_point loc, cstr file, bool hero = false, bool hasBars = false);
-    void SpawnUnitFromList(cstr file);
+    size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);
+    void SpawnUnitFromList(cstr file, int BlitOrder);
 
     //Getter
     Unit& GetUnit(size_t id) const;
@@ -46,17 +47,23 @@ public:
     void Draw();
     void RunEvents();
     void PlaySounds();
+    void GC();//Units garbage collector
 
 private:
     Game* owner_ref;
     SDL_Event* event;
-    std::vector<UnitNode*> gameObjects;
+    BinarySearchTree<size_t, UnitNode*> gameObjects;
     size_t mutex_id;
+
+    //Methods
+    bool OnScreen(const Unit& unit) const;
+
 };
 
 void_ptr helperSoundFunction(void_ptr game);
 void_ptr helperDrawFunction(void_ptr game);
 void_ptr helperPhysicsFunction(void_ptr game);
 void_ptr helperEventsFunction(void_ptr game);
+void_ptr helperUnitGCFunction(void_ptr game);
 
 #endif // UNITMANAGER_H_INCLUDED

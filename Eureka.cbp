@@ -132,6 +132,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="iomanager.cpp" />
+		<Unit filename="iomanager.h" />
 		<Unit filename="level.cpp" />
 		<Unit filename="level.h">
 			<Option target="Release" />
@@ -239,6 +241,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="unitmanager.cpp" />
+		<Unit filename="unitmanager.h" />
 		<Unit filename="utf8.h" />
 		<Unit filename="utf8/checked.h" />
 		<Unit filename="utf8/core.h" />

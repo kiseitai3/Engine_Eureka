@@ -17,6 +17,11 @@ void ScreenInfo::SetScreenInfo(size_t frames_per_second, size_t screenWidth, siz
     m_screen_bpp = screenBPP;
 }
 
+math_point& ScreenInfo::GetScreenLoc() const
+{
+    return screenLoc;
+}
+
 size_t ScreenInfo::GetMaxFramesPerSec() const
 {
     return m_frames_per_second;

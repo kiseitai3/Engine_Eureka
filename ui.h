@@ -17,7 +17,7 @@ private:
     std::list<Button*> buttons;
     std::list<ProgressBar*> pBars;
     std::map<std::string, int> pBNums;//Storage location for numbers related to ProgressBars
-    std::string msg; //Used for temporary storage of text to be sent to a textbox. It must be cleared as soon as anothe textbox is clicked on!
+    std::string msg; //Used for temporary storage of text to be sent to a textbox. It must be cleared as soon as another textbox is clicked on!
     Button *exit;
     textbox *selectedText;
     draw_base *background;

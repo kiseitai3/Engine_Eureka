@@ -236,6 +236,8 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="uimanager.cpp" />
+		<Unit filename="uimanager.h" />
 		<Unit filename="unit.cpp" />
 		<Unit filename="unit.h">
 			<Option target="Release" />

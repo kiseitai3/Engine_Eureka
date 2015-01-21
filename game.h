@@ -20,11 +20,13 @@
 #include "threading.h"
 #include "unitmanager.h"
 #include "iomanager.h"
+#include "uimanager.h"
 
 class ScriptWrap;
 class Unit;
 
-class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager
+class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
+    public UIManager
 {
 public:
     Game();
@@ -34,28 +36,17 @@ public:
     void LoadGameConstants(cstr file);
     bool init();
 
-    /*Queues*/
-    void QueueGlobalScript(const ScriptWrap& script);
-
-    /*Other setters*/
-    size_t AddUI(const UI& ui);
-
     //Level
     bool loadLevel(cstr file);
-    void endTopLevel();
     Level& GetCurrentLevel();
     Timer& GetTimer();
 
     /*Getters*/
-    SDL_Renderer& GetRenderer() const;
+    SDL_Renderer& GetRenderer();
+    SDL_Event& GetEvents();
     bool isMultithreaded() const;
-    size_t GetDefaultUnitCount() const;
     bool GetRelativity() const;
     bool isEngineClosing() const;
-
-    //Delete
-    void removeUnit(const std::string& name);
-    void removeUnit(size_t id);
 
     /*Save methods*/
     void loadData(const std::string& name);
@@ -82,13 +73,6 @@ public:
 
 
 private:
-    /*Below are the store places for the objects that the game will use over and over during operation.*/
-    std::map<size_t, std::stack<Unit*>> renderStack;
-    std::stack<Unit*> soundStack;
-    std::stack<Level*> levelStack;
-    std::list<ScriptWrap*> scripts;
-    std::vector<UI*> uis;
-
     //Timer and renderer
     Timer fps;
     SDL_Renderer *screen;
@@ -108,9 +92,6 @@ private:
     uint64_t currentMemory;
     uint64_t maxMemAllowed;
     uint64_t maxMem;
-
-    //Global Unit Allocation Count
-    size_t defaultUnitCount;
 
 };
 //Global functions

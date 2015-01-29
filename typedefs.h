@@ -8,8 +8,8 @@ typedef unsigned char byte;
 typedef void* void_ptr;
 typedef void (*func_ptr)(...);
 typedef const char* cstr;
-typedef (void*)(*func)(void* data) thread_func;
-typedef (void) (*func)(void* data) func;
+typedef void* (*thread_func)(void* data);
+typedef void (*func)(void* data);
 
 //Struct
 typedef struct psudo_type{
@@ -67,4 +67,6 @@ enum Statistics
 {
     SKEWLEFT, SKEWRIGHT, SKEWBOTH
 };
+
+static int maxConn = 2000;
 #endif // TYPEDEFS_H_INCLUDED

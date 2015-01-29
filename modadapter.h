@@ -1,10 +1,9 @@
 #ifndef MODADAPTER_H_INCLUDED
 #define MODADAPTER_H_INCLUDED
-
+#include "game.h"
 #include "plugin.h"
 #include "scriptwrap.h"
 #include "typedefs.h"
-#include "game.h"
 #include "data_base.h"
 #include "conversion.h"
 #include <vector>

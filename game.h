@@ -1,5 +1,7 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+
+#include "iomanager.h"
 #include "scriptwrap.h"
 #include <iostream>
 #include <queue>
@@ -10,23 +12,18 @@
 #include <cstdlib>
 #include <random>
 #include <pthread.h>
-#include "typedefs.h"
 #include "info.h"
-#include "ui.h"
-#include "unit.h"
-#include "plugin.h"
 #include "Timer.h"
 #include "modules.h"
 #include "threading.h"
 #include "unitmanager.h"
-#include "iomanager.h"
 #include "uimanager.h"
+#include "networking.h"
+#include "typedefs.h"
 
-class ScriptWrap;
-class Unit;
 
-class Game : public GameInfo, public ThreadSystem, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
-    public UIManager
+class Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
+    public UIManager, public NetworkManager, public GameInfo, public ThreadSystem
 {
 public:
     Game();
@@ -57,6 +54,7 @@ public:
     static size_t randUniform(Range limits = Range());//Generates random numbers that form a uniform distribution with a defined range.
     static size_t randBinomial(Range limits = Range());//Generates random numbers using the binomial distribution and a defined range.
     static size_t randNormal(Range limits = Range());//Generates random numbers using the bellshape distribution and a defined range.
+    static bool GetMaxValueSizeT();
 
     /*Frame adjustment*/
     void FrameCapper();

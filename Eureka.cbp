@@ -54,6 +54,9 @@
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/include" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/include/boost" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
+			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include/boost" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include" />
 		</Compiler>
 		<Linker>
 			<Add library="libmingw32" />
@@ -66,6 +69,7 @@
 			<Add library="lua" />
 			<Add library="sqlite3" />
 			<Add library="mysqlcppconn" />
+			<Add library="SDL2_net" />
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
@@ -77,8 +81,12 @@
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/lib" />
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/lib" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
+			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/lib" />
 		</Linker>
-		<Unit filename="BST.cc" />
+		<Unit filename="BST.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="BST.h" />
 		<Unit filename="Eureka_lua.cxx">
 			<Option target="Release" />
@@ -163,6 +171,8 @@
 		<Unit filename="modules.h" />
 		<Unit filename="mysql.cpp" />
 		<Unit filename="mysql.h" />
+		<Unit filename="networking.cpp" />
+		<Unit filename="networking.h" />
 		<Unit filename="particlesystem.cpp" />
 		<Unit filename="particlesystem.h" />
 		<Unit filename="physics.cpp" />

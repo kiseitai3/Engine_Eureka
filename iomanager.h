@@ -2,6 +2,7 @@
 #define IOMANAGER_H_INCLUDED
 #include <iostream>
 #include <string>
+#include "database.h"
 #include "game.h"
 #include "typedefs.h"
 

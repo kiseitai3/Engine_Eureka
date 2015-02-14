@@ -3,14 +3,13 @@
 #include <iostream>
 #include <string>
 #include "ui.h"
-#include "game.h"
 #include "BST.h"
 
 class UIManager
 {
 public:
     //ctors and dtor
-    UIManager(Game& owner);
+    UIManager(Game* owner);
     ~UIManager();
 
     //Setter

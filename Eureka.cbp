@@ -7,21 +7,20 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Release">
-				<Option output="bin/Eureka" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj" />
+				<Option output="bin/Release/Eureka" prefix_auto="1" extension_auto="1" />
 				<Option external_deps="C:/Users/Kiseitai2/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL.dll;C:/Users/Kiseitai2/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL_mixer.dll;" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O3" />
-					<Add option="-std=c++0x" />
+					<Add option="-std=c++11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="lib">
-				<Option output="Eureka" prefix_auto="1" extension_auto="1" />
+			<Target title="staticlib_all">
+				<Option output="bin/libs/Eureka" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option type="2" />
 				<Option compiler="gcc" />
@@ -36,12 +35,42 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
-					<Add option="-std=c++0x" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
+			<Target title="c++11_test">
+				<Option output="bin/tests/c++11_test" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="MySQL_test">
+				<Option output="bin/test/mysql_test" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="IO">
+				<Option output="/bin/engine/IO" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="threading" />
+				</Linker>
+			</Target>
+			<Target title="Threading">
+				<Option output="bin/engine/threading" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-std=c++11" />
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/include" />
 			<Add directory="c:/Python27/include" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/include/SDL2" />
@@ -70,6 +99,7 @@
 			<Add library="sqlite3" />
 			<Add library="mysqlcppconn" />
 			<Add library="SDL2_net" />
+			<Add library="pthread" />
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
@@ -83,43 +113,105 @@
 			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/lib" />
+			<Add directory="bin/engine" />
 		</Linker>
 		<Unit filename="BST.cc">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="BST.h" />
+		<Unit filename="BST.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Eureka_lua.cxx">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="Eureka_wrap.cxx" />
-		<Unit filename="Timer.cpp" />
+		<Unit filename="Eureka_wrap.cxx">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Timer.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Timer.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="button.cpp" />
+		<Unit filename="Unit_tests/c++11_test.cpp">
+			<Option target="c++11_test" />
+		</Unit>
+		<Unit filename="Unit_tests/mysql_test.cpp">
+			<Option target="MySQL_test" />
+		</Unit>
+		<Unit filename="button.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="button.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="config.h" />
-		<Unit filename="conversion.cpp" />
+		<Unit filename="config.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="conversion.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+			<Option target="Threading" />
+		</Unit>
 		<Unit filename="conversion.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+			<Option target="IO" />
+			<Option target="Threading" />
 		</Unit>
-		<Unit filename="data_base.cpp" />
+		<Unit filename="data_base.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
 		<Unit filename="data_base.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+			<Option target="IO" />
 		</Unit>
-		<Unit filename="database.cpp" />
-		<Unit filename="database.h" />
-		<Unit filename="draw_base.cpp" />
+		<Unit filename="database.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="database.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="draw_base.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="draw_base.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+		</Unit>
+		<Unit filename="eureka.h">
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="c++11_test" />
+			<Option target="MySQL_test" />
+			<Option target="IO" />
 		</Unit>
 		<Unit filename="game.cpp">
 			<Option target="Release" />
@@ -133,16 +225,42 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="info.cpp" />
-		<Unit filename="info.h" />
-		<Unit filename="input.cpp" />
+		<Unit filename="info.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="info.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="input.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="input.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="iomanager.cpp" />
-		<Unit filename="iomanager.h" />
-		<Unit filename="level.cpp" />
+		<Unit filename="iomanager.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="iomanager.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="level.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="level.h">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -167,15 +285,53 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="modules.cpp" />
-		<Unit filename="modules.h" />
-		<Unit filename="mysql.cpp" />
-		<Unit filename="mysql.h" />
-		<Unit filename="networking.cpp" />
-		<Unit filename="networking.h" />
-		<Unit filename="particlesystem.cpp" />
-		<Unit filename="particlesystem.h" />
-		<Unit filename="physics.cpp" />
+		<Unit filename="modules.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="modules.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="mysql.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="mysql.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="networking.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="networking.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="particlesystem.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="particlesystem.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="physics.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="physics.h">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -188,15 +344,29 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="progressbar.cpp" />
+		<Unit filename="progressbar.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="progressbar.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="pywrap.cpp" />
+		<Unit filename="pywrap.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="pywrap.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+		</Unit>
+		<Unit filename="rand_generators.cpp">
+			<Option target="Threading" />
+		</Unit>
+		<Unit filename="rand_generators.h">
+			<Option target="Threading" />
 		</Unit>
 		<Unit filename="scriptwrap.cpp">
 			<Option target="Release" />
@@ -206,59 +376,169 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="sound_base.cpp" />
+		<Unit filename="sound_base.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="sound_base.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="sqlite_error.cpp" />
-		<Unit filename="sqlite_error.h" />
-		<Unit filename="sqlite_row.cpp" />
-		<Unit filename="sqlite_row.h" />
+		<Unit filename="sqlite_error.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="sqlite_error.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="sqlite_row.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="sqlite_row.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
 		<Unit filename="sqlitewrap.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />
+			<Option target="IO" />
 		</Unit>
 		<Unit filename="sqlitewrap.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+			<Option target="IO" />
 		</Unit>
-		<Unit filename="sqlkeywords.cpp" />
-		<Unit filename="sqlkeywords.h" />
-		<Unit filename="textbox.cpp" />
+		<Unit filename="sqlkeywords.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="sqlkeywords.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="textbox.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="textbox.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="threading.cpp" />
-		<Unit filename="threading.h" />
-		<Unit filename="trigger.cpp" />
+		<Unit filename="threading.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="Threading" />
+		</Unit>
+		<Unit filename="threading.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="Threading" />
+		</Unit>
+		<Unit filename="trigger.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="trigger.h">
 			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="triggermanager.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="triggermanager.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="typedefs.h">
 			<Option target="Release" />
 			<Option target="Debug" />
+			<Option target="IO" />
+			<Option target="Threading" />
 		</Unit>
-		<Unit filename="ui.cpp" />
+		<Unit filename="ui.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="ui.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="uimanager.cpp" />
-		<Unit filename="uimanager.h" />
-		<Unit filename="unit.cpp" />
+		<Unit filename="uimanager.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="uimanager.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="unit.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="unit.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="unitmanager.cpp" />
-		<Unit filename="unitmanager.h" />
-		<Unit filename="utf8.h" />
-		<Unit filename="utf8/checked.h" />
-		<Unit filename="utf8/core.h" />
-		<Unit filename="utf8/unchecked.h" />
+		<Unit filename="unitmanager.cpp">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="unitmanager.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="utf8.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="utf8/checked.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="utf8/core.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="utf8/unchecked.h">
+			<Option target="Release" />
+			<Option target="staticlib_all" />
+			<Option target="Debug" />
+			<Option target="IO" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -2,7 +2,53 @@
 #define THREADING_H_INCLUDED
 #include <iostream>
 #include <pthread.h>
+#include <list>
 #include "typedefs.h"
+
+//Templates
+template <typename T>
+struct pthreads_opaque
+{
+    size_t id;
+    T var;
+    pthreads_opaque(T& val, size_t T_id)
+    {
+        var = val;
+        id = T_id;
+    }
+
+    bool operator==(pthreads_opaque& t)
+    {
+        return id == t.id;
+    }
+
+    bool operator==(size_t& t)
+    {
+        return id == t;
+    }
+};
+
+template <typename T>
+class indexed_opaque_list : public std::list<T>
+{
+public:
+    T& operator[] (size_t id)
+    {
+        typename std::list<T>::iterator itr;//iterator that will point to opaque object contained
+        itr = this->begin();
+        while(itr->id != id)//Search for object
+        {
+            itr++;
+        }//This whole operation is linearly expensive, so we want to cut as many cycles as possible
+
+        return *itr;
+    }
+};
+
+//typedefs
+typedef pthreads_opaque<pthread_t*> pthread;
+typedef pthreads_opaque<pthread_mutex_t> pmutex;
+typedef pthreads_opaque<pthread_cond_t> pcond_var;
 
 class ThreadSystem
 {
@@ -13,9 +59,8 @@ public:
 
     //Setter
     size_t SpawnThread(thread_func target, void_ptr arg);
-    size_t SpawnThread(func target, void_ptr arg);//This one uses the reentrant helperMethod()
     size_t SpawnMutex();//Creates a mutex and returns the mutex id
-    size_t SpawnCondVar()//Creates a condition variable and return the id
+    size_t SpawnCondVar();//Creates a condition variable and return the id
 
     //Getter
     pthread_mutex_t& GetMutex(size_t id);
@@ -33,16 +78,16 @@ public:
     void DeleteConditionVariable(size_t id);
 
 private:
-    std::vector<pthread_t*> threads;
-    std::vector<pthread_mutex_t> mutexes;
-    std::vector<pthread_cond_t> cond_vars;
+    indexed_opaque_list<pthread> threads;
+    indexed_opaque_list<pmutex> mutexes;
+    indexed_opaque_list<pcond_var> cond_vars;
     size_t mutex_mutex_id;
     size_t mutex_cond_id;
     size_t mutex_thread_id;
 
     //Methods
-    void* helperMethod_r(func target);//Feed it a void function for execution in a pthread!
+    size_t generateID(char target);
+    bool hasID(size_t id, char target);
+
 };
-
-
 #endif // THREADING_H_INCLUDED

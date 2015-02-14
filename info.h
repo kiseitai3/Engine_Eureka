@@ -14,7 +14,7 @@ class ScreenInfo
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
      size_t GetScreenHeight() const;
-     math_point& GetScreenLoc() const;
+     math_point& GetScreenLoc();
      size_t GetScreenBPP() const;
  private:
     size_t m_frames_per_second, m_screen_width, m_screen_height, m_screen_bpp;

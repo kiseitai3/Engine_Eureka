@@ -3,27 +3,30 @@
 #include "data_base.h"
 #include "scriptwrap.h"
 #include "unit.h"
+#include "game.h"
+#include "typedefs.h"
 
 class Trigger
 {
 private:
-    data_base *TriggerDOM;//Document Object Model for the trigger class
-    SDL_Rect rect;
-    int height, width, x, y, ID, duration;
+    int height, width, x, y, z, duration;
+    size_t ID;
     bool death;
     ScriptWrap *Scripts;
+    math_point loc;
 
 public:
-    Trigger(const char *file);
+    Trigger(cstr file);
     ~Trigger();
     //Getters and setters
-    int GetID() const;
-    void SetID(int id);
-    //Behavior
-    bool isUnitOnTrigger(Unit *target) const;
-    void ConsumeTrigger(Unit *target);
+    size_t GetID() const;
+    void SetID(size_t id);
     bool GetDeath() const;
     void ToggleDeath();
+    //Behavior
+    bool isUnitOnTrigger(Unit *target) const;
+    void ConsumeTrigger(Game* owner, Unit *target);
+    void UpdateTriggerLoc(int X, int Y, int Z);
 };
 
 

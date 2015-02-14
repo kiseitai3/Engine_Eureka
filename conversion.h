@@ -21,10 +21,6 @@
 #include "config.h"
 
 #ifdef UTF8_NEEDED
-#warning "Notice, if you want to access the utf8 conversion functions, you are required to add the utfcpp library/headers"
-#warning "to your project and define the macro UTF8_NEEDED in the included config.h header! You may find the library at"
-#warning "http://utfcpp.sourceforge.net/"
-
 #include "utf8.h"
 
 #define convertASCIItoUTF8 convertASCII2UTF8
@@ -32,6 +28,12 @@
 #define convertUTF16toUTF8 convertUTF162UTF8
 #define convertUTF8toUTF32 convertUTF82UTF32
 #define convertUTF32toUTF8 convertUTF322UTF8
+
+#else
+#warning "Notice, if you want to access the utf8 conversion functions, you are required to add the utfcpp library/headers"
+#warning "to your project and define the macro UTF8_NEEDED in the included config.h header! You may find the library at"
+#warning "http://utfcpp.sourceforge.net/"
+
 #endif
 
 struct pChar

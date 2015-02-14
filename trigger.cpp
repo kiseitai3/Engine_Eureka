@@ -6,26 +6,20 @@
 
 Trigger::Trigger(const char *file)
 {
-    TriggerDOM = 0;
-    TriggerDOM = new data_base(file);
-    if(!TriggerDOM)
+    data_base TriggerDOM(file);
+    Scripts = 0;
+    height = TriggerDOM.GetIntFromData("trigger_height");
+    width = TriggerDOM.GetIntFromData("trigger_width");
+    length = TriggerDOM.GetIntFromData("trigger_length");
+    x = TriggerDOM.GetIntFromData("trigger_x");
+    y = TriggerDOM.GetIntFromData("trigger_y");
+    z = TriggerDOM.GetIntFromData("trigger_z");
+    duration = TriggerDOM.GetIntFromData("trigger_duration");
+    death = false;
+    Scripts = new ScriptWrap(TriggerDOM.GetStrFromData("trigger_script").c_str());
+    if(!Scripts)
     {
-        std::cout<<"Error: This trigger object failed to load its settings file!"<<std::endl;
-    }
-    else
-    {
-        Scripts = 0;
-        height = TriggerDOM->GetIntFromData("trigger_height");
-        width = TriggerDOM->GetIntFromData("trigger_width");
-        x = TriggerDOM->GetIntFromData("trigger_x");
-        y = TriggerDOM->GetIntFromData("trigger_y");
-        duration = TriggerDOM->GetIntFromData("trigger_duration");
-        death = false;
-        Scripts = new ScriptWrap(TriggerDOM->GetStrFromData("trigger_script").c_str());
-        if(!Scripts)
-        {
-            std::cout<<"Error: could not load this Trigger's script!\n\r";
-        }
+        std::cout<<"Error: could not load this Trigger's script!" << std::endl;
     }
 }
 
@@ -38,12 +32,12 @@ Trigger::~Trigger()
 }
 
 //Getters and setters
-int Trigger::GetID() const
+size_t Trigger::GetID() const
 {
     return ID;
 }
 
-void Trigger::SetID(int id)
+void Trigger::SetID(size_t id)
 {
     ID = id;
 }
@@ -52,9 +46,9 @@ void Trigger::SetID(int id)
 bool Trigger::isUnitOnTrigger(Unit *target) const
 {
     math_point tLoc = target->GetPhysics()->GetLoc();//Grab target's position
-    if(tLoc.X >= x && tLoc.X <= (x + width))
+    if(tLoc.X >= loc.X && tLoc.X <= (loc.X + width))
     {
-        if(tLoc.Y >= y && tLoc.Y <= (y - height))
+        if(tLoc.Y >= loc.Y && tLoc.Y <= (loc.Y - height))
         {
             return true;
         }
@@ -62,10 +56,12 @@ bool Trigger::isUnitOnTrigger(Unit *target) const
     return false;
 }
 
-void Trigger::ConsumeTrigger(Unit *target)
+void Trigger::ConsumeTrigger(Game* owner, Unit *target)
 {
     Scripts->ClearArgs(1);
-    Scripts->AddArgument(target);
+    Scripts->AddArgument((void_ptr)owner);
+    Scripts->AddArgument((void_ptr)target);
+    Scripts->AddArgument((void_ptr)this);
     Scripts->executeFunction("Trigger", Scripts->NO_ARGS);
 }
 
@@ -84,4 +80,16 @@ void Trigger::ToggleDeath()
     {
         death = false;
     }
+}
+
+void Trigger::UpdateTriggerLoc(int X, int Y, int Z)
+{
+    loc.X = X;
+    loc.Y = Y;
+    loc.Z = Z;
+}
+
+math_point Trigger::GetLoc() const
+{
+    return loc;
 }

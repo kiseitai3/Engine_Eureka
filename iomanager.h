@@ -1,10 +1,13 @@
 #ifndef IOMANAGER_H_INCLUDED
 #define IOMANAGER_H_INCLUDED
+#include "BST.h"
+#include "data_base.h"
+#include "database.h"
 #include <iostream>
 #include <string>
-#include "database.h"
-#include "game.h"
-#include "typedefs.h"
+
+class DataBase;
+class Game;
 
 class IONode
 {
@@ -18,7 +21,7 @@ public:
     size_t GetCount() const;
     size_t GetID() const;
     std::string GetPath() const;
-    data_base& GetBuffer();
+    data_base& GetFile();
     DataBase& GetDataBase();
 
 private:
@@ -31,7 +34,7 @@ private:
 class IOManager
 {
 public:
-    IOManager(Game& owner);
+    IOManager(Game* owner);
     ~IOManager();
 
     //Getters
@@ -42,7 +45,6 @@ public:
     //Setters
     size_t RegisterFile(cstr file_path, bool inputMode = true);
     size_t RegisterDataBase(cstr file);
-    size_t RegisterDataBase(DataBase& database);
     void CloseFile(size_t file_id);
     void CloseDBConnection(size_t db_id);
 

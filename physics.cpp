@@ -116,7 +116,7 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
     int signX = 0;
     int signY = 0;
     double tempForce = 0;
-    double degreesX = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Y);
+    double degrees = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Y);
     //double degreesZ = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Z);
 
     if(relativity == true && !unmovable)
@@ -164,20 +164,20 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
         {
             if(GetForceCount('x') < 0)
             {
-                frictionForceX = 1 * Friction(forceProducer->GetMU(), relativity);
+                frictionForce = 1 * Friction(forceProducer->GetMU(), relativity);
             }
             else
             {
-                frictionForceX = -1 * Friction(forceProducer->GetMU(), relativity);
+                frictionForce = -1 * Friction(forceProducer->GetMU(), relativity);
             }
 
             if(GetForceCount('y') < 0)
             {
-                frictionForceY = 1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
+                frictionForce = 1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
             }
             else
             {
-                frictionForceY = -1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
+                frictionForce = -1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
             }
         }
         if(force_type == 2)
@@ -211,6 +211,7 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
     //Update other forces
     ForceCountX += electricForceX;
     ForceCountY += electricForceY + magneticForce + (-1 * g * mass);
+    }
 }
     void Physics::Update_Position(double secondsPassed)
     {

@@ -8,7 +8,7 @@
 
 void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
-    animDOM = new data_base(source);
+    data_base *animDOM = new data_base(source);
     if(animDOM)
     {
         SDL_Surface* tmp = IMG_Load(animDOM->GetStrFromData("tex_texture").c_str());
@@ -92,11 +92,6 @@ int draw_base::GetAnimCounter() const
     return animCounter;
 }
 
-data_base *draw_base::GetDOM() const
-{
-    return animDOM;
-}
-
 SDL_Texture& draw_base::GetTexture() const
 {
     return *SpriteSheet;
@@ -148,10 +143,6 @@ draw_base::draw_base()
 draw_base::~draw_base()
 {
     ClearTexture();
-    if(animDOM > 0)
-    {
-        delete(animDOM);
-    }
 }
 
 

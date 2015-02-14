@@ -1,6 +1,6 @@
 
 template<typename KeyTy, typename ValueTy>
-BinarySearchTree::TreeNode::TreeNode(const KeyTy& key, const ValueTy& value,
+BinarySearchTree<KeyTy, ValueTy>::TreeNode::TreeNode(const KeyTy& key, const ValueTy& value,
 				     TreeNode* left, TreeNode* right)
 {
   //TreeNode ctor
@@ -11,7 +11,7 @@ BinarySearchTree::TreeNode::TreeNode(const KeyTy& key, const ValueTy& value,
 }
 
 template<typename KeyTy, typename ValueTy>
-BinarySearchTree::BinarySearchTree()
+BinarySearchTree<KeyTy, ValueTy>::BinarySearchTree()
 {
   //BST ctor
   Size = 0;
@@ -19,14 +19,14 @@ BinarySearchTree::BinarySearchTree()
 }
 
 template<typename KeyTy, typename ValueTy>
-BinarySearchTree::~BinarySearchTree()
+BinarySearchTree<KeyTy, ValueTy>::~BinarySearchTree()
 {
   /*BST dtor. Will deallocate the whole tree! */
   freeTree(Root);
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::insert(const KeyTy& key, const ValueTy& value)
+void BinarySearchTree<KeyTy, ValueTy>::insert(const KeyTy& key, const ValueTy& value)
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   if(Root)
@@ -39,109 +39,89 @@ void BinarySearchTree::insert(const KeyTy& key, const ValueTy& value)
 }
 
 template<typename KeyTy, typename ValueTy>
-bool BinarySearchTree::search(const KeyTy& key, ValueTy& value) const
+bool BinarySearchTree<KeyTy, ValueTy>::search(const KeyTy& key, ValueTy& value) const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   return searchNode(Root, key, value);
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::remove(const KeyTy& key)
+void BinarySearchTree<KeyTy, ValueTy>::remove(const KeyTy& key)
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   removeNode(Root, key);
 }
 
 template<typename KeyTy, typename ValueTy>
-bool BinarySearchTree::empty()const
+bool BinarySearchTree<KeyTy, ValueTy>::empty()const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   return Size == 0;
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::clear()const
+void BinarySearchTree<KeyTy, ValueTy>::clear()
 {
     freeTree(Root);
 }
 
 template<typename KeyTy, typename ValueTy>
-size_t BinarySearchTree::size()const
+size_t BinarySearchTree<KeyTy, ValueTy>::size()const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   return Size;
 }
 
 template<typename KeyTy, typename ValueTy>
-size_t BinarySearchTree::height()const
+size_t BinarySearchTree<KeyTy, ValueTy>::height()const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   return computeHeight(Root);
 }
 
-std::vector<ValueTy&> BinarySearchTree::getContents()
+template<typename KeyTy, typename ValueTy>
+std::vector<ValueTy> BinarySearchTree<KeyTy, ValueTy>::getContents()
 {
-    std::vector<ValueTy&> holder;
+    std::vector<ValueTy> holder;
     dumpNode(Root, holder);
     return holder;
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::inorder(TraversalFunction func)const
+void BinarySearchTree<KeyTy, ValueTy>::inorder(TraversalFunction func)const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   inorderNode(Root, func);
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::postorder(TraversalFunction func)const
+void BinarySearchTree<KeyTy, ValueTy>::postorder(TraversalFunction func)const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   postorderNode(Root, func);
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::preorder(TraversalFunction func)const
+void BinarySearchTree<KeyTy, ValueTy>::preorder(TraversalFunction func)const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   preorderNode(Root, func);
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::inorder(TraversalMethod func)const
-{
- /*This is a wrapper method. Check out the recursive funtions. */
-  inorderNode(Root, func);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::postorder(TraversalMethod func)const
-{
- /*This is a wrapper method. Check out the recursive funtions. */
-  postorderNode(Root, func);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::preorder(TraversalMethod func)const
-{
- /*This is a wrapper method. Check out the recursive funtions. */
-  preorderNode(Root, func);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::print()const
+void BinarySearchTree<KeyTy, ValueTy>::print()const
 {
  /*This is a wrapper method. Check out the recursive funtions. */
   printTree(Root);
   std::cout << std::endl;
 }
 
-template<typename KeyTy, typename ValueTy>
-BinarySearchTree::ValueTy& BinarySearchTree::operator []
+/*template<typename KeyTy, typename ValueTy>
+BinarySearchTree<KeyTy,ValueTy>::ValueTy& BinarySearchTree<KeyTy, ValueTy>::operator []
 (const KeyTy& key)
-{
+{*/
   /*This is a wrapper method. Check out the recursive funtions. */
-  ValueTy* tmp = getValRef(Root, key);
+ /* ValueTy* tmp = getValRef(Root, key);
   if(!tmp)
     {
       insert(key, 0);
@@ -150,10 +130,10 @@ BinarySearchTree::ValueTy& BinarySearchTree::operator []
   else
     return *tmp;
 }
-
+*/
 //Recursive methods
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::insertNode(TreeNode*& root,
+void BinarySearchTree<KeyTy,ValueTy>::insertNode(TreeNode*& root,
 				  const KeyTy& key, const ValueTy& value)
 {
   /*This method will insert a new node in the appropriate subtree.
@@ -177,7 +157,7 @@ void BinarySearchTree::insertNode(TreeNode*& root,
 }
 
 template<typename KeyTy, typename ValueTy>
-bool BinarySearchTree::searchNode(TreeNode* root,
+bool BinarySearchTree<KeyTy,ValueTy>::searchNode(TreeNode* root,
 				  const KeyTy& key,  ValueTy& value) const
 {
   /*This method searches for a node and returns true or false if found.
@@ -204,7 +184,7 @@ bool BinarySearchTree::searchNode(TreeNode* root,
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::removeNode(TreeNode*& root, const KeyTy& key)
+void BinarySearchTree<KeyTy,ValueTy>::removeNode(TreeNode*& root, const KeyTy& key)
 {
   /*This method searches for a node and "removes" it. This method makes use
     of another helper method to search for the appropriate node in the left
@@ -239,7 +219,7 @@ void BinarySearchTree::removeNode(TreeNode*& root, const KeyTy& key)
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::rem_swapNode(TreeNode*& root, TreeNode*& current)
+void BinarySearchTree<KeyTy,ValueTy>::rem_swapNode(TreeNode*& root, TreeNode*& current)
 {
   /* This method searches for the rightmost node of a subtree and copies
      its nonpointer contents to the root of this subtree. Then, it modifies
@@ -263,7 +243,7 @@ void BinarySearchTree::rem_swapNode(TreeNode*& root, TreeNode*& current)
 }
 
 template<typename KeyTy, typename ValueTy>
-size_t BinarySearchTree::computeHeight(TreeNode* root) const
+size_t BinarySearchTree<KeyTy,ValueTy>::computeHeight(TreeNode* root) const
 {
   /*This method computes the height of the tree recursively.
    */
@@ -274,7 +254,7 @@ size_t BinarySearchTree::computeHeight(TreeNode* root) const
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::inorderNode(TreeNode* root, TraversalFunction& f) const
+void BinarySearchTree<KeyTy,ValueTy>::inorderNode(TreeNode* root, TraversalFunction& f) const
 {
   /*This method will traverse the tree recursively and call the function
     provided on each node. Format: left subtree, root, right subtree.
@@ -288,7 +268,7 @@ void BinarySearchTree::inorderNode(TreeNode* root, TraversalFunction& f) const
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::preorderNode(TreeNode* root, TraversalFunction& f) const
+void BinarySearchTree<KeyTy,ValueTy>::preorderNode(TreeNode* root, TraversalFunction& f) const
 {
   /*This method will traverse the tree recursively and call the function
     provided on each node. Format: root, left subtree, right subtree.
@@ -302,7 +282,7 @@ void BinarySearchTree::preorderNode(TreeNode* root, TraversalFunction& f) const
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::postorderNode(TreeNode* root, TraversalFunction& f)const
+void BinarySearchTree<KeyTy,ValueTy>::postorderNode(TreeNode* root, TraversalFunction& f)const
 {
   /*This method will traverse the tree recursively and call the function
     provided on each node. Format: left subtree, right subtree, root.
@@ -316,49 +296,7 @@ void BinarySearchTree::postorderNode(TreeNode* root, TraversalFunction& f)const
 }
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::inorderNode(TreeNode* root, TraversalMethod& f) const
-{
-  /*This method will traverse the tree recursively and call the function
-    provided on each node. Format: left subtree, root, right subtree.
-  */
-  if(!root)
-    return;
-
-  inorderNode(root->pLeft, f);
-  f(root->Key, root->Value);
-  inorderNode(root->pRight, f);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::preorderNode(TreeNode* root, TraversalMethod& f) const
-{
-  /*This method will traverse the tree recursively and call the function
-    provided on each node. Format: root, left subtree, right subtree.
-  */
-  if(!root)
-    return;
-
-  f(root->Key, root->Value);
-  preorderNode(root->pLeft, f);
-  preorderNode(root->pRight, f);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::postorderNode(TreeNode* root, TraversalMethod& f)const
-{
-  /*This method will traverse the tree recursively and call the function
-    provided on each node. Format: left subtree, right subtree, root.
-  */
-  if(!root)
-    return;
-
-  postorderNode(root->pLeft, f);
-  postorderNode(root->pRight, f);
-  f(root->Key, root->Value);
-}
-
-template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::printTree(TreeNode* root) const
+void BinarySearchTree<KeyTy,ValueTy>::printTree(TreeNode* root) const
 {
   /*This method prints recursively the root's key and value. Then,
     it prints the left and right subtrees. The format of the full output
@@ -378,14 +316,14 @@ void BinarySearchTree::printTree(TreeNode* root) const
   std::cout << "]";
 }
 
-template<typename KeyTy, typename ValueTy>
-BinarySearchTree::ValueTy* BinarySearchTree::getValRef
+/*template<typename KeyTy, typename ValueTy>
+BinarySearchTree<KeyTy,ValueTy>::ValueTy* BinarySearchTree<KeyTy,ValueTy>::getValRef
 (TreeNode* root, const KeyTy& key)
 {
   /*This method looks recursively for a node with the same key as key and
     returns a reference to the node's value.
   */
-  if(!root)//Base case
+  /*if(!root)//Base case
     return NULL;
 
   if(root->Key == key)//We got lucky
@@ -395,10 +333,10 @@ BinarySearchTree::ValueTy* BinarySearchTree::getValRef
   else if(root->Key < key)
     return getValRef(root->pRight, key);
   return NULL;
-}
+}*/
 
 template<typename KeyTy, typename ValueTy>
-void BinarySearchTree::freeTree(TreeNode* root)
+void BinarySearchTree<KeyTy,ValueTy>::freeTree(TreeNode* root)
 {
   /*This method removes recursively the left and right subtrees before removing
     the root.*/
@@ -416,11 +354,12 @@ void verbose(const KeyTy& key, const ValueTy& value)
     /*This is a simple traversal function and the default function for this
     implementation! It prints out the tree but with the address of the Value
     instead of the actual value.*/
-    std::cout << "[Key: " << root->Key << ", Address of Value: " << &root->Value
+    std::cout << "[Key: " << key << ", Address of Value: " << value
 	    << std::endl;
 }
 
-void BinarySearchTree::dumpNode(TreeNode* root, const std::vector<ValueTy&>& holder)
+template<typename KeyTy, typename ValueTy>
+void BinarySearchTree<KeyTy,ValueTy>::dumpNode(TreeNode* root, std::vector<ValueTy>& holder)
 {
     if(!root)
         return;

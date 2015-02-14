@@ -11,19 +11,20 @@ ModuleSystem::ModuleSystem(Game& owner)
 {
     owner_ref = &owner;
     mutex_id = owner.SpawnMutex();
-    modules.push_back(NULL);
+    modules.insert(0, NULL);
 }
 
 ModuleSystem::~ModuleSystem()
 {
     owner_ref->LockMutex(mutex_id);
-    for(size_t i = 0; i < modules.size(); i++)
+    std::vector<Module*> tmpObjs = modules.getContents();
+    for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        if(modules[i].module)
+        if(tmpObjs[i]->module)
         {
-            if(modules[i].threaded)//If a thread is using this object, let's close it before attempting to erase it.
-                owner_ref->CloseThread(modules[i].thread_id);
-            delete modules[i].module;
+            if(tmpObjs[i]->threaded)//If a thread is using this object, let's close it before attempting to erase it.
+                owner_ref->CloseThread(tmpObjs[i]->thread_id);
+            delete (*itr)->module;
         }
     }
     owner_ref->UnlockMutex(mutex_id);
@@ -32,17 +33,16 @@ ModuleSystem::~ModuleSystem()
 
 size_t ModuleSystem::RegisterModule(cstr file, bool threaded)
 {
-    size_t mod_id = 0;
     Module* tmp = new Module(*owner_ref, file, threaded)
     owner_ref->LockMutex(mutex_id);
-    modules.push_back(tmp);
-    mod_id = modules.size() - 1;
-    if(threaded)
+    tmp->mod_id = generateID();//Create an id
+    modules.insert(tmp->mod_id, tmp);//add to list
+    if(threaded)//Prepare module to run in separate thread
     {
         tmp->thread_id = owner_ref->SpawnThread(&helperModFunction, (void_ptr)tmp);
     }
     owner_ref->UnlockMutex(mutex_id);
-    return mod_id;
+    return tmp->mod_id;
 }
 
 void ModuleSystem::RegisterFunction(const std::string& name, size_t mod_id)
@@ -103,10 +103,36 @@ int ModuleSystem::RunFunctionsInModule(size_t mod_id) const
 void ModuleSystem::RunAllFunctions() const
 {
     owner_ref->LockMutex(mutex_id);
-    for(size_t i = 0; i < modules.size(); i++)
+    std::vector<Module*> tmpObjs = modules.getContents();
+    for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        if(modules[mod_id] && !modules[mod_id]->threaded)
-            modules[mod_id]->module->RunFunctions();
+        if(tmpObjs[i] && !tmpObjs[i]->threaded)
+            tmpObjs[i]->module->RunFunctions();
     }
     owner_ref->UnlockMutex(mutex_id);
 }
+
+size_t ModuleSystem::generateID()
+{
+    size_t id = Game::randUniform((0, Game::GetMaxValueSizeT())) ;//Get a random number
+    //Continue getting a new random number if the id is already taken!
+    while(hasID(id, target))
+    {
+        id = Game::randUniform((0, Game::GetMaxValueSizeT()));
+    }
+
+    return id;
+}
+
+bool ModuleSystem::hasID(size_t id)
+{
+    std::vector<Module*> tmpObjs = modules.getContents();
+    for(size_t i = 0; i < tmpObjs.size(); i++)
+    {
+        if(tmpObjs[i]->mod_id == id)
+            return true;
+    }
+    //If nothing was found
+    return false;
+}
+

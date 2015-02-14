@@ -1,8 +1,6 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
 
-#include "iomanager.h"
-#include "scriptwrap.h"
 #include <iostream>
 #include <queue>
 #include <map>
@@ -10,17 +8,21 @@
 #include <stack>
 #include <list>
 #include <cstdlib>
-#include <random>
 #include <pthread.h>
-#include "info.h"
-#include "Timer.h"
+
+//Game includes
+#include "particlesystem.h"
 #include "modules.h"
 #include "threading.h"
 #include "unitmanager.h"
 #include "uimanager.h"
 #include "networking.h"
+#include "iomanager.h"
+#include "info.h"
+#include "Timer.h"
+#include "level.h"
+#include "rand_generators.h"
 #include "typedefs.h"
-
 
 class Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public GameInfo, public ThreadSystem
@@ -48,13 +50,6 @@ public:
     /*Save methods*/
     void loadData(const std::string& name);
     void saveData(const std::string& name);
-
-    //static members
-    static size_t hasher();//Spews out a random number as the key for an element using a bellshape distribution
-    static size_t randUniform(Range limits = Range());//Generates random numbers that form a uniform distribution with a defined range.
-    static size_t randBinomial(Range limits = Range());//Generates random numbers using the binomial distribution and a defined range.
-    static size_t randNormal(Range limits = Range());//Generates random numbers using the bellshape distribution and a defined range.
-    static bool GetMaxValueSizeT();
 
     /*Frame adjustment*/
     void FrameCapper();

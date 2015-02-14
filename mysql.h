@@ -25,7 +25,14 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include "sqlkeywords.h"
+#include "typedefs.h"
 
+
+#define SQL_COMA ","
+#define SQL_NULL "NULL"
+#define SQL_NULL_STR "'NULL'"
+#define SQL_ZERO "'0'"
+#define SQL_NONE "None"
 
 class MySQL : public SQLGenerator
 {
@@ -38,9 +45,13 @@ public:
     MySQL(cstr database = NULL, cstr username = NULL, cstr password = NULL, cstr host = MySQL::DEFAULT_HOST);
     //Main interface
     void connect(cstr database, cstr username, cstr password, cstr host);
+    void reconnect(cstr database, cstr username, cstr password, cstr host);
     void disconnect();
-    void queryDB(const std::string& query);
+    void queryDB(const std::string& query, bool clearRes = true);
     void CleanResults();
+    bool hasResults();
+    bool validConnection(const std::string& query);
+    size_t rowCount();
     /*Results getters*/
     void getResult(int& response, const std::string& col_name);
     void getResult(char& response, const std::string& col_name);
@@ -52,6 +63,7 @@ public:
     void getResult(std::string& response, size_t col_index = DEFAULT_COL_INDEX);
     void getResult(bool& response, size_t col_index = DEFAULT_COL_INDEX);
     void getResult(double& response, size_t col_index = DEFAULT_COL_INDEX);
+    std::vector<fuzzy_obj> getResults();
     bool getStatus() const;
     //Dtors
     ~MySQL();

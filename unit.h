@@ -3,7 +3,6 @@
 #include <string>
 #include <map>
 #include <SDL.h>
-#include "game.h"
 #include "physics.h"
 #include "sound_base.h"
 #include "draw_base.h"
@@ -14,6 +13,7 @@
 //Forward declarations
 class ProgressBar;
 class ScriptWrap;
+class Game;
 
 class Unit
 {
@@ -61,7 +61,7 @@ class Unit
         void SetVisionRange(int val);
         void SetMovementSpeed(double val);
         void SetID(unsigned int id);
-        void SetOwner(Game& game);
+        void SetOwner(Game* game);
         bool GetDeath() const;
         void ToggleDeath();
 

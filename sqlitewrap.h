@@ -7,7 +7,6 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include "game.h"
 #include "data_base.h"
 #include "sqlkeywords.h"
 #include "sqlite_error.h"

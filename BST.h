@@ -2,22 +2,21 @@
 #ifndef BST_H
 #define BST_H
 #include <iostream>
+#include <vector>
 #include <cassert>
 
 //Prototypes
 template<typename KeyTy, typename ValueTy>
 void verbose(const KeyTy& key, const ValueTy& value);
 
-//Typedefs
-template<typename KeyTy, typename ValueTy>
-typedef void (*TraversalFunction)(const KeyTy& key, ValueTy& value);
-template<typename KeyTy, typename ValueTy, typename ClassTy>
-typedef void (*ClassTy::TraversalMethod)(const KeyTy& key, ValueTy& value);
+
 
 template<typename KeyTy, typename ValueTy>
 class BinarySearchTree
 {
- public:
+public:
+    //Typedefs
+    typedef void (*TraversalFunction)(const KeyTy& key, ValueTy& value);
   //Structures
   struct TreeNode
   {
@@ -41,18 +40,27 @@ class BinarySearchTree
   size_t height() const;//Returns the height of the tree
   void clear();//Empties container
   //Getter
-  std::vector<ValueTy&> getContents();//Dumps all nodes into a linear structure.
+  std::vector<ValueTy> getContents();//Dumps all nodes into a linear structure.
   //Traveral methods
   void inorder(TraversalFunction func = verbose) const;//Order: left, root, right
   void postorder(TraversalFunction func = verbose) const;//Order: left, right, root
   void preorder(TraversalFunction func = verbose) const;//Order:root, left, right
-  void inorder(TraversalMethod func) const;//Order: left, root, right
-  void postorder(TraversalMethod func) const;//Order: left, right, root
-  void preorder(TraversalMethod func) const;//Order:root, left, right
   //Debugging
   void print() const;//Outputs the internal structure of the tree
   //Operator overloads
-  ValueTy& operator [] (const KeyTy& key);//Provides [key] functionality
+  ValueTy& operator [] (const KeyTy& key)//Provides [key] functionality, if defined in header it's because of template issues with compiler
+  {
+  /*This is a wrapper method. Check out the recursive funtions. */
+  ValueTy* tmp = getValRef(Root, key);
+  if(!tmp)
+    {
+      insert(key, 0);
+      return *(getValRef(Root, key));
+    }
+  else
+    return *tmp;
+  }
+
 
  private:
   //instance variables
@@ -68,13 +76,25 @@ class BinarySearchTree
   void inorderNode(TreeNode* root, TraversalFunction& f) const;
   void preorderNode(TreeNode* root, TraversalFunction& f) const;
   void postorderNode(TreeNode* root, TraversalFunction& f) const;
-  void inorderNode(TreeNode* root, TraversalMethod& f) const;
-  void preorderNode(TreeNode* root, TraversalMethod& f) const;
-  void postorderNode(TreeNode* root, TraversalMethod& f) const;
   void printTree(TreeNode* root) const;
-  ValueTy* getValRef(TreeNode* root, const KeyTy& key);
+  ValueTy* getValRef(TreeNode* root, const KeyTy& key)
+  {
+  /*This method looks recursively for a node with the same key as key and
+    returns a reference to the node's value.
+  */
+  if(!root)//Base case
+    return NULL;
+
+  if(root->Key == key)//We got lucky
+    return &root->Value;
+  else if(root->Key > key)//Otherwise, keep looking
+    return getValRef(root->pLeft, key);
+  else if(root->Key < key)
+    return getValRef(root->pRight, key);
+  return NULL;
+}
   void freeTree(TreeNode* root);//Frees each node in the tree
-  void dumpNode(TreeNode* root, const std::vector<ValueTy&> holder);
+  void dumpNode(TreeNode* root, std::vector<ValueTy>& holder);
 };
 //Max template function
 template <class T>

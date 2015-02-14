@@ -1,9 +1,12 @@
 #ifndef TYPEDEFS_H_INCLUDED
 #define TYPEDEFS_H_INCLUDED
 
+#include <string>
+
 #define ENGINE_NAMESPACE namespace\32Eureka{
 #define ENGINE_NAMESPACE_END }
 
+//typedefs
 typedef unsigned char byte;
 typedef void* void_ptr;
 typedef void (*func_ptr)(...);

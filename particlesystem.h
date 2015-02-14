@@ -2,13 +2,13 @@
 #define PARTICLESYSTEM_H_INCLUDED
 #include <string>
 #include <pthread.h>
-#include "game.h"
+#include <queue>
 #include "unit.h"
 #include "draw_base.h"
 #include "physics.h"
-#include "typedefs.h"
 #include "BST.h"
 
+class ParticleNode;
 void traversalRender(const size_t& id, const ParticleNode& node);//Renders each element as it traverses
 
 class Particle: public Physics
@@ -50,7 +50,7 @@ public:
 
     //Render
     void RenderParticles();
-    void RenderParticlesByProximity(const math_point& loc, size_t radius = 100)
+    void RenderParticlesByProximity(const math_point& loc, size_t radius = 100);
 
     //Setter
     void SetInitialForce(double force);
@@ -141,7 +141,7 @@ private:
     ParticleCluster* gameCluster;
     size_t mutex_id_unit, mutex_id_game;
     size_t cond_id;
-}
+};
 
 
 #endif // PARTICLESYSTEM_H_INCLUDED

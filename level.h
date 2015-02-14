@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <list>
 #include <string>
+#include "BST.h"
 
 //Forward declarations
 class data_base;

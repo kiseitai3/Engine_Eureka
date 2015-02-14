@@ -3,8 +3,7 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <SDL_net>
-#include "game.h"
+#include <SDL_net.h>
 #include "BST.h"
 #include "typedefs.h"
 
@@ -62,7 +61,7 @@ class NetworkManager
 {
 public:
     //ctors and dtor
-    NetworkManager(Game& owner);
+    NetworkManager(Game* owner);
     ~NetworkManager();
 
     //Setters

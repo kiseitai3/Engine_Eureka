@@ -1,6 +1,7 @@
 #ifndef UNITMANAGER_H_INCLUDED
 #define UNITMANAGER_H_INCLUDED
-#include "game.h"
+#include "unit.h"
+#include "BST.h"
 #include "typedefs.h"
 
 
@@ -11,7 +12,7 @@ struct UnitNode
     size_t id;
 
     //ctor
-    UnitNode(Game& owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars);
+    UnitNode(Game* owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars);
     UnitNode();
 };
 
@@ -19,7 +20,7 @@ class UnitManager
 {
 public:
     //ctors and dtor
-    UnitManager(Game& owner, SDL_Event& events);
+    UnitManager(Game* owner, SDL_Event& events);
     ~UnitManager();
 
     //Setters

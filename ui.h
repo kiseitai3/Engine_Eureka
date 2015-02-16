@@ -5,6 +5,7 @@
 #include <string>
 #include <SDL.h>
 #include "textbox.h"
+#include "typedefs.h"
 
 class textbox;
 class Button;
@@ -29,7 +30,7 @@ private:
 
 
 public:
-    UI(const char *file, SDL_Renderer& ren);
+    UI(cstr file, SDL_Renderer& ren);
     ~UI();
 
     //Getters and setters

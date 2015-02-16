@@ -5,7 +5,6 @@
 
 #if defined(__linux__) || defined(__APPLE__)//Under unix systems
 
-
 #elif defined(__CYGWIN__)//Under unix in Windows
 
 

@@ -1,8 +1,8 @@
 #include "uimanager.h"
 
-UIManager::UIManager(Game& owner)
+UIManager::UIManager(Game* owner)
 {
-    owner_ref = &owner;
+    owner_ref = owner;
     //Create mutex
     mutex_ui_id = owner.SpawnMutex();
 }

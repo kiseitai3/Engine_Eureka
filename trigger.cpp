@@ -1,16 +1,17 @@
 #include <SDL.h>
 #include <iostream>
+#include "game.h"
 #include "unit.h"
 #include "trigger.h"
-#include "physics.h"
+#include "scriptwrap.h"
 
-Trigger::Trigger(const char *file)
+Trigger::Trigger(cstr file)
 {
     data_base TriggerDOM(file);
     Scripts = 0;
     height = TriggerDOM.GetIntFromData("trigger_height");
     width = TriggerDOM.GetIntFromData("trigger_width");
-    length = TriggerDOM.GetIntFromData("trigger_length");
+    duration = TriggerDOM.GetIntFromData("trigger_length");
     x = TriggerDOM.GetIntFromData("trigger_x");
     y = TriggerDOM.GetIntFromData("trigger_y");
     z = TriggerDOM.GetIntFromData("trigger_z");
@@ -25,10 +26,6 @@ Trigger::Trigger(const char *file)
 
 Trigger::~Trigger()
 {
-    if(TriggerDOM > 0)
-    {
-        delete(TriggerDOM);
-    }
 }
 
 //Getters and setters

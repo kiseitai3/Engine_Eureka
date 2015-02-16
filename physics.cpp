@@ -7,6 +7,7 @@
 #include <vector>
 #include "conversion.h"
 #include "physics.h"
+#include "rand_generators.h"
 
 //Let's define some basic physics constants
 /*This part is a bit dirty, but such is the world of physics. I normally name my constants with upper case, but the scientist
@@ -385,9 +386,13 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
         {
             ForceCountX = force;
         }
-        else
+        else if(axis == 'y')
         {
             ForceCountY = force;
+        }
+        else
+        {
+            SetForceCount((double)force, axis);
         }
     }
     void Physics::SetForceCount(double force, const char axis)
@@ -396,9 +401,19 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
         {
             ForceCountX = (int)force;
         }
-        else
+        else if(axis == 'y')
         {
             ForceCountY = (int)force;
+        }
+        else if(axis == 'a')
+        {
+            //When the axis is a (aka all), I randomly generate the proportions of force assigned to each axis
+            float multiplier;
+            //This is saying I generate a random number from 0 to 100, which divided by 100 gives me proportionality
+            //constant.
+            multiplier = randNormal(Range(0, 100)) / 100.0f;
+            ForceCountX = (int)(force * multiplier);
+            ForceCountY = (int)(force * (1 - multiplier));
         }
     }
     void Physics::AddForce(double force, const char axis)
@@ -462,8 +477,14 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
         }
     }
 
+    void Physics::SetLoc(const math_point& pos)
+    {
+        loc = pos;
+    }
+
     size_t CalculateDistance(const math_point& A, const math_point& B)
     {
         return (size_t)sqrt((pow((double)(A.Y-B.Y),2))+(pow((double)(A.X-B.X),2)));
     }
+
 

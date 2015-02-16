@@ -1,10 +1,12 @@
 #include "unitmanager.h"
+#include "game.h"
+#include "rand_generators.h"
 
-UnitNode::UnitNode(Game& owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars)
+UnitNode::UnitNode(Game* owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars)
 {
     Type = type;
     pData = NULL;
-    pData = new Unit(BlitOrder, file, loc, owner.GetRenderer(), owner.GetTimer(), hero, hasBars);
+    pData = new Unit(BlitOrder, file, loc, owner->GetRenderer(), owner->GetTimer(), hero, hasBars);
 }
 
 UnitNode::UnitNode()
@@ -13,25 +15,24 @@ UnitNode::UnitNode()
     pData = NULL;
 }
 
-UnitManager::UnitManager(Game& owner, SDL_Event& events)
+UnitManager::UnitManager(Game* owner, SDL_Event& events)
 {
-    owner_ref = &owner;
+    owner_ref = owner;
     event = &events;
-    mutex_id = owner.SpawnMutex();
+    mutex_id = owner->SpawnMutex();
     UnitNode* tmp = new UnitNode();
-    gameObjects.resize(owner.GetDefaultUnitCount());
-    gameObjects.push_back(tmp);
+    gameObjects.insert(0, tmp);
 }
 
 size_t UnitManager::SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars)
 {
-    size_t id = owner_ref->hasher();
+    size_t id = hasher();
     UnitNode* tmp =  NULL;
     owner_ref->LockMutex(mutex_id);
-    UnitNode *pUnit = new UnitNode(*owner_ref, type, BlitOrder, loc, file, hero, hasBars);
+    UnitNode *pUnit = new UnitNode(owner_ref, type, BlitOrder, loc, file.c_str(), hero, hasBars);
     while(gameObjects.search(id, tmp))
     {
-        id = owner_ref->hasher();
+        id = hasher();
     }
     gameObjects.insert(id, pUnit);
     owner_ref->UnlockMutex(mutex_id);
@@ -49,7 +50,7 @@ void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
     //Load file
     data_base f(file);
     size_t count = f.GetIntFromData("unit_count");
-    size_t id = owner_ref->hasher();
+    size_t id = hasher();
     std::string unit = "";
 
     //Let's load the objects
@@ -58,20 +59,20 @@ void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
          //Let's lock the container
         unit = "unit_" + intToStr(i);
         //Load constants
-        hero = f.GetIntFromData(name + "_hero");
-        hasBars = f.GetIntFromData(name + "_bars");
-        loc.X = f.GetIntFromData(name + "_X");
-        loc.Y = f.GetIntFromData(name + "_Y");
-        loc.Z = f.GetIntFromData(name + "_Z");
-        type = f.GetStrFromData(name + "_type")[0];
-        unitFile = f.GetStrFromData(name + "_file");
+        hero = f.GetIntFromData(unit + "_hero");
+        hasBars = f.GetIntFromData(unit + "_bars");
+        loc.X = f.GetIntFromData(unit + "_X");
+        loc.Y = f.GetIntFromData(unit + "_Y");
+        loc.Z = f.GetIntFromData(unit + "_Z");
+        type = f.GetStrFromData(unit + "_type")[0];
+        unitFile = f.GetStrFromData(unit + "_file");
         //Create object
         UnitNode* hasID;
-        UnitNode* tmp = new UnitNode(*owner_ref, type, BlitOrder, loc, unitFile.c_str(), hero, hasBars);
+        UnitNode* tmp = new UnitNode(owner_ref, type, BlitOrder, loc, file, hero, hasBars);
         owner_ref->LockMutex(mutex_id);
         while(gameObjects.search(id, hasID))
         {
-            id = owner_ref->hasher();
+            id = hasher();
         }
         gameObjects.insert(id, tmp);
         //Release the container
@@ -79,7 +80,7 @@ void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
     }
 }
 
-Unit& UnitManager::GetUnit(size_t id) const
+Unit& UnitManager::GetUnit(size_t id)
 {
     Unit* tmp;
     owner_ref->LockMutex(mutex_id);//Lock container
@@ -88,7 +89,7 @@ Unit& UnitManager::GetUnit(size_t id) const
     return *tmp;
 }
 
-Unit& UnitManager::GetUnitByName(const std::string& name) const
+Unit& UnitManager::GetUnitByName(const std::string& name)
 {
     Unit* tmp;
     owner_ref->LockMutex(mutex_id);//Lock container
@@ -103,7 +104,7 @@ Unit& UnitManager::GetUnitByName(const std::string& name) const
     return *tmp;
 }
 
-Unit* UnitManager::FindNearbyUnit(Unit *pUnit) const
+Unit* UnitManager::FindNearbyUnit(Unit *pUnit)
 
 {
     Unit *tmp = 0;
@@ -152,19 +153,19 @@ UnitManager::~UnitManager()
     owner_ref->DeleteMutex(mutex_id);
 }
 
-bool UnitManager::hasUnit(const std::string& name) const
+bool UnitManager::hasUnit(const std::string& name)
 {
     Unit* tmp = NULL;
-    tmp = GetUnitByName(name);
+    tmp = &(GetUnitByName(name));
     if(tmp)
         return true;
     return false;
 }
 
-bool UnitManager::hasUnit(size_t id) const
+bool UnitManager::hasUnit(size_t id)
 {
     Unit* tmp = NULL;
-    tmp = GetUnit(id);
+    tmp = &(GetUnit(id));
     if(tmp)
         return true;
     return false;
@@ -179,8 +180,8 @@ void UnitManager::DeleteUnit(Unit& unit)
         if((*itr)->pData == &unit)
         {
             if((*itr)->pData)
-                delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+                delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
         }
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -195,8 +196,8 @@ void UnitManager::DeleteUnitByName(const std::string& name)
         if((*itr)->pData->GetName() == name)
         {
             if((*itr)->pData)
-                delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+                delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
         }
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -215,11 +216,11 @@ void UnitManager::DeleteAllProjectiles()
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(std::vector<UnitNode*>::iterator itr = (tmpObjs.begin()++); itr <= tmpObjs.end(); itr++)
     {
-        if((*itr)->type == 'p')
+        if((*itr)->Type == 'p')
         {
             if((*itr)->pData)
-                delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+                delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
         }
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -231,11 +232,11 @@ void UnitManager::DeleteAllGameObjects()
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(std::vector<UnitNode*>::iterator itr = (tmpObjs.begin()++); itr <= tmpObjs.end(); itr++)
     {
-        if((*itr)->type == 'o')
+        if((*itr)->Type == 'o')
         {
             if((*itr)->pData)
-                delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+                delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
         }
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -247,11 +248,11 @@ void UnitManager::DeleteAllUnits()
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(std::vector<UnitNode*>::iterator itr = (tmpObjs.begin()++); itr <= tmpObjs.end(); itr++)
     {
-        if((*itr)->type == 'u')
+        if((*itr)->Type == 'u')
         {
             if((*itr)->pData)
-                delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+                delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
         }
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -264,8 +265,8 @@ void UnitManager::DeleteAll()
     for(std::vector<UnitNode*>::iterator itr = (tmpObjs.begin()++); itr <= tmpObjs.end(); itr++)
     {
         if((*itr)->pData)
-            delete (*itr)->pData
-            gameObjects.remove(*itr->id);
+            delete (*itr)->pData;
+            gameObjects.remove((*itr)->id);
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }
@@ -275,7 +276,7 @@ void UnitManager::RunPhysics()
     /*This is a more complicated method. Here, I have to run the physics of each object in respect to every
     object. Also, I have to run a couple of different physics (magnetic effects, electrical forces, and
     Newtonian forces).*/
-    std:;string tmp;
+    std::string tmp;
     owner_ref->LockMutex(mutex_id);//Lock container
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(size_t i = 1; i < tmpObjs.size(); i++)
@@ -301,7 +302,7 @@ void UnitManager::Draw()
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(size_t i = 1; i < tmpObjs.size(); i++)
     {
-        if(OnScreen(tmpObjs[i]->pData))
+        if(OnScreen(*tmpObjs[i]->pData))
             tmpObjs[i]->pData->DrawImages();
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -326,8 +327,8 @@ void UnitManager::RunEvents()
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(size_t i = 1; i < tmpObjs.size(); i++)
     {
-        tmpObjs[i]->pData->ProcessKeyEvent(event->key.keysym.sym);
-        tmpObjs[i]->pData->ProcessMouseMovement(event->motion->xrel, event->motion->yrel);
+        tmpObjs[i]->pData->ProcessKeyEvent((char*)event->key.keysym.sym);
+        tmpObjs[i]->pData->ProcessMouseMovement(event->motion.xrel, event->motion.yrel);
         tmpObjs[i]->pData->ProcessMouseKey(event->button.button, event->button.x, event->button.y);
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
@@ -346,34 +347,34 @@ void UnitManager::GC()
 }
 
 
-bool UnitManager::OnScreen(const Unit& unit)
+bool UnitManager::OnScreen(Unit& unit)
 {
-    draw_base *pDTarget = unit->GetDefaultDrawObject();
-    math_point targetLoc = unit->GetPhysics()->GetLoc();
+    draw_base *pDTarget = unit.GetDefaultDrawObject();
+    math_point targetLoc = unit.GetPhysics()->GetLoc();
     int tLenTop = pDTarget->GetHeightOfMainRect() / 2;
     int tLenLeft = pDTarget->GetWidthOfMainRect() / 2;//getting distances to the sides from the center point
-    //Grab some variables from this unit
-    int uLenTop = unit->GetHeightOfMainRect() / 2;
-    int uLenLeft = unit->GetWidthOfMainRect() / 2;
+    //Grab some variables from this the game viewport
+    int uLenTop = owner_ref->GetScreenHeight() / 2;
+    int uLenLeft = owner_ref->GetScreenWidth() / 2;
 
     //Compute collisions
     //bottom side
-    if(((targetLoc.Y + tLenTop) >= (owner_ref->GetS->GetLoc().Y - uLenTop) && ((targetLoc.X + tLenLeft) >= (phys->GetLoc().X - uLenLeft))) || ((targetLoc.Y + tLenTop) >= (phys->GetLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (phys->GetLoc().X + uLenLeft))))
+    if(((targetLoc.Y + tLenTop) >= (owner_ref->GetScreenLoc().Y - uLenTop) && ((targetLoc.X + tLenLeft) >= (owner_ref->GetScreenLoc().X - uLenLeft))) || ((targetLoc.Y + tLenTop) >= (owner_ref->GetScreenLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (owner_ref->GetScreenLoc().X + uLenLeft))))
     {
         return true;
     }
     //top side
-    if(((targetLoc.Y - tLenTop) <= (phys->GetLoc().Y + uLenTop) && ((targetLoc.X + tLenLeft) >= (phys->GetLoc().X - uLenLeft))) || ((targetLoc.Y + tLenTop) >= (phys->GetLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (phys->GetLoc().X + uLenLeft))))
+    if(((targetLoc.Y - tLenTop) <= (owner_ref->GetScreenLoc().Y + uLenTop) && ((targetLoc.X + tLenLeft) >= (owner_ref->GetScreenLoc().X - uLenLeft))) || ((targetLoc.Y + tLenTop) >= (owner_ref->GetScreenLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (owner_ref->GetScreenLoc().X + uLenLeft))))
     {
         return true;
     }
     //left side
-    if(((targetLoc.Y + tLenTop) >= (phys->GetLoc().Y - uLenTop) && ((targetLoc.X + tLenLeft) >= (phys->GetLoc().X - uLenLeft))) || ((targetLoc.Y - tLenTop) <= (phys->GetLoc().Y + uLenTop) && ((targetLoc.X + tLenLeft) >= (phys->GetLoc().X - uLenLeft))))
+    if(((targetLoc.Y + tLenTop) >= (owner_ref->GetScreenLoc().Y - uLenTop) && ((targetLoc.X + tLenLeft) >= (owner_ref->GetScreenLoc().X - uLenLeft))) || ((targetLoc.Y - tLenTop) <= (owner_ref->GetScreenLoc().Y + uLenTop) && ((targetLoc.X + tLenLeft) >= (owner_ref->GetScreenLoc().X - uLenLeft))))
     {
         return true;
     }
     //right side
-    if(((targetLoc.Y + tLenTop) >= (phys->GetLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (phys->GetLoc().X + uLenLeft))) || ((targetLoc.Y - tLenTop) <= (phys->GetLoc().Y + uLenTop) && ((targetLoc.X - tLenLeft) <= (phys->GetLoc().X + uLenLeft))))
+    if(((targetLoc.Y + tLenTop) >= (owner_ref->GetScreenLoc().Y - uLenTop) && ((targetLoc.X - tLenLeft) <= (owner_ref->GetScreenLoc().X + uLenLeft))) || ((targetLoc.Y - tLenTop) <= (owner_ref->GetScreenLoc().Y + uLenTop) && ((targetLoc.X - tLenLeft) <= (owner_ref->GetScreenLoc().X + uLenLeft))))
     {
         return true;
     }
@@ -384,7 +385,7 @@ bool UnitManager::OnScreen(const Unit& unit)
 //Threading entry points
 void_ptr helperSoundFunction(void_ptr game)
 {
-    Game* tmp = game;
+    Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
         tmp->PlaySounds();
@@ -394,7 +395,7 @@ void_ptr helperSoundFunction(void_ptr game)
 
 void_ptr helperDrawFunction(void_ptr game)
 {
-    Game* tmp = game;
+    Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
         tmp->Draw();
@@ -404,7 +405,7 @@ void_ptr helperDrawFunction(void_ptr game)
 
 void_ptr helperEventsFunction(void_ptr game)
 {
-    Game* tmp = game;
+    Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
         tmp->RunEvents();
@@ -414,7 +415,7 @@ void_ptr helperEventsFunction(void_ptr game)
 
 void_ptr helperPhysicsFunction(void_ptr game)
 {
-    Game* tmp = game;
+    Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
         tmp->RunPhysics();
@@ -424,11 +425,11 @@ void_ptr helperPhysicsFunction(void_ptr game)
 
 void_ptr helperUnitGCFunction(void_ptr game)
 {
-    Game* tmp = game;
+    Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
         tmp->GC();
-        sleep(Game::randBinomial(Range(0, 10000)));
+        sleep(randUniform(Range(0, 10000)));
     }
     return NULL;
 }

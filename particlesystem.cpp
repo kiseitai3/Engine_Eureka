@@ -1,12 +1,13 @@
 #include "particlesystem.h"
+#include "game.h"
 
-void traversalRender(const size_t& id, const ParticleNode& node)
+void traversalRender(const size_t& id, ParticleNode*& node)
 {
-    node.RenderParticles();
+    node->RenderParticles();
 }
 
 /*Particle*/
-Particle::Particle(Game& owner, cstr file, const math_point location, draw_base* refParticle) : Physics()
+Particle::Particle(Game* owner, cstr file, const math_point& location, draw_base* refParticle) : Physics()
 {
     data_base settings(file);
     particle = NULL;
@@ -34,7 +35,7 @@ Particle::Particle(Game& owner, cstr file, const math_point location, draw_base*
 
         if(particle && !refParticle)//If allocation was successful, try to load settings for the particle texture
         {
-            particle.Load_Texture(settings.GetStrFromData("texture_file").c_str(), owner.GetRenderer(), settings.GetIntFromData("fps"));
+            particle->Load_Texture(settings.GetStrFromData("texture_file").c_str(), owner->GetRenderer(), settings.GetIntFromData("fps"));
         }
         else
         {
@@ -45,8 +46,8 @@ Particle::Particle(Game& owner, cstr file, const math_point location, draw_base*
         //Now, let's set the lifetime of the particle
         life = settings.GetIntFromData("life"); //milliseconds
     }
-    loc = location;
-    owner_ref = &owner;
+    SetLoc(location);
+    owner_ref = owner;
     dead = false;
 
     //Set up timer
@@ -64,8 +65,8 @@ Particle::Particle(Game& owner, cstr file, const math_point location, draw_base*
 
 void Particle::RenderParticle()//Let's draw the texture
 {
-    particle->apply_surface(loc.X, loc.Y, owner_ref->GetRenderer());
-    if(t && t.get_ticks() >= life)
+    particle->apply_surface(GetLoc().X, GetLoc().Y, owner_ref->GetRenderer());
+    if(t && t->get_ticks() >= life)
     {
         dead = true;
     }
@@ -73,7 +74,7 @@ void Particle::RenderParticle()//Let's draw the texture
 
 void Particle::OverrideParticlePos(const math_point& newPos)
 {
-    loc = newPos;
+    SetLoc(newPos);
 }
 
 draw_base* Particle::GetParticle()
@@ -100,12 +101,12 @@ Particle::~Particle()
 }
 
 /*ParticleNode*/
-ParticleNode::ParticleNode(Game& owner, cstr file, const math_point& loc, double force)
+ParticleNode::ParticleNode(Game* owner, cstr file, const math_point& loc, char axis, double force)
 {
     data_base settings(file);
     particle = NULL;
     refLoc = NULL;
-    owner_ref = &owner;
+    owner_ref = owner;
     file_path = file;
     stickToUnit = false;
     singleParticle = false;
@@ -124,12 +125,13 @@ ParticleNode::ParticleNode(Game& owner, cstr file, const math_point& loc, double
 
     spawnLoc = loc;
     initForce = force;
+    xis = axis;
 }
 
-ParticleNode::ParticleNode(Game& owner, cstr file, const math_point& reference, const math_point& loc, double force)
+ParticleNode::ParticleNode(Game* owner, cstr file, const math_point& reference, const math_point& loc, char axis, double force)
 {
-    ParticleNode(owner, file, loc, force);
-    refLoc = &loc;
+    ParticleNode(owner, file, loc, axis, force);
+    refLoc = &reference;
 }
 
 void ParticleNode::GenerateParticle()
@@ -138,17 +140,17 @@ void ParticleNode::GenerateParticle()
     if(particles.size() < particleMaxCount)//Fill the queue with new particles
     {
         tmp =  new Particle(owner_ref, file_path, finalLoc, particle->GetParticle());
-        tmp->SetForceCount(initForce);
+        tmp->SetForceCount(initForce, xis);
         particles.push(tmp);
     }
     else//If the queue is filled, clean it if possible
     {
-        Particle* current = particles.top();
+        Particle* current = particles.front();
         if(current->isDead())
         {
             delete current;
             tmp = new Particle(owner_ref, file_path, finalLoc, particle->GetParticle());
-            tmp->SetForceCount(initForce)
+            tmp->SetForceCount(initForce, xis);
             particles.push(tmp);
         }
         else
@@ -174,7 +176,7 @@ void ParticleNode::RenderParticles()
     //Render all of the particles
     for(size_t i = 0; i < particles.size(); i++)
     {
-        current = particles.top();
+        current = particles.front();
         //Render particle and return it to the queue if it is not NULL
         if(current)
         {
@@ -190,7 +192,7 @@ void ParticleNode::RenderParticlesByProximity(const math_point& loc, size_t radi
     //Render all of the particles that are close to the position of interest
     for(size_t i = 0; i < particles.size(); i++)
     {
-        current = particles.top();
+        current = particles.front();
         //Render particle and return it to the queue if it is not NULL
         if(current && (CalculateDistance(current->GetLoc(), loc) <= radius))
         {
@@ -212,7 +214,7 @@ ParticleNode::~ParticleNode()
     //Clean the queue
     while(particles.size() > 0)
     {
-        Particle* tmp = particles.top();
+        Particle* tmp = particles.front();
         if(tmp)
             delete tmp;
     }
@@ -223,31 +225,35 @@ ParticleNode::~ParticleNode()
 }
 
 /*particleCluster*/
-ParticleCluster::ParticleCluster(Game& owner)
+ParticleCluster::ParticleCluster(Game* owner)
 {
-    owner_ref = &owner;
-    searchLoc = NULL;
-    searchRadius = 0;
+    owner_ref = owner;
 }
 
 ParticleCluster::~ParticleCluster()
 {
-
+    //Delete unit particle clusters
+    std::vector<ParticleNode*> tmpObjs = particleSet.getContents();
+    for(size_t i = 0; i < tmpObjs.size(); i++)
+    {
+        if(tmpObjs[i])
+            delete tmpObjs[i];
+    }
 }
 
-size_t ParticleCluster::GetParticlecount()
+size_t ParticleCluster::GetParticleCount()
 {
     return particleSet.size();
 }
 
 void ParticleCluster::SetInitialForce(size_t id, double force)
 {
-    particleSet[id].SetInitialForce(force);
+    particleSet[id]->SetInitialForce(force);
 }
 
 void ParticleCluster::RenderParticleById(size_t id)
 {
-    particleSet[id].RenderParticles();
+    particleSet[id]->RenderParticles();
 }
 
 void ParticleCluster::RenderAllParticles()
@@ -257,28 +263,28 @@ void ParticleCluster::RenderAllParticles()
 
 void ParticleCluster::RenderParticlesByProximity(const math_point& loc, size_t radius)
 {
-    std::vector<ParticleNode&> tmp = particleSet.getContents();
+    std::vector<ParticleNode*> tmp = particleSet.getContents();
     for(size_t i = 0; i < tmp.size(); i++)
     {
-        tmp[i].RenderParticleByProximity(loc, radius);
+        tmp[i]->RenderParticlesByProximity(loc, radius);
     }
 }
 
-size_t ParticleCluster::RegisterParticle(const math_point& loc, cstr particle, double force, const Unit* unit)
+size_t ParticleCluster::RegisterParticle(const math_point& loc, cstr particle, char axis, double force, const Unit* unit)
 {
     size_t id = 0;
-    ParticleNode holder(*owner_ref, particle, loc, force);
+    ParticleNode* holder = NULL;
     //Let's generate a random number that is available in the BST
     do
     {
-        id = Game::hasher();
+        id = hasher();
     }
     while(particleSet.search(id, holder));
 
     if(unit)//If the particles are 'owned' by a Unit object, include the reference loc
-        particleSet.insert(id, ParticleNode(*owner_ref, particle, unit->GetPhysics()->GetLoc(), loc, force));
+        particleSet.insert(id, new ParticleNode(owner_ref, particle, unit->GetPhysics()->GetLoc(), loc, force));
     else
-        particleSet.insert(id, ParticleNode(*owner_ref, particle, loc, force));
+        particleSet.insert(id, new ParticleNode(owner_ref, particle, loc, force));
     return id;//Return the key to access this particle node in the cluster
 }
 
@@ -293,62 +299,79 @@ void ParticleCluster::DeleteAllParticles()
 }
 
 /*ParticleSystem*/
-ParticleSystem::ParticleSystem(Game& owner)
+ParticleSystem::ParticleSystem(Game* owner)
 {
-    owner_ref = &owner;
-    gameCluster = new ParticleCluster(&owner);
-    mutex_id_unit = owner.SpawnMutex();
-    mutex_id_game = owner.SpawnMutex();
-    cond_id =  owner.SpawnCondVar();
+    owner_ref = owner;
+    gameCluster = new ParticleCluster(owner);
+    mutex_id_unit = owner->SpawnMutex();
+    mutex_id_game = owner->SpawnMutex();
+    cond_id =  owner->SpawnCondVar();
 }
 
 ParticleSystem::~ParticleSystem()
 {
+    //Lock mutexes
+    owner_ref->LockMutex(mutex_id_unit);
+    owner_ref->LockMutex(mutex_id_game);
+    //Delete unit particle clusters
+    std::vector<ParticleCluster*> tmpObjs = unitCluster.getContents();
+    for(size_t i =0; i < tmpObjs.size(); i++)
+    {
+        if(tmpObjs[i])
+            delete tmpObjs[i];
+    }
+    //Delete game particle cluster
     if(gameCluster)
         delete gameCluster;
+    //Unlock mutexes
+    owner_ref->UnlockMutex(mutex_id_game);
+    owner_ref->UnlockMutex(mutex_id_unit);
+    //Delete mutex
+    owner_ref->DeleteMutex(mutex_id_game);
+    owner_ref->DeleteMutex(mutex_id_unit);
 }
 
-size_t ParticleSystem::RegisterUnitParticle(const Unit& target, const math_point& loc, cstr particle)
+size_t ParticleSystem::RegisterUnitParticle(Unit& target, const math_point& loc, cstr particle, char axis)
 {
-    ParticleCluster holder(*owner_ref);
+    ParticleCluster* holder;
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
     if(unitCluster.search(&target, holder))
     {
-        return unitCluster[&target].RegisterParticle(loc, particle, 0, &target);
+        return unitCluster[&target]->RegisterParticle(loc, particle, 0, axis, &target);
     }
     else
     {
-        unitCluster.insert(&target, ParticleCluster(*owner_ref));
-        return unitCluster[&target].RegisterParticle(loc, particle, 0, &target);
+        unitCluster.insert(&target, new ParticleCluster(owner_ref));
+        return unitCluster[&target]->RegisterParticle(loc, particle, 0, axis, &target);
     }
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
-size_t ParticleSystem::RegisterGameParticle(const math_point& loc, cstr particle)
+size_t ParticleSystem::RegisterGameParticle(const math_point& loc, cstr particle, char axis)
 {
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
-    return gameCluster.RegisterParticle(loc, particle);
+    return gameCluster->RegisterParticle(loc, particle, axis);
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
-void ParticleSystem::RenderParticleFromUnit(const Unit& unit, size_t id)
+void ParticleSystem::RenderParticleFromUnit(Unit& unit, size_t id)
 {
-    ParticleCluster holder(*owner_ref);
+    ParticleCluster* holder;
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    if(unitCluster.search(&target, holder))
+    if(unitCluster.search(&unit, holder))
     {
-        unitCluster[&unit].RenderParticleById(id);
+        unitCluster[&unit]->RenderParticleById(id);
     }
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
-void ParticleSystem::RenderAllParticlesFromUnit(const Unit& unit)
+void ParticleSystem::RenderAllParticlesFromUnit(Unit& unit)
 {
-    ParticleCluster holder(*owner_ref);
+    ParticleCluster* holder;
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    if(unitCluster.search(&target, holder))
+    if(unitCluster.search(&unit, holder))
     {
-        unitCluster[&unit].RenderAllParticles();
+        unitCluster[&unit]->RenderAllParticles();
     }
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
@@ -360,10 +383,10 @@ void ParticleSystem::RenderAllParticlesFromGame()
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
-void ParticleSystem::RenderUnitParticlesByProximity(const Unit& unit, size_t radius)
+void ParticleSystem::RenderUnitParticlesByProximity(Unit& unit, size_t radius)
 {
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    unitCluster[&unit].RenderParticlesByProximity(unit.GetPhysics()->GetLoc(), radius);
+    unitCluster[&unit]->RenderParticlesByProximity(unit.GetPhysics()->GetLoc(), radius);
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
@@ -374,17 +397,17 @@ void ParticleSystem::RenderGameParticlesByProximity(const math_point& loc, size_
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
-void ParticleSystem::DeleteUnitParticle(const Unit& unit, size_t id)
+void ParticleSystem::DeleteUnitParticle(Unit& unit, size_t id)
 {
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    unitCluster[&unit].DeleteParticle(id);
+    unitCluster[&unit]->DeleteParticle(id);
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
 void ParticleSystem::DeleteGameParticle(size_t id)
 {
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
-    gameCluster.DeleteParticle(id);
+    gameCluster->DeleteParticle(id);
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
@@ -398,34 +421,34 @@ void ParticleSystem::ClearUnitParticles()
 void ParticleSystem::ClearGameParticles()
 {
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
-    gameCluster.DeleteAllParticles();
+    gameCluster->DeleteAllParticles();
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
 size_t ParticleSystem::GetGameParticleCount()
 {
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
-    return gameCluster.GetParticleCount();
+    return gameCluster->GetParticleCount();
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
 
-size_t ParticleSystem::GetUnitParticleCount(const Unit& unit)
+size_t ParticleSystem::GetUnitParticleCount(Unit& unit)
 {
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    return unitCluster[&unit].GetParticleCount();
+    return unitCluster[&unit]->GetParticleCount();
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
-void PaticleSystem::SetInitialForceOfUnitParticle(const Unit& unit, size_t id, double force)
+void ParticleSystem::SetInitialForceOfUnitParticle(Unit& unit, size_t id, double force)
 {
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    unitCluster[&unit].SetInitialForce(id, force);
+    unitCluster[&unit]->SetInitialForce(id, force);
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
 void ParticleSystem::SetInitialForceOfGameParticle(size_t id, double force)
 {
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
-    gameCluster.SetInitialForce(id, force);
+    gameCluster->SetInitialForce(id, force);
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }

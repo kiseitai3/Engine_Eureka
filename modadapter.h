@@ -21,14 +21,14 @@ class ModAdapter
 public:
     //typedefs and enums
     typedef Node func;
-    ModAdapter(const char* file, Game& owner);
+    ModAdapter(const char* file, Game* owner);
     void RegisterFunction(const std::string& name);
     void RegisterFunctionFromFile(const char* file);
     bool isFuncRegistered(const std::string& name) const;
     int RunFunctions() const;
     ~ModAdapter();
 private:
-    static Game* owner_ref;
+    Game* owner_ref;
     ScriptWrap *sModule;
     Plugin *dlModule;
     std::vector<func> fList;

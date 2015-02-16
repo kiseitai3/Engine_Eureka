@@ -3,16 +3,17 @@
 #include <string>
 #include <map>
 #include <SDL.h>
-#include "physics.h"
-#include "sound_base.h"
-#include "draw_base.h"
-#include "scriptwrap.h"
-#include "Timer.h"
 #include <list>
+#include "Timer.h"
+#include "typedefs.h"
 
 //Forward declarations
 class ProgressBar;
 class ScriptWrap;
+class sound_base;
+class draw_base;
+class data_base;
+class Physics;
 class Game;
 
 class Unit

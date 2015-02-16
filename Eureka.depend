@@ -23665,15 +23665,17 @@
 1411089258 c:\users\luis\documents\devcb\engine_eureka\utf8\unchecked.h
 	"core.h"
 
-1420128714 c:\users\luis\documents\devcb\engine_eureka\physics.h
+1424039676 c:\users\luis\documents\devcb\engine_eureka\physics.h
 	"data_base.h"
 	"typedefs.h"
 	<string>
 	<SDL.h>
 	<vector>
 
-1423945936 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
+1424121249 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
 	<string>
+	<unistd.h>
+	<unistd.h>
 
 1411089150 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl_ttf-2.0.11\sdl_ttf-2.0.11\include\sdl_ttf.h
 	"SDL.h"
@@ -23688,10 +23690,8 @@
 	<map>
 	"scriptwrap.h"
 
-1411764716 c:\users\luis\documents\devcb\engine_eureka\scriptwrap.h
+1424110590 c:\users\luis\documents\devcb\engine_eureka\scriptwrap.h
 	<vector>
-	"pywrap.h"
-	"luawrap.h"
 	"typedefs.h"
 
 1411773943 c:\users\luis\documents\devcb\engine_eureka\pywrap.h
@@ -23738,11 +23738,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1411089088 c:\users\luis\documents\devcb\engine_eureka\globals.h
+1423965611 c:\users\luis\documents\devcb\engine_eureka\globals.h
 	<stack>
 	"game.h"
 
-1423951570 c:\users\luis\documents\devcb\engine_eureka\game.h
+1423977854 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23751,6 +23751,7 @@
 	<list>
 	<cstdlib>
 	<pthread.h>
+	<cmath>
 	"particlesystem.h"
 	"modules.h"
 	"threading.h"
@@ -23769,23 +23770,21 @@
 	<string>
 	"typedefs.h"
 
-1421781332 c:\users\luis\documents\devcb\engine_eureka\ui.h
+1424126794 c:\users\luis\documents\devcb\engine_eureka\ui.h
 	<list>
 	<map>
 	<string>
 	<SDL.h>
 	"textbox.h"
+	"typedefs.h"
 
-1423930621 c:\users\luis\documents\devcb\engine_eureka\unit.h
+1423976805 c:\users\luis\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
-	"physics.h"
-	"sound_base.h"
-	"draw_base.h"
-	"scriptwrap.h"
-	"Timer.h"
 	<list>
+	"Timer.h"
+	"typedefs.h"
 
 1411088998 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
@@ -23813,11 +23812,11 @@
 	<dlfcn.h>
 	<windows.h>
 
-1423930468 c:\users\luis\documents\devcb\engine_eureka\modules.h
-	"modadapter.h"
+1424112529 c:\users\luis\documents\devcb\engine_eureka\modules.h
+	"BST.h"
 	"typedefs.h"
 
-1422202213 c:\users\luis\documents\devcb\engine_eureka\modadapter.h
+1424016397 c:\users\luis\documents\devcb\engine_eureka\modadapter.h
 	"game.h"
 	"plugin.h"
 	"scriptwrap.h"
@@ -23833,7 +23832,7 @@
 	<list>
 	"typedefs.h"
 
-1423930468 c:\users\luis\documents\devcb\engine_eureka\unitmanager.h
+1423977168 c:\users\luis\documents\devcb\engine_eureka\unitmanager.h
 	"unit.h"
 	"BST.h"
 	"typedefs.h"
@@ -23851,7 +23850,7 @@
 	"ui.h"
 	"BST.h"
 
-1423927206 c:\users\luis\documents\devcb\engine_eureka\bst.h
+1424122614 c:\users\luis\documents\devcb\engine_eureka\bst.h
 	<iostream>
 	<vector>
 	<cassert>
@@ -23870,12 +23869,12 @@
 1411650685 source:c:\users\luis\documents\devcb\engine_eureka\database.cpp
 	"database.h"
 
-1411778573 c:\users\luis\documents\devcb\engine_eureka\database.h
+1423977854 c:\users\luis\documents\devcb\engine_eureka\database.h
 	"mysql.h"
 	"sqlitewrap.h"
 	<string>
 
-1423877775 c:\users\luis\documents\devcb\engine_eureka\mysql.h
+1423977782 c:\users\luis\documents\devcb\engine_eureka\mysql.h
 	<iostream>
 	<string>
 	<cppconn/driver.h>
@@ -24002,10 +24001,8 @@
 	"plugin.h"
 	"game.h"
 
-1411088998 c:\users\luis\documents\devcb\engine_eureka\trigger.h
-	"data_base.h"
-	"scriptwrap.h"
-	"unit.h"
+1424101100 c:\users\luis\documents\devcb\engine_eureka\trigger.h
+	"typedefs.h"
 
 1411085222 c:\users\luis\documents\devcb\engine_eureka\sound_baseb.h
 	<stdio.h>
@@ -24085,7 +24082,7 @@
 	<cmath>
 	"conversion.h"
 
-1411089010 source:c:\users\luis\documents\devcb\engine_eureka\plugin.cpp
+1424112529 source:c:\users\luis\documents\devcb\engine_eureka\plugin.cpp
 	"plugin.h"
 
 1411085222 source:c:\users\luis\documents\devcb\engine_eureka\progressbar.cpp
@@ -24102,8 +24099,10 @@
 	"conversion.h"
 	<iostream>
 
-1411088998 source:c:\users\luis\documents\devcb\engine_eureka\scriptwrap.cpp
+1424110880 source:c:\users\luis\documents\devcb\engine_eureka\scriptwrap.cpp
 	"scriptwrap.h"
+	"luawrap.h"
+	"pywrap.h"
 
 1411085222 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
@@ -24143,14 +24142,15 @@
 	"Timer.h"
 	<SDL.h>
 
-1411088998 source:c:\users\luis\documents\devcb\engine_eureka\trigger.cpp
+1424110293 source:c:\users\luis\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
+	"game.h"
 	"unit.h"
 	"trigger.h"
-	"physics.h"
+	"scriptwrap.h"
 
-1411085222 source:c:\users\luis\documents\devcb\engine_eureka\ui.cpp
+1424126794 source:c:\users\luis\documents\devcb\engine_eureka\ui.cpp
 	<list>
 	<string>
 	<SDL.h>
@@ -27278,7 +27278,7 @@
 1403713585 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\variant\bad_visit.hpp
 	<exception>
 
-1423527732 source:c:\users\luis\documents\devcb\engine_eureka\physics.cpp
+1424094630 source:c:\users\luis\documents\devcb\engine_eureka\physics.cpp
 	"data_base.h"
 	<string>
 	<SDL.h>
@@ -27287,6 +27287,7 @@
 	<vector>
 	"conversion.h"
 	"physics.h"
+	"rand_generators.h"
 
 1423665966 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\c++11_test.cpp
 	<iostream>
@@ -27296,7 +27297,7 @@
 1423930242 c:\users\luis\documents\devcb\engine_eureka\eureka.h
 	"game.h"
 
-1423930647 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
+1424093986 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
 	<string>
 	<pthread.h>
 	<queue>
@@ -27304,8 +27305,9 @@
 	"draw_base.h"
 	"physics.h"
 	"BST.h"
+	"typedefs.h"
 
-1423930468 c:\users\luis\documents\devcb\engine_eureka\networking.h
+1424126251 c:\users\luis\documents\devcb\engine_eureka\networking.h
 	<iostream>
 	<string>
 	<list>
@@ -27338,4 +27340,52 @@
 	<ctime>
 	"rand_generators.h"
 	"conversion.h"
+
+1424017737 source:c:\users\luis\documents\devcb\engine_eureka\unitmanager.cpp
+	"unitmanager.h"
+	"game.h"
+	"rand_generators.h"
+
+1424094315 source:c:\users\luis\documents\devcb\engine_eureka\unit.cpp
+	"game.h"
+	"unit.h"
+	"physics.h"
+	"sound_base.h"
+	"draw_base.h"
+	"conversion.h"
+	"scriptwrap.h"
+	"Timer.h"
+	<map>
+	<string>
+	<iostream>
+	<list>
+	"progressbar.h"
+
+1424112364 source:c:\users\luis\documents\devcb\engine_eureka\modadapter.cpp
+	"modadapter.h"
+
+1424112529 source:c:\users\luis\documents\devcb\engine_eureka\modules.cpp
+	"modules.h"
+	"modadapter.h"
+	"game.h"
+
+1424094257 source:c:\users\luis\documents\devcb\engine_eureka\particlesystem.cpp
+	"particlesystem.h"
+	"game.h"
+
+1424101623 source:c:\users\luis\documents\devcb\engine_eureka\triggermanager.cpp
+	"triggermanager.h"
+	"rand_generators.h"
+	"trigger.h"
+
+1424101295 c:\users\luis\documents\devcb\engine_eureka\triggermanager.h
+	"eureka.h"
+	<iostream>
+	<string>
+	"typedefs.h"
+
+1424126251 source:c:\users\luis\documents\devcb\engine_eureka\networking.cpp
+	"networking.h"
+	"rand_generators.h"
+	"game.h"
 

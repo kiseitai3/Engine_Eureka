@@ -1,10 +1,10 @@
 #ifndef TRIGGER_H_INCLUDED
 #define TRIGGER_H_INCLUDED
-#include "data_base.h"
-#include "scriptwrap.h"
-#include "unit.h"
-#include "game.h"
 #include "typedefs.h"
+
+class ScriptWrap;
+class Game;
+class Unit;
 
 class Trigger
 {
@@ -22,6 +22,7 @@ public:
     size_t GetID() const;
     void SetID(size_t id);
     bool GetDeath() const;
+    math_point GetLoc() const;
     void ToggleDeath();
     //Behavior
     bool isUnitOnTrigger(Unit *target) const;

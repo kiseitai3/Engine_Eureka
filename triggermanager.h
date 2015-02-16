@@ -4,8 +4,10 @@
 #define TRIGGERMANAGER_H_INCLUDED
 #include <iostream>
 #include <string>
-#include "trigger.h"
 #include "typedefs.h"
+
+class Game;
+class Unit;
 
 class TriggerManager
 {
@@ -26,7 +28,7 @@ public:
 private:
     Game* owner_ref;
     size_t mutex_trigger_id;
-    BinarySearchTree<size_t, Trigger> triggers;
+    BinarySearchTree<size_t, Trigger*> triggers;
 };
 
 

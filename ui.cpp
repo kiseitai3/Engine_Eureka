@@ -1,3 +1,4 @@
+#define EUREKA_EXPORT
 #include <list>
 #include <string>
 #include <SDL.h>
@@ -12,7 +13,7 @@
 #include "ui.h"
 
 //Constructor and destructor
-UI::UI(const char *file, SDL_Renderer& ren)
+UI::UI(cstr file, SDL_Renderer& ren)
 {
     screen = &ren;
     background = new draw_base();
@@ -24,16 +25,14 @@ UI::UI(const char *file, SDL_Renderer& ren)
     {
         //Send settings to background
         background->Load_Texture(file, *screen);
-        //Recycle the background's DOM object as it contains the settings for the UI in general.
-        //This prevents duplication of the same piece of memory! In other words, we save ourselves a couple of bytes.
-        uiDOM = background->GetDOM();
+        data_base uiDOM(file);
 
         //copy location on screen
-        loc.X = uiDOM->GetIntFromData("ui_x");
-        loc.Y = uiDOM->GetIntFromData("ui_y");
+        loc.X = uiDOM.GetIntFromData("ui_x");
+        loc.Y = uiDOM.GetIntFromData("ui_y");
 
         //Build exit button
-        exit = new Button("X", uiDOM->GetStrFromData("ui_exit_file").c_str(), *screen, 10);
+        exit = new Button("X", uiDOM.GetStrFromData("ui_exit_file").c_str(), *screen, 10);
         if(!exit)
         {
             std::cout<<"Error: Could not build Exit button for this UI!\n\r";
@@ -45,22 +44,22 @@ UI::UI(const char *file, SDL_Renderer& ren)
 
         //Build textboxes
         std::string name;
-        texts.resize(uiDOM->GetIntFromData("ui_text_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_text_num"); i++)
+        texts.resize(uiDOM.GetIntFromData("ui_text_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_text_num"); i++)
         {
             name = "ui_text_" + intToStr(i);
-            textbox *tmp = new textbox(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
+            textbox *tmp = new textbox(uiDOM.GetStrFromData(name + "_msg"), uiDOM.GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             texts.push_back(tmp);
         }
 
         //Build Buttons
-        buttons.resize(uiDOM->GetIntFromData("ui_button_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_button_num"); i++)
+        buttons.resize(uiDOM.GetIntFromData("ui_button_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_button_num"); i++)
         {
             name = "ui_button_" + intToStr(i);
-            Button *tmp = new Button(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
+            Button *tmp = new Button(uiDOM.GetStrFromData(name + "_msg"), uiDOM.GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             buttons.push_back(tmp);
@@ -68,20 +67,20 @@ UI::UI(const char *file, SDL_Renderer& ren)
 
         //Build ProgressBars
         math_point tempPoint;
-        pBars.resize(uiDOM->GetIntFromData("ui_pb_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_pb_num"); i++)
+        pBars.resize(uiDOM.GetIntFromData("ui_pb_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_pb_num"); i++)
         {
             name = "ui_pb_" + intToStr(i);
-            pBNums[uiDOM->GetStrFromData(name + "name")] = 0;
-            tempPoint.X = uiDOM->GetIntFromData(name + "_x");
-            tempPoint.Y = uiDOM->GetIntFromData(name + "_y");
-            int tmpPB = pBNums[uiDOM->GetStrFromData(name + "name")];
-            ProgressBar *tmp = new ProgressBar(uiDOM->GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, *screen);
+            pBNums[uiDOM.GetStrFromData(name + "name")] = 0;
+            tempPoint.X = uiDOM.GetIntFromData(name + "_x");
+            tempPoint.Y = uiDOM.GetIntFromData(name + "_y");
+            int tmpPB = pBNums[uiDOM.GetStrFromData(name + "name")];
+            ProgressBar *tmp = new ProgressBar(uiDOM.GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, *screen);
             pBars.push_back(tmp);
         }
 
         //Get beginning visibility state
-        visibility = bool(uiDOM->GetIntFromData("ui_visibility"));
+        visibility = bool(uiDOM.GetIntFromData("ui_visibility"));
     }
     selectedText = 0;
     keyDown = false;

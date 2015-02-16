@@ -1,7 +1,10 @@
 #ifndef MODULES_H_INCLUDED
 #define MODULES_H_INCLUDED
-#include "modadapter.h"
+#include "BST.h"
 #include "typedefs.h"
+
+class ModAdapter;
+class Game;
 
 typedef struct ModuleNode
 {
@@ -10,10 +13,10 @@ typedef struct ModuleNode
     size_t mod_id;
     bool threaded;
 
-    ModuleNode(cstr file, bool independent = false, size_t pthread_id = 0);
+    ModuleNode(Game* owner, cstr file, bool independent = false, size_t pthread_id = 0);
 }Module;
 
-class ModuleSystem
+class EUREKA ModuleSystem
 {
 public:
     //ctors and dtor
@@ -26,16 +29,16 @@ public:
     void RegisterFunctionFromFile(const char* file, size_t mod_id);
 
     //Getter
-    bool isFuncRegistered(const std::string& name, size_t mod_id) const;
-    size_t GetModuleThreadID(size_t mod_id) const;
-    bool isModuleIndependent(size_t mod_id) const;
+    bool isFuncRegistered(const std::string& name, size_t mod_id);
+    size_t GetModuleThreadID(size_t mod_id);
+    bool isModuleIndependent(size_t mod_id);
 
     //Setter
     void MarkModuleAsIndependent(size_t mod_id);//This method is hard to interpret but the idea is that some modules register their own separate threads
 
     //Execution
-    int RunFunctionsInModule(size_t mod_id) const;
-    void RunAllFunctions()const;
+    int RunFunctionsInModule(size_t mod_id);
+    void RunAllFunctions();
 private:
     BinarySearchTree<size_t, Module*> modules;
     Game* owner_ref;

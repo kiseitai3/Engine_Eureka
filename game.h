@@ -11,6 +11,7 @@
 #include <pthread.h>
 
 //Game includes
+#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
 #include "particlesystem.h"
 #include "modules.h"
 #include "threading.h"

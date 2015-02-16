@@ -1,6 +1,6 @@
 #include "plugin.h"
 
-Plugin::Plugin(const char* file)
+Plugin::Plugin(cstr file)
 {
     lib = NULL;//Pre-set the pointer to NULL in case of a failure!
     lib = openLib(file);//Attempt to load the module!

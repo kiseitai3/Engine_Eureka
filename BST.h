@@ -7,7 +7,7 @@
 
 //Prototypes
 template<typename KeyTy, typename ValueTy>
-void verbose(const KeyTy& key, const ValueTy& value);
+void verbose(const KeyTy& key, ValueTy& value);
 
 
 
@@ -52,15 +52,9 @@ public:
   {
   /*This is a wrapper method. Check out the recursive funtions. */
   ValueTy* tmp = getValRef(Root, key);
-  if(!tmp)
-    {
-      insert(key, 0);
-      return *(getValRef(Root, key));
-    }
-  else
-    return *tmp;
+  assert(tmp);//I can't think of another way.
+  return *tmp;
   }
-
 
  private:
   //instance variables

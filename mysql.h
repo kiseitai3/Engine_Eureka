@@ -27,7 +27,6 @@
 #include "sqlkeywords.h"
 #include "typedefs.h"
 
-
 #define SQL_COMA ","
 #define SQL_NULL "NULL"
 #define SQL_NULL_STR "'NULL'"
@@ -79,3 +78,4 @@ private:
 };
 
 #endif // MYSQL_H_INCLUDED
+

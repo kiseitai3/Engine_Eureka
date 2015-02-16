@@ -1,10 +1,13 @@
+#define EUREKA_EXPORT
 #include "scriptwrap.h"
+#include "luawrap.h"
+#include "pywrap.h"
 
 
 //Static methods/ vars
 const std::vector<fuzzy_obj> ScriptWrap::NO_ARGS;
 
-ScriptWrap::ScriptWrap(const char* file)
+ScriptWrap::ScriptWrap(cstr file)
 {
     //Set variables to propper default values
     pyScript = NULL;

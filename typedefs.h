@@ -6,6 +6,33 @@
 #define ENGINE_NAMESPACE namespace\32Eureka{
 #define ENGINE_NAMESPACE_END }
 
+#if defined(__linux__) || defined(__APPLE__)//Under unix systems
+#include <unistd.h>
+#define sleep(us)\
+{\
+    usleep(us);\
+}
+
+#elif defined(__CYGWIN__)//Under unix in Windows
+#include <unistd.h>
+#define sleep(us)\
+{\
+    usleep(us);\
+}
+
+#elif defined(__WIN32__) || defined(__WIN64__)//Under Windows systems
+#define sleep(us)\
+{\
+    Sleep(us / 1000);\
+}
+#endif
+
+#ifdef EUREKA_EXPORT
+#define EUREKA __declspec(dllexport)
+#else
+#define EUREKA __declspec(dllimport)
+#endif
+
 //typedefs
 typedef unsigned char byte;
 typedef void* void_ptr;
@@ -13,6 +40,7 @@ typedef void (*func_ptr)(...);
 typedef const char* cstr;
 typedef void* (*thread_func)(void* data);
 typedef void (*func)(void* data);
+
 
 //Struct
 typedef struct psudo_type{

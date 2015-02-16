@@ -28,11 +28,11 @@ public:
     void SpawnUnitFromList(cstr file, int BlitOrder);
 
     //Getter
-    Unit& GetUnit(size_t id) const;
-    Unit& GetUnitByName(const std::string& name) const;
-    Unit* FindNearbyUnit(Unit *pUnit) const;
-    bool hasUnit(const std::string& name) const;
-    bool hasUnit(size_t id) const;
+    Unit& GetUnit(size_t id);
+    Unit& GetUnitByName(const std::string& name);
+    Unit* FindNearbyUnit(Unit *pUnit);
+    bool hasUnit(const std::string& name);
+    bool hasUnit(size_t id);
 
     //Delete
     void DeleteUnit(Unit& unit);
@@ -57,7 +57,7 @@ private:
     size_t mutex_id;
 
     //Methods
-    bool OnScreen(const Unit& unit) const;
+    bool OnScreen(Unit& unit);
 
 };
 

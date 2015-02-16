@@ -7,15 +7,16 @@
 #include "draw_base.h"
 #include "physics.h"
 #include "BST.h"
+#include "typedefs.h"
 
 class ParticleNode;
-void traversalRender(const size_t& id, const ParticleNode& node);//Renders each element as it traverses
+void traversalRender(const size_t& id, ParticleNode*& node);//Renders each element as it traverses
 
 class Particle: public Physics
 {
 public:
     //ctors and dtor
-    Particle(Game& owner, cstr file, const math_point& location, draw_base* refParticle = NULL);
+    Particle(Game* owner, cstr file, const math_point& location, draw_base* refParticle = NULL);
     ~Particle();
 
     //Render
@@ -44,8 +45,8 @@ class ParticleNode
 {
 public:
     //ctors and dtor
-    ParticleNode(Game& owner, cstr file, const math_point& loc, double force = 0);
-    ParticleNode(Game& owner, cstr file, const math_point& reference, const math_point& loc, double force = 0);
+    ParticleNode(Game* owner, cstr file, const math_point& loc, char axis, double force = 0);
+    ParticleNode(Game* owner, cstr file, const math_point& reference, const math_point& loc, char axis, double force = 0);
     ~ParticleNode();
 
     //Render
@@ -59,13 +60,15 @@ private:
     Particle* particle;
     Game* owner_ref;
     const math_point* refLoc;//reference location
-    const math_point spawnLoc;//Location to spawn particles on object
+    math_point spawnLoc;//Location to spawn particles on object
     math_point finalLoc;//Actual location
     cstr file_path;
     std::queue<Particle*> particles;
     size_t particleMaxCount;
+    char xis;
     double initForce;
     bool stickToUnit;
+    bool singleParticle;
 
     //Methods
     //Generator
@@ -76,7 +79,7 @@ class ParticleCluster
 {
 public:
     //ctors and dtor
-    ParticleCluster(Game& owner);
+    ParticleCluster(Game* owner);
     ~ParticleCluster();
 
     //Getters
@@ -91,7 +94,7 @@ public:
     void RenderParticlesByProximity(const math_point& loc, size_t radius = 100);
 
     //Register
-    size_t RegisterParticle(const math_point& loc, cstr particle, double force = 0, const Unit* unit = NULL);
+    size_t RegisterParticle(const math_point& loc, cstr particle, char axis = 'a', double force = 0, const Unit* unit = NULL);
 
     //Delete
     void DeleteParticle(size_t id);
@@ -99,45 +102,46 @@ public:
 
 private:
     Game* owner_ref;
-    BinarySearchTree<size_t, ParticleNode> particleSet;
+    BinarySearchTree<size_t, ParticleNode*> particleSet;
 };
 
 class ParticleSystem
 {
 public:
     //Constructors and Destructor
-    ParticleSystem(Game& owner);
+    ParticleSystem(Game* owner);
     ~ParticleSystem();
 
     //Resgister
-    size_t RegisterUnitParticle(const Unit& target, const math_point& loc, cstr particle);
-    size_t RegisterGameParticle(const math_point& loc, cstr particle);
+    size_t RegisterUnitParticle(Unit& target, const math_point& loc, cstr particle, char axis = 'a');
+    size_t RegisterGameParticle(const math_point& loc, cstr particle, char axis = 'a');
 
     //Render
-    void RenderParticleFromUnit(const Unit& unit, size_t id);
-    void RenderAllParticlesFromUnit(const Unit& unit);
-    void RenderUnitParticlesByProximity(const Unit& unit, size_t radius = 100);
+    void RenderParticleFromUnit(Unit& unit, size_t id);
+    void RenderAllParticlesFromUnit(Unit& unit);
+    void RenderUnitParticlesByProximity(Unit& unit, size_t radius = 100);
     void RenderGameParticlesByProximity(const math_point& loc, size_t radius = 100);
+    void RenderAllParticlesFromGame();
 
     //Delete
-    void DeleteUnitParticle(const Unit& unit, size_t id);
+    void DeleteUnitParticle(Unit& unit, size_t id);
     void DeleteGameParticle(size_t id);
     void ClearUnitParticles();
     void ClearGameParticles();
     void ClearAllParticles();
 
     //Getters
-    size_t GetUnitParticleCount(const Unit& unit);
+    size_t GetUnitParticleCount(Unit& unit);
     size_t GetGameParticleCount();
 
     //Setter
-    void SetInitialForceOfUnitParticle(const Unit& unit, size_t id, double force);
+    void SetInitialForceOfUnitParticle(Unit& unit, size_t id, double force);
     void SetInitialForceOfGameParticle(size_t id, double force);
 
 
 private:
     Game* owner_ref;
-    BinarySearchTree<Unit*, ParticleCluster> unitCluster;
+    BinarySearchTree<Unit*, ParticleCluster*> unitCluster;
     ParticleCluster* gameCluster;
     size_t mutex_id_unit, mutex_id_game;
     size_t cond_id;

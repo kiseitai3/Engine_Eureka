@@ -1,16 +1,17 @@
+#include "game.h"
 #include "unit.h"
 #include "physics.h"
 #include "sound_base.h"
 #include "draw_base.h"
 #include "conversion.h"
-#include "pywrap.h"
+#include "scriptwrap.h"
 #include "Timer.h"
-#include "globals.h"
 #include <map>
 #include <string>
 #include <iostream>
 #include <list>
 #include "progressbar.h"
+
 
 Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, Timer& t, bool hero, bool hasPBar)
 {
@@ -504,9 +505,9 @@ void Unit::SetID(unsigned int id)
     ID = id;
 }
 
-void Unit::SetOwner(Game& owner)
+void Unit::SetOwner(Game* owner)
 {
-    owner_ref = &owner;
+    owner_ref = owner;
 }
 
 bool Unit::GetDeath() const

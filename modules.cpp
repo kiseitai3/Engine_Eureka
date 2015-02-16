@@ -1,16 +1,19 @@
+#define EUREKA_EXPORT
 #include "modules.h"
+#include "modadapter.h"
+#include "game.h"
 
-ModuleNode::ModuleNode(Game& owner, cstr file, bool independent, size_t pthread_id)
+ModuleNode::ModuleNode(Game* owner, cstr file, bool independent, size_t pthread_id)
 {
     module = new ModAdapter(file, owner);
     threaded = independent;
     thread_id = pthread_id;
 }
 
-ModuleSystem::ModuleSystem(Game& owner)
+ModuleSystem::ModuleSystem(Game* owner)
 {
-    owner_ref = &owner;
-    mutex_id = owner.SpawnMutex();
+    owner_ref = owner;
+    mutex_id = owner->SpawnMutex();
     modules.insert(0, NULL);
 }
 
@@ -24,7 +27,7 @@ ModuleSystem::~ModuleSystem()
         {
             if(tmpObjs[i]->threaded)//If a thread is using this object, let's close it before attempting to erase it.
                 owner_ref->CloseThread(tmpObjs[i]->thread_id);
-            delete (*itr)->module;
+            delete tmpObjs[i]->module;
         }
     }
     owner_ref->UnlockMutex(mutex_id);
@@ -33,7 +36,7 @@ ModuleSystem::~ModuleSystem()
 
 size_t ModuleSystem::RegisterModule(cstr file, bool threaded)
 {
-    Module* tmp = new Module(*owner_ref, file, threaded)
+    Module* tmp = new Module(owner_ref, file, threaded);
     owner_ref->LockMutex(mutex_id);
     tmp->mod_id = generateID();//Create an id
     modules.insert(tmp->mod_id, tmp);//add to list
@@ -59,15 +62,15 @@ void ModuleSystem::RegisterFunctionFromFile(const char* file, size_t mod_id)
     owner_ref->UnlockMutex(mutex_id);
 }
 
-bool ModuleSystem::isFuncRegistered(const std::string& name, size_t mod_id) const
+bool ModuleSystem::isFuncRegistered(const std::string& name, size_t mod_id)
 {
     owner_ref->LockMutex(mutex_id);
-    bool ans = modules[mod_id]->module->isFuncRegistered(file);
+    bool ans = modules[mod_id]->module->isFuncRegistered(name);
     owner_ref->UnlockMutex(mutex_id);
     return ans;
 }
 
-size_t ModuleSystem::GetModuleThreadID(size_t mod_id) const
+size_t ModuleSystem::GetModuleThreadID(size_t mod_id)
 {
     owner_ref->LockMutex(mutex_id);
     size_t ans = modules[mod_id]->thread_id;
@@ -75,7 +78,7 @@ size_t ModuleSystem::GetModuleThreadID(size_t mod_id) const
     return ans;
 }
 
-bool ModuleSystem::isModuleIndependent(size_t mod_id) const
+bool ModuleSystem::isModuleIndependent(size_t mod_id)
 {
     owner_ref->LockMutex(mutex_id);
     bool ans = modules[mod_id]->threaded;
@@ -90,7 +93,7 @@ void ModuleSystem::MarkModuleAsIndependent(size_t mod_id)
     owner_ref->UnlockMutex(mutex_id);
 }
 
-int ModuleSystem::RunFunctionsInModule(size_t mod_id) const
+int ModuleSystem::RunFunctionsInModule(size_t mod_id)
 {
     size_t ans = 0;
     owner_ref->LockMutex(mutex_id);
@@ -100,7 +103,7 @@ int ModuleSystem::RunFunctionsInModule(size_t mod_id) const
     return ans;
 }
 
-void ModuleSystem::RunAllFunctions() const
+void ModuleSystem::RunAllFunctions()
 {
     owner_ref->LockMutex(mutex_id);
     std::vector<Module*> tmpObjs = modules.getContents();
@@ -114,11 +117,11 @@ void ModuleSystem::RunAllFunctions() const
 
 size_t ModuleSystem::generateID()
 {
-    size_t id = Game::randUniform((0, Game::GetMaxValueSizeT())) ;//Get a random number
+    size_t id = randUniform((0, GetMaxValueSizeT())) ;//Get a random number
     //Continue getting a new random number if the id is already taken!
-    while(hasID(id, target))
+    while(hasID(id))
     {
-        id = Game::randUniform((0, Game::GetMaxValueSizeT()));
+        id = randUniform((0, GetMaxValueSizeT()));
     }
 
     return id;

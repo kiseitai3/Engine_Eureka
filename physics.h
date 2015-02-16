@@ -42,6 +42,7 @@
     bool isUnmovable() const;
     void SetForceCount(int force, char axis);
     void SetForceCount(double force, char axis);
+    void SetLoc(const math_point& pos);
     void SetVelocity(double velocity, char axis);
     void AddForce(double force, char axis = 'x');
     Physics(const char* location = "");

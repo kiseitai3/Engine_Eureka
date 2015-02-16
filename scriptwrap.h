@@ -1,8 +1,6 @@
 #ifndef SCRIPTWRAP_H_INCLUDED
 #define SCRIPTWRAP_H_INCLUDED
 #include <vector>
-#include "pywrap.h"
-#include "luawrap.h"
 #include "typedefs.h"
 
 class LuaWrap;
@@ -16,7 +14,7 @@ class Pywrap;
 #define EXIT_SUCCESS 0
 #endif
 
-class ScriptWrap
+class EUREKA ScriptWrap
 {
 public:
     ScriptWrap(const char* file);

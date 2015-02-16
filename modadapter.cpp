@@ -1,6 +1,7 @@
+#define EUREKA_EXPORT
 #include "modadapter.h"
 
-ModAdapter::ModAdapter(const char* file, Game& owner)
+ModAdapter::ModAdapter(const char* file, Game* owner)
 {
     std::string tmp = file;
     dlModule = NULL;
@@ -10,8 +11,8 @@ ModAdapter::ModAdapter(const char* file, Game& owner)
     else
         sModule = new ScriptWrap(file);//Otherwise, initialize the plugin as a regular script. Good for scripted plugins.
 
-    if(!owner_ref && !(owner_ref == &owner))
-        owner_ref = &owner;
+    if(!owner_ref && !(owner_ref == owner))
+        owner_ref = owner;
 }
 
 bool ModAdapter::isFuncRegistered(const std::string& name) const

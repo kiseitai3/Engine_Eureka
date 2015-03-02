@@ -1,6 +1,7 @@
+#define EUREKA_EXPORT
 #include "triggermanager.h"
 #include "rand_generators.h"
-#include "trigger.h"
+#include "eureka.h"
 
 TriggerManager::TriggerManager(Game* owner)
 {
@@ -12,22 +13,13 @@ TriggerManager::~TriggerManager()
 {
     //Lock mutex
     owner_ref->LockMutex(mutex_trigger_id);
-    std::vector<Trigger*> tmpObjs = triggers.getContents();
-    //Delete triggers
-    for(size_t i = 0; i < tmpObjs.size(); i++)
-    {
-        if(tmpObjs[i])
-            delete tmpObjs[i];
-    }
-    //Unlock mutex
-    owner_ref->UnlockMutex(mutex_trigger_id);
     //Delete the mutex
     owner_ref->DeleteMutex(mutex_trigger_id);
 }
 
 size_t TriggerManager::RegisterTrigger(cstr file)
 {
-    Trigger* tmp;
+    Trigger tmp;
     size_t id = 0;
     //Lock mutex
     owner_ref->LockMutex(mutex_trigger_id);
@@ -36,17 +28,69 @@ size_t TriggerManager::RegisterTrigger(cstr file)
     {
         id = hasher();
     }
-    tmp = NULL; //Reset value of tmp just in case
-    tmp = new Trigger(file);
-    if(tmp)
-    {
-        //Insert new trigger into the tree
-        triggers.insert(id, tmp);
-    }
-    else
-        id = 0;//Set to 0 if unable to allocate!
+    triggers.insert(id, Trigger(file));
+    triggers[id].SetID(id);
     //Release mutex
     owner_ref->UnlockMutex(mutex_trigger_id);
     //Return id
     return id;
+}
+
+void TriggerManager::UnRegisterTrigger(size_t trigger_id)
+{
+    //Lock mutex
+    owner_ref->LockMutex(mutex_trigger_id);
+    triggers.remove(trigger_id);
+    //Release mutex
+    owner_ref->UnlockMutex(mutex_trigger_id);
+}
+
+Trigger& TriggerManager::GetTrigger(size_t trigger_id)
+{
+    Trigger* tmp = NULL;
+    //Lock mutex
+    owner_ref->LockMutex(mutex_trigger_id);
+    tmp = &triggers[trigger_id];
+    //Release mutex
+    owner_ref->UnlockMutex(mutex_trigger_id);
+    return *tmp;
+}
+
+void TriggerManager::UpdateTriggers(size_t unit_id)
+{
+    std::vector<Trigger> tmpObjs;
+    //Lock mutex
+    owner_ref->LockMutex(mutex_trigger_id);
+    tmpObjs = triggers.getContents();
+    for(std::vector<Trigger>::iterator itr = tmpObjs.begin(); itr < tmpObjs.end(); itr++)
+    {
+        if(itr->isUnitOnTrigger(&owner_ref->GetUnit(unit_id)))
+            itr->ConsumeTrigger(owner_ref, &owner_ref->GetUnit(unit_id));
+        owner_ref->UnlockUnit();
+    }
+    //Release mutex
+    owner_ref->UnlockMutex(mutex_trigger_id);
+}
+
+void TriggerManager::UpdateTrigger(size_t trigger_id, size_t unit_id)
+{
+    //Lock mutex
+    owner_ref->LockMutex(mutex_trigger_id);
+    Trigger tmp = triggers[trigger_id];
+    if(tmp.isUnitOnTrigger(&owner_ref->GetUnit(unit_id)))
+        tmp.ConsumeTrigger(owner_ref, &owner_ref->GetUnit(unit_id));
+    owner_ref->UnlockUnit();
+    //Release mutex
+    owner_ref->UnlockMutex(mutex_trigger_id);
+}
+
+void TriggerManager::UpdateTriggerLocation(math_point loc, size_t trigger_id)
+{
+    //Lock mutex
+    owner_ref->LockMutex(mutex_trigger_id);
+    Trigger tmp = triggers[trigger_id];
+    tmp.UpdateTriggerLoc(loc.X, loc.Y, loc.Z);
+    owner_ref->UnlockUnit();
+    //Release mutex
+    owner_ref->UnlockMutex(mutex_trigger_id);
 }

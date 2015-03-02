@@ -38,6 +38,7 @@ class data_base
     //methods
     bool LoadData(const char* location, bool readMode = true);
     void LoadStringBuffer(bool closeFile = true);
+    void LoadBuffer(const char* contents);
     void FlushData();
     int GetLineIndex(const std::string& search, int lineNum) const;
     void FileClear();
@@ -73,6 +74,9 @@ class data_base
     void CreateNewFile(const char* location = "");
     static void CreateNewFile_static(const char* location);
     ~data_base();
+
+    //Constant directives
+    static const char* BUFFER;
 };
 
 bool copyfile(const std::string& source, const std::string& destination, bool binary = true);

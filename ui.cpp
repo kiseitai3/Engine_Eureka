@@ -203,7 +203,7 @@ void UI::Update()
     }
 }
 
-void UI::AddNumToPBar(int num, std::string name)
+void UI::AddNumToPBar(int num, const std::string& name)
 {
     pBNums[name] = num;
 }

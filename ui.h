@@ -39,7 +39,7 @@ public:
     //Updaters
     void Update();
     void ProcessEvents(SDL_Event *event);
-    void AddNumToPBar(int num, std::string name); //This is a very obscure function I added so you can input values that are going to be used by the ProgressBars
+    void AddNumToPBar(int num, const std::string& name); //This is a very obscure function I added so you can input values that are going to be used by the ProgressBars
 
     //Draw
     void Draw();

@@ -1,6 +1,6 @@
 #ifndef MODADAPTER_H_INCLUDED
 #define MODADAPTER_H_INCLUDED
-#include "game.h"
+#include "eureka.h"
 #include "plugin.h"
 #include "scriptwrap.h"
 #include "typedefs.h"

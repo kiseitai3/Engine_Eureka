@@ -19,13 +19,13 @@ class Game;
 class Level
 {
 private:
-    ProgressBar *loadingBar;
-    textbox *loadingText;
-    draw_base *lvlBackground;
     sound_base *lvlBackgroundMusic;
-    data_base *lvlDOM;
-    BinarySearchTree<size_t, size_t> unitList;
-    Timer* timer;
+    size_t heroID;
+    std::list<size_t> unitList;
+    std::list<size_t> layerList;
+    std::list<size_t> uiList;
+    std::list<size_t> triggerList;
+    std::list<size_t> moduleList;
     Game* sys;
     bool backgroundFixed;
     std::string mapName;
@@ -36,9 +36,12 @@ public:
 
     //Getters
     std::string& GetMapName() const;
-
-    //Extra cleaning methods
-    void ScreenClear();
+    size_t GetHeroID() const;
+    std::list<size_t>* GetLayerIDs() const;
+    std::list<size_t>* GetUnitIDs() const;
+    std::list<size_t>* GetUIIDs() const;
+    std::list<size_t>* GetModuleIDs() const;
+    std::list<size_t>* GetTriggerIDs() const;
 };
 
 

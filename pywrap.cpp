@@ -4,9 +4,16 @@
 #include "conversion.h"
 #include <iostream>
 
+bool Pywrap::initialized = false;
+
 void Pywrap::exec_pycode(const char* code)
 {
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     PyRun_SimpleString(code);
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
 }
 
 void Pywrap::SetFilePath(const char* file)
@@ -16,6 +23,13 @@ void Pywrap::SetFilePath(const char* file)
 
 Pywrap::Pywrap(const char* file, unsigned int arg_size)
 {
+    if(!initialized)
+    {
+        Py_Initialize();//Initialize the thread
+        PyEval_InitThreads();//Initialize Python's internal Threading system
+        initialized = true;
+    }
+
     if(file != "")
     {
         if(findString(".py",file)>= 0)
@@ -122,8 +136,10 @@ void Pywrap::DisplayInternalVars()
 
 void Pywrap::executeNoReturnF(const char* funcName)//all arguments that will be passed to a Python function have to be added to a string literal with the type letter at the beginning and a ; ending each entry (i.e. i1;f23.4;sLove and Peace;)
 {
-    /*Like executeReturnF, this method extracts a function from the loaded python module and calls it thanks to the
-    defined () operator in boost*/
+    /*Like executeReturnF, this method extracts a function from the loaded python module and calls it. No return value is expected from the function!*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     func =  PyObject_GetAttrString(module, funcName);
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
@@ -135,6 +151,8 @@ void Pywrap::executeNoReturnF(const char* funcName)//all arguments that will be 
         PyObject_CallObject(func, args);//Execute function.
     }
     DecreaseRef(func);//Small cleanup.
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
 }
 
 PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
@@ -142,6 +160,9 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
     /*This method will take a filepath and a tuple containing the arguments, and will execute a main function
     within the script. I am assuming here that the module contains a main function that I can use as the
     entrypoint. I am not using the standard if __namespace__ == Python entrypoint!*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     if(findString(".py",file)>= 0)//Check and delete the .py extension as it is not necessary and makes the Python API crash.
         {
             file = sliceStr(file,0,std::string(file).size() - 3).c_str();
@@ -167,6 +188,9 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
         //I can overwrite our internal copy of the pointer because the cleanup will occur at the caller side.
         return result;
     }
+
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
     return 0;
 }
 
@@ -192,6 +216,9 @@ PyObject *Pywrap::executeReturnF(const char* funcName)
     /*Like executeNoReturnF, this method extracts a function from the loaded python module and calls it thanks to the
     defined () operator in boost. However, I return the resulting boost py object since it contains the results of the
     function.*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     func =  PyObject_GetAttrString(module, funcName);
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
@@ -203,6 +230,8 @@ PyObject *Pywrap::executeReturnF(const char* funcName)
         value = PyObject_CallObject(func, args);//Execute function
         return value;
     }
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
     return func;
 }
 
@@ -459,4 +488,16 @@ void *Pywrap::py_extractPtrFromList(PyObject *results, unsigned int index) const
     std::cout << "Warning: PyObject is not a Tuple. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return 0;
+}
+
+void Pywrap::LockInterpreter()
+{
+    //Lock Interpreter
+    gstate = PyGILState_Ensure();
+}
+
+void Pywrap::ReleaseInterpreter()
+{
+    //Let go of the interpreter! Please don't crash! *Tears*
+    PyGILState_Release(gstate);
 }

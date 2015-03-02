@@ -25,7 +25,8 @@ public:
 
     //Setters
     size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);
-    void SpawnUnitFromList(cstr file, int BlitOrder);
+    size_t SpawnUnitFromFile(cstr file);
+    std::vector<size_t> SpawnUnitFromList(cstr file, int BlitOrder);
 
     //Getter
     Unit& GetUnit(size_t id);
@@ -45,10 +46,11 @@ public:
 
     //Execution
     void RunPhysics();
-    void Draw();
+    void DrawUnits();
     void RunEvents();
     void PlaySounds();
     void GC();//Units garbage collector
+    void UnlockUnit();
 
 private:
     Game* owner_ref;
@@ -62,7 +64,6 @@ private:
 };
 
 void_ptr helperSoundFunction(void_ptr game);
-void_ptr helperDrawFunction(void_ptr game);
 void_ptr helperPhysicsFunction(void_ptr game);
 void_ptr helperEventsFunction(void_ptr game);
 void_ptr helperUnitGCFunction(void_ptr game);

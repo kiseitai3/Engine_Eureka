@@ -10,7 +10,7 @@
 #include <map>
 #include "data_base.h"
 #include <SDL_image.h>
-#include "globals.h"
+#include "eureka.h"
 
 Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
 {

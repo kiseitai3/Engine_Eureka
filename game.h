@@ -11,22 +11,26 @@
 #include <pthread.h>
 
 //Game includes
-#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
-#include "particlesystem.h"
-#include "modules.h"
-#include "threading.h"
-#include "unitmanager.h"
-#include "uimanager.h"
-#include "networking.h"
-#include "iomanager.h"
-#include "info.h"
-#include "Timer.h"
-#include "level.h"
-#include "rand_generators.h"
+//#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
 #include "typedefs.h"
 
-class Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
-    public UIManager, public NetworkManager, public GameInfo, public ThreadSystem
+class ParticleSystem;
+class ModuleSystem;
+class IOManager;
+class ThreadSystem;
+class UnitManager;
+class UIManager;
+class NetworkManager;
+class GameInfo;
+class TimerSystem;
+class LayerSystem;
+class TriggerManager;
+class Level;
+class DataBase;
+
+class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
+    public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
+    public GameInfo, public ThreadSystem
 {
 public:
     Game();
@@ -38,19 +42,20 @@ public:
 
     //Level
     bool loadLevel(cstr file);
-    Level& GetCurrentLevel();
-    Timer& GetTimer();
+    Level* GetCurrentLevel();
 
     /*Getters*/
     SDL_Renderer& GetRenderer();
     SDL_Event& GetEvents();
+    size_t GetMainTimer();
     bool isMultithreaded() const;
     bool GetRelativity() const;
     bool isEngineClosing() const;
 
     /*Save methods*/
-    void loadData(const std::string& name);
-    void saveData(const std::string& name);
+    void loadSaveData(const std::string& file);
+    void SaveData(const std::string& query);
+    DataBase* GetSaveDataHandle();
 
     /*Frame adjustment*/
     void FrameCapper();
@@ -63,13 +68,25 @@ public:
     void runPhysics();
     void run(int id = -1);//This method will run all of the threads unless an specific thread id is specified
     void stop(int id = -1);//This method will halt all of the threads unless an specific thread id is specified
+
     /*Let's remove game objects*/
+
+    /*UI quick methods*/
+    void ShowLoadingScreen();
+    void UpdateLoadingStatus(size_t value);
+    void HideLoadingScreen();
+    void ReplaceLoadingScreen(cstr file);
+    void ShowMainMenu();
+    void HideMainMenu();
+    void ReplaceMainMenu(cstr file);
+    void ShowHUD();
+    void HideHUD();
+    void ReplaceHUD(cstr file);
 
 
 private:
-    //Timer and renderer
-    Timer fps;
-    SDL_Renderer *screen;
+    //Renderer
+    SDL_Renderer *screen, *outputFrame;
     SDL_Window *win;
     SDL_Event *event;//Where all the events will be stored.
 
@@ -78,6 +95,9 @@ private:
     bool multithreaded;
     bool relativity;
     bool closeEngine;
+
+    //IDs
+    size_t mainTimer;//Timer
 
     //Other variables
     Level *current;
@@ -89,6 +109,6 @@ private:
 
 };
 //Global functions
-
+void_ptr helperDrawFunction(void_ptr game);
 
 #endif // GAME_H_INCLUDED

@@ -77,6 +77,8 @@
 				<Linker>
 					<Add library="IO" />
 					<Add library="threading" />
+					<Add library="Core" />
+					<Add library="plugins" />
 				</Linker>
 			</Target>
 			<Target title="Core">
@@ -88,6 +90,7 @@
 				<Linker>
 					<Add library="IO" />
 					<Add library="threading" />
+					<Add library="plugins" />
 				</Linker>
 			</Target>
 			<Target title="UI">
@@ -99,6 +102,8 @@
 				<Linker>
 					<Add library="IO" />
 					<Add library="threading" />
+					<Add library="Core" />
+					<Add library="plugins" />
 				</Linker>
 			</Target>
 			<Target title="Plugins">
@@ -334,6 +339,12 @@
 			<Option target="Debug" />
 			<Option target="IO" />
 		</Unit>
+		<Unit filename="layersystem.cpp">
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="layersystem.h">
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="level.cpp">
 			<Option target="Release" />
 			<Option target="staticlib_all" />
@@ -442,12 +453,12 @@
 			<Option target="Release" />
 			<Option target="staticlib_all" />
 			<Option target="Debug" />
-			<Option target="UI" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="progressbar.h">
 			<Option target="Release" />
 			<Option target="Debug" />
-			<Option target="UI" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="pywrap.cpp">
 			<Option target="Release" />
@@ -558,6 +569,12 @@
 			<Option target="Debug" />
 			<Option target="Threading" />
 		</Unit>
+		<Unit filename="timersystem.cpp">
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="timersystem.h">
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="trigger.cpp">
 			<Option target="Release" />
 			<Option target="staticlib_all" />
@@ -613,11 +630,13 @@
 			<Option target="staticlib_all" />
 			<Option target="Debug" />
 			<Option target="Unit" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="unit.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 			<Option target="Unit" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="unitmanager.cpp">
 			<Option target="Release" />

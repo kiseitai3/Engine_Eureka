@@ -1,6 +1,6 @@
 #include <SDL.h>
 #include <iostream>
-#include "game.h"
+#include "eureka.h"
 #include "unit.h"
 #include "trigger.h"
 #include "scriptwrap.h"
@@ -15,13 +15,25 @@ Trigger::Trigger(cstr file)
     x = TriggerDOM.GetIntFromData("trigger_x");
     y = TriggerDOM.GetIntFromData("trigger_y");
     z = TriggerDOM.GetIntFromData("trigger_z");
-    duration = TriggerDOM.GetIntFromData("trigger_duration");
     death = false;
     Scripts = new ScriptWrap(TriggerDOM.GetStrFromData("trigger_script").c_str());
     if(!Scripts)
     {
         std::cout<<"Error: could not load this Trigger's script!" << std::endl;
     }
+}
+
+Trigger::Trigger()
+{
+    Scripts = 0;
+    height = 0;
+    width = 0;
+    duration = 0;
+    x = 0;
+    y = 0;
+    z = 0;
+    death = false;
+    Scripts = NULL;
 }
 
 Trigger::~Trigger()

@@ -10,7 +10,7 @@ EXPORTS
     _ZN13inputKeyboard7getTextEv @9
     _ZN13inputKeyboardC1EP9SDL_Event @10
     _ZN13inputKeyboardC2EP9SDL_Event @11
-    _ZN2UI12AddNumToPBarEiSs @12
+    _ZN2UI12AddNumToPBarEiRKSs @12
     _ZN2UI13ProcessEventsEP9SDL_Event @13
     _ZN2UI16toggleVisibilityEv @14
     _ZN2UI4DrawEv @15

@@ -1,15 +1,15 @@
-#include "eureka.h"
-
 #ifndef TRIGGERMANAGER_H_INCLUDED
 #define TRIGGERMANAGER_H_INCLUDED
 #include <iostream>
 #include <string>
 #include "typedefs.h"
+#include "trigger.h"
+#include "BST.h"
 
 class Game;
 class Unit;
 
-class TriggerManager
+class EUREKA TriggerManager
 {
 public:
     //ctors and dtor
@@ -24,11 +24,13 @@ public:
     Trigger& GetTrigger(size_t trigger_id);
 
     //Updaters
-    void UpdateTriggers(Unit* unit);
+    void UpdateTriggers(size_t unit_id);
+    void UpdateTrigger(size_t trigger_id, size_t unit_id);
+    void UpdateTriggerLocation(math_point loc, size_t trigger_id);
 private:
     Game* owner_ref;
     size_t mutex_trigger_id;
-    BinarySearchTree<size_t, Trigger*> triggers;
+    BinarySearchTree<size_t, Trigger> triggers;
 };
 
 

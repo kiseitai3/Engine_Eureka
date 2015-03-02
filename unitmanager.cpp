@@ -1,12 +1,12 @@
 #include "unitmanager.h"
-#include "game.h"
+#include "eureka.h"
 #include "rand_generators.h"
 
 UnitNode::UnitNode(Game* owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars)
 {
     Type = type;
     pData = NULL;
-    pData = new Unit(BlitOrder, file, loc, owner->GetRenderer(), owner->GetTimer(), hero, hasBars);
+    pData = new Unit(BlitOrder, file, loc, owner->GetRenderer(), owner->GetMainTimer(), hero, hasBars);
 }
 
 UnitNode::UnitNode()
@@ -39,9 +39,10 @@ size_t UnitManager::SpawnUnit(const char type, int BlitOrder, math_point loc, st
     return id;
 }
 
-void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
+std::vector<size_t> UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
 {
     //Vars needed to initialize a Unit
+    std::vector<size_t> ids;
     bool hero = false;
     bool hasBars = false;
     math_point loc;
@@ -56,7 +57,7 @@ void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
     //Let's load the objects
     for(size_t i = 0; i < count; i++)
     {
-         //Let's lock the container
+        //Let's lock the container
         unit = "unit_" + intToStr(i);
         //Load constants
         hero = f.GetIntFromData(unit + "_hero");
@@ -69,15 +70,57 @@ void UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
         //Create object
         UnitNode* hasID;
         UnitNode* tmp = new UnitNode(owner_ref, type, BlitOrder, loc, file, hero, hasBars);
+        tmp->pData->SetID(id);
         owner_ref->LockMutex(mutex_id);
         while(gameObjects.search(id, hasID))
         {
             id = hasher();
         }
         gameObjects.insert(id, tmp);
+        ids.push_back(id);
         //Release the container
         owner_ref->UnlockMutex(mutex_id);
     }
+    //Return set of ids
+    return ids;
+}
+
+size_t UnitManager::SpawnUnitFromFile(cstr file)
+{
+    bool hero = false;
+    bool hasBars = false;
+    math_point loc;
+    char type = 'u';
+    std::string unitFile = "";
+    //Load file
+    data_base f(file);
+    size_t count = f.GetIntFromData("unit_count");
+    size_t id = hasher();
+    std::string unit = "";
+
+    //Let's lock the container
+    unit = "unit_" + intToStr(i);
+    //Load constants
+    hero = f.GetIntFromData(unit + "_hero");
+    hasBars = f.GetIntFromData(unit + "_bars");
+    loc.X = f.GetIntFromData(unit + "_X");
+    loc.Y = f.GetIntFromData(unit + "_Y");
+    loc.Z = f.GetIntFromData(unit + "_Z");
+    type = f.GetStrFromData(unit + "_type")[0];
+    unitFile = f.GetStrFromData(unit + "_file");
+    //Create object
+    UnitNode* hasID;
+    UnitNode* tmp = new UnitNode(owner_ref, type, BlitOrder, loc, file, hero, hasBars);
+    tmp->pData->SetID(id);
+    owner_ref->LockMutex(mutex_id);
+    while(gameObjects.search(id, hasID))
+    {
+        id = hasher();
+    }
+    gameObjects.insert(id, tmp);
+    //Release the container
+    owner_ref->UnlockMutex(mutex_id);
+
 }
 
 Unit& UnitManager::GetUnit(size_t id)
@@ -85,7 +128,7 @@ Unit& UnitManager::GetUnit(size_t id)
     Unit* tmp;
     owner_ref->LockMutex(mutex_id);//Lock container
     tmp = gameObjects[id]->pData;
-    owner_ref->UnlockMutex(mutex_id);//Unlock container
+    //owner_ref->UnlockMutex(mutex_id);//Unlock container
     return *tmp;
 }
 
@@ -100,7 +143,7 @@ Unit& UnitManager::GetUnitByName(const std::string& name)
         if(tmp->GetName() == name)
             break;
     }
-    owner_ref->UnlockMutex(mutex_id);//Unlock container
+    //owner_ref->UnlockMutex(mutex_id);//Unlock container
     return *tmp;
 }
 
@@ -131,7 +174,7 @@ Unit* UnitManager::FindNearbyUnit(Unit *pUnit)
             }
         }
     }
-    owner_ref->UnlockMutex(mutex_id);//Unlock container
+    //owner_ref->UnlockMutex(mutex_id);//Unlock container
     return old;
 }
 
@@ -266,7 +309,7 @@ void UnitManager::DeleteAll()
     {
         if((*itr)->pData)
             delete (*itr)->pData;
-            gameObjects.remove((*itr)->id);
+        gameObjects.remove((*itr)->id);
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }
@@ -295,7 +338,7 @@ void UnitManager::RunPhysics()
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }
 
-void UnitManager::Draw()
+void UnitManager::DrawUnits()
 {
     /*Here I handle the drawing step of the units!*/
     owner_ref->LockMutex(mutex_id);//Lock container
@@ -381,6 +424,11 @@ bool UnitManager::OnScreen(Unit& unit)
     return false;
 }
 
+void UnitManager::UnlockUnit()
+{
+    owner_ref->UnlockMutex(mutex_id);
+}
+
 
 //Threading entry points
 void_ptr helperSoundFunction(void_ptr game)
@@ -393,15 +441,7 @@ void_ptr helperSoundFunction(void_ptr game)
     return NULL;
 }
 
-void_ptr helperDrawFunction(void_ptr game)
-{
-    Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
-    {
-        tmp->Draw();
-    }
-    return NULL;
-}
+
 
 void_ptr helperEventsFunction(void_ptr game)
 {

@@ -4,8 +4,9 @@
 #include <string>
 #include "ui.h"
 #include "BST.h"
+#include "typedefs.h"
 
-class UIManager
+class EUREKA UIManager
 {
 public:
     //ctors and dtor

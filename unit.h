@@ -16,17 +16,21 @@ class data_base;
 class Physics;
 class Game;
 
+//General purpose script loader
+void LoadScript(ScriptWrap* script, const char *file);
+
 class Unit
 {
     public:
         /** Default constructor */
-        Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer &screen, Timer& t, bool hero = false, bool hasPBar = false);//PBar = progressbar
+        Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer &screen, size_t t_id, bool hero = false, bool hasPBar = false);//PBar = progressbar
         /** Default destructor */
         ~Unit();
         //Question methods
         bool isMelee() const;
+        bool isNPC() const;
+
         //AI methods
-        void LoadScript(ScriptWrap *script, const char *file);
         void MoveAI();
         void LoadAI(const char *file);
         void AttackAI(Unit* target);
@@ -34,7 +38,7 @@ class Unit
         void MoveTowardsAI(double force, const char axis = 'x');
 
         //Timer
-        void SetTimer(Timer* timerI);
+        void SetTimer(size_t timer_id);
         void Update_NewTime();
         void Update_OldTime();
         double GetTimeChange() const;
@@ -101,6 +105,7 @@ class Unit
         int hp, ad, ap, aSpeed, range, vRange, mana;//vRange is vision range. It's used for mobs and such. Can be used for fog of war
         int oldTime, t;//The first is the previous time. The second is the current new time.
         unsigned int ID; //Only used to check whether a unit was deleted from a level.
+        size_t gameTime;
         double mSpeed;//Movement speed. Keep in mind it's pixels per seconds!
         double currentATime; //Use this variable to keep track of how fast the unit is attacking
         bool melee, dead;
@@ -115,11 +120,8 @@ class Unit
         ScriptWrap *AI, *KeyScripts, *GeneralScripts, *BuffScripts;
         SDL_Renderer* ren;
         movementTracker movement;
-        Timer *gameTime;
         ProgressBar *manaB, *hpB;
         Game* owner_ref;
-
-
 };
 
 #endif // UNIT_H

@@ -13,10 +13,12 @@ class Pywrap
         //vars
     PyObject *module, *name_space, *dict, *func;
     PyObject *args, *value, *result;
+    PyGILState_STATE gstate;
     unsigned int sizeT;
     size_t index;
     std::string path;
     bool fileLoaded;
+    static bool initialized;
     //methods
 
 
@@ -51,6 +53,10 @@ class Pywrap
     void AddArgument (PyObject *argument);
     void AddArgument(unsigned int argument);
     void AddArgument (void_ptr argument);
+
+    //Thread Protection
+    void LockInterpreter();
+    void ReleaseInterpreter();
 
     //Py Conversion Functions with overloads
     /*All functions in this block take care of the extraction of a C type from a generalized object

@@ -1,4 +1,6 @@
+EUREKA_EXPORT
 #include "uimanager.h"
+#include "eureka.h"
 
 UIManager::UIManager(Game* owner)
 {

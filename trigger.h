@@ -16,6 +16,7 @@ private:
     math_point loc;
 
 public:
+    Trigger();
     Trigger(cstr file);
     ~Trigger();
     //Getters and setters

@@ -1,5 +1,6 @@
 #include "iomanager.h"
-#include "game.h"
+#include "eureka.h"
+#include "rand_generators.h"
 
 IONode::IONode(bool inputMode, size_t id, cstr file_path, bool database)
 {

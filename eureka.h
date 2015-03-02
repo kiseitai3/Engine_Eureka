@@ -1,5 +1,15 @@
-
-
+#include "unitmanager.h"
+#include "particlesystem.h"
+#include "networking.h"
+#include "threading.h"
+#include "iomanager.h"
+#include "uimanager.h"
+#include "info.h"
+#include "modules.h"
+#include "timersystem.h"
+#include "triggermanager.h"
+#include "layersystem.h"
+#include "rand_generators.h"
 #include "game.h"
 
 

@@ -1,7 +1,7 @@
 #define EUREKA_EXPORT
 #include "networking.h"
 #include "rand_generators.h"
-#include "game.h"
+#include "eureka.h"
 
 NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool udp, int maxConn)
 {

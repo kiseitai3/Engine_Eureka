@@ -1,7 +1,7 @@
 #define EUREKA_EXPORT
 #include "modules.h"
 #include "modadapter.h"
-#include "game.h"
+#include "eureka.h"
 
 ModuleNode::ModuleNode(Game* owner, cstr file, bool independent, size_t pthread_id)
 {

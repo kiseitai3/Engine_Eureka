@@ -1,5 +1,6 @@
 #include "particlesystem.h"
-#include "game.h"
+#include "eureka.h"
+#include "rand_generators.h"
 
 void traversalRender(const size_t& id, ParticleNode*& node)
 {

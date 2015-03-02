@@ -8,40 +8,33 @@
 
 void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
-    data_base *animDOM = new data_base(source);
-    if(animDOM)
+    data_base animDOM(source);
+    SDL_Surface* tmp = IMG_Load(animDOM.GetStrFromData("tex_texture").c_str());
+    if(!tmp)
     {
-        SDL_Surface* tmp = IMG_Load(animDOM->GetStrFromData("tex_texture").c_str());
-        if(!tmp)
-        {
-            std::cout << "Failed to load the surface!\n\r";
-        }
-        else
-        {
-            SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
-            SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
-            SDL_FreeSurface(tmp);
-        }
-        frames = animDOM->GetIntFromData("tex_frames");
-        height = animDOM->GetIntFromData("tex_height");//Size of placeholding rectangle
-        width = animDOM->GetIntFromData("tex_width");
-        animNum = animDOM->GetIntFromData("tex_anim_num");
-        animCounter = animDOM->GetIntFromData("tex_anim_counter");
-        noLoop = animDOM->GetIntFromData("tex_noloop");
-        timeBetweenFrames = animDOM->GetIntFromData("tex_time_on_frames");
-        if(timeBetweenFrames == 0)
-        {
-            timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
-        }
-        src.h = height;
-        src.w = width;
-        target.h = height;
-        target.w = width;
+        std::cout << "Failed to load the surface!\n\r";
     }
     else
     {
-        std::cout<<"ERROR:Failed to load this draw_base object's Document Object Model\n\r";
+        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
+        SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
+        SDL_FreeSurface(tmp);
     }
+    frames = animDOM.GetIntFromData("tex_frames");
+    height = animDOM.GetIntFromData("tex_height");//Size of placeholding rectangle
+    width = animDOM.GetIntFromData("tex_width");
+    animNum = animDOM.GetIntFromData("tex_anim_num");
+    animCounter = animDOM.GetIntFromData("tex_anim_counter");
+    noLoop = animDOM.GetIntFromData("tex_noloop");
+    timeBetweenFrames = animDOM.GetIntFromData("tex_time_on_frames");
+    if(timeBetweenFrames == 0)
+    {
+        timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
+    }
+    src.h = height;
+    src.w = width;
+    target.h = height;
+    target.w = width;
 }
 
 bool draw_base::isNoLoop() const

@@ -1,11 +1,10 @@
-#include "game.h"
+#include "eureka.h"
 #include "unit.h"
 #include "physics.h"
 #include "sound_base.h"
 #include "draw_base.h"
 #include "conversion.h"
 #include "scriptwrap.h"
-#include "Timer.h"
 #include <map>
 #include <string>
 #include <iostream>
@@ -13,7 +12,7 @@
 #include "progressbar.h"
 
 
-Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, Timer& t, bool hero, bool hasPBar)
+Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, size_t t_id, bool hero, bool hasPBar)
 {
     DOM = NULL;
     DOM = new data_base(path.c_str());
@@ -77,7 +76,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
         ren = &screen;
         blitOrder = BlitOrder;
         mapPoint = loc;
-        gameTime = &t;
+        gameTime = t_id;
         //Initializing internal variables
         name = DOM->GetStrFromData("unit_name");
         drawImage = "default";
@@ -199,6 +198,11 @@ void Unit::LoadAI(const char *file)
     }
 }
 
+bool Unit::isNPC() const
+{
+    return hasAI;
+}
+
 //Internal updaters
 void Unit::Update_OldTime()
 {
@@ -207,7 +211,7 @@ void Unit::Update_OldTime()
 
 void Unit::Update_NewTime()
 {
-    t = gameTime->get_ticks();
+    t = owner_ref->GetTicks(gameTime);
 }
 
 double Unit::GetTimeChange() const//based on seconds. Remember that .get_ticks() is based on milliseconds
@@ -320,9 +324,9 @@ void Unit::ExecuteAI(Unit *target, const char axis)
 
 }
 
-void Unit::SetTimer(Timer *timerI)
+void Unit::SetTimer(size_t timer_id)
 {
-    gameTime = timerI;
+    gameTime = timer_id;
 }
 
 //Player Controls and Behavior
@@ -606,18 +610,6 @@ void Unit::OnCollision(Unit *target, std::string side)
     GeneralScripts->executeFunction("OnCollision", GeneralScripts->NO_ARGS);
 }
 
-void Unit::LoadScript(ScriptWrap* script, const char *file)
-{
-    if(file != "")
-    {
-        script = new ScriptWrap(file);
-        if(!script)
-        {
-            std::cout<<"Error: Scripts file for this object was unable to load!\n\r";
-        }
-    }
-}
-
 //Handle buffs like spells that add extra damage or defenses
 void Unit::AddBuff(std::string buffName)
 {
@@ -687,7 +679,17 @@ void Unit::DrawImages()
     tmpImage->apply_surface(phys->GetLoc().X - dx, phys->GetLoc().Y - dy, *ren);
 }
 
-
+void LoadScript(ScriptWrap* script, const char *file)
+{
+    if(file != "")
+    {
+        script = new ScriptWrap(file);
+        if(!script)
+        {
+            std::cout<<"Error: Scripts file for this object was unable to load!\n\r";
+        }
+    }
+}
 
 
 

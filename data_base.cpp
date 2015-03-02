@@ -22,6 +22,8 @@
 #include "conversion.h"
 #include "data_base.h"
 
+ const char* data_base::BUFFER = "b>>\0";
+
 //Reading section
     bool data_base::LoadData(const char* location, bool readMode)
     {
@@ -38,6 +40,14 @@
         }
         return file.is_open();
     }
+
+void data_base::LoadBuffer(const char* contents)
+{
+    //Contents must be a NULL terminated C string
+    buffer = contents;
+    isBufferLoaded = true;
+}
+
 void data_base::LoadStringBuffer(bool closeFile)
 {
     /*Loads file into internal string buffer line by line*/
@@ -511,6 +521,7 @@ bool data_base::SearchTermExists(const std::string& search) const
     {
         /*Constructor. This class will be used for reading files by default. However, changing the read flag to false will
         make the constructor prep the object for writing purposes instead*/
+        const char* buffToken = NULL;
         isBufferLoaded = false;
         writeMode = false;
         buffer = "";
@@ -528,6 +539,17 @@ bool data_base::SearchTermExists(const std::string& search) const
                 }
             break;
             default:
+            /*In the following part I ask to find the BUFFER string inside location.
+            I do this in order to create a way to use data_base as a char buffer
+            guard class. In other words, it will allow the programmer to load files
+            from a direct char buffer instead from a file on disk!*/
+            buffToken = strstr(location, BUFFER);
+            if(buffToken)//If we have a buffer file
+            {
+                LoadBuffer(location + strlen(BUFFER));//Load the contents of the buffer past the BUFFER directive
+                return;//End the loading stage here since we are not opening a file on disk!
+            }
+
             if(LoadData(location))//Checks if internal file buffer was properly started.
             {
                 LoadStringBuffer(false);//reads the file buffer into the internal string buffer

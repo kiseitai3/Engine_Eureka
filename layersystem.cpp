@@ -80,6 +80,15 @@ void LayerSystem::DeleteLayer(size_t l_id)
     owner_ref->UnlockMutex(mutex_layer_id);
 }
 
+void LayerSystem::DeleteAllLayers()
+{
+    //Lock mutex
+    owner_ref->LockMutex(mutex_layer_id);
+    layers.clear();
+    //Unlock mutex
+    owner_ref->UnlockMutex(mutex_layer_id);
+}
+
 Layer& LayerSystem::GetLayer(size_t l_id)
 {
     std::list<Layer>::iterator itr;

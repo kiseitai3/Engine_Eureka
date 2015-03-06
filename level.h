@@ -16,22 +16,21 @@ class Timer;
 class Pywrap;
 class Game;
 
-class Level
+class EUREKA Level
 {
 private:
     sound_base *lvlBackgroundMusic;
-    size_t heroID;
+    size_t heroID, mutex_modlist_id, mutex_unitlist_id, mutex_layerlist_id, mutex_triggerlist_id, mutex_uilist_id;
     std::list<size_t> unitList;
     std::list<size_t> layerList;
     std::list<size_t> uiList;
     std::list<size_t> triggerList;
     std::list<size_t> moduleList;
     Game* sys;
-    bool backgroundFixed;
     std::string mapName;
 public:
     //Constructors and Destructors
-    Level();
+    Level(Game* owner, cstr file);
     ~Level();
 
     //Getters

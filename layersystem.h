@@ -28,6 +28,7 @@ public:
     size_t AddLayer(cstr file);
     std::vector<size_t> AddLayerSet(cstr file);
     void DeleteLayer(size_t l_id);
+    void DeleteAllLayers();
 
     //Getter
     Layer& GetLayer(size_t l_id);

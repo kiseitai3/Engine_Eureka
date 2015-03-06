@@ -9,8 +9,10 @@ ScreenInfo::ScreenInfo()
     m_screen_bpp = 0;
 }
 
-void ScreenInfo::SetScreenInfo(size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP)
+void ScreenInfo::SetScreenInfo(size_t displayCount, size_t display, size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP)
 {
+    m_display_count = displayCount;
+    m_display = display;
     m_frames_per_second = frames_per_second;
     m_screen_width = screenWidth;
     m_screen_height = screenHeight;
@@ -40,6 +42,16 @@ size_t ScreenInfo::GetScreenHeight() const
 size_t ScreenInfo::GetScreenWidth() const
 {
     return m_screen_width;
+}
+
+size_t ScreenInfo::GetDisplayIndex() const
+{
+    return m_display;
+}
+
+size_t ScreenInfo::GetDisplayCount() const
+{
+    return m_display_count;
 }
 /*End of ScreenInfo*/
 
@@ -91,10 +103,10 @@ GameInfo::GameInfo():ScreenInfo(), SoundInfo()
 
 void GameInfo::SetInfo(const std::string& rootdata, const std::string& mod, const std::string& saveloc,
             const std::string& name, const std::string& icon, const std::string& renderQuality,
-            size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP,
+            size_t displayCount, size_t display, size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP,
             size_t blitlevels, size_t frequency, size_t channels, size_t chunksize)
 {
-    SetScreenInfo(frames_per_second, screenWidth, screenHeight, screenBPP);
+    SetScreenInfo(displayCount, display, frames_per_second, screenWidth, screenHeight, screenBPP);
     SetSoundInfo(frequency, channels, chunksize);
     m_rootdata = rootdata;
     m_mod = mod;
@@ -122,5 +134,10 @@ std::string GameInfo::GetGameName() const
 size_t GameInfo::GetBlitLevels() const
 {
     return m_blitlevels;
+}
+
+std::string GameInfo::GetRenderQuality() const
+{
+    return m_render_quality;
 }
 /*End of GameInfo*/

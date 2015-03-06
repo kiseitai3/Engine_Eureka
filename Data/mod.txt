@@ -1,7 +1,12 @@
+//Main constants;
 mod_number = 1;
 selected_mod = campaign;
 mod1 = campaign;
 root = Data;
+game_name = Rito;
+icon = rito.ico;
+current_display = 0;
+render_quality = high;
 frames_per_second = 60;
 screen_width = 1280;
 screen_height = 800;
@@ -10,3 +15,18 @@ blit_levels = 20;
 frequency = 22050;
 channels = 2;
 chunk_size = 4096;
+auto_video = 1;
+multithreaded = 1;
+
+
+//Global Modules file;
+plugins = plugins/plugins.txt;
+
+//UIs;
+ui = UI/gameUI.txt
+
+//Save file;
+save = save/save;
+
+//Initial level
+initial_lvl = menu/lvl.txt

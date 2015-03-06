@@ -9,6 +9,10 @@
 #include <list>
 #include <cstdlib>
 #include <pthread.h>
+#include <SDL.h>
+#include <SDL_mixer.h>
+#include <SDL_ttf.h>
+#include <SDL_net.h>
 
 //Game includes
 //#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
@@ -30,7 +34,7 @@ class DataBase;
 
 class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
-    public GameInfo, public ThreadSystem
+     public ThreadSystem, public GameInfo
 {
 public:
     Game();
@@ -38,6 +42,8 @@ public:
 
     /*Init*/
     void LoadGameConstants(cstr file);
+    void LoadGlobalModules(cstr file);
+    void LoadUIs(cstr file);
     bool init();
 
     //Level
@@ -54,7 +60,7 @@ public:
 
     /*Save methods*/
     void loadSaveData(const std::string& file);
-    void SaveData(const std::string& query);
+    void SaveData(const std::string& query);//Done on a database so you must query
     DataBase* GetSaveDataHandle();
 
     /*Frame adjustment*/
@@ -98,15 +104,13 @@ private:
 
     //IDs
     size_t mainTimer;//Timer
+    size_t dataID;//ID for save data
+    size_t dbID;//Save database
+    std::list<size_t> moduleList;
+    std::list<size_t> uiList;
 
     //Other variables
-    Level *current;
-
-    //Memory
-    uint64_t currentMemory;
-    uint64_t maxMemAllowed;
-    uint64_t maxMem;
-
+    Level *currentLvl;
 };
 //Global functions
 void_ptr helperDrawFunction(void_ptr game);

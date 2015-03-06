@@ -15,13 +15,17 @@ UnitNode::UnitNode()
     pData = NULL;
 }
 
-UnitManager::UnitManager(Game* owner, SDL_Event& events)
+UnitManager::UnitManager(Game* owner)
 {
     owner_ref = owner;
-    event = &events;
     mutex_id = owner->SpawnMutex();
     UnitNode* tmp = new UnitNode();
     gameObjects.insert(0, tmp);
+}
+
+void UnitManager::SetSDLEvent(SDL_Event* ev)
+{
+    event = ev;
 }
 
 size_t UnitManager::SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars)

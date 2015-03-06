@@ -4,15 +4,78 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>02-03-2015 at 17:25.07</u><br />
-Build ended on: <u>02-03-2015 at 17:25.09</u><p />
-<b>-------------- Build: UI in Eureka (compiler: GNU GCC Compiler)---------------</b><br />
-mingw32-g++.exe -std=c++11 -I"C:\Program Files\CodeBlocks\MinGW\include" -Ic:\Python27\include -IDependencies\SDL2-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\SDL_ttf-2.0.11\SDL_ttf-2.0.11\include -IDependencies\SDL2_image-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\lua-5.2.3\src -IDependencies\sqlite3 -IDependencies\mysql-connector-c-6.1.5-win32\include -IDependencies\mysql-connector-c++-noinstall-1.1.4-win32\include -I..\..\..\..\..\MinGW\msys\1.0\local\include\boost -I..\..\..\..\..\MinGW\msys\1.0\local\include -IDependencies\SDL2_net-2.0.0\i686-w64-mingw32\include\SDL2 -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include\boost" -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include" -c C:\Users\Luis\Documents\DevCB\Engine_Eureka\button.cpp -o .objs\button.o<br />
-mingw32-g++.exe -shared -Wl,--output-def=bin\engine\libUI.def -Wl,--out-implib=bin\engine\libUI.a -Wl,--dll -L"C:\Program Files\CodeBlocks\MinGW\lib" -Lc:\Python27\libs -LDependencies\SDL2-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL_ttf-2.0.11\SDL_ttf-2.0.11\lib\x86 -LDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_image-2.0.0\i686-w64-mingw32\lib -LDependencies\lua-5.2.3\src -LDependencies\sqlite3\win32_lib -LDependencies\mysql-connector-c-6.1.5-win32\lib -LDependencies\mysql-connector-c++-noinstall-1.1.4-win32\lib -L..\..\..\..\..\MinGW\msys\1.0\local\lib -LDependencies\SDL2_net-2.0.0\i686-w64-mingw32\lib -L"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\lib" -Lbin\engine .objs\button.o .objs\input.o .objs\textbox.o .objs\ui.o  -o bin\engine\UI.dll  -lmingw32 -lSDL2main -lSDL2.dll -lSDL2_mixer -lpython27 -lSDL_ttf -lSDL2_image -llua -lsqlite3 -lmysqlcppconn -lSDL2_net -lpthread -lIO -lthreading -lCore -lplugins<br />
-Creating library file: bin\engine\libUI.a<br />
-Output file is bin\engine\UI.dll with size 1.12 MB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
-<font color="#0000ff">0 error(s), 0 warning(s) (0 minute(s), 1 second(s))</font><br />
+Build started on: <u>05-03-2015 at 20:21.07</u><br />
+Build ended on: <u>05-03-2015 at 20:21.08</u><p />
+<b>-------------- Build: Eureka in Eureka (compiler: GNU GCC Compiler)---------------</b><br />
+mingw32-g++.exe -std=c++11 -I"C:\Program Files\CodeBlocks\MinGW\include" -Ic:\Python27\include -IDependencies\SDL2-2.0.0\include -IDependencies\SDL_ttf-2.0.11\SDL_ttf-2.0.11\include -IDependencies\SDL2_image-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\lua-5.2.3\src -IDependencies\sqlite3 -IDependencies\mysql-connector-c-6.1.5-win32\include -IDependencies\mysql-connector-c++-noinstall-1.1.4-win32\include -I..\..\..\..\..\MinGW\msys\1.0\local\include\boost -I..\..\..\..\..\MinGW\msys\1.0\local\include -IDependencies\SDL2_net-2.0.0\i686-w64-mingw32\include\SDL2 -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include\boost" -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include" -c C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp -o .objs\level.o<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp: In constructor 'Level::Level(Game*, cstr)':<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:32:82: error: no match for 'operator=' in '((Level*)this)-&gt;Level::layerList = LayerSystem::AddLayerSet(cstr)(data_base::GetStrFromData(const string&amp;) const((* &amp; std::basic_string&lt;char&gt;(((const char*)"lvl_layer_set"), (*(const std::allocator&lt;char&gt;*)(&amp; std::allocator&lt;char&gt;()))))).std::basic_string&lt;_CharT, _Traits, _Alloc&gt;::c_str&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;())'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:32:82: note: candidates are:<br />
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/list:65:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:3:<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/list.tcc:185:5: note: std::list&lt;_Tp, _Alloc&gt;&amp; std::list&lt;_Tp, _Alloc&gt;::operator=(const std::list&lt;_Tp, _Alloc&gt;&amp;) [with _Tp = unsigned int; _Alloc = std::allocator&lt;unsigned int&gt;; std::list&lt;_Tp, _Alloc&gt; = std::list&lt;unsigned int&gt;]<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/list.tcc:185:5: note:   no known conversion for argument 1 from 'std::vector&lt;unsigned int&gt;' to 'const std::list&lt;unsigned int&gt;&amp;'<br />
+In file included from c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/list:64:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:3:<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:678:7: note: std::list&lt;_Tp, _Alloc&gt;&amp; std::list&lt;_Tp, _Alloc&gt;::operator=(std::list&lt;_Tp, _Alloc&gt;&amp;&amp;) [with _Tp = unsigned int; _Alloc = std::allocator&lt;unsigned int&gt;; std::list&lt;_Tp, _Alloc&gt; = std::list&lt;unsigned int&gt;]<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:678:7: note:   no known conversion for argument 1 from 'std::vector&lt;unsigned int&gt;' to 'std::list&lt;unsigned int&gt;&amp;&amp;'<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:695:7: note: std::list&lt;_Tp, _Alloc&gt;&amp; std::list&lt;_Tp, _Alloc&gt;::operator=(std::initializer_list&lt;_Tp&gt;) [with _Tp = unsigned int; _Alloc = std::allocator&lt;unsigned int&gt;; std::list&lt;_Tp, _Alloc&gt; = std::list&lt;unsigned int&gt;]<br />
+c:\program files (x86)\codeblocks\mingw\bin\../lib/gcc/mingw32/4.7.1/include/c++/bits/stl_list.h:695:7: note:   no known conversion for argument 1 from 'std::vector&lt;unsigned int&gt;' to 'std::initializer_list&lt;unsigned int&gt;'<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:33:15: error: 'loadRate' was not declared in this scope</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:41:100: error: no matching function for call to 'Game::SpawnUnitFromList(std::string, size_t&amp;)'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:41:100: note: candidate is:<br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\eureka.h:1:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:5:<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\unitmanager.h:29:25: note: std::vector&lt;unsigned int&gt; UnitManager::SpawnUnitFromList(cstr, int)<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\unitmanager.h:29:25: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string&lt;char&gt;}' to 'cstr {aka const char*}'<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:49:30: error: base operand of '-&gt;' has non-pointer type 'data_base'</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:66:46: error: base operand of '-&gt;' has non-pointer type 'data_base'</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:82:30: error: base operand of '-&gt;' has non-pointer type 'data_base'</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:85:95: error: no matching function for call to 'Game::RegisterTrigger(std::string)'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:85:95: note: candidate is:<br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\eureka.h:10:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:5:<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\triggermanager.h:20:12: note: size_t TriggerManager::RegisterTrigger(cstr)<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\triggermanager.h:20:12: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string&lt;char&gt;}' to 'cstr {aka const char*}'<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:86:9: error: expected ';' before 'nameString'</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:91:76: error: no matching function for call to 'Game::SpawnUnitFromFile(std::string)'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:91:76: note: candidate is:<br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\eureka.h:1:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:5:<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\unitmanager.h:28:12: note: size_t UnitManager::SpawnUnitFromFile(cstr)<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\unitmanager.h:28:12: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string&lt;char&gt;}' to 'cstr {aka const char*}'<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:98:30: error: base operand of '-&gt;' has non-pointer type 'data_base'</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:101:93: error: no matching function for call to 'Game::RegisterModule(std::string)'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:101:93: note: candidate is:<br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\eureka.h:8:0,<br />
+                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:5:<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\modules.h:27:12: note: size_t ModuleSystem::RegisterModule(cstr, bool)<br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\modules.h:27:12: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string&lt;char&gt;}' to 'cstr {aka const char*}'<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:102:9: error: expected ';' before 'nameString'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp: In destructor 'Level::~Level()':<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:129:43: error: 'modList' was not declared in this scope</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:140:14: error: 'class Game' has no member named 'UnregisterTrigger'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp: In member function 'std::string&amp; Level::GetMapName() const':<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:163:12: error: invalid initialization of reference of type 'std::string&amp; {aka std::basic_string&lt;char&gt;&amp;}' from expression of type 'const string {aka const std::basic_string&lt;char&gt;}'</font><br />
+C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp: At global scope:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:166:22: error: prototype for 'std::vector&lt;unsigned int&gt;* Level::GetLayerIDs() const' does not match any in class 'Level'</font><br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:13:0:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.h:39:24: error: candidate is: std::list&lt;unsigned int&gt;* Level::GetLayerIDs() const</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:171:22: error: prototype for 'std::vector&lt;unsigned int&gt;* Level::GetUnitIDs() const' does not match any in class 'Level'</font><br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:13:0:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.h:40:24: error: candidate is: std::list&lt;unsigned int&gt;* Level::GetUnitIDs() const</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:176:22: error: prototype for 'std::vector&lt;unsigned int&gt;* Level::GetTriggerIDs() const' does not match any in class 'Level'</font><br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:13:0:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.h:43:24: error: candidate is: std::list&lt;unsigned int&gt;* Level::GetTriggerIDs() const</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:181:22: error: prototype for 'std::vector&lt;unsigned int&gt;* Level::GetUIIDs() const' does not match any in class 'Level'</font><br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:13:0:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.h:41:24: error: candidate is: std::list&lt;unsigned int&gt;* Level::GetUIIDs() const</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:186:22: error: prototype for 'std::vector&lt;unsigned int&gt;* Level::GetModuleIDs() const' does not match any in class 'Level'</font><br />
+In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:13:0:<br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.h:42:24: error: candidate is: std::list&lt;unsigned int&gt;* Level::GetModuleIDs() const</font><br />
+<font color="#ff0000">C:\Users\Luis\Documents\DevCB\Engine_Eureka\level.cpp:196:42: error: no 'void Level::LoadingDraw(SDL_Renderer&amp;)' member function declared in class 'Level'</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 1 second(s))</font><br />
+<font color="#a00000">26 error(s), 0 warning(s) (0 minute(s), 1 second(s))</font><br />
 </tt>
 </body>
 </html>

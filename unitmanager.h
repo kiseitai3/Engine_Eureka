@@ -20,13 +20,14 @@ class UnitManager
 {
 public:
     //ctors and dtor
-    UnitManager(Game* owner, SDL_Event& events);
+    UnitManager(Game* owner);
     ~UnitManager();
 
     //Setters
     size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);
     size_t SpawnUnitFromFile(cstr file);
     std::vector<size_t> SpawnUnitFromList(cstr file, int BlitOrder);
+    void SetSDLEvent(SDL_Event* ev);
 
     //Getter
     Unit& GetUnit(size_t id);

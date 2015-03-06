@@ -1,7 +1,8 @@
+#define EUREKA_EXPORT
 #include <SDL.h>
 #include <list>
 #include <string>
-#include "globals.h"
+#include "eureka.h"
 #include "data_base.h"
 #include "draw_base.h"
 #include "sound_base.h"
@@ -24,10 +25,11 @@ Level::Level(Game* owner, cstr file)
     std::string nameString;
     data_base lvlDOM(file);
 
+    owner->ShowLoadingScreen();
     //Stage 1
     /*Contents: Map name, background layers*/
     mapName = lvlDOM.GetStrFromData("lvl_name");
-    layerList = owner->AddLayerSet(lvlDOM.GetStrFromData("lvl_layer_set"));
+    layerList = owner->AddLayerSet(lvlDOM.GetStrFromData("lvl_layer_set").c_str());
     status += loadRate;
     owner->UpdateLoadingStatus(status);
 
@@ -46,9 +48,9 @@ Level::Level(Game* owner, cstr file)
     nameString = "lvl_ui_";
     for(int i = 0; i < lvlDOM->GetIntFromData("lvl_ui_number"); i++)
     {
-        nameString = "lvl_ui_";
         nameString += intToStr(i);
         uiList.push_back(owner->RegisterUI(nameString.c_str()));
+        nameString = "lvl_ui_";
     }
     status += loadRate;
     owner->UpdateLoadingStatus(status);
@@ -85,7 +87,8 @@ Level::Level(Game* owner, cstr file)
     }
 
     //Hero portion
-    heroID = owner->SpawnUnitFromFile(lvlDOM.GetStrFromData("lvl_hero"));
+    if(lvlDOM.GetIntFromData("lvl_has_hero"))
+        heroID = owner->SpawnUnitFromFile(lvlDOM.GetStrFromData("lvl_hero"));
     status += loadRate;
     owner->UpdateLoadingStatus(status);
 
@@ -101,12 +104,93 @@ Level::Level(Game* owner, cstr file)
     status += loadRate;
     owner->UpdateLoadingStatus(status);
 
+    //Last part
+    //Create mutexes
+    mutex_modlist_id = sys->SpawnMutex();
+    mutex_unitlist_id = sys->SpawnMutex();
+    mutex_layerlist_id = sys->SpawnMutex();
+    mutex_uilist_id = sys->SpawnMutex();
+    mutex_triggerlist_id = sys->SpawnMutex();
     sys = owner;
+
+    owner->HideLoadingScreen();
 }
 
 Level::~Level()
 {
+    //Lock mutexes
+    sys->LockMutex(mutex_modlist_id);
+    sys->LockMutex(mutex_unitlist_id);
+    sys->LockMutex(mutex_layerlist_id);
+    sys->LockMutex(mutex_uilist_id);
+    sys->LockMutex(mutex_triggerlist_id);
+    //Unloading resources
+    //Unloading modules
+    for(std::list<size_t>::iterator itr = modList.begin(); itr != modList.end(); itr++)
+    {
+        sys->UnregisterModule(*itr);
+    }
+    //Unloading units
+    sys->DeleteAll();
+    //Unloading layers
+    sys->DeleteAllLayers();
+    //Unloading triggers
+    for(std::list<size_t>::iterator itr = triggerList.begin(); itr != triggerList.end(); itr++)
+    {
+        sys->UnregisterTrigger(*itr);
+    }
+    //Unloading UIs
+    for(std::list<size_t>::iterator itr = uiList.begin(); itr != uiList.end(); itr++)
+    {
+        sys->UnregisterUI(*itr);
+    }
+    //Unlock mutexes
+    sys->UnlockMutex(mutex_modlist_id);
+    sys->UnlockMutex(mutex_unitlist_id);
+    sys->UnlockMutex(mutex_layerlist_id);
+    sys->UnlockMutex(mutex_uilist_id);
+    sys->UnlockMutex(mutex_triggerlist_id);
+    //Delete mutexes
+    sys->DeleteMutex(mutex_modlist_id);
+    sys->DeleteMutex(mutex_unitlist_id);
+    sys->DeleteMutex(mutex_layerlist_id);
+    sys->DeleteMutex(mutex_uilist_id);
+    sys->DeleteMutex(mutex_triggerlist_id);
+}
 
+std::string& Level::GetMapName() const
+{
+    return mapName;
+}
+
+std::vector<size_t>* Level::GetLayerIDs() const
+{
+    return &layerList;
+}
+
+std::vector<size_t>* Level::GetUnitIDs() const
+{
+    return &unitList;
+}
+
+std::vector<size_t>* Level::GetTriggerIDs() const
+{
+    return &triggerList;
+}
+
+std::vector<size_t>* Level::GetUIIDs() const
+{
+    return &uiList;
+}
+
+std::vector<size_t>* Level::GetModuleIDs() const
+{
+    return &moduleList;
+}
+
+size_t Level::GetHeroID() const
+{
+    return heroID;
 }
 
 void Level::LoadingDraw(SDL_Renderer &ren)

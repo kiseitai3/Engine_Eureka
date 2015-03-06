@@ -27,6 +27,8 @@ public:
     size_t RegisterModule(cstr file, bool threaded = false);
     void RegisterFunction(const std::string& name, size_t mod_id);
     void RegisterFunctionFromFile(const char* file, size_t mod_id);
+    void UnregisterModule(size_t mod_id);
+    void UnregisterFunction(const std::string& name, size_t mod_id);
 
     //Getter
     bool isFuncRegistered(const std::string& name, size_t mod_id);

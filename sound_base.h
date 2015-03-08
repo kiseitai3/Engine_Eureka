@@ -5,6 +5,11 @@
 #include <string.h>
 #include <SDL_mixer.h>
 #include "physics.h"
+#include "typedefs.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class sound_base
 {
@@ -76,4 +81,6 @@ private:
 };
 static void PutNum(long num,FILE *f,int endianness,int bytes);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // SOUND_BASE_H_INCLUDED

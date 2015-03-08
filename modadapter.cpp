@@ -1,6 +1,10 @@
 #define EUREKA_EXPORT
 #include "modadapter.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 ModAdapter::ModAdapter(const char* file, Game* owner)
 {
     std::string tmp = file;
@@ -38,9 +42,9 @@ void ModAdapter::RegisterFunction(const std::string& name)
     }
 
     if(sModule)
-        fList.push_back(func(name, NULL));
+        fList.push_back(Node(name, NULL));
     else if(dlModule)
-        fList.push_back(func(name, dlModule->GetFunction(name)));
+        fList.push_back(Node(name, dlModule->GetFunction(name)));
 }
 
 void ModAdapter::RegisterFunctionFromFile(const char* file)
@@ -54,6 +58,15 @@ void ModAdapter::RegisterFunctionFromFile(const char* file)
             fList.push_back(Node(settings.GetStrFromData("func_" + intToStr(i) + "_name"), NULL));
         else if(dlModule)
             fList.push_back(Node(settings.GetStrFromData("func_" + intToStr(i) + "_name"), dlModule->GetFunction(settings.GetStrFromData("func_" + intToStr(i) + "_name"))));
+    }
+}
+
+void ModAdapter::UnregisterFunction(const std::string& name)
+{
+    for(std::vector<Node>::iterator itr = fList.begin(); itr != fList.end(); itr++)
+    {
+        if(itr->Name == name)
+            fList.erase(itr);
     }
 }
 
@@ -96,3 +109,6 @@ void_ptr helperModFunction(void_ptr obj)
 {
     ((ModAdapter*)obj)->RunFunctions();
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

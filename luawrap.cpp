@@ -1,6 +1,11 @@
+#define EUREKA_EXPORT
 #include "luawrap.h"
 #include <cmath>
 #include "conversion.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 LuaWrap::LuaWrap(const char* file)
 {
@@ -360,3 +365,6 @@ void LuaWrap::PushToLua(lua_State* lua, const fuzzy_obj& obj)
                   << obj.flag << "!" << std::endl;
     }
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

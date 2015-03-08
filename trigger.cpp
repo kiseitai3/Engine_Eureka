@@ -1,9 +1,15 @@
 #include <SDL.h>
 #include <iostream>
+#include "data_base.h"
 #include "eureka.h"
 #include "unit.h"
-#include "trigger.h"
 #include "scriptwrap.h"
+
+#include "trigger.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 Trigger::Trigger(cstr file)
 {
@@ -102,3 +108,6 @@ math_point Trigger::GetLoc() const
 {
     return loc;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

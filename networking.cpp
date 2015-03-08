@@ -1,7 +1,11 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "networking.h"
 #include "rand_generators.h"
 #include "eureka.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool udp, int maxConn)
 {
@@ -660,3 +664,6 @@ TCPClient NetworkManager::GetTCPClientInfo(size_t socket_id, size_t client_id)
 {
    return connections[socket_id]->GetTCPClientInfo(client_id);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

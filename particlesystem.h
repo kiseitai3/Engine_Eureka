@@ -9,6 +9,10 @@
 #include "BST.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class ParticleNode;
 void traversalRender(const size_t& id, ParticleNode*& node);//Renders each element as it traverses
 
@@ -105,7 +109,7 @@ private:
     BinarySearchTree<size_t, ParticleNode*> particleSet;
 };
 
-class ParticleSystem
+class EUREKA ParticleSystem
 {
 public:
     //Constructors and Destructor
@@ -148,4 +152,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PARTICLESYSTEM_H_INCLUDED

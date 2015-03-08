@@ -1,5 +1,9 @@
 #include "info.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 /*ScreenInfo*/
 ScreenInfo::ScreenInfo()
 {
@@ -141,3 +145,6 @@ std::string GameInfo::GetRenderQuality() const
     return m_render_quality;
 }
 /*End of GameInfo*/
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

@@ -9,6 +9,10 @@
 #include "sound_base.h"
 
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
   //Beginning of types related to usage of random streams as audio inputs
   /* The idea is to take a chunk of memory from the game and create a buffer that can be mistakenly
   interpreted by the SDL audio player as a sound stream. Thus, the objective is to use the games own
@@ -322,3 +326,6 @@ void sound_base::addBuff_String(std::string input, int index)
     indexCount = (indexCount + input.size())-1;// there's a -1 offset when you count 0 as one item
 }
 
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

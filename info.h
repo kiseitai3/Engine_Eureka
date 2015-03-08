@@ -4,6 +4,10 @@
 #include <string>
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class ScreenInfo
 {
  public:
@@ -61,4 +65,6 @@ private:
     size_t m_blitlevels;
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // INFO_H_INCLUDED

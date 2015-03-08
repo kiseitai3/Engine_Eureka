@@ -6,10 +6,16 @@
 #include "BST.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
+class Game;
+
 class EUREKA UIManager
 {
 public:
-    //ctors and dtor
+    //ctors and dtorp
     UIManager(Game* owner);
     ~UIManager();
 
@@ -19,6 +25,8 @@ public:
 
     //Getter
     UI& GetUI(size_t ui_id);
+    size_t FindUIByName(const std::string& name);
+    bool uiIDExists(size_t id);//Checks if there's a UI resgistered under the specified id
 
     //Execution
     void UIUpdate();
@@ -31,7 +39,7 @@ private:
     size_t mutex_ui_id;
 
     //Methods
-    bool uiIDExists(size_t id);//Checks if there's a UI resgistered under the specified id
+
 };
 
 //Helper functions
@@ -39,4 +47,6 @@ void_ptr helperUIUpdate(void_ptr game);
 void_ptr helperUIProcessEvents(void_ptr game);
 void_ptr helperUIDraw(void_ptr game);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // UIMANAGER_H_INCLUDED

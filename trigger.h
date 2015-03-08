@@ -2,6 +2,10 @@
 #define TRIGGER_H_INCLUDED
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class ScriptWrap;
 class Game;
 class Unit;
@@ -32,4 +36,6 @@ public:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TRIGGER_H_INCLUDED

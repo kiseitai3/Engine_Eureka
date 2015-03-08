@@ -1,8 +1,13 @@
-#include "layersystem.h"
+#define EUREKA_EXPORT
 #include "rand_generators.h"
 #include "eureka.h"
 #include "conversion.h"
 #include "threading.h"
+#include "data_base.h"
+#include "layersystem.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
 
 Layer::Layer(cstr file, Game* owner, size_t l_id)
 {
@@ -130,3 +135,6 @@ bool LayerSystem::hasID(size_t l_id)
     }
     return false;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

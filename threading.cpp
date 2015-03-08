@@ -1,6 +1,10 @@
 #include "threading.h"
 #include "rand_generators.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 ThreadSystem::ThreadSystem()
 {
     pthread_t* tmp = NULL;
@@ -187,3 +191,6 @@ bool ThreadSystem::hasID(size_t id, char target)
     //If nothing was found
     return false;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

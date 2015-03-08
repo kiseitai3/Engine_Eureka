@@ -6,6 +6,11 @@
 #include "physics.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class UI;
 
@@ -54,4 +59,6 @@ public:
 //Global functions
 void grabText(textbox *pTextbox, const SDL_Event& e);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TEXTBOX_H_INCLUDED

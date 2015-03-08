@@ -9,6 +9,10 @@
 #include "physics.h"
 #include "rand_generators.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 //Let's define some basic physics constants
 /*This part is a bit dirty, but such is the world of physics. I normally name my constants with upper case, but the scientist
 in me is used to using upper and lower cases for specific physics constants. Sorry if it makes you feel dirty, it makes
@@ -488,3 +492,5 @@ void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativit
     }
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END

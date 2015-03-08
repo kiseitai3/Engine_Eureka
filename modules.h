@@ -3,6 +3,10 @@
 #include "BST.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class ModAdapter;
 class Game;
 
@@ -52,4 +56,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // MODULES_H_INCLUDED

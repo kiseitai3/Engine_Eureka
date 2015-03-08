@@ -6,9 +6,10 @@
 #include <SDL_ttf.h>
 #include <map>
 #include "scriptwrap.h"
+#include "typedefs.h"
 
 class textbox;
-SDL_Texture *LoadTexture(const char *file, SDL_Renderer& ren);
+SDL_Texture* LoadTexture(const char *file, SDL_Renderer& ren);
 
 
 class Button: public textbox

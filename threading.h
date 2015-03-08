@@ -5,6 +5,10 @@
 #include <list>
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 //Templates
 template <typename T>
 struct pthreads_opaque
@@ -90,4 +94,7 @@ private:
     bool hasID(size_t id, char target);
 
 };
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // THREADING_H_INCLUDED

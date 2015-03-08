@@ -21,7 +21,6 @@
 #include <fstream>
 #include <string>
 #include "conversion.h"
-#include "data_base.h"
 #include <iostream>
 
 class data_base

@@ -4,6 +4,10 @@
 #include <string>
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 //For compatibility purposes, I looked up the compiler os detection macros at
 //http://nadeausoftware.com/articles/2012/01/c_c_tip_how_use_compiler_predefined_macros_detect_operating_system#Howtodetecttheoperatingsystemtype
 
@@ -44,4 +48,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PLUGIN_H_INCLUDED

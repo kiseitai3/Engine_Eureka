@@ -1,5 +1,9 @@
 #include "plugin.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 Plugin::Plugin(cstr file)
 {
     lib = NULL;//Pre-set the pointer to NULL in case of a failure!
@@ -29,3 +33,6 @@ Plugin::~Plugin()
 {
     closeLib(lib);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

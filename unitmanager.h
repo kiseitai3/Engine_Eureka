@@ -4,6 +4,10 @@
 #include "BST.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 
 struct UnitNode
 {
@@ -16,7 +20,7 @@ struct UnitNode
     UnitNode();
 };
 
-class UnitManager
+class EUREKA UnitManager
 {
 public:
     //ctors and dtor
@@ -25,7 +29,7 @@ public:
 
     //Setters
     size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);
-    size_t SpawnUnitFromFile(cstr file);
+    size_t SpawnUnitFromFile(cstr file, int BlitOrder);
     std::vector<size_t> SpawnUnitFromList(cstr file, int BlitOrder);
     void SetSDLEvent(SDL_Event* ev);
 
@@ -64,9 +68,8 @@ private:
 
 };
 
-void_ptr helperSoundFunction(void_ptr game);
-void_ptr helperPhysicsFunction(void_ptr game);
-void_ptr helperEventsFunction(void_ptr game);
-void_ptr helperUnitGCFunction(void_ptr game);
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 
 #endif // UNITMANAGER_H_INCLUDED

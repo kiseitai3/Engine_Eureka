@@ -3,6 +3,10 @@
 #include "modadapter.h"
 #include "eureka.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 ModuleNode::ModuleNode(Game* owner, cstr file, bool independent, size_t pthread_id)
 {
     module = new ModAdapter(file, owner);
@@ -139,3 +143,21 @@ bool ModuleSystem::hasID(size_t id)
     return false;
 }
 
+void ModuleSystem::UnregisterModule(size_t mod_id)
+{
+    owner_ref->LockMutex(mutex_id);
+    modules.remove(mod_id);
+    owner_ref->UnlockMutex(mutex_id);
+}
+
+void ModuleSystem::UnregisterFunction(const std::string& name, size_t mod_id)
+{
+    owner_ref->LockMutex(mutex_id);
+    std::vector<Module*> tmpObjs = modules.getContents();
+    modules[mod_id]->module->UnregisterFunction(name);
+    owner_ref->UnlockMutex(mutex_id);
+}
+
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

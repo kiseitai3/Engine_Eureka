@@ -1,12 +1,17 @@
-EUREKA_EXPORT
+#define EUREKA_EXPORT
 #include "uimanager.h"
 #include "eureka.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 
 UIManager::UIManager(Game* owner)
 {
     owner_ref = owner;
     //Create mutex
-    mutex_ui_id = owner.SpawnMutex();
+    mutex_ui_id = owner->SpawnMutex();
 }
 
 UIManager::~UIManager()
@@ -29,13 +34,13 @@ UIManager::~UIManager()
 
 size_t UIManager::RegisterUI(cstr file)
 {
-    size_t id = owner_ref->hasher();
+    size_t id = hasher();
     //Lock mutex
     owner_ref->LockMutex(mutex_ui_id);
     //Check for object existence and request a new hash if appropriate
     while(uiIDExists(id))
     {
-        id = owner_ref->hasher();
+        id = hasher();
     }
     //Create object
     uis.insert(id, new UI(file, owner_ref->GetRenderer()));
@@ -54,6 +59,25 @@ UI& UIManager::GetUI(size_t ui_id)
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_ui_id);
     return *tmp;
+}
+
+size_t UIManager::FindUIByName(const std::string& name)
+{
+    size_t id = 0;
+    //Lock mutex
+    owner_ref->LockMutex(mutex_ui_id);
+    std::vector<UI*> tmp = uis.getContents();
+    for(size_t i = 0; i < tmp.size(); i++)
+    {
+        if(tmp[i]->GetName() == name)
+        {
+            id = tmp[i]->GetID();
+            break;
+        }
+    }
+    //Unlock mutex
+    owner_ref->UnlockMutex(mutex_ui_id);
+    return id;
 }
 
 void UIManager::UnregisterUI(size_t ui_id)
@@ -122,7 +146,7 @@ void UIManager::UIDraw()
 
 void_ptr helperUIDraw(void_ptr game)
 {
-    Game* gameObj = game;
+    Game* gameObj = (Game*)game;
     while(!gameObj->isEngineClosing())
     {
         gameObj->UIDraw();
@@ -131,7 +155,7 @@ void_ptr helperUIDraw(void_ptr game)
 
 void_ptr helperUIProcessEvents(void_ptr game)
 {
-    Game* gameObj = game;
+    Game* gameObj = (Game*)game;
     while(!gameObj->isEngineClosing())
     {
         gameObj->UIProcessEvents();
@@ -140,9 +164,12 @@ void_ptr helperUIProcessEvents(void_ptr game)
 
 void_ptr helperUIUpdate(void_ptr game)
 {
-    Game* gameObj = game;
+    Game* gameObj = (Game*)game;
     while(!gameObj->isEngineClosing())
     {
         gameObj->UIUpdate();
     }
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

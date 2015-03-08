@@ -2,6 +2,10 @@
 #include "rand_generators.h"
 #include "eureka.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 TimerSystem::TimerSystem(Game* owner)
 {
     owner_ref = owner;
@@ -113,3 +117,6 @@ bool TimerSystem::hasID(size_t t_id)
     Timer tmp;
     return timers.search(t_id, tmp);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

@@ -3,7 +3,11 @@
 #include "physics.h"
 #include <SDL.h>
 
-class ProgressBar
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
+class  ProgressBar
 {
 private:
     math_point location;
@@ -24,4 +28,6 @@ public:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PROGRESSBAR_H_INCLUDED

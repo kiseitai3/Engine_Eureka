@@ -2,6 +2,10 @@
 #include "eureka.h"
 #include "rand_generators.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 IONode::IONode(bool inputMode, size_t id, cstr file_path, bool database)
 {
     db = NULL;
@@ -242,3 +246,6 @@ void IOManager::CloseDBConnection(size_t db_id)
     //Unlock appropriate mutex
     owner_ref->UnlockMutex(mutex_db_id);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

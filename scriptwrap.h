@@ -3,6 +3,10 @@
 #include <vector>
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class LuaWrap;
 class Pywrap;
 
@@ -14,7 +18,7 @@ class Pywrap;
 #define EXIT_SUCCESS 0
 #endif
 
-class EUREKA ScriptWrap
+class ScriptWrap
 {
 public:
     ScriptWrap(const char* file);
@@ -55,4 +59,6 @@ private:
     byte scriptMode;//Uses the FileTypes enum to set the mode.
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // SCRIPTWRAP_H_INCLUDED

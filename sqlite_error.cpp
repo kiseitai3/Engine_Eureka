@@ -1,5 +1,9 @@
 #include "sqlite_error.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 sqlite3_ptr SQLiteError::NULL_SQLITE3_PTR = NULL;
 
 void SQLiteError::log_error(size_t err, sqlite3_ptr& dbHandle)
@@ -62,3 +66,6 @@ void SQLiteError::printNotice()
     std::cout << "be found in the SQLite3 documentation. You may find the documentation webpage useful!";
     std::cout << "The page is located at http://www.sqlite.org/rescode.html." << std::endl;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

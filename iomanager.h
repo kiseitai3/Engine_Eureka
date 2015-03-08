@@ -1,10 +1,15 @@
 #ifndef IOMANAGER_H_INCLUDED
 #define IOMANAGER_H_INCLUDED
 #include "BST.h"
-#include "data_base.h"
+
 #include "database.h"
 #include <iostream>
 #include <string>
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class DataBase;
 class Game;
@@ -56,4 +61,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // IOMANAGER_H_INCLUDED

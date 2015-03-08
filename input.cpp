@@ -3,6 +3,10 @@
 #include "physics.h"
 #include "input.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
     inputMouse::inputMouse(SDL_Event* pEvent)
     {
         event = pEvent; //We want to have an object that can access the event instance since that's where all event data is updated by SDL
@@ -131,3 +135,6 @@ unsigned int inputMouse::GetButton() const
        return (char)*SDL_GetKeyName(event->key.keysym.sym);
    }
 
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

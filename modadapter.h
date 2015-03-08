@@ -4,10 +4,14 @@
 #include "plugin.h"
 #include "scriptwrap.h"
 #include "typedefs.h"
-#include "data_base.h"
+
 #include "conversion.h"
 #include <vector>
 #include <string>
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 struct Node
 {
@@ -20,20 +24,22 @@ class ModAdapter
 {
 public:
     //typedefs and enums
-    typedef Node func;
     ModAdapter(const char* file, Game* owner);
     void RegisterFunction(const std::string& name);
     void RegisterFunctionFromFile(const char* file);
     bool isFuncRegistered(const std::string& name) const;
+    void UnregisterFunction(const std::string& name);
     int RunFunctions() const;
     ~ModAdapter();
 private:
     Game* owner_ref;
     ScriptWrap *sModule;
     Plugin *dlModule;
-    std::vector<func> fList;
+    std::vector<Node> fList;
 };
 
 void_ptr helperModFunction(void_ptr obj);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // MODADAPTER_H_INCLUDED

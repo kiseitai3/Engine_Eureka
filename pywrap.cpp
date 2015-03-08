@@ -4,6 +4,10 @@
 #include "conversion.h"
 #include <iostream>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 bool Pywrap::initialized = false;
 
 void Pywrap::exec_pycode(const char* code)
@@ -501,3 +505,6 @@ void Pywrap::ReleaseInterpreter()
     //Let go of the interpreter! Please don't crash! *Tears*
     PyGILState_Release(gstate);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

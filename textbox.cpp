@@ -8,6 +8,10 @@
 #include "textbox.h"
 #include "ui.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer& ren, int blitOrderI)
 {
 	screen = NULL;
@@ -246,3 +250,6 @@ void grabText(textbox *pTextbox, const SDL_Event& e)
         }
     }
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

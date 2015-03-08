@@ -7,6 +7,9 @@
 #include "Timer.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 //Forward declarations
 class ProgressBar;
 class ScriptWrap;
@@ -124,4 +127,6 @@ class Unit
         Game* owner_ref;
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // UNIT_H

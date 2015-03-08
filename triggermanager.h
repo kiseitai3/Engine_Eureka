@@ -6,6 +6,10 @@
 #include "trigger.h"
 #include "BST.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class Game;
 class Unit;
 
@@ -34,4 +38,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TRIGGERMANAGER_H_INCLUDED

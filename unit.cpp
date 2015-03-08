@@ -11,6 +11,10 @@
 #include <list>
 #include "progressbar.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+#include "data_base.h"
+
 
 Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, size_t t_id, bool hero, bool hasPBar)
 {
@@ -691,6 +695,8 @@ void LoadScript(ScriptWrap* script, const char *file)
     }
 }
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 
 
 

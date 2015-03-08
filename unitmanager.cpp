@@ -1,6 +1,12 @@
+#define EUREKA_EXPORT
 #include "unitmanager.h"
 #include "eureka.h"
 #include "rand_generators.h"
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 UnitNode::UnitNode(Game* owner, char type, int BlitOrder, math_point loc, cstr file, bool hero, bool hasBars)
 {
@@ -89,7 +95,7 @@ std::vector<size_t> UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
     return ids;
 }
 
-size_t UnitManager::SpawnUnitFromFile(cstr file)
+size_t UnitManager::SpawnUnitFromFile(cstr file, int BlitOrder)
 {
     bool hero = false;
     bool hasBars = false;
@@ -103,7 +109,8 @@ size_t UnitManager::SpawnUnitFromFile(cstr file)
     std::string unit = "";
 
     //Let's lock the container
-    unit = "unit_" + intToStr(i);
+    owner_ref->LockMutex(mutex_id);
+    unit = "unit_";
     //Load constants
     hero = f.GetIntFromData(unit + "_hero");
     hasBars = f.GetIntFromData(unit + "_bars");
@@ -433,47 +440,5 @@ void UnitManager::UnlockUnit()
     owner_ref->UnlockMutex(mutex_id);
 }
 
-
-//Threading entry points
-void_ptr helperSoundFunction(void_ptr game)
-{
-    Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
-    {
-        tmp->PlaySounds();
-    }
-    return NULL;
-}
-
-
-
-void_ptr helperEventsFunction(void_ptr game)
-{
-    Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
-    {
-        tmp->RunEvents();
-    }
-    return NULL;
-}
-
-void_ptr helperPhysicsFunction(void_ptr game)
-{
-    Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
-    {
-        tmp->RunPhysics();
-    }
-    return NULL;
-}
-
-void_ptr helperUnitGCFunction(void_ptr game)
-{
-    Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
-    {
-        tmp->GC();
-        sleep(randUniform(Range(0, 10000)));
-    }
-    return NULL;
-}
+//End of namespace macro
+//ENGINE_NAMESPACE_END

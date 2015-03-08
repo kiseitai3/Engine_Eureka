@@ -5,6 +5,10 @@
 #include <string>
 #include "BST.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 //Forward declarations
 class data_base;
 class Trigger;
@@ -19,6 +23,7 @@ class Game;
 class EUREKA Level
 {
 private:
+    bool music_status;
     sound_base *lvlBackgroundMusic;
     size_t heroID, mutex_modlist_id, mutex_unitlist_id, mutex_layerlist_id, mutex_triggerlist_id, mutex_uilist_id;
     std::list<size_t> unitList;
@@ -34,14 +39,23 @@ public:
     ~Level();
 
     //Getters
-    std::string& GetMapName() const;
+    bool isMusicPlaying() const;
+    std::string GetMapName() const;
     size_t GetHeroID() const;
-    std::list<size_t>* GetLayerIDs() const;
-    std::list<size_t>* GetUnitIDs() const;
-    std::list<size_t>* GetUIIDs() const;
-    std::list<size_t>* GetModuleIDs() const;
-    std::list<size_t>* GetTriggerIDs() const;
+    std::list<size_t>* GetLayerIDs();
+    std::list<size_t>* GetUnitIDs();
+    std::list<size_t>* GetUIIDs();
+    std::list<size_t>* GetModuleIDs();
+    std::list<size_t>* GetTriggerIDs();
+
+    //Game world management
+    void playBackgroundMusic();
+    void killBackgrounMusic();
+    void fadeBackgroundMusic(int ms);
+    void SetHeroID(size_t h_id);
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // LEVEL_H_INCLUDED

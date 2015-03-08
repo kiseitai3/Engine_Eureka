@@ -7,10 +7,14 @@
 #include <vector>
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 #define LUA_TOPITEM -1
 #define LUA_ERASE_ALL -1
 
-class LuaWrap
+class EUREKA LuaWrap
 {
 public:
     LuaWrap(const char* file);
@@ -61,4 +65,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // LUAWRAP_H_INCLUDED

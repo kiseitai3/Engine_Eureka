@@ -5,6 +5,10 @@
 #include <vector>
 #include <list>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class Game;
 class draw_base;
 
@@ -18,7 +22,7 @@ struct Layer
     ~Layer();
 };
 
-class LayerSystem
+class EUREKA LayerSystem
 {
 public:
     LayerSystem(Game* owner);
@@ -46,4 +50,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // LAYERSYSTEM_H_INCLUDED

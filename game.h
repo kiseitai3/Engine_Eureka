@@ -18,6 +18,10 @@
 //#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class ParticleSystem;
 class ModuleSystem;
 class IOManager;
@@ -37,8 +41,10 @@ class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManag
      public ThreadSystem, public GameInfo
 {
 public:
+    /*Ctors and dtor*/
     Game();
     Game(cstr file);
+    ~Game();
 
     /*Init*/
     void LoadGameConstants(cstr file);
@@ -49,14 +55,19 @@ public:
     //Level
     bool loadLevel(cstr file);
     Level* GetCurrentLevel();
+    void SetHeroIDForCurrentLevel(size_t h_id);
+    void SetHeroUnitAsLoaded();
+    void UnsetHeroUnitAsLoaded();
 
     /*Getters*/
     SDL_Renderer& GetRenderer();
     SDL_Event& GetEvents();
-    size_t GetMainTimer();
+    size_t GetMainTimer() const;
+    size_t GetHeroID() const;
     bool isMultithreaded() const;
     bool GetRelativity() const;
     bool isEngineClosing() const;
+    bool noHero() const;
 
     /*Save methods*/
     void loadSaveData(const std::string& file);
@@ -69,13 +80,12 @@ public:
     /*Below are the methods that will be called by the main thread or independent threads (if in multithreaded mode).*/
     void drawWorld();
     void playSounds();
-    void executePlugins();
-    void executeScripts();
     void runPhysics();
-    void run(int id = -1);//This method will run all of the threads unless an specific thread id is specified
-    void stop(int id = -1);//This method will halt all of the threads unless an specific thread id is specified
+    void run();//This method will run the game
+    void stopGame();//This method will emit the exit command to the engine! Be careful!
 
-    /*Let's remove game objects*/
+    /*Let's remove ids for removed game objects*/
+    void mainGC();
 
     /*UI quick methods*/
     void ShowLoadingScreen();
@@ -89,6 +99,7 @@ public:
     void HideHUD();
     void ReplaceHUD(cstr file);
 
+    static const size_t loadRate;
 
 private:
     //Renderer
@@ -101,11 +112,14 @@ private:
     bool multithreaded;
     bool relativity;
     bool closeEngine;
+    bool loading;
+    bool heroLoaded;
 
     //IDs
     size_t mainTimer;//Timer
-    size_t dataID;//ID for save data
     size_t dbID;//Save database
+    size_t drawThread, eventsThread, gcThread, soundThread, pluginThread, updateThread;
+    size_t loadID, hudID, mainMenuID;//Main ui ids
     std::list<size_t> moduleList;
     std::list<size_t> uiList;
 
@@ -114,5 +128,13 @@ private:
 };
 //Global functions
 void_ptr helperDrawFunction(void_ptr game);
+void_ptr helperSoundFunction(void_ptr game);
+void_ptr helperPhysicsFunction(void_ptr game);
+void_ptr helperEventsFunction(void_ptr game);
+void_ptr helperGCFunction(void_ptr game);
+void_ptr helperPluginFunction(void_ptr obj);
+void_ptr helperUpdateFunction(void_ptr game);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // GAME_H_INCLUDED

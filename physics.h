@@ -1,10 +1,14 @@
 #ifndef PHYSICS_H_INCLUDED
 #define PHYSICS_H_INCLUDED
-#include "data_base.h"
+
 #include "typedefs.h"
 #include <string>
 #include <SDL.h>
 #include <vector>
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
  class Physics
 {
@@ -81,4 +85,7 @@
 };
 
 size_t CalculateDistance(const math_point& A, const math_point& B);
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PHYSICS_H_INCLUDED

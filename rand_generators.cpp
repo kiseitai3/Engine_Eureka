@@ -3,6 +3,10 @@
 #include "rand_generators.h"
 #include "conversion.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 size_t hasher()
 {
     size_t max_t = 0;
@@ -37,3 +41,6 @@ size_t GetMaxValueSizeT()
 {
     return 0-1;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

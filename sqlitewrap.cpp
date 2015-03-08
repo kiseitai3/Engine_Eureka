@@ -2,6 +2,10 @@
 #include "sqlitewrap.h"
 #include "conversion.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 SQLiteWrap::SQLiteWrap(const char* file)
 {
     hDB = NULL;
@@ -254,3 +258,6 @@ SQLiteWrap::~SQLiteWrap()
 {
     closeConnection();
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

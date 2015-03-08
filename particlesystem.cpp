@@ -1,6 +1,12 @@
+#define EUREKA_EXPORT
 #include "particlesystem.h"
 #include "eureka.h"
 #include "rand_generators.h"
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 void traversalRender(const size_t& id, ParticleNode*& node)
 {
@@ -453,3 +459,6 @@ void ParticleSystem::SetInitialForceOfGameParticle(size_t id, double force)
     gameCluster->SetInitialForce(id, force);
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

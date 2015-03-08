@@ -1,3 +1,4 @@
+//#define EUREKA_EXPORT
 #include <SDL.h>
 #include <SDL_image.h>
 #include "data_base.h"
@@ -5,6 +6,10 @@
 #include <iostream>
 #include "draw_base.h"
 #include "conversion.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
@@ -187,3 +192,6 @@ SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren)
     }
 }
 
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

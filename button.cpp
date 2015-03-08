@@ -1,3 +1,4 @@
+//#define EUREKA_EXPORT
 #include "textbox.h"
 #include "button.h"
 #include <string>
@@ -8,9 +9,13 @@
 #include <SDL_ttf.h>
 #include "scriptwrap.h"
 #include <map>
-#include "data_base.h"
+
 #include <SDL_image.h>
 #include "eureka.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
 {
@@ -94,3 +99,6 @@ void Button::MouseClick(unsigned int button, int x, int y, bool down)
         }
     }
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

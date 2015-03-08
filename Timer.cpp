@@ -1,6 +1,10 @@
 #include "Timer.h"
 #include <SDL.h>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 Timer::Timer()
 {
     //Initialize the variables
@@ -91,3 +95,6 @@ bool Timer::is_paused() const
 {
     return paused;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

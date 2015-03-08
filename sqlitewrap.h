@@ -7,10 +7,14 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include "data_base.h"
+
 #include "sqlkeywords.h"
 #include "sqlite_error.h"
 #include "sqlite_row.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class SQLiteWrap : public SQLGenerator, public SQLiteError
 {
@@ -51,4 +55,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // SQLITEWRAP_H_INCLUDED

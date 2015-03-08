@@ -1,16 +1,20 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include <list>
 #include <string>
 #include <SDL.h>
 #include "textbox.h"
 #include "button.h"
-#include "data_base.h"
+
 #include "physics.h"
 #include "conversion.h"
 #include "progressbar.h"
 #include <iostream>
 #include <string>
 #include "ui.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 //Constructor and destructor
 UI::UI(cstr file, SDL_Renderer& ren)
@@ -26,6 +30,10 @@ UI::UI(cstr file, SDL_Renderer& ren)
         //Send settings to background
         background->Load_Texture(file, *screen);
         data_base uiDOM(file);
+
+        //Get name of this UI (optional)
+        if(uiDOM.SearchTermExists("ui_name"))
+            uiName = uiDOM.GetStrFromData("ui_name");
 
         //copy location on screen
         loc.X = uiDOM.GetIntFromData("ui_x");
@@ -225,6 +233,21 @@ bool UI::isVisible() const
     return visibility;
 }
 
+std::string UI::GetName() const
+{
+    return uiName;
+}
+
+size_t UI::GetID() const
+{
+    return ui_id;
+}
+
+void UI::SetID(size_t id)
+{
+    ui_id = id;
+}
+
 UI::~UI()
 {
     Button *tmp;
@@ -257,3 +280,6 @@ UI::~UI()
     exit = 0;
     selectedText = 0;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

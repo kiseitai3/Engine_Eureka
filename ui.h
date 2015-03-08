@@ -7,6 +7,10 @@
 #include "textbox.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class textbox;
 class Button;
 class ProgressBar;
@@ -19,6 +23,8 @@ private:
     std::list<ProgressBar*> pBars;
     std::map<std::string, int> pBNums;//Storage location for numbers related to ProgressBars
     std::string msg; //Used for temporary storage of text to be sent to a textbox. It must be cleared as soon as another textbox is clicked on!
+    std::string uiName;
+    size_t ui_id;
     Button *exit;
     textbox *selectedText;
     draw_base *background;
@@ -36,6 +42,12 @@ public:
     //Getters and setters
     bool isVisible() const;
     void toggleVisibility();
+    std::string GetName() const;
+    size_t GetID() const;
+
+    //Setters
+    void SetID(size_t id);
+
     //Updaters
     void Update();
     void ProcessEvents(SDL_Event *event);
@@ -46,4 +58,6 @@ public:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // UI_H_INCLUDED

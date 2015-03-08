@@ -4,6 +4,10 @@
 #include "sqlitewrap.h"
 #include <string>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class DataBase : public SQLGenerator
 {
 public:
@@ -28,4 +32,6 @@ private:
     bool connected;
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // DATABASE_H_INCLUDED

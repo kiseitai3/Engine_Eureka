@@ -7,9 +7,13 @@
 #include "BST.h"
 #include "typedefs.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 class Game;
 
-struct EUREKA UDPClient
+struct UDPClient
 {
     IPaddress ip;
     int nativeChannel;
@@ -24,7 +28,7 @@ struct EUREKA UDPClient
     }
 };
 
-struct EUREKA TCPClient
+struct TCPClient
 {
     size_t id;
     size_t host;
@@ -91,7 +95,7 @@ private:
     bool hasID(size_t client_id);
 };
 
-class EUREKA NetworkManager
+class NetworkManager
 {
 public:
     //ctors and dtor
@@ -139,4 +143,6 @@ private:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // NETWORKING_H_INCLUDED

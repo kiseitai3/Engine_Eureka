@@ -1,7 +1,11 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "scriptwrap.h"
 #include "luawrap.h"
 #include "pywrap.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 
 //Static methods/ vars
@@ -994,3 +998,6 @@ ScriptWrap::~ScriptWrap()
         delete luaScript;
 }
 
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

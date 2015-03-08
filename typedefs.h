@@ -3,7 +3,7 @@
 
 #include <string>
 
-#define ENGINE_NAMESPACE namespace\32Eureka{
+#define ENGINE_NAMESPACE namespace Eureka{
 #define ENGINE_NAMESPACE_END }
 
 #if defined(__linux__) || defined(__APPLE__)//Under unix systems
@@ -13,6 +13,13 @@
     usleep(us);\
 }
 
+#ifdef EUREKA_EXPORT
+#define EUREKA __attribute__((dllexport))
+#else
+#define EUREKA __attribute__((dllimport))
+#endif
+#define EUREKA_CALL
+
 #elif defined(__CYGWIN__)//Under unix in Windows
 #include <unistd.h>
 #define sleep(us)\
@@ -20,18 +27,31 @@
     usleep(us);\
 }
 
+#ifdef EUREKA_EXPORT
+#define EUREKA __attribute__((dllexport))
+#else
+#define EUREKA __attribute__((dllimport))
+#endif
+#define EUREKA_CALL
+
 #elif defined(__WIN32__) || defined(__WIN64__)//Under Windows systems
 #define sleep(us)\
 {\
     Sleep(us / 1000);\
 }
-#endif
 
 #ifdef EUREKA_EXPORT
 #define EUREKA __declspec(dllexport)
 #else
 #define EUREKA __declspec(dllimport)
 #endif
+
+#define EUREKA_CALL __stdcall
+
+#endif
+
+//Engine name space macro
+//ENGINE_NAMESPACE
 
 //typedefs
 typedef unsigned char byte;
@@ -100,4 +120,7 @@ enum Statistics
 };
 
 static int maxConn = 2000;
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TYPEDEFS_H_INCLUDED

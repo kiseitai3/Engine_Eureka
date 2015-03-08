@@ -3,6 +3,10 @@
 #include "rand_generators.h"
 #include "eureka.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 TriggerManager::TriggerManager(Game* owner)
 {
     mutex_trigger_id = owner->SpawnMutex();
@@ -94,3 +98,6 @@ void TriggerManager::UpdateTriggerLocation(math_point loc, size_t trigger_id)
     //Release mutex
     owner_ref->UnlockMutex(mutex_trigger_id);
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

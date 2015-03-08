@@ -1,4 +1,9 @@
 #include "database.h"
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 DataBase::DataBase(const char* file)
 {
@@ -150,3 +155,6 @@ DataBase::~DataBase()
 {
     disconnect();
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

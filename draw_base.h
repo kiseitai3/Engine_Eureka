@@ -2,8 +2,13 @@
 #define DRAW_BASE_H_INCLUDED
 
 #include <SDL.h>
-#include "data_base.h"
+
 #include <string>
+#include "typedefs.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class draw_base
 {
@@ -41,4 +46,7 @@ class draw_base
 
 void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function
 SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren);//Non-class loading function
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // DRAW_BASE_H_INCLUDED

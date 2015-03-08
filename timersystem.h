@@ -3,6 +3,11 @@
 #include "Timer.h"
 #include "BST.h"
 #include <iostream>
+#include "typedefs.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class Game;
 
@@ -36,4 +41,6 @@ private:
     bool hasID(size_t t_id);
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TIMERSYSTEM_H_INCLUDED

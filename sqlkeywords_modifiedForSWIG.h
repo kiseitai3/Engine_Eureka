@@ -38,6 +38,11 @@ SELECT and FROM binary values! :D
 */
 #undef DELETE
 #undef IN
+
+enum test_swig
+{
+    PI = 0x01;
+};
 enum StatementTypes
 {
     CREATETABLE =   0b0000000000000001,

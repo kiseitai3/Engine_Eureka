@@ -1,5 +1,6 @@
 #include "iomanager.h"
 #include "eureka.h"
+#include "database.h"
 #include "rand_generators.h"
 
 //Engine name space macro
@@ -65,9 +66,9 @@ data_base& IONode::GetFile()
     return *fileHandle;
 }
 
-DataBase& IONode::GetDataBase()
+DataBase* IONode::GetDataBase()
 {
-    return *db;
+    return db;
 }
 
 IOManager::IOManager(Game* owner)
@@ -197,7 +198,7 @@ data_base& IOManager::GetFile(size_t file_id)
     return tmp->GetFile();
 }
 
-DataBase& IOManager::GetDataBase(size_t db_id)
+DataBase* IOManager::GetDataBase(size_t db_id)
 {
     IONode* tmp = NULL;
     //Lock appropriate mutexes

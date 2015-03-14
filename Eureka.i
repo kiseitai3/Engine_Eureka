@@ -5,7 +5,13 @@
 %include carrays.i
 %include cstring.i
 %include cdata.i
+%include cpointer.i
 %include exception.i
+%include std_list.i
+%include std_vector.i
+%include std_map.i
+%include std_string.i
+%include std_iostream.i
 
 /*Engine includes for the wrapper*/
 %{

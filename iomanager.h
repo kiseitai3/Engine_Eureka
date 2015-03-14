@@ -2,10 +2,10 @@
 #define IOMANAGER_H_INCLUDED
 #include "BST.h"
 
-#include "database.h"
 #include <iostream>
 #include <string>
 #include "data_base.h"
+#include "typedefs.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -27,7 +27,7 @@ public:
     size_t GetID() const;
     std::string GetPath() const;
     data_base& GetFile();
-    DataBase& GetDataBase();
+    DataBase* GetDataBase();
 
 private:
     data_base* fileHandle;
@@ -45,7 +45,7 @@ public:
     //Getters
     //Be careful with manipulation of objects below. The engine will crash if someone deletes objects directly!
     data_base& GetFile(size_t file_id);//Returns reference to data_base object
-    DataBase& GetDataBase(size_t db_id);//Returns reference to Database object
+    DataBase* GetDataBase(size_t db_id);//Returns reference to Database object
 
     //Setters
     size_t RegisterFile(cstr file_path, bool inputMode = true);

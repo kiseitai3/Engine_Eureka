@@ -1,4 +1,4 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "modules.h"
 #include "modadapter.h"
 #include "eureka.h"

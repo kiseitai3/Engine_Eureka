@@ -22,7 +22,7 @@ struct Layer
     ~Layer();
 };
 
-class EUREKA LayerSystem
+class LayerSystem
 {
 public:
     LayerSystem(Game* owner);

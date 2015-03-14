@@ -109,7 +109,7 @@ private:
     BinarySearchTree<size_t, ParticleNode*> particleSet;
 };
 
-class EUREKA ParticleSystem
+class ParticleSystem
 {
 public:
     //Constructors and Destructor

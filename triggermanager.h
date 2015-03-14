@@ -13,7 +13,7 @@
 class Game;
 class Unit;
 
-class EUREKA TriggerManager
+class TriggerManager
 {
 public:
     //ctors and dtor

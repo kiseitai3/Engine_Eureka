@@ -1,7 +1,8 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "eureka.h"
 #include "level.h"
 #include <SDL_image.h>
+#include "database.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -86,8 +87,32 @@ const size_t Game::loadRate = 17;
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
     public ThreadSystem, public GameInfo
 */
-Game::Game(cstr file): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+Game::Game(cstr file, bool editor): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
     NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
+{
+    LoadGame(file);
+    closeEngine = false;
+    loading = false;
+    frameBuffer = NULL;
+    requestFrame = editor;
+}
+
+Game::Game(bool editor): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
+{
+    closeEngine = false;
+    loading = false;
+    frameBuffer = NULL;
+    requestFrame = editor;
+}
+
+void Game::initEditorFrameBuffer()
+{
+    frameSize = GetScreenWidth() * GetScreenHeight() * 4;//Size of the buffer that will be exposed to the game editor. 4 = 4 basic components of a pixel!
+    frameBuffer = new char[frameSize];
+}
+
+void Game::LoadGame(cstr file)
 {
     //Save actual initial path
     std::string filePath = SDL_GetBasePath();
@@ -116,15 +141,6 @@ Game::Game(cstr file): ParticleSystem(this), ModuleSystem(this), UnitManager(thi
     hudID = FindUIByName("HUD");
     loadID = FindUIByName("LoadScreen");
     mainMenuID = FindUIByName("MainMenu");
-    closeEngine = false;
-    loading = false;
-}
-
-Game::Game(): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
-{
-    closeEngine = false;
-    loading = false;
 }
 
 void Game::LoadGameConstants(cstr file)
@@ -301,6 +317,10 @@ bool Game::init()
     //Change dir
     SDL_strdup(GetRootDirectory().c_str());
 
+    //Initialize the buffer to be used by the game editor if engine is called with requestFrame == true!
+    if(requestFrame)
+        initEditorFrameBuffer();
+
     //If everything initialized fine
     return true;
 }
@@ -311,6 +331,14 @@ void Game::FrameCapper()
     {
         //Sleep the remaining frame time
         SDL_Delay( ( 1000 / GetMaxFramesPerSec() ) - GetTicks(mainTimer) );
+    }
+}
+
+void Game::ClearEditorFrameBuffer()
+{
+    for(size_t i = 0; i < frameSize; i++)
+    {
+        frameBuffer[i] = 0;//Clear contents of buffer
     }
 }
 
@@ -334,6 +362,13 @@ void Game::drawWorld()
     //Draw loading screen
     if(loading)
         GetUI(loadID).Draw();//Draw on top of whatever has been drawn!
+    //If the game is being run from a game editor, make sure the editor can obtain a copy of the pixels. Warning: this operation may be slow!
+    if(requestFrame)
+    {
+        ClearEditorFrameBuffer();//clean the buffer
+        if(SDL_RenderReadPixels(screen, NULL, 0, (void*)frameBuffer, 0) != 0)//Read the pixels
+            std::cout << SDL_GetError() << std::endl;
+    }
     //Present buffer
     SDL_RenderPresent(screen);
 }
@@ -494,12 +529,12 @@ void Game::mainGC()
 
 void Game::SaveData(const std::string& query)
 {
-    GetDataBase(dbID).query(query);
+    GetDataBase(dbID)->query(query);
 }
 
 DataBase* Game::GetSaveDataHandle()
 {
-    return &GetDataBase(dbID);
+    return GetDataBase(dbID);
 }
 
 size_t Game::GetHeroID() const
@@ -515,6 +550,16 @@ size_t Game::GetMainTimer() const
 Level* Game::GetCurrentLevel()
 {
     return currentLvl;
+}
+
+char* Game::GetFrameBuffer() const
+{
+    return frameBuffer;
+}
+
+size_t Game::GetSizeOfFrameBuffer() const
+{
+    return frameSize;
 }
 
 Game::~Game()
@@ -555,6 +600,10 @@ Game::~Game()
     //Stop timer
     std::cout << "Engine closing after about " << GetTicks(mainTimer) << " ms!" << std::endl;
     DeleteTimer(mainTimer);
+
+    //Delete the editor frame buffer if initialized
+    if(frameBuffer)
+        delete[] frameBuffer;
 
     //Let's shutdown the SDL subsystems
     SDLNet_Quit();//Network lib

@@ -1,4 +1,4 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include <SDL.h>
 #include <list>
 #include <string>

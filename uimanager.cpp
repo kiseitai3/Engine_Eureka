@@ -1,4 +1,4 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "uimanager.h"
 #include "eureka.h"
 

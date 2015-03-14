@@ -20,7 +20,7 @@ class Timer;
 class Pywrap;
 class Game;
 
-class EUREKA Level
+class Level
 {
 private:
     bool music_status;

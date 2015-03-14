@@ -652,6 +652,22 @@ void Unit::ApplyBuffs()
 
 
 //Handle assets
+void Unit::FlipSprite(draw_base* sprite, size_t direction)
+{
+    //This method will allow users to manipulate the graphics such that you only need half the animations to obtain the full animation set.
+    sprite->flip(direction);
+}
+
+void Unit::RotateSprite(draw_base* sprite, double degrees)
+{
+    sprite->rotate(degrees);
+}
+
+void Unit::ResetRotation(draw_base* sprite)
+{
+    sprite->resetRotation();
+}
+
 void Unit::PlaySounds(const math_point& screenLoc)
 {
     sound_base *tmp = sounds["default"];

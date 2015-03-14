@@ -36,10 +36,17 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// a
     {
         timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
     }
+    //Dimensions manipulation
     src.h = height;
     src.w = width;
     target.h = height;
     target.w = width;
+    pivot.x = width / 2;
+    pivot.y = height / 2;
+
+    //Reset graphics manipulation!
+    resetRotation();
+    flip();
 }
 
 bool draw_base::isNoLoop() const
@@ -58,7 +65,7 @@ void draw_base::apply_surface( int x, int y, SDL_Renderer& destination)
     target.y = y;
 
     //Blit
-    SDL_RenderCopy(&destination, SpriteSheet, &src, &target);
+    SDL_RenderCopyEx(&destination, SpriteSheet, &src, &target, rotationDeg, &pivot, flipDir);
     if(frame != frames && !noLoop)
     {
         if(timeSpentOnFrame == timeBetweenFrames)
@@ -127,6 +134,40 @@ void draw_base::setAlpha( Uint8 alpha )
 {
 	//Modulate texture alpha
 	SDL_SetTextureAlphaMod( SpriteSheet, alpha );
+}
+
+void draw_base::setRotationPivot(math_point p)
+{
+    pivot.x = p.X;
+    pivot.y = p.Y;
+}
+
+void draw_base::flip(size_t direction)
+{
+    switch(direction)
+    {
+    case TextureFlipDirection::NOFLIP:
+        flipDir = SDL_FLIP_NONE;
+        break;
+    case TextureFlipDirection::HORIZONTALLY:
+        flipDir = SDL_FLIP_HORIZONTAL;
+        break;
+    case TextureFlipDirection::VERTICALLY:
+        flipDir = SDL_FLIP_VERTICAL;
+        break;
+    default:
+        std::cout << "Wrong flip parameter passed!" << std::endl;
+    }
+}
+
+void draw_base::rotate(double degrees)
+{
+    rotationDeg += degrees;
+}
+
+void draw_base::resetRotation()
+{
+    rotationDeg = 0;
 }
 
 draw_base::draw_base()

@@ -12,7 +12,7 @@
 
 class Game;
 
-class EUREKA UIManager
+class UIManager
 {
 public:
     //ctors and dtorp

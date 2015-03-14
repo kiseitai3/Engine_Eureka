@@ -76,6 +76,9 @@ class Unit
         //Handle assets
         void PlaySounds(const math_point& screenLoc);
         void DrawImages();
+        static void RotateSprite(draw_base* sprite, double degrees);
+        static void FlipSprite(draw_base* sprite, size_t direction = TextureFlipDirection::NOFLIP);
+        static void ResetRotation(draw_base* sprite);
 
         //Handle buffs
         void AddBuff(std::string buffName);

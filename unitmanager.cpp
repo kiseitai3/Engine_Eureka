@@ -1,4 +1,4 @@
-#define EUREKA_EXPORT
+//#define EUREKA_EXPORT
 #include "unitmanager.h"
 #include "eureka.h"
 #include "rand_generators.h"

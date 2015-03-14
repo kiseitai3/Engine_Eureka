@@ -20,7 +20,7 @@ struct UnitNode
     UnitNode();
 };
 
-class EUREKA UnitManager
+class UnitManager
 {
 public:
     //ctors and dtor

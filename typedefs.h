@@ -119,6 +119,11 @@ enum Statistics
     SKEWLEFT, SKEWRIGHT, SKEWBOTH
 };
 
+enum TextureFlipDirection
+{
+    NOFLIP, HORIZONTALLY, VERTICALLY
+};
+
 static int maxConn = 2000;
 
 //End of namespace macro

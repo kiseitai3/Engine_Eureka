@@ -36,20 +36,22 @@ class TriggerManager;
 class Level;
 class DataBase;
 
-class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
+class Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
      public ThreadSystem, public GameInfo
 {
 public:
     /*Ctors and dtor*/
-    Game();
-    Game(cstr file);
+    Game(bool editor = false);
+    Game(cstr file, bool editor = false);
     ~Game();
 
     /*Init*/
+    void LoadGame(cstr file);
     void LoadGameConstants(cstr file);
     void LoadGlobalModules(cstr file);
     void LoadUIs(cstr file);
+    void initEditorFrameBuffer();
     bool init();
 
     //Level
@@ -68,6 +70,8 @@ public:
     bool GetRelativity() const;
     bool isEngineClosing() const;
     bool noHero() const;
+    char* GetFrameBuffer() const;
+    size_t GetSizeOfFrameBuffer() const;
 
     /*Save methods*/
     void loadSaveData(const std::string& file);
@@ -76,6 +80,7 @@ public:
 
     /*Frame adjustment*/
     void FrameCapper();
+    void ClearEditorFrameBuffer();
 
     /*Below are the methods that will be called by the main thread or independent threads (if in multithreaded mode).*/
     void drawWorld();
@@ -114,6 +119,7 @@ private:
     bool closeEngine;
     bool loading;
     bool heroLoaded;
+    bool requestFrame;
 
     //IDs
     size_t mainTimer;//Timer
@@ -125,6 +131,8 @@ private:
 
     //Other variables
     Level *currentLvl;
+    char* frameBuffer;
+    size_t frameSize;
 };
 //Global functions
 void_ptr helperDrawFunction(void_ptr game);

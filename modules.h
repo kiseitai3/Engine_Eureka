@@ -20,7 +20,7 @@ typedef struct ModuleNode
     ModuleNode(Game* owner, cstr file, bool independent = false, size_t pthread_id = 0);
 }Module;
 
-class EUREKA ModuleSystem
+class ModuleSystem
 {
 public:
     //ctors and dtor

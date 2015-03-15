@@ -197,7 +197,7 @@ void sound_base::Load_Sound (const char* source)
     }
 }
 
-bool sound_base::Load_Sound(unsigned char* buffer)
+bool sound_base::Load_SoundFromBuffer(unsigned char* buffer)
 {
     unsigned char buffer2 = WriteWav(buffer,(long int)(sizeof *buffer));
     SDL_RWops* rwop = SDL_RWFromMem((void*)(&buffer2), sizeof buffer2);
@@ -223,7 +223,16 @@ void sound_base::Stop()
 
 void sound_base::FadeOut(int ms)
 {
-    Mix_FadeOutMusic(ms);
+    while(!Mix_FadeOutMusic(ms) && isPlaying())
+    {
+        SDL_Delay(100);
+    }
+}
+
+void sound_base::FadeIn(int ms)
+{
+    if(Mix_FadeInMusic(music, -1, ms) < 0)
+        std::clog << "Music FadeIn Failed: " << Mix_GetError() << std::endl;
 }
 
 void sound_base::Pause()

@@ -37,6 +37,7 @@
 #include "triggermanager.h"
 #include "uimanager.h"
 #include "level.h"
+#include "soundqueue.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -72,4 +73,5 @@
 %include "timersystem.h"
 %include "uimanager.h"
 %include "level.h"
+%include "soundqueue.h"
 %include "game.h"

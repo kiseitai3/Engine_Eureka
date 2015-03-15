@@ -1426,8 +1426,8 @@ class UnitManager(_object):
     def RunEvents(self):
         return _Eureka.UnitManager_RunEvents(self)
 
-    def PlaySounds(self):
-        return _Eureka.UnitManager_PlaySounds(self)
+    def PlayUnitSounds(self):
+        return _Eureka.UnitManager_PlayUnitSounds(self)
 
     def GC(self):
         return _Eureka.UnitManager_GC(self)
@@ -2305,9 +2305,6 @@ class Level(_object):
     __swig_destroy__ = _Eureka.delete_Level
     __del__ = lambda self: None
 
-    def isMusicPlaying(self):
-        return _Eureka.Level_isMusicPlaying(self)
-
     def GetMapName(self):
         return _Eureka.Level_GetMapName(self)
 
@@ -2329,27 +2326,63 @@ class Level(_object):
     def GetTriggerIDs(self):
         return _Eureka.Level_GetTriggerIDs(self)
 
-    def playBackgroundMusic(self):
-        return _Eureka.Level_playBackgroundMusic(self)
-
-    def killBackgrounMusic(self):
-        return _Eureka.Level_killBackgrounMusic(self)
-
-    def fadeBackgroundMusic(self, ms):
-        return _Eureka.Level_fadeBackgroundMusic(self, ms)
-
     def SetHeroID(self, h_id):
         return _Eureka.Level_SetHeroID(self, h_id)
 Level_swigregister = _Eureka.Level_swigregister
 Level_swigregister(Level)
 
-class Game(ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo):
+class SoundQueue(_object):
     __swig_setmethods__ = {}
-    for _s in [ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SoundQueue, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, SoundQueue, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, owner):
+        this = _Eureka.new_SoundQueue(owner)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_SoundQueue
+    __del__ = lambda self: None
+
+    def AddSoundToQueue(self, soundFile, music=False):
+        return _Eureka.SoundQueue_AddSoundToQueue(self, soundFile, music)
+
+    def AddSoundBufferToQueue(self, soundBuffer, music=False):
+        return _Eureka.SoundQueue_AddSoundBufferToQueue(self, soundBuffer, music)
+
+    def FlipMusic(self):
+        return _Eureka.SoundQueue_FlipMusic(self)
+
+    def SetFadeInTime(self, ms):
+        return _Eureka.SoundQueue_SetFadeInTime(self, ms)
+
+    def SetRangeOfEffects(self, range):
+        return _Eureka.SoundQueue_SetRangeOfEffects(self, range)
+
+    def PlayNextSound(self):
+        return _Eureka.SoundQueue_PlayNextSound(self)
+
+    def UpdateMusicAroundHero(self, hero):
+        return _Eureka.SoundQueue_UpdateMusicAroundHero(self, hero)
+
+    def PlayMusicSound(self):
+        return _Eureka.SoundQueue_PlayMusicSound(self)
+
+    def StopMusicSound(self):
+        return _Eureka.SoundQueue_StopMusicSound(self)
+SoundQueue_swigregister = _Eureka.SoundQueue_swigregister
+SoundQueue_swigregister(SoundQueue)
+
+class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo):
+    __swig_setmethods__ = {}
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Game, name, value)
     __swig_getmethods__ = {}
-    for _s in [ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Game, name)
     __repr__ = _swig_repr

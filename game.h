@@ -35,8 +35,9 @@ class LayerSystem;
 class TriggerManager;
 class Level;
 class DataBase;
+class SoundQueue;
 
-class Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
+class Game : public SoundQueue, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
      public ThreadSystem, public GameInfo
 {

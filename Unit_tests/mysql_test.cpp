@@ -8,10 +8,10 @@ int main()
 
 
     /*Database test*/
-    h2fax::cstr database = "avantfax_test\0";
-    h2fax::cstr host = "localhost\0";
-    h2fax::cstr password = "\0";//Add your own MySQL/WAMP/LAMP account info
-    h2fax::cstr username = "\0";
+    cstr database = "avantfax_test\0";
+    cstr host = "localhost\0";
+    cstr password = "\0";//Add your own MySQL/WAMP/LAMP account info
+    cstr username = "\0";
 
     std::cout << "Connecting to database: " << database << " with username " << username << " and password:"
         << password << "." << std::endl;

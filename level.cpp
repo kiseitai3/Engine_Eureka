@@ -63,23 +63,8 @@ Level::Level(Game* owner, cstr file)
     owner->UpdateLoadingStatus(status);
 
     //Stage 4
-    lvlBackgroundMusic = new sound_base();
-    if(!lvlBackgroundMusic)
-    {
-        std::cout<<"Error: Unable to load background music or no music is available in this level!\n\r";
-    }
-    else
-    {
-        lvlBackgroundMusic->Load_Sound(lvlDOM.GetStrFromData("lvl_music").c_str());
-        if(!lvlBackgroundMusic->isPlaying())
-        {
-            lvlBackgroundMusic->Play(-1);
-        }
-        else
-        {
-            std::cout<<"Error: Unable to load background music or no music is available in this level!\n\r Error at lvl_music!\n\r";
-        }
-    }
+    /*Now we load the music*/
+    owner->AddSoundToQueue(lvlDOM.GetStrFromData("lvl_music").c_str(), true);
     status += owner->loadRate;
     owner->UpdateLoadingStatus(status);
 
@@ -120,7 +105,6 @@ Level::Level(Game* owner, cstr file)
     mutex_uilist_id = sys->SpawnMutex();
     mutex_triggerlist_id = sys->SpawnMutex();
     sys = owner;
-    music_status = false;
 
     owner->HideLoadingScreen();
 }
@@ -206,31 +190,6 @@ std::list<size_t>* Level::GetModuleIDs()
 size_t Level::GetHeroID() const
 {
     return heroID;
-}
-
-bool Level::isMusicPlaying() const
-{
-    return music_status;
-}
-
-void Level::playBackgroundMusic()
-{
-    if(!music_status)
-        lvlBackgroundMusic->Play(-1);
-    music_status = true;
-}
-
-void Level::killBackgrounMusic()
-{
-    if(music_status)
-        lvlBackgroundMusic->Stop();
-    music_status = false;
-}
-
-void Level::fadeBackgroundMusic(int ms)
-{
-    if(music_status)
-        lvlBackgroundMusic->FadeOut(ms);
 }
 
 void Level::SetHeroID(size_t h_id)

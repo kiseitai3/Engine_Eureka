@@ -23,8 +23,6 @@ class Game;
 class Level
 {
 private:
-    bool music_status;
-    sound_base *lvlBackgroundMusic;
     size_t heroID, mutex_modlist_id, mutex_unitlist_id, mutex_layerlist_id, mutex_triggerlist_id, mutex_uilist_id;
     std::list<size_t> unitList;
     std::list<size_t> layerList;
@@ -39,7 +37,6 @@ public:
     ~Level();
 
     //Getters
-    bool isMusicPlaying() const;
     std::string GetMapName() const;
     size_t GetHeroID() const;
     std::list<size_t>* GetLayerIDs();
@@ -49,9 +46,6 @@ public:
     std::list<size_t>* GetTriggerIDs();
 
     //Game world management
-    void playBackgroundMusic();
-    void killBackgrounMusic();
-    void fadeBackgroundMusic(int ms);
     void SetHeroID(size_t h_id);
 };
 

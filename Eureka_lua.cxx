@@ -2670,48 +2670,49 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_ScreenInfo swig_types[26]
 #define SWIGTYPE_p_ScriptWrap swig_types[27]
 #define SWIGTYPE_p_SoundInfo swig_types[28]
-#define SWIGTYPE_p_TCPClient swig_types[29]
-#define SWIGTYPE_p_TCPsocket swig_types[30]
-#define SWIGTYPE_p_ThreadSystem swig_types[31]
-#define SWIGTYPE_p_Timer swig_types[32]
-#define SWIGTYPE_p_TimerSystem swig_types[33]
-#define SWIGTYPE_p_Trigger swig_types[34]
-#define SWIGTYPE_p_TriggerManager swig_types[35]
-#define SWIGTYPE_p_UDPClient swig_types[36]
-#define SWIGTYPE_p_UDPsocket swig_types[37]
-#define SWIGTYPE_p_UI swig_types[38]
-#define SWIGTYPE_p_UIManager swig_types[39]
-#define SWIGTYPE_p_Uint8 swig_types[40]
-#define SWIGTYPE_p_Unit swig_types[41]
-#define SWIGTYPE_p_UnitManager swig_types[42]
-#define SWIGTYPE_p_UnitNode swig_types[43]
-#define SWIGTYPE_p_bool swig_types[44]
-#define SWIGTYPE_p_char swig_types[45]
-#define SWIGTYPE_p_data_base swig_types[46]
-#define SWIGTYPE_p_double swig_types[47]
-#define SWIGTYPE_p_draw_base swig_types[48]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[49]
-#define SWIGTYPE_p_int swig_types[50]
-#define SWIGTYPE_p_math_VECTOR swig_types[51]
-#define SWIGTYPE_p_math_point swig_types[52]
-#define SWIGTYPE_p_pChar swig_types[53]
-#define SWIGTYPE_p_p_ParticleNode swig_types[54]
-#define SWIGTYPE_p_psudo_type swig_types[55]
-#define SWIGTYPE_p_pthread_cond_t swig_types[56]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[57]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[58]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[59]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[60]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[61]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[62]
-#define SWIGTYPE_p_std__string swig_types[63]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[64]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[65]
-#define SWIGTYPE_p_unsigned_char swig_types[66]
-#define SWIGTYPE_p_unsigned_short swig_types[67]
-#define SWIGTYPE_p_void swig_types[68]
-static swig_type_info *swig_types[70];
-static swig_module_info swig_module = {swig_types, 69, 0, 0, 0, 0};
+#define SWIGTYPE_p_SoundQueue swig_types[29]
+#define SWIGTYPE_p_TCPClient swig_types[30]
+#define SWIGTYPE_p_TCPsocket swig_types[31]
+#define SWIGTYPE_p_ThreadSystem swig_types[32]
+#define SWIGTYPE_p_Timer swig_types[33]
+#define SWIGTYPE_p_TimerSystem swig_types[34]
+#define SWIGTYPE_p_Trigger swig_types[35]
+#define SWIGTYPE_p_TriggerManager swig_types[36]
+#define SWIGTYPE_p_UDPClient swig_types[37]
+#define SWIGTYPE_p_UDPsocket swig_types[38]
+#define SWIGTYPE_p_UI swig_types[39]
+#define SWIGTYPE_p_UIManager swig_types[40]
+#define SWIGTYPE_p_Uint8 swig_types[41]
+#define SWIGTYPE_p_Unit swig_types[42]
+#define SWIGTYPE_p_UnitManager swig_types[43]
+#define SWIGTYPE_p_UnitNode swig_types[44]
+#define SWIGTYPE_p_bool swig_types[45]
+#define SWIGTYPE_p_char swig_types[46]
+#define SWIGTYPE_p_data_base swig_types[47]
+#define SWIGTYPE_p_double swig_types[48]
+#define SWIGTYPE_p_draw_base swig_types[49]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[50]
+#define SWIGTYPE_p_int swig_types[51]
+#define SWIGTYPE_p_math_VECTOR swig_types[52]
+#define SWIGTYPE_p_math_point swig_types[53]
+#define SWIGTYPE_p_pChar swig_types[54]
+#define SWIGTYPE_p_p_ParticleNode swig_types[55]
+#define SWIGTYPE_p_psudo_type swig_types[56]
+#define SWIGTYPE_p_pthread_cond_t swig_types[57]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[58]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[59]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[60]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[61]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[62]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[63]
+#define SWIGTYPE_p_std__string swig_types[64]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[65]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[66]
+#define SWIGTYPE_p_unsigned_char swig_types[67]
+#define SWIGTYPE_p_unsigned_short swig_types[68]
+#define SWIGTYPE_p_void swig_types[69]
+static swig_type_info *swig_types[71];
+static swig_module_info swig_module = {swig_types, 70, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2803,6 +2804,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 #include "triggermanager.h"
 #include "uimanager.h"
 #include "level.h"
+#include "soundqueue.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -16427,18 +16429,18 @@ fail:
 }
 
 
-static int _wrap_UnitManager_PlaySounds(lua_State* L) {
+static int _wrap_UnitManager_PlayUnitSounds(lua_State* L) {
   int SWIG_arg = 0;
   UnitManager *arg1 = (UnitManager *) 0 ;
   
-  SWIG_check_num_args("UnitManager::PlaySounds",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("UnitManager::PlaySounds",1,"UnitManager *");
+  SWIG_check_num_args("UnitManager::PlayUnitSounds",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("UnitManager::PlayUnitSounds",1,"UnitManager *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_UnitManager,0))){
-    SWIG_fail_ptr("UnitManager_PlaySounds",1,SWIGTYPE_p_UnitManager);
+    SWIG_fail_ptr("UnitManager_PlayUnitSounds",1,SWIGTYPE_p_UnitManager);
   }
   
-  (arg1)->PlaySounds();
+  (arg1)->PlayUnitSounds();
   
   return SWIG_arg;
   
@@ -16530,7 +16532,7 @@ static swig_lua_method swig_UnitManager_methods[]= {
     { "RunPhysics", _wrap_UnitManager_RunPhysics},
     { "DrawUnits", _wrap_UnitManager_DrawUnits},
     { "RunEvents", _wrap_UnitManager_RunEvents},
-    { "PlaySounds", _wrap_UnitManager_PlaySounds},
+    { "PlayUnitSounds", _wrap_UnitManager_PlayUnitSounds},
     { "GC", _wrap_UnitManager_GC},
     { "UnlockUnit", _wrap_UnitManager_UnlockUnit},
     {0,0}
@@ -29045,30 +29047,6 @@ fail:
 }
 
 
-static int _wrap_Level_isMusicPlaying(lua_State* L) {
-  int SWIG_arg = 0;
-  Level *arg1 = (Level *) 0 ;
-  bool result;
-  
-  SWIG_check_num_args("Level::isMusicPlaying",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Level::isMusicPlaying",1,"Level const *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Level,0))){
-    SWIG_fail_ptr("Level_isMusicPlaying",1,SWIGTYPE_p_Level);
-  }
-  
-  result = (bool)((Level const *)arg1)->isMusicPlaying();
-  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Level_GetMapName(lua_State* L) {
   int SWIG_arg = 0;
   Level *arg1 = (Level *) 0 ;
@@ -29237,78 +29215,6 @@ fail:
 }
 
 
-static int _wrap_Level_playBackgroundMusic(lua_State* L) {
-  int SWIG_arg = 0;
-  Level *arg1 = (Level *) 0 ;
-  
-  SWIG_check_num_args("Level::playBackgroundMusic",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Level::playBackgroundMusic",1,"Level *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Level,0))){
-    SWIG_fail_ptr("Level_playBackgroundMusic",1,SWIGTYPE_p_Level);
-  }
-  
-  (arg1)->playBackgroundMusic();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Level_killBackgrounMusic(lua_State* L) {
-  int SWIG_arg = 0;
-  Level *arg1 = (Level *) 0 ;
-  
-  SWIG_check_num_args("Level::killBackgrounMusic",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Level::killBackgrounMusic",1,"Level *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Level,0))){
-    SWIG_fail_ptr("Level_killBackgrounMusic",1,SWIGTYPE_p_Level);
-  }
-  
-  (arg1)->killBackgrounMusic();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Level_fadeBackgroundMusic(lua_State* L) {
-  int SWIG_arg = 0;
-  Level *arg1 = (Level *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("Level::fadeBackgroundMusic",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Level::fadeBackgroundMusic",1,"Level *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Level::fadeBackgroundMusic",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Level,0))){
-    SWIG_fail_ptr("Level_fadeBackgroundMusic",1,SWIGTYPE_p_Level);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  (arg1)->fadeBackgroundMusic(arg2);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Level_SetHeroID(lua_State* L) {
   int SWIG_arg = 0;
   Level *arg1 = (Level *) 0 ;
@@ -29352,7 +29258,6 @@ static swig_lua_attribute swig_Level_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_Level_methods[]= {
-    { "isMusicPlaying", _wrap_Level_isMusicPlaying},
     { "GetMapName", _wrap_Level_GetMapName},
     { "GetHeroID", _wrap_Level_GetHeroID},
     { "GetLayerIDs", _wrap_Level_GetLayerIDs},
@@ -29360,9 +29265,6 @@ static swig_lua_method swig_Level_methods[]= {
     { "GetUIIDs", _wrap_Level_GetUIIDs},
     { "GetModuleIDs", _wrap_Level_GetModuleIDs},
     { "GetTriggerIDs", _wrap_Level_GetTriggerIDs},
-    { "playBackgroundMusic", _wrap_Level_playBackgroundMusic},
-    { "killBackgrounMusic", _wrap_Level_killBackgrounMusic},
-    { "fadeBackgroundMusic", _wrap_Level_fadeBackgroundMusic},
     { "SetHeroID", _wrap_Level_SetHeroID},
     {0,0}
 };
@@ -29394,6 +29296,489 @@ static swig_lua_namespace swig_Level_Sf_SwigStatic = {
 static swig_lua_class *swig_Level_bases[] = {0};
 static const char *swig_Level_base_names[] = {0};
 static swig_lua_class _wrap_class_Level = { "Level", "Level", &SWIGTYPE_p_Level,_proxy__wrap_new_Level, swig_delete_Level, swig_Level_methods, swig_Level_attributes, &swig_Level_Sf_SwigStatic, swig_Level_meta, swig_Level_bases, swig_Level_base_names };
+
+static int _wrap_new_SoundQueue(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  SoundQueue *result = 0 ;
+  
+  SWIG_check_num_args("SoundQueue::SoundQueue",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::SoundQueue",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("new_SoundQueue",1,SWIGTYPE_p_Game);
+  }
+  
+  result = (SoundQueue *)new SoundQueue(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SoundQueue,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundToQueue__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  bool arg3 ;
+  
+  SWIG_check_num_args("SoundQueue::AddSoundToQueue",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundToQueue",1,"SoundQueue *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundToQueue",2,"cstr");
+  if(!lua_isboolean(L,3)) SWIG_fail_arg("SoundQueue::AddSoundToQueue",3,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_AddSoundToQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  arg3 = (lua_toboolean(L, 3)!=0);
+  (arg1)->AddSoundToQueue(arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundToQueue__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::AddSoundToQueue",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundToQueue",1,"SoundQueue *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundToQueue",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_AddSoundToQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  (arg1)->AddSoundToQueue(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundToQueue(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_SoundQueue_AddSoundToQueue__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isboolean(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_SoundQueue_AddSoundToQueue__SWIG_0(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'SoundQueue_AddSoundToQueue'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundQueue::AddSoundToQueue(cstr,bool)\n"
+    "    SoundQueue::AddSoundToQueue(cstr)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  bool arg3 ;
+  
+  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",1,"SoundQueue *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",2,"cstr");
+  if(!lua_isboolean(L,3)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",3,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_AddSoundBufferToQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  arg3 = (lua_toboolean(L, 3)!=0);
+  (arg1)->AddSoundBufferToQueue(arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",1,"SoundQueue *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_AddSoundBufferToQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  (arg1)->AddSoundBufferToQueue(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundBufferToQueue(lua_State* L) {
+  int argc;
+  int argv[4]={
+    1,2,3,4
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isboolean(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(L);
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'SoundQueue_AddSoundBufferToQueue'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr,bool)\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr)\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_SoundQueue_FlipMusic(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::FlipMusic",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::FlipMusic",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_FlipMusic",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->FlipMusic();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_SetFadeInTime(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SoundQueue::SetFadeInTime",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::SetFadeInTime",1,"SoundQueue *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundQueue::SetFadeInTime",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_SetFadeInTime",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->SetFadeInTime(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_SetRangeOfEffects(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("SoundQueue::SetRangeOfEffects",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::SetRangeOfEffects",1,"SoundQueue *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundQueue::SetRangeOfEffects",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_SetRangeOfEffects",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  (arg1)->SetRangeOfEffects(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_PlayNextSound(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::PlayNextSound",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::PlayNextSound",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_PlayNextSound",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->PlayNextSound();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_UpdateMusicAroundHero(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  Unit *arg2 = (Unit *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::UpdateMusicAroundHero",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::UpdateMusicAroundHero",1,"SoundQueue *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("SoundQueue::UpdateMusicAroundHero",2,"Unit *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_UpdateMusicAroundHero",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Unit,0))){
+    SWIG_fail_ptr("SoundQueue_UpdateMusicAroundHero",2,SWIGTYPE_p_Unit);
+  }
+  
+  (arg1)->UpdateMusicAroundHero(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_PlayMusicSound(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::PlayMusicSound",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::PlayMusicSound",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_PlayMusicSound",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->PlayMusicSound();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_StopMusicSound(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::StopMusicSound",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::StopMusicSound",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_StopMusicSound",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->StopMusicSound();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_SoundQueue(void *obj) {
+SoundQueue *arg1 = (SoundQueue *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_SoundQueue(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_SoundQueue);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_SoundQueue_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_SoundQueue_methods[]= {
+    { "AddSoundToQueue", _wrap_SoundQueue_AddSoundToQueue},
+    { "AddSoundBufferToQueue", _wrap_SoundQueue_AddSoundBufferToQueue},
+    { "FlipMusic", _wrap_SoundQueue_FlipMusic},
+    { "SetFadeInTime", _wrap_SoundQueue_SetFadeInTime},
+    { "SetRangeOfEffects", _wrap_SoundQueue_SetRangeOfEffects},
+    { "PlayNextSound", _wrap_SoundQueue_PlayNextSound},
+    { "UpdateMusicAroundHero", _wrap_SoundQueue_UpdateMusicAroundHero},
+    { "PlayMusicSound", _wrap_SoundQueue_PlayMusicSound},
+    { "StopMusicSound", _wrap_SoundQueue_StopMusicSound},
+    {0,0}
+};
+static swig_lua_method swig_SoundQueue_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_SoundQueue_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_SoundQueue_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_SoundQueue_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_SoundQueue_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_SoundQueue_Sf_SwigStatic = {
+    "SoundQueue",
+    swig_SoundQueue_Sf_SwigStatic_methods,
+    swig_SoundQueue_Sf_SwigStatic_attributes,
+    swig_SoundQueue_Sf_SwigStatic_constants,
+    swig_SoundQueue_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_SoundQueue_bases[] = {0};
+static const char *swig_SoundQueue_base_names[] = {0};
+static swig_lua_class _wrap_class_SoundQueue = { "SoundQueue", "SoundQueue", &SWIGTYPE_p_SoundQueue,_proxy__wrap_new_SoundQueue, swig_delete_SoundQueue, swig_SoundQueue_methods, swig_SoundQueue_attributes, &swig_SoundQueue_Sf_SwigStatic, swig_SoundQueue_meta, swig_SoundQueue_bases, swig_SoundQueue_base_names };
 
 static int _wrap_new_Game__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
@@ -30651,8 +31036,8 @@ static swig_lua_namespace swig_Game_Sf_SwigStatic = {
     swig_Game_Sf_SwigStatic_classes,
     0
 };
-static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0};
-static const char *swig_Game_base_names[] = {"ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","TimerSystem *","ThreadSystem *","GameInfo *",0};
+static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","TimerSystem *","ThreadSystem *","GameInfo *",0};
 static swig_lua_class _wrap_class_Game = { "Game", "Game", &SWIGTYPE_p_Game,_proxy__wrap_new_Game, swig_delete_Game, swig_Game_methods, swig_Game_attributes, &swig_Game_Sf_SwigStatic, swig_Game_meta, swig_Game_bases, swig_Game_base_names };
 
 static int _wrap_helperDrawFunction(lua_State* L) {
@@ -30959,6 +31344,7 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_TimerSystem,
 &_wrap_class_UIManager,
 &_wrap_class_Level,
+&_wrap_class_SoundQueue,
 &_wrap_class_Game,
     0
 };
@@ -30983,14 +31369,17 @@ static swig_lua_namespace swig_SwigModule = {
 static void *_p_DataBaseTo_p_SQLGenerator(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SQLGenerator *)  ((DataBase *) x));
 }
-static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((ThreadSystem *)  ((Game *) x));
+static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((SoundQueue *)  ((Game *) x));
 }
 static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((TimerSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_LayerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((LayerSystem *)  ((Game *) x));
+}
+static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ThreadSystem *)  ((Game *) x));
 }
 static void *_p_GameInfoTo_p_SoundInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundInfo *)  ((GameInfo *) x));
@@ -31060,6 +31449,7 @@ static swig_type_info _swigt__p_SWIGCDATA = {"_p_SWIGCDATA", "SWIGCDATA *", 0, 0
 static swig_type_info _swigt__p_ScreenInfo = {"_p_ScreenInfo", "ScreenInfo *", 0, 0, (void*)&_wrap_class_ScreenInfo, 0};
 static swig_type_info _swigt__p_ScriptWrap = {"_p_ScriptWrap", "ScriptWrap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundInfo = {"_p_SoundInfo", "SoundInfo *", 0, 0, (void*)&_wrap_class_SoundInfo, 0};
+static swig_type_info _swigt__p_SoundQueue = {"_p_SoundQueue", "SoundQueue *", 0, 0, (void*)&_wrap_class_SoundQueue, 0};
 static swig_type_info _swigt__p_TCPClient = {"_p_TCPClient", "TCPClient *", 0, 0, (void*)&_wrap_class_TCPClient, 0};
 static swig_type_info _swigt__p_TCPsocket = {"_p_TCPsocket", "TCPsocket *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ThreadSystem = {"_p_ThreadSystem", "ThreadSystem *", 0, 0, (void*)&_wrap_class_ThreadSystem, 0};
@@ -31131,6 +31521,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_ScreenInfo,
   &_swigt__p_ScriptWrap,
   &_swigt__p_SoundInfo,
+  &_swigt__p_SoundQueue,
   &_swigt__p_TCPClient,
   &_swigt__p_TCPsocket,
   &_swigt__p_ThreadSystem,
@@ -31202,6 +31593,7 @@ static swig_cast_info _swigc__p_SWIGCDATA[] = {  {&_swigt__p_SWIGCDATA, 0, 0, 0}
 static swig_cast_info _swigc__p_ScreenInfo[] = {  {&_swigt__p_ScreenInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_ScreenInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ScreenInfo, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ScriptWrap[] = {  {&_swigt__p_ScriptWrap, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundInfo[] = {  {&_swigt__p_SoundInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_SoundInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundInfo, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SoundQueue[] = {  {&_swigt__p_SoundQueue, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundQueue, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPClient[] = {  {&_swigt__p_TCPClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPsocket[] = {  {&_swigt__p_TCPsocket, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ThreadSystem[] = {  {&_swigt__p_ThreadSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ThreadSystem, 0, 0},{0, 0, 0, 0}};
@@ -31273,6 +31665,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_ScreenInfo,
   _swigc__p_ScriptWrap,
   _swigc__p_SoundInfo,
+  _swigc__p_SoundQueue,
   _swigc__p_TCPClient,
   _swigc__p_TCPsocket,
   _swigc__p_ThreadSystem,

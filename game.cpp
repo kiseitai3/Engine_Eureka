@@ -13,7 +13,7 @@ void_ptr helperSoundFunction(void_ptr game)
     Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
-        tmp->PlaySounds();
+        tmp->playSounds();
     }
     return NULL;
 }
@@ -87,7 +87,7 @@ const size_t Game::loadRate = 17;
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
     public ThreadSystem, public GameInfo
 */
-Game::Game(cstr file, bool editor): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
     NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
 {
     LoadGame(file);
@@ -97,7 +97,7 @@ Game::Game(cstr file, bool editor): ParticleSystem(this), ModuleSystem(this), Un
     requestFrame = editor;
 }
 
-Game::Game(bool editor): ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+Game::Game(bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
     NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
 {
     closeEngine = false;
@@ -377,7 +377,9 @@ void Game::playSounds()
 {
     /*This method will play the sounds*/
     //First, play the level music or atmosphere track
-    currentLvl->playBackgroundMusic();
+    PlayMusicSound();//Game music
+    PlayUnitSounds();//Unit manager sounds
+    PlayNextSound();//Other sound effects
 }
 
 void Game::runPhysics()
@@ -421,7 +423,6 @@ void Game::run()
             RunAllFunctions();
             //Play sounds
             playSounds();
-            PlaySounds();
             //Draw world
             drawWorld();
             //Run GarbageCollector

@@ -10,6 +10,7 @@
 #include "triggermanager.h"
 #include "layersystem.h"
 #include "rand_generators.h"
+#include "soundqueue.h"
 #include "game.h"
 
 

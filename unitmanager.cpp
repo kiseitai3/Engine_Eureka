@@ -362,7 +362,7 @@ void UnitManager::DrawUnits()
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }
 
-void UnitManager::PlaySounds()
+void UnitManager::PlayUnitSounds()
 {
     /*Although the engine will have a smaller, but global sound system, Units can play their own sounds
     too*/

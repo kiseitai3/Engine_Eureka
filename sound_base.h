@@ -48,7 +48,7 @@ public:
     /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
     This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
     void Load_Sound (const char* source);
-    bool Load_Sound(unsigned char* buffer);
+    bool Load_SoundFromBuffer(unsigned char* buffer);
     void Play(int loops = 0);
     void Pause();
     void Stop();
@@ -56,6 +56,7 @@ public:
     bool PlayEffect(int soundLoops);
     bool isLoopingEffect() const;
     void FadeOut(int ms);
+    void FadeIn(int ms);
     void SetVol(int volume);
     const char SoundType();
     void SetPoint();// This point is to create the fading effect of an ambient sound as you move away from a place.

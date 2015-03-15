@@ -2965,48 +2965,49 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_ScreenInfo swig_types[25]
 #define SWIGTYPE_p_ScriptWrap swig_types[26]
 #define SWIGTYPE_p_SoundInfo swig_types[27]
-#define SWIGTYPE_p_TCPClient swig_types[28]
-#define SWIGTYPE_p_TCPsocket swig_types[29]
-#define SWIGTYPE_p_ThreadSystem swig_types[30]
-#define SWIGTYPE_p_Timer swig_types[31]
-#define SWIGTYPE_p_TimerSystem swig_types[32]
-#define SWIGTYPE_p_Trigger swig_types[33]
-#define SWIGTYPE_p_TriggerManager swig_types[34]
-#define SWIGTYPE_p_UDPClient swig_types[35]
-#define SWIGTYPE_p_UDPsocket swig_types[36]
-#define SWIGTYPE_p_UI swig_types[37]
-#define SWIGTYPE_p_UIManager swig_types[38]
-#define SWIGTYPE_p_Uint8 swig_types[39]
-#define SWIGTYPE_p_Unit swig_types[40]
-#define SWIGTYPE_p_UnitManager swig_types[41]
-#define SWIGTYPE_p_UnitNode swig_types[42]
-#define SWIGTYPE_p_bool swig_types[43]
-#define SWIGTYPE_p_char swig_types[44]
-#define SWIGTYPE_p_data_base swig_types[45]
-#define SWIGTYPE_p_double swig_types[46]
-#define SWIGTYPE_p_draw_base swig_types[47]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[48]
-#define SWIGTYPE_p_int swig_types[49]
-#define SWIGTYPE_p_math_VECTOR swig_types[50]
-#define SWIGTYPE_p_math_point swig_types[51]
-#define SWIGTYPE_p_pChar swig_types[52]
-#define SWIGTYPE_p_p_ParticleNode swig_types[53]
-#define SWIGTYPE_p_psudo_type swig_types[54]
-#define SWIGTYPE_p_pthread_cond_t swig_types[55]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[56]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[57]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[58]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[59]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[60]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[61]
-#define SWIGTYPE_p_std__string swig_types[62]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[63]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[64]
-#define SWIGTYPE_p_unsigned_char swig_types[65]
-#define SWIGTYPE_p_unsigned_short swig_types[66]
-#define SWIGTYPE_p_void swig_types[67]
-static swig_type_info *swig_types[69];
-static swig_module_info swig_module = {swig_types, 68, 0, 0, 0, 0};
+#define SWIGTYPE_p_SoundQueue swig_types[28]
+#define SWIGTYPE_p_TCPClient swig_types[29]
+#define SWIGTYPE_p_TCPsocket swig_types[30]
+#define SWIGTYPE_p_ThreadSystem swig_types[31]
+#define SWIGTYPE_p_Timer swig_types[32]
+#define SWIGTYPE_p_TimerSystem swig_types[33]
+#define SWIGTYPE_p_Trigger swig_types[34]
+#define SWIGTYPE_p_TriggerManager swig_types[35]
+#define SWIGTYPE_p_UDPClient swig_types[36]
+#define SWIGTYPE_p_UDPsocket swig_types[37]
+#define SWIGTYPE_p_UI swig_types[38]
+#define SWIGTYPE_p_UIManager swig_types[39]
+#define SWIGTYPE_p_Uint8 swig_types[40]
+#define SWIGTYPE_p_Unit swig_types[41]
+#define SWIGTYPE_p_UnitManager swig_types[42]
+#define SWIGTYPE_p_UnitNode swig_types[43]
+#define SWIGTYPE_p_bool swig_types[44]
+#define SWIGTYPE_p_char swig_types[45]
+#define SWIGTYPE_p_data_base swig_types[46]
+#define SWIGTYPE_p_double swig_types[47]
+#define SWIGTYPE_p_draw_base swig_types[48]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[49]
+#define SWIGTYPE_p_int swig_types[50]
+#define SWIGTYPE_p_math_VECTOR swig_types[51]
+#define SWIGTYPE_p_math_point swig_types[52]
+#define SWIGTYPE_p_pChar swig_types[53]
+#define SWIGTYPE_p_p_ParticleNode swig_types[54]
+#define SWIGTYPE_p_psudo_type swig_types[55]
+#define SWIGTYPE_p_pthread_cond_t swig_types[56]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[57]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[58]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[59]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[60]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[61]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[62]
+#define SWIGTYPE_p_std__string swig_types[63]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[64]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[65]
+#define SWIGTYPE_p_unsigned_char swig_types[66]
+#define SWIGTYPE_p_unsigned_short swig_types[67]
+#define SWIGTYPE_p_void swig_types[68]
+static swig_type_info *swig_types[70];
+static swig_module_info swig_module = {swig_types, 69, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3430,6 +3431,7 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 #include "triggermanager.h"
 #include "uimanager.h"
 #include "level.h"
+#include "soundqueue.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -18638,20 +18640,20 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_UnitManager_PlaySounds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_UnitManager_PlayUnitSounds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   UnitManager *arg1 = (UnitManager *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:UnitManager_PlaySounds",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:UnitManager_PlayUnitSounds",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UnitManager, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UnitManager_PlaySounds" "', argument " "1"" of type '" "UnitManager *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UnitManager_PlayUnitSounds" "', argument " "1"" of type '" "UnitManager *""'"); 
   }
   arg1 = reinterpret_cast< UnitManager * >(argp1);
-  (arg1)->PlaySounds();
+  (arg1)->PlayUnitSounds();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -32628,28 +32630,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Level_isMusicPlaying(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Level *arg1 = (Level *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Level_isMusicPlaying",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Level, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Level_isMusicPlaying" "', argument " "1"" of type '" "Level const *""'"); 
-  }
-  arg1 = reinterpret_cast< Level * >(argp1);
-  result = (bool)((Level const *)arg1)->isMusicPlaying();
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_Level_GetMapName(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Level *arg1 = (Level *) 0 ;
@@ -32804,78 +32784,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Level_playBackgroundMusic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Level *arg1 = (Level *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Level_playBackgroundMusic",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Level, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Level_playBackgroundMusic" "', argument " "1"" of type '" "Level *""'"); 
-  }
-  arg1 = reinterpret_cast< Level * >(argp1);
-  (arg1)->playBackgroundMusic();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Level_killBackgrounMusic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Level *arg1 = (Level *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Level_killBackgrounMusic",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Level, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Level_killBackgrounMusic" "', argument " "1"" of type '" "Level *""'"); 
-  }
-  arg1 = reinterpret_cast< Level * >(argp1);
-  (arg1)->killBackgrounMusic();
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Level_fadeBackgroundMusic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Level *arg1 = (Level *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Level_fadeBackgroundMusic",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Level, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Level_fadeBackgroundMusic" "', argument " "1"" of type '" "Level *""'"); 
-  }
-  arg1 = reinterpret_cast< Level * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Level_fadeBackgroundMusic" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  (arg1)->fadeBackgroundMusic(arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_Level_SetHeroID(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Level *arg1 = (Level *) 0 ;
@@ -32910,6 +32818,484 @@ SWIGINTERN PyObject *Level_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_Level, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_new_SoundQueue(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SoundQueue *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_SoundQueue",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_SoundQueue" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (SoundQueue *)new SoundQueue(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SoundQueue, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_SoundQueue(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_SoundQueue",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_SoundQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundToQueue__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  bool arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:SoundQueue_AddSoundToQueue",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_AddSoundToQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SoundQueue_AddSoundToQueue" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  ecode3 = SWIG_AsVal_bool(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "SoundQueue_AddSoundToQueue" "', argument " "3"" of type '" "bool""'");
+  } 
+  arg3 = static_cast< bool >(val3);
+  (arg1)->AddSoundToQueue(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundToQueue__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundQueue_AddSoundToQueue",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_AddSoundToQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SoundQueue_AddSoundToQueue" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  (arg1)->AddSoundToQueue(arg2);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundToQueue(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_SoundQueue, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_SoundQueue_AddSoundToQueue__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_SoundQueue, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_bool(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_SoundQueue_AddSoundToQueue__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'SoundQueue_AddSoundToQueue'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundQueue::AddSoundToQueue(cstr,bool)\n"
+    "    SoundQueue::AddSoundToQueue(cstr)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  bool arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:SoundQueue_AddSoundBufferToQueue",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_AddSoundBufferToQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SoundQueue_AddSoundBufferToQueue" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  ecode3 = SWIG_AsVal_bool(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "SoundQueue_AddSoundBufferToQueue" "', argument " "3"" of type '" "bool""'");
+  } 
+  arg3 = static_cast< bool >(val3);
+  (arg1)->AddSoundBufferToQueue(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundQueue_AddSoundBufferToQueue",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_AddSoundBufferToQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SoundQueue_AddSoundBufferToQueue" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  (arg1)->AddSoundBufferToQueue(arg2);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_AddSoundBufferToQueue(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_SoundQueue, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_SoundQueue, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_bool(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'SoundQueue_AddSoundBufferToQueue'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr,bool)\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_FlipMusic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_FlipMusic",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_FlipMusic" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->FlipMusic();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_SetFadeInTime(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundQueue_SetFadeInTime",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_SetFadeInTime" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SoundQueue_SetFadeInTime" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  (arg1)->SetFadeInTime(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_SetRangeOfEffects(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundQueue_SetRangeOfEffects",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_SetRangeOfEffects" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SoundQueue_SetRangeOfEffects" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  (arg1)->SetRangeOfEffects(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_PlayNextSound(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_PlayNextSound",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_PlayNextSound" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->PlayNextSound();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_UpdateMusicAroundHero(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  Unit *arg2 = (Unit *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundQueue_UpdateMusicAroundHero",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_UpdateMusicAroundHero" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Unit, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SoundQueue_UpdateMusicAroundHero" "', argument " "2"" of type '" "Unit *""'"); 
+  }
+  arg2 = reinterpret_cast< Unit * >(argp2);
+  (arg1)->UpdateMusicAroundHero(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_PlayMusicSound(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_PlayMusicSound",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_PlayMusicSound" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->PlayMusicSound();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_StopMusicSound(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_StopMusicSound",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_StopMusicSound" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->StopMusicSound();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *SoundQueue_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_SoundQueue, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -34677,7 +35063,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"UnitManager_RunPhysics", _wrap_UnitManager_RunPhysics, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_DrawUnits", _wrap_UnitManager_DrawUnits, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_RunEvents", _wrap_UnitManager_RunEvents, METH_VARARGS, NULL},
-	 { (char *)"UnitManager_PlaySounds", _wrap_UnitManager_PlaySounds, METH_VARARGS, NULL},
+	 { (char *)"UnitManager_PlayUnitSounds", _wrap_UnitManager_PlayUnitSounds, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_GC", _wrap_UnitManager_GC, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_UnlockUnit", _wrap_UnitManager_UnlockUnit, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_swigregister", UnitManager_swigregister, METH_VARARGS, NULL},
@@ -34914,7 +35300,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"helperUIDraw", _wrap_helperUIDraw, METH_VARARGS, NULL},
 	 { (char *)"new_Level", _wrap_new_Level, METH_VARARGS, NULL},
 	 { (char *)"delete_Level", _wrap_delete_Level, METH_VARARGS, NULL},
-	 { (char *)"Level_isMusicPlaying", _wrap_Level_isMusicPlaying, METH_VARARGS, NULL},
 	 { (char *)"Level_GetMapName", _wrap_Level_GetMapName, METH_VARARGS, NULL},
 	 { (char *)"Level_GetHeroID", _wrap_Level_GetHeroID, METH_VARARGS, NULL},
 	 { (char *)"Level_GetLayerIDs", _wrap_Level_GetLayerIDs, METH_VARARGS, NULL},
@@ -34922,11 +35307,20 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Level_GetUIIDs", _wrap_Level_GetUIIDs, METH_VARARGS, NULL},
 	 { (char *)"Level_GetModuleIDs", _wrap_Level_GetModuleIDs, METH_VARARGS, NULL},
 	 { (char *)"Level_GetTriggerIDs", _wrap_Level_GetTriggerIDs, METH_VARARGS, NULL},
-	 { (char *)"Level_playBackgroundMusic", _wrap_Level_playBackgroundMusic, METH_VARARGS, NULL},
-	 { (char *)"Level_killBackgrounMusic", _wrap_Level_killBackgrounMusic, METH_VARARGS, NULL},
-	 { (char *)"Level_fadeBackgroundMusic", _wrap_Level_fadeBackgroundMusic, METH_VARARGS, NULL},
 	 { (char *)"Level_SetHeroID", _wrap_Level_SetHeroID, METH_VARARGS, NULL},
 	 { (char *)"Level_swigregister", Level_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_SoundQueue", _wrap_new_SoundQueue, METH_VARARGS, NULL},
+	 { (char *)"delete_SoundQueue", _wrap_delete_SoundQueue, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_AddSoundToQueue", _wrap_SoundQueue_AddSoundToQueue, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_AddSoundBufferToQueue", _wrap_SoundQueue_AddSoundBufferToQueue, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_FlipMusic", _wrap_SoundQueue_FlipMusic, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_SetFadeInTime", _wrap_SoundQueue_SetFadeInTime, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_SetRangeOfEffects", _wrap_SoundQueue_SetRangeOfEffects, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_PlayNextSound", _wrap_SoundQueue_PlayNextSound, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_UpdateMusicAroundHero", _wrap_SoundQueue_UpdateMusicAroundHero, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_PlayMusicSound", _wrap_SoundQueue_PlayMusicSound, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_StopMusicSound", _wrap_SoundQueue_StopMusicSound, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_swigregister", SoundQueue_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Game", _wrap_new_Game, METH_VARARGS, NULL},
 	 { (char *)"delete_Game", _wrap_delete_Game, METH_VARARGS, NULL},
 	 { (char *)"Game_LoadGame", _wrap_Game_LoadGame, METH_VARARGS, NULL},
@@ -34988,14 +35382,17 @@ static PyMethodDef SwigMethods[] = {
 static void *_p_DataBaseTo_p_SQLGenerator(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SQLGenerator *)  ((DataBase *) x));
 }
-static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((ThreadSystem *)  ((Game *) x));
+static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((SoundQueue *)  ((Game *) x));
 }
 static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((TimerSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_LayerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((LayerSystem *)  ((Game *) x));
+}
+static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ThreadSystem *)  ((Game *) x));
 }
 static void *_p_GameInfoTo_p_SoundInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundInfo *)  ((GameInfo *) x));
@@ -35064,6 +35461,7 @@ static swig_type_info _swigt__p_SQLGenerator = {"_p_SQLGenerator", "SQLGenerator
 static swig_type_info _swigt__p_ScreenInfo = {"_p_ScreenInfo", "ScreenInfo *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ScriptWrap = {"_p_ScriptWrap", "ScriptWrap *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SoundInfo = {"_p_SoundInfo", "SoundInfo *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SoundQueue = {"_p_SoundQueue", "SoundQueue *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TCPClient = {"_p_TCPClient", "TCPClient *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TCPsocket = {"_p_TCPsocket", "TCPsocket *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ThreadSystem = {"_p_ThreadSystem", "ThreadSystem *", 0, 0, (void*)0, 0};
@@ -35134,6 +35532,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_ScreenInfo,
   &_swigt__p_ScriptWrap,
   &_swigt__p_SoundInfo,
+  &_swigt__p_SoundQueue,
   &_swigt__p_TCPClient,
   &_swigt__p_TCPsocket,
   &_swigt__p_ThreadSystem,
@@ -35204,6 +35603,7 @@ static swig_cast_info _swigc__p_SQLGenerator[] = {  {&_swigt__p_SQLGenerator, 0,
 static swig_cast_info _swigc__p_ScreenInfo[] = {  {&_swigt__p_ScreenInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_ScreenInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ScreenInfo, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ScriptWrap[] = {  {&_swigt__p_ScriptWrap, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundInfo[] = {  {&_swigt__p_SoundInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_SoundInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundInfo, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SoundQueue[] = {  {&_swigt__p_SoundQueue, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundQueue, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPClient[] = {  {&_swigt__p_TCPClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPsocket[] = {  {&_swigt__p_TCPsocket, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ThreadSystem[] = {  {&_swigt__p_ThreadSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ThreadSystem, 0, 0},{0, 0, 0, 0}};
@@ -35274,6 +35674,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_ScreenInfo,
   _swigc__p_ScriptWrap,
   _swigc__p_SoundInfo,
+  _swigc__p_SoundQueue,
   _swigc__p_TCPClient,
   _swigc__p_TCPsocket,
   _swigc__p_ThreadSystem,

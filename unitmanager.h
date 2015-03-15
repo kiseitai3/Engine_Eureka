@@ -53,7 +53,7 @@ public:
     void RunPhysics();
     void DrawUnits();
     void RunEvents();
-    void PlaySounds();
+    void PlayUnitSounds();
     void GC();//Units garbage collector
     void UnlockUnit();
 

@@ -1,14 +1,14 @@
 EXPORTS
     _Z15traversalRenderRKjRP12ParticleNode @1
     _ZN11UnitManager10DeleteUnitER4Unit @2
-    _ZN11UnitManager10PlaySoundsEv @3
-    _ZN11UnitManager10RunPhysicsEv @4
-    _ZN11UnitManager10UnlockUnitEv @5
-    _ZN11UnitManager11SetSDLEventEP9SDL_Event @6
-    _ZN11UnitManager13GetUnitByNameERKSs @7
-    _ZN11UnitManager14DeleteAllUnitsEv @8
-    _ZN11UnitManager14DeleteUnitByIDEj @9
-    _ZN11UnitManager14FindNearbyUnitEP4Unit @10
+    _ZN11UnitManager10RunPhysicsEv @3
+    _ZN11UnitManager10UnlockUnitEv @4
+    _ZN11UnitManager11SetSDLEventEP9SDL_Event @5
+    _ZN11UnitManager13GetUnitByNameERKSs @6
+    _ZN11UnitManager14DeleteAllUnitsEv @7
+    _ZN11UnitManager14DeleteUnitByIDEj @8
+    _ZN11UnitManager14FindNearbyUnitEP4Unit @9
+    _ZN11UnitManager14PlayUnitSoundsEv @10
     _ZN11UnitManager16DeleteUnitByNameERKSs @11
     _ZN11UnitManager17SpawnUnitFromFileEPKci @12
     _ZN11UnitManager17SpawnUnitFromListEPKci @13

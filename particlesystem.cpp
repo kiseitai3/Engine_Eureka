@@ -321,12 +321,7 @@ ParticleSystem::~ParticleSystem()
     owner_ref->LockMutex(mutex_id_unit);
     owner_ref->LockMutex(mutex_id_game);
     //Delete unit particle clusters
-    std::vector<ParticleCluster*> tmpObjs = unitCluster.getContents();
-    for(size_t i =0; i < tmpObjs.size(); i++)
-    {
-        if(tmpObjs[i])
-            delete tmpObjs[i];
-    }
+    clearUnitCluster();
     //Delete game particle cluster
     if(gameCluster)
         delete gameCluster;
@@ -421,7 +416,7 @@ void ParticleSystem::DeleteGameParticle(size_t id)
 void ParticleSystem::ClearUnitParticles()
 {
     owner_ref->LockMutex(mutex_id_unit);//Lock the mutex to prevent any weird access to our datamembers
-    unitCluster.clear();
+    clearUnitCluster();
     owner_ref->UnlockMutex(mutex_id_unit);//Release the mutex
 }
 
@@ -430,6 +425,27 @@ void ParticleSystem::ClearGameParticles()
     owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
     gameCluster->DeleteAllParticles();
     owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
+}
+
+void ParticleSystem::ClearAllParticles()
+{
+    owner_ref->LockMutex(mutex_id_game);//Lock the mutex to prevent any weird access to our datamembers
+    owner_ref->LockMutex(mutex_id_unit);
+    gameCluster->DeleteAllParticles();
+    clearUnitCluster();
+    owner_ref->UnlockMutex(mutex_id_unit);
+    owner_ref->UnlockMutex(mutex_id_game);//Release the mutex
+}
+
+void ParticleSystem::clearUnitCluster()
+{
+    std::vector<ParticleCluster*> tmpObjs = unitCluster.getContents();
+    for(std::vector<ParticleCluster*>::iterator itr = tmpObjs.begin(); itr != tmpObjs.end(); itr++)
+    {
+        if(*itr)
+            delete *itr;
+    }
+    unitCluster.clear();
 }
 
 size_t ParticleSystem::GetGameParticleCount()

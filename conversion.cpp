@@ -176,7 +176,7 @@ pChar* createPCharFromBuffer(char buffer[], int size)
     holder->pBuffer = content;
     return holder;
 }
-pChar* slice(char* const input, int start, int end)
+pChar* slicepChar(char* const input, int start, int end)
 {
     /*Slices a c-string and returns the slice. This emulates the behavior of the python slice.
     Pretty handy for string manipulation and extraction. */
@@ -215,7 +215,7 @@ pChar* shiftArrayLeft(char* input, int size)
 {
     /*Default version of this function. It returns a slice of the original c-string that does
     not contain the first element of the array.*/
-    pChar* holder = slice(input, 1, size);
+    pChar* holder = slicepChar(input, 1, size);
     if(!holder)
     {
         return NULL;
@@ -227,7 +227,7 @@ pChar* shiftArrayLeft(char* input, int size, int elements)
 {
     /*Overload version of this function. It returns a slice of the original c-string that does
     not contain the number of elements (elements) in the array. For example, "ABCDE" => "DE" if elements = 3*/
-    pChar* holder = slice(input, elements, size);
+    pChar* holder = slicepChar(input, elements, size);
     if(!holder)
     {
         return NULL;
@@ -240,7 +240,7 @@ std::string fuseStrs(std::string Str1, std::string Str2)
     return Str1 + Str2;
 }
 
-double round(double value, int precision)
+double roundDecimal(double value, int precision)
 {
     int precisionFactor = 10 ^ precision;
     double tmpValue = value * precisionFactor;
@@ -252,9 +252,9 @@ double round(double value, int precision)
     return floor(tmpValue) / precisionFactor;
 }
 
-int iround(double value, int precision)
+int iroundDecimal(double value, int precision)
 {
-    return (int)(round(value, precision));
+    return (int)(roundDecimal(value, precision));
 }
 
 std::string numToStr(const double num)

@@ -14,6 +14,7 @@ class ScreenInfo
      ScreenInfo();
      /*Setter*/
      void SetScreenInfo(size_t displayCount = 1, size_t display = 0, size_t frames_per_second = 60, size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32);
+    void SetScreenLoc(int x = 0, int y = 0);
      /*Getters*/
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
@@ -50,7 +51,6 @@ public:
             const std::string& name = EMPTY, const std::string& icon = EMPTY, const std::string& renderQuality = EMPTY,
             size_t displayCount = 1, size_t display = 0, size_t frames_per_second = 60, size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32,
             size_t blitlevels = 50, size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096);
-    void SetScreenLoc(int x = 0, int y = 0);
     /*Getters*/
     std::string GetRootDirectory() const;
     std::string GetModName() const;
@@ -60,7 +60,7 @@ public:
 
 private:
     /*These are the key variables of the game*/
-    const static std::string EMPTY;
+    static const std::string EMPTY;
     std::string m_rootdata, m_mod, m_saveloc, m_name, m_icon, m_render_quality;
     size_t m_blitlevels;
 };

@@ -1,12 +1,11 @@
 #ifndef DATABASE_H_INCLUDED
 #define DATABASE_H_INCLUDED
-#include "mysql.h"
 #include "sqlitewrap.h"
 #include <string>
 
 //Engine name space macro
 //ENGINE_NAMESPACE
-
+class MySQL;
 
 class DataBase : public SQLGenerator
 {

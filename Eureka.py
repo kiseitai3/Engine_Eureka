@@ -118,6 +118,108 @@ randNormal = _Eureka.randNormal
 def GetMaxValueSizeT():
     return _Eureka.GetMaxValueSizeT()
 GetMaxValueSizeT = _Eureka.GetMaxValueSizeT
+
+_Eureka.CREATETABLE_swigconstant(_Eureka)
+CREATETABLE = _Eureka.CREATETABLE
+
+_Eureka.SELECT_swigconstant(_Eureka)
+SELECT = _Eureka.SELECT
+
+_Eureka.INSERT_swigconstant(_Eureka)
+INSERT = _Eureka.INSERT
+
+_Eureka.DELETE_swigconstant(_Eureka)
+DELETE = _Eureka.DELETE
+
+_Eureka.WHERE_swigconstant(_Eureka)
+WHERE = _Eureka.WHERE
+
+_Eureka.AS_swigconstant(_Eureka)
+AS = _Eureka.AS
+
+_Eureka.CALL_swigconstant(_Eureka)
+CALL = _Eureka.CALL
+
+_Eureka.FROM_swigconstant(_Eureka)
+FROM = _Eureka.FROM
+
+_Eureka.TO_swigconstant(_Eureka)
+TO = _Eureka.TO
+
+_Eureka.UPDATE_swigconstant(_Eureka)
+UPDATE = _Eureka.UPDATE
+
+_Eureka.AND_swigconstant(_Eureka)
+AND = _Eureka.AND
+
+_Eureka.OR_swigconstant(_Eureka)
+OR = _Eureka.OR
+
+_Eureka.LIKE_swigconstant(_Eureka)
+LIKE = _Eureka.LIKE
+
+_Eureka.CREATEDATABASE_swigconstant(_Eureka)
+CREATEDATABASE = _Eureka.CREATEDATABASE
+
+_Eureka.INTO_swigconstant(_Eureka)
+INTO = _Eureka.INTO
+
+_Eureka.IN_swigconstant(_Eureka)
+IN = _Eureka.IN
+
+_Eureka.ALL_swigconstant(_Eureka)
+ALL = _Eureka.ALL
+
+_Eureka.AOR_swigconstant(_Eureka)
+AOR = _Eureka.AOR
+
+_Eureka.ORDERBY_swigconstant(_Eureka)
+ORDERBY = _Eureka.ORDERBY
+
+_Eureka.VALUES_swigconstant(_Eureka)
+VALUES = _Eureka.VALUES
+
+_Eureka.SET_swigconstant(_Eureka)
+SET = _Eureka.SET
+
+_Eureka.AS_TABLE_swigconstant(_Eureka)
+AS_TABLE = _Eureka.AS_TABLE
+
+_Eureka.INNER_JOIN_swigconstant(_Eureka)
+INNER_JOIN = _Eureka.INNER_JOIN
+
+_Eureka.ON_swigconstant(_Eureka)
+ON = _Eureka.ON
+
+_Eureka.JOIN_swigconstant(_Eureka)
+JOIN = _Eureka.JOIN
+
+_Eureka.LEFT_JOIN_swigconstant(_Eureka)
+LEFT_JOIN = _Eureka.LEFT_JOIN
+
+_Eureka.LEFT_OUTER_JOIN_swigconstant(_Eureka)
+LEFT_OUTER_JOIN = _Eureka.LEFT_OUTER_JOIN
+
+_Eureka.BETWEEN_swigconstant(_Eureka)
+BETWEEN = _Eureka.BETWEEN
+
+_Eureka.RIGHT_JOIN_swigconstant(_Eureka)
+RIGHT_JOIN = _Eureka.RIGHT_JOIN
+
+_Eureka.RIGHT_OUTER_JOIN_swigconstant(_Eureka)
+RIGHT_OUTER_JOIN = _Eureka.RIGHT_OUTER_JOIN
+
+_Eureka.FULL_JOIN_swigconstant(_Eureka)
+FULL_JOIN = _Eureka.FULL_JOIN
+
+_Eureka.FULL_OUTER_JOIN_swigconstant(_Eureka)
+FULL_OUTER_JOIN = _Eureka.FULL_OUTER_JOIN
+
+_Eureka.INTO_SELECT_swigconstant(_Eureka)
+INTO_SELECT = _Eureka.INTO_SELECT
+
+_Eureka.UNION_swigconstant(_Eureka)
+UNION = _Eureka.UNION
 class SQLQuery(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, SQLQuery, name, value)
@@ -1052,9 +1154,9 @@ def findString(target, stringSource, pos=0):
     return _Eureka.findString(target, stringSource, pos)
 findString = _Eureka.findString
 
-def slice(input, start, end):
-    return _Eureka.slice(input, start, end)
-slice = _Eureka.slice
+def slicepChar(input, start, end):
+    return _Eureka.slicepChar(input, start, end)
+slicepChar = _Eureka.slicepChar
 
 def shiftArrayLeft(*args):
     return _Eureka.shiftArrayLeft(*args)
@@ -1112,13 +1214,13 @@ def getCharArrayFromConstArray(s):
     return _Eureka.getCharArrayFromConstArray(s)
 getCharArrayFromConstArray = _Eureka.getCharArrayFromConstArray
 
-def round(value, precision):
-    return _Eureka.round(value, precision)
-round = _Eureka.round
+def roundDecimal(value, precision):
+    return _Eureka.roundDecimal(value, precision)
+roundDecimal = _Eureka.roundDecimal
 
-def iround(value, precision):
-    return _Eureka.iround(value, precision)
-iround = _Eureka.iround
+def iroundDecimal(value, precision):
+    return _Eureka.iroundDecimal(value, precision)
+iroundDecimal = _Eureka.iroundDecimal
 
 def changeProgramWorkingDirectory(newPath):
     return _Eureka.changeProgramWorkingDirectory(newPath)
@@ -1954,6 +2056,9 @@ class ScreenInfo(_object):
     def SetScreenInfo(self, displayCount=1, display=0, frames_per_second=60, screenWidth=640, screenHeight=480, screenBPP=32):
         return _Eureka.ScreenInfo_SetScreenInfo(self, displayCount, display, frames_per_second, screenWidth, screenHeight, screenBPP)
 
+    def SetScreenLoc(self, x=0, y=0):
+        return _Eureka.ScreenInfo_SetScreenLoc(self, x, y)
+
     def GetMaxFramesPerSec(self):
         return _Eureka.ScreenInfo_GetMaxFramesPerSec(self)
 
@@ -2029,9 +2134,6 @@ class GameInfo(ScreenInfo, SoundInfo):
 
     def SetInfo(self, *args):
         return _Eureka.GameInfo_SetInfo(self, *args)
-
-    def SetScreenLoc(self, x=0, y=0):
-        return _Eureka.GameInfo_SetScreenLoc(self, x, y)
 
     def GetRootDirectory(self):
         return _Eureka.GameInfo_GetRootDirectory(self)

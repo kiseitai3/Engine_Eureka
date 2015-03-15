@@ -1,5 +1,6 @@
 #include "database.h"
 #include "data_base.h"
+#include "mysql.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE

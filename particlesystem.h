@@ -149,6 +149,9 @@ private:
     ParticleCluster* gameCluster;
     size_t mutex_id_unit, mutex_id_game;
     size_t cond_id;
+
+    //methods
+    void clearUnitCluster();
 };
 
 

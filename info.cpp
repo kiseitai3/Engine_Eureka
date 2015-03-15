@@ -57,6 +57,12 @@ size_t ScreenInfo::GetDisplayCount() const
 {
     return m_display_count;
 }
+
+void ScreenInfo::SetScreenLoc(int x, int y)
+{
+    screenLoc.X = x;
+    screenLoc.Y = y;
+}
 /*End of ScreenInfo*/
 
 /*SoundInfo*/

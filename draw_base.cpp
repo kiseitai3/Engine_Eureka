@@ -34,7 +34,7 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// a
     timeBetweenFrames = animDOM.GetIntFromData("tex_time_on_frames");
     if(timeBetweenFrames == 0)
     {
-        timeBetweenFrames = (int)(round(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
+        timeBetweenFrames = (int)(roundDecimal(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
     }
     //Dimensions manipulation
     src.h = height;

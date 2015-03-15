@@ -30,6 +30,10 @@ SDL_Event& Game::GetEvents()
     return *event;
 }
 
+bool Game::isMultithreaded() const
+{
+    return multithreaded;
+}
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END

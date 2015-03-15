@@ -265,6 +265,7 @@ NetworkManager::NetworkManager(Game* owner)
 {
     owner_ref = owner;
     mutex_net_id = owner->SpawnMutex();
+    mtu = 1;
 }
 
 NetworkManager::~NetworkManager()
@@ -663,6 +664,11 @@ UDPClient NetworkManager::GetUDPClientInfo(size_t socket_id, int channel)
 TCPClient NetworkManager::GetTCPClientInfo(size_t socket_id, size_t client_id)
 {
    return connections[socket_id]->GetTCPClientInfo(client_id);
+}
+
+void NetworkManager::SetMTU(size_t max)
+{
+    mtu = max;
 }
 
 //End of namespace macro

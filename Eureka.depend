@@ -23643,7 +23643,7 @@
 	"conversion.h"
 	<iostream>
 
-1423619446 c:\users\luis\documents\devcb\engine_eureka\conversion.h
+1426369023 c:\users\luis\documents\devcb\engine_eureka\conversion.h
 	<string>
 	"config.h"
 	"utf8.h"
@@ -23756,7 +23756,7 @@
 	<SDL_net.h>
 	"typedefs.h"
 
-1426351433 c:\users\luis\documents\devcb\engine_eureka\info.h
+1426391523 c:\users\luis\documents\devcb\engine_eureka\info.h
 	<iostream>
 	<string>
 	"typedefs.h"
@@ -23859,12 +23859,12 @@
 	"conversion.h"
 	"data_base.h"
 
-1425769081 source:c:\users\luis\documents\devcb\engine_eureka\database.cpp
+1426383284 source:c:\users\luis\documents\devcb\engine_eureka\database.cpp
 	"database.h"
 	"data_base.h"
-
-1425768967 c:\users\luis\documents\devcb\engine_eureka\database.h
 	"mysql.h"
+
+1426383284 c:\users\luis\documents\devcb\engine_eureka\database.h
 	"sqlitewrap.h"
 	<string>
 
@@ -23933,7 +23933,7 @@
 	"resultset.h"
 	<string>
 
-1426351240 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
+1426369904 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
 	<string>
 	<map>
 	<iostream>
@@ -23962,7 +23962,7 @@
 	<iostream>
 	"typedefs.h"
 
-1426346730 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
+1426369108 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -23971,28 +23971,45 @@
 	"draw_base.h"
 	"conversion.h"
 
-1411088998 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1426393153 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
 	<stdlib.h>
 	<assert.h>
+	"lrodefs.h"
+	"lrotable.h"
+	<stdexcept>
+	<vector>
+	<stdexcept>
+	<map>
+	<algorithm>
+	<stdexcept>
+	<string>
+	"rand_generators.h"
+	"sqlkeywords.h"
 	"physics.h"
 	"data_base.h"
 	"draw_base.h"
 	"ui.h"
 	"unit.h"
-	"textbox.h"
-	"button.h"
 	"trigger.h"
-	"sound_baseB.h"
 	"Timer.h"
-	"progressbar.h"
-	"globals.h"
+	"database.h"
+	"typedefs.h"
 	"conversion.h"
-	"input.h"
-	"scriptwrap.h"
-	"plugin.h"
+	"modules.h"
+	"unitmanager.h"
+	"particlesystem.h"
+	"threading.h"
+	"networking.h"
+	"iomanager.h"
+	"layersystem.h"
+	"info.h"
+	"timersystem.h"
+	"triggermanager.h"
+	"uimanager.h"
+	"level.h"
 	"game.h"
 
 1425768967 c:\users\luis\documents\devcb\engine_eureka\trigger.h
@@ -24014,32 +24031,51 @@
 	"physics.h"
 	"input.h"
 
-1411088998 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1426384183 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
 	<stdexcept>
+	<float.h>
+	<math.h>
+	<iostream>
+	<stdexcept>
+	<string>
+	<stddef.h>
+	<list>
+	<vector>
+	<utility>
+	<map>
+	<ios>
+	<streambuf.h>
+	<limits.h>
+	<iostream>
+	<ieeefp.h>
+	"rand_generators.h"
+	"sqlkeywords.h"
 	"physics.h"
 	"data_base.h"
 	"draw_base.h"
 	"ui.h"
 	"unit.h"
-	"textbox.h"
-	"button.h"
 	"trigger.h"
-	"sound_baseB.h"
 	"Timer.h"
-	"progressbar.h"
-	"globals.h"
+	"database.h"
+	"typedefs.h"
 	"conversion.h"
-	"input.h"
-	"scriptwrap.h"
-	"plugin.h"
+	"modules.h"
+	"unitmanager.h"
+	"particlesystem.h"
+	"threading.h"
+	"networking.h"
+	"iomanager.h"
+	"layersystem.h"
+	"info.h"
+	"timersystem.h"
+	"triggermanager.h"
+	"uimanager.h"
+	"level.h"
 	"game.h"
-	<limits.h>
-	<float.h>
-	<math.h>
-	<ieeefp.h>
 
 1425768967 source:c:\users\luis\documents\devcb\engine_eureka\input.cpp
 	<SDL.h>
@@ -24157,7 +24193,7 @@
 	<string>
 	"ui.h"
 
-1419895583 source:c:\users\luis\documents\devcb\engine_eureka\conversion.cpp
+1426369103 source:c:\users\luis\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
 	<stdio.h>
@@ -27302,7 +27338,7 @@
 	"rand_generators.h"
 	"game.h"
 
-1426350481 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
+1426392194 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
 	<string>
 	<pthread.h>
 	<queue>
@@ -27400,10 +27436,11 @@
 	"rand_generators.h"
 	"eureka.h"
 
-1426348925 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
+1426364251 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
 	"eureka.h"
 	"level.h"
 	<SDL_image.h>
+	"database.h"
 
 1425768967 c:\users\luis\documents\devcb\engine_eureka\timersystem.h
 	"Timer.h"

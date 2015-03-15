@@ -2,39 +2,39 @@ EXPORTS
     _Z10findStringPKcS0_i @1
     _Z10randNormal5Range @2
     _Z10searchCharcSs @3
-    _Z11randUniform5Range @4
-    _Z11transferStrP5pCharPc @5
-    _Z12randBinomial5Range @6
-    _Z13capitalizeStrRKSs @7
-    _Z13lowerCaseCharc @8
-    _Z14capitalizeCharc @9
-    _Z14shiftArrayLeftPci @10
-    _Z14shiftArrayLeftPcii @11
-    _Z15checkUTF8StringRKSs @12
-    _Z15replaceStrInStrSsRKSsS0_b @13
-    _Z15searchCharIndexcPc @14
-    _Z15searchCharIndexcSsi @15
-    _Z16GetMaxValueSizeTv @16
-    _Z16replaceCharInStrSsccb @17
-    _Z16scientificFormatRKSsj @18
-    _Z16scientificFormatfj @19
-    _Z17convertASCII2UTF8RKSs @20
-    _Z17convertUTF162UTF8RKSs @21
-    _Z17convertUTF322UTF8RKSs @22
-    _Z17convertUTF82UTF16RKSs @23
-    _Z17convertUTF82UTF32RKSs @24
-    _Z17removeCharFromStrcPKc @25
-    _Z21createPCharFromBufferPci @26
-    _Z23removeLeadingWhiteSpaceRKSs @27
-    _Z25removeMultipleCharFromStrcPKc @28
-    _Z26getCharArrayFromConstArrayRKSs @29
-    _Z26shiftLeadingExponentZeroesPcj @30
-    _Z29changeProgramWorkingDirectoryPc @31
-    _Z5isNumRSs @32
-    _Z5rounddi @33
-    _Z5slicePcii @34
-    _Z6hasherv @35
-    _Z6irounddi @36
+    _Z10slicepCharPcii @4
+    _Z11randUniform5Range @5
+    _Z11transferStrP5pCharPc @6
+    _Z12randBinomial5Range @7
+    _Z12roundDecimaldi @8
+    _Z13capitalizeStrRKSs @9
+    _Z13iroundDecimaldi @10
+    _Z13lowerCaseCharc @11
+    _Z14capitalizeCharc @12
+    _Z14shiftArrayLeftPci @13
+    _Z14shiftArrayLeftPcii @14
+    _Z15checkUTF8StringRKSs @15
+    _Z15replaceStrInStrSsRKSsS0_b @16
+    _Z15searchCharIndexcPc @17
+    _Z15searchCharIndexcSsi @18
+    _Z16GetMaxValueSizeTv @19
+    _Z16replaceCharInStrSsccb @20
+    _Z16scientificFormatRKSsj @21
+    _Z16scientificFormatfj @22
+    _Z17convertASCII2UTF8RKSs @23
+    _Z17convertUTF162UTF8RKSs @24
+    _Z17convertUTF322UTF8RKSs @25
+    _Z17convertUTF82UTF16RKSs @26
+    _Z17convertUTF82UTF32RKSs @27
+    _Z17removeCharFromStrcPKc @28
+    _Z21createPCharFromBufferPci @29
+    _Z23removeLeadingWhiteSpaceRKSs @30
+    _Z25removeMultipleCharFromStrcPKc @31
+    _Z26getCharArrayFromConstArrayRKSs @32
+    _Z26shiftLeadingExponentZeroesPcj @33
+    _Z29changeProgramWorkingDirectoryPc @34
+    _Z5isNumRSs @35
+    _Z6hasherv @36
     _Z8fuseStrsSsSs @37
     _Z8intToStri @38
     _Z8numToIntd @39

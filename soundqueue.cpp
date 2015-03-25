@@ -16,36 +16,7 @@ SoundQueue::SoundQueue(Game* owner)
 
 SoundQueue::~SoundQueue()
 {
-    //Lock internal mutex
-    owner_ref->LockMutex(mutex_sound_id);
-    //Wait for sound to finish
-    while(playingSound->isPlaying() && !owner_ref->isEngineClosing())
-    {
-        sleep(5000);
-    }
-
-    if(playingSound)
-        delete playingSound;
-
-    if(backBuffer)
-        delete backBuffer;
-
-    //Delete all sounds
-    sound_base* tmp;
-    while(!sounds.empty())
-    {
-        tmp = sounds.front();
-        sounds.pop();
-        if(tmp)
-            delete tmp;
-    }
-
-    //Delete music
-    if(musicSound)
-        delete musicSound;
-
-    //Unlock internal mutex
-    owner_ref->UnlockMutex(mutex_sound_id);
+    ClearQueue();
     owner_ref->DeleteMutex(mutex_sound_id);
 }
 
@@ -67,7 +38,7 @@ void SoundQueue::AddSoundToQueue(cstr soundFile, bool music)
     owner_ref->UnlockMutex(mutex_sound_id);
 }
 
-void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, bool music)
+void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, size_t size, bool isHeaderlessWav, bool music)
 {
     //Make sure we keep the backBuffer object ready
     FlipMusic();
@@ -75,7 +46,7 @@ void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, bool music)
     owner_ref->LockMutex(mutex_sound_id);
     //Allocate new object
     sound_base* tmp = new sound_base;
-    tmp->Load_SoundFromBuffer((byte*)soundBuffer);
+    tmp->Load_SoundFromBuffer((byte*)soundBuffer, size, !music, isHeaderlessWav);
     //Check the type of sound
     if(music)
         backBuffer = tmp;
@@ -116,12 +87,12 @@ void SoundQueue::PlayNextSound()
 {
     //Lock internal mutex
     owner_ref->LockMutex(mutex_sound_id);
-    //Delete previous sound
+    //If all the channels are full, there's not point
+    if(channelsBusy())
+        return;
+    //Send previous sound to trash bin so it gets GCed when it finishes
     if(playingSound)
-    {
-        playingSound->Stop();
-        delete playingSound;
-    }
+        trash.push(playingSound);
     //Grab new sound
     playingSound = sounds.front();
     //Pop sound from the queue
@@ -155,6 +126,75 @@ void SoundQueue::StopMusicSound()
     owner_ref->LockMutex(mutex_sound_id);
     if(musicSound->isPlaying())
         musicSound->Stop();
+    //Unlock internal mutex
+    owner_ref->UnlockMutex(mutex_sound_id);
+}
+
+void SoundQueue::GCSounds()
+{
+    sound_base* tmp = NULL;
+    //Lock internal mutex
+    owner_ref->LockMutex(mutex_sound_id);
+    tmp = trash.front();
+    if(tmp && !tmp->isEffectPlaying())
+    {
+        delete tmp;
+        trash.pop();
+    }
+    //Unlock internal mutex
+    owner_ref->UnlockMutex(mutex_sound_id);
+}
+
+bool SoundQueue::channelsBusy() const
+{
+    //Now, we iterate through each channel in the Mix/SDL libraries and report false as soon as we find an empty channel!
+    for(size_t i = 0; i < MIX_CHANNELS; i++)
+    {
+        if(!Mix_Playing(i))//If the channel is ready/free
+            return false;
+    }
+    //If we get here, it means no channels are free!
+    return true;
+}
+
+void SoundQueue::ClearQueue()
+{
+    //Lock internal mutex
+    owner_ref->LockMutex(mutex_sound_id);
+    //Wait for sound to finish
+    while(playingSound->isPlaying() && !owner_ref->isEngineClosing())
+    {
+        sleep(5000);
+    }
+
+    if(playingSound)
+    {
+        playingSound->Stop();
+        delete playingSound;
+    }
+
+    if(backBuffer)
+    {
+        delete backBuffer;
+    }
+
+    //Delete all sounds
+    sound_base* tmp;
+    while(!sounds.empty())
+    {
+        tmp = sounds.front();
+        sounds.pop();
+        if(tmp)
+            delete tmp;
+    }
+
+    //Delete music
+    if(musicSound)
+    {
+        musicSound->Stop();
+        delete musicSound;
+    }
+
     //Unlock internal mutex
     owner_ref->UnlockMutex(mutex_sound_id);
 }

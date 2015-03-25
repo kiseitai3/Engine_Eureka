@@ -55,6 +55,7 @@ void_ptr helperGCFunction(void_ptr game)
     {
         tmp->mainGC();
         tmp->GC();
+        tmp->GCSounds();
         sleep(randUniform(Range(0, 10000)));
     }
     return NULL;
@@ -77,6 +78,8 @@ void_ptr helperUpdateFunction(void_ptr game)
     {
         tmp->UIUpdate();
         tmp->UpdateTriggers(tmp->GetHeroID());
+        if(tmp->isPlayingVideo())
+            tmp->UpdateVideo();
     }
     return NULL;
 }
@@ -85,10 +88,10 @@ const size_t Game::loadRate = 17;
 
 /*class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
-    public ThreadSystem, public GameInfo
+    public VideoPlayer, public ThreadSystem, public GameInfo
 */
 Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
 {
     LoadGame(file);
     closeEngine = false;
@@ -98,7 +101,7 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
 }
 
 Game::Game(bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
 {
     closeEngine = false;
     loading = false;
@@ -350,18 +353,30 @@ void Game::drawWorld()
     As a result, the simple call of RenderCopy only works on building the backbuffer, so the player only sees the final
     frame after RenderPresent is called. Call RenderPresent once after the frame is complete and call RenderClear before
     building any frames!
+
+    **Update: This method will skip all drawing methods except the video and the UIManager if a video is playing.
+    This will prevent potential issues with objects drawing on top of the video image!
     */
     SDL_RenderClear(screen);//Let's first clear and initialize the backbuffer
     //Let's begin building the frame
-    //Let's draw the layers
-    DrawLayers();
-    //Next let's draw everything else!
-    DrawUnits();
-    //Finally, draw the UIs that are marked as visible last so they are on top of the game world
-    UIDraw();
-    //Draw loading screen
-    if(loading)
-        GetUI(loadID).Draw();//Draw on top of whatever has been drawn!
+    if(!isPlayingVideo())
+    {
+        //Let's draw the layers
+        DrawLayers();
+        //Next let's draw everything else!
+        DrawUnits();
+        //Finally, draw the UIs that are marked as visible last so they are on top of the game world
+        UIDraw();
+        //Draw loading screen
+        if(loading)
+            GetUI(loadID).Draw();//Draw on top of whatever has been drawn!
+    }
+    else
+    {
+        DrawVideo();//Video frame
+        UIDraw();//UI
+    }
+
     //If the game is being run from a game editor, make sure the editor can obtain a copy of the pixels. Warning: this operation may be slow!
     if(requestFrame)
     {
@@ -414,6 +429,8 @@ void Game::run()
             //Update
             UpdateTriggers(currentLvl->GetHeroID());
             UIUpdate();
+            if(isPlayingVideo())
+                UpdateVideo();
             //Process events
             RunEvents();
             UIProcessEvents();
@@ -428,6 +445,7 @@ void Game::run()
             //Run GarbageCollector
             GC();
             mainGC();
+            GCSounds();
         }
     }
 }
@@ -511,6 +529,28 @@ void Game::ReplaceMainMenu(cstr file)
     mainMenuID = RegisterUI(file);
 }
 
+void Game::ShowVideoHUD()
+{
+    if(!GetUI(videoHUD_ID).isVisible())
+    {
+        GetUI(videoHUD_ID).toggleVisibility();
+    }
+}
+
+void Game::HideVideoHUD()
+{
+    if(GetUI(videoHUD_ID).isVisible())
+    {
+        GetUI(videoHUD_ID).toggleVisibility();
+    }
+}
+
+void Game::ReplaceVideoHUD(cstr file)
+{
+    UnregisterUI(videoHUD_ID);
+    videoHUD_ID = RegisterUI(file);
+}
+
 void Game::mainGC()
 {
     //check ui ids
@@ -567,8 +607,6 @@ Game::~Game()
 {
     //Emit engine exit command
     stopGame();
-    //Delay a bit so threads can begin exiting
-    SDL_Delay(5000);
     //Close threads
     if(multithreaded)
     {
@@ -579,6 +617,8 @@ Game::~Game()
         CloseThread(updateThread);
         CloseThread(gcThread);
     }
+    //Delay a bit so threads can begin exiting
+    SDL_Delay(5000);
 
     //Begin deleting global objects
     for(std::list<size_t>::iterator itr = moduleList.begin(); itr != moduleList.end(); itr++)
@@ -605,6 +645,11 @@ Game::~Game()
     //Delete the editor frame buffer if initialized
     if(frameBuffer)
         delete[] frameBuffer;
+
+    //Delete SDL things
+    SDL_DestroyRenderer(screen);
+    SDL_DestroyWindow(win);
+    SDL_free(event);
 
     //Let's shutdown the SDL subsystems
     SDLNet_Quit();//Network lib

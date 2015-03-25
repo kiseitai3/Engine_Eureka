@@ -36,10 +36,11 @@ class TriggerManager;
 class Level;
 class DataBase;
 class SoundQueue;
+class VideoPlayer;
 
 class Game : public SoundQueue, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
-     public ThreadSystem, public GameInfo
+     public VideoPlayer, public ThreadSystem, public GameInfo
 {
 public:
     /*Ctors and dtor*/
@@ -104,12 +105,15 @@ public:
     void ShowHUD();
     void HideHUD();
     void ReplaceHUD(cstr file);
+    void ShowVideoHUD();
+    void HideVideoHUD();
+    void ReplaceVideoHUD(cstr file);
 
     static const size_t loadRate;
 
 private:
     //Renderer
-    SDL_Renderer *screen, *outputFrame;
+    SDL_Renderer *screen;
     SDL_Window *win;
     SDL_Event *event;//Where all the events will be stored.
 
@@ -126,7 +130,7 @@ private:
     size_t mainTimer;//Timer
     size_t dbID;//Save database
     size_t drawThread, eventsThread, gcThread, soundThread, pluginThread, updateThread;
-    size_t loadID, hudID, mainMenuID;//Main ui ids
+    size_t loadID, hudID, mainMenuID, videoHUD_ID;//Main ui ids
     std::list<size_t> moduleList;
     std::list<size_t> uiList;
 

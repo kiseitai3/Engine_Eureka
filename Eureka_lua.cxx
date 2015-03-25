@@ -2663,56 +2663,62 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_Range swig_types[19]
 #define SWIGTYPE_p_SDL_BlendMode swig_types[20]
 #define SWIGTYPE_p_SDL_Event swig_types[21]
-#define SWIGTYPE_p_SDL_Renderer swig_types[22]
-#define SWIGTYPE_p_SDL_Texture swig_types[23]
-#define SWIGTYPE_p_SQLGenerator swig_types[24]
-#define SWIGTYPE_p_SWIGCDATA swig_types[25]
-#define SWIGTYPE_p_ScreenInfo swig_types[26]
-#define SWIGTYPE_p_ScriptWrap swig_types[27]
-#define SWIGTYPE_p_SoundInfo swig_types[28]
-#define SWIGTYPE_p_SoundQueue swig_types[29]
-#define SWIGTYPE_p_TCPClient swig_types[30]
-#define SWIGTYPE_p_TCPsocket swig_types[31]
-#define SWIGTYPE_p_ThreadSystem swig_types[32]
-#define SWIGTYPE_p_Timer swig_types[33]
-#define SWIGTYPE_p_TimerSystem swig_types[34]
-#define SWIGTYPE_p_Trigger swig_types[35]
-#define SWIGTYPE_p_TriggerManager swig_types[36]
-#define SWIGTYPE_p_UDPClient swig_types[37]
-#define SWIGTYPE_p_UDPsocket swig_types[38]
-#define SWIGTYPE_p_UI swig_types[39]
-#define SWIGTYPE_p_UIManager swig_types[40]
-#define SWIGTYPE_p_Uint8 swig_types[41]
-#define SWIGTYPE_p_Unit swig_types[42]
-#define SWIGTYPE_p_UnitManager swig_types[43]
-#define SWIGTYPE_p_UnitNode swig_types[44]
-#define SWIGTYPE_p_bool swig_types[45]
-#define SWIGTYPE_p_char swig_types[46]
-#define SWIGTYPE_p_data_base swig_types[47]
-#define SWIGTYPE_p_double swig_types[48]
-#define SWIGTYPE_p_draw_base swig_types[49]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[50]
-#define SWIGTYPE_p_int swig_types[51]
-#define SWIGTYPE_p_math_VECTOR swig_types[52]
-#define SWIGTYPE_p_math_point swig_types[53]
-#define SWIGTYPE_p_pChar swig_types[54]
-#define SWIGTYPE_p_p_ParticleNode swig_types[55]
-#define SWIGTYPE_p_psudo_type swig_types[56]
-#define SWIGTYPE_p_pthread_cond_t swig_types[57]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[58]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[59]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[60]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[61]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[62]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[63]
-#define SWIGTYPE_p_std__string swig_types[64]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[65]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[66]
-#define SWIGTYPE_p_unsigned_char swig_types[67]
-#define SWIGTYPE_p_unsigned_short swig_types[68]
-#define SWIGTYPE_p_void swig_types[69]
-static swig_type_info *swig_types[71];
-static swig_module_info swig_module = {swig_types, 70, 0, 0, 0, 0};
+#define SWIGTYPE_p_SDL_Rect swig_types[22]
+#define SWIGTYPE_p_SDL_Renderer swig_types[23]
+#define SWIGTYPE_p_SDL_Texture swig_types[24]
+#define SWIGTYPE_p_SQLGenerator swig_types[25]
+#define SWIGTYPE_p_SWIGCDATA swig_types[26]
+#define SWIGTYPE_p_ScreenInfo swig_types[27]
+#define SWIGTYPE_p_ScriptWrap swig_types[28]
+#define SWIGTYPE_p_SoundChunk swig_types[29]
+#define SWIGTYPE_p_SoundInfo swig_types[30]
+#define SWIGTYPE_p_SoundQueue swig_types[31]
+#define SWIGTYPE_p_SubFrame swig_types[32]
+#define SWIGTYPE_p_SynchData swig_types[33]
+#define SWIGTYPE_p_TCPClient swig_types[34]
+#define SWIGTYPE_p_TCPsocket swig_types[35]
+#define SWIGTYPE_p_ThreadSystem swig_types[36]
+#define SWIGTYPE_p_Timer swig_types[37]
+#define SWIGTYPE_p_TimerSystem swig_types[38]
+#define SWIGTYPE_p_Trigger swig_types[39]
+#define SWIGTYPE_p_TriggerManager swig_types[40]
+#define SWIGTYPE_p_UDPClient swig_types[41]
+#define SWIGTYPE_p_UDPsocket swig_types[42]
+#define SWIGTYPE_p_UI swig_types[43]
+#define SWIGTYPE_p_UIManager swig_types[44]
+#define SWIGTYPE_p_Uint8 swig_types[45]
+#define SWIGTYPE_p_Unit swig_types[46]
+#define SWIGTYPE_p_UnitManager swig_types[47]
+#define SWIGTYPE_p_UnitNode swig_types[48]
+#define SWIGTYPE_p_VideoFrame swig_types[49]
+#define SWIGTYPE_p_VideoPlayer swig_types[50]
+#define SWIGTYPE_p_bool swig_types[51]
+#define SWIGTYPE_p_char swig_types[52]
+#define SWIGTYPE_p_data_base swig_types[53]
+#define SWIGTYPE_p_double swig_types[54]
+#define SWIGTYPE_p_draw_base swig_types[55]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[56]
+#define SWIGTYPE_p_int swig_types[57]
+#define SWIGTYPE_p_math_VECTOR swig_types[58]
+#define SWIGTYPE_p_math_point swig_types[59]
+#define SWIGTYPE_p_pChar swig_types[60]
+#define SWIGTYPE_p_p_ParticleNode swig_types[61]
+#define SWIGTYPE_p_psudo_type swig_types[62]
+#define SWIGTYPE_p_pthread_cond_t swig_types[63]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[64]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[65]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[66]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[67]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[68]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[69]
+#define SWIGTYPE_p_std__string swig_types[70]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[71]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[72]
+#define SWIGTYPE_p_unsigned_char swig_types[73]
+#define SWIGTYPE_p_unsigned_short swig_types[74]
+#define SWIGTYPE_p_void swig_types[75]
+static swig_type_info *swig_types[77];
+static swig_module_info swig_module = {swig_types, 76, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2805,6 +2811,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 #include "uimanager.h"
 #include "level.h"
 #include "soundqueue.h"
+#include "videoplayer.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -29439,20 +29446,27 @@ static int _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SoundQueue *arg1 = (SoundQueue *) 0 ;
   cstr arg2 = (cstr) 0 ;
-  bool arg3 ;
+  size_t arg3 ;
+  bool arg4 ;
+  bool arg5 ;
   
-  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",3,3)
+  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",5,5)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",1,"SoundQueue *");
   if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",2,"cstr");
-  if(!lua_isboolean(L,3)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",3,"bool");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",3,"size_t");
+  if(!lua_isboolean(L,4)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",4,"bool");
+  if(!lua_isboolean(L,5)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",5,"bool");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
     SWIG_fail_ptr("SoundQueue_AddSoundBufferToQueue",1,SWIGTYPE_p_SoundQueue);
   }
   
   arg2 = (cstr)lua_tostring(L, 2);
-  arg3 = (lua_toboolean(L, 3)!=0);
-  (arg1)->AddSoundBufferToQueue(arg2,arg3);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
+  arg3 = (size_t)lua_tonumber(L, 3);
+  arg4 = (lua_toboolean(L, 4)!=0);
+  arg5 = (lua_toboolean(L, 5)!=0);
+  (arg1)->AddSoundBufferToQueue(arg2,arg3,arg4,arg5);
   
   return SWIG_arg;
   
@@ -29468,17 +29482,54 @@ static int _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SoundQueue *arg1 = (SoundQueue *) 0 ;
   cstr arg2 = (cstr) 0 ;
+  size_t arg3 ;
+  bool arg4 ;
   
-  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",2,2)
+  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",4,4)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",1,"SoundQueue *");
   if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",2,"cstr");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",3,"size_t");
+  if(!lua_isboolean(L,4)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",4,"bool");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
     SWIG_fail_ptr("SoundQueue_AddSoundBufferToQueue",1,SWIGTYPE_p_SoundQueue);
   }
   
   arg2 = (cstr)lua_tostring(L, 2);
-  (arg1)->AddSoundBufferToQueue(arg2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
+  arg3 = (size_t)lua_tonumber(L, 3);
+  arg4 = (lua_toboolean(L, 4)!=0);
+  (arg1)->AddSoundBufferToQueue(arg2,arg3,arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_2(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  size_t arg3 ;
+  
+  SWIG_check_num_args("SoundQueue::AddSoundBufferToQueue",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",1,"SoundQueue *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",2,"cstr");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SoundQueue::AddSoundBufferToQueue",3,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_AddSoundBufferToQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  SWIG_contract_assert((lua_tonumber(L,3)>=0),"number must not be negative")
+  arg3 = (size_t)lua_tonumber(L, 3);
+  (arg1)->AddSoundBufferToQueue(arg2,arg3);
   
   return SWIG_arg;
   
@@ -29492,30 +29543,11 @@ fail:
 
 static int _wrap_SoundQueue_AddSoundBufferToQueue(lua_State* L) {
   int argc;
-  int argv[4]={
-    1,2,3,4
+  int argv[6]={
+    1,2,3,4,5,6
   };
   
   argc = lua_gettop(L);
-  if (argc == 2) {
-    int _v;
-    {
-      void *ptr;
-      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
-        _v = 0;
-      } else {
-        _v = 1;
-      }
-    }
-    if (_v) {
-      {
-        _v = SWIG_lua_isnilstring(L,argv[1]);
-      }
-      if (_v) {
-        return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(L);
-      }
-    }
-  }
   if (argc == 3) {
     int _v;
     {
@@ -29532,10 +29564,73 @@ static int _wrap_SoundQueue_AddSoundBufferToQueue(lua_State* L) {
       }
       if (_v) {
         {
-          _v = lua_isboolean(L,argv[2]);
+          _v = lua_isnumber(L,argv[2]);
         }
         if (_v) {
-          return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(L);
+          return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_2(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          {
+            _v = lua_isboolean(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  if (argc == 5) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SoundQueue, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          {
+            _v = lua_isboolean(L,argv[3]);
+          }
+          if (_v) {
+            {
+              _v = lua_isboolean(L,argv[4]);
+            }
+            if (_v) {
+              return _wrap_SoundQueue_AddSoundBufferToQueue__SWIG_0(L);
+            }
+          }
         }
       }
     }
@@ -29543,8 +29638,9 @@ static int _wrap_SoundQueue_AddSoundBufferToQueue(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'SoundQueue_AddSoundBufferToQueue'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SoundQueue::AddSoundBufferToQueue(cstr,bool)\n"
-    "    SoundQueue::AddSoundBufferToQueue(cstr)\n");
+    "    SoundQueue::AddSoundBufferToQueue(cstr,size_t,bool,bool)\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr,size_t,bool)\n"
+    "    SoundQueue::AddSoundBufferToQueue(cstr,size_t)\n");
   lua_error(L);return 0;
 }
 
@@ -29779,6 +29875,1001 @@ static swig_lua_namespace swig_SoundQueue_Sf_SwigStatic = {
 static swig_lua_class *swig_SoundQueue_bases[] = {0};
 static const char *swig_SoundQueue_base_names[] = {0};
 static swig_lua_class _wrap_class_SoundQueue = { "SoundQueue", "SoundQueue", &SWIGTYPE_p_SoundQueue,_proxy__wrap_new_SoundQueue, swig_delete_SoundQueue, swig_SoundQueue_methods, swig_SoundQueue_attributes, &swig_SoundQueue_Sf_SwigStatic, swig_SoundQueue_meta, swig_SoundQueue_bases, swig_SoundQueue_base_names };
+
+static int _wrap_SynchData_pts_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SynchData *arg1 = (SynchData *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SynchData::pts",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SynchData::pts",1,"SynchData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SynchData::pts",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SynchData,0))){
+    SWIG_fail_ptr("SynchData_pts_set",1,SWIGTYPE_p_SynchData);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->pts = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SynchData_pts_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SynchData *arg1 = (SynchData *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SynchData::pts",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SynchData::pts",1,"SynchData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SynchData,0))){
+    SWIG_fail_ptr("SynchData_pts_get",1,SWIGTYPE_p_SynchData);
+  }
+  
+  result =  ((arg1)->pts);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SynchData_repeats_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SynchData *arg1 = (SynchData *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SynchData::repeats",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SynchData::repeats",1,"SynchData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SynchData::repeats",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SynchData,0))){
+    SWIG_fail_ptr("SynchData_repeats_set",1,SWIGTYPE_p_SynchData);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->repeats = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SynchData_repeats_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SynchData *arg1 = (SynchData *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SynchData::repeats",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SynchData::repeats",1,"SynchData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SynchData,0))){
+    SWIG_fail_ptr("SynchData_repeats_get",1,SWIGTYPE_p_SynchData);
+  }
+  
+  result =  ((arg1)->repeats);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_SynchData(lua_State* L) {
+  int SWIG_arg = 0;
+  SynchData *result = 0 ;
+  
+  SWIG_check_num_args("SynchData::SynchData",0,0)
+  result = (SynchData *)new SynchData();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SynchData,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_SynchData(void *obj) {
+SynchData *arg1 = (SynchData *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_SynchData(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_SynchData);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_SynchData_attributes[] = {
+    { "pts", _wrap_SynchData_pts_get, _wrap_SynchData_pts_set },
+    { "repeats", _wrap_SynchData_repeats_get, _wrap_SynchData_repeats_set },
+    {0,0,0}
+};
+static swig_lua_method swig_SynchData_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_SynchData_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_SynchData_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_SynchData_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_SynchData_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_SynchData_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_SynchData_Sf_SwigStatic = {
+    "SynchData",
+    swig_SynchData_Sf_SwigStatic_methods,
+    swig_SynchData_Sf_SwigStatic_attributes,
+    swig_SynchData_Sf_SwigStatic_constants,
+    swig_SynchData_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_SynchData_bases[] = {0};
+static const char *swig_SynchData_base_names[] = {0};
+static swig_lua_class _wrap_class_SynchData = { "SynchData", "SynchData", &SWIGTYPE_p_SynchData,_proxy__wrap_new_SynchData, swig_delete_SynchData, swig_SynchData_methods, swig_SynchData_attributes, &swig_SynchData_Sf_SwigStatic, swig_SynchData_meta, swig_SynchData_bases, swig_SynchData_base_names };
+
+static int _wrap_VideoFrame_pYUV420PText_set(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoFrame *arg1 = (VideoFrame *) 0 ;
+  SDL_Texture *arg2 = (SDL_Texture *) 0 ;
+  
+  SWIG_check_num_args("VideoFrame::pYUV420PText",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoFrame::pYUV420PText",1,"VideoFrame *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("VideoFrame::pYUV420PText",2,"SDL_Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoFrame,0))){
+    SWIG_fail_ptr("VideoFrame_pYUV420PText_set",1,SWIGTYPE_p_VideoFrame);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SDL_Texture,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("VideoFrame_pYUV420PText_set",2,SWIGTYPE_p_SDL_Texture);
+  }
+  
+  if (arg1) (arg1)->pYUV420PText = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoFrame_pYUV420PText_get(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoFrame *arg1 = (VideoFrame *) 0 ;
+  SDL_Texture *result = 0 ;
+  
+  SWIG_check_num_args("VideoFrame::pYUV420PText",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoFrame::pYUV420PText",1,"VideoFrame *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoFrame,0))){
+    SWIG_fail_ptr("VideoFrame_pYUV420PText_get",1,SWIGTYPE_p_VideoFrame);
+  }
+  
+  result = (SDL_Texture *) ((arg1)->pYUV420PText);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SDL_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_VideoFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  VideoFrame *result = 0 ;
+  
+  SWIG_check_num_args("VideoFrame::VideoFrame",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoFrame::VideoFrame",1,"Game *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("VideoFrame::VideoFrame",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("VideoFrame::VideoFrame",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("new_VideoFrame",1,SWIGTYPE_p_Game);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  result = (VideoFrame *)new VideoFrame(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_VideoFrame,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_VideoFrame(void *obj) {
+VideoFrame *arg1 = (VideoFrame *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_VideoFrame(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_VideoFrame);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_VideoFrame_attributes[] = {
+    { "pYUV420PText", _wrap_VideoFrame_pYUV420PText_get, _wrap_VideoFrame_pYUV420PText_set },
+    {0,0,0}
+};
+static swig_lua_method swig_VideoFrame_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_VideoFrame_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_VideoFrame_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_VideoFrame_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_VideoFrame_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_VideoFrame_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_VideoFrame_Sf_SwigStatic = {
+    "VideoFrame",
+    swig_VideoFrame_Sf_SwigStatic_methods,
+    swig_VideoFrame_Sf_SwigStatic_attributes,
+    swig_VideoFrame_Sf_SwigStatic_constants,
+    swig_VideoFrame_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_VideoFrame_bases[] = {0,0};
+static const char *swig_VideoFrame_base_names[] = {"SynchData *",0};
+static swig_lua_class _wrap_class_VideoFrame = { "VideoFrame", "VideoFrame", &SWIGTYPE_p_VideoFrame,_proxy__wrap_new_VideoFrame, swig_delete_VideoFrame, swig_VideoFrame_methods, swig_VideoFrame_attributes, &swig_VideoFrame_Sf_SwigStatic, swig_VideoFrame_meta, swig_VideoFrame_bases, swig_VideoFrame_base_names };
+
+static int _wrap_SubFrame_subtitle_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  SDL_Texture *arg2 = (SDL_Texture *) 0 ;
+  
+  SWIG_check_num_args("SubFrame::subtitle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::subtitle",1,"SubFrame *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("SubFrame::subtitle",2,"SDL_Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_subtitle_set",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SDL_Texture,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("SubFrame_subtitle_set",2,SWIGTYPE_p_SDL_Texture);
+  }
+  
+  if (arg1) (arg1)->subtitle = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SubFrame_subtitle_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  SDL_Texture *result = 0 ;
+  
+  SWIG_check_num_args("SubFrame::subtitle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::subtitle",1,"SubFrame *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_subtitle_get",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  result = (SDL_Texture *) ((arg1)->subtitle);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SDL_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SubFrame_rect_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  SDL_Rect arg2 ;
+  SDL_Rect *argp2 ;
+  
+  SWIG_check_num_args("SubFrame::rect",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::rect",1,"SubFrame *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("SubFrame::rect",2,"SDL_Rect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_rect_set",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_SDL_Rect,0))){
+    SWIG_fail_ptr("SubFrame_rect_set",2,SWIGTYPE_p_SDL_Rect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->rect = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SubFrame_rect_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  SDL_Rect result;
+  
+  SWIG_check_num_args("SubFrame::rect",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::rect",1,"SubFrame *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_rect_get",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  result =  ((arg1)->rect);
+  {
+    SDL_Rect * resultptr = new SDL_Rect((const SDL_Rect &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_SDL_Rect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SubFrame_beg_time_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SubFrame::beg_time",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::beg_time",1,"SubFrame *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SubFrame::beg_time",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_beg_time_set",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->beg_time = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SubFrame_beg_time_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *arg1 = (SubFrame *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SubFrame::beg_time",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubFrame::beg_time",1,"SubFrame *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SubFrame,0))){
+    SWIG_fail_ptr("SubFrame_beg_time_get",1,SWIGTYPE_p_SubFrame);
+  }
+  
+  result =  ((arg1)->beg_time);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_SubFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  SubFrame *result = 0 ;
+  
+  SWIG_check_num_args("SubFrame::SubFrame",0,0)
+  result = (SubFrame *)new SubFrame();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SubFrame,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_SubFrame(void *obj) {
+SubFrame *arg1 = (SubFrame *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_SubFrame(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_SubFrame);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_SubFrame_attributes[] = {
+    { "subtitle", _wrap_SubFrame_subtitle_get, _wrap_SubFrame_subtitle_set },
+    { "rect", _wrap_SubFrame_rect_get, _wrap_SubFrame_rect_set },
+    { "beg_time", _wrap_SubFrame_beg_time_get, _wrap_SubFrame_beg_time_set },
+    {0,0,0}
+};
+static swig_lua_method swig_SubFrame_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_SubFrame_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_SubFrame_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_SubFrame_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_SubFrame_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_SubFrame_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_SubFrame_Sf_SwigStatic = {
+    "SubFrame",
+    swig_SubFrame_Sf_SwigStatic_methods,
+    swig_SubFrame_Sf_SwigStatic_attributes,
+    swig_SubFrame_Sf_SwigStatic_constants,
+    swig_SubFrame_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_SubFrame_bases[] = {0,0};
+static const char *swig_SubFrame_base_names[] = {"SynchData *",0};
+static swig_lua_class _wrap_class_SubFrame = { "SubFrame", "SubFrame", &SWIGTYPE_p_SubFrame,_proxy__wrap_new_SubFrame, swig_delete_SubFrame, swig_SubFrame_methods, swig_SubFrame_attributes, &swig_SubFrame_Sf_SwigStatic, swig_SubFrame_meta, swig_SubFrame_bases, swig_SubFrame_base_names };
+
+static int _wrap_SoundChunk_size_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundChunk *arg1 = (SoundChunk *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SoundChunk::size",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundChunk::size",1,"SoundChunk *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundChunk::size",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundChunk,0))){
+    SWIG_fail_ptr("SoundChunk_size_set",1,SWIGTYPE_p_SoundChunk);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->size = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundChunk_size_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundChunk *arg1 = (SoundChunk *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SoundChunk::size",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundChunk::size",1,"SoundChunk *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundChunk,0))){
+    SWIG_fail_ptr("SoundChunk_size_get",1,SWIGTYPE_p_SoundChunk);
+  }
+  
+  result =  ((arg1)->size);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundChunk_chunk_set(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundChunk *arg1 = (SoundChunk *) 0 ;
+  byte *arg2 = (byte *) 0 ;
+  
+  SWIG_check_num_args("SoundChunk::chunk",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundChunk::chunk",1,"SoundChunk *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("SoundChunk::chunk",2,"byte *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundChunk,0))){
+    SWIG_fail_ptr("SoundChunk_chunk_set",1,SWIGTYPE_p_SoundChunk);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_unsigned_char,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("SoundChunk_chunk_set",2,SWIGTYPE_p_unsigned_char);
+  }
+  
+  if (arg1) (arg1)->chunk = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundChunk_chunk_get(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundChunk *arg1 = (SoundChunk *) 0 ;
+  byte *result = 0 ;
+  
+  SWIG_check_num_args("SoundChunk::chunk",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundChunk::chunk",1,"SoundChunk *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundChunk,0))){
+    SWIG_fail_ptr("SoundChunk_chunk_get",1,SWIGTYPE_p_SoundChunk);
+  }
+  
+  result = (byte *) ((arg1)->chunk);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_SoundChunk(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundChunk *result = 0 ;
+  
+  SWIG_check_num_args("SoundChunk::SoundChunk",0,0)
+  result = (SoundChunk *)new SoundChunk();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SoundChunk,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_SoundChunk(void *obj) {
+SoundChunk *arg1 = (SoundChunk *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_SoundChunk(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_SoundChunk);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_SoundChunk_attributes[] = {
+    { "size", _wrap_SoundChunk_size_get, _wrap_SoundChunk_size_set },
+    { "chunk", _wrap_SoundChunk_chunk_get, _wrap_SoundChunk_chunk_set },
+    {0,0,0}
+};
+static swig_lua_method swig_SoundChunk_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_SoundChunk_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_SoundChunk_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_SoundChunk_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_SoundChunk_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_SoundChunk_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_SoundChunk_Sf_SwigStatic = {
+    "SoundChunk",
+    swig_SoundChunk_Sf_SwigStatic_methods,
+    swig_SoundChunk_Sf_SwigStatic_attributes,
+    swig_SoundChunk_Sf_SwigStatic_constants,
+    swig_SoundChunk_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_SoundChunk_bases[] = {0,0};
+static const char *swig_SoundChunk_base_names[] = {"SynchData *",0};
+static swig_lua_class _wrap_class_SoundChunk = { "SoundChunk", "SoundChunk", &SWIGTYPE_p_SoundChunk,_proxy__wrap_new_SoundChunk, swig_delete_SoundChunk, swig_SoundChunk_methods, swig_SoundChunk_attributes, &swig_SoundChunk_Sf_SwigStatic, swig_SoundChunk_meta, swig_SoundChunk_bases, swig_SoundChunk_base_names };
+
+static int _wrap_new_VideoPlayer(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  VideoPlayer *result = 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::VideoPlayer",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::VideoPlayer",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("new_VideoPlayer",1,SWIGTYPE_p_Game);
+  }
+  
+  result = (VideoPlayer *)new VideoPlayer(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_VideoPlayer,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_LoadVideoFile(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::LoadVideoFile",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::LoadVideoFile",1,"VideoPlayer *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("VideoPlayer::LoadVideoFile",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_LoadVideoFile",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  (arg1)->LoadVideoFile(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_PlayVideo(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::PlayVideo",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::PlayVideo",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_PlayVideo",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->PlayVideo();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_StopVideo(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::StopVideo",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::StopVideo",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_StopVideo",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->StopVideo();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_UpdateVideo(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::UpdateVideo",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::UpdateVideo",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_UpdateVideo",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->UpdateVideo();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_DrawVideo(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::DrawVideo",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::DrawVideo",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_DrawVideo",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->DrawVideo();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_GetVideoT(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("VideoPlayer::GetVideoT",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::GetVideoT",1,"VideoPlayer const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_GetVideoT",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  result = ((VideoPlayer const *)arg1)->GetVideoT();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_isSubtitled(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("VideoPlayer::isSubtitled",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::isSubtitled",1,"VideoPlayer const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_isSubtitled",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  result = (bool)((VideoPlayer const *)arg1)->isSubtitled();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_isPlayingVideo(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("VideoPlayer::isPlayingVideo",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::isPlayingVideo",1,"VideoPlayer const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_isPlayingVideo",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  result = (bool)((VideoPlayer const *)arg1)->isPlayingVideo();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_VideoPlayer_InitVideoSystem(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::InitVideoSystem",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::InitVideoSystem",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_InitVideoSystem",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->InitVideoSystem();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_VideoPlayer(void *obj) {
+VideoPlayer *arg1 = (VideoPlayer *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_VideoPlayer(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_VideoPlayer);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_VideoPlayer_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_VideoPlayer_methods[]= {
+    { "LoadVideoFile", _wrap_VideoPlayer_LoadVideoFile},
+    { "PlayVideo", _wrap_VideoPlayer_PlayVideo},
+    { "StopVideo", _wrap_VideoPlayer_StopVideo},
+    { "UpdateVideo", _wrap_VideoPlayer_UpdateVideo},
+    { "DrawVideo", _wrap_VideoPlayer_DrawVideo},
+    { "GetVideoT", _wrap_VideoPlayer_GetVideoT},
+    { "isSubtitled", _wrap_VideoPlayer_isSubtitled},
+    { "isPlayingVideo", _wrap_VideoPlayer_isPlayingVideo},
+    { "InitVideoSystem", _wrap_VideoPlayer_InitVideoSystem},
+    {0,0}
+};
+static swig_lua_method swig_VideoPlayer_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_VideoPlayer_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_VideoPlayer_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_VideoPlayer_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_VideoPlayer_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_VideoPlayer_Sf_SwigStatic = {
+    "VideoPlayer",
+    swig_VideoPlayer_Sf_SwigStatic_methods,
+    swig_VideoPlayer_Sf_SwigStatic_attributes,
+    swig_VideoPlayer_Sf_SwigStatic_constants,
+    swig_VideoPlayer_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_VideoPlayer_bases[] = {0};
+static const char *swig_VideoPlayer_base_names[] = {0};
+static swig_lua_class _wrap_class_VideoPlayer = { "VideoPlayer", "VideoPlayer", &SWIGTYPE_p_VideoPlayer,_proxy__wrap_new_VideoPlayer, swig_delete_VideoPlayer, swig_VideoPlayer_methods, swig_VideoPlayer_attributes, &swig_VideoPlayer_Sf_SwigStatic, swig_VideoPlayer_meta, swig_VideoPlayer_bases, swig_VideoPlayer_base_names };
 
 static int _wrap_new_Game__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
@@ -31036,8 +32127,8 @@ static swig_lua_namespace swig_Game_Sf_SwigStatic = {
     swig_Game_Sf_SwigStatic_classes,
     0
 };
-static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
-static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","TimerSystem *","ThreadSystem *","GameInfo *",0};
+static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","TimerSystem *","VideoPlayer *","ThreadSystem *","GameInfo *",0};
 static swig_lua_class _wrap_class_Game = { "Game", "Game", &SWIGTYPE_p_Game,_proxy__wrap_new_Game, swig_delete_Game, swig_Game_methods, swig_Game_attributes, &swig_Game_Sf_SwigStatic, swig_Game_meta, swig_Game_bases, swig_Game_base_names };
 
 static int _wrap_helperDrawFunction(lua_State* L) {
@@ -31345,6 +32436,11 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_UIManager,
 &_wrap_class_Level,
 &_wrap_class_SoundQueue,
+&_wrap_class_SynchData,
+&_wrap_class_VideoFrame,
+&_wrap_class_SubFrame,
+&_wrap_class_SoundChunk,
+&_wrap_class_VideoPlayer,
 &_wrap_class_Game,
     0
 };
@@ -31372,11 +32468,14 @@ static void *_p_DataBaseTo_p_SQLGenerator(void *x, int *SWIGUNUSEDPARM(newmemory
 static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundQueue *)  ((Game *) x));
 }
-static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((TimerSystem *)  ((Game *) x));
+static void *_p_GameTo_p_VideoPlayer(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((VideoPlayer *)  ((Game *) x));
 }
 static void *_p_GameTo_p_LayerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((LayerSystem *)  ((Game *) x));
+}
+static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((TimerSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ThreadSystem *)  ((Game *) x));
@@ -31386,6 +32485,15 @@ static void *_p_GameInfoTo_p_SoundInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) 
 }
 static void *_p_GameTo_p_SoundInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundInfo *) (GameInfo *) ((Game *) x));
+}
+static void *_p_VideoFrameTo_p_SynchData(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((SynchData *)  ((VideoFrame *) x));
+}
+static void *_p_SoundChunkTo_p_SynchData(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((SynchData *)  ((SoundChunk *) x));
+}
+static void *_p_SubFrameTo_p_SynchData(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((SynchData *)  ((SubFrame *) x));
 }
 static void *_p_ParticleTo_p_Physics(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((Physics *)  ((Particle *) x));
@@ -31442,14 +32550,18 @@ static swig_type_info _swigt__p_Physics = {"_p_Physics", "Physics *", 0, 0, (voi
 static swig_type_info _swigt__p_Range = {"_p_Range", "Range *", 0, 0, (void*)&_wrap_class_Range, 0};
 static swig_type_info _swigt__p_SDL_BlendMode = {"_p_SDL_BlendMode", "SDL_BlendMode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Event = {"_p_SDL_Event", "SDL_Event *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SDL_Rect = {"_p_SDL_Rect", "SDL_Rect *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Renderer = {"_p_SDL_Renderer", "SDL_Renderer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Texture = {"_p_SDL_Texture", "SDL_Texture *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SQLGenerator = {"_p_SQLGenerator", "SQLGenerator *|SQLQuery *", 0, 0, (void*)&_wrap_class_SQLQuery, 0};
 static swig_type_info _swigt__p_SWIGCDATA = {"_p_SWIGCDATA", "SWIGCDATA *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ScreenInfo = {"_p_ScreenInfo", "ScreenInfo *", 0, 0, (void*)&_wrap_class_ScreenInfo, 0};
 static swig_type_info _swigt__p_ScriptWrap = {"_p_ScriptWrap", "ScriptWrap *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SoundChunk = {"_p_SoundChunk", "SoundChunk *", 0, 0, (void*)&_wrap_class_SoundChunk, 0};
 static swig_type_info _swigt__p_SoundInfo = {"_p_SoundInfo", "SoundInfo *", 0, 0, (void*)&_wrap_class_SoundInfo, 0};
 static swig_type_info _swigt__p_SoundQueue = {"_p_SoundQueue", "SoundQueue *", 0, 0, (void*)&_wrap_class_SoundQueue, 0};
+static swig_type_info _swigt__p_SubFrame = {"_p_SubFrame", "SubFrame *", 0, 0, (void*)&_wrap_class_SubFrame, 0};
+static swig_type_info _swigt__p_SynchData = {"_p_SynchData", "SynchData *", 0, 0, (void*)&_wrap_class_SynchData, 0};
 static swig_type_info _swigt__p_TCPClient = {"_p_TCPClient", "TCPClient *", 0, 0, (void*)&_wrap_class_TCPClient, 0};
 static swig_type_info _swigt__p_TCPsocket = {"_p_TCPsocket", "TCPsocket *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ThreadSystem = {"_p_ThreadSystem", "ThreadSystem *", 0, 0, (void*)&_wrap_class_ThreadSystem, 0};
@@ -31465,6 +32577,8 @@ static swig_type_info _swigt__p_Uint8 = {"_p_Uint8", "Uint8 *", 0, 0, (void*)0, 
 static swig_type_info _swigt__p_Unit = {"_p_Unit", "Unit *", 0, 0, (void*)&_wrap_class_Unit, 0};
 static swig_type_info _swigt__p_UnitManager = {"_p_UnitManager", "UnitManager *", 0, 0, (void*)&_wrap_class_UnitManager, 0};
 static swig_type_info _swigt__p_UnitNode = {"_p_UnitNode", "UnitNode *", 0, 0, (void*)&_wrap_class_UnitNode, 0};
+static swig_type_info _swigt__p_VideoFrame = {"_p_VideoFrame", "VideoFrame *", 0, 0, (void*)&_wrap_class_VideoFrame, 0};
+static swig_type_info _swigt__p_VideoPlayer = {"_p_VideoPlayer", "VideoPlayer *", 0, 0, (void*)&_wrap_class_VideoPlayer, 0};
 static swig_type_info _swigt__p_bool = {"_p_bool", "bool *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_data_base = {"_p_data_base", "data_base *", 0, 0, (void*)&_wrap_class_data_base, 0};
@@ -31514,14 +32628,18 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Range,
   &_swigt__p_SDL_BlendMode,
   &_swigt__p_SDL_Event,
+  &_swigt__p_SDL_Rect,
   &_swigt__p_SDL_Renderer,
   &_swigt__p_SDL_Texture,
   &_swigt__p_SQLGenerator,
   &_swigt__p_SWIGCDATA,
   &_swigt__p_ScreenInfo,
   &_swigt__p_ScriptWrap,
+  &_swigt__p_SoundChunk,
   &_swigt__p_SoundInfo,
   &_swigt__p_SoundQueue,
+  &_swigt__p_SubFrame,
+  &_swigt__p_SynchData,
   &_swigt__p_TCPClient,
   &_swigt__p_TCPsocket,
   &_swigt__p_ThreadSystem,
@@ -31537,6 +32655,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Unit,
   &_swigt__p_UnitManager,
   &_swigt__p_UnitNode,
+  &_swigt__p_VideoFrame,
+  &_swigt__p_VideoPlayer,
   &_swigt__p_bool,
   &_swigt__p_char,
   &_swigt__p_data_base,
@@ -31586,14 +32706,18 @@ static swig_cast_info _swigc__p_Physics[] = {  {&_swigt__p_Physics, 0, 0, 0},  {
 static swig_cast_info _swigc__p_Range[] = {  {&_swigt__p_Range, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_BlendMode[] = {  {&_swigt__p_SDL_BlendMode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Event[] = {  {&_swigt__p_SDL_Event, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SDL_Rect[] = {  {&_swigt__p_SDL_Rect, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Renderer[] = {  {&_swigt__p_SDL_Renderer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Texture[] = {  {&_swigt__p_SDL_Texture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SQLGenerator[] = {  {&_swigt__p_SQLGenerator, 0, 0, 0},  {&_swigt__p_DataBase, _p_DataBaseTo_p_SQLGenerator, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SWIGCDATA[] = {  {&_swigt__p_SWIGCDATA, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ScreenInfo[] = {  {&_swigt__p_ScreenInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_ScreenInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ScreenInfo, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ScriptWrap[] = {  {&_swigt__p_ScriptWrap, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SoundChunk[] = {  {&_swigt__p_SoundChunk, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundInfo[] = {  {&_swigt__p_SoundInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_SoundInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundInfo, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SoundQueue[] = {  {&_swigt__p_SoundQueue, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_SoundQueue, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SubFrame[] = {  {&_swigt__p_SubFrame, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SynchData[] = {  {&_swigt__p_SynchData, 0, 0, 0},  {&_swigt__p_VideoFrame, _p_VideoFrameTo_p_SynchData, 0, 0},  {&_swigt__p_SoundChunk, _p_SoundChunkTo_p_SynchData, 0, 0},  {&_swigt__p_SubFrame, _p_SubFrameTo_p_SynchData, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPClient[] = {  {&_swigt__p_TCPClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPsocket[] = {  {&_swigt__p_TCPsocket, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ThreadSystem[] = {  {&_swigt__p_ThreadSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ThreadSystem, 0, 0},{0, 0, 0, 0}};
@@ -31609,6 +32733,8 @@ static swig_cast_info _swigc__p_Uint8[] = {  {&_swigt__p_Uint8, 0, 0, 0},{0, 0, 
 static swig_cast_info _swigc__p_Unit[] = {  {&_swigt__p_Unit, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_UnitManager[] = {  {&_swigt__p_UnitManager, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_UnitManager, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_UnitNode[] = {  {&_swigt__p_UnitNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VideoFrame[] = {  {&_swigt__p_VideoFrame, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VideoPlayer[] = {  {&_swigt__p_Game, _p_GameTo_p_VideoPlayer, 0, 0},  {&_swigt__p_VideoPlayer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_bool[] = {  {&_swigt__p_bool, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_data_base[] = {  {&_swigt__p_data_base, 0, 0, 0},{0, 0, 0, 0}};
@@ -31658,14 +32784,18 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Range,
   _swigc__p_SDL_BlendMode,
   _swigc__p_SDL_Event,
+  _swigc__p_SDL_Rect,
   _swigc__p_SDL_Renderer,
   _swigc__p_SDL_Texture,
   _swigc__p_SQLGenerator,
   _swigc__p_SWIGCDATA,
   _swigc__p_ScreenInfo,
   _swigc__p_ScriptWrap,
+  _swigc__p_SoundChunk,
   _swigc__p_SoundInfo,
   _swigc__p_SoundQueue,
+  _swigc__p_SubFrame,
+  _swigc__p_SynchData,
   _swigc__p_TCPClient,
   _swigc__p_TCPsocket,
   _swigc__p_ThreadSystem,
@@ -31681,6 +32811,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Unit,
   _swigc__p_UnitManager,
   _swigc__p_UnitNode,
+  _swigc__p_VideoFrame,
+  _swigc__p_VideoPlayer,
   _swigc__p_bool,
   _swigc__p_char,
   _swigc__p_data_base,

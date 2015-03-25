@@ -111,8 +111,9 @@ void sound_base::WriteWav(FILE *f, long int bytes)//I may use this to stick a he
     fwrite("data",sizeof(char),4,f); /* 36-39 */
     PutNum(bytes,f,1,4);             /* 40-43 */
 }
-unsigned char sound_base::WriteWav(unsigned char* buffer, long int bytes)
+unsigned char* sound_base::WriteWav(unsigned char* buffer, size_t bytes)
 {
+    indexCount = 0;
     /* quick and dirty */                   //index table
     addBuff_String("RIFF",0);               /*  0-3 */
     PutNum2(bytes+44-8,1,4);                /*  4-7 */
@@ -126,8 +127,10 @@ unsigned char sound_base::WriteWav(unsigned char* buffer, long int bytes)
     PutNum2(16,1,2);                        /* 34-35 */
     addBuff_String("data",36);              /* 36-39 */
     PutNum2(bytes,1,4);                     /* 40-43 */
-    unsigned char *buff = (headerBuffer+(*buffer)); //I don't want to duplicate memory for too long so I return it in the function so it can be used and quickly disposed.
-    return *buff;
+    unsigned char *buff = new unsigned char[43 + bytes];
+    strcpyn((char*)buff, (const char*)headerBuffer, 43);
+    strcpyn((char*)buff, (const char*)buffer, bytes, 43);
+    return buff;
 }
 //End of random stream input
 
@@ -197,14 +200,25 @@ void sound_base::Load_Sound (const char* source)
     }
 }
 
-bool sound_base::Load_SoundFromBuffer(unsigned char* buffer)
+bool sound_base::Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool isEffect, bool headerlessWav)
 {
-    unsigned char buffer2 = WriteWav(buffer,(long int)(sizeof *buffer));
-    SDL_RWops* rwop = SDL_RWFromMem((void*)(&buffer2), sizeof buffer2);
-    if((music = Mix_LoadMUS_RW(rwop, 0)))
+    SDL_RWops* rwop = NULL;
+    if(headerlessWav && !isEffect)
+    {
+        unsigned char* buffer2 = WriteWav(buffer, size);
+        rwop = SDL_RWFromMem((void*)(&buffer2), size + 43);
+    }
+    else
+    {
+        rwop = SDL_RWFromMem((void*)(&buffer), size);
+    }
+
+    if(!isEffect && (music = Mix_LoadMUS_RW(rwop, 0)))
     {
         return true;
     }
+    else if(isEffect && (effect = Mix_LoadWAV_RW(rwop, 0)))
+        return true;
     else
     {
         return false;
@@ -254,6 +268,11 @@ bool sound_base::PlayEffect(int soundLoops)
 {
     if(loopingEffect == false && soundLoops == -1)
     {
+        channel = Mix_PlayChannel(-1, effect, soundLoops);
+        if(channel == -1)
+        {
+            return false;
+        }
         loopingEffect = true;
     }
     if(!loopingEffect)
@@ -270,6 +289,11 @@ bool sound_base::PlayEffect(int soundLoops)
 bool sound_base::isLoopingEffect() const
 {
     return loopingEffect;
+}
+
+bool sound_base::isEffectPlaying() const
+{
+    return Mix_Playing(channel);
 }
 
 const char sound_base::SoundType()
@@ -335,6 +359,13 @@ void sound_base::addBuff_String(std::string input, int index)
     indexCount = (indexCount + input.size())-1;// there's a -1 offset when you count 0 as one item
 }
 
+void strcpyn(char* dest, const char* src, size_t bytes, size_t start)
+{
+    for(size_t i = 0; i < bytes; i++)
+    {
+        dest[start + i] = src[i];
+    }
+}
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END

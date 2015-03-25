@@ -2350,8 +2350,8 @@ class SoundQueue(_object):
     def AddSoundToQueue(self, soundFile, music=False):
         return _Eureka.SoundQueue_AddSoundToQueue(self, soundFile, music)
 
-    def AddSoundBufferToQueue(self, soundBuffer, music=False):
-        return _Eureka.SoundQueue_AddSoundBufferToQueue(self, soundBuffer, music)
+    def AddSoundBufferToQueue(self, soundBuffer, size, isHeaderlessWav=True, music=False):
+        return _Eureka.SoundQueue_AddSoundBufferToQueue(self, soundBuffer, size, isHeaderlessWav, music)
 
     def FlipMusic(self):
         return _Eureka.SoundQueue_FlipMusic(self)
@@ -2376,13 +2376,174 @@ class SoundQueue(_object):
 SoundQueue_swigregister = _Eureka.SoundQueue_swigregister
 SoundQueue_swigregister(SoundQueue)
 
-class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo):
+class SynchData(_object):
     __swig_setmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SynchData, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, SynchData, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["pts"] = _Eureka.SynchData_pts_set
+    __swig_getmethods__["pts"] = _Eureka.SynchData_pts_get
+    if _newclass:
+        pts = _swig_property(_Eureka.SynchData_pts_get, _Eureka.SynchData_pts_set)
+    __swig_setmethods__["repeats"] = _Eureka.SynchData_repeats_set
+    __swig_getmethods__["repeats"] = _Eureka.SynchData_repeats_get
+    if _newclass:
+        repeats = _swig_property(_Eureka.SynchData_repeats_get, _Eureka.SynchData_repeats_set)
+
+    def __init__(self):
+        this = _Eureka.new_SynchData()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_SynchData
+    __del__ = lambda self: None
+SynchData_swigregister = _Eureka.SynchData_swigregister
+SynchData_swigregister(SynchData)
+
+class VideoFrame(SynchData):
+    __swig_setmethods__ = {}
+    for _s in [SynchData]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, VideoFrame, name, value)
+    __swig_getmethods__ = {}
+    for _s in [SynchData]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, VideoFrame, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["pYUV420PText"] = _Eureka.VideoFrame_pYUV420PText_set
+    __swig_getmethods__["pYUV420PText"] = _Eureka.VideoFrame_pYUV420PText_get
+    if _newclass:
+        pYUV420PText = _swig_property(_Eureka.VideoFrame_pYUV420PText_get, _Eureka.VideoFrame_pYUV420PText_set)
+
+    def __init__(self, owner, h, w):
+        this = _Eureka.new_VideoFrame(owner, h, w)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_VideoFrame
+    __del__ = lambda self: None
+VideoFrame_swigregister = _Eureka.VideoFrame_swigregister
+VideoFrame_swigregister(VideoFrame)
+
+class SubFrame(SynchData):
+    __swig_setmethods__ = {}
+    for _s in [SynchData]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SubFrame, name, value)
+    __swig_getmethods__ = {}
+    for _s in [SynchData]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, SubFrame, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["subtitle"] = _Eureka.SubFrame_subtitle_set
+    __swig_getmethods__["subtitle"] = _Eureka.SubFrame_subtitle_get
+    if _newclass:
+        subtitle = _swig_property(_Eureka.SubFrame_subtitle_get, _Eureka.SubFrame_subtitle_set)
+    __swig_setmethods__["rect"] = _Eureka.SubFrame_rect_set
+    __swig_getmethods__["rect"] = _Eureka.SubFrame_rect_get
+    if _newclass:
+        rect = _swig_property(_Eureka.SubFrame_rect_get, _Eureka.SubFrame_rect_set)
+    __swig_setmethods__["beg_time"] = _Eureka.SubFrame_beg_time_set
+    __swig_getmethods__["beg_time"] = _Eureka.SubFrame_beg_time_get
+    if _newclass:
+        beg_time = _swig_property(_Eureka.SubFrame_beg_time_get, _Eureka.SubFrame_beg_time_set)
+
+    def __init__(self):
+        this = _Eureka.new_SubFrame()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_SubFrame
+    __del__ = lambda self: None
+SubFrame_swigregister = _Eureka.SubFrame_swigregister
+SubFrame_swigregister(SubFrame)
+
+class SoundChunk(SynchData):
+    __swig_setmethods__ = {}
+    for _s in [SynchData]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SoundChunk, name, value)
+    __swig_getmethods__ = {}
+    for _s in [SynchData]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, SoundChunk, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["size"] = _Eureka.SoundChunk_size_set
+    __swig_getmethods__["size"] = _Eureka.SoundChunk_size_get
+    if _newclass:
+        size = _swig_property(_Eureka.SoundChunk_size_get, _Eureka.SoundChunk_size_set)
+    __swig_setmethods__["chunk"] = _Eureka.SoundChunk_chunk_set
+    __swig_getmethods__["chunk"] = _Eureka.SoundChunk_chunk_get
+    if _newclass:
+        chunk = _swig_property(_Eureka.SoundChunk_chunk_get, _Eureka.SoundChunk_chunk_set)
+
+    def __init__(self):
+        this = _Eureka.new_SoundChunk()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_SoundChunk
+    __del__ = lambda self: None
+SoundChunk_swigregister = _Eureka.SoundChunk_swigregister
+SoundChunk_swigregister(SoundChunk)
+
+class VideoPlayer(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, VideoPlayer, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, VideoPlayer, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, owner):
+        this = _Eureka.new_VideoPlayer(owner)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_VideoPlayer
+    __del__ = lambda self: None
+
+    def LoadVideoFile(self, file):
+        return _Eureka.VideoPlayer_LoadVideoFile(self, file)
+
+    def PlayVideo(self):
+        return _Eureka.VideoPlayer_PlayVideo(self)
+
+    def StopVideo(self):
+        return _Eureka.VideoPlayer_StopVideo(self)
+
+    def UpdateVideo(self):
+        return _Eureka.VideoPlayer_UpdateVideo(self)
+
+    def DrawVideo(self):
+        return _Eureka.VideoPlayer_DrawVideo(self)
+
+    def GetVideoT(self):
+        return _Eureka.VideoPlayer_GetVideoT(self)
+
+    def isSubtitled(self):
+        return _Eureka.VideoPlayer_isSubtitled(self)
+
+    def isPlayingVideo(self):
+        return _Eureka.VideoPlayer_isPlayingVideo(self)
+
+    def InitVideoSystem(self):
+        return _Eureka.VideoPlayer_InitVideoSystem(self)
+VideoPlayer_swigregister = _Eureka.VideoPlayer_swigregister
+VideoPlayer_swigregister(VideoPlayer)
+
+class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo):
+    __swig_setmethods__ = {}
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Game, name, value)
     __swig_getmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, ThreadSystem, GameInfo]:
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Game, name)
     __repr__ = _swig_repr

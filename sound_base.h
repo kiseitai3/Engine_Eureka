@@ -26,7 +26,7 @@ public:
 
     void PutNum2(long num,int endianness,int bytes);
     void WriteWav(FILE *f, long int bytes);
-    unsigned char WriteWav(unsigned char* buffer, long int bytes);
+    unsigned char* WriteWav(unsigned char* buffer, size_t bytes);
     typedef struct  wavHeaderInfo
     {
         char                RIFF[4];        /* RIFF Header      */ //Magic header
@@ -48,13 +48,14 @@ public:
     /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
     This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
     void Load_Sound (const char* source);
-    bool Load_SoundFromBuffer(unsigned char* buffer);
+    bool Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool isEffect, bool headerlessWav);
     void Play(int loops = 0);
     void Pause();
     void Stop();
     bool isPlaying() const;
     bool PlayEffect(int soundLoops);
     bool isLoopingEffect() const;
+    bool isEffectPlaying() const;
     void FadeOut(int ms);
     void FadeIn(int ms);
     void SetVol(int volume);
@@ -81,7 +82,7 @@ private:
     void addBuff_String(std::string input, int index);
 };
 static void PutNum(long num,FILE *f,int endianness,int bytes);
-
+void strcpyn(char* dest, const char* src, size_t bytes, size_t start = 0);
 //End of namespace macro
 //ENGINE_NAMESPACE_END
 #endif // SOUND_BASE_H_INCLUDED

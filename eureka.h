@@ -11,6 +11,7 @@
 #include "layersystem.h"
 #include "rand_generators.h"
 #include "soundqueue.h"
+#include "videoplayer.h"
 #include "game.h"
 
 

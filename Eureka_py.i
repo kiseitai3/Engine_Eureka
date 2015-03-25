@@ -36,6 +36,7 @@
 #include "uimanager.h"
 #include "level.h"
 #include "soundqueue.h"
+#include "videoplayer.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -68,4 +69,5 @@
 %include "uimanager.h"
 %include "level.h"
 %include "soundqueue.h"
+%include "videoplayer.h"
 %include "game.h"

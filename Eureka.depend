@@ -20316,7 +20316,7 @@
 1401721588 c:\mingw\msys\1.0\local\include\boost\config\no_tr1\utility.hpp
 	<utility>
 
-1408853660 c:\mingw\msys\1.0\local\include\boost\utility
+1427243074 c:\mingw\msys\1.0\local\include\boost\utility
 
 1401721588 c:\mingw\msys\1.0\local\include\boost\config\stdlib\stlport.hpp
 	<cstddef>
@@ -20325,7 +20325,7 @@
 	<string.h>
 	<algorithm>
 
-1408853441 c:\mingw\msys\1.0\local\include\boost\algorithm
+1427242906 c:\mingw\msys\1.0\local\include\boost\algorithm
 
 1401721588 c:\mingw\msys\1.0\local\include\boost\config\stdlib\libcomo.hpp
 	<boost/config/no_tr1/utility.hpp>
@@ -20363,7 +20363,7 @@
 	<exception>
 	<typeinfo>
 
-1408853472 c:\mingw\msys\1.0\local\include\boost\exception
+1427242928 c:\mingw\msys\1.0\local\include\boost\exception
 
 1401721588 c:\mingw\msys\1.0\local\include\boost\config\select_platform_config.hpp
 	<boost/config/posix_features.hpp>
@@ -21641,12 +21641,12 @@
 	"boost/config.hpp"
 	"boost/assert.hpp"
 
-1394237976 c:\mingw\msys\1.0\local\include\boost\assert.hpp
+1394234376 c:\mingw\msys\1.0\local\include\boost\assert.hpp
 	<boost/config.hpp>
 	<boost/current_function.hpp>
 	<assert.h>
 
-1394237976 c:\mingw\msys\1.0\local\include\boost\current_function.hpp
+1394234376 c:\mingw\msys\1.0\local\include\boost\current_function.hpp
 
 1403713585 c:\mingw\msys\1.0\local\include\boost\variant\detail\enable_recursive_fwd.hpp
 	"boost/mpl/aux_/config/ctps.hpp"
@@ -21744,9 +21744,9 @@
 	"boost/detail/workaround.hpp"
 	"boost/move/move.hpp"
 
-1408853554 c:\mingw\msys\1.0\local\include\boost\iterator
+1427242983 c:\mingw\msys\1.0\local\include\boost\iterator
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\move.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\move.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<boost/move/iterator.hpp>
@@ -21754,10 +21754,10 @@
 	<boost/move/algorithm.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\detail\config_begin.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\detail\config_begin.hpp
 	<boost/config.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\utility.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\utility.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/core.hpp>
 	<boost/move/detail/meta_utils.hpp>
@@ -21765,25 +21765,25 @@
 	<boost/type_traits/remove_reference.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\core.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\core.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/detail/meta_utils.hpp>
 	<boost/move/detail/meta_utils.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\detail\meta_utils.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\detail\meta_utils.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/detail/config_end.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\detail\config_end.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\detail\config_end.hpp
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\iterator.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\iterator.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<iterator>
 	<boost/move/detail/config_end.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\traits.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\traits.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/type_traits/has_trivial_destructor.hpp>
 	<boost/type_traits/is_nothrow_move_constructible.hpp>
@@ -21879,7 +21879,7 @@
 	<boost/type_traits/detail/bool_trait_def.hpp>
 	<boost/type_traits/detail/bool_trait_undef.hpp>
 
-1393230648 c:\mingw\msys\1.0\local\include\boost\move\algorithm.hpp
+1393227048 c:\mingw\msys\1.0\local\include\boost\move\algorithm.hpp
 	<boost/move/detail/config_begin.hpp>
 	<boost/move/utility.hpp>
 	<boost/move/iterator.hpp>
@@ -23741,7 +23741,7 @@
 	<stack>
 	"game.h"
 
-1426441044 c:\users\luis\documents\devcb\engine_eureka\game.h
+1427302329 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23777,7 +23777,7 @@
 	"Timer.h"
 	"typedefs.h"
 
-1426439354 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
+1427290487 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23971,7 +23971,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1426446881 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1427241465 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24011,6 +24011,7 @@
 	"uimanager.h"
 	"level.h"
 	"soundqueue.h"
+	"videoplayer.h"
 	"game.h"
 
 1425768967 c:\users\luis\documents\devcb\engine_eureka\trigger.h
@@ -24032,7 +24033,7 @@
 	"physics.h"
 	"input.h"
 
-1426446880 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1427241464 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -24065,6 +24066,7 @@
 	"uimanager.h"
 	"level.h"
 	"soundqueue.h"
+	"videoplayer.h"
 	"game.h"
 	<limits.h>
 	<ieeefp.h>
@@ -24125,7 +24127,7 @@
 	"luawrap.h"
 	"pywrap.h"
 
-1426439354 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
+1427158823 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -24149,7 +24151,7 @@
 1411089088 source:c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.cpp
 	"sqlkeywords.h"
 
-1425768966 source:c:\users\luis\documents\devcb\engine_eureka\textbox.cpp
+1427145349 source:c:\users\luis\documents\devcb\engine_eureka\textbox.cpp
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -27315,7 +27317,7 @@
 
 1422197389 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\random
 
-1426445873 c:\users\luis\documents\devcb\engine_eureka\eureka.h
+1427158791 c:\users\luis\documents\devcb\engine_eureka\eureka.h
 	"unitmanager.h"
 	"particlesystem.h"
 	"networking.h"
@@ -27329,6 +27331,7 @@
 	"layersystem.h"
 	"rand_generators.h"
 	"soundqueue.h"
+	"videoplayer.h"
 	"game.h"
 
 1426392194 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
@@ -27377,7 +27380,7 @@
 	"rand_generators.h"
 	"conversion.h"
 
-1426350700 source:c:\users\luis\documents\devcb\engine_eureka\unitmanager.cpp
+1426446831 source:c:\users\luis\documents\devcb\engine_eureka\unitmanager.cpp
 	"unitmanager.h"
 	"eureka.h"
 	"rand_generators.h"
@@ -27429,7 +27432,7 @@
 	"rand_generators.h"
 	"eureka.h"
 
-1426446869 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
+1427158570 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
 	"eureka.h"
 	"level.h"
 	<SDL_image.h>
@@ -27787,15 +27790,349 @@
 	<vector>
 	"../data_base.h"
 
-1426440852 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
+1427303616 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
 	<iostream>
 	<queue>
 	"typedefs.h"
 
-1426445941 source:c:\users\luis\documents\devcb\engine_eureka\soundqueue.cpp
+1427240325 source:c:\users\luis\documents\devcb\engine_eureka\soundqueue.cpp
 	"eureka.h"
 	"game.h"
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
+
+1427281602 c:\users\luis\documents\devcb\engine_eureka\videoplayer.h
+	<libavcodec/avcodec.h>
+	<libavformat/avformat.h>
+	<libswscale/swscale.h>
+	<SDL.h>
+	<queue>
+	"typedefs.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavcodec\avcodec.h
+	<errno.h>
+	"libavutil/samplefmt.h"
+	"libavutil/attributes.h"
+	"libavutil/avutil.h"
+	"libavutil/buffer.h"
+	"libavutil/cpu.h"
+	"libavutil/channel_layout.h"
+	"libavutil/dict.h"
+	"libavutil/frame.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"libavutil/rational.h"
+	"version.h"
+	"old_codec_ids.h"
+
+1426504905 c:\mingw\msys\1.0\local\include\libavutil\samplefmt.h
+	<stdint.h>
+	"avutil.h"
+	"attributes.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\avutil.h
+	"common.h"
+	"error.h"
+	"rational.h"
+	"version.h"
+	"macros.h"
+	"mathematics.h"
+	"log.h"
+	"pixfmt.h"
+
+1427159451 c:\mingw\msys\1.0\local\include\libavutil\common.h
+	<errno.h>
+	<inttypes.h>
+	<limits.h>
+	<math.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"attributes.h"
+	"version.h"
+	"libavutil/avconfig.h"
+	"config.h"
+	"intmath.h"
+	"common.h"
+	"mem.h"
+	"internal.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\attributes.h
+
+1426504905 c:\mingw\msys\1.0\local\include\libavutil\version.h
+	"macros.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\macros.h
+
+1426504905 c:\mingw\msys\1.0\local\include\libavutil\avconfig.h
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\mem.h
+	<limits.h>
+	<stdint.h>
+	"attributes.h"
+	"error.h"
+	"avutil.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\error.h
+	<errno.h>
+	<stddef.h>
+
+1426504905 c:\mingw\msys\1.0\local\include\libavutil\rational.h
+	<stdint.h>
+	<limits.h>
+	"attributes.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\mathematics.h
+	<stdint.h>
+	<math.h>
+	"attributes.h"
+	"rational.h"
+	"intfloat.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\intfloat.h
+	<stdint.h>
+	"attributes.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\log.h
+	<stdarg.h>
+	"avutil.h"
+	"attributes.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\pixfmt.h
+	"libavutil/avconfig.h"
+	"version.h"
+	"old_pix_fmts.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\old_pix_fmts.h
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\buffer.h
+	<stdint.h>
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\cpu.h
+	"attributes.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\channel_layout.h
+	<stdint.h>
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\dict.h
+	<stdint.h>
+	"version.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavutil\frame.h
+	<stdint.h>
+	"avutil.h"
+	"buffer.h"
+	"dict.h"
+	"rational.h"
+	"samplefmt.h"
+	"pixfmt.h"
+	"version.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavcodec\version.h
+	"libavutil/version.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libavcodec\old_codec_ids.h
+
+1426504903 c:\mingw\msys\1.0\local\include\libavformat\avformat.h
+	<time.h>
+	<stdio.h>
+	"libavcodec/avcodec.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"avio.h"
+	"libavformat/version.h"
+
+1426504903 c:\mingw\msys\1.0\local\include\libavformat\avio.h
+	<stdint.h>
+	"libavutil/common.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"libavformat/version.h"
+
+1426504903 c:\mingw\msys\1.0\local\include\libavformat\version.h
+	"libavutil/version.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libswscale\swscale.h
+	<stdint.h>
+	"libavutil/avutil.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"version.h"
+
+1426504904 c:\mingw\msys\1.0\local\include\libswscale\version.h
+	"libavutil/version.h"
+
+1427281377 source:c:\users\luis\documents\devcb\engine_eureka\videoplayer.cpp
+	"videoplayer.h"
+	"eureka.h"
+	<libavutil/common.h>
+	<libavutil/opt.h>
+	<libavformat/avformat.h>
+
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\avcodec.h
+	<errno.h>
+	"libavutil/samplefmt.h"
+	"libavutil/attributes.h"
+	"libavutil/avutil.h"
+	"libavutil/buffer.h"
+	"libavutil/cpu.h"
+	"libavutil/channel_layout.h"
+	"libavutil/dict.h"
+	"libavutil/frame.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"libavutil/rational.h"
+	"version.h"
+	"old_codec_ids.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\samplefmt.h
+	<stdint.h>
+	"avutil.h"
+	"attributes.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avutil.h
+	"common.h"
+	"error.h"
+	"rational.h"
+	"version.h"
+	"macros.h"
+	"mathematics.h"
+	"log.h"
+	"pixfmt.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\common.h
+	<errno.h>
+	<inttypes.h>
+	<limits.h>
+	<math.h>
+	<stdint.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"attributes.h"
+	"version.h"
+	"libavutil/avconfig.h"
+	"config.h"
+	"intmath.h"
+	"common.h"
+	"mem.h"
+	"internal.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\attributes.h
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\version.h
+	"macros.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\macros.h
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avconfig.h
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mem.h
+	<limits.h>
+	<stdint.h>
+	"attributes.h"
+	"error.h"
+	"avutil.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\error.h
+	<errno.h>
+	<stddef.h>
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mathematics.h
+	<stdint.h>
+	<math.h>
+	"attributes.h"
+	"rational.h"
+	"intfloat.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\rational.h
+	<stdint.h>
+	<limits.h>
+	"attributes.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\intfloat.h
+	<stdint.h>
+	"attributes.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\log.h
+	<stdarg.h>
+	"avutil.h"
+	"attributes.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\pixfmt.h
+	"libavutil/avconfig.h"
+	"version.h"
+	"old_pix_fmts.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\old_pix_fmts.h
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\buffer.h
+	<stdint.h>
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\cpu.h
+	"attributes.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\channel_layout.h
+	<stdint.h>
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\dict.h
+	<stdint.h>
+	"version.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\frame.h
+	<stdint.h>
+	"avutil.h"
+	"buffer.h"
+	"dict.h"
+	"rational.h"
+	"samplefmt.h"
+	"pixfmt.h"
+	"version.h"
+
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\version.h
+	"libavutil/version.h"
+
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\old_codec_ids.h
+
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avformat.h
+	<time.h>
+	<stdio.h>
+	"libavcodec/avcodec.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"avio.h"
+	"libavformat/version.h"
+
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avio.h
+	<stdint.h>
+	"libavutil/common.h"
+	"libavutil/dict.h"
+	"libavutil/log.h"
+	"libavformat/version.h"
+
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\version.h
+	"libavutil/version.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\swscale.h
+	<stdint.h>
+	"libavutil/avutil.h"
+	"libavutil/log.h"
+	"libavutil/pixfmt.h"
+	"version.h"
+
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\version.h
+	"libavutil/version.h"
+
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\opt.h
+	"rational.h"
+	"avutil.h"
+	"dict.h"
+	"log.h"
+	"pixfmt.h"
+	"samplefmt.h"
+	"version.h"
+
+1427243043 c:\mingw\msys\1.0\local\include\boost\random
 

@@ -17,7 +17,7 @@ public:
 
     //Setter
     void AddSoundToQueue(cstr soundFile, bool music = false);
-    void AddSoundBufferToQueue(cstr soundBuffer, bool music = false);
+    void AddSoundBufferToQueue(cstr soundBuffer, size_t size, bool isHeaderlessWav = true, bool music = false);
     void FlipMusic();
     void SetFadeInTime(size_t ms);
     void SetRangeOfEffects(int range);
@@ -28,8 +28,14 @@ public:
     void PlayMusicSound();
     void StopMusicSound();
 
+    //Maintenance
+    void GCSounds();
+    void ClearQueue();
+
+
 private:
     std::queue<sound_base*> sounds;
+    std::queue<sound_base*> trash;
     sound_base* playingSound;
     sound_base* musicSound;
     sound_base* backBuffer;
@@ -37,6 +43,9 @@ private:
     size_t fadeInT;
     int rangeEffects;
     Game* owner_ref;
+
+    //Methods
+    bool channelsBusy() const;
 };
 
 #endif // SOUNDQUEUE_H_INCLUDED

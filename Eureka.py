@@ -2373,6 +2373,12 @@ class SoundQueue(_object):
 
     def StopMusicSound(self):
         return _Eureka.SoundQueue_StopMusicSound(self)
+
+    def GCSounds(self):
+        return _Eureka.SoundQueue_GCSounds(self)
+
+    def ClearQueue(self):
+        return _Eureka.SoundQueue_ClearQueue(self)
 SoundQueue_swigregister = _Eureka.SoundQueue_swigregister
 SoundQueue_swigregister(SoundQueue)
 
@@ -2682,6 +2688,15 @@ class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIM
 
     def ReplaceHUD(self, file):
         return _Eureka.Game_ReplaceHUD(self, file)
+
+    def ShowVideoHUD(self):
+        return _Eureka.Game_ShowVideoHUD(self)
+
+    def HideVideoHUD(self):
+        return _Eureka.Game_HideVideoHUD(self)
+
+    def ReplaceVideoHUD(self, file):
+        return _Eureka.Game_ReplaceVideoHUD(self, file)
 Game_swigregister = _Eureka.Game_swigregister
 Game_swigregister(Game)
 Game.loadRate = _Eureka.cvar.Game_loadRate

@@ -77,9 +77,10 @@ void_ptr helperUpdateFunction(void_ptr game)
     while(!tmp->isEngineClosing())
     {
         tmp->UIUpdate();
-        tmp->UpdateTriggers(tmp->GetHeroID());
         if(tmp->isPlayingVideo())
             tmp->UpdateVideo();
+        else
+           tmp->UpdateTriggers(tmp->GetHeroID());
     }
     return NULL;
 }
@@ -393,7 +394,8 @@ void Game::playSounds()
     /*This method will play the sounds*/
     //First, play the level music or atmosphere track
     PlayMusicSound();//Game music
-    PlayUnitSounds();//Unit manager sounds
+    if(!isPlayingVideo())
+        PlayUnitSounds();//Unit manager sounds
     PlayNextSound();//Other sound effects
 }
 
@@ -432,10 +434,12 @@ void Game::run()
             if(isPlayingVideo())
                 UpdateVideo();
             //Process events
-            RunEvents();
+            if(!isPlayingVideo())
+                RunEvents();
             UIProcessEvents();
             //Run physics
-            runPhysics();
+            if(!isPlayingVideo())
+                runPhysics();
             //Run plugins
             RunAllFunctions();
             //Play sounds

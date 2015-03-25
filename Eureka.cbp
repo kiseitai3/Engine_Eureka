@@ -141,13 +141,12 @@
 					<Add library="Flags" />
 					<Add library="Unit" />
 					<Add library="Sound" />
-					<Add library="libavutil.dll" />
-					<Add library="libswscale" />
-					<Add library="libswresample" />
-					<Add library="libavformat" />
-					<Add library="libavfilter" />
-					<Add library="libavdevice" />
-					<Add library="libavcodec" />
+					<Add library="avutil" />
+					<Add library="swscale" />
+					<Add library="avformat" />
+					<Add library="avdevice" />
+					<Add library="avcodec" />
+					<Add directory="Dependencies/libFFmpeg/lib" />
 				</Linker>
 			</Target>
 			<Target title="Flags">

@@ -33421,6 +33421,48 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_SoundQueue_GCSounds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_GCSounds",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_GCSounds" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->GCSounds();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_ClearQueue(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_ClearQueue",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_ClearQueue" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->ClearQueue();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *SoundQueue_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -35511,6 +35553,81 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Game_ShowVideoHUD(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_ShowVideoHUD",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_ShowVideoHUD" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->ShowVideoHUD();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_HideVideoHUD(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_HideVideoHUD",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_HideVideoHUD" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->HideVideoHUD();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_ReplaceVideoHUD(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Game_ReplaceVideoHUD",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_ReplaceVideoHUD" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Game_ReplaceVideoHUD" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  (arg1)->ReplaceVideoHUD(arg2);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
 SWIGINTERN int Swig_var_Game_loadRate_set(PyObject *) {
   SWIG_Error(SWIG_AttributeError,"Variable Game_loadRate is read-only.");
   return 1;
@@ -36318,6 +36435,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SoundQueue_UpdateMusicAroundHero", _wrap_SoundQueue_UpdateMusicAroundHero, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_PlayMusicSound", _wrap_SoundQueue_PlayMusicSound, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_StopMusicSound", _wrap_SoundQueue_StopMusicSound, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_GCSounds", _wrap_SoundQueue_GCSounds, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_ClearQueue", _wrap_SoundQueue_ClearQueue, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_swigregister", SoundQueue_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SynchData_pts_set", _wrap_SynchData_pts_set, METH_VARARGS, NULL},
 	 { (char *)"SynchData_pts_get", _wrap_SynchData_pts_get, METH_VARARGS, NULL},
@@ -36403,6 +36522,9 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Game_ShowHUD", _wrap_Game_ShowHUD, METH_VARARGS, NULL},
 	 { (char *)"Game_HideHUD", _wrap_Game_HideHUD, METH_VARARGS, NULL},
 	 { (char *)"Game_ReplaceHUD", _wrap_Game_ReplaceHUD, METH_VARARGS, NULL},
+	 { (char *)"Game_ShowVideoHUD", _wrap_Game_ShowVideoHUD, METH_VARARGS, NULL},
+	 { (char *)"Game_HideVideoHUD", _wrap_Game_HideVideoHUD, METH_VARARGS, NULL},
+	 { (char *)"Game_ReplaceVideoHUD", _wrap_Game_ReplaceVideoHUD, METH_VARARGS, NULL},
 	 { (char *)"Game_swigregister", Game_swigregister, METH_VARARGS, NULL},
 	 { (char *)"helperDrawFunction", _wrap_helperDrawFunction, METH_VARARGS, NULL},
 	 { (char *)"helperSoundFunction", _wrap_helperSoundFunction, METH_VARARGS, NULL},

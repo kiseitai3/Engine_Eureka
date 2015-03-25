@@ -29820,6 +29820,52 @@ fail:
 }
 
 
+static int _wrap_SoundQueue_GCSounds(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::GCSounds",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::GCSounds",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_GCSounds",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->GCSounds();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_ClearQueue(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::ClearQueue",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::ClearQueue",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_ClearQueue",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->ClearQueue();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_SoundQueue(void *obj) {
 SoundQueue *arg1 = (SoundQueue *) obj;
 delete arg1;
@@ -29845,6 +29891,8 @@ static swig_lua_method swig_SoundQueue_methods[]= {
     { "UpdateMusicAroundHero", _wrap_SoundQueue_UpdateMusicAroundHero},
     { "PlayMusicSound", _wrap_SoundQueue_PlayMusicSound},
     { "StopMusicSound", _wrap_SoundQueue_StopMusicSound},
+    { "GCSounds", _wrap_SoundQueue_GCSounds},
+    { "ClearQueue", _wrap_SoundQueue_ClearQueue},
     {0,0}
 };
 static swig_lua_method swig_SoundQueue_meta[] = {
@@ -32024,6 +32072,78 @@ fail:
 }
 
 
+static int _wrap_Game_ShowVideoHUD(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  
+  SWIG_check_num_args("Game::ShowVideoHUD",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::ShowVideoHUD",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_ShowVideoHUD",1,SWIGTYPE_p_Game);
+  }
+  
+  (arg1)->ShowVideoHUD();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Game_HideVideoHUD(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  
+  SWIG_check_num_args("Game::HideVideoHUD",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::HideVideoHUD",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_HideVideoHUD",1,SWIGTYPE_p_Game);
+  }
+  
+  (arg1)->HideVideoHUD();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Game_ReplaceVideoHUD(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  
+  SWIG_check_num_args("Game::ReplaceVideoHUD",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::ReplaceVideoHUD",1,"Game *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("Game::ReplaceVideoHUD",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_ReplaceVideoHUD",1,SWIGTYPE_p_Game);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  (arg1)->ReplaceVideoHUD(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Game_loadRate_get(lua_State* L) {
   int SWIG_arg = 0;
   size_t result;
@@ -32099,6 +32219,9 @@ static swig_lua_method swig_Game_methods[]= {
     { "ShowHUD", _wrap_Game_ShowHUD},
     { "HideHUD", _wrap_Game_HideHUD},
     { "ReplaceHUD", _wrap_Game_ReplaceHUD},
+    { "ShowVideoHUD", _wrap_Game_ShowVideoHUD},
+    { "HideVideoHUD", _wrap_Game_HideVideoHUD},
+    { "ReplaceVideoHUD", _wrap_Game_ReplaceVideoHUD},
     {0,0}
 };
 static swig_lua_method swig_Game_meta[] = {

@@ -45,14 +45,14 @@ size_t SQLiteWrap::query(const std::string& query)
     {
         err = sqlite3_prepare_v2(hDB, utf8.c_str(), utf8.size(), &stmt, &tail);
         //Let's log the result of the statement if an error has ocurred!
-        if(err)
+        if(isError(err))
         {
             log_error(err, hDB);
             return err;
         }
         //Let's query the database and save the results!
         err = stepThroughRow(stmt);
-        if(err)
+        if(isError(err))
         {
             log_error(err, hDB);
             return err;
@@ -60,14 +60,14 @@ size_t SQLiteWrap::query(const std::string& query)
 
         //Let's cleanup the statement
         err = sqlite3_finalize(stmt);
-        if(err)
+        if(isError(err))
         {
             log_error(err, hDB);
             return err;
         }
         res_by_statement.push(result.size());
         utf8 = tail;
-    }while(tail);//Keep processing the query until no statements are left!
+    }while(std::string(tail).size() > 0);//Keep processing the query until no statements are left!
 
     //Let's reverse the stack
     result = reverseStackOrder(result);
@@ -100,13 +100,15 @@ void SQLiteWrap::getResult(char& response, size_t col) const
 void SQLiteWrap::getResult(std::string& response, size_t col) const
 {
     fuzzy_obj tmp = result.top().GetResultFromCol(col);
-    if(tmp.flag == 's' || tmp.flag == 'l')//Check type
+    if(tmp.flag == 's')//Check type
     {
         response = tmp.str;
+        return;
     }
     else if(tmp.flag == 'l')//Check type
     {
         response = tmp.blob;
+        return;
     }
     response = "";
 }
@@ -131,7 +133,7 @@ void SQLiteWrap::getResult(double& response, size_t col) const
     response = std::string::npos;
 }
 
-std::vector<fuzzy_obj> SQLiteWrap::getResults() const
+std::vector<fuzzy_obj> SQLiteWrap::getResults()
 {
     size_t rowCount = res_by_statement.top() - rowsPopped;
     std::vector<fuzzy_obj> tmp;//Where we temporarily save the individual objects.
@@ -140,6 +142,7 @@ std::vector<fuzzy_obj> SQLiteWrap::getResults() const
         SQLiteRow row = result.top();
         tmp.reserve(tmp.size() + row.GetNumCol());
         tmp.insert(tmp.end(), row.GetFullRow().begin(), row.GetFullRow().end());
+        result.pop();
     }
     return tmp;
 }
@@ -173,7 +176,8 @@ size_t SQLiteWrap::saveResult(sqlite3_stmt* stmt)
         return SQLITE_ABORT;
 
     SQLiteRow row;
-    for(int i = 0; i < sqlite3_column_count(stmt); i++)
+    size_t count = sqlite3_column_count(stmt);
+    for(int i = 0; i < count; i++)
     {
         fuzzy_obj s_result;//Now, let's allocate memory for the result
         s_result.flag = 'n';
@@ -190,16 +194,20 @@ size_t SQLiteWrap::saveResult(sqlite3_stmt* stmt)
             s_result.flag = 'd';
             break;
         case SQLITE_TEXT:
-            s_result.str = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
+            s_result.str = (const char*)(sqlite3_column_text(stmt, i));
             s_result.flag = 's';
             break;
         case SQLITE_BLOB:
-            s_result.str = reinterpret_cast<const char*>(sqlite3_column_text(stmt, i));
+            s_result.blob = (const char*)sqlite3_column_text(stmt, i);
             s_result.flag = 'l';
+            break;
+        case SQLITE_NULL:
+            s_result.str = "End of SQLite row!";
+            s_result.flag = 's';
             break;
         default:
             std::cerr << "Error: The SQLite interface received an unexpected data type code from the SQLite engine!"
-                    << std::endl;
+                    << " Type requested: " << sqlite3_column_type(stmt, i) << std::endl;
         }
         //Now, we add the result to the row.
         row.insertCol(s_result);
@@ -224,19 +232,19 @@ size_t SQLiteWrap::stepThroughRow(sqlite3_stmt* stmt)
     if(!stmt)
         return SQLITE_ABORT;
 
-    size_t err = 0;
-    do
+    size_t err = sqlite3_step(stmt);
+    while(err == SQLITE_ROW)
     {
-        //Step through each row and log any errors
-        err = sqlite3_step(stmt);
-        if(err)
+        if(isError(err))
         {
             log_error(err, hDB);
             return err;
         }
         //Let's save the returned data!
         saveResult(stmt);
-    }while(err == SQLITE_ROW);
+        //Step through each row and log any errors
+        err = sqlite3_step(stmt);
+    }
     return err;
 }
 
@@ -252,6 +260,43 @@ bool SQLiteWrap::isSQLiteDB(const char* file)
 
     sqlite3_close(DB);//Close the database
     return false;
+}
+
+bool SQLiteWrap::isError(size_t err) const
+{
+    if(err >= SQLITE_ROW || err == SQLITE_OK)
+        return false;
+    return true;
+}
+
+void SQLiteWrap::printRows()
+{
+    while(!result.empty())
+    {
+        SQLiteRow row = result.top();
+        for(size_t i = 0; i < row.GetNumCol(); i++)
+        {
+            fuzzy_obj tmp = row.GetResultFromCol(i);
+            std::cout << "Result type: " << tmp.flag << std::endl;
+            switch(tmp.flag)
+            {
+            case 's':
+                std::cout << "Result data: " << tmp.str << std::endl;
+                break;
+            case 'i':
+                std::cout << "Result data: " << tmp.number << std::endl;
+                break;
+            case 'd':
+                std::cout << "Result data: " << tmp.decimal << std::endl;
+                break;
+            case 'l':
+                std::cout << "Result data: " << tmp.blob << std::endl;
+                break;
+            }
+        }
+
+        result.pop();
+    }
 }
 
 SQLiteWrap::~SQLiteWrap()

@@ -1,27 +1,32 @@
-/*
-    Copyright (C) 2014 Luis M. Santos
-    Contact: luismigue1234@hotmail.com
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with This program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 #include "sqlkeywords.h"
 
-const std::string SQLGenerator::WILDCARD = "*";
+const std::string SQLGenerator::WILDCARD = "* ";
 
-std::string SQLGenerator::prepareStatement(const std::string& table, const std::string& columns, const std::string& criteria, const std::string& pattern, const std::string& pattern2, size_t statementType)
+std::string SQLGenerator::prepareStatement(std::string table, std::string columns, std::string criteria, std::string pattern, std::string pattern2, size_t statementType)
 {
     std::string query;
+    /*Let's make sure each field/ parameter has a space at the end. SQL databases are sensitive to white space!*/
+    if(table[table.size()-1] != ' ')
+    {
+        table += " ";
+    }
+    if(columns[columns.size()-1] != ' ')
+    {
+        columns += " ";
+    }
+    if(criteria[criteria.size()-1] != ' ')
+    {
+        criteria += " ";
+    }
+    if(pattern[pattern.size()-1] != ' ')
+    {
+        pattern += " ";
+    }
+    if(pattern2[pattern2.size()-1] != ' ')
+    {
+        pattern2 += " ";
+    }
+    /*With that check out of the way, we can start producing the query!*/
     switch(statementType)
     {
     /*SELECT column_name,column_name FROM table_name; */
@@ -97,7 +102,7 @@ std::string SQLGenerator::prepareStatement(const std::string& table, const std::
     case INSERT:
     case INSERT | INTO:
     case INSERT | INTO | VALUES:
-        query = Keywords[INSERT] + Keywords[INTO] + table + "(" + columns + ")" + Keywords[VALUES] + criteria;
+        query = Keywords[INSERT] + Keywords[INTO] + table + "(" + columns + ")" + Keywords[VALUES] + "(" + criteria + ")";
         break;
     /*UPDATE table_name
     SET column1=value1,column2=value2,...

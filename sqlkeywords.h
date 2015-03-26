@@ -1,20 +1,3 @@
-/*
-    Copyright (C) 2014 Luis M. Santos
-    Contact: luismigue1234@hotmail.com
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with This program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 #ifndef SQLKEYWORDS_H_INCLUDED
 #define SQLKEYWORDS_H_INCLUDED
 
@@ -36,8 +19,6 @@ in the generator multiple keywords in the format x|y|z. Thus, the SQL statement 
 whether statementType = SELECT | FROM. Since this is a binary OR evaluation, you obtain a value that is a merged version of
 SELECT and FROM binary values! :D
 */
-#undef DELETE
-#undef IN
 enum StatementTypes
 {
     CREATETABLE =   0x0001,
@@ -75,6 +56,7 @@ enum StatementTypes
     INTO_SELECT =   INTO | SELECT | CALL,
     UNION =         AS | LIKE | INTO,
 };
+
 /*The following map is used by the generators to quickly generate the query statement while using as little memory as
 possible. In other words, the compiler doesn't have to add assembly code every time I write SELECT in the switch statement.
 The program doesn't have to allocate memory for each SELECT either! The users can also use this map in their custom
@@ -113,12 +95,8 @@ static std::map<word, std::string> Keywords{
 
 typedef struct SQLGenerator//SQL Query Generator. It's a nice helping structure!
 {
-    enum DataTypes
-    {
-        INT, DOUBLE, BOOL, STRING, CHAR,
-    };
     static const std::string WILDCARD;
-    std::string prepareStatement(const std::string& table, const std::string& columns = WILDCARD, const std::string& criteria = WILDCARD, const std::string& pattern = WILDCARD, const std::string& pattern2 = WILDCARD, size_t statementType = SELECT);
+    std::string prepareStatement(std::string table = WILDCARD, std::string columns = WILDCARD, std::string criteria = WILDCARD, std::string pattern = WILDCARD, std::string pattern2 = WILDCARD, size_t statementType = SELECT);
 }SQLQuery;
 
 #endif // SQLKEYWORDS_H_INCLUDED

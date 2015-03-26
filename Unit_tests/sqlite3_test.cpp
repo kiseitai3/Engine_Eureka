@@ -6,25 +6,22 @@ int main()
 {
     int res;
 
+    SQLiteWrap db("save");
 
-    /*Database test*/
-    h2fax::cstr database = "avantfax_test\0";
-    h2fax::cstr host = "localhost\0";
-    h2fax::cstr password = "\0";//Add your own MySQL/WAMP/LAMP account info
-    h2fax::cstr username = "\0";
-
-    std::cout << "Connecting to database: " << database << " with username " << username << " and password:"
-        << password << "." << std::endl;
-    MySQL db(database, username, password, host);
-
-    std::string query = db.prepareStatement("UserAccount", "email", "username='kiseitai2'","","",SELECT|WHERE);
-    std::cout << "Status: " << db.getStatus() << std::endl;
+    std::cout << "Is the database a valid SQLite3 database? " << std::endl;
+    std::cout << (SQLiteWrap::isSQLiteDB("save") ? "Yes" : "No") << std::endl;
+    std::cout << "Connecting to database..." << std::endl;
+    std::string query = db.prepareStatement("UserAccount", "email", "username='pandora'","","",SELECT|WHERE);
     std::cout << "Query: " << query << std::endl;
     std::string email;
     std::cout << "Querying database!" << std::endl;
-    db.queryDB(query);
+    db.query(query);
+    std::cout << "Printing contents!" << std::endl;
+    db.printRows();
+    std::cout << "Querying database!" << std::endl;
+    db.query(query);
     std::cout << "Obtaining results!" << std::endl;
-    db.getResult(email, 1);
+    db.getResult(email, 0);
     std::cout << "Email: " << email << std::endl;
     std::cin >> res;
     return 0;

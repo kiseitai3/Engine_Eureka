@@ -31,7 +31,7 @@ public:
     void getResult(std::string& response, size_t col) const;
     void getResult(bool& response, size_t col) const;
     void getResult(double& response, size_t col) const;
-    std::vector<fuzzy_obj> getResults() const;
+    std::vector<fuzzy_obj> getResults();
     size_t getColCount();
     //Clearing methods
     void popRow();
@@ -39,6 +39,10 @@ public:
     void ClearResults();
     /*Ask for the validity of a database file!*/
     static bool isSQLiteDB(const char* file);
+    //Getters
+    bool isError(size_t err) const;
+    //Debugging
+    void printRows();
     ~SQLiteWrap();
 private:
     sqlite3 *hDB; //Database handle!

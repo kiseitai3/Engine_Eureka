@@ -23933,13 +23933,13 @@
 	"resultset.h"
 	<string>
 
-1426369904 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
+1427326412 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
 	<string>
 	<map>
 	<iostream>
 	"typedefs.h"
 
-1425768967 c:\users\luis\documents\devcb\engine_eureka\sqlitewrap.h
+1427331735 c:\users\luis\documents\devcb\engine_eureka\sqlitewrap.h
 	<sqlite3.h>
 	<iostream>
 	<string>
@@ -24127,7 +24127,7 @@
 	"luawrap.h"
 	"pywrap.h"
 
-1427158823 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
+1427290487 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -24144,11 +24144,11 @@
 1425768967 source:c:\users\luis\documents\devcb\engine_eureka\sqlite_row.cpp
 	"sqlite_row.h"
 
-1425768967 source:c:\users\luis\documents\devcb\engine_eureka\sqlitewrap.cpp
+1427368224 source:c:\users\luis\documents\devcb\engine_eureka\sqlitewrap.cpp
 	"sqlitewrap.h"
 	"conversion.h"
 
-1411089088 source:c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.cpp
+1420518233 source:c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.cpp
 	"sqlkeywords.h"
 
 1427145349 source:c:\users\luis\documents\devcb\engine_eureka\textbox.cpp
@@ -28135,4 +28135,14 @@
 	"version.h"
 
 1427243043 c:\mingw\msys\1.0\local\include\boost\random
+
+1427334717 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\sqlite3_test.cpp
+	<iostream>
+	<string>
+	"../sqlitewrap.h"
+
+1376156543 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
 

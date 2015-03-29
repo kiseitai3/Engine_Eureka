@@ -42,5 +42,10 @@ size_t GetMaxValueSizeT()
     return 0-1;
 }
 
+void printHello()
+{
+    std::cout << "Hello World!" << std::endl;
+}
+
 //End of namespace macro
 //ENGINE_NAMESPACE_END

@@ -4,6 +4,7 @@
 #include <Python.h>
 #include <string>
 #include <vector>
+#include <queue>
 #include "typedefs.h"
 
 //class
@@ -14,13 +15,12 @@ class Pywrap
     PyObject *module, *name_space, *dict, *func;
     PyObject *args, *value, *result;
     PyGILState_STATE gstate;
-    unsigned int sizeT;
-    size_t index;
     std::string path;
+    std::queue<fuzzy_obj> argQueue;
     bool fileLoaded;
     static bool initialized;
     //methods
-
+    void prepArgs();
 
     public:
         //methods
@@ -50,7 +50,6 @@ class Pywrap
     void AddArgument (std::string argument);
     void AddArgument (char argument);
     void AddArgument (double argument);
-    void AddArgument (PyObject *argument);
     void AddArgument(unsigned int argument);
     void AddArgument (void_ptr argument);
 

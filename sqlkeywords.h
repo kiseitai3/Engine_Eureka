@@ -19,6 +19,9 @@ in the generator multiple keywords in the format x|y|z. Thus, the SQL statement 
 whether statementType = SELECT | FROM. Since this is a binary OR evaluation, you obtain a value that is a merged version of
 SELECT and FROM binary values! :D
 */
+//To guard against defined macros
+#undef DELETE
+#undef IN
 enum StatementTypes
 {
     CREATETABLE =   0x0001,

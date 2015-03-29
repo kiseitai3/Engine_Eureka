@@ -34,6 +34,5 @@ bool Game::isMultithreaded() const
 {
     return multithreaded;
 }
-
 //End of namespace macro
 //ENGINE_NAMESPACE_END

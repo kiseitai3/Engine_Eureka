@@ -14,6 +14,12 @@ size_t randBinomial(Range limits = Range());//Generates random numbers using the
 size_t randNormal(Range limits = Range());//Generates random numbers using the bellshape distribution and a defined range.
 size_t GetMaxValueSizeT();
 
+/*The following is for testing purposes only*/
+extern "C"
+{
+    void printHello();
+}
+
 //End of namespace macro
 //ENGINE_NAMESPACE_END
 #endif // RAND_GENERATORS_H_INCLUDED

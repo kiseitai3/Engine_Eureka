@@ -27,6 +27,7 @@ void Pywrap::SetFilePath(const char* file)
 
 Pywrap::Pywrap(const char* file, unsigned int arg_size)
 {
+    std::string File;
     if(!initialized)
     {
         Py_Initialize();//Initialize the thread
@@ -38,10 +39,10 @@ Pywrap::Pywrap(const char* file, unsigned int arg_size)
     {
         if(findString(".py",file)>= 0)
         {
-            file = sliceStr(file,0,std::string(file).size() - 3).c_str();
+            File = sliceStr(file,0,std::string(file).size() - 3).c_str();
         }
-        SetFilePath(file);
-        name_space = PyString_FromString(file);
+        SetFilePath(File.c_str());
+        name_space = PyString_FromString(File.c_str());
         module = PyImport_Import(name_space);
         PyErr_Print();//get error output if import fails :).
         Py_DECREF(name_space);
@@ -52,8 +53,6 @@ Pywrap::Pywrap(const char* file, unsigned int arg_size)
         fileLoaded = false;
     }
     args = PyTuple_New(arg_size);
-    sizeT = arg_size;
-    index = 0;
 }
 
 bool Pywrap::isFileLoaded() const
@@ -148,9 +147,9 @@ void Pywrap::executeNoReturnF(const char* funcName)//all arguments that will be 
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
     {
-        if(PyTuple_GET_SIZE(args) < 1)
+        if(!(PyTuple_GET_SIZE(args) == 0))
         {
-            std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
+            std::cout<<"Arguments were passed to this method. They will be ignored!" << std::endl;
         }
         PyObject_CallObject(func, args);//Execute function.
     }
@@ -179,9 +178,9 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
     PyErr_Print();//get error output if import fails :).
     if (funcI && PyCallable_Check(funcI))
     {
-        if(PyTuple_GET_SIZE(args) < 1)
+        if(!(PyTuple_GET_SIZE(args) == 0))
         {
-            std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
+            std::cout<<"Arguments were passed to this method. They will be ignored!" << std::endl;
         }
         result = PyObject_CallObject(funcI, argsI);//save the reference inside this class' object so we don't lose it for when we have to decrease its reference count. :)
         //Always remember to do some cleanup.
@@ -190,9 +189,10 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
         Py_CLEAR(argsI);
         //return our internal reference. The final cleanup has to be done elsewhere. I assume in this function that
         //I can overwrite our internal copy of the pointer because the cleanup will occur at the caller side.
+        //Let's make sure other threads can use the interpreter
+        ReleaseInterpreter();
         return result;
     }
-
     //Let's make sure other threads can use the interpreter
     ReleaseInterpreter();
     return 0;
@@ -206,8 +206,6 @@ void Pywrap::ClearArgs(unsigned arg_size)
     CleanCPyObjInArgs();
     Py_CLEAR(args);//Make sure the previous object had its reference count lowered (and hopefully the object was deleted altogether)
     args = PyTuple_New(arg_size);
-    sizeT = arg_size;
-    index = 0;
 }
 
 void Pywrap::IncreaseRef(PyObject *obj)
@@ -217,12 +215,16 @@ void Pywrap::IncreaseRef(PyObject *obj)
 
 PyObject *Pywrap::executeReturnF(const char* funcName)
 {
-    /*Like executeNoReturnF, this method extracts a function from the loaded python module and calls it thanks to the
-    defined () operator in boost. However, I return the resulting boost py object since it contains the results of the
-    function.*/
+    /*Like executeNoReturnF, this method extracts a function from the loaded python module and calls it.*/
     //Let's guard this Py call!
     LockInterpreter();
     //Prepare for execution
+    if(func)
+    {
+        PyObject_Free(func);
+        func = NULL;
+    }
+    prepArgs();
     func =  PyObject_GetAttrString(module, funcName);
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
@@ -232,8 +234,13 @@ PyObject *Pywrap::executeReturnF(const char* funcName)
             std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
         }
         value = PyObject_CallObject(func, args);//Execute function
+        ClearArgs(0);
+        DecreaseRef(func);//Small cleanup.
+        //Let's make sure other threads can use the interpreter
+        ReleaseInterpreter();
         return value;
     }
+    ClearArgs(0);
     //Let's make sure other threads can use the interpreter
     ReleaseInterpreter();
     return func;
@@ -303,7 +310,7 @@ Pywrap::~Pywrap()
 
 unsigned int Pywrap::GetSizeOfArgs() const
 {
-    return sizeT;
+    return argQueue.size();
 }
 
 PyObject *Pywrap::CreateObjFromPtr(void_ptr classT)
@@ -322,46 +329,91 @@ void Pywrap::CleanCPyObjInArgs()
         }
     }
 }
+
+void Pywrap::prepArgs()
+{
+    size_t index = 0;
+    //Create a new tupple for arguments
+    ClearArgs(argQueue.size());
+    //Now, I start adding args
+    while(!argQueue.empty())
+    {
+        fuzzy_obj tmp = argQueue.front();
+        switch(tmp.flag)
+        {
+        case 'i':
+            PyTuple_SetItem(args, index, PyInt_FromLong(tmp.number));
+            break;
+        case 'd':
+            PyTuple_SetItem(args, index, PyFloat_FromDouble(tmp.decimal));
+            break;
+        case 'u':
+            PyTuple_SetItem(args, index, PyInt_FromSize_t(tmp.uNumber));
+            break;
+        case 'c':
+            PyTuple_SetItem(args, index, PyString_FromString(&tmp.c));
+            break;
+        case 's':
+            PyTuple_SetItem(args, index, PyString_FromString(tmp.str.c_str()));
+            break;
+        case 'v':
+            PyTuple_SetItem(args, index, CreateObjFromPtr(tmp.ptr));
+            break;
+        default:
+            std::cerr << "Python: Type not recognized!" << std::endl;
+        }
+        argQueue.pop();
+        index++;
+    }
+}
+
 //Overloads
 void Pywrap::AddArgument (int argument)
 {
-    PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
-    index++;
+    fuzzy_obj tmp;
+    tmp.flag = 'i';
+    tmp.number = argument;
+    argQueue.push(tmp);
 }
 
 void Pywrap::AddArgument (unsigned int argument)
 {
-    PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
-    index++;
+    fuzzy_obj tmp;
+    tmp.flag = 'u';
+    tmp.uNumber = argument;
+    argQueue.push(tmp);
 }
 
 void Pywrap::AddArgument (std::string argument)
 {
-    PyTuple_SetItem(args, index, PyString_FromString(argument.c_str()));
-    index++;
+    fuzzy_obj tmp;
+    tmp.flag = 's';
+    tmp.str = argument;
+    argQueue.push(tmp);
 }
 
 void Pywrap::AddArgument (char argument)
 {
-    PyTuple_SetItem(args, index, PyString_FromString(&argument));
-    index++;
+    fuzzy_obj tmp;
+    tmp.flag = 'c';
+    tmp.c = argument;
+    argQueue.push(tmp);
 }
 
 void Pywrap::AddArgument (double argument)
 {
-    PyTuple_SetItem(args, index, PyFloat_FromDouble(argument));
-    index++;
-}
-
-void Pywrap::AddArgument (PyObject *argument)
-{
-    PyTuple_SetItem(args, index, argument);
-    index++;
+    fuzzy_obj tmp;
+    tmp.flag = 'd';
+    tmp.decimal = argument;
+    argQueue.push(tmp);
 }
 
 void Pywrap::AddArgument(void_ptr argument)
 {
-    AddArgument(CreateObjFromPtr(argument));
+    fuzzy_obj tmp;
+    tmp.flag = 'v';
+    tmp.ptr = argument;
+    argQueue.push(tmp);
 }
 //Py Conversion Functions with overloads
 int Pywrap::py_extractInt(PyObject *results) const

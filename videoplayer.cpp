@@ -198,6 +198,10 @@ void VideoPlayer::PlayVideo()
     owner_ref->LockMutex(mutex_vid_id);
     //Let's prep the sound queue
     owner_ref->ClearQueue();
+    //Prep the sound
+    Mix_CloseAudio();
+    SDL_Delay(20);
+    Mix_OpenAudio(pSoundCtx->sample_rate, MIX_DEFAULT_FORMAT, pSoundCtx->channels, owner_ref->GetSoundChunkSize());
     vidPlaying = true;
     if(owner_ref->isTimerPaused(timer_id))
         owner_ref->UnpauseTimer(timer_id);
@@ -471,6 +475,10 @@ void VideoPlayer::StopVideo()
     //Lock mutex
     owner_ref->LockMutex(mutex_vid_id);
     vidPlaying = false;
+    //Restore the sound settings to the game's original
+    Mix_CloseAudio();
+    SDL_Delay(20);
+    Mix_OpenAudio(owner_ref->GetSoundFrequency(), MIX_DEFAULT_FORMAT, owner_ref->GetSoundChannels(), owner_ref->GetSoundChunkSize());
     owner_ref->PauseTimer(timer_id);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_vid_id);

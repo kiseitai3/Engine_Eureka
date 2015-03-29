@@ -226,11 +226,6 @@ class SQLQuery(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, SQLQuery, name)
     __repr__ = _swig_repr
-    INT = _Eureka.SQLQuery_INT
-    DOUBLE = _Eureka.SQLQuery_DOUBLE
-    BOOL = _Eureka.SQLQuery_BOOL
-    STRING = _Eureka.SQLQuery_STRING
-    CHAR = _Eureka.SQLQuery_CHAR
 
     def prepareStatement(self, *args):
         return _Eureka.SQLQuery_prepareStatement(self, *args)

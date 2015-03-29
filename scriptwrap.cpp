@@ -22,19 +22,19 @@ ScriptWrap::ScriptWrap(cstr file)
 
     //Let's decide the kind of file we have to load and therefore the scripting mode!
     //The scripting mode is a flag to decide whether to execute the Pywrap or LuaWrap APIs.
-    if(File.rfind(".lua") || File.rfind(".luo"))
+    if(File.rfind(".lua") < File.size() || File.rfind(".luo") < File.size())
         scriptMode = LUA;
-    else if(File.rfind(".py") || File.rfind(".pyc"))
+    else if(File.rfind(".py")  < File.size()|| File.rfind(".pyc") < File.size())
         scriptMode = PYTHON;
 
     //Now, let's load the correct script object based on the scripting mode!
     switch(scriptMode)
     {
     case LUA:
-        luaScript = new LuaWrap(file);
+        luaScript = new LuaWrap(File.c_str());
         break;
     case PYTHON:
-        pyScript = new Pywrap(file);
+        pyScript = new Pywrap(File.c_str());
         break;
     default:
         //Throw an error to cout for later reference!
@@ -205,7 +205,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractInt(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractInt();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -305,7 +308,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractDouble(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractDouble();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -403,7 +409,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractChar(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractChar();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -501,7 +510,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractBool(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractBool();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -599,7 +611,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractStr(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractStr();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -699,7 +714,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
-            response = luaScript->lua_extractPtr(luaScript->GetInternalState());
+        {
+            response = luaScript->lua_extractPtr();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -799,7 +817,10 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name.c_str()))
+        {
             response = luaScript->GenerateListFromLuaTable();
+            break;
+        }
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;

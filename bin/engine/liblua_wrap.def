@@ -19,14 +19,14 @@ EXPORTS
     _ZN7LuaWrapD2Ev @18
     _ZNK7LuaWrap12isResultVoidEv @19
     _ZNK7LuaWrap13GetResultSizeEv @20
-    _ZNK7LuaWrap13GetResultTypeEP9lua_State @21
-    _ZNK7LuaWrap14lua_extractIntEP9lua_State @22
-    _ZNK7LuaWrap14lua_extractPtrEP9lua_State @23
-    _ZNK7LuaWrap14lua_extractStrEP9lua_State @24
-    _ZNK7LuaWrap15lua_extractBoolEP9lua_State @25
-    _ZNK7LuaWrap15lua_extractCharEP9lua_State @26
+    _ZNK7LuaWrap13GetResultTypeEv @21
+    _ZNK7LuaWrap14lua_extractIntEv @22
+    _ZNK7LuaWrap14lua_extractPtrEv @23
+    _ZNK7LuaWrap14lua_extractStrEv @24
+    _ZNK7LuaWrap15lua_extractBoolEv @25
+    _ZNK7LuaWrap15lua_extractCharEv @26
     _ZNK7LuaWrap16GetInternalStateEv @27
-    _ZNK7LuaWrap17lua_extractDoubleEP9lua_State @28
+    _ZNK7LuaWrap17lua_extractDoubleEv @28
     luaL_addlstring @29
     luaL_addstring @30
     luaL_addvalue @31

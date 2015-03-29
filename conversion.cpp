@@ -201,11 +201,11 @@ std::string sliceStr(std::string input, int start, int end)
     /*This function takes a string and returns a slice from the start position to the desired end position*/
     char answer[end - start + 1];
     answer[end-start] = '\0'; //Append end of string character so the string is not misdisplayed or misused later on.
-    if(end < 0)
+    if(end <= 0)
     {
         return input;
     }
-    for(int i = 0; i<end-start; i++)
+    for(int i = 0; i<(end-start); i++)
     {
         answer[i] = input[i+start];
     }

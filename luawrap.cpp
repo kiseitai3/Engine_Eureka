@@ -14,11 +14,15 @@ LuaWrap::LuaWrap(const char* file)
     Lua = luaL_newstate();
     luaL_openlibs(Lua);
     //Let's open the file!
-    if(luaL_loadfile(Lua, file))
+    if(luaL_dofile(Lua, file))
     {
         std::cout << "Error loading Lua Script: " << file << std::endl;
     }
     path = file;
+
+    argStack = new std::queue<fuzzy_obj>;
+
+    hasResult = false;
 }
 
 
@@ -36,29 +40,36 @@ bool LuaWrap::executeFunction(const std::string& funcName)
 {
     size_t argCount = 0;
     int errStatus = 0;
+    int errindex = 0;
     if(hasResult)
     {
         ClearResult();
     }
 
     //Now, let's set the function!
-    lua_setglobal(Lua, funcName.c_str());
-    if(lua_isfunction(Lua, LUA_TOPITEM))
+    lua_getglobal(Lua, funcName.c_str());
+    if(!lua_isfunction(Lua, LUA_TOPITEM))
     {
-        std::cout << "Error attempting to run function: " << funcName <<". Check that the name is a valid Lua function in the current Engine Version!"
+        std::cout << "Error attempting to run function: " << funcName << " Lua stack size: " << lua_gettop(Lua)<<". Check that the name is a valid Lua function in the current Engine Version!"
                   << std::endl;
         return false;
     }
 
+    lua_getglobal(Lua, "debug");
+    lua_getfield(Lua, -1, "traceback");
+    lua_remove(Lua, -2);
+    argCount = argStack->size();
+    errindex = -argCount - 2;
+    lua_insert(Lua, errindex);
+
     //Check for the presence of arguments before deciding how to run the function!
     if(!argStack->empty())
     {
-        //Let's reverse the order of the stack. A queue would have done the same job, but I like stacks!
-        *argStack = reverseStackOrder(*argStack);
-        argCount = argStack->size();
+        //*Old* Let's reverse the order of the stack. A queue would have done the same job, but I like stacks!
+        //It's now a queue, but to maintain the same feel as the Lua stack, I kept the name
         while(!argStack->empty())
         {
-            PushToLua(Lua, argStack->top());
+            PushToLua(Lua, argStack->front());
             argStack->pop();
         }
     }
@@ -68,7 +79,7 @@ bool LuaWrap::executeFunction(const std::string& funcName)
     question about how to extract the stacktrace from the pcall execution function
     (http://stackoverflow.com/questions/12256455/print-stacktrace-from-c-code-with-embedded-lua)
     */
-    errStatus = lua_pcall(Lua, argCount, LUA_MULTRET, lua_gettop(Lua) - LUA_TOPITEM - argCount);
+    errStatus = lua_pcall(Lua, argCount, LUA_MULTRET, errindex);
 
     //Check status code
     ErrF(Lua, errStatus);
@@ -132,54 +143,54 @@ void LuaWrap::AddArgument(void_ptr argument)
     argStack->push(tmp);
 }
 
-int LuaWrap::lua_extractInt(lua_State* results) const
+int LuaWrap::lua_extractInt() const
 {
-    if(lua_isnumber(results, LUA_TOPITEM))
-        return lua_tointeger(results, LUA_TOPITEM);
+    if(lua_isnumber(Lua, LUA_TOPITEM))
+        return lua_tointeger(Lua, LUA_TOPITEM);
     std::cout << "Warning: Lua result is not an integer. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return 0;
 }
 
-double LuaWrap::lua_extractDouble(lua_State* results) const
+double LuaWrap::lua_extractDouble() const
 {
-    if(lua_isnumber(results, LUA_TOPITEM))
-        return lua_tonumber(results, LUA_TOPITEM);
+    if(lua_isnumber(Lua, LUA_TOPITEM))
+        return lua_tonumber(Lua, LUA_TOPITEM);
     std::cout << "Warning: Lua result is not a double. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return 0.0f;
 }
 
-char LuaWrap::lua_extractChar(lua_State* results) const
+char LuaWrap::lua_extractChar() const
 {
-    if(lua_isstring(results, LUA_TOPITEM))
-        return lua_tostring(results, LUA_TOPITEM)[0];
+    if(lua_isstring(Lua, LUA_TOPITEM))
+        return lua_tostring(Lua, LUA_TOPITEM)[0];
     std::cout << "Warning: Lua result is not a char. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return 0;
 }
 
-std::string LuaWrap::lua_extractStr(lua_State* results) const
+std::string LuaWrap::lua_extractStr() const
 {
-    if(lua_isstring(results, LUA_TOPITEM))
-        return lua_tostring(results, LUA_TOPITEM);
+    if(lua_isstring(Lua, LUA_TOPITEM))
+        return lua_tostring(Lua, LUA_TOPITEM);
     std::cout << "Warning: Lua result is not a string. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return "";
 }
 
-bool LuaWrap::lua_extractBool(lua_State* results) const
+bool LuaWrap::lua_extractBool() const
 {
-    if(lua_isboolean(results, LUA_TOPITEM))
-        return bool(lua_tointeger(results, LUA_TOPITEM));
+    if(lua_isboolean(Lua, LUA_TOPITEM))
+        return bool(lua_tointeger(Lua, LUA_TOPITEM));
     std::cout << "Warning: Lua result is not boolean. Undefined behavior may occur! Warning in script: " << path
             << std::endl;
     return false;
 }
 
-void_ptr LuaWrap::lua_extractPtr(lua_State* results) const
+void_ptr LuaWrap::lua_extractPtr() const
 {
-    return (void_ptr)lua_topointer(results, LUA_TOPITEM);
+    return (void_ptr)lua_topointer(Lua, LUA_TOPITEM);
 }
 
 std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
@@ -199,26 +210,26 @@ std::vector<fuzzy_obj> LuaWrap::GenerateListFromLuaTable()
     while(lua_next(Lua, t))//Obtain key-value pairs
     {
         fuzzy_obj obj;
-        obj.flag = GetResultType(Lua);
+        obj.flag = GetResultType();
         switch(obj.flag)
         {
         case 'i':
-            obj.number = lua_extractInt(Lua);
+            obj.number = lua_extractInt();
             break;
         case 'd':
-            obj.decimal = lua_extractDouble(Lua);
+            obj.decimal = lua_extractDouble();
             break;
         case 'b':
-            obj.answer = lua_extractBool(Lua);
+            obj.answer = lua_extractBool();
             break;
         case 'c':
-            obj.c = lua_extractChar(Lua);
+            obj.c = lua_extractChar();
             break;
         case 's':
-            obj.str = lua_extractStr(Lua);
+            obj.str = lua_extractStr();
             break;
         case 'v':
-            obj.ptr = lua_extractPtr(Lua);
+            obj.ptr = lua_extractPtr();
             break;
         default:
             std::cout << "Error: Argument from array returned by script function is not a valid type! "
@@ -239,22 +250,22 @@ bool LuaWrap::isResultVoid() const
     return lua_isnoneornil(Lua, lua_gettop(Lua));
 }
 
-char LuaWrap::GetResultType(lua_State* result) const
+char LuaWrap::GetResultType() const
 {
-    if(lua_isboolean(result, LUA_TOPITEM))
+    if(lua_isboolean(Lua, LUA_TOPITEM))
         return 'b';
 
-    if(lua_isnumber(result, LUA_TOPITEM))
+    if(lua_isnumber(Lua, LUA_TOPITEM))
     {
-        if(lua_tonumber(result, LUA_TOPITEM)/round(lua_tonumber(result, LUA_TOPITEM)))
+        if(lua_tonumber(Lua, LUA_TOPITEM)/round(lua_tonumber(Lua, LUA_TOPITEM)))
             return 'i';
         else
             return 'd';
     }
 
-    if(lua_isstring(result, LUA_TOPITEM))
+    if(lua_isstring(Lua, LUA_TOPITEM))
     {
-        if(std::string(lua_tostring(result, LUA_TOPITEM)).length() == 1)
+        if(std::string(lua_tostring(Lua, LUA_TOPITEM)).length() == 1)
             return 'c';
         return 's';
     }
@@ -328,9 +339,10 @@ void LuaWrap::ErrF(lua_State* result, int status)
     It will let you know the status code regardless of whether a stacktrace was made for the
     script!
     */
-    if(status)
+    if(status && !lua_isnil(result, -1))
     {
-        std::cerr << lua_tostring(Lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
+        //std::cerr << lua_tostring(Lua, LUA_TOPITEM) << std::endl;/*Get item string for the stacktrace!*/
+        traceback(result);
         /*Leave an error notice in the standard output!*/
         std::cout << "Error executing Lua script! Execution ended with status: " << status <<std::endl
                   <<"For more information, check the Lua documentation and the standard error stacktrace (cerr) if any!"

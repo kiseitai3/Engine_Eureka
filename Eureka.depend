@@ -23693,17 +23693,18 @@
 	<vector>
 	"typedefs.h"
 
-1425329297 c:\users\luis\documents\devcb\engine_eureka\pywrap.h
+1427575685 c:\users\luis\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 	<vector>
+	<queue>
 	"typedefs.h"
 
-1425824812 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
+1427561150 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
 	<lua.hpp>
 	<string>
 	<iostream>
-	<stack>
+	<queue>
 	<vector>
 	"typedefs.h"
 
@@ -23933,7 +23934,7 @@
 	"resultset.h"
 	<string>
 
-1427326412 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
+1427564044 c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.h
 	<string>
 	<map>
 	<iostream>
@@ -23971,7 +23972,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1427241465 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1427304963 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24033,7 +24034,7 @@
 	"physics.h"
 	"input.h"
 
-1427241464 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1427304962 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -24100,7 +24101,7 @@
 	<string>
 	"BST.h"
 
-1425824812 source:c:\users\luis\documents\devcb\engine_eureka\luawrap.cpp
+1427557996 source:c:\users\luis\documents\devcb\engine_eureka\luawrap.cpp
 	"luawrap.h"
 	<cmath>
 	"conversion.h"
@@ -24115,14 +24116,14 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1425768967 source:c:\users\luis\documents\devcb\engine_eureka\pywrap.cpp
+1427576351 source:c:\users\luis\documents\devcb\engine_eureka\pywrap.cpp
 	<Python.h>
 	"pywrap.h"
 	<string>
 	"conversion.h"
 	<iostream>
 
-1425823544 source:c:\users\luis\documents\devcb\engine_eureka\scriptwrap.cpp
+1427576627 source:c:\users\luis\documents\devcb\engine_eureka\scriptwrap.cpp
 	"scriptwrap.h"
 	"luawrap.h"
 	"pywrap.h"
@@ -24187,7 +24188,7 @@
 	<string>
 	"ui.h"
 
-1426369103 source:c:\users\luis\documents\devcb\engine_eureka\conversion.cpp
+1427568339 source:c:\users\luis\documents\devcb\engine_eureka\conversion.cpp
 	"conversion.h"
 	<stdlib.h>
 	<stdio.h>
@@ -27370,11 +27371,11 @@
 	"threading.h"
 	"rand_generators.h"
 
-1425768967 c:\users\luis\documents\devcb\engine_eureka\rand_generators.h
+1427578112 c:\users\luis\documents\devcb\engine_eureka\rand_generators.h
 	<iostream>
 	"typedefs.h"
 
-1425768967 source:c:\users\luis\documents\devcb\engine_eureka\rand_generators.cpp
+1427578112 source:c:\users\luis\documents\devcb\engine_eureka\rand_generators.cpp
 	<random>
 	<ctime>
 	"rand_generators.h"
@@ -27964,7 +27965,7 @@
 1426504904 c:\mingw\msys\1.0\local\include\libswscale\version.h
 	"libavutil/version.h"
 
-1427304096 source:c:\users\luis\documents\devcb\engine_eureka\videoplayer.cpp
+1427563475 source:c:\users\luis\documents\devcb\engine_eureka\videoplayer.cpp
 	"videoplayer.h"
 	"eureka.h"
 	<libavutil/common.h>
@@ -28136,7 +28137,7 @@
 
 1427243043 c:\mingw\msys\1.0\local\include\boost\random
 
-1427334717 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\sqlite3_test.cpp
+1427368386 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\sqlite3_test.cpp
 	<iostream>
 	<string>
 	"../sqlitewrap.h"
@@ -28145,4 +28146,26 @@
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
+
+1427561498 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\lua_wrap_test.cpp
+	<iostream>
+	<string>
+	"../luawrap.h"
+
+1427576388 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\scriptwrap_test.cpp
+	<iostream>
+	<string>
+	"../scriptwrap.h"
+
+1427579301 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\modules_test.cpp
+	<iostream>
+	<string>
+	"../plugin.h"
+
+1427594098 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\bst_test.cpp
+	<iostream>
+	<string>
+	<vector>
+	"../typedefs.h"
+	"../BST.h"
 

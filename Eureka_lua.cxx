@@ -3460,40 +3460,35 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  std::string *arg4 = 0 ;
-  std::string *arg5 = 0 ;
-  std::string *arg6 = 0 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  std::string arg4 ;
+  std::string arg5 ;
+  std::string arg6 ;
   size_t arg7 ;
-  std::string temp2 ;
-  std::string temp3 ;
-  std::string temp4 ;
-  std::string temp5 ;
-  std::string temp6 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",7,7)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
-  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string const &");
-  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string const &");
-  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string const &");
-  if(!lua_isstring(L,6)) SWIG_fail_arg("SQLGenerator::prepareStatement",6,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string");
+  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string");
+  if(!lua_isstring(L,6)) SWIG_fail_arg("SQLGenerator::prepareStatement",6,"std::string");
   if(!lua_isnumber(L,7)) SWIG_fail_arg("SQLGenerator::prepareStatement",7,"size_t");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
-  temp5.assign(lua_tostring(L,5),lua_rawlen(L,5)); arg5=&temp5;
-  temp6.assign(lua_tostring(L,6),lua_rawlen(L,6)); arg6=&temp6;
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
+  (&arg4)->assign(lua_tostring(L,4),lua_rawlen(L,4));
+  (&arg5)->assign(lua_tostring(L,5),lua_rawlen(L,5));
+  (&arg6)->assign(lua_tostring(L,6),lua_rawlen(L,6));
   SWIG_contract_assert((lua_tonumber(L,7)>=0),"number must not be negative")
   arg7 = (size_t)lua_tonumber(L, 7);
-  result = (arg1)->prepareStatement((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,arg7);
+  result = (arg1)->prepareStatement(arg2,arg3,arg4,arg5,arg6,arg7);
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3508,36 +3503,31 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  std::string *arg4 = 0 ;
-  std::string *arg5 = 0 ;
-  std::string *arg6 = 0 ;
-  std::string temp2 ;
-  std::string temp3 ;
-  std::string temp4 ;
-  std::string temp5 ;
-  std::string temp6 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  std::string arg4 ;
+  std::string arg5 ;
+  std::string arg6 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",6,6)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
-  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string const &");
-  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string const &");
-  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string const &");
-  if(!lua_isstring(L,6)) SWIG_fail_arg("SQLGenerator::prepareStatement",6,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string");
+  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string");
+  if(!lua_isstring(L,6)) SWIG_fail_arg("SQLGenerator::prepareStatement",6,"std::string");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
-  temp5.assign(lua_tostring(L,5),lua_rawlen(L,5)); arg5=&temp5;
-  temp6.assign(lua_tostring(L,6),lua_rawlen(L,6)); arg6=&temp6;
-  result = (arg1)->prepareStatement((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6);
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
+  (&arg4)->assign(lua_tostring(L,4),lua_rawlen(L,4));
+  (&arg5)->assign(lua_tostring(L,5),lua_rawlen(L,5));
+  (&arg6)->assign(lua_tostring(L,6),lua_rawlen(L,6));
+  result = (arg1)->prepareStatement(arg2,arg3,arg4,arg5,arg6);
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3552,32 +3542,28 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_2(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  std::string *arg4 = 0 ;
-  std::string *arg5 = 0 ;
-  std::string temp2 ;
-  std::string temp3 ;
-  std::string temp4 ;
-  std::string temp5 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  std::string arg4 ;
+  std::string arg5 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",5,5)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
-  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string const &");
-  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string const &");
-  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string");
+  if(!lua_isstring(L,5)) SWIG_fail_arg("SQLGenerator::prepareStatement",5,"std::string");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
-  temp5.assign(lua_tostring(L,5),lua_rawlen(L,5)); arg5=&temp5;
-  result = (arg1)->prepareStatement((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5);
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
+  (&arg4)->assign(lua_tostring(L,4),lua_rawlen(L,4));
+  (&arg5)->assign(lua_tostring(L,5),lua_rawlen(L,5));
+  result = (arg1)->prepareStatement(arg2,arg3,arg4,arg5);
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3592,28 +3578,25 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_3(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  std::string *arg4 = 0 ;
-  std::string temp2 ;
-  std::string temp3 ;
-  std::string temp4 ;
+  std::string arg2 ;
+  std::string arg3 ;
+  std::string arg4 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",4,4)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
-  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string const &");
-  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("SQLGenerator::prepareStatement",4,"std::string");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
-  result = (arg1)->prepareStatement((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4);
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
+  (&arg4)->assign(lua_tostring(L,4),lua_rawlen(L,4));
+  result = (arg1)->prepareStatement(arg2,arg3,arg4);
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3628,24 +3611,22 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_4(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string *arg3 = 0 ;
-  std::string temp2 ;
-  std::string temp3 ;
+  std::string arg2 ;
+  std::string arg3 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
-  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("SQLGenerator::prepareStatement",3,"std::string");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  result = (arg1)->prepareStatement((std::string const &)*arg2,(std::string const &)*arg3);
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  (&arg3)->assign(lua_tostring(L,3),lua_rawlen(L,3));
+  result = (arg1)->prepareStatement(arg2,arg3);
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3660,20 +3641,43 @@ fail:
 static int _wrap_SQLQuery_prepareStatement__SWIG_5(lua_State* L) {
   int SWIG_arg = 0;
   SQLGenerator *arg1 = (SQLGenerator *) 0 ;
-  std::string *arg2 = 0 ;
-  std::string temp2 ;
+  std::string arg2 ;
   std::string result;
   
   SWIG_check_num_args("SQLGenerator::prepareStatement",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
-  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string const &");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SQLGenerator::prepareStatement",2,"std::string");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
     SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
   }
   
-  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
-  result = (arg1)->prepareStatement((std::string const &)*arg2);
+  (&arg2)->assign(lua_tostring(L,2),lua_rawlen(L,2));
+  result = (arg1)->prepareStatement(arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SQLQuery_prepareStatement__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  SQLGenerator *arg1 = (SQLGenerator *) 0 ;
+  std::string result;
+  
+  SWIG_check_num_args("SQLGenerator::prepareStatement",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SQLGenerator::prepareStatement",1,"SQLGenerator *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SQLGenerator,0))){
+    SWIG_fail_ptr("SQLQuery_prepareStatement",1,SWIGTYPE_p_SQLGenerator);
+  }
+  
+  result = (arg1)->prepareStatement();
   lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
   return SWIG_arg;
   
@@ -3692,6 +3696,20 @@ static int _wrap_SQLQuery_prepareStatement(lua_State* L) {
   };
   
   argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_SQLGenerator, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_SQLQuery_prepareStatement__SWIG_6(L);
+    }
+  }
   if (argc == 2) {
     int _v;
     {
@@ -3884,12 +3902,13 @@ static int _wrap_SQLQuery_prepareStatement(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'SQLQuery_prepareStatement'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SQLGenerator::prepareStatement(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t)\n"
-    "    SQLGenerator::prepareStatement(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &)\n"
-    "    SQLGenerator::prepareStatement(std::string const &,std::string const &,std::string const &,std::string const &)\n"
-    "    SQLGenerator::prepareStatement(std::string const &,std::string const &,std::string const &)\n"
-    "    SQLGenerator::prepareStatement(std::string const &,std::string const &)\n"
-    "    SQLGenerator::prepareStatement(std::string const &)\n");
+    "    SQLGenerator::prepareStatement(std::string,std::string,std::string,std::string,std::string,size_t)\n"
+    "    SQLGenerator::prepareStatement(std::string,std::string,std::string,std::string,std::string)\n"
+    "    SQLGenerator::prepareStatement(std::string,std::string,std::string,std::string)\n"
+    "    SQLGenerator::prepareStatement(std::string,std::string,std::string)\n"
+    "    SQLGenerator::prepareStatement(std::string,std::string)\n"
+    "    SQLGenerator::prepareStatement(std::string)\n"
+    "    SQLGenerator::prepareStatement()\n");
   lua_error(L);return 0;
 }
 
@@ -3939,11 +3958,6 @@ static swig_lua_attribute swig_SQLQuery_Sf_SwigStatic_attributes[] = {
     {0,0,0}
 };
 static swig_lua_const_info swig_SQLQuery_Sf_SwigStatic_constants[]= {
-    {SWIG_LUA_CONSTTAB_INT("INT", SQLGenerator::INT)},
-    {SWIG_LUA_CONSTTAB_INT("DOUBLE", SQLGenerator::DOUBLE)},
-    {SWIG_LUA_CONSTTAB_INT("BOOL", SQLGenerator::BOOL)},
-    {SWIG_LUA_CONSTTAB_INT("STRING", SQLGenerator::STRING)},
-    {SWIG_LUA_CONSTTAB_INT("CHAR", SQLGenerator::CHAR)},
     {0,0,0,0,0,0}
 };
 static swig_lua_method swig_SQLQuery_Sf_SwigStatic_methods[]= {
@@ -32437,11 +32451,6 @@ static swig_lua_const_info swig_SwigModule_constants[]= {
     {SWIG_LUA_CONSTTAB_INT("FULL_OUTER_JOIN", FULL_OUTER_JOIN)},
     {SWIG_LUA_CONSTTAB_INT("INTO_SELECT", INTO_SELECT)},
     {SWIG_LUA_CONSTTAB_INT("UNION", UNION)},
-    {SWIG_LUA_CONSTTAB_INT("SQLQuery_INT", SQLGenerator::INT)},
-    {SWIG_LUA_CONSTTAB_INT("SQLQuery_DOUBLE", SQLGenerator::DOUBLE)},
-    {SWIG_LUA_CONSTTAB_INT("SQLQuery_BOOL", SQLGenerator::BOOL)},
-    {SWIG_LUA_CONSTTAB_INT("SQLQuery_STRING", SQLGenerator::STRING)},
-    {SWIG_LUA_CONSTTAB_INT("SQLQuery_CHAR", SQLGenerator::CHAR)},
     {SWIG_LUA_CONSTTAB_INT("ENDOFFILE", -1)},
     {SWIG_LUA_CONSTTAB_INT("NONE", NONE)},
     {SWIG_LUA_CONSTTAB_INT("VAR", VAR)},

@@ -175,26 +175,67 @@
 			</Target>
 			<Target title="data_base_test">
 				<Option output="bin/tests/data_base_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 			</Target>
 			<Target title="c++11_test">
 				<Option output="bin/tests/c++11_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
 			</Target>
-			<Target title="MySQL_test">
-				<Option output="bin/tests/mysql_test" prefix_auto="1" extension_auto="1" />
+			<Target title="plugin_test">
+				<Option output="bin/tests/plugin_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="plugins" />
+				</Linker>
 			</Target>
-			<Target title="sqlite_test">
-				<Option output="bin/tests/sqlite_test" prefix_auto="1" extension_auto="1" />
+			<Target title="lua_wrap_test">
+				<Option output="bin/tests/lua_wrap_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="lua_wrap" />
+				</Linker>
+			</Target>
+			<Target title="mysql_test">
+				<Option output="bin/tests/mysql_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="sqlite3_test">
+				<Option output="bin/tests/sqlite_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="scriptwrap_test">
+				<Option output="bin/tests/scriptwrap_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
@@ -204,9 +245,9 @@
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/include" />
 			<Add directory="c:/Python27/include" />
 			<Add directory="Dependencies/SDL2-2.0.0/include" />
-			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/include" />
 			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2" />
 			<Add directory="Dependencies/lua-5.2.3/src" />
 			<Add directory="Dependencies/sqlite3" />
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/include" />
@@ -224,7 +265,7 @@
 			<Add library="libSDL2.dll" />
 			<Add library="SDL2_mixer" />
 			<Add library="libpython27" />
-			<Add library="SDL_ttf" />
+			<Add library="SDL2_ttf" />
 			<Add library="SDL2_image" />
 			<Add library="lua" />
 			<Add library="sqlite3" />
@@ -234,9 +275,9 @@
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
-			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/lib/x86" />
 			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies/lua-5.2.3/src" />
 			<Add directory="Dependencies/sqlite3/win32_lib" />
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/lib" />
@@ -278,11 +319,23 @@
 		<Unit filename="Unit_tests/data_base_test.cpp">
 			<Option target="data_base_test" />
 		</Unit>
+		<Unit filename="Unit_tests/game_managers_test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Unit_tests/lua_wrap_test.cpp">
+			<Option target="lua_wrap_test" />
+		</Unit>
+		<Unit filename="Unit_tests/modules_test.cpp">
+			<Option target="plugin_test" />
+		</Unit>
 		<Unit filename="Unit_tests/mysql_test.cpp">
-			<Option target="MySQL_test" />
+			<Option target="mysql_test" />
+		</Unit>
+		<Unit filename="Unit_tests/scriptwrap_test.cpp">
+			<Option target="scriptwrap_test" />
 		</Unit>
 		<Unit filename="Unit_tests/sqlite3_test.cpp">
-			<Option target="sqlite_test" />
+			<Option target="sqlite3_test" />
 		</Unit>
 		<Unit filename="button.cpp">
 			<Option target="staticlib_all" />
@@ -340,7 +393,6 @@
 		<Unit filename="eureka.h">
 			<Option target="staticlib_all" />
 			<Option target="c++11_test" />
-			<Option target="MySQL_test" />
 			<Option target="IO" />
 		</Unit>
 		<Unit filename="game.cpp">

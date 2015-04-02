@@ -21,7 +21,9 @@ struct CursorNode
 
 struct cursor_state : public math_point
 {
-    bool click;
+    bool lclick;
+    bool rclick;
+    bool mclick;
 };
 
 class Cursor

@@ -2815,6 +2815,8 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "BST.h"
+#include "Queue.h"
 #include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
@@ -31228,21 +31230,21 @@ static swig_lua_class *swig_CursorNode_bases[] = {0};
 static const char *swig_CursorNode_base_names[] = {0};
 static swig_lua_class _wrap_class_CursorNode = { "CursorNode", "CursorNode", &SWIGTYPE_p_CursorNode,_proxy__wrap_new_CursorNode, swig_delete_CursorNode, swig_CursorNode_methods, swig_CursorNode_attributes, &swig_CursorNode_Sf_SwigStatic, swig_CursorNode_meta, swig_CursorNode_bases, swig_CursorNode_base_names };
 
-static int _wrap_cursor_state_click_set(lua_State* L) {
+static int _wrap_cursor_state_lclick_set(lua_State* L) {
   int SWIG_arg = 0;
   cursor_state *arg1 = (cursor_state *) 0 ;
   bool arg2 ;
   
-  SWIG_check_num_args("cursor_state::click",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::click",1,"cursor_state *");
-  if(!lua_isboolean(L,2)) SWIG_fail_arg("cursor_state::click",2,"bool");
+  SWIG_check_num_args("cursor_state::lclick",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::lclick",1,"cursor_state *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("cursor_state::lclick",2,"bool");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
-    SWIG_fail_ptr("cursor_state_click_set",1,SWIGTYPE_p_cursor_state);
+    SWIG_fail_ptr("cursor_state_lclick_set",1,SWIGTYPE_p_cursor_state);
   }
   
   arg2 = (lua_toboolean(L, 2)!=0);
-  if (arg1) (arg1)->click = arg2;
+  if (arg1) (arg1)->lclick = arg2;
   
   return SWIG_arg;
   
@@ -31254,19 +31256,119 @@ fail:
 }
 
 
-static int _wrap_cursor_state_click_get(lua_State* L) {
+static int _wrap_cursor_state_lclick_get(lua_State* L) {
   int SWIG_arg = 0;
   cursor_state *arg1 = (cursor_state *) 0 ;
   bool result;
   
-  SWIG_check_num_args("cursor_state::click",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::click",1,"cursor_state *");
+  SWIG_check_num_args("cursor_state::lclick",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::lclick",1,"cursor_state *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
-    SWIG_fail_ptr("cursor_state_click_get",1,SWIGTYPE_p_cursor_state);
+    SWIG_fail_ptr("cursor_state_lclick_get",1,SWIGTYPE_p_cursor_state);
   }
   
-  result = (bool) ((arg1)->click);
+  result = (bool) ((arg1)->lclick);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cursor_state_rclick_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("cursor_state::rclick",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::rclick",1,"cursor_state *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("cursor_state::rclick",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_rclick_set",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  if (arg1) (arg1)->rclick = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cursor_state_rclick_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("cursor_state::rclick",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::rclick",1,"cursor_state *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_rclick_get",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  result = (bool) ((arg1)->rclick);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cursor_state_mclick_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("cursor_state::mclick",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::mclick",1,"cursor_state *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("cursor_state::mclick",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_mclick_set",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  if (arg1) (arg1)->mclick = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cursor_state_mclick_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("cursor_state::mclick",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::mclick",1,"cursor_state *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_mclick_get",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  result = (bool) ((arg1)->mclick);
   lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
   return SWIG_arg;
   
@@ -31308,7 +31410,9 @@ static int _proxy__wrap_new_cursor_state(lua_State *L) {
     return 1;
 }
 static swig_lua_attribute swig_cursor_state_attributes[] = {
-    { "click", _wrap_cursor_state_click_get, _wrap_cursor_state_click_set },
+    { "lclick", _wrap_cursor_state_lclick_get, _wrap_cursor_state_lclick_set },
+    { "rclick", _wrap_cursor_state_rclick_get, _wrap_cursor_state_rclick_set },
+    { "mclick", _wrap_cursor_state_mclick_get, _wrap_cursor_state_mclick_set },
     {0,0,0}
 };
 static swig_lua_method swig_cursor_state_methods[]= {

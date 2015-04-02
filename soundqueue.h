@@ -1,7 +1,7 @@
 #ifndef SOUNDQUEUE_H_INCLUDED
 #define SOUNDQUEUE_H_INCLUDED
 #include <iostream>
-#include <queue>
+#include "Queue.h"
 #include "typedefs.h"
 
 class Game;
@@ -34,8 +34,8 @@ public:
 
 
 private:
-    std::queue<sound_base*> sounds;
-    std::queue<sound_base*> trash;
+    Queue<sound_base*> sounds;
+    Queue<sound_base*> trash;
     sound_base* playingSound;
     sound_base* musicSound;
     sound_base* backBuffer;
@@ -46,6 +46,7 @@ private:
 
     //Methods
     bool channelsBusy() const;
+    void waitForEmptyQueue() const;
 };
 
 #endif // SOUNDQUEUE_H_INCLUDED

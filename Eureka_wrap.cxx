@@ -3442,6 +3442,8 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "BST.h"
+#include "Queue.h"
 #include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
@@ -34550,7 +34552,7 @@ SWIGINTERN PyObject *CursorNode_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_cursor_state_click_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_cursor_state_lclick_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   cursor_state *arg1 = (cursor_state *) 0 ;
   bool arg2 ;
@@ -34561,18 +34563,18 @@ SWIGINTERN PyObject *_wrap_cursor_state_click_set(PyObject *SWIGUNUSEDPARM(self)
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:cursor_state_click_set",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:cursor_state_lclick_set",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_click_set" "', argument " "1"" of type '" "cursor_state *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_lclick_set" "', argument " "1"" of type '" "cursor_state *""'"); 
   }
   arg1 = reinterpret_cast< cursor_state * >(argp1);
   ecode2 = SWIG_AsVal_bool(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "cursor_state_click_set" "', argument " "2"" of type '" "bool""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "cursor_state_lclick_set" "', argument " "2"" of type '" "bool""'");
   } 
   arg2 = static_cast< bool >(val2);
-  if (arg1) (arg1)->click = arg2;
+  if (arg1) (arg1)->lclick = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -34580,7 +34582,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_cursor_state_click_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_cursor_state_lclick_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   cursor_state *arg1 = (cursor_state *) 0 ;
   void *argp1 = 0 ;
@@ -34588,13 +34590,117 @@ SWIGINTERN PyObject *_wrap_cursor_state_click_get(PyObject *SWIGUNUSEDPARM(self)
   PyObject * obj0 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:cursor_state_click_get",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:cursor_state_lclick_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_click_get" "', argument " "1"" of type '" "cursor_state *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_lclick_get" "', argument " "1"" of type '" "cursor_state *""'"); 
   }
   arg1 = reinterpret_cast< cursor_state * >(argp1);
-  result = (bool) ((arg1)->click);
+  result = (bool) ((arg1)->lclick);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cursor_state_rclick_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:cursor_state_rclick_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_rclick_set" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "cursor_state_rclick_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->rclick = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cursor_state_rclick_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:cursor_state_rclick_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_rclick_get" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  result = (bool) ((arg1)->rclick);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cursor_state_mclick_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:cursor_state_mclick_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_mclick_set" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "cursor_state_mclick_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->mclick = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cursor_state_mclick_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:cursor_state_mclick_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_mclick_get" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  result = (bool) ((arg1)->mclick);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -37036,8 +37142,12 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_CursorNode", _wrap_new_CursorNode, METH_VARARGS, NULL},
 	 { (char *)"delete_CursorNode", _wrap_delete_CursorNode, METH_VARARGS, NULL},
 	 { (char *)"CursorNode_swigregister", CursorNode_swigregister, METH_VARARGS, NULL},
-	 { (char *)"cursor_state_click_set", _wrap_cursor_state_click_set, METH_VARARGS, NULL},
-	 { (char *)"cursor_state_click_get", _wrap_cursor_state_click_get, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_lclick_set", _wrap_cursor_state_lclick_set, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_lclick_get", _wrap_cursor_state_lclick_get, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_rclick_set", _wrap_cursor_state_rclick_set, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_rclick_get", _wrap_cursor_state_rclick_get, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_mclick_set", _wrap_cursor_state_mclick_set, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_mclick_get", _wrap_cursor_state_mclick_get, METH_VARARGS, NULL},
 	 { (char *)"new_cursor_state", _wrap_new_cursor_state, METH_VARARGS, NULL},
 	 { (char *)"delete_cursor_state", _wrap_delete_cursor_state, METH_VARARGS, NULL},
 	 { (char *)"cursor_state_swigregister", cursor_state_swigregister, METH_VARARGS, NULL},

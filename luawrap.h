@@ -61,7 +61,7 @@ private:
     std::queue<fuzzy_obj> *argStack; /*Once upon a time, I learned how to use stacks, which I used to make packs of elegant code without hacks!
                                     Seriously though, first time I find a very good reason to use stacks in this engine! Since Lua uses stacks
                                     to run and pass arguments to functions, there's no other way I can pass arguments that is as elegant as the
-                                    implemented scheme!*/
+                                    implemented scheme!*//*Ha! Joke's on me! I switched to a queue!*/
 };
 
 

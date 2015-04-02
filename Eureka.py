@@ -2586,10 +2586,18 @@ class cursor_state(math_point):
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, cursor_state, name)
     __repr__ = _swig_repr
-    __swig_setmethods__["click"] = _Eureka.cursor_state_click_set
-    __swig_getmethods__["click"] = _Eureka.cursor_state_click_get
+    __swig_setmethods__["lclick"] = _Eureka.cursor_state_lclick_set
+    __swig_getmethods__["lclick"] = _Eureka.cursor_state_lclick_get
     if _newclass:
-        click = _swig_property(_Eureka.cursor_state_click_get, _Eureka.cursor_state_click_set)
+        lclick = _swig_property(_Eureka.cursor_state_lclick_get, _Eureka.cursor_state_lclick_set)
+    __swig_setmethods__["rclick"] = _Eureka.cursor_state_rclick_set
+    __swig_getmethods__["rclick"] = _Eureka.cursor_state_rclick_get
+    if _newclass:
+        rclick = _swig_property(_Eureka.cursor_state_rclick_get, _Eureka.cursor_state_rclick_set)
+    __swig_setmethods__["mclick"] = _Eureka.cursor_state_mclick_set
+    __swig_getmethods__["mclick"] = _Eureka.cursor_state_mclick_get
+    if _newclass:
+        mclick = _swig_property(_Eureka.cursor_state_mclick_get, _Eureka.cursor_state_mclick_set)
 
     def __init__(self):
         this = _Eureka.new_cursor_state()

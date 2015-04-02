@@ -12,6 +12,14 @@ SoundQueue::SoundQueue(Game* owner)
     backBuffer = NULL;
     playingSound = NULL;
     fadeInT = 5000;
+
+    //Set up the queues
+    size_t queue_size = owner_ref->GetSoundChunkSize(); //Choosing this number will gives us a nice buffer space to work with
+
+    //Reserve arrays
+    sounds.reserve(queue_size);
+    trash.reserve(queue_size);//Here, we are allocating the same amount of memory for a potential trash to be sent to GC.
+                            //I believe that we may never need this much memory, but it should be enough for most cases!
 }
 
 SoundQueue::~SoundQueue()
@@ -22,6 +30,8 @@ SoundQueue::~SoundQueue()
 
 void SoundQueue::AddSoundToQueue(cstr soundFile, bool music)
 {
+    //Let's block this call if the queue is not quite ready to accept a new item
+    waitForEmptyQueue();
     //Make sure we keep the backBuffer object ready
     FlipMusic();
     //Lock internal mutex
@@ -33,13 +43,15 @@ void SoundQueue::AddSoundToQueue(cstr soundFile, bool music)
     if(music)
         backBuffer = tmp;
     else
-        sounds.push(tmp);
+        sounds.enqueue(tmp);
     //Unlock internal mutex
     owner_ref->UnlockMutex(mutex_sound_id);
 }
 
 void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, size_t size, bool isHeaderlessWav, bool music)
 {
+    //Let's block this call if the queue is not quite ready to accept a new item
+    waitForEmptyQueue();
     //Make sure we keep the backBuffer object ready
     FlipMusic();
     //Lock internal mutex
@@ -51,7 +63,7 @@ void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, size_t size, bool isHea
     if(music)
         backBuffer = tmp;
     else
-        sounds.push(tmp);
+        sounds.enqueue(tmp);
     //Unlock internal mutex
     owner_ref->UnlockMutex(mutex_sound_id);
 }
@@ -92,11 +104,11 @@ void SoundQueue::PlayNextSound()
         return;
     //Send previous sound to trash bin so it gets GCed when it finishes
     if(playingSound)
-        trash.push(playingSound);
+        trash.enqueue(playingSound);
     //Grab new sound
     playingSound = sounds.front();
     //Pop sound from the queue
-    sounds.pop();
+    sounds.dequeue();
     //Unlock internal mutex
     owner_ref->UnlockMutex(mutex_sound_id);
 }
@@ -139,7 +151,7 @@ void SoundQueue::GCSounds()
     if(tmp && !tmp->isEffectPlaying())
     {
         delete tmp;
-        trash.pop();
+        trash.dequeue();
     }
     //Unlock internal mutex
     owner_ref->UnlockMutex(mutex_sound_id);
@@ -155,6 +167,14 @@ bool SoundQueue::channelsBusy() const
     }
     //If we get here, it means no channels are free!
     return true;
+}
+
+void SoundQueue::waitForEmptyQueue() const
+{
+    while(sounds.full())
+    {
+        SDL_Delay(1);
+    }
 }
 
 void SoundQueue::ClearQueue()
@@ -183,7 +203,7 @@ void SoundQueue::ClearQueue()
     while(!sounds.empty())
     {
         tmp = sounds.front();
-        sounds.pop();
+        sounds.dequeue();
         if(tmp)
             delete tmp;
     }

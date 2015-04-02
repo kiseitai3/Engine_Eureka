@@ -5,6 +5,8 @@ Cursor::Cursor(Game* owner)
 {
     owner_ref = owner;
     mutex_cursor_id = owner->SpawnMutex();
+    //Hide system cursor
+    SDL_ShowCursor(SDL_DISABLE);
 }
 
 size_t Cursor::RegisterCursor(cstr file)
@@ -60,10 +62,25 @@ void Cursor::UpdateCursor(SDL_Event *e)
 {
     //Lock mutex
     owner_ref->LockMutex(mutex_cursor_id);
-    if(e->button.button == SDL_BUTTON_LEFT)
-        state.click = true;
-    else
-        state.click = false;
+    switch(e->button.button)
+    {
+    case SDL_BUTTON_LEFT:
+        state.lclick = true;
+        break;
+    case SDL_BUTTON_MIDDLE:
+        state.mclick = true;
+        break;
+    case SDL_BUTTON_RIGHT:
+        state.rclick = true;
+        break;
+    default:
+        {
+            state.lclick = false;
+            state.mclick = false;
+            state.rclick = false;
+        }
+
+    }
     state.X = e->motion.x;
     state.Y = e->motion.y;
     //Unlock mutex
@@ -120,6 +137,8 @@ Cursor::~Cursor()
         if(tmp)
             delete tmp;
     }
+    //Restore system cursor
+    SDL_ShowCursor(SDL_ENABLE);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_cursor_id);
     owner_ref->DeleteMutex(mutex_cursor_id);

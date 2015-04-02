@@ -39,6 +39,8 @@
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "BST.h"
+#include "Queue.h"
 #include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
@@ -77,5 +79,7 @@
 %include "level.h"
 %include "soundqueue.h"
 %include "videoplayer.h"
+%include "BST.h"
+%include "Queue.h"
 %include "cursor.h"
 %include "game.h"

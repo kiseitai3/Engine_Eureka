@@ -23972,7 +23972,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1427982702 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1428012865 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24035,7 +24035,7 @@
 	"physics.h"
 	"input.h"
 
-1427982701 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1428012863 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -27794,9 +27794,9 @@
 	<vector>
 	"../data_base.h"
 
-1427303616 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
+1428013757 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
 	<iostream>
-	<queue>
+	"Queue.h"
 	"typedefs.h"
 
 1427240325 source:c:\users\luis\documents\devcb\engine_eureka\soundqueue.cpp
@@ -28490,7 +28490,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1427994455 c:\users\luis\documents\devcb\engine_eureka\cursor.h
+1428012536 c:\users\luis\documents\devcb\engine_eureka\cursor.h
 	<istream>
 	"BST.h"
 	"typedefs.h"
@@ -28536,7 +28536,17 @@
 	<stdio.h>
 	"lua.h"
 
-1427994837 source:c:\users\luis\documents\devcb\engine_eureka\cursor.cpp
+1428012922 source:c:\users\luis\documents\devcb\engine_eureka\cursor.cpp
 	"eureka.h"
 	"scriptwrap.h"
+
+1428015014 c:\users\luis\documents\devcb\engine_eureka\queue.h
+	<iostream>
+	<cstdlib>
+	"Queue.cc"
+
+1428015248 c:\users\luis\documents\devcb\engine_eureka\queue.cc
+	<iostream>
+	<cstdlib>
+	<cassert>
 

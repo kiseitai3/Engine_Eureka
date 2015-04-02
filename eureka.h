@@ -12,6 +12,7 @@
 #include "rand_generators.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "cursor.h"
 #include "game.h"
 
 

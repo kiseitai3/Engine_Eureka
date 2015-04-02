@@ -325,4 +325,5 @@ EXPORTS
     _ZZN4utf815replace_invalidIN9__gnu_cxx17__normal_iteratorIPKcSsEESt20back_insert_iteratorISsEEET0_T_S9_S8_E18replacement_marker @324 DATA
     _ZnwjPv @325
     _get_output_format @326
-    sprintf @327
+    printHello @327
+    sprintf @328

@@ -1,4 +1,5 @@
 --Implement accessibility options on the engine level!
 --Create crossplatform level designer project.
---Create new Python and Lua wrappers.
 --Work on unit tests!
+--Move Event handling to the Game layer!
+--Add a cursor manager!

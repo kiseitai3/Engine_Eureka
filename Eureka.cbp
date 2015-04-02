@@ -237,6 +237,31 @@
 					<Add library="Core" />
 				</Linker>
 			</Target>
+			<Target title="BST_test">
+				<Option output="bin/tests/modadapter_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+				</Linker>
+			</Target>
+			<Target title="Base_components_test">
+				<Option output="bin/tests/base_components_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="database_test">
+				<Option output="bin/tests/database_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
@@ -313,11 +338,20 @@
 			<Option target="Timer" />
 			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="Unit_tests/base_components_test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Unit_tests/bst_test.cpp">
+			<Option target="BST_test" />
+		</Unit>
 		<Unit filename="Unit_tests/c++11_test.cpp">
 			<Option target="c++11_test" />
 		</Unit>
 		<Unit filename="Unit_tests/data_base_test.cpp">
 			<Option target="data_base_test" />
+		</Unit>
+		<Unit filename="Unit_tests/database_test.cpp">
+			<Option target="database_test" />
 		</Unit>
 		<Unit filename="Unit_tests/game_managers_test.cpp">
 			<Option target="&lt;{~None~}&gt;" />
@@ -363,6 +397,12 @@
 		<Unit filename="core.cpp">
 			<Option target="Flags" />
 			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="cursor.cpp">
+			<Option target="Eureka" />
+		</Unit>
+		<Unit filename="cursor.h">
+			<Option target="Eureka" />
 		</Unit>
 		<Unit filename="data_base.cpp">
 			<Option target="staticlib_all" />

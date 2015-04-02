@@ -37,9 +37,10 @@ class Level;
 class DataBase;
 class SoundQueue;
 class VideoPlayer;
+class Cursor;
 
 class Game : public SoundQueue, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
-    public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
+    public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public Cursor, public TimerSystem,
      public VideoPlayer, public ThreadSystem, public GameInfo
 {
 public:

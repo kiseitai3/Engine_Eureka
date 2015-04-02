@@ -39,6 +39,7 @@
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -76,4 +77,5 @@
 %include "level.h"
 %include "soundqueue.h"
 %include "videoplayer.h"
+%include "cursor.h"
 %include "game.h"

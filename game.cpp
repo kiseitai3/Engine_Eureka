@@ -32,6 +32,8 @@ void_ptr helperEventsFunction(void_ptr game)
     Game* tmp = (Game*)game;
     while(!tmp->isEngineClosing())
     {
+        //Cursor
+        tmp->UpdateCursor(&tmp->GetEvents());
         tmp->RunEvents();
         tmp->UIProcessEvents();
     }
@@ -88,11 +90,11 @@ void_ptr helperUpdateFunction(void_ptr game)
 const size_t Game::loadRate = 17;
 
 /*class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
-    public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public TimerSystem,
+    public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public Cursor, public TimerSystem,
     public VideoPlayer, public ThreadSystem, public GameInfo
 */
 Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
 {
     LoadGame(file);
     closeEngine = false;
@@ -102,7 +104,7 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
 }
 
 Game::Game(bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
 {
     closeEngine = false;
     loading = false;
@@ -362,6 +364,8 @@ void Game::drawWorld()
     //Let's begin building the frame
     if(!isPlayingVideo())
     {
+        //Cursor
+        DrawCursor();
         //Let's draw the layers
         DrawLayers();
         //Next let's draw everything else!
@@ -428,6 +432,8 @@ void Game::run()
         //Run through every method call once per frame until exit command is issued from within the game
         while(!isEngineClosing())
         {
+            //Cursor
+            UpdateCursor(event);
             //Update
             UpdateTriggers(currentLvl->GetHeroID());
             UIUpdate();

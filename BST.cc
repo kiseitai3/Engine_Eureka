@@ -83,6 +83,7 @@ template<typename KeyTy, typename ValueTy>
 std::vector<ValueTy> BinarySearchTree<KeyTy, ValueTy>::getContents()
 {
     std::vector<ValueTy> holder;
+    holder.reserve(Size);//pre allocate space in order to boost performance (decreasing realloc and copy calls).
     dumpNode(Root, holder);
     return holder;
 }

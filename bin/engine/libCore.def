@@ -1674,38 +1674,39 @@ EXPORTS
     _ZStorSt13_Ios_OpenmodeS_ @1673
     _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_ @1674
     _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_RKS6_ @1675
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_S7_ @1676
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_OS6_ @1677
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_ @1678
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_OS6_ @1679
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_ @1680
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_ @1681
-    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ES3_RKS6_ @1682
-    _ZTIN3sql12SQLExceptionE @1683 DATA
-    _ZTIN4utf812invalid_utf8E @1684 DATA
-    _ZTIN4utf813invalid_utf16E @1685 DATA
-    _ZTIN4utf815not_enough_roomE @1686 DATA
-    _ZTIN4utf818invalid_code_pointE @1687 DATA
-    _ZTIN4utf89exceptionE @1688 DATA
-    _ZTISt13runtime_error @1689 DATA
-    _ZTISt9exception @1690 DATA
-    _ZTSN3sql12SQLExceptionE @1691 DATA
-    _ZTSN4utf812invalid_utf8E @1692 DATA
-    _ZTSN4utf813invalid_utf16E @1693 DATA
-    _ZTSN4utf815not_enough_roomE @1694 DATA
-    _ZTSN4utf818invalid_code_pointE @1695 DATA
-    _ZTSN4utf89exceptionE @1696 DATA
-    _ZTSSt13runtime_error @1697 DATA
-    _ZTSSt9exception @1698 DATA
-    _ZTVN4utf812invalid_utf8E @1699 DATA
-    _ZTVN4utf813invalid_utf16E @1700 DATA
-    _ZTVN4utf815not_enough_roomE @1701 DATA
-    _ZTVN4utf818invalid_code_pointE @1702 DATA
-    _ZTVN4utf89exceptionE @1703 DATA
-    _ZZN4utf815replace_invalidIN9__gnu_cxx17__normal_iteratorIPKcSsEESt20back_insert_iteratorISsEEET0_T_S9_S8_E18replacement_marker @1704 DATA
-    _ZdlPvS_ @1705
-    _ZnwjPv @1706
-    _get_output_format @1707
-    printHello @1708
-    printf @1709
-    sprintf @1710
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_S3_ @1676
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_S7_ @1677
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_OS6_ @1678
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_ @1679
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_OS6_ @1680
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_ @1681
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_ @1682
+    _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ES3_RKS6_ @1683
+    _ZTIN3sql12SQLExceptionE @1684 DATA
+    _ZTIN4utf812invalid_utf8E @1685 DATA
+    _ZTIN4utf813invalid_utf16E @1686 DATA
+    _ZTIN4utf815not_enough_roomE @1687 DATA
+    _ZTIN4utf818invalid_code_pointE @1688 DATA
+    _ZTIN4utf89exceptionE @1689 DATA
+    _ZTISt13runtime_error @1690 DATA
+    _ZTISt9exception @1691 DATA
+    _ZTSN3sql12SQLExceptionE @1692 DATA
+    _ZTSN4utf812invalid_utf8E @1693 DATA
+    _ZTSN4utf813invalid_utf16E @1694 DATA
+    _ZTSN4utf815not_enough_roomE @1695 DATA
+    _ZTSN4utf818invalid_code_pointE @1696 DATA
+    _ZTSN4utf89exceptionE @1697 DATA
+    _ZTSSt13runtime_error @1698 DATA
+    _ZTSSt9exception @1699 DATA
+    _ZTVN4utf812invalid_utf8E @1700 DATA
+    _ZTVN4utf813invalid_utf16E @1701 DATA
+    _ZTVN4utf815not_enough_roomE @1702 DATA
+    _ZTVN4utf818invalid_code_pointE @1703 DATA
+    _ZTVN4utf89exceptionE @1704 DATA
+    _ZZN4utf815replace_invalidIN9__gnu_cxx17__normal_iteratorIPKcSsEESt20back_insert_iteratorISsEEET0_T_S9_S8_E18replacement_marker @1705 DATA
+    _ZdlPvS_ @1706
+    _ZnwjPv @1707
+    _get_output_format @1708
+    printHello @1709
+    printf @1710
+    sprintf @1711

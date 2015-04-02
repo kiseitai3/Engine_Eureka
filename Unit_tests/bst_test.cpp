@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../typedefs.h"
 #include "../BST.h"
 
 int main()

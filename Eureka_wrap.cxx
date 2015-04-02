@@ -2937,83 +2937,86 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_DataBase swig_types[0]
-#define SWIGTYPE_p_Game swig_types[1]
-#define SWIGTYPE_p_GameInfo swig_types[2]
-#define SWIGTYPE_p_IOManager swig_types[3]
-#define SWIGTYPE_p_IONode swig_types[4]
-#define SWIGTYPE_p_IPaddress swig_types[5]
-#define SWIGTYPE_p_Layer swig_types[6]
-#define SWIGTYPE_p_LayerSystem swig_types[7]
-#define SWIGTYPE_p_Level swig_types[8]
-#define SWIGTYPE_p_ModAdapter swig_types[9]
-#define SWIGTYPE_p_ModuleNode swig_types[10]
-#define SWIGTYPE_p_ModuleSystem swig_types[11]
-#define SWIGTYPE_p_NetNode swig_types[12]
-#define SWIGTYPE_p_NetworkManager swig_types[13]
-#define SWIGTYPE_p_Particle swig_types[14]
-#define SWIGTYPE_p_ParticleCluster swig_types[15]
-#define SWIGTYPE_p_ParticleNode swig_types[16]
-#define SWIGTYPE_p_ParticleSystem swig_types[17]
-#define SWIGTYPE_p_Physics swig_types[18]
-#define SWIGTYPE_p_Range swig_types[19]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[20]
-#define SWIGTYPE_p_SDL_Event swig_types[21]
-#define SWIGTYPE_p_SDL_Rect swig_types[22]
-#define SWIGTYPE_p_SDL_Renderer swig_types[23]
-#define SWIGTYPE_p_SDL_Texture swig_types[24]
-#define SWIGTYPE_p_SQLGenerator swig_types[25]
-#define SWIGTYPE_p_ScreenInfo swig_types[26]
-#define SWIGTYPE_p_ScriptWrap swig_types[27]
-#define SWIGTYPE_p_SoundChunk swig_types[28]
-#define SWIGTYPE_p_SoundInfo swig_types[29]
-#define SWIGTYPE_p_SoundQueue swig_types[30]
-#define SWIGTYPE_p_SubFrame swig_types[31]
-#define SWIGTYPE_p_SynchData swig_types[32]
-#define SWIGTYPE_p_TCPClient swig_types[33]
-#define SWIGTYPE_p_TCPsocket swig_types[34]
-#define SWIGTYPE_p_ThreadSystem swig_types[35]
-#define SWIGTYPE_p_Timer swig_types[36]
-#define SWIGTYPE_p_TimerSystem swig_types[37]
-#define SWIGTYPE_p_Trigger swig_types[38]
-#define SWIGTYPE_p_TriggerManager swig_types[39]
-#define SWIGTYPE_p_UDPClient swig_types[40]
-#define SWIGTYPE_p_UDPsocket swig_types[41]
-#define SWIGTYPE_p_UI swig_types[42]
-#define SWIGTYPE_p_UIManager swig_types[43]
-#define SWIGTYPE_p_Uint8 swig_types[44]
-#define SWIGTYPE_p_Unit swig_types[45]
-#define SWIGTYPE_p_UnitManager swig_types[46]
-#define SWIGTYPE_p_UnitNode swig_types[47]
-#define SWIGTYPE_p_VideoFrame swig_types[48]
-#define SWIGTYPE_p_VideoPlayer swig_types[49]
-#define SWIGTYPE_p_bool swig_types[50]
-#define SWIGTYPE_p_char swig_types[51]
-#define SWIGTYPE_p_data_base swig_types[52]
-#define SWIGTYPE_p_double swig_types[53]
-#define SWIGTYPE_p_draw_base swig_types[54]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[55]
-#define SWIGTYPE_p_int swig_types[56]
-#define SWIGTYPE_p_math_VECTOR swig_types[57]
-#define SWIGTYPE_p_math_point swig_types[58]
-#define SWIGTYPE_p_pChar swig_types[59]
-#define SWIGTYPE_p_p_ParticleNode swig_types[60]
-#define SWIGTYPE_p_psudo_type swig_types[61]
-#define SWIGTYPE_p_pthread_cond_t swig_types[62]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[63]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[64]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[65]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[66]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[67]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[68]
-#define SWIGTYPE_p_std__string swig_types[69]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[70]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[71]
-#define SWIGTYPE_p_unsigned_char swig_types[72]
-#define SWIGTYPE_p_unsigned_short swig_types[73]
-#define SWIGTYPE_p_void swig_types[74]
-static swig_type_info *swig_types[76];
-static swig_module_info swig_module = {swig_types, 75, 0, 0, 0, 0};
+#define SWIGTYPE_p_Cursor swig_types[0]
+#define SWIGTYPE_p_CursorNode swig_types[1]
+#define SWIGTYPE_p_DataBase swig_types[2]
+#define SWIGTYPE_p_Game swig_types[3]
+#define SWIGTYPE_p_GameInfo swig_types[4]
+#define SWIGTYPE_p_IOManager swig_types[5]
+#define SWIGTYPE_p_IONode swig_types[6]
+#define SWIGTYPE_p_IPaddress swig_types[7]
+#define SWIGTYPE_p_Layer swig_types[8]
+#define SWIGTYPE_p_LayerSystem swig_types[9]
+#define SWIGTYPE_p_Level swig_types[10]
+#define SWIGTYPE_p_ModAdapter swig_types[11]
+#define SWIGTYPE_p_ModuleNode swig_types[12]
+#define SWIGTYPE_p_ModuleSystem swig_types[13]
+#define SWIGTYPE_p_NetNode swig_types[14]
+#define SWIGTYPE_p_NetworkManager swig_types[15]
+#define SWIGTYPE_p_Particle swig_types[16]
+#define SWIGTYPE_p_ParticleCluster swig_types[17]
+#define SWIGTYPE_p_ParticleNode swig_types[18]
+#define SWIGTYPE_p_ParticleSystem swig_types[19]
+#define SWIGTYPE_p_Physics swig_types[20]
+#define SWIGTYPE_p_Range swig_types[21]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[22]
+#define SWIGTYPE_p_SDL_Event swig_types[23]
+#define SWIGTYPE_p_SDL_Rect swig_types[24]
+#define SWIGTYPE_p_SDL_Renderer swig_types[25]
+#define SWIGTYPE_p_SDL_Texture swig_types[26]
+#define SWIGTYPE_p_SQLGenerator swig_types[27]
+#define SWIGTYPE_p_ScreenInfo swig_types[28]
+#define SWIGTYPE_p_ScriptWrap swig_types[29]
+#define SWIGTYPE_p_SoundChunk swig_types[30]
+#define SWIGTYPE_p_SoundInfo swig_types[31]
+#define SWIGTYPE_p_SoundQueue swig_types[32]
+#define SWIGTYPE_p_SubFrame swig_types[33]
+#define SWIGTYPE_p_SynchData swig_types[34]
+#define SWIGTYPE_p_TCPClient swig_types[35]
+#define SWIGTYPE_p_TCPsocket swig_types[36]
+#define SWIGTYPE_p_ThreadSystem swig_types[37]
+#define SWIGTYPE_p_Timer swig_types[38]
+#define SWIGTYPE_p_TimerSystem swig_types[39]
+#define SWIGTYPE_p_Trigger swig_types[40]
+#define SWIGTYPE_p_TriggerManager swig_types[41]
+#define SWIGTYPE_p_UDPClient swig_types[42]
+#define SWIGTYPE_p_UDPsocket swig_types[43]
+#define SWIGTYPE_p_UI swig_types[44]
+#define SWIGTYPE_p_UIManager swig_types[45]
+#define SWIGTYPE_p_Uint8 swig_types[46]
+#define SWIGTYPE_p_Unit swig_types[47]
+#define SWIGTYPE_p_UnitManager swig_types[48]
+#define SWIGTYPE_p_UnitNode swig_types[49]
+#define SWIGTYPE_p_VideoFrame swig_types[50]
+#define SWIGTYPE_p_VideoPlayer swig_types[51]
+#define SWIGTYPE_p_bool swig_types[52]
+#define SWIGTYPE_p_char swig_types[53]
+#define SWIGTYPE_p_cursor_state swig_types[54]
+#define SWIGTYPE_p_data_base swig_types[55]
+#define SWIGTYPE_p_double swig_types[56]
+#define SWIGTYPE_p_draw_base swig_types[57]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[58]
+#define SWIGTYPE_p_int swig_types[59]
+#define SWIGTYPE_p_math_VECTOR swig_types[60]
+#define SWIGTYPE_p_math_point swig_types[61]
+#define SWIGTYPE_p_pChar swig_types[62]
+#define SWIGTYPE_p_p_ParticleNode swig_types[63]
+#define SWIGTYPE_p_psudo_type swig_types[64]
+#define SWIGTYPE_p_pthread_cond_t swig_types[65]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[66]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[67]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[68]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[69]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[70]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[71]
+#define SWIGTYPE_p_std__string swig_types[72]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[73]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[74]
+#define SWIGTYPE_p_unsigned_char swig_types[75]
+#define SWIGTYPE_p_unsigned_short swig_types[76]
+#define SWIGTYPE_p_void swig_types[77]
+static swig_type_info *swig_types[79];
+static swig_module_info swig_module = {swig_types, 78, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3439,6 +3442,7 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -4048,6 +4052,18 @@ SWIGINTERN PyObject *_wrap_GetMaxValueSizeT(PyObject *SWIGUNUSEDPARM(self), PyOb
   if (!PyArg_ParseTuple(args,(char *)":GetMaxValueSizeT")) SWIG_fail;
   result = GetMaxValueSizeT();
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_printHello(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  
+  if (!PyArg_ParseTuple(args,(char *)":printHello")) SWIG_fail;
+  printHello();
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -34271,6 +34287,604 @@ SWIGINTERN PyObject *VideoPlayer_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_CursorNode_name_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:CursorNode_name_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_name_set" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CursorNode_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CursorNode_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->name = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_name_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:CursorNode_name_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_name_get" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  result = (std::string *) & ((arg1)->name);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_soundFile_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:CursorNode_soundFile_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_soundFile_set" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CursorNode_soundFile_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CursorNode_soundFile_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->soundFile = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_soundFile_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:CursorNode_soundFile_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_soundFile_get" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  result = (std::string *) & ((arg1)->soundFile);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_id_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:CursorNode_id_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_id_set" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CursorNode_id_set" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  if (arg1) (arg1)->id = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_id_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:CursorNode_id_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_id_get" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  result =  ((arg1)->id);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_cursor_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:CursorNode_cursor_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_cursor_set" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_draw_base, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CursorNode_cursor_set" "', argument " "2"" of type '" "draw_base *""'"); 
+  }
+  arg2 = reinterpret_cast< draw_base * >(argp2);
+  if (arg1) (arg1)->cursor = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_CursorNode_cursor_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  draw_base *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:CursorNode_cursor_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CursorNode_cursor_get" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  result = (draw_base *) ((arg1)->cursor);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_draw_base, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_CursorNode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_CursorNode")) SWIG_fail;
+  result = (CursorNode *)new CursorNode();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_CursorNode, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_CursorNode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_CursorNode",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_CursorNode, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_CursorNode" "', argument " "1"" of type '" "CursorNode *""'"); 
+  }
+  arg1 = reinterpret_cast< CursorNode * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *CursorNode_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_CursorNode, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_cursor_state_click_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:cursor_state_click_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_click_set" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "cursor_state_click_set" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  if (arg1) (arg1)->click = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cursor_state_click_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:cursor_state_click_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cursor_state_click_get" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  result = (bool) ((arg1)->click);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_cursor_state(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_cursor_state")) SWIG_fail;
+  result = (cursor_state *)new cursor_state();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_cursor_state, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_cursor_state(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_cursor_state",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_cursor_state, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_cursor_state" "', argument " "1"" of type '" "cursor_state *""'"); 
+  }
+  arg1 = reinterpret_cast< cursor_state * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *cursor_state_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_cursor_state, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_new_Cursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  Cursor *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Cursor",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Cursor" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (Cursor *)new Cursor(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Cursor, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Cursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Cursor",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Cursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_LoadCursorScript(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_LoadCursorScript",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_LoadCursorScript" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cursor_LoadCursorScript" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  result = (arg1)->LoadCursorScript(arg2);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_RegisterCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_RegisterCursor",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_RegisterCursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cursor_RegisterCursor" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  result = (arg1)->RegisterCursor(arg2);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_UpdateCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  SDL_Event *arg2 = (SDL_Event *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_UpdateCursor",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_UpdateCursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_SDL_Event, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cursor_UpdateCursor" "', argument " "2"" of type '" "SDL_Event *""'"); 
+  }
+  arg2 = reinterpret_cast< SDL_Event * >(argp2);
+  (arg1)->UpdateCursor(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_ChangeToCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_ChangeToCursor",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_ChangeToCursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Cursor_ChangeToCursor" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  (arg1)->ChangeToCursor(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_ToggleMouseGrab(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Cursor_ToggleMouseGrab",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_ToggleMouseGrab" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  (arg1)->ToggleMouseGrab();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_GetCursorState(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  cursor_state result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Cursor_GetCursorState",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_GetCursorState" "', argument " "1"" of type '" "Cursor const *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  result = ((Cursor const *)arg1)->GetCursorState();
+  resultobj = SWIG_NewPointerObj((new cursor_state(static_cast< const cursor_state& >(result))), SWIGTYPE_p_cursor_state, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_DrawCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Cursor_DrawCursor",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_DrawCursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  (arg1)->DrawCursor();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Cursor_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Cursor, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_Game__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   bool arg1 ;
@@ -35730,6 +36344,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"randBinomial", _wrap_randBinomial, METH_VARARGS, NULL},
 	 { (char *)"randNormal", _wrap_randNormal, METH_VARARGS, NULL},
 	 { (char *)"GetMaxValueSizeT", _wrap_GetMaxValueSizeT, METH_VARARGS, NULL},
+	 { (char *)"printHello", _wrap_printHello, METH_VARARGS, NULL},
 	 { (char *)"CREATETABLE_swigconstant", CREATETABLE_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"SELECT_swigconstant", SELECT_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"INSERT_swigconstant", INSERT_swigconstant, METH_VARARGS, NULL},
@@ -36410,6 +37025,32 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"VideoPlayer_isPlayingVideo", _wrap_VideoPlayer_isPlayingVideo, METH_VARARGS, NULL},
 	 { (char *)"VideoPlayer_InitVideoSystem", _wrap_VideoPlayer_InitVideoSystem, METH_VARARGS, NULL},
 	 { (char *)"VideoPlayer_swigregister", VideoPlayer_swigregister, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_name_set", _wrap_CursorNode_name_set, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_name_get", _wrap_CursorNode_name_get, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_soundFile_set", _wrap_CursorNode_soundFile_set, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_soundFile_get", _wrap_CursorNode_soundFile_get, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_id_set", _wrap_CursorNode_id_set, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_id_get", _wrap_CursorNode_id_get, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_cursor_set", _wrap_CursorNode_cursor_set, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_cursor_get", _wrap_CursorNode_cursor_get, METH_VARARGS, NULL},
+	 { (char *)"new_CursorNode", _wrap_new_CursorNode, METH_VARARGS, NULL},
+	 { (char *)"delete_CursorNode", _wrap_delete_CursorNode, METH_VARARGS, NULL},
+	 { (char *)"CursorNode_swigregister", CursorNode_swigregister, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_click_set", _wrap_cursor_state_click_set, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_click_get", _wrap_cursor_state_click_get, METH_VARARGS, NULL},
+	 { (char *)"new_cursor_state", _wrap_new_cursor_state, METH_VARARGS, NULL},
+	 { (char *)"delete_cursor_state", _wrap_delete_cursor_state, METH_VARARGS, NULL},
+	 { (char *)"cursor_state_swigregister", cursor_state_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_Cursor", _wrap_new_Cursor, METH_VARARGS, NULL},
+	 { (char *)"delete_Cursor", _wrap_delete_Cursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_LoadCursorScript", _wrap_Cursor_LoadCursorScript, METH_VARARGS, NULL},
+	 { (char *)"Cursor_RegisterCursor", _wrap_Cursor_RegisterCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_UpdateCursor", _wrap_Cursor_UpdateCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_ChangeToCursor", _wrap_Cursor_ChangeToCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab, METH_VARARGS, NULL},
+	 { (char *)"Cursor_GetCursorState", _wrap_Cursor_GetCursorState, METH_VARARGS, NULL},
+	 { (char *)"Cursor_DrawCursor", _wrap_Cursor_DrawCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_swigregister", Cursor_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Game", _wrap_new_Game, METH_VARARGS, NULL},
 	 { (char *)"delete_Game", _wrap_delete_Game, METH_VARARGS, NULL},
 	 { (char *)"Game_LoadGame", _wrap_Game_LoadGame, METH_VARARGS, NULL},
@@ -36531,12 +37172,20 @@ static void *_p_GameTo_p_IOManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static void *_p_GameTo_p_UnitManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UnitManager *)  ((Game *) x));
 }
+static void *_p_GameTo_p_Cursor(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((Cursor *)  ((Game *) x));
+}
 static void *_p_GameTo_p_ModuleSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ModuleSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_ParticleSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ParticleSystem *)  ((Game *) x));
 }
+static void *_p_cursor_stateTo_p_math_point(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((math_point *)  ((cursor_state *) x));
+}
+static swig_type_info _swigt__p_Cursor = {"_p_Cursor", "Cursor *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_CursorNode = {"_p_CursorNode", "CursorNode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_DataBase = {"_p_DataBase", "DataBase *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Game = {"_p_Game", "Game *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameInfo = {"_p_GameInfo", "GameInfo *", 0, 0, (void*)0, 0};
@@ -36589,6 +37238,7 @@ static swig_type_info _swigt__p_VideoFrame = {"_p_VideoFrame", "VideoFrame *", 0
 static swig_type_info _swigt__p_VideoPlayer = {"_p_VideoPlayer", "VideoPlayer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_bool = {"_p_bool", "bool *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cursor_state = {"_p_cursor_state", "cursor_state *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_data_base = {"_p_data_base", "data_base *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_draw_base = {"_p_draw_base", "draw_base *", 0, 0, (void*)0, 0};
@@ -36614,6 +37264,8 @@ static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "word *|u
 static swig_type_info _swigt__p_void = {"_p_void", "void *|void_ptr", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Cursor,
+  &_swigt__p_CursorNode,
   &_swigt__p_DataBase,
   &_swigt__p_Game,
   &_swigt__p_GameInfo,
@@ -36666,6 +37318,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_VideoPlayer,
   &_swigt__p_bool,
   &_swigt__p_char,
+  &_swigt__p_cursor_state,
   &_swigt__p_data_base,
   &_swigt__p_double,
   &_swigt__p_draw_base,
@@ -36691,6 +37344,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_void,
 };
 
+static swig_cast_info _swigc__p_Cursor[] = {  {&_swigt__p_Game, _p_GameTo_p_Cursor, 0, 0},  {&_swigt__p_Cursor, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_CursorNode[] = {  {&_swigt__p_CursorNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_DataBase[] = {  {&_swigt__p_DataBase, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Game[] = {  {&_swigt__p_Game, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameInfo[] = {  {&_swigt__p_GameInfo, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_GameInfo, 0, 0},{0, 0, 0, 0}};
@@ -36743,13 +37398,14 @@ static swig_cast_info _swigc__p_VideoFrame[] = {  {&_swigt__p_VideoFrame, 0, 0, 
 static swig_cast_info _swigc__p_VideoPlayer[] = {  {&_swigt__p_Game, _p_GameTo_p_VideoPlayer, 0, 0},  {&_swigt__p_VideoPlayer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_bool[] = {  {&_swigt__p_bool, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cursor_state[] = {  {&_swigt__p_cursor_state, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_data_base[] = {  {&_swigt__p_data_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_draw_base[] = {  {&_swigt__p_draw_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_p_void__p_void[] = {  {&_swigt__p_f_p_void__p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_math_VECTOR[] = {  {&_swigt__p_math_VECTOR, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},  {&_swigt__p_cursor_state, _p_cursor_stateTo_p_math_point, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_ParticleNode[] = {  {&_swigt__p_p_ParticleNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -36768,6 +37424,8 @@ static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Cursor,
+  _swigc__p_CursorNode,
   _swigc__p_DataBase,
   _swigc__p_Game,
   _swigc__p_GameInfo,
@@ -36820,6 +37478,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_VideoPlayer,
   _swigc__p_bool,
   _swigc__p_char,
+  _swigc__p_cursor_state,
   _swigc__p_data_base,
   _swigc__p_double,
   _swigc__p_draw_base,
@@ -37531,6 +38190,9 @@ SWIG_init(void) {
   SWIG_addvarlink(SWIG_globals(),(char*)"SQLQuery_WILDCARD",Swig_var_SQLQuery_WILDCARD_get, Swig_var_SQLQuery_WILDCARD_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"data_base_BUFFER",Swig_var_data_base_BUFFER_get, Swig_var_data_base_BUFFER_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"maxConn",Swig_var_maxConn_get, Swig_var_maxConn_set);
+  SWIG_Python_SetConstant(d, "Cursor_SUCCESS",SWIG_From_int(static_cast< int >(Cursor::SUCCESS)));
+  SWIG_Python_SetConstant(d, "Cursor_ALREADY_HAS_SCRIPT",SWIG_From_int(static_cast< int >(Cursor::ALREADY_HAS_SCRIPT)));
+  SWIG_Python_SetConstant(d, "Cursor_FAILED_TO_LOAD",SWIG_From_int(static_cast< int >(Cursor::FAILED_TO_LOAD)));
   SWIG_addvarlink(SWIG_globals(),(char*)"Game_loadRate",Swig_var_Game_loadRate_get, Swig_var_Game_loadRate_set);
 #if PY_VERSION_HEX >= 0x03000000
   return m;

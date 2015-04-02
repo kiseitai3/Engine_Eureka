@@ -87,7 +87,7 @@ void Button::MouseClick(unsigned int button, int x, int y, bool down)
                 GetDrawObject()->SetTextureFromPointer(textures["selected"]);
                 selected = true;
             }
-            if(buttonPressedBefore && !down || buttonPressedBefore && !down)
+            if((buttonPressedBefore && !down) || (buttonPressedBefore && !down))
             {
                 script->ClearArgs(4);
                 script->AddArgument(button);

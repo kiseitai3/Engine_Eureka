@@ -187,7 +187,7 @@ Unit::~Unit()
 
 void Unit::LoadAI(const char *file)
 {
-    if(file != "")
+    if(strcmp(file, ""))
     {
         AI = new ScriptWrap(file);
         if(!AI)
@@ -298,7 +298,7 @@ void Unit::ExecuteAI(Unit *target, const char axis)
     {
         if(hasAI)
         {
-            drawImage = "Combat_" + axis + intToStr(sign);
+            drawImage = std::string("Combat_") + axis + intToStr(sign);
         }
         AttackAI(target);
     }
@@ -346,7 +346,7 @@ void Unit::ProcessKeyEvent(std::string key)
 
 void Unit::LoadKeyScript(const char *file)
 {
-    if(file != "")
+    if(strcmp(file, ""))
     {
         KeyScripts = new ScriptWrap(file);
         if(!KeyScripts)
@@ -701,7 +701,7 @@ void Unit::DrawImages()
 
 void LoadScript(ScriptWrap* script, const char *file)
 {
-    if(file != "")
+    if(strcmp(file, ""))
     {
         script = new ScriptWrap(file);
         if(!script)

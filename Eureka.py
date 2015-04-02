@@ -119,6 +119,10 @@ def GetMaxValueSizeT():
     return _Eureka.GetMaxValueSizeT()
 GetMaxValueSizeT = _Eureka.GetMaxValueSizeT
 
+def printHello():
+    return _Eureka.printHello()
+printHello = _Eureka.printHello
+
 _Eureka.CREATETABLE_swigconstant(_Eureka)
 CREATETABLE = _Eureka.CREATETABLE
 
@@ -2538,13 +2542,115 @@ class VideoPlayer(_object):
 VideoPlayer_swigregister = _Eureka.VideoPlayer_swigregister
 VideoPlayer_swigregister(VideoPlayer)
 
-class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo):
+class CursorNode(_object):
     __swig_setmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
+    __setattr__ = lambda self, name, value: _swig_setattr(self, CursorNode, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, CursorNode, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["name"] = _Eureka.CursorNode_name_set
+    __swig_getmethods__["name"] = _Eureka.CursorNode_name_get
+    if _newclass:
+        name = _swig_property(_Eureka.CursorNode_name_get, _Eureka.CursorNode_name_set)
+    __swig_setmethods__["soundFile"] = _Eureka.CursorNode_soundFile_set
+    __swig_getmethods__["soundFile"] = _Eureka.CursorNode_soundFile_get
+    if _newclass:
+        soundFile = _swig_property(_Eureka.CursorNode_soundFile_get, _Eureka.CursorNode_soundFile_set)
+    __swig_setmethods__["id"] = _Eureka.CursorNode_id_set
+    __swig_getmethods__["id"] = _Eureka.CursorNode_id_get
+    if _newclass:
+        id = _swig_property(_Eureka.CursorNode_id_get, _Eureka.CursorNode_id_set)
+    __swig_setmethods__["cursor"] = _Eureka.CursorNode_cursor_set
+    __swig_getmethods__["cursor"] = _Eureka.CursorNode_cursor_get
+    if _newclass:
+        cursor = _swig_property(_Eureka.CursorNode_cursor_get, _Eureka.CursorNode_cursor_set)
+
+    def __init__(self):
+        this = _Eureka.new_CursorNode()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_CursorNode
+    __del__ = lambda self: None
+CursorNode_swigregister = _Eureka.CursorNode_swigregister
+CursorNode_swigregister(CursorNode)
+
+class cursor_state(math_point):
+    __swig_setmethods__ = {}
+    for _s in [math_point]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, cursor_state, name, value)
+    __swig_getmethods__ = {}
+    for _s in [math_point]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, cursor_state, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["click"] = _Eureka.cursor_state_click_set
+    __swig_getmethods__["click"] = _Eureka.cursor_state_click_get
+    if _newclass:
+        click = _swig_property(_Eureka.cursor_state_click_get, _Eureka.cursor_state_click_set)
+
+    def __init__(self):
+        this = _Eureka.new_cursor_state()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_cursor_state
+    __del__ = lambda self: None
+cursor_state_swigregister = _Eureka.cursor_state_swigregister
+cursor_state_swigregister(cursor_state)
+
+class Cursor(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Cursor, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Cursor, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, owner):
+        this = _Eureka.new_Cursor(owner)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_Cursor
+    __del__ = lambda self: None
+
+    def LoadCursorScript(self, file):
+        return _Eureka.Cursor_LoadCursorScript(self, file)
+
+    def RegisterCursor(self, file):
+        return _Eureka.Cursor_RegisterCursor(self, file)
+
+    def UpdateCursor(self, e):
+        return _Eureka.Cursor_UpdateCursor(self, e)
+
+    def ChangeToCursor(self, id):
+        return _Eureka.Cursor_ChangeToCursor(self, id)
+
+    def ToggleMouseGrab(self):
+        return _Eureka.Cursor_ToggleMouseGrab(self)
+
+    def GetCursorState(self):
+        return _Eureka.Cursor_GetCursorState(self)
+
+    def DrawCursor(self):
+        return _Eureka.Cursor_DrawCursor(self)
+    SUCCESS = _Eureka.Cursor_SUCCESS
+    ALREADY_HAS_SCRIPT = _Eureka.Cursor_ALREADY_HAS_SCRIPT
+    FAILED_TO_LOAD = _Eureka.Cursor_FAILED_TO_LOAD
+Cursor_swigregister = _Eureka.Cursor_swigregister
+Cursor_swigregister(Cursor)
+
+class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo):
+    __swig_setmethods__ = {}
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Game, name, value)
     __swig_getmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Game, name)
     __repr__ = _swig_repr

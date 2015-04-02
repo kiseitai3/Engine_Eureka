@@ -2641,84 +2641,87 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_DataBase swig_types[0]
-#define SWIGTYPE_p_Game swig_types[1]
-#define SWIGTYPE_p_GameInfo swig_types[2]
-#define SWIGTYPE_p_IOManager swig_types[3]
-#define SWIGTYPE_p_IONode swig_types[4]
-#define SWIGTYPE_p_IPaddress swig_types[5]
-#define SWIGTYPE_p_Layer swig_types[6]
-#define SWIGTYPE_p_LayerSystem swig_types[7]
-#define SWIGTYPE_p_Level swig_types[8]
-#define SWIGTYPE_p_ModAdapter swig_types[9]
-#define SWIGTYPE_p_ModuleNode swig_types[10]
-#define SWIGTYPE_p_ModuleSystem swig_types[11]
-#define SWIGTYPE_p_NetNode swig_types[12]
-#define SWIGTYPE_p_NetworkManager swig_types[13]
-#define SWIGTYPE_p_Particle swig_types[14]
-#define SWIGTYPE_p_ParticleCluster swig_types[15]
-#define SWIGTYPE_p_ParticleNode swig_types[16]
-#define SWIGTYPE_p_ParticleSystem swig_types[17]
-#define SWIGTYPE_p_Physics swig_types[18]
-#define SWIGTYPE_p_Range swig_types[19]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[20]
-#define SWIGTYPE_p_SDL_Event swig_types[21]
-#define SWIGTYPE_p_SDL_Rect swig_types[22]
-#define SWIGTYPE_p_SDL_Renderer swig_types[23]
-#define SWIGTYPE_p_SDL_Texture swig_types[24]
-#define SWIGTYPE_p_SQLGenerator swig_types[25]
-#define SWIGTYPE_p_SWIGCDATA swig_types[26]
-#define SWIGTYPE_p_ScreenInfo swig_types[27]
-#define SWIGTYPE_p_ScriptWrap swig_types[28]
-#define SWIGTYPE_p_SoundChunk swig_types[29]
-#define SWIGTYPE_p_SoundInfo swig_types[30]
-#define SWIGTYPE_p_SoundQueue swig_types[31]
-#define SWIGTYPE_p_SubFrame swig_types[32]
-#define SWIGTYPE_p_SynchData swig_types[33]
-#define SWIGTYPE_p_TCPClient swig_types[34]
-#define SWIGTYPE_p_TCPsocket swig_types[35]
-#define SWIGTYPE_p_ThreadSystem swig_types[36]
-#define SWIGTYPE_p_Timer swig_types[37]
-#define SWIGTYPE_p_TimerSystem swig_types[38]
-#define SWIGTYPE_p_Trigger swig_types[39]
-#define SWIGTYPE_p_TriggerManager swig_types[40]
-#define SWIGTYPE_p_UDPClient swig_types[41]
-#define SWIGTYPE_p_UDPsocket swig_types[42]
-#define SWIGTYPE_p_UI swig_types[43]
-#define SWIGTYPE_p_UIManager swig_types[44]
-#define SWIGTYPE_p_Uint8 swig_types[45]
-#define SWIGTYPE_p_Unit swig_types[46]
-#define SWIGTYPE_p_UnitManager swig_types[47]
-#define SWIGTYPE_p_UnitNode swig_types[48]
-#define SWIGTYPE_p_VideoFrame swig_types[49]
-#define SWIGTYPE_p_VideoPlayer swig_types[50]
-#define SWIGTYPE_p_bool swig_types[51]
-#define SWIGTYPE_p_char swig_types[52]
-#define SWIGTYPE_p_data_base swig_types[53]
-#define SWIGTYPE_p_double swig_types[54]
-#define SWIGTYPE_p_draw_base swig_types[55]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[56]
-#define SWIGTYPE_p_int swig_types[57]
-#define SWIGTYPE_p_math_VECTOR swig_types[58]
-#define SWIGTYPE_p_math_point swig_types[59]
-#define SWIGTYPE_p_pChar swig_types[60]
-#define SWIGTYPE_p_p_ParticleNode swig_types[61]
-#define SWIGTYPE_p_psudo_type swig_types[62]
-#define SWIGTYPE_p_pthread_cond_t swig_types[63]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[64]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[65]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[66]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[67]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[68]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[69]
-#define SWIGTYPE_p_std__string swig_types[70]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[71]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[72]
-#define SWIGTYPE_p_unsigned_char swig_types[73]
-#define SWIGTYPE_p_unsigned_short swig_types[74]
-#define SWIGTYPE_p_void swig_types[75]
-static swig_type_info *swig_types[77];
-static swig_module_info swig_module = {swig_types, 76, 0, 0, 0, 0};
+#define SWIGTYPE_p_Cursor swig_types[0]
+#define SWIGTYPE_p_CursorNode swig_types[1]
+#define SWIGTYPE_p_DataBase swig_types[2]
+#define SWIGTYPE_p_Game swig_types[3]
+#define SWIGTYPE_p_GameInfo swig_types[4]
+#define SWIGTYPE_p_IOManager swig_types[5]
+#define SWIGTYPE_p_IONode swig_types[6]
+#define SWIGTYPE_p_IPaddress swig_types[7]
+#define SWIGTYPE_p_Layer swig_types[8]
+#define SWIGTYPE_p_LayerSystem swig_types[9]
+#define SWIGTYPE_p_Level swig_types[10]
+#define SWIGTYPE_p_ModAdapter swig_types[11]
+#define SWIGTYPE_p_ModuleNode swig_types[12]
+#define SWIGTYPE_p_ModuleSystem swig_types[13]
+#define SWIGTYPE_p_NetNode swig_types[14]
+#define SWIGTYPE_p_NetworkManager swig_types[15]
+#define SWIGTYPE_p_Particle swig_types[16]
+#define SWIGTYPE_p_ParticleCluster swig_types[17]
+#define SWIGTYPE_p_ParticleNode swig_types[18]
+#define SWIGTYPE_p_ParticleSystem swig_types[19]
+#define SWIGTYPE_p_Physics swig_types[20]
+#define SWIGTYPE_p_Range swig_types[21]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[22]
+#define SWIGTYPE_p_SDL_Event swig_types[23]
+#define SWIGTYPE_p_SDL_Rect swig_types[24]
+#define SWIGTYPE_p_SDL_Renderer swig_types[25]
+#define SWIGTYPE_p_SDL_Texture swig_types[26]
+#define SWIGTYPE_p_SQLGenerator swig_types[27]
+#define SWIGTYPE_p_SWIGCDATA swig_types[28]
+#define SWIGTYPE_p_ScreenInfo swig_types[29]
+#define SWIGTYPE_p_ScriptWrap swig_types[30]
+#define SWIGTYPE_p_SoundChunk swig_types[31]
+#define SWIGTYPE_p_SoundInfo swig_types[32]
+#define SWIGTYPE_p_SoundQueue swig_types[33]
+#define SWIGTYPE_p_SubFrame swig_types[34]
+#define SWIGTYPE_p_SynchData swig_types[35]
+#define SWIGTYPE_p_TCPClient swig_types[36]
+#define SWIGTYPE_p_TCPsocket swig_types[37]
+#define SWIGTYPE_p_ThreadSystem swig_types[38]
+#define SWIGTYPE_p_Timer swig_types[39]
+#define SWIGTYPE_p_TimerSystem swig_types[40]
+#define SWIGTYPE_p_Trigger swig_types[41]
+#define SWIGTYPE_p_TriggerManager swig_types[42]
+#define SWIGTYPE_p_UDPClient swig_types[43]
+#define SWIGTYPE_p_UDPsocket swig_types[44]
+#define SWIGTYPE_p_UI swig_types[45]
+#define SWIGTYPE_p_UIManager swig_types[46]
+#define SWIGTYPE_p_Uint8 swig_types[47]
+#define SWIGTYPE_p_Unit swig_types[48]
+#define SWIGTYPE_p_UnitManager swig_types[49]
+#define SWIGTYPE_p_UnitNode swig_types[50]
+#define SWIGTYPE_p_VideoFrame swig_types[51]
+#define SWIGTYPE_p_VideoPlayer swig_types[52]
+#define SWIGTYPE_p_bool swig_types[53]
+#define SWIGTYPE_p_char swig_types[54]
+#define SWIGTYPE_p_cursor_state swig_types[55]
+#define SWIGTYPE_p_data_base swig_types[56]
+#define SWIGTYPE_p_double swig_types[57]
+#define SWIGTYPE_p_draw_base swig_types[58]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[59]
+#define SWIGTYPE_p_int swig_types[60]
+#define SWIGTYPE_p_math_VECTOR swig_types[61]
+#define SWIGTYPE_p_math_point swig_types[62]
+#define SWIGTYPE_p_pChar swig_types[63]
+#define SWIGTYPE_p_p_ParticleNode swig_types[64]
+#define SWIGTYPE_p_psudo_type swig_types[65]
+#define SWIGTYPE_p_pthread_cond_t swig_types[66]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[67]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[68]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[69]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[70]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[71]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[72]
+#define SWIGTYPE_p_std__string swig_types[73]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[74]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[75]
+#define SWIGTYPE_p_unsigned_char swig_types[76]
+#define SWIGTYPE_p_unsigned_short swig_types[77]
+#define SWIGTYPE_p_void swig_types[78]
+static swig_type_info *swig_types[80];
+static swig_module_info swig_module = {swig_types, 79, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2812,6 +2815,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 #include "level.h"
 #include "soundqueue.h"
 #include "videoplayer.h"
+#include "cursor.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -3390,6 +3394,22 @@ static int _wrap_GetMaxValueSizeT(lua_State* L) {
   SWIG_check_num_args("GetMaxValueSizeT",0,0)
   result = GetMaxValueSizeT();
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_printHello(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("printHello",0,0)
+  printHello();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -30933,6 +30953,661 @@ static swig_lua_class *swig_VideoPlayer_bases[] = {0};
 static const char *swig_VideoPlayer_base_names[] = {0};
 static swig_lua_class _wrap_class_VideoPlayer = { "VideoPlayer", "VideoPlayer", &SWIGTYPE_p_VideoPlayer,_proxy__wrap_new_VideoPlayer, swig_delete_VideoPlayer, swig_VideoPlayer_methods, swig_VideoPlayer_attributes, &swig_VideoPlayer_Sf_SwigStatic, swig_VideoPlayer_meta, swig_VideoPlayer_bases, swig_VideoPlayer_base_names };
 
+static int _wrap_CursorNode_name_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("CursorNode::name",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::name",1,"CursorNode *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("CursorNode::name",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_name_set",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->name = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_name_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("CursorNode::name",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::name",1,"CursorNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_name_get",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  result = (std::string *) & ((arg1)->name);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_soundFile_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("CursorNode::soundFile",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::soundFile",1,"CursorNode *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("CursorNode::soundFile",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_soundFile_set",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->soundFile = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_soundFile_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("CursorNode::soundFile",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::soundFile",1,"CursorNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_soundFile_get",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  result = (std::string *) & ((arg1)->soundFile);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_id_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("CursorNode::id",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::id",1,"CursorNode *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("CursorNode::id",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_id_set",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->id = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_id_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("CursorNode::id",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::id",1,"CursorNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_id_get",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  result =  ((arg1)->id);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_cursor_set(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
+  
+  SWIG_check_num_args("CursorNode::cursor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::cursor",1,"CursorNode *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("CursorNode::cursor",2,"draw_base *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_cursor_set",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_draw_base,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("CursorNode_cursor_set",2,SWIGTYPE_p_draw_base);
+  }
+  
+  if (arg1) (arg1)->cursor = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CursorNode_cursor_get(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *arg1 = (CursorNode *) 0 ;
+  draw_base *result = 0 ;
+  
+  SWIG_check_num_args("CursorNode::cursor",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CursorNode::cursor",1,"CursorNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CursorNode,0))){
+    SWIG_fail_ptr("CursorNode_cursor_get",1,SWIGTYPE_p_CursorNode);
+  }
+  
+  result = (draw_base *) ((arg1)->cursor);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_draw_base,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_CursorNode(lua_State* L) {
+  int SWIG_arg = 0;
+  CursorNode *result = 0 ;
+  
+  SWIG_check_num_args("CursorNode::CursorNode",0,0)
+  result = (CursorNode *)new CursorNode();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CursorNode,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_CursorNode(void *obj) {
+CursorNode *arg1 = (CursorNode *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_CursorNode(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_CursorNode);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_CursorNode_attributes[] = {
+    { "name", _wrap_CursorNode_name_get, _wrap_CursorNode_name_set },
+    { "soundFile", _wrap_CursorNode_soundFile_get, _wrap_CursorNode_soundFile_set },
+    { "id", _wrap_CursorNode_id_get, _wrap_CursorNode_id_set },
+    { "cursor", _wrap_CursorNode_cursor_get, _wrap_CursorNode_cursor_set },
+    {0,0,0}
+};
+static swig_lua_method swig_CursorNode_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_CursorNode_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_CursorNode_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_CursorNode_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_CursorNode_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_CursorNode_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_CursorNode_Sf_SwigStatic = {
+    "CursorNode",
+    swig_CursorNode_Sf_SwigStatic_methods,
+    swig_CursorNode_Sf_SwigStatic_attributes,
+    swig_CursorNode_Sf_SwigStatic_constants,
+    swig_CursorNode_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_CursorNode_bases[] = {0};
+static const char *swig_CursorNode_base_names[] = {0};
+static swig_lua_class _wrap_class_CursorNode = { "CursorNode", "CursorNode", &SWIGTYPE_p_CursorNode,_proxy__wrap_new_CursorNode, swig_delete_CursorNode, swig_CursorNode_methods, swig_CursorNode_attributes, &swig_CursorNode_Sf_SwigStatic, swig_CursorNode_meta, swig_CursorNode_bases, swig_CursorNode_base_names };
+
+static int _wrap_cursor_state_click_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool arg2 ;
+  
+  SWIG_check_num_args("cursor_state::click",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::click",1,"cursor_state *");
+  if(!lua_isboolean(L,2)) SWIG_fail_arg("cursor_state::click",2,"bool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_click_set",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  arg2 = (lua_toboolean(L, 2)!=0);
+  if (arg1) (arg1)->click = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cursor_state_click_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *arg1 = (cursor_state *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("cursor_state::click",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cursor_state::click",1,"cursor_state *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cursor_state,0))){
+    SWIG_fail_ptr("cursor_state_click_get",1,SWIGTYPE_p_cursor_state);
+  }
+  
+  result = (bool) ((arg1)->click);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cursor_state(lua_State* L) {
+  int SWIG_arg = 0;
+  cursor_state *result = 0 ;
+  
+  SWIG_check_num_args("cursor_state::cursor_state",0,0)
+  result = (cursor_state *)new cursor_state();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cursor_state,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cursor_state(void *obj) {
+cursor_state *arg1 = (cursor_state *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_cursor_state(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cursor_state);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cursor_state_attributes[] = {
+    { "click", _wrap_cursor_state_click_get, _wrap_cursor_state_click_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cursor_state_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cursor_state_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cursor_state_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cursor_state_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cursor_state_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cursor_state_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cursor_state_Sf_SwigStatic = {
+    "cursor_state",
+    swig_cursor_state_Sf_SwigStatic_methods,
+    swig_cursor_state_Sf_SwigStatic_attributes,
+    swig_cursor_state_Sf_SwigStatic_constants,
+    swig_cursor_state_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cursor_state_bases[] = {0,0};
+static const char *swig_cursor_state_base_names[] = {"math_point *",0};
+static swig_lua_class _wrap_class_cursor_state = { "cursor_state", "cursor_state", &SWIGTYPE_p_cursor_state,_proxy__wrap_new_cursor_state, swig_delete_cursor_state, swig_cursor_state_methods, swig_cursor_state_attributes, &swig_cursor_state_Sf_SwigStatic, swig_cursor_state_meta, swig_cursor_state_bases, swig_cursor_state_base_names };
+
+static int _wrap_new_Cursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  Cursor *result = 0 ;
+  
+  SWIG_check_num_args("Cursor::Cursor",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::Cursor",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("new_Cursor",1,SWIGTYPE_p_Game);
+  }
+  
+  result = (Cursor *)new Cursor(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Cursor,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_LoadCursorScript(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("Cursor::LoadCursorScript",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::LoadCursorScript",1,"Cursor *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("Cursor::LoadCursorScript",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_LoadCursorScript",1,SWIGTYPE_p_Cursor);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  result = (arg1)->LoadCursorScript(arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_RegisterCursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("Cursor::RegisterCursor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::RegisterCursor",1,"Cursor *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("Cursor::RegisterCursor",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_RegisterCursor",1,SWIGTYPE_p_Cursor);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  result = (arg1)->RegisterCursor(arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_UpdateCursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  SDL_Event *arg2 = (SDL_Event *) 0 ;
+  
+  SWIG_check_num_args("Cursor::UpdateCursor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::UpdateCursor",1,"Cursor *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Cursor::UpdateCursor",2,"SDL_Event *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_UpdateCursor",1,SWIGTYPE_p_Cursor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SDL_Event,0))){
+    SWIG_fail_ptr("Cursor_UpdateCursor",2,SWIGTYPE_p_SDL_Event);
+  }
+  
+  (arg1)->UpdateCursor(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_ChangeToCursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("Cursor::ChangeToCursor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::ChangeToCursor",1,"Cursor *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Cursor::ChangeToCursor",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_ChangeToCursor",1,SWIGTYPE_p_Cursor);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->ChangeToCursor(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_ToggleMouseGrab(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  
+  SWIG_check_num_args("Cursor::ToggleMouseGrab",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::ToggleMouseGrab",1,"Cursor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_ToggleMouseGrab",1,SWIGTYPE_p_Cursor);
+  }
+  
+  (arg1)->ToggleMouseGrab();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_GetCursorState(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cursor_state result;
+  
+  SWIG_check_num_args("Cursor::GetCursorState",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::GetCursorState",1,"Cursor const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_GetCursorState",1,SWIGTYPE_p_Cursor);
+  }
+  
+  result = ((Cursor const *)arg1)->GetCursorState();
+  {
+    cursor_state * resultptr = new cursor_state((const cursor_state &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cursor_state,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_DrawCursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  
+  SWIG_check_num_args("Cursor::DrawCursor",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::DrawCursor",1,"Cursor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_DrawCursor",1,SWIGTYPE_p_Cursor);
+  }
+  
+  (arg1)->DrawCursor();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_Cursor(void *obj) {
+Cursor *arg1 = (Cursor *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_Cursor(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_Cursor);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_Cursor_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_Cursor_methods[]= {
+    { "LoadCursorScript", _wrap_Cursor_LoadCursorScript},
+    { "RegisterCursor", _wrap_Cursor_RegisterCursor},
+    { "UpdateCursor", _wrap_Cursor_UpdateCursor},
+    { "ChangeToCursor", _wrap_Cursor_ChangeToCursor},
+    { "ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab},
+    { "GetCursorState", _wrap_Cursor_GetCursorState},
+    { "DrawCursor", _wrap_Cursor_DrawCursor},
+    {0,0}
+};
+static swig_lua_method swig_Cursor_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_Cursor_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_Cursor_Sf_SwigStatic_constants[]= {
+    {SWIG_LUA_CONSTTAB_INT("SUCCESS", Cursor::SUCCESS)},
+    {SWIG_LUA_CONSTTAB_INT("ALREADY_HAS_SCRIPT", Cursor::ALREADY_HAS_SCRIPT)},
+    {SWIG_LUA_CONSTTAB_INT("FAILED_TO_LOAD", Cursor::FAILED_TO_LOAD)},
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_Cursor_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_Cursor_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_Cursor_Sf_SwigStatic = {
+    "Cursor",
+    swig_Cursor_Sf_SwigStatic_methods,
+    swig_Cursor_Sf_SwigStatic_attributes,
+    swig_Cursor_Sf_SwigStatic_constants,
+    swig_Cursor_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_Cursor_bases[] = {0};
+static const char *swig_Cursor_base_names[] = {0};
+static swig_lua_class _wrap_class_Cursor = { "Cursor", "Cursor", &SWIGTYPE_p_Cursor,_proxy__wrap_new_Cursor, swig_delete_Cursor, swig_Cursor_methods, swig_Cursor_attributes, &swig_Cursor_Sf_SwigStatic, swig_Cursor_meta, swig_Cursor_bases, swig_Cursor_base_names };
+
 static int _wrap_new_Game__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   bool arg1 ;
@@ -32264,8 +32939,8 @@ static swig_lua_namespace swig_Game_Sf_SwigStatic = {
     swig_Game_Sf_SwigStatic_classes,
     0
 };
-static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","TimerSystem *","VideoPlayer *","ThreadSystem *","GameInfo *",0};
+static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","Cursor *","TimerSystem *","VideoPlayer *","ThreadSystem *","GameInfo *",0};
 static swig_lua_class _wrap_class_Game = { "Game", "Game", &SWIGTYPE_p_Game,_proxy__wrap_new_Game, swig_delete_Game, swig_Game_methods, swig_Game_attributes, &swig_Game_Sf_SwigStatic, swig_Game_meta, swig_Game_bases, swig_Game_base_names };
 
 static int _wrap_helperDrawFunction(lua_State* L) {
@@ -32465,6 +33140,9 @@ static swig_lua_const_info swig_SwigModule_constants[]= {
     {SWIG_LUA_CONSTTAB_INT("NOFLIP", NOFLIP)},
     {SWIG_LUA_CONSTTAB_INT("HORIZONTALLY", HORIZONTALLY)},
     {SWIG_LUA_CONSTTAB_INT("VERTICALLY", VERTICALLY)},
+    {SWIG_LUA_CONSTTAB_INT("Cursor_SUCCESS", Cursor::SUCCESS)},
+    {SWIG_LUA_CONSTTAB_INT("Cursor_ALREADY_HAS_SCRIPT", Cursor::ALREADY_HAS_SCRIPT)},
+    {SWIG_LUA_CONSTTAB_INT("Cursor_FAILED_TO_LOAD", Cursor::FAILED_TO_LOAD)},
     {0,0,0,0,0,0}
 };
 static swig_lua_method swig_SwigModule_methods[]= {
@@ -32475,6 +33153,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "randBinomial", _wrap_randBinomial},
     { "randNormal", _wrap_randNormal},
     { "GetMaxValueSizeT", _wrap_GetMaxValueSizeT},
+    { "printHello", _wrap_printHello},
     { "CalculateDistance", _wrap_CalculateDistance},
     { "data_base_CreateNewFile_static", _wrap_data_base_CreateNewFile_static},
     { "copyfile", _wrap_copyfile},
@@ -32573,6 +33252,9 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_SubFrame,
 &_wrap_class_SoundChunk,
 &_wrap_class_VideoPlayer,
+&_wrap_class_CursorNode,
+&_wrap_class_cursor_state,
+&_wrap_class_Cursor,
 &_wrap_class_Game,
     0
 };
@@ -32654,12 +33336,20 @@ static void *_p_GameTo_p_IOManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static void *_p_GameTo_p_UnitManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UnitManager *)  ((Game *) x));
 }
+static void *_p_GameTo_p_Cursor(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((Cursor *)  ((Game *) x));
+}
 static void *_p_GameTo_p_ModuleSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ModuleSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_ParticleSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ParticleSystem *)  ((Game *) x));
 }
+static void *_p_cursor_stateTo_p_math_point(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((math_point *)  ((cursor_state *) x));
+}
+static swig_type_info _swigt__p_Cursor = {"_p_Cursor", "Cursor *", 0, 0, (void*)&_wrap_class_Cursor, 0};
+static swig_type_info _swigt__p_CursorNode = {"_p_CursorNode", "CursorNode *", 0, 0, (void*)&_wrap_class_CursorNode, 0};
 static swig_type_info _swigt__p_DataBase = {"_p_DataBase", "DataBase *", 0, 0, (void*)&_wrap_class_DataBase, 0};
 static swig_type_info _swigt__p_Game = {"_p_Game", "Game *", 0, 0, (void*)&_wrap_class_Game, 0};
 static swig_type_info _swigt__p_GameInfo = {"_p_GameInfo", "GameInfo *", 0, 0, (void*)&_wrap_class_GameInfo, 0};
@@ -32713,6 +33403,7 @@ static swig_type_info _swigt__p_VideoFrame = {"_p_VideoFrame", "VideoFrame *", 0
 static swig_type_info _swigt__p_VideoPlayer = {"_p_VideoPlayer", "VideoPlayer *", 0, 0, (void*)&_wrap_class_VideoPlayer, 0};
 static swig_type_info _swigt__p_bool = {"_p_bool", "bool *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cursor_state = {"_p_cursor_state", "cursor_state *", 0, 0, (void*)&_wrap_class_cursor_state, 0};
 static swig_type_info _swigt__p_data_base = {"_p_data_base", "data_base *", 0, 0, (void*)&_wrap_class_data_base, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_draw_base = {"_p_draw_base", "draw_base *", 0, 0, (void*)&_wrap_class_draw_base, 0};
@@ -32738,6 +33429,8 @@ static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "word *|u
 static swig_type_info _swigt__p_void = {"_p_void", "void *|void_ptr", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Cursor,
+  &_swigt__p_CursorNode,
   &_swigt__p_DataBase,
   &_swigt__p_Game,
   &_swigt__p_GameInfo,
@@ -32791,6 +33484,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_VideoPlayer,
   &_swigt__p_bool,
   &_swigt__p_char,
+  &_swigt__p_cursor_state,
   &_swigt__p_data_base,
   &_swigt__p_double,
   &_swigt__p_draw_base,
@@ -32816,6 +33510,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_void,
 };
 
+static swig_cast_info _swigc__p_Cursor[] = {  {&_swigt__p_Game, _p_GameTo_p_Cursor, 0, 0},  {&_swigt__p_Cursor, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_CursorNode[] = {  {&_swigt__p_CursorNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_DataBase[] = {  {&_swigt__p_DataBase, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Game[] = {  {&_swigt__p_Game, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameInfo[] = {  {&_swigt__p_GameInfo, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_GameInfo, 0, 0},{0, 0, 0, 0}};
@@ -32869,13 +33565,14 @@ static swig_cast_info _swigc__p_VideoFrame[] = {  {&_swigt__p_VideoFrame, 0, 0, 
 static swig_cast_info _swigc__p_VideoPlayer[] = {  {&_swigt__p_Game, _p_GameTo_p_VideoPlayer, 0, 0},  {&_swigt__p_VideoPlayer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_bool[] = {  {&_swigt__p_bool, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cursor_state[] = {  {&_swigt__p_cursor_state, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_data_base[] = {  {&_swigt__p_data_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_draw_base[] = {  {&_swigt__p_draw_base, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_f_p_void__p_void[] = {  {&_swigt__p_f_p_void__p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_math_VECTOR[] = {  {&_swigt__p_math_VECTOR, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},  {&_swigt__p_cursor_state, _p_cursor_stateTo_p_math_point, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_ParticleNode[] = {  {&_swigt__p_p_ParticleNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -32894,6 +33591,8 @@ static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Cursor,
+  _swigc__p_CursorNode,
   _swigc__p_DataBase,
   _swigc__p_Game,
   _swigc__p_GameInfo,
@@ -32947,6 +33646,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_VideoPlayer,
   _swigc__p_bool,
   _swigc__p_char,
+  _swigc__p_cursor_state,
   _swigc__p_data_base,
   _swigc__p_double,
   _swigc__p_draw_base,

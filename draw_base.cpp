@@ -4,6 +4,7 @@
 #include "data_base.h"
 #include <string>
 #include <iostream>
+#include <cstring>
 #include "draw_base.h"
 #include "conversion.h"
 
@@ -14,14 +15,16 @@
 void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
     data_base animDOM(source);
-    SDL_Surface* tmp = IMG_Load(animDOM.GetStrFromData("tex_texture").c_str());
+    spriteFile = new char[animDOM.GetStrFromData("tex_texture").size()];
+    strcpy(spriteFile, animDOM.GetStrFromData("tex_texture").c_str());//Save local copy of the texture location for reference
+    SDL_Surface* tmp = IMG_Load(spriteFile);
     if(!tmp)
     {
         std::cout << "Failed to load the surface!\n\r";
     }
     else
     {
-        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
+        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0xFF, 0xFF, 0xFF ));
         SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
         SDL_FreeSurface(tmp);
     }
@@ -31,7 +34,7 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// a
     animNum = animDOM.GetIntFromData("tex_anim_num");
     animCounter = animDOM.GetIntFromData("tex_anim_counter");
     noLoop = animDOM.GetIntFromData("tex_noloop");
-    timeBetweenFrames = animDOM.GetIntFromData("tex_time_on_frames");
+    timeBetweenFrames = fps / frames;
     if(timeBetweenFrames == 0)
     {
         timeBetweenFrames = (int)(roundDecimal(1.0 / (frames / (double)(fps)), 0)); //get the number of cycles the frame will be visible by targetting the current frame cap
@@ -66,7 +69,7 @@ void draw_base::apply_surface( int x, int y, SDL_Renderer& destination)
 
     //Blit
     SDL_RenderCopyEx(&destination, SpriteSheet, &src, &target, rotationDeg, &pivot, flipDir);
-    if(frame != frames && !noLoop)
+    if((frame != frames) && !noLoop)
     {
         if(timeSpentOnFrame == timeBetweenFrames)
         {
@@ -104,18 +107,30 @@ SDL_Texture& draw_base::GetTexture() const
 
 void draw_base::ClearTexture()
 {
-    SDL_DestroyTexture(SpriteSheet);
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
     SpriteSheet = 0;
+
+    //Let's delete the local reference to the texture
+    if(spriteFile && textureDelete)
+        delete[] spriteFile;
+    spriteFile = NULL;
 }
 
 void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 {
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
     SpriteSheet = ptr;
+    textureDelete = false;
 }
 
 void draw_base::SetTextureFromRef(SDL_Texture& tex)
 {
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
     SpriteSheet = &tex;
+    textureDelete = false;
 }
 
 void draw_base::setColor( Uint8 red, Uint8 green, Uint8 blue )
@@ -140,6 +155,49 @@ void draw_base::setRotationPivot(math_point p)
 {
     pivot.x = p.X;
     pivot.y = p.Y;
+}
+
+void draw_base::copy(const draw_base& obj, bool realloc_texture, SDL_Renderer* ren)
+{
+    frame = obj.frame;
+    frames = obj.frames;
+    height = obj.height;
+    width = obj.width;
+    animCounter = obj.animCounter;
+    animNum = obj.animNum;
+    timeBetweenFrames = obj.timeBetweenFrames;
+    timeSpentOnFrame = obj.timeSpentOnFrame;
+    flipDir = obj.flipDir;
+    src = obj.src;
+    target = obj.target;
+    pivot = obj.pivot;
+    noLoop = obj.noLoop;
+    rotationDeg = rotationDeg;
+
+    //Now we copy the texture
+    spriteFile = obj.spriteFile;
+    if(realloc_texture)
+    {
+        ClearTexture();
+        SDL_Surface* tmp = IMG_Load(spriteFile);
+        if(!tmp)
+        {
+            std::cout << "Failed to load the surface!\n\r";
+        }
+        else
+        {
+            SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
+            SpriteSheet = SDL_CreateTextureFromSurface(ren, tmp);
+            SDL_FreeSurface(tmp);
+        }
+        textureDelete = true;
+    }
+    else
+    {
+        ClearTexture();
+        SpriteSheet = obj.SpriteSheet;
+        textureDelete = false;
+    }
 }
 
 void draw_base::flip(size_t direction)
@@ -177,6 +235,9 @@ draw_base::draw_base()
     height =0;
     width =0;
     noLoop = 0;
+    timeSpentOnFrame = 0;
+    SpriteSheet = NULL;
+    spriteFile = NULL;
 }
 
 draw_base::~draw_base()

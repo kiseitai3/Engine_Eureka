@@ -1,0 +1,16 @@
+tex_texture = ;
+tex_frames = 1;
+tex_height = 50;
+tex_width = 100;
+tex_anim_num = 0;
+tex_anim_counter = 1;
+tex_noloop = 1;
+tex_time_on_frames = 1;
+textbox_colorbyte1 = 0;
+textbox_colorbyte2 = 0;
+textbox_colorbyte3 = 0;
+textbox_fontloc = ..\\Fonts\\font_default.ttf;
+textbox_font_size = 10;
+textbox_x = 0;
+textbox_y = 0;
+textbox_type = textbox;

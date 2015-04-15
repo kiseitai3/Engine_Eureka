@@ -95,6 +95,11 @@ std::vector<size_t> UnitManager::SpawnUnitFromList(cstr file, int BlitOrder)
     return ids;
 }
 
+std::vector<size_t> UnitManager::CloneUnit(size_t unit_id, size_t copies)
+{
+
+}
+
 size_t UnitManager::SpawnUnitFromFile(cstr file, int BlitOrder)
 {
     bool hero = false;

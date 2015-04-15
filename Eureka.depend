@@ -23324,7 +23324,7 @@
 	<SDL_ttf.h>
 	"data_base.h"
 
-1426346714 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
+1428192007 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	<string>
 	"typedefs.h"
@@ -23637,7 +23637,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1425761393 c:\users\luis\documents\devcb\engine_eureka\data_base.h
+1428115558 c:\users\luis\documents\devcb\engine_eureka\data_base.h
 	<fstream>
 	<string>
 	"conversion.h"
@@ -23700,7 +23700,7 @@
 	<queue>
 	"typedefs.h"
 
-1427561150 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
+1428015788 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
 	<lua.hpp>
 	<string>
 	<iostream>
@@ -23778,7 +23778,7 @@
 	"Timer.h"
 	"typedefs.h"
 
-1427290487 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
+1428165085 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23819,7 +23819,7 @@
 	<vector>
 	<string>
 
-1425768967 c:\users\luis\documents\devcb\engine_eureka\threading.h
+1428071825 c:\users\luis\documents\devcb\engine_eureka\threading.h
 	<iostream>
 	<pthread.h>
 	<list>
@@ -23852,7 +23852,7 @@
 
 1427994028 c:\users\luis\documents\devcb\engine_eureka\bst.cc
 
-1425226624 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
+1428116777 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
 	<string>
 	<string.h>
@@ -23963,7 +23963,7 @@
 	<iostream>
 	"typedefs.h"
 
-1426369108 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
+1428098584 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -24130,7 +24130,7 @@
 	"luawrap.h"
 	"pywrap.h"
 
-1427290487 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
+1428165153 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -27370,7 +27370,7 @@
 	"database.h"
 	"rand_generators.h"
 
-1425768967 source:c:\users\luis\documents\devcb\engine_eureka\threading.cpp
+1428088285 source:c:\users\luis\documents\devcb\engine_eureka\threading.cpp
 	"threading.h"
 	"rand_generators.h"
 
@@ -28549,4 +28549,20 @@
 	<iostream>
 	<cstdlib>
 	<cassert>
+
+1428164887 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
+	<iostream>
+	<string>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<SDL_net.h>
+	"../data_base.h"
+	"../draw_base.h"
+	"../sound_base.h"
+	"../threading.h"
+	"../textbox.h"
+	"../trigger.h"
+	"../button.h"
+	"../physics.h"
+	"../timersystem.h"
 

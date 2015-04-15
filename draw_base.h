@@ -26,6 +26,7 @@ class draw_base
     void setRotationPivot(math_point p);
     void flip(size_t direction = NOFLIP);
     void rotate(double degrees);
+    void copy(const draw_base& obj, bool realloc_texture = false, SDL_Renderer* ren = NULL);
     void resetRotation();
     void ClearTexture();
     void SetTextureFromPointer(SDL_Texture* ptr);
@@ -48,7 +49,8 @@ class draw_base
     SDL_Point pivot;
     int noLoop;
     double rotationDeg;//Degrees around which the texture should be rotated!
-
+    bool textureDelete;//Flag that will be used to know if we can deallocate the spritesheet or not!
+    char* spriteFile;
 };
 
 void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function

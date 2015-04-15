@@ -48,7 +48,7 @@ public:
     /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
     This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
     void Load_Sound (const char* source);
-    bool Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool isEffect, bool headerlessWav);
+    void Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool headerlessWav = false);
     void Play(int loops = 0);
     void Pause();
     void Stop();
@@ -80,6 +80,7 @@ private:
 
     //Private functions
     void addBuff_String(std::string input, int index);
+    void clearSounds();
 };
 static void PutNum(long num,FILE *f,int endianness,int bytes);
 void strcpyn(char* dest, const char* src, size_t bytes, size_t start = 0);

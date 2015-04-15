@@ -599,3 +599,29 @@ bool copyfile(const std::string& source, const std::string& destination, bool bi
     }
     return result;
 }
+
+unsigned char* get_bin_buffer(const char* file, size_t& s)
+{
+    FILE* f;
+    size_t size = 0;
+    unsigned char* buff = NULL;
+
+    //open file
+    f = fopen(file, "rb");
+
+    if(f)
+    {
+        fseek(f, 0, SEEK_END);
+        size = ftell(f);
+        //allocate buffer
+        buff = new unsigned char[size];
+        fseek(f, 0, SEEK_SET);
+        //Copy buffer
+        for(size_t i = 0; i < size; i++)
+        {
+            buff[i] = fgetc(f);
+        }
+    }
+    s = size;
+    return buff;
+}

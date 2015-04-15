@@ -22,7 +22,8 @@ ThreadSystem::~ThreadSystem()
 {
     for(std::list<pthread>::iterator itr = threads.begin(); itr != threads.end(); itr++)
     {
-        pthread_cancel(*itr->var);
+        if((*itr).running)
+            pthread_cancel(*itr->var);
     }
 
     for(std::list<pcond_var>::iterator itr = cond_vars.begin(); itr != cond_vars.end(); itr++)
@@ -38,7 +39,7 @@ ThreadSystem::~ThreadSystem()
 
 size_t ThreadSystem::SpawnThread(thread_func target, void_ptr arg)
 {
-    pthread_t* thread;
+    pthread_t* thread = new pthread_t;
     size_t id = generateID('t');//Get id
     LockMutex(mutex_thread_id);
     if(!pthread_create(thread, NULL, target, arg))
@@ -52,10 +53,10 @@ size_t ThreadSystem::SpawnThread(thread_func target, void_ptr arg)
 size_t ThreadSystem::SpawnMutex()
 {
     size_t id = generateID('m');//Get id
-    LockMutex(mutex_mutex_id);
+    pthread_mutex_lock(&mutexes[mutex_mutex_id].var);
     pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
     mutexes.push_back(pmutex(mutex, id));
-    UnlockMutex(mutex_mutex_id);
+    pthread_mutex_unlock(&mutexes[mutex_mutex_id].var);
     return id;
 }
 
@@ -89,9 +90,10 @@ pthread_cond_t& ThreadSystem::GetConditionVariable(size_t id)
 
 void ThreadSystem::LockMutex(size_t mutex_id)
 {
-    LockMutex(mutex_mutex_id);
-    pthread_mutex_lock(&(mutexes[mutex_id].var));
-    UnlockMutex(mutex_mutex_id);
+    pthread_mutex_lock(&mutexes[mutex_mutex_id].var);
+    pthread_mutex_lock(&mutexes[mutex_id].var);
+    if(pthread_mutex_unlock(&mutexes[mutex_mutex_id].var) != 0)
+        std::cout << "Unable to unlock mutex!" << std::endl;
 }
 
 void ThreadSystem::WaitForCond(size_t mutex_id, size_t cond_id)
@@ -101,15 +103,20 @@ void ThreadSystem::WaitForCond(size_t mutex_id, size_t cond_id)
 
 void ThreadSystem::UnlockMutex(size_t mutex_id)
 {
-    LockMutex(mutex_mutex_id);
     pthread_mutex_unlock(&mutexes[mutex_id].var);
-    UnlockMutex(mutex_mutex_id);
 }
 
 void ThreadSystem::SignalCond(size_t cond_id)
 {
     LockMutex(mutex_cond_id);
     pthread_cond_signal(&cond_vars[cond_id].var);
+    UnlockMutex(mutex_cond_id);
+}
+
+void ThreadSystem::JoinThread(size_t id)
+{
+    LockMutex(mutex_cond_id);
+    pthread_join(*(threads[id]).var, NULL);
     UnlockMutex(mutex_cond_id);
 }
 

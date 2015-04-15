@@ -141,10 +141,24 @@ sound_base::sound_base(bool random_blob)
     channel = -3;
     loopingEffect = false;
     type = 'a';
+    effect = NULL;
+    music = NULL;
+}
+
+void sound_base::clearSounds()
+{
+    if(effect)
+        Mix_FreeChunk(effect);
+    if(music)
+        Mix_FreeMusic(music);
+
+    effect = NULL;
+    music = NULL;
 }
 
 sound_base::~sound_base()
 {
+    clearSounds();
     if(AudioDOM > 0)
     {
         delete(AudioDOM);
@@ -155,13 +169,14 @@ sound_base::~sound_base()
 This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
 void sound_base::Load_Sound (const char* source)
 {
+    clearSounds();
     if (!AudioDOM)
     {
         AudioDOM = new data_base(source);
         if(AudioDOM)
         {
             type = char(AudioDOM->GetStrFromData("sound_type").c_str()[0]);
-            if(type == 'm' || type == 'a')
+            if(type == 'm')
             {
                 music = Mix_LoadMUS(AudioDOM->GetStrFromData("music_loc").c_str());
             }
@@ -200,34 +215,26 @@ void sound_base::Load_Sound (const char* source)
     }
 }
 
-bool sound_base::Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool isEffect, bool headerlessWav)
+void sound_base::Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool headerlessWav)
 {
-    SDL_RWops* rwop = NULL;
-    if(headerlessWav && !isEffect)
+    clearSounds();
+    if(headerlessWav)
     {
-        unsigned char* buffer2 = WriteWav(buffer, size);
-        rwop = SDL_RWFromMem((void*)(&buffer2), size + 43);
+        unsigned char* buff2  = new unsigned char[size + 43];
+        buff2 = WriteWav(buffer, size);
+        effect = Mix_QuickLoad_WAV(buff2);
+        delete[] buff2;
+        return;
     }
-    else
-    {
-        rwop = SDL_RWFromMem((void*)(&buffer), size);
-    }
-
-    if(!isEffect && (music = Mix_LoadMUS_RW(rwop, 0)))
-    {
-        return true;
-    }
-    else if(isEffect && (effect = Mix_LoadWAV_RW(rwop, 0)))
-        return true;
-    else
-    {
-        return false;
-    }
+    effect = Mix_QuickLoad_RAW(buffer, size);
 }
 
 void sound_base::Play(int loops)//if loops = -1, the loop is infinite!
 {
-    Mix_PlayMusic(music,loops); // Start playing the sound.
+    if(music)
+        Mix_PlayMusic(music,loops); // Start playing the sound.
+    else
+        PlayEffect(loops);
 }
 
 void sound_base::Stop()
@@ -266,6 +273,11 @@ bool sound_base::isPlaying() const
 
 bool sound_base::PlayEffect(int soundLoops)
 {
+    if(music && !effect)
+    {
+        Play(soundLoops);
+        return true;
+    }
     if(loopingEffect == false && soundLoops == -1)
     {
         channel = Mix_PlayChannel(-1, effect, soundLoops);

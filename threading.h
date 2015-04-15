@@ -14,11 +14,14 @@ template <typename T>
 struct pthreads_opaque
 {
     size_t id;
+    bool running;
     T var;
+
     pthreads_opaque(T& val, size_t T_id)
     {
         var = val;
         id = T_id;
+        running = false;
     }
 
     bool operator==(pthreads_opaque& t)
@@ -77,6 +80,7 @@ public:
     void UnlockMutex(size_t mutex_id);
 
     //Thread
+    void JoinThread(size_t id);
     void CloseThread(size_t id);
     void DeleteMutex(size_t id);
     void DeleteConditionVariable(size_t id);

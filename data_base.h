@@ -79,4 +79,5 @@ class data_base
 };
 
 bool copyfile(const std::string& source, const std::string& destination, bool binary = true);
+unsigned char* get_bin_buffer(const char* file, size_t& s);
 #endif // DATA_BASE_H_INCLUDED

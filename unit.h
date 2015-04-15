@@ -72,6 +72,7 @@ class Unit
         void SetOwner(Game* game);
         bool GetDeath() const;
         void ToggleDeath();
+        void copy(const Unit& obj);
 
         //Handle assets
         void PlaySounds(const math_point& screenLoc);
@@ -97,6 +98,8 @@ class Unit
         void LoadKeyBindings(const char *file);
         void ProcessMouseMovement(int x, int y);
         void ProcessMouseKey(unsigned int mouseButton, int x, int y);
+
+        //Overloads
 
     private:
         //structs

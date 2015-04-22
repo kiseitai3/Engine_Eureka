@@ -160,7 +160,10 @@ sound_base::~sound_base()
 {
     clearSounds();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
     if(AudioDOM > 0)
     {
         delete(AudioDOM);
@@ -174,6 +177,7 @@ void sound_base::Load_Sound (const char* source)
 {
     clearSounds();
 <<<<<<< HEAD
+<<<<<<< HEAD
     data_base AudioDOM(source);
 
     type = AudioDOM.GetStrFromData("sound_type").c_str()[0];
@@ -181,6 +185,8 @@ void sound_base::Load_Sound (const char* source)
     {
         music = Mix_LoadMUS(AudioDOM.GetStrFromData("music_loc").c_str());
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
     if (!AudioDOM)
     {
         AudioDOM = new data_base(source);

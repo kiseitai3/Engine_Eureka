@@ -55,9 +55,14 @@ class draw_base
     int noLoop;
     double rotationDeg;//Degrees around which the texture should be rotated!
 <<<<<<< HEAD
+<<<<<<< HEAD
     bool sharedTexture;
     std::string spriteFile;
 
+=======
+    bool textureDelete;//Flag that will be used to know if we can deallocate the spritesheet or not!
+    char* spriteFile;
+>>>>>>> origin/TheIllusiveMan
 =======
     bool textureDelete;//Flag that will be used to know if we can deallocate the spritesheet or not!
     char* spriteFile;

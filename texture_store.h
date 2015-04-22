@@ -13,6 +13,7 @@ public:
     TextureStore();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     SDL_Texture* LoadUniqueTexture(cstr file, SDL_Renderer& ren);
     void DeleteUniqueTexture(SDL_Texture* tex);
     bool hasTexture(uint64_t hash);
@@ -28,6 +29,8 @@ private:
 
     SDL_Texture* createTexture(cstr file, SDL_Renderer& ren);
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
     SDL_Texture* LoadUniqueTexture(cstr file, SDL_Renderer& ren, bool duplicate = true);
 
     //the magic of a singleton
@@ -40,6 +43,9 @@ private:
     pmutex mutex;
 
     static TextureStore* objPtr;
+<<<<<<< HEAD
+>>>>>>> origin/TheIllusiveMan
+=======
 >>>>>>> origin/TheIllusiveMan
 };
 

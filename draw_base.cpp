@@ -17,11 +17,14 @@ void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// a
 {
     data_base animDOM(source);
 <<<<<<< HEAD
+<<<<<<< HEAD
     char path[animDOM.GetStrFromData("tex_texture").size()];
     strcpy(path, animDOM.GetStrFromData("tex_texture").c_str());
     spriteFile = path;//Save local copy of the texture location for reference
     SpriteSheet = textures.LoadUniqueTexture(spriteFile.c_str(), ren);
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
     spriteFile = new char[animDOM.GetStrFromData("tex_texture").size()];
     strcpy(spriteFile, animDOM.GetStrFromData("tex_texture").c_str());//Save local copy of the texture location for reference
     SDL_Surface* tmp = IMG_Load(spriteFile);
@@ -116,8 +119,13 @@ SDL_Texture& draw_base::GetTexture() const
 void draw_base::ClearTexture()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if(SpriteSheet)
         textures.DeleteUniqueTexture(SpriteSheet);
+=======
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
+>>>>>>> origin/TheIllusiveMan
 =======
     if(SpriteSheet && textureDelete)
         SDL_DestroyTexture(SpriteSheet);
@@ -133,7 +141,12 @@ void draw_base::ClearTexture()
 void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     ClearTexture();
+=======
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
+>>>>>>> origin/TheIllusiveMan
 =======
     if(SpriteSheet && textureDelete)
         SDL_DestroyTexture(SpriteSheet);
@@ -145,7 +158,12 @@ void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 void draw_base::SetTextureFromRef(SDL_Texture& tex)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     ClearTexture();
+=======
+    if(SpriteSheet && textureDelete)
+        SDL_DestroyTexture(SpriteSheet);
+>>>>>>> origin/TheIllusiveMan
 =======
     if(SpriteSheet && textureDelete)
         SDL_DestroyTexture(SpriteSheet);
@@ -201,8 +219,11 @@ void draw_base::copy(const draw_base& obj, bool realloc_texture, SDL_Renderer* r
     {
         ClearTexture();
 <<<<<<< HEAD
+<<<<<<< HEAD
         SpriteSheet = textures.LoadUniqueTexture(spriteFile.c_str(), *ren);
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
         SDL_Surface* tmp = IMG_Load(spriteFile);
         if(!tmp)
         {
@@ -215,6 +236,9 @@ void draw_base::copy(const draw_base& obj, bool realloc_texture, SDL_Renderer* r
             SDL_FreeSurface(tmp);
         }
         textureDelete = true;
+<<<<<<< HEAD
+>>>>>>> origin/TheIllusiveMan
+=======
 >>>>>>> origin/TheIllusiveMan
     }
     else
@@ -222,6 +246,10 @@ void draw_base::copy(const draw_base& obj, bool realloc_texture, SDL_Renderer* r
         ClearTexture();
         SpriteSheet = obj.SpriteSheet;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        textureDelete = false;
+>>>>>>> origin/TheIllusiveMan
 =======
         textureDelete = false;
 >>>>>>> origin/TheIllusiveMan
@@ -266,6 +294,10 @@ draw_base::draw_base()
     timeSpentOnFrame = 0;
     SpriteSheet = NULL;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    spriteFile = NULL;
+>>>>>>> origin/TheIllusiveMan
 =======
     spriteFile = NULL;
 >>>>>>> origin/TheIllusiveMan

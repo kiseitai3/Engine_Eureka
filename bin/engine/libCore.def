@@ -120,6 +120,7 @@ EXPORTS
     _ZN10sound_base7FadeOutEi @119
     _ZN10sound_base7PutNum2Elii @120
 <<<<<<< HEAD
+<<<<<<< HEAD
     _ZN10sound_base8WriteWavEP6_iobufl @121
     _ZN10sound_base8WriteWavEPhj @122
     _ZN10sound_base9SoundTypeEv @123
@@ -1752,6 +1753,8 @@ EXPORTS
     printf @1750
     sprintf @1751
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
     _ZN10sound_base8SetPointEv @121
     _ZN10sound_base8WriteWavEP6_iobufl @122
     _ZN10sound_base8WriteWavEPhj @123
@@ -3346,4 +3349,7 @@ EXPORTS
     printHello @1712
     printf @1713
     sprintf @1714
+<<<<<<< HEAD
+>>>>>>> origin/TheIllusiveMan
+=======
 >>>>>>> origin/TheIllusiveMan

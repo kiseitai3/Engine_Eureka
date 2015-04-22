@@ -657,7 +657,11 @@
 		</Unit>
 		<Unit filename="texture_store.cpp">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<Option target="Core" />
+=======
+			<Option target="&lt;{~None~}&gt;" />
+>>>>>>> origin/TheIllusiveMan
 =======
 			<Option target="&lt;{~None~}&gt;" />
 >>>>>>> origin/TheIllusiveMan

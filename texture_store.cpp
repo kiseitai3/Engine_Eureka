@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <cstdlib>
 #include "texture_store.h"
 #include <crc.h>
@@ -101,6 +102,8 @@ bool TextureStore::hasHash(SDL_Texture* tex)
     uint64_t hash;
     return hashCache.search(tex, hash);
 =======
+=======
+>>>>>>> origin/TheIllusiveMan
 #include "texture_store.h"
 #include <cstdlib>
 
@@ -144,6 +147,9 @@ SDL_Texture* TextureStore::LoadUniqueTexture(cstr file, SDL_Renderer& ren, bool 
 
     //
 
+<<<<<<< HEAD
+>>>>>>> origin/TheIllusiveMan
+=======
 >>>>>>> origin/TheIllusiveMan
 }
 

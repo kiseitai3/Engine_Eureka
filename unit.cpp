@@ -534,6 +534,12 @@ void Unit::ToggleDeath()
         dead = false;
     }
 }
+
+void Unit::copy(const Unit& obj)
+{
+    //Copy variables
+}
+
 //Physics handling
 std::string Unit::isColliding(Unit *target)
 {
@@ -640,13 +646,14 @@ bool Unit::BuffExists(std::string buffName)
 
 void Unit::ApplyBuffs()
 {
-    BuffScripts->ClearArgs(1);
-    BuffScripts->AddArgument(owner_ref);
-    BuffScripts->AddArgument(this);
     for(std::list<std::string>::iterator it = buffs.begin(); it != buffs.end(); it++)
     {
+        BuffScripts->ClearArgs(3);
+        BuffScripts->AddArgument(owner_ref);
+        BuffScripts->AddArgument(this);
         std::string names = *it;
-        BuffScripts->executeFunction(names.c_str(), BuffScripts->NO_ARGS);
+        BuffScripts->AddArgument(names);
+        BuffScripts->executeFunction("HandleBuffs", BuffScripts->NO_ARGS);
     }
 }
 

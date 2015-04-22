@@ -1,0 +1,8 @@
+sound_type = e;
+effect_loc = Crickets.wav;
+music_loc = Crickets.wav;
+
+Notice!
+For this afternoon, I want to add a texture and physics copying mechanism!
+I also want to move the input handling to a higher layer in the engine and take 
+it off the unit and maybe UI classes!;

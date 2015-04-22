@@ -121,7 +121,7 @@ enum Statistics
 
 enum TextureFlipDirection
 {
-    NOFLIP, HORIZONTALLY, VERTICALLY
+    NOFLIP, HORIZONTALLY, VERTICALLY, BOTH
 };
 
 static int maxConn = 2000;

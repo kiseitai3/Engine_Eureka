@@ -1,0 +1,8 @@
+tex_texture = Fireb.png;
+tex_frames = 3;
+tex_height = 80;
+tex_width = 60;
+tex_anim_num = 0;
+tex_anim_counter = 1;
+tex_noloop = 0;
+tex_time_on_frames = 1000;

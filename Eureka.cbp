@@ -77,6 +77,7 @@
 					<Add library="Flags" />
 					<Add library="Timer" />
 					<Add library="lua_wrap" />
+					<Add library="CRC_d" />
 				</Linker>
 			</Target>
 			<Target title="UI">
@@ -251,6 +252,10 @@
 				<Option working_dir="bin/tests" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Linker>
+					<Add library="threading" />
+					<Add library="Core" />
+				</Linker>
 			</Target>
 			<Target title="database_test">
 				<Option output="bin/tests/database_test" prefix_auto="1" extension_auto="1" />
@@ -266,8 +271,8 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-g" />
+			<Add option="-ftrapv" />
 			<Add option="-D__STDC_CONSTANT_MACROS" />
-			<Add directory="C:/Program Files/CodeBlocks/MinGW/include" />
 			<Add directory="c:/Python27/include" />
 			<Add directory="Dependencies/SDL2-2.0.0/include" />
 			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
@@ -278,9 +283,10 @@
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/include" />
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/include" />
 			<Add directory="Dependencies/libFFmpeg/include" />
+			<Add directory="Dependencies/CRC" />
+			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/include/boost" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
-			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include/boost" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include" />
 		</Compiler>
@@ -297,7 +303,6 @@
 			<Add library="mysqlcppconn" />
 			<Add library="SDL2_net" />
 			<Add library="pthread" />
-			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
@@ -308,8 +313,9 @@
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/lib" />
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/lib" />
 			<Add directory="Dependencies/libFFmpeg/lib" />
-			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
+			<Add directory="Dependencies/CRC" />
 			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/lib" />
 			<Add directory="bin/engine" />
 		</Linker>
@@ -328,6 +334,13 @@
 			<Option target="staticlib_all" />
 			<Option target="Eureka" />
 		</Unit>
+		<Unit filename="Queue.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Queue.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="Timer.cpp">
 			<Option target="staticlib_all" />
 			<Option target="Core" />
@@ -339,7 +352,7 @@
 			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="Unit_tests/base_components_test.cpp">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Base_components_test" />
 		</Unit>
 		<Unit filename="Unit_tests/bst_test.cpp">
 			<Option target="BST_test" />
@@ -641,6 +654,16 @@
 		<Unit filename="textbox.h">
 			<Option target="Core" />
 			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="texture_store.cpp">
+<<<<<<< HEAD
+			<Option target="Core" />
+=======
+			<Option target="&lt;{~None~}&gt;" />
+>>>>>>> origin/TheIllusiveMan
+		</Unit>
+		<Unit filename="texture_store.h">
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="threading.cpp">
 			<Option target="staticlib_all" />

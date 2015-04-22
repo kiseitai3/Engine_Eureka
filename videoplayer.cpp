@@ -202,6 +202,8 @@ void VideoPlayer::PlayVideo()
     Mix_CloseAudio();
     SDL_Delay(20);
     Mix_OpenAudio(pSoundCtx->sample_rate, MIX_DEFAULT_FORMAT, pSoundCtx->channels, owner_ref->GetSoundChunkSize());
+    //Limit the number of channels used by the audio driver so the sound isn't desynchronized!
+    Mix_AllocateChannels(pSoundCtx->channels);
     vidPlaying = true;
     if(owner_ref->isTimerPaused(timer_id))
         owner_ref->UnpauseTimer(timer_id);
@@ -479,6 +481,8 @@ void VideoPlayer::StopVideo()
     Mix_CloseAudio();
     SDL_Delay(20);
     Mix_OpenAudio(owner_ref->GetSoundFrequency(), MIX_DEFAULT_FORMAT, owner_ref->GetSoundChannels(), owner_ref->GetSoundChunkSize());
+    //Restore default number of channels
+    Mix_AllocateChannels(owner_ref->GetSoundChannels());
     owner_ref->PauseTimer(timer_id);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_vid_id);

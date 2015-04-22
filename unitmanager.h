@@ -31,6 +31,7 @@ public:
     size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);
     size_t SpawnUnitFromFile(cstr file, int BlitOrder);
     std::vector<size_t> SpawnUnitFromList(cstr file, int BlitOrder);
+    std::vector<size_t> CloneUnit(size_t unit_id, size_t copies);
     void SetSDLEvent(SDL_Event* ev);
 
     //Getter

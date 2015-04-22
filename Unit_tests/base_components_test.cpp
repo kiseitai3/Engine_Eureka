@@ -36,15 +36,9 @@ SDL_Window* win = NULL;
 SDL_Event e;
 Timer fps;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 draw_base texture, texture2, texture3;
 
-=======
->>>>>>> origin/TheIllusiveMan
-=======
->>>>>>> origin/TheIllusiveMan
 void_ptr myThread(void* data)
 {
     char* d = (char*) data;
@@ -77,13 +71,7 @@ void_ptr myDrawThread(void_ptr obj)
     {
         SDL_RenderClear(screen);
         ((draw_base*)obj)->apply_surface(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, *screen);
-<<<<<<< HEAD
-<<<<<<< HEAD
         texture2.apply_surface(SCREEN_WIDTH/4, SCREEN_HEIGHT/4, *screen);
-=======
->>>>>>> origin/TheIllusiveMan
-=======
->>>>>>> origin/TheIllusiveMan
         SDL_RenderPresent(screen);
     }
 }
@@ -123,18 +111,8 @@ int main(int argc, char** argv)
     init();
 
     //Create draw_base object
-<<<<<<< HEAD
-<<<<<<< HEAD
     texture.Load_Texture("test_hero.txt\0", *screen, 30);
     texture2.Load_Texture("test_hero.txt\0", *screen, 30);
-=======
-    draw_base texture;
-    texture.Load_Texture("test_hero.txt\0", *screen, 30);
->>>>>>> origin/TheIllusiveMan
-=======
-    draw_base texture;
-    texture.Load_Texture("test_hero.txt\0", *screen, 30);
->>>>>>> origin/TheIllusiveMan
     size_t thread4 = ts.SpawnThread(myDrawThread, (void*)&texture);
     const byte* keystates;
     stop = false;

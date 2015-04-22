@@ -54,19 +54,9 @@ class draw_base
     SDL_Point pivot;
     int noLoop;
     double rotationDeg;//Degrees around which the texture should be rotated!
-<<<<<<< HEAD
-<<<<<<< HEAD
     bool sharedTexture;
     std::string spriteFile;
 
-=======
-    bool textureDelete;//Flag that will be used to know if we can deallocate the spritesheet or not!
-    char* spriteFile;
->>>>>>> origin/TheIllusiveMan
-=======
-    bool textureDelete;//Flag that will be used to know if we can deallocate the spritesheet or not!
-    char* spriteFile;
->>>>>>> origin/TheIllusiveMan
 };
 
 void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function

@@ -159,16 +159,6 @@ void sound_base::clearSounds()
 sound_base::~sound_base()
 {
     clearSounds();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/TheIllusiveMan
-    if(AudioDOM > 0)
-    {
-        delete(AudioDOM);
-    }
->>>>>>> origin/TheIllusiveMan
 }
 //Beginning of functions and types related to normal audio systems in games
 /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
@@ -176,38 +166,12 @@ This compells me to allow the program to load normal audio files. I also have to
 void sound_base::Load_Sound (const char* source)
 {
     clearSounds();
-<<<<<<< HEAD
-<<<<<<< HEAD
     data_base AudioDOM(source);
 
     type = AudioDOM.GetStrFromData("sound_type").c_str()[0];
     if(type == 'm')
     {
         music = Mix_LoadMUS(AudioDOM.GetStrFromData("music_loc").c_str());
-=======
-=======
->>>>>>> origin/TheIllusiveMan
-    if (!AudioDOM)
-    {
-        AudioDOM = new data_base(source);
-        if(AudioDOM)
-        {
-            type = char(AudioDOM->GetStrFromData("sound_type").c_str()[0]);
-            if(type == 'm')
-            {
-                music = Mix_LoadMUS(AudioDOM->GetStrFromData("music_loc").c_str());
-            }
-            if(type == 'e' || type == 'a')
-            {
-                effect = Mix_LoadWAV(AudioDOM->GetStrFromData("effect_loc").c_str());
-            }
-            SetPoint();
-        }
-        else
-        {
-            std::cout<<"ERROR:Failed to load this sound_base object's Document Object Model\n\r";
-        }
->>>>>>> origin/TheIllusiveMan
     }
     if(type == 'e' || type == 'a')
     {

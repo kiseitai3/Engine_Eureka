@@ -16,29 +16,10 @@ TextureStore draw_base::textures;
 void draw_base::Load_Texture(const char* source, SDL_Renderer& ren, int fps)// animName is the variable that will contain the name of the animation tag name in the xml file containing the animation details of especific objects (i.e. The hero's animation would have an animation name <hero>).
 {
     data_base animDOM(source);
-<<<<<<< HEAD
-<<<<<<< HEAD
     char path[animDOM.GetStrFromData("tex_texture").size()];
     strcpy(path, animDOM.GetStrFromData("tex_texture").c_str());
     spriteFile = path;//Save local copy of the texture location for reference
     SpriteSheet = textures.LoadUniqueTexture(spriteFile.c_str(), ren);
-=======
-=======
->>>>>>> origin/TheIllusiveMan
-    spriteFile = new char[animDOM.GetStrFromData("tex_texture").size()];
-    strcpy(spriteFile, animDOM.GetStrFromData("tex_texture").c_str());//Save local copy of the texture location for reference
-    SDL_Surface* tmp = IMG_Load(spriteFile);
-    if(!tmp)
-    {
-        std::cout << "Failed to load the surface!\n\r";
-    }
-    else
-    {
-        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0xFF, 0xFF, 0xFF ));
-        SpriteSheet = SDL_CreateTextureFromSurface(&ren, tmp);
-        SDL_FreeSurface(tmp);
-    }
->>>>>>> origin/TheIllusiveMan
     frames = animDOM.GetIntFromData("tex_frames");
     height = animDOM.GetIntFromData("tex_height");//Size of placeholding rectangle
     width = animDOM.GetIntFromData("tex_width");
@@ -118,58 +99,21 @@ SDL_Texture& draw_base::GetTexture() const
 
 void draw_base::ClearTexture()
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     if(SpriteSheet)
         textures.DeleteUniqueTexture(SpriteSheet);
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
     SpriteSheet = 0;
-
-    //Let's delete the local reference to the texture
-    if(spriteFile && textureDelete)
-        delete[] spriteFile;
-    spriteFile = NULL;
 }
 
 void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     ClearTexture();
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
     SpriteSheet = ptr;
-    textureDelete = false;
 }
 
 void draw_base::SetTextureFromRef(SDL_Texture& tex)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     ClearTexture();
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
-=======
-    if(SpriteSheet && textureDelete)
-        SDL_DestroyTexture(SpriteSheet);
->>>>>>> origin/TheIllusiveMan
     SpriteSheet = &tex;
-    textureDelete = false;
 }
 
 void draw_base::setColor( Uint8 red, Uint8 green, Uint8 blue )
@@ -218,41 +162,12 @@ void draw_base::copy(const draw_base& obj, bool realloc_texture, SDL_Renderer* r
     if(realloc_texture)
     {
         ClearTexture();
-<<<<<<< HEAD
-<<<<<<< HEAD
         SpriteSheet = textures.LoadUniqueTexture(spriteFile.c_str(), *ren);
-=======
-=======
->>>>>>> origin/TheIllusiveMan
-        SDL_Surface* tmp = IMG_Load(spriteFile);
-        if(!tmp)
-        {
-            std::cout << "Failed to load the surface!\n\r";
-        }
-        else
-        {
-            SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0x0, 0xFF, 0xFF ));
-            SpriteSheet = SDL_CreateTextureFromSurface(ren, tmp);
-            SDL_FreeSurface(tmp);
-        }
-        textureDelete = true;
-<<<<<<< HEAD
->>>>>>> origin/TheIllusiveMan
-=======
->>>>>>> origin/TheIllusiveMan
     }
     else
     {
         ClearTexture();
         SpriteSheet = obj.SpriteSheet;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-        textureDelete = false;
->>>>>>> origin/TheIllusiveMan
-=======
-        textureDelete = false;
->>>>>>> origin/TheIllusiveMan
     }
 }
 
@@ -293,14 +208,6 @@ draw_base::draw_base()
     noLoop = 0;
     timeSpentOnFrame = 0;
     SpriteSheet = NULL;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    spriteFile = NULL;
->>>>>>> origin/TheIllusiveMan
-=======
-    spriteFile = NULL;
->>>>>>> origin/TheIllusiveMan
 }
 
 draw_base::~draw_base()

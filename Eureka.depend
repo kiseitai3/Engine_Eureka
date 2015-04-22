@@ -23324,19 +23324,76 @@
 	<SDL_ttf.h>
 	"data_base.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429720124 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
-=======
-1428192007 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
->>>>>>> origin/TheIllusiveMan
-=======
-1428192007 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
->>>>>>> origin/TheIllusiveMan
+1428164887 D
+
+1429733118 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	<string>
 	"texture_store.h"
 	"typedefs.h"
+
+1429572097 gin/TheIllusiveMan
+	<SDL.h>
+	<string>
+	"texture_store.h"
+	"typedefs.h"
+	<fstream>
+	<string>
+	"conversion.h"
+	<iostream>
+	<lua.hpp>
+	<string>
+	<iostream>
+	<queue>
+	<vector>
+	"typedefs.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<SDL_mixer.h>
+	"physics.h"
+	"typedefs.h"
+	<iostream>
+	<pthread.h>
+	<list>
+	"typedefs.h"
+	<fstream>
+	<string>
+	<string.h>
+	<sstream>
+	"conversion.h"
+	"data_base.h"
+	<SDL.h>
+	<SDL_image.h>
+	"data_base.h"
+	<string>
+	<iostream>
+	<cstring>
+	"draw_base.h"
+	"conversion.h"
+	<stdio.h>
+	<stdlib.h>
+	<string>
+	<iostream>
+	<cmath>
+	"data_base.h"
+	<SDL_mixer.h>
+	"physics.h"
+	"sound_base.h"
+	<iostream>
+	<string>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<SDL_net.h>
+	"../data_base.h"
+	"../draw_base.h"
+	"../sound_base.h"
+	"../threading.h"
+	"../textbox.h"
+	"../trigger.h"
+	"../button.h"
+	"../physics.h"
+	"../timersystem.h"
 
 1411089134 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -23646,15 +23703,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1428119158 c:\users\luis\documents\devcb\engine_eureka\data_base.h
-=======
-1428115558 c:\users\luis\documents\devcb\engine_eureka\data_base.h
->>>>>>> origin/TheIllusiveMan
-=======
-1428115558 c:\users\luis\documents\devcb\engine_eureka\data_base.h
->>>>>>> origin/TheIllusiveMan
 	<fstream>
 	<string>
 	"conversion.h"
@@ -23687,7 +23736,7 @@
 	<SDL.h>
 	<vector>
 
-1429553297 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
+1429732679 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
 	<string>
 	<unistd.h>
 	<unistd.h>
@@ -23717,15 +23766,7 @@
 	<queue>
 	"typedefs.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1428019388 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
-=======
-1428015788 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
->>>>>>> origin/TheIllusiveMan
-=======
-1428015788 c:\users\luis\documents\devcb\engine_eureka\luawrap.h
->>>>>>> origin/TheIllusiveMan
 	<lua.hpp>
 	<string>
 	<iostream>
@@ -23803,15 +23844,7 @@
 	"Timer.h"
 	"typedefs.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429575074 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
-=======
-1428165085 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
->>>>>>> origin/TheIllusiveMan
-=======
-1428165085 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
->>>>>>> origin/TheIllusiveMan
+1429733272 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23852,15 +23885,7 @@
 	<vector>
 	<string>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1428075425 c:\users\luis\documents\devcb\engine_eureka\threading.h
-=======
-1428071825 c:\users\luis\documents\devcb\engine_eureka\threading.h
->>>>>>> origin/TheIllusiveMan
-=======
-1428071825 c:\users\luis\documents\devcb\engine_eureka\threading.h
->>>>>>> origin/TheIllusiveMan
 	<iostream>
 	<pthread.h>
 	<list>
@@ -23893,15 +23918,7 @@
 
 1427997628 c:\users\luis\documents\devcb\engine_eureka\bst.cc
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 1428120377 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
-=======
-1428116777 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
->>>>>>> origin/TheIllusiveMan
-=======
-1428116777 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
->>>>>>> origin/TheIllusiveMan
 	<fstream>
 	<string>
 	<string.h>
@@ -24012,15 +24029,7 @@
 	<iostream>
 	"typedefs.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429725486 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
-=======
-1428098584 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
->>>>>>> origin/TheIllusiveMan
-=======
-1428098584 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
->>>>>>> origin/TheIllusiveMan
+1429733118 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -24188,15 +24197,7 @@
 	"luawrap.h"
 	"pywrap.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429575109 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
-=======
-1428165153 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
->>>>>>> origin/TheIllusiveMan
-=======
-1428165153 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
->>>>>>> origin/TheIllusiveMan
+1429732684 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -28616,15 +28617,7 @@
 	<cstdlib>
 	<cassert>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429584653 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
-=======
-1428164887 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
->>>>>>> origin/TheIllusiveMan
-=======
-1428164887 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
->>>>>>> origin/TheIllusiveMan
+1429736232 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
 	<iostream>
 	<string>
 	<SDL_mixer.h>
@@ -28640,9 +28633,7 @@
 	"../physics.h"
 	"../timersystem.h"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-1429716378 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
+1429733086 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
 	<iostream>
 	<string>
 	<SDL.h>
@@ -28650,17 +28641,15 @@
 	"BST.h"
 	"typedefs.h"
 
-1429728606 source:c:\users\luis\documents\devcb\engine_eureka\texture_store.cpp
+1429733086 source:c:\users\luis\documents\devcb\engine_eureka\texture_store.cpp
 	<cstdlib>
 	"texture_store.h"
 	<crc.h>
 	<SDL.h>
 	<SDL_image.h>
 
-1429572097 c:\users\luis\documents\devcb\engine_eureka\dependencies\crc\crc.h
+1429732679 c:\users\luis\documents\devcb\engine_eureka\dependencies\crc\crc.h
 	<stdint.h>
 
-=======
->>>>>>> origin/TheIllusiveMan
-=======
->>>>>>> origin/TheIllusiveMan
+1429572097 
+

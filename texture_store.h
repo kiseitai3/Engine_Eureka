@@ -12,8 +12,6 @@ class TextureStore
 public:
     TextureStore();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     SDL_Texture* LoadUniqueTexture(cstr file, SDL_Renderer& ren);
     void DeleteUniqueTexture(SDL_Texture* tex);
     bool hasTexture(uint64_t hash);
@@ -28,25 +26,6 @@ private:
     //Methods
 
     SDL_Texture* createTexture(cstr file, SDL_Renderer& ren);
-=======
-=======
->>>>>>> origin/TheIllusiveMan
-    SDL_Texture* LoadUniqueTexture(cstr file, SDL_Renderer& ren, bool duplicate = true);
-
-    //the magic of a singleton
-    void* operator new(size_t s);
-    void operator delete(void* ptr);
-
-private:
-    uint64_t instances;
-    BinarySearchTree<uint64_t, SDL_Texture*> storage;
-    pmutex mutex;
-
-    static TextureStore* objPtr;
-<<<<<<< HEAD
->>>>>>> origin/TheIllusiveMan
-=======
->>>>>>> origin/TheIllusiveMan
 };
 
 

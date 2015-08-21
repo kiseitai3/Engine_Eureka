@@ -30,24 +30,6 @@ size_t Cursor::RegisterCursor(cstr file)
     return id;
 }
 
-size_t Cursor::LoadCursorScript(cstr file)
-{
-    size_t res = SUCCESS;
-    //Lock mutex
-    owner_ref->LockMutex(mutex_cursor_id);
-    if(cursorScript)
-        res = ALREADY_HAS_SCRIPT;
-    else
-    {
-        cursorScript = new ScriptWrap(file);
-        if(!cursorScript)
-            res = FAILED_TO_LOAD;
-    }
-    //Unlock mutex
-    owner_ref->UnlockMutex(mutex_cursor_id);
-    return res;
-}
-
 void Cursor::ToggleMouseGrab()
 {
     //Lock mutex
@@ -58,45 +40,11 @@ void Cursor::ToggleMouseGrab()
     owner_ref->UnlockMutex(mutex_cursor_id);
 }
 
-void Cursor::UpdateCursor(SDL_Event *e)
-{
-    //Lock mutex
-    owner_ref->LockMutex(mutex_cursor_id);
-    switch(e->button.button)
-    {
-    case SDL_BUTTON_LEFT:
-        state.lclick = true;
-        break;
-    case SDL_BUTTON_MIDDLE:
-        state.mclick = true;
-        break;
-    case SDL_BUTTON_RIGHT:
-        state.rclick = true;
-        break;
-    default:
-        {
-            state.lclick = false;
-            state.mclick = false;
-            state.rclick = false;
-        }
-
-    }
-    state.X = e->motion.x;
-    state.Y = e->motion.y;
-    //Unlock mutex
-    owner_ref->UnlockMutex(mutex_cursor_id);
-}
-
-cursor_state Cursor::GetCursorState() const
-{
-    return state;
-}
-
 void Cursor::DrawCursor()
 {
     //Lock mutex
     owner_ref->LockMutex(mutex_cursor_id);
-    selected.cursor->apply_surface(state.X, state.Y, owner_ref->GetRenderer());
+    selected.cursor->apply_surface(owner_ref->GetRawInput().mx, owner_ref->GetRawInput().my, owner_ref->GetRenderer());
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_cursor_id);
 }
@@ -128,8 +76,6 @@ Cursor::~Cursor()
     draw_base* tmp;
     //Lock mutex
     owner_ref->LockMutex(mutex_cursor_id);
-    if(cursorScript)
-        delete cursorScript;
     tmpObjs = cursors.getContents();
     for(size_t i = 0; i < tmpObjs.size(); i++)
     {

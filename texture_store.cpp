@@ -101,3 +101,7 @@ bool TextureStore::hasHash(SDL_Texture* tex)
     return hashCache.search(tex, hash);
 }
 
+void TextureStore::IncrementTextLife(SDL_Texture* tex)
+{
+    textureLife[tex]++;
+}

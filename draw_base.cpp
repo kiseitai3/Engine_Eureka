@@ -108,12 +108,14 @@ void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
 {
     ClearTexture();
     SpriteSheet = ptr;
+    textures.IncrementTextLife(SpriteSheet);
 }
 
 void draw_base::SetTextureFromRef(SDL_Texture& tex)
 {
     ClearTexture();
     SpriteSheet = &tex;
+    textures.IncrementTextLife(SpriteSheet);
 }
 
 void draw_base::setColor( Uint8 red, Uint8 green, Uint8 blue )

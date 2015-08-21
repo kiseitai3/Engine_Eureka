@@ -15,6 +15,7 @@
 //ENGINE_NAMESPACE
 #include "data_base.h"
 
+AIStore Unit::ai;
 
 Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, size_t t_id, bool hero, bool hasPBar)
 {
@@ -62,12 +63,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
         sounds["default"] = sounds[DOM->GetStrFromData(DOM->GetStrFromData("unit_sound_default"))];
         phys = new Physics(DOM->GetStrFromData("unit_physics").c_str());
         //Load Python scripts!
-        if(hero)
-        {
-            LoadKeyBindings(DOM->GetStrFromData("unit_keybindings").c_str());
-            LoadKeyScript(DOM->GetStrFromData("unit_keyscripts").c_str());
-        }
-        else
+        if(!hero)
         {
             LoadAI(DOM->GetStrFromData("unit_ai").c_str());
         }
@@ -159,28 +155,18 @@ Unit::~Unit()
     }
     if(GeneralScripts > 0)
     {
-       delete(GeneralScripts);
+       ai.DeleteUniqueAI(GeneralScripts);
        GeneralScripts = 0;
     }
     if(AI > 0)
     {
-       delete(AI);
+       ai.DeleteUniqueAI(AI);
        AI = 0;
     }
     if(BuffScripts > 0)
     {
-       delete(BuffScripts);
+       ai.DeleteUniqueAI(BuffScripts);
        BuffScripts = 0;
-    }
-    if(KeyScripts > 0)
-    {
-       delete(KeyScripts);
-       KeyScripts = 0;
-    }
-    if(KeyDOM > 0)
-    {
-       delete(KeyDOM);
-       KeyDOM = 0;
     }
     ren = 0;
 }
@@ -189,7 +175,7 @@ void Unit::LoadAI(const char *file)
 {
     if(strcmp(file, ""))
     {
-        AI = new ScriptWrap(file);
+        ai.LoadUniqueAI(file);
         if(!AI)
         {
             hasAI = false;
@@ -331,68 +317,6 @@ void Unit::ExecuteAI(Unit *target, const char axis)
 void Unit::SetTimer(size_t timer_id)
 {
     gameTime = timer_id;
-}
-
-//Player Controls and Behavior
-void Unit::ProcessKeyEvent(std::string key)
-{
-    if(KeyDOM->SearchTermExists(key))
-    {
-        KeyScripts->ClearArgs(1);
-        KeyScripts->AddArgument(this);
-        KeyScripts->executeFunction(KeyDOM->GetStrFromData(key).c_str(), KeyScripts->NO_ARGS);
-    }
-}
-
-void Unit::LoadKeyScript(const char *file)
-{
-    if(strcmp(file, ""))
-    {
-        KeyScripts = new ScriptWrap(file);
-        if(!KeyScripts)
-        {
-            std::cout<<"Error: Keyboard scripts file for this object was unable to load!\n\r";
-        }
-    }
-}
-
-void Unit::LoadKeyBindings(const char *file)
-{
-    KeyDOM = new data_base(file);
-    if(!KeyDOM)
-    {
-        std::cout<<"Error: Could not load keybindings file into Unit class!";
-    }
-}
-
-void Unit::ProcessMouseMovement(int x, int y)
-{
-    KeyScripts->ClearArgs(3);
-    KeyScripts->AddArgument(this);
-    KeyScripts->AddArgument(x);
-    KeyScripts->AddArgument(y);
-    KeyScripts->executeFunction("ProcessMouseMovement", KeyScripts->NO_ARGS);
-}
-
-void Unit::ProcessMouseKey(unsigned int mouseButton, int x, int y)
-{
-    if(KeyDOM->SearchTermExists(intToStr(mouseButton)))
-    {
-        KeyScripts->ClearArgs(3);
-        KeyScripts->AddArgument(this);
-        KeyScripts->AddArgument(x);
-        KeyScripts->AddArgument(y);
-        KeyScripts->executeFunction(KeyDOM->GetStrFromData(intToStr(mouseButton)).c_str(), KeyScripts->NO_ARGS);
-    }
-    else
-    {
-        KeyScripts->ClearArgs(4);
-        KeyScripts->AddArgument(this);
-        KeyScripts->AddArgument(mouseButton);
-        KeyScripts->AddArgument(x);
-        KeyScripts->AddArgument(y);
-        KeyScripts->executeFunction("ProcessMouseKey", KeyScripts->NO_ARGS);
-    }
 }
 
 //General getters and Setters
@@ -710,7 +634,7 @@ void LoadScript(ScriptWrap* script, const char *file)
 {
     if(strcmp(file, ""))
     {
-        script = new ScriptWrap(file);
+        script = Unit::ai.LoadUniqueAI(file);
         if(!script)
         {
             std::cout<<"Error: Scripts file for this object was unable to load!\n\r";

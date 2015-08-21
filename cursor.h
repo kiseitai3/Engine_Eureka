@@ -19,13 +19,6 @@ struct CursorNode
     }
 };
 
-struct cursor_state : public math_point
-{
-    bool lclick;
-    bool rclick;
-    bool mclick;
-};
-
 class Cursor
 {
 public:
@@ -34,29 +27,16 @@ public:
     ~Cursor();
 
     //Setters
-    size_t LoadCursorScript(cstr file);
     size_t RegisterCursor(cstr file);
-    void UpdateCursor(SDL_Event* e);
     void ChangeToCursor(size_t id);
     void ToggleMouseGrab();
-
-    //Getters
-    cursor_state GetCursorState() const;
 
     //Manipulation
     void DrawCursor();
 
-    //vars
-    enum CursorScriptResult
-    {
-        SUCCESS, ALREADY_HAS_SCRIPT, FAILED_TO_LOAD
-    };
-
 private:
-    ScriptWrap* cursorScript;
     BinarySearchTree<size_t, CursorNode> cursors;
     CursorNode selected;
-    cursor_state state;
     Game* owner_ref;
     size_t mutex_cursor_id;
     bool centered;

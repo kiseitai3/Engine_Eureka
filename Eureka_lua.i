@@ -42,6 +42,7 @@
 #include "BST.h"
 #include "Queue.h"
 #include "cursor.h"
+#include "input.h"
 #include "game.h"
 /*This is a small compilation error fix*/
 #undef IN
@@ -82,4 +83,5 @@
 %include "BST.h"
 %include "Queue.h"
 %include "cursor.h"
+%include "input.h"
 %include "game.h"

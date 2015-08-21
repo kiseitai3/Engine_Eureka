@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <list>
 #include "Timer.h"
+#include "ai_store.h"
 #include "typedefs.h"
 
 //Engine name space macro
@@ -92,14 +93,10 @@ class Unit
         void Update_Physics(Unit *target);
         void OnCollision(Unit *target, std::string side);
 
-        //Player controls and behavior
-        void ProcessKeyEvent(std::string key);
-        void LoadKeyScript(const char *file);
-        void LoadKeyBindings(const char *file);
-        void ProcessMouseMovement(int x, int y);
-        void ProcessMouseKey(unsigned int mouseButton, int x, int y);
-
         //Overloads
+
+        //Global
+        static AIStore ai;
 
     private:
         //structs
@@ -126,7 +123,7 @@ class Unit
         math_point mapPoint, locBar; //mapPoint holds center point.
         data_base *DOM, *KeyDOM; //!< Member variable "dom"
         Physics *phys; //!< Member variable "phys"
-        ScriptWrap *AI, *KeyScripts, *GeneralScripts, *BuffScripts;
+        ScriptWrap *AI, *GeneralScripts, *BuffScripts;
         SDL_Renderer* ren;
         movementTracker movement;
         ProgressBar *manaB, *hpB;

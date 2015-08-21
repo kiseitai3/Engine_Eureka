@@ -1,6 +1,7 @@
 //#define EUREKA_EXPORT
 #include "uimanager.h"
 #include "eureka.h"
+#include "input.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -108,7 +109,8 @@ void UIManager::UIUpdate()
     //Update each object
     for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        tmpObjs[i]->Update();
+        if(tmpObjs[i]->isVisible())
+            tmpObjs[i]->Update();
     }
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_ui_id);
@@ -116,6 +118,9 @@ void UIManager::UIUpdate()
 
 void UIManager::UIProcessEvents()
 {
+    Button* bt = NULL;
+    textbox* txt = NULL;
+    raw_input in = owner_ref->GetRawInput();
     //Lock mutex
     owner_ref->LockMutex(mutex_ui_id);
     //Get array of contents
@@ -123,8 +128,18 @@ void UIManager::UIProcessEvents()
     //Update each object
     for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        tmpObjs[i]->ProcessEvents(&owner_ref->GetEvents());
+        if(tmpObjs[i]->isVisible())
+        {
+            tmpObjs[i]->ProcessEvents(in.mx, in.my);
+            if(tmpObjs[i]->isInside(in.mx, in.my))
+            {
+                bt = tmpObjs[i]->GetButtonByLoc(in.mx, in.my);
+                txt = tmpObjs[i]->GetTextboxByLoc(in.mx, in.my);
+            }
+        }
     }
+    //Let's run the events on selected object
+    owner_ref->ProcessUIInput(bt, txt);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_ui_id);
 }
@@ -138,7 +153,8 @@ void UIManager::UIDraw()
     //Update each object
     for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        tmpObjs[i]->Draw();
+        if(tmpObjs[i]->isVisible())
+            tmpObjs[i]->Draw();
     }
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_ui_id);

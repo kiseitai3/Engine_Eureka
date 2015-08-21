@@ -19,7 +19,6 @@
 
 Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
 {
-    script = 0;
     if(!GetDOM())
     {
         std::cout<<"Error: DOM object for this button is NULL!\n\r";
@@ -31,13 +30,7 @@ Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrd
         textures["idle"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_idle").c_str(), ren);
         textures["selected"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_selected").c_str(), ren);
         textures["down"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_down").c_str(), ren);
-        script = new ScriptWrap(GetDOM()->GetStrFromData("button_script").c_str());
-        if(!script)
-        {
-            std::cout<<"Error: Failed to load scripts for this button! :( \n\r";
-        }
     }
-    buttonPressedBefore = false;
 }
 
 Button::~Button()
@@ -48,15 +41,10 @@ Button::~Button()
     SDL_DestroyTexture(textures["idle"]);
     SDL_DestroyTexture(textures["selected"]);
     SDL_DestroyTexture(textures["down"]);
-    //Clean up additional heap objects
-    if(script > 0)
-    {
-        delete(script);
-    }
 
 }
 
-void Button::ProcessMouseLoc(int x, int y)
+void Button::ProcessMouseLoc(size_t x, size_t y)
 {
     if(x >= GetLoc().X && x <= (GetLoc().X + GetDrawObject()->GetWidthOfMainRect()))
     {
@@ -71,33 +59,14 @@ void Button::ProcessMouseLoc(int x, int y)
     }
 }
 
-void Button::MouseClick(unsigned int button, int x, int y, bool down)
+void Button::SetTexture(const std::string& name)
 {
-    if(x >= GetLoc().X && x <= (GetLoc().X + GetDrawObject()->GetWidthOfMainRect()))
-    {
-        if(y <= GetLoc().Y && y >= (GetLoc().X - GetDrawObject()->GetHeightOfMainRect()))
-        {
-            if(button == SDL_BUTTON_LEFT && down)
-            {
-                GetDrawObject()->SetTextureFromPointer(textures["down"]);
-                buttonPressedBefore = true;
-            }
-            if(button == SDL_BUTTON_RIGHT && down)
-            {
-                GetDrawObject()->SetTextureFromPointer(textures["selected"]);
-                selected = true;
-            }
-            if((buttonPressedBefore && !down) || (buttonPressedBefore && !down))
-            {
-                script->ClearArgs(4);
-                script->AddArgument(button);
-                script->AddArgument(x);
-                script->AddArgument(y);
-                script->AddArgument((void_ptr)GetOwner());
-                script->executeFunction("MouseClick", script->NO_ARGS);
-            }
-        }
-    }
+    GetDrawObject()->SetTextureFromPointer(textures[name]);
+}
+
+void Button::ChangeMsg(const std::string& msg)
+{
+    changeMsg(msg, GetOwner()->GetRenderer());
 }
 
 //End of namespace macro

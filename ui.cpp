@@ -90,8 +90,6 @@ UI::UI(cstr file, SDL_Renderer& ren)
         //Get beginning visibility state
         visibility = bool(uiDOM.GetIntFromData("ui_visibility"));
     }
-    selectedText = 0;
-    keyDown = false;
 }
 
 //Draw
@@ -121,74 +119,19 @@ void UI::Draw()
     }
 }
 
-void UI::ProcessEvents(SDL_Event *event)
+void UI::ProcessEvents(size_t x, size_t y)
 {
-    //Process our events
-    Button *tmp;
-    textbox *tmpText;
-        //Mouse events
-        for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
-        {
-            tmp = *it;
-            if(event->button.state == SDL_PRESSED)
-            {
-                tmp->MouseClick(event->button.button, event->motion.x, event->motion.y,true);
-            }
-            else if(event->button.state == SDL_RELEASED)
-            {
-                tmp->MouseClick(event->button.button, event->button.x, event->button.y,false);
-            }
-            else
-            {
-                tmp->ProcessMouseLoc(event->motion.x, event->motion.y);
-            }
-        }
-
-        //Textbox events
-        for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
-        {
-            tmpText = *it;
-            if(event->button.state == SDL_PRESSED)
-            {
-                if(event->button.button == SDL_BUTTON_LEFT && tmpText->isInside(event->button.x, event->button.y))
-                {
-                    if(tmpText->isWritable())
-                    {
-                        selectedText = tmpText;
-                        msg = selectedText->GetText();
-                    }
-                }
-                if(event->button.button == SDL_BUTTON_RIGHT && tmpText->isInside(event->button.x, event->button.y))
-                {
-                    selectedText = 0;
-                }
-            }
-            if(event->key.state == SDL_KEYDOWN)
-            {
-                keyDown = true;
-            }
-            else if(event->key.state == SDL_KEYUP && keyDown)
-            {
-                msg = msg + SDL_GetKeyName(event->key.keysym.sym);
-                keyDown = false;
-            }
-        }
-        //Check exit button
-        if(exit->isInside(event->button.x, event->button.y))
-        {
-            toggleVisibility();
-        }
+    //Check exit button
+    if(exit->isInside(x, y))
+    {
+        toggleVisibility();
+    }
 }
 
 void UI::Update()
 {
     Button *tmp;
     textbox *tmpText;
-
-    if(selectedText)
-    {
-        selectedText->changeMsg(msg, screen);
-    }
 
     //Remove objects marked for removal (for whatever reason)
     for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
@@ -233,6 +176,47 @@ bool UI::isVisible() const
     return visibility;
 }
 
+bool UI::isInside(size_t x, size_t y)
+{
+    /*Search textboxes and buttons to see if coordinate is inside of them. If it is, then we assume the coordinate is inside the UI.*/
+    for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return true;
+    }
+
+    for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return true;
+    }
+
+    //If not inside, then coordinate is not inside UI
+    return false;
+}
+
+Button* UI::GetButtonByLoc(size_t x, size_t y)
+{
+    for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return *it;
+    }
+
+    return NULL;
+}
+
+textbox* UI::GetTextboxByLoc(size_t x, size_t y)
+{
+    for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return *it;
+    }
+
+    return NULL;
+}
+
 std::string UI::GetName() const
 {
     return uiName;
@@ -241,6 +225,11 @@ std::string UI::GetName() const
 size_t UI::GetID() const
 {
     return ui_id;
+}
+
+SDL_Renderer* UI::GetRenderer()
+{
+    return screen;
 }
 
 void UI::SetID(size_t id)
@@ -278,7 +267,6 @@ UI::~UI()
     //Remove other objects
     delete(exit);
     exit = 0;
-    selectedText = 0;
 }
 
 //End of namespace macro

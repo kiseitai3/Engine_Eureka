@@ -38,10 +38,11 @@ class DataBase;
 class SoundQueue;
 class VideoPlayer;
 class Cursor;
+class Input;
 
 class Game : public SoundQueue, public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public Cursor, public TimerSystem,
-     public VideoPlayer, public ThreadSystem, public GameInfo
+     public VideoPlayer, public Input, public ThreadSystem, public GameInfo
 {
 public:
     /*Ctors and dtor*/
@@ -75,6 +76,7 @@ public:
     bool noHero() const;
     char* GetFrameBuffer() const;
     size_t GetSizeOfFrameBuffer() const;
+    size_t GetWinID() const;
 
     /*Save methods*/
     void loadSaveData(const std::string& file);

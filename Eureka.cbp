@@ -147,7 +147,9 @@
 					<Add library="avformat" />
 					<Add library="avdevice" />
 					<Add library="avcodec" />
+					<Add library="CMD_Processor" />
 					<Add directory="Dependencies/libFFmpeg/lib" />
+					<Add directory="Dependencies/cmd_processor/lib/Release" />
 				</Linker>
 			</Target>
 			<Target title="Flags">
@@ -255,6 +257,7 @@
 				<Linker>
 					<Add library="threading" />
 					<Add library="Core" />
+					<Add library="crc" />
 				</Linker>
 			</Target>
 			<Target title="database_test">
@@ -383,6 +386,12 @@
 		</Unit>
 		<Unit filename="Unit_tests/sqlite3_test.cpp">
 			<Option target="sqlite3_test" />
+		</Unit>
+		<Unit filename="ai_store.cpp">
+			<Option target="Unit" />
+		</Unit>
+		<Unit filename="ai_store.h">
+			<Option target="Unit" />
 		</Unit>
 		<Unit filename="button.cpp">
 			<Option target="staticlib_all" />
@@ -656,15 +665,7 @@
 			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="texture_store.cpp">
-<<<<<<< HEAD
-<<<<<<< HEAD
 			<Option target="Core" />
-=======
-			<Option target="&lt;{~None~}&gt;" />
->>>>>>> origin/TheIllusiveMan
-=======
-			<Option target="&lt;{~None~}&gt;" />
->>>>>>> origin/TheIllusiveMan
 		</Unit>
 		<Unit filename="texture_store.h">
 			<Option target="Core" />
@@ -716,6 +717,12 @@
 		<Unit filename="ui.h">
 			<Option target="Core" />
 			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="ui_list.cpp">
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="ui_list.h">
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="uimanager.cpp">
 			<Option target="staticlib_all" />

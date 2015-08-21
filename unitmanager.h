@@ -32,7 +32,6 @@ public:
     size_t SpawnUnitFromFile(cstr file, int BlitOrder);
     std::vector<size_t> SpawnUnitFromList(cstr file, int BlitOrder);
     std::vector<size_t> CloneUnit(size_t unit_id, size_t copies);
-    void SetSDLEvent(SDL_Event* ev);
 
     //Getter
     Unit& GetUnit(size_t id);
@@ -53,14 +52,13 @@ public:
     //Execution
     void RunPhysics();
     void DrawUnits();
-    void RunEvents();
     void PlayUnitSounds();
+    void ProcessUnitEvents();
     void GC();//Units garbage collector
     void UnlockUnit();
 
 private:
     Game* owner_ref;
-    SDL_Event* event;
     BinarySearchTree<size_t, UnitNode*> gameObjects;
     size_t mutex_id;
 

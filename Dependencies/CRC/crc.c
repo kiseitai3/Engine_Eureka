@@ -66,7 +66,7 @@ size_t CRC_EXPORT CRC_DECL get_file_size(const char* file)
     size_t file_s = 0;
 
     //open file
-    fopen(file, "r");
+    f = fopen(file, "rb");
     if(f)
     {
         //reset cursor
@@ -85,7 +85,7 @@ char* CRC_EXPORT CRC_DECL get_file_chunk(const char* file, size_t start, size_t 
     char* buff = (char*)malloc(s);
 
     //open file
-    fopen(file, "r");
+    f = fopen(file, "rb");
     if(f)
     {
         //reset cursor

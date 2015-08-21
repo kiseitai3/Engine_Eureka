@@ -34,5 +34,10 @@ bool Game::isMultithreaded() const
 {
     return multithreaded;
 }
+
+size_t Game::GetWinID() const
+{
+    return SDL_GetWindowID(win);
+}
 //End of namespace macro
 //ENGINE_NAMESPACE_END

@@ -15,18 +15,14 @@ SDL_Texture* LoadTexture(const char *file, SDL_Renderer& ren);
 class Button: public textbox
 {
 private:
-    ScriptWrap *script;
     std::map<std::string, SDL_Texture*> textures;
-    bool buttonPressedBefore;
-    bool selected;
 
 public:
     Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI);
     ~Button();
-    void ProcessMouseLoc(int x, int y);
-    void MouseClick(unsigned int button, int x, int y, bool down);
-
-
+    void ProcessMouseLoc(size_t x, size_t y);
+    void SetTexture(const std::string& name);
+    void ChangeMsg(const std::string& msg);
 };
 
 

@@ -231,7 +231,7 @@ void IOManager::CloseFile(size_t file_id)
 
 void IOManager::CloseDBConnection(size_t db_id)
 {
-        IONode* tmp = NULL;
+    IONode* tmp = NULL;
     //Lock appropriate mutexes
     owner_ref->LockMutex(mutex_db_id);
     //Grab object

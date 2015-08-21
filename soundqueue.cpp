@@ -58,7 +58,7 @@ void SoundQueue::AddSoundBufferToQueue(cstr soundBuffer, size_t size, bool isHea
     owner_ref->LockMutex(mutex_sound_id);
     //Allocate new object
     sound_base* tmp = new sound_base;
-    tmp->Load_SoundFromBuffer((byte*)soundBuffer, size, !music, isHeaderlessWav);
+    tmp->Load_SoundFromBuffer((byte*)soundBuffer, size, isHeaderlessWav);
     //Check the type of sound
     if(music)
         backBuffer = tmp;

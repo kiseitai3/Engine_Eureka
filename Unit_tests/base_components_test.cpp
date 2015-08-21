@@ -13,6 +13,7 @@
 #include "../button.h"
 #include "../physics.h"
 #include "../timersystem.h"
+#include "../Dependencies/CRC/crc.h"
 
 bool stop = false;
 size_t mutex_id;
@@ -38,6 +39,7 @@ Timer fps;
 
 
 draw_base texture, texture2, texture3;
+textbox* txt_input = NULL;
 
 void_ptr myThread(void* data)
 {
@@ -72,7 +74,10 @@ void_ptr myDrawThread(void_ptr obj)
         SDL_RenderClear(screen);
         ((draw_base*)obj)->apply_surface(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, *screen);
         texture2.apply_surface(SCREEN_WIDTH/4, SCREEN_HEIGHT/4, *screen);
+        if(txt_input)
+            txt_input->Draw(*screen);
         SDL_RenderPresent(screen);
+        SDL_Delay(5);
     }
 }
 
@@ -125,13 +130,19 @@ int main(int argc, char** argv)
     sound.Load_SoundFromBuffer(buff, t, false);
     size_t thread5 = ts.SpawnThread(mySoundThread, (void*)&sound);
 
+    //CRC test
+    std::cout << "CRC of Crickets: " << std::hex << crc64_on_file_fast("Crickets.wav") << std::endl;
+    std::cout << "CRC of Animation: " <<  std::hex << crc64_on_file_fast("Fireb.png") << std::endl;
+    std::cout << "CRC of Save Database: " <<  std::hex << crc64_on_file_fast("save") << std::endl;
+    std::cout << "CRC of Python Script: " <<  std::hex << crc64_on_file_fast("pyMod.py") << std::endl;
 
     //Create textbox
-
+    txt_input = new textbox("Hello World!\0", "textbox_test.txt", *screen);
 
     //Event handling for the tests
     while(SDL_WaitEvent(&e))
     {
+        math_point loc = txt_input->GetLoc();
         keystates = SDL_GetKeyboardState(NULL);
         if(keystates[SDL_SCANCODE_Q])
             break;
@@ -145,6 +156,20 @@ int main(int argc, char** argv)
             texture.rotate(-10);
         else if(keystates[SDL_SCANCODE_B])
             texture.setColor(255,255,255);
+        else if(keystates[SDL_SCANCODE_T])
+            //Print ticks
+            std::cout << fps.get_ticks() << std::endl;
+        else if(keystates[SDL_SCANCODE_LEFT])
+        {
+            loc.X -= 5;
+            txt_input->SetLoc(loc.X, loc.Y);
+        }
+        else if(keystates[SDL_SCANCODE_RIGHT])
+        {
+            loc.X += 5;
+            txt_input->SetLoc(loc.X, loc.Y);
+        }
+
     }
     stop = true;
     SDL_Delay(500);

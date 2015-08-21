@@ -5,4 +5,5 @@ EXPORTS
     _ZNK4Game13GetRelativityEv @4
     _ZNK4Game15isEngineClosingEv @5
     _ZNK4Game15isMultithreadedEv @6
-    _get_output_format @7
+    _ZNK4Game8GetWinIDEv @7
+    _get_output_format @8

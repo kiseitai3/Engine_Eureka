@@ -479,6 +479,10 @@ data_base_CreateNewFile_static = _Eureka.data_base_CreateNewFile_static
 def copyfile(source, destination, binary=True):
     return _Eureka.copyfile(source, destination, binary)
 copyfile = _Eureka.copyfile
+
+def get_bin_buffer(file, s):
+    return _Eureka.get_bin_buffer(file, s)
+get_bin_buffer = _Eureka.get_bin_buffer
 class draw_base(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, draw_base, name, value)
@@ -525,6 +529,9 @@ class draw_base(_object):
     def rotate(self, degrees):
         return _Eureka.draw_base_rotate(self, degrees)
 
+    def copy(self, obj, realloc_texture=False, ren=None):
+        return _Eureka.draw_base_copy(self, obj, realloc_texture, ren)
+
     def resetRotation(self):
         return _Eureka.draw_base_resetRotation(self)
 
@@ -545,6 +552,10 @@ class draw_base(_object):
             self.this = this
     __swig_destroy__ = _Eureka.delete_draw_base
     __del__ = lambda self: None
+    __swig_setmethods__["textures"] = _Eureka.draw_base_textures_set
+    __swig_getmethods__["textures"] = _Eureka.draw_base_textures_get
+    if _newclass:
+        textures = _swig_property(_Eureka.draw_base_textures_get, _Eureka.draw_base_textures_set)
 draw_base_swigregister = _Eureka.draw_base_swigregister
 draw_base_swigregister(draw_base)
 
@@ -575,6 +586,9 @@ class UI(_object):
     def isVisible(self):
         return _Eureka.UI_isVisible(self)
 
+    def isInside(self, x, y):
+        return _Eureka.UI_isInside(self, x, y)
+
     def toggleVisibility(self):
         return _Eureka.UI_toggleVisibility(self)
 
@@ -584,14 +598,23 @@ class UI(_object):
     def GetID(self):
         return _Eureka.UI_GetID(self)
 
+    def GetButtonByLoc(self, x, y):
+        return _Eureka.UI_GetButtonByLoc(self, x, y)
+
+    def GetTextboxByLoc(self, x, y):
+        return _Eureka.UI_GetTextboxByLoc(self, x, y)
+
+    def GetRenderer(self):
+        return _Eureka.UI_GetRenderer(self)
+
     def SetID(self, id):
         return _Eureka.UI_SetID(self, id)
 
     def Update(self):
         return _Eureka.UI_Update(self)
 
-    def ProcessEvents(self, event):
-        return _Eureka.UI_ProcessEvents(self, event)
+    def ProcessEvents(self, x, y):
+        return _Eureka.UI_ProcessEvents(self, x, y)
 
     def AddNumToPBar(self, num, name):
         return _Eureka.UI_AddNumToPBar(self, num, name)
@@ -729,6 +752,9 @@ class Unit(_object):
     def ToggleDeath(self):
         return _Eureka.Unit_ToggleDeath(self)
 
+    def copy(self, obj):
+        return _Eureka.Unit_copy(self, obj)
+
     def PlaySounds(self, screenLoc):
         return _Eureka.Unit_PlaySounds(self, screenLoc)
 
@@ -764,21 +790,10 @@ class Unit(_object):
 
     def OnCollision(self, target, side):
         return _Eureka.Unit_OnCollision(self, target, side)
-
-    def ProcessKeyEvent(self, key):
-        return _Eureka.Unit_ProcessKeyEvent(self, key)
-
-    def LoadKeyScript(self, file):
-        return _Eureka.Unit_LoadKeyScript(self, file)
-
-    def LoadKeyBindings(self, file):
-        return _Eureka.Unit_LoadKeyBindings(self, file)
-
-    def ProcessMouseMovement(self, x, y):
-        return _Eureka.Unit_ProcessMouseMovement(self, x, y)
-
-    def ProcessMouseKey(self, mouseButton, x, y):
-        return _Eureka.Unit_ProcessMouseKey(self, mouseButton, x, y)
+    __swig_setmethods__["ai"] = _Eureka.Unit_ai_set
+    __swig_getmethods__["ai"] = _Eureka.Unit_ai_get
+    if _newclass:
+        ai = _swig_property(_Eureka.Unit_ai_get, _Eureka.Unit_ai_set)
 Unit_swigregister = _Eureka.Unit_swigregister
 Unit_swigregister(Unit)
 
@@ -1058,6 +1073,9 @@ HORIZONTALLY = _Eureka.HORIZONTALLY
 
 _Eureka.VERTICALLY_swigconstant(_Eureka)
 VERTICALLY = _Eureka.VERTICALLY
+
+_Eureka.BOTH_swigconstant(_Eureka)
+BOTH = _Eureka.BOTH
 class DataBase(SQLQuery):
     __swig_setmethods__ = {}
     for _s in [SQLQuery]:
@@ -1380,8 +1398,8 @@ class UnitManager(_object):
     def SpawnUnitFromList(self, file, BlitOrder):
         return _Eureka.UnitManager_SpawnUnitFromList(self, file, BlitOrder)
 
-    def SetSDLEvent(self, ev):
-        return _Eureka.UnitManager_SetSDLEvent(self, ev)
+    def CloneUnit(self, unit_id, copies):
+        return _Eureka.UnitManager_CloneUnit(self, unit_id, copies)
 
     def GetUnit(self, id):
         return _Eureka.UnitManager_GetUnit(self, id)
@@ -1422,11 +1440,11 @@ class UnitManager(_object):
     def DrawUnits(self):
         return _Eureka.UnitManager_DrawUnits(self)
 
-    def RunEvents(self):
-        return _Eureka.UnitManager_RunEvents(self)
-
     def PlayUnitSounds(self):
         return _Eureka.UnitManager_PlayUnitSounds(self)
+
+    def ProcessUnitEvents(self):
+        return _Eureka.UnitManager_ProcessUnitEvents(self)
 
     def GC(self):
         return _Eureka.UnitManager_GC(self)
@@ -1654,6 +1672,9 @@ class ThreadSystem(_object):
 
     def UnlockMutex(self, mutex_id):
         return _Eureka.ThreadSystem_UnlockMutex(self, mutex_id)
+
+    def JoinThread(self, id):
+        return _Eureka.ThreadSystem_JoinThread(self, id)
 
     def CloseThread(self, id):
         return _Eureka.ThreadSystem_CloseThread(self, id)
@@ -2576,40 +2597,6 @@ class CursorNode(_object):
 CursorNode_swigregister = _Eureka.CursorNode_swigregister
 CursorNode_swigregister(CursorNode)
 
-class cursor_state(math_point):
-    __swig_setmethods__ = {}
-    for _s in [math_point]:
-        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, cursor_state, name, value)
-    __swig_getmethods__ = {}
-    for _s in [math_point]:
-        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
-    __getattr__ = lambda self, name: _swig_getattr(self, cursor_state, name)
-    __repr__ = _swig_repr
-    __swig_setmethods__["lclick"] = _Eureka.cursor_state_lclick_set
-    __swig_getmethods__["lclick"] = _Eureka.cursor_state_lclick_get
-    if _newclass:
-        lclick = _swig_property(_Eureka.cursor_state_lclick_get, _Eureka.cursor_state_lclick_set)
-    __swig_setmethods__["rclick"] = _Eureka.cursor_state_rclick_set
-    __swig_getmethods__["rclick"] = _Eureka.cursor_state_rclick_get
-    if _newclass:
-        rclick = _swig_property(_Eureka.cursor_state_rclick_get, _Eureka.cursor_state_rclick_set)
-    __swig_setmethods__["mclick"] = _Eureka.cursor_state_mclick_set
-    __swig_getmethods__["mclick"] = _Eureka.cursor_state_mclick_get
-    if _newclass:
-        mclick = _swig_property(_Eureka.cursor_state_mclick_get, _Eureka.cursor_state_mclick_set)
-
-    def __init__(self):
-        this = _Eureka.new_cursor_state()
-        try:
-            self.this.append(this)
-        except:
-            self.this = this
-    __swig_destroy__ = _Eureka.delete_cursor_state
-    __del__ = lambda self: None
-cursor_state_swigregister = _Eureka.cursor_state_swigregister
-cursor_state_swigregister(cursor_state)
-
 class Cursor(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, Cursor, name, value)
@@ -2626,14 +2613,8 @@ class Cursor(_object):
     __swig_destroy__ = _Eureka.delete_Cursor
     __del__ = lambda self: None
 
-    def LoadCursorScript(self, file):
-        return _Eureka.Cursor_LoadCursorScript(self, file)
-
     def RegisterCursor(self, file):
         return _Eureka.Cursor_RegisterCursor(self, file)
-
-    def UpdateCursor(self, e):
-        return _Eureka.Cursor_UpdateCursor(self, e)
 
     def ChangeToCursor(self, id):
         return _Eureka.Cursor_ChangeToCursor(self, id)
@@ -2641,24 +2622,268 @@ class Cursor(_object):
     def ToggleMouseGrab(self):
         return _Eureka.Cursor_ToggleMouseGrab(self)
 
-    def GetCursorState(self):
-        return _Eureka.Cursor_GetCursorState(self)
-
     def DrawCursor(self):
         return _Eureka.Cursor_DrawCursor(self)
-    SUCCESS = _Eureka.Cursor_SUCCESS
-    ALREADY_HAS_SCRIPT = _Eureka.Cursor_ALREADY_HAS_SCRIPT
-    FAILED_TO_LOAD = _Eureka.Cursor_FAILED_TO_LOAD
 Cursor_swigregister = _Eureka.Cursor_swigregister
 Cursor_swigregister(Cursor)
 
-class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo):
+class raw_input(_object):
     __swig_setmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
+    __setattr__ = lambda self, name, value: _swig_setattr(self, raw_input, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, raw_input, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["eventType"] = _Eureka.raw_input_eventType_set
+    __swig_getmethods__["eventType"] = _Eureka.raw_input_eventType_get
+    if _newclass:
+        eventType = _swig_property(_Eureka.raw_input_eventType_get, _Eureka.raw_input_eventType_set)
+    __swig_setmethods__["type"] = _Eureka.raw_input_type_set
+    __swig_getmethods__["type"] = _Eureka.raw_input_type_get
+    if _newclass:
+        type = _swig_property(_Eureka.raw_input_type_get, _Eureka.raw_input_type_set)
+    __swig_setmethods__["state"] = _Eureka.raw_input_state_set
+    __swig_getmethods__["state"] = _Eureka.raw_input_state_get
+    if _newclass:
+        state = _swig_property(_Eureka.raw_input_state_get, _Eureka.raw_input_state_set)
+    __swig_setmethods__["mx"] = _Eureka.raw_input_mx_set
+    __swig_getmethods__["mx"] = _Eureka.raw_input_mx_get
+    if _newclass:
+        mx = _swig_property(_Eureka.raw_input_mx_get, _Eureka.raw_input_mx_set)
+    __swig_setmethods__["my"] = _Eureka.raw_input_my_set
+    __swig_getmethods__["my"] = _Eureka.raw_input_my_get
+    if _newclass:
+        my = _swig_property(_Eureka.raw_input_my_get, _Eureka.raw_input_my_set)
+    __swig_setmethods__["mx2"] = _Eureka.raw_input_mx2_set
+    __swig_getmethods__["mx2"] = _Eureka.raw_input_mx2_get
+    if _newclass:
+        mx2 = _swig_property(_Eureka.raw_input_mx2_get, _Eureka.raw_input_mx2_set)
+    __swig_setmethods__["my2"] = _Eureka.raw_input_my2_set
+    __swig_getmethods__["my2"] = _Eureka.raw_input_my2_get
+    if _newclass:
+        my2 = _swig_property(_Eureka.raw_input_my2_get, _Eureka.raw_input_my2_set)
+    __swig_setmethods__["mb"] = _Eureka.raw_input_mb_set
+    __swig_getmethods__["mb"] = _Eureka.raw_input_mb_get
+    if _newclass:
+        mb = _swig_property(_Eureka.raw_input_mb_get, _Eureka.raw_input_mb_set)
+    __swig_setmethods__["clicks"] = _Eureka.raw_input_clicks_set
+    __swig_getmethods__["clicks"] = _Eureka.raw_input_clicks_get
+    if _newclass:
+        clicks = _swig_property(_Eureka.raw_input_clicks_get, _Eureka.raw_input_clicks_set)
+    __swig_setmethods__["txt_editing_len"] = _Eureka.raw_input_txt_editing_len_set
+    __swig_getmethods__["txt_editing_len"] = _Eureka.raw_input_txt_editing_len_get
+    if _newclass:
+        txt_editing_len = _swig_property(_Eureka.raw_input_txt_editing_len_get, _Eureka.raw_input_txt_editing_len_set)
+    __swig_setmethods__["key"] = _Eureka.raw_input_key_set
+    __swig_getmethods__["key"] = _Eureka.raw_input_key_get
+    if _newclass:
+        key = _swig_property(_Eureka.raw_input_key_get, _Eureka.raw_input_key_set)
+    __swig_setmethods__["winID"] = _Eureka.raw_input_winID_set
+    __swig_getmethods__["winID"] = _Eureka.raw_input_winID_get
+    if _newclass:
+        winID = _swig_property(_Eureka.raw_input_winID_get, _Eureka.raw_input_winID_set)
+    __swig_setmethods__["pressure"] = _Eureka.raw_input_pressure_set
+    __swig_getmethods__["pressure"] = _Eureka.raw_input_pressure_get
+    if _newclass:
+        pressure = _swig_property(_Eureka.raw_input_pressure_get, _Eureka.raw_input_pressure_set)
+    __swig_setmethods__["tx"] = _Eureka.raw_input_tx_set
+    __swig_getmethods__["tx"] = _Eureka.raw_input_tx_get
+    if _newclass:
+        tx = _swig_property(_Eureka.raw_input_tx_get, _Eureka.raw_input_tx_set)
+    __swig_setmethods__["ty"] = _Eureka.raw_input_ty_set
+    __swig_getmethods__["ty"] = _Eureka.raw_input_ty_get
+    if _newclass:
+        ty = _swig_property(_Eureka.raw_input_ty_get, _Eureka.raw_input_ty_set)
+    __swig_setmethods__["tdx"] = _Eureka.raw_input_tdx_set
+    __swig_getmethods__["tdx"] = _Eureka.raw_input_tdx_get
+    if _newclass:
+        tdx = _swig_property(_Eureka.raw_input_tdx_get, _Eureka.raw_input_tdx_set)
+    __swig_setmethods__["tdy"] = _Eureka.raw_input_tdy_set
+    __swig_getmethods__["tdy"] = _Eureka.raw_input_tdy_get
+    if _newclass:
+        tdy = _swig_property(_Eureka.raw_input_tdy_get, _Eureka.raw_input_tdy_set)
+    __swig_setmethods__["txtBuffer"] = _Eureka.raw_input_txtBuffer_set
+    __swig_getmethods__["txtBuffer"] = _Eureka.raw_input_txtBuffer_get
+    if _newclass:
+        txtBuffer = _swig_property(_Eureka.raw_input_txtBuffer_get, _Eureka.raw_input_txtBuffer_set)
+    __swig_setmethods__["txtEditing"] = _Eureka.raw_input_txtEditing_set
+    __swig_getmethods__["txtEditing"] = _Eureka.raw_input_txtEditing_get
+    if _newclass:
+        txtEditing = _swig_property(_Eureka.raw_input_txtEditing_get, _Eureka.raw_input_txtEditing_set)
+
+    def __init__(self):
+        this = _Eureka.new_raw_input()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_raw_input
+    __del__ = lambda self: None
+raw_input_swigregister = _Eureka.raw_input_swigregister
+raw_input_swigregister(raw_input)
+
+class KeyNode(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, KeyNode, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, KeyNode, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["key"] = _Eureka.KeyNode_key_set
+    __swig_getmethods__["key"] = _Eureka.KeyNode_key_get
+    if _newclass:
+        key = _swig_property(_Eureka.KeyNode_key_get, _Eureka.KeyNode_key_set)
+    __swig_setmethods__["val"] = _Eureka.KeyNode_val_set
+    __swig_getmethods__["val"] = _Eureka.KeyNode_val_get
+    if _newclass:
+        val = _swig_property(_Eureka.KeyNode_val_get, _Eureka.KeyNode_val_set)
+
+    def __init__(self, *args):
+        this = _Eureka.new_KeyNode(*args)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_KeyNode
+    __del__ = lambda self: None
+KeyNode_swigregister = _Eureka.KeyNode_swigregister
+KeyNode_swigregister(KeyNode)
+
+
+_Eureka.TEXTINPUT_swigconstant(_Eureka)
+TEXTINPUT = _Eureka.TEXTINPUT
+
+_Eureka.KEYBOARD_swigconstant(_Eureka)
+KEYBOARD = _Eureka.KEYBOARD
+
+_Eureka.MOUSE_swigconstant(_Eureka)
+MOUSE = _Eureka.MOUSE
+
+_Eureka.TOUCH_swigconstant(_Eureka)
+TOUCH = _Eureka.TOUCH
+
+_Eureka.CONTROLLER_swigconstant(_Eureka)
+CONTROLLER = _Eureka.CONTROLLER
+
+_Eureka.MOUSEMOTION_swigconstant(_Eureka)
+MOUSEMOTION = _Eureka.MOUSEMOTION
+class InputMouse(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, InputMouse, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, InputMouse, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _Eureka.new_InputMouse()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def ChangeCoordinates(self, x, y, z=0):
+        return _Eureka.InputMouse_ChangeCoordinates(self, x, y, z)
+
+    def GetCoordinates(self):
+        return _Eureka.InputMouse_GetCoordinates(self)
+    __swig_destroy__ = _Eureka.delete_InputMouse
+    __del__ = lambda self: None
+InputMouse_swigregister = _Eureka.InputMouse_swigregister
+InputMouse_swigregister(InputMouse)
+
+class InputKeyboard(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, InputKeyboard, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, InputKeyboard, name)
+    __repr__ = _swig_repr
+
+    def __init__(self):
+        this = _Eureka.new_InputKeyboard()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def feedBuffer(self, buffer):
+        return _Eureka.InputKeyboard_feedBuffer(self, buffer)
+
+    def toggleTextMode(self):
+        return _Eureka.InputKeyboard_toggleTextMode(self)
+
+    def getText(self):
+        return _Eureka.InputKeyboard_getText(self)
+
+    def GetTextMode(self):
+        return _Eureka.InputKeyboard_GetTextMode(self)
+
+    def StartTextInput(self):
+        return _Eureka.InputKeyboard_StartTextInput(self)
+
+    def StopTextInput(self):
+        return _Eureka.InputKeyboard_StopTextInput(self)
+    __swig_destroy__ = _Eureka.delete_InputKeyboard
+    __del__ = lambda self: None
+InputKeyboard_swigregister = _Eureka.InputKeyboard_swigregister
+InputKeyboard_swigregister(InputKeyboard)
+
+class Input(InputMouse, InputKeyboard):
+    __swig_setmethods__ = {}
+    for _s in [InputMouse, InputKeyboard]:
+        __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Input, name, value)
+    __swig_getmethods__ = {}
+    for _s in [InputMouse, InputKeyboard]:
+        __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Input, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, owner):
+        this = _Eureka.new_Input(owner)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _Eureka.delete_Input
+    __del__ = lambda self: None
+
+    def LoadCursors(self, file):
+        return _Eureka.Input_LoadCursors(self, file)
+
+    def LoadKeyScript(self, file):
+        return _Eureka.Input_LoadKeyScript(self, file)
+
+    def LoadDefaultKeyBindings(self, file):
+        return _Eureka.Input_LoadDefaultKeyBindings(self, file)
+
+    def LoadCurrentKeyBindings(self, db_id):
+        return _Eureka.Input_LoadCurrentKeyBindings(self, db_id)
+
+    def UpdateInput(self, pEvent):
+        return _Eureka.Input_UpdateInput(self, pEvent)
+
+    def ProcessUIInput(self, bt, txt):
+        return _Eureka.Input_ProcessUIInput(self, bt, txt)
+
+    def ProcessUnitInput(self, unit):
+        return _Eureka.Input_ProcessUnitInput(self, unit)
+
+    def ChangeKeyBinding(self, previousKey, newKey):
+        return _Eureka.Input_ChangeKeyBinding(self, previousKey, newKey)
+
+    def SaveKeyBindings(self, db_id):
+        return _Eureka.Input_SaveKeyBindings(self, db_id)
+
+    def GetRawInput(self):
+        return _Eureka.Input_GetRawInput(self)
+Input_swigregister = _Eureka.Input_swigregister
+Input_swigregister(Input)
+
+class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo):
+    __swig_setmethods__ = {}
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Game, name, value)
     __swig_getmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, ThreadSystem, GameInfo]:
+    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Game, name)
     __repr__ = _swig_repr
@@ -2734,6 +2959,9 @@ class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIM
 
     def GetSizeOfFrameBuffer(self):
         return _Eureka.Game_GetSizeOfFrameBuffer(self)
+
+    def GetWinID(self):
+        return _Eureka.Game_GetWinID(self)
 
     def loadSaveData(self, file):
         return _Eureka.Game_loadSaveData(self, file)

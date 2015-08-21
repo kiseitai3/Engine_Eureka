@@ -19,6 +19,7 @@ class textbox
 private:
     SDL_Texture *message;
 	SDL_Renderer *screen;
+	SDL_Rect txt_rect;
     data_base *data;
     draw_base *background;
     math_point loc;

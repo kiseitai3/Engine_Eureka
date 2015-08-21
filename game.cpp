@@ -30,12 +30,11 @@ void_ptr helperPluginFunction(void_ptr game)
 void_ptr helperEventsFunction(void_ptr game)
 {
     Game* tmp = (Game*)game;
-    while(!tmp->isEngineClosing())
+    while(!tmp->isEngineClosing() || SDL_WaitEvent(&tmp->GetEvents()))
     {
-        //Cursor
-        tmp->UpdateCursor(&tmp->GetEvents());
-        tmp->RunEvents();
+        tmp->UpdateInput(&tmp->GetEvents());
         tmp->UIProcessEvents();
+        tmp->ProcessUnitEvents();
     }
     return NULL;
 }
@@ -94,7 +93,7 @@ const size_t Game::loadRate = 17;
     public VideoPlayer, public ThreadSystem, public GameInfo
 */
 Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), Input(this), ThreadSystem(), GameInfo()
 {
     LoadGame(file);
     closeEngine = false;
@@ -104,7 +103,8 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
 }
 
 Game::Game(bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
-    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), ThreadSystem(), GameInfo()
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), Input(this),
+    ThreadSystem(), GameInfo()
 {
     closeEngine = false;
     loading = false;
@@ -432,16 +432,16 @@ void Game::run()
         //Run through every method call once per frame until exit command is issued from within the game
         while(!isEngineClosing())
         {
-            //Cursor
-            UpdateCursor(event);
             //Update
             UpdateTriggers(currentLvl->GetHeroID());
             UIUpdate();
             if(isPlayingVideo())
                 UpdateVideo();
             //Process events
+            SDL_WaitEvent(&GetEvents());
             if(!isPlayingVideo())
-                RunEvents();
+                ProcessUnitEvents();
+            UpdateInput(&GetEvents());
             UIProcessEvents();
             //Run physics
             if(!isPlayingVideo())

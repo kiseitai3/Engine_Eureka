@@ -22,6 +22,9 @@ int main()
     crc = crc64(w, 10);
     fprintf(stdout, "%i \n", crc);
 
+    crc = crc64_on_file_fast("pyMod.py");
+    fprintf(stdout, "0x%X \n", crc);
+
     scanf("%c \n", &x);
     return 0;
 }

@@ -16,6 +16,7 @@ public:
     void DeleteUniqueTexture(SDL_Texture* tex);
     bool hasTexture(uint64_t hash);
     bool hasHash(SDL_Texture* tex);
+    void IncrementTextLife(SDL_Texture* tex);
 
 private:
     BinarySearchTree<uint64_t, SDL_Texture*> storage;//Storage of unmodified textures

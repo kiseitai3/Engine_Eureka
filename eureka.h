@@ -13,6 +13,7 @@
 #include "soundqueue.h"
 #include "videoplayer.h"
 #include "cursor.h"
+#include "input.h"
 #include "game.h"
 
 

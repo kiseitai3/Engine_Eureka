@@ -29,11 +29,6 @@ UnitManager::UnitManager(Game* owner)
     gameObjects.insert(0, tmp);
 }
 
-void UnitManager::SetSDLEvent(SDL_Event* ev)
-{
-    event = ev;
-}
-
 size_t UnitManager::SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars)
 {
     size_t id = hasher();
@@ -380,15 +375,13 @@ void UnitManager::PlayUnitSounds()
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }
 
-void UnitManager::RunEvents()
+void UnitManager::ProcessUnitEvents()
 {
     owner_ref->LockMutex(mutex_id);//Lock container
     std::vector<UnitNode*> tmpObjs = gameObjects.getContents();
     for(size_t i = 1; i < tmpObjs.size(); i++)
     {
-        tmpObjs[i]->pData->ProcessKeyEvent((char*)event->key.keysym.sym);
-        tmpObjs[i]->pData->ProcessMouseMovement(event->motion.xrel, event->motion.yrel);
-        tmpObjs[i]->pData->ProcessMouseKey(event->button.button, event->button.x, event->button.y);
+        owner_ref->ProcessUnitInput(tmpObjs[i]->pData);
     }
     owner_ref->UnlockMutex(mutex_id);//Unlock container
 }

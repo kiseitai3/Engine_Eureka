@@ -1,5 +1,5 @@
 /* File : Eureka.i */
-%module Eureka
+%module EE
 
 /*SWIG includes for propper operations of wrapper*/
 %include carrays.i
@@ -84,4 +84,5 @@
 %include "Queue.h"
 %include "cursor.h"
 %include "input.h"
+%include "typedefs.h"
 %include "game.h"

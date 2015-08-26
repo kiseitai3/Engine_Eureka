@@ -12,8 +12,9 @@
 class Game;
 class draw_base;
 
-struct Layer
+class Layer
 {
+public:
     draw_base* layer;
     size_t id;
     math_point loc;

@@ -1,6 +1,8 @@
 #ifndef VIDEOPLAYER_H_INCLUDED
 #define VIDEOPLAYER_H_INCLUDED
 
+//#define EUREKA_EXPORT
+
 //Apparently, the FFmpeg libraries were not wrapped around with a set of macros that tag the code with extern C
 //for compatibility with C++. If you don't add the extern C, C++ will try to link with C++ name mangling!
 //However, the libs are compiled in C so the symbols are not mangled! Be careful with this!

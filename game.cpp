@@ -593,11 +593,6 @@ size_t Game::GetHeroID() const
     return currentLvl->GetHeroID();
 }
 
-size_t Game::GetMainTimer() const
-{
-    return mainTimer;
-}
-
 Level* Game::GetCurrentLevel()
 {
     return currentLvl;

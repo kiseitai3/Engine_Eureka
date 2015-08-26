@@ -3038,16 +3038,16 @@ static swig_module_info swig_module = {swig_types, 87, 0, 0, 0, 0};
 #endif
 
 /*-----------------------------------------------
-              @(target):= _Eureka.so
+              @(target):= _EE.so
   ------------------------------------------------*/
 #if PY_VERSION_HEX >= 0x03000000
-#  define SWIG_init    PyInit__Eureka
+#  define SWIG_init    PyInit__EE
 
 #else
-#  define SWIG_init    init_Eureka
+#  define SWIG_init    init_EE
 
 #endif
-#define SWIG_name    "_Eureka"
+#define SWIG_name    "_EE"
 
 #define SWIGVERSION 0x030005 
 #define SWIG_VERSION SWIGVERSION

@@ -65,6 +65,7 @@
 					<Add library="Core" />
 					<Add library="threading" />
 					<Add library="Flags" />
+					<Add library="Input" />
 				</Linker>
 			</Target>
 			<Target title="Core">
@@ -76,8 +77,8 @@
 				<Linker>
 					<Add library="Flags" />
 					<Add library="Timer" />
-					<Add library="lua_wrap" />
 					<Add library="CRC_d" />
+					<Add library="lua_wrap" />
 				</Linker>
 			</Target>
 			<Target title="UI">
@@ -90,6 +91,8 @@
 					<Add library="Core" />
 					<Add library="threading" />
 					<Add library="Flags" />
+					<Add library="Input" />
+					<Add library="IO" />
 				</Linker>
 			</Target>
 			<Target title="Sound">
@@ -148,6 +151,7 @@
 					<Add library="avdevice" />
 					<Add library="avcodec" />
 					<Add library="CMD_Processor" />
+					<Add library="Input" />
 					<Add directory="Dependencies/libFFmpeg/lib" />
 					<Add directory="Dependencies/cmd_processor/lib/Release" />
 				</Linker>
@@ -175,6 +179,19 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
+			</Target>
+			<Target title="Input">
+				<Option output="bin/engine/Input" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="Flags" />
+					<Add library="threading" />
+					<Add library="IO" />
+				</Linker>
 			</Target>
 			<Target title="data_base_test">
 				<Option output="bin/tests/data_base_test" prefix_auto="1" extension_auto="1" />
@@ -388,10 +405,10 @@
 			<Option target="sqlite3_test" />
 		</Unit>
 		<Unit filename="ai_store.cpp">
-			<Option target="Unit" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="ai_store.h">
-			<Option target="Unit" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="button.cpp">
 			<Option target="staticlib_all" />
@@ -421,10 +438,10 @@
 			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="cursor.cpp">
-			<Option target="Eureka" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="cursor.h">
-			<Option target="Eureka" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="data_base.cpp">
 			<Option target="staticlib_all" />
@@ -481,9 +498,11 @@
 		<Unit filename="input.cpp">
 			<Option target="staticlib_all" />
 			<Option target="UI" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="input.h">
 			<Option target="UI" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="iomanager.cpp">
 			<Option target="staticlib_all" />
@@ -555,10 +574,12 @@
 		<Unit filename="particlesystem.cpp">
 			<Option target="staticlib_all" />
 			<Option target="Unit" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="particlesystem.h">
 			<Option target="staticlib_all" />
 			<Option target="Unit" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="physics.cpp">
 			<Option target="staticlib_all" />
@@ -589,8 +610,8 @@
 			<Option target="Core" />
 		</Unit>
 		<Unit filename="pywrap.h">
-			<Option target="Core" />
 			<Option target="staticlib_all" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="rand_generators.cpp">
 			<Option target="Threading" />
@@ -603,12 +624,12 @@
 			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="scriptwrap.cpp">
-			<Option target="Core" />
 			<Option target="staticlib_all" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="scriptwrap.h">
-			<Option target="Core" />
 			<Option target="staticlib_all" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="sound_base.cpp">
 			<Option target="staticlib_all" />
@@ -709,6 +730,7 @@
 			<Option target="LuaWrap" />
 			<Option target="Unit" />
 			<Option target="staticlib_all" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="ui.cpp">
 			<Option target="staticlib_all" />
@@ -737,16 +759,18 @@
 			<Option target="Core" />
 		</Unit>
 		<Unit filename="unit.h">
-			<Option target="Core" />
 			<Option target="staticlib_all" />
+			<Option target="Core" />
 		</Unit>
 		<Unit filename="unitmanager.cpp">
 			<Option target="staticlib_all" />
 			<Option target="Unit" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="unitmanager.h">
 			<Option target="staticlib_all" />
 			<Option target="Unit" />
+			<Option target="Input" />
 		</Unit>
 		<Unit filename="utf8.h">
 			<Option target="staticlib_all" />

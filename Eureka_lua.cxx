@@ -2736,11 +2736,11 @@ static swig_module_info swig_module = {swig_types, 88, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_name      "Eureka"
-#define SWIG_init      luaopen_Eureka
-#define SWIG_init_user luaopen_Eureka_user
+#define SWIG_name      "EE"
+#define SWIG_init      luaopen_EE
+#define SWIG_init_user luaopen_EE_user
 
-#define SWIG_LUACODE   luaopen_Eureka_luacode
+#define SWIG_LUACODE   luaopen_EE_luacode
 
 namespace swig {
 typedef struct{} LANGUAGE_OBJ;
@@ -35560,7 +35560,7 @@ static swig_lua_namespace* swig_SwigModule_namespaces[] = {
 };
 
 static swig_lua_namespace swig_SwigModule = {
-    "Eureka",
+    "EE",
     swig_SwigModule_methods,
     swig_SwigModule_attributes,
     swig_SwigModule_constants,

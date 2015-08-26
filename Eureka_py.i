@@ -1,5 +1,7 @@
 /* File : Eureka.i */
-%module Eureka
+%module EE
+
+
 
 /*SWIG includes for propper operations of wrapper*/
 %include carrays.i

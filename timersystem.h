@@ -17,6 +17,7 @@ public:
     //ctros and dtor
     TimerSystem(Game* owner);
     ~TimerSystem();
+    void initTimerSys();
 
     //Manipulation
     size_t GetTicks(size_t t_id);

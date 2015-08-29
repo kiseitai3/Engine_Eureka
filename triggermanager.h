@@ -19,6 +19,7 @@ public:
     //ctors and dtor
     TriggerManager(Game* owner);
     ~TriggerManager();
+    void initTriggerSys();
 
     //Setters
     size_t RegisterTrigger(cstr file);

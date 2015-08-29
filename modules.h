@@ -26,6 +26,7 @@ public:
     //ctors and dtor
     ModuleSystem(Game* owner);
     ~ModuleSystem();
+    void initModSys();
 
     //Module
     size_t RegisterModule(cstr file, bool threaded = false);

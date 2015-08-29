@@ -28,6 +28,7 @@ class LayerSystem
 public:
     LayerSystem(Game* owner);
     ~LayerSystem();
+    void initLayerSys();
 
     //Setters
     size_t AddLayer(cstr file);

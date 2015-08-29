@@ -15421,6 +15421,29 @@ fail:
 }
 
 
+static int _wrap_ModuleSystem_initModSys(lua_State* L) {
+  int SWIG_arg = 0;
+  ModuleSystem *arg1 = (ModuleSystem *) 0 ;
+  
+  SWIG_check_num_args("ModuleSystem::initModSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ModuleSystem::initModSys",1,"ModuleSystem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ModuleSystem,0))){
+    SWIG_fail_ptr("ModuleSystem_initModSys",1,SWIGTYPE_p_ModuleSystem);
+  }
+  
+  (arg1)->initModSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ModuleSystem_RegisterModule__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   ModuleSystem *arg1 = (ModuleSystem *) 0 ;
@@ -15838,6 +15861,7 @@ static swig_lua_attribute swig_ModuleSystem_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_ModuleSystem_methods[]= {
+    { "initModSys", _wrap_ModuleSystem_initModSys},
     { "RegisterModule", _wrap_ModuleSystem_RegisterModule},
     { "RegisterFunction", _wrap_ModuleSystem_RegisterFunction},
     { "RegisterFunctionFromFile", _wrap_ModuleSystem_RegisterFunctionFromFile},
@@ -16232,6 +16256,29 @@ static int _wrap_new_UnitManager(lua_State* L) {
   
   result = (UnitManager *)new UnitManager(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_UnitManager,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_UnitManager_initUnitSys(lua_State* L) {
+  int SWIG_arg = 0;
+  UnitManager *arg1 = (UnitManager *) 0 ;
+  
+  SWIG_check_num_args("UnitManager::initUnitSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("UnitManager::initUnitSys",1,"UnitManager *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_UnitManager,0))){
+    SWIG_fail_ptr("UnitManager_initUnitSys",1,SWIGTYPE_p_UnitManager);
+  }
+  
+  (arg1)->initUnitSys();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -16915,6 +16962,7 @@ static swig_lua_attribute swig_UnitManager_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_UnitManager_methods[]= {
+    { "initUnitSys", _wrap_UnitManager_initUnitSys},
     { "SpawnUnit", _wrap_UnitManager_SpawnUnit},
     { "SpawnUnitFromFile", _wrap_UnitManager_SpawnUnitFromFile},
     { "SpawnUnitFromList", _wrap_UnitManager_SpawnUnitFromList},
@@ -18638,6 +18686,29 @@ fail:
 }
 
 
+static int _wrap_ParticleSystem_initParticleSys(lua_State* L) {
+  int SWIG_arg = 0;
+  ParticleSystem *arg1 = (ParticleSystem *) 0 ;
+  
+  SWIG_check_num_args("ParticleSystem::initParticleSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ParticleSystem::initParticleSys",1,"ParticleSystem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ParticleSystem,0))){
+    SWIG_fail_ptr("ParticleSystem_initParticleSys",1,SWIGTYPE_p_ParticleSystem);
+  }
+  
+  (arg1)->initParticleSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ParticleSystem_RegisterUnitParticle__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   ParticleSystem *arg1 = (ParticleSystem *) 0 ;
@@ -19593,6 +19664,7 @@ static swig_lua_attribute swig_ParticleSystem_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_ParticleSystem_methods[]= {
+    { "initParticleSys", _wrap_ParticleSystem_initParticleSys},
     { "RegisterUnitParticle", _wrap_ParticleSystem_RegisterUnitParticle},
     { "RegisterGameParticle", _wrap_ParticleSystem_RegisterGameParticle},
     { "RenderParticleFromUnit", _wrap_ParticleSystem_RenderParticleFromUnit},
@@ -21603,6 +21675,29 @@ static int _wrap_new_NetworkManager(lua_State* L) {
   
   result = (NetworkManager *)new NetworkManager(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_NetworkManager,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_NetworkManager_initNetSys(lua_State* L) {
+  int SWIG_arg = 0;
+  NetworkManager *arg1 = (NetworkManager *) 0 ;
+  
+  SWIG_check_num_args("NetworkManager::initNetSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("NetworkManager::initNetSys",1,"NetworkManager *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_NetworkManager,0))){
+    SWIG_fail_ptr("NetworkManager_initNetSys",1,SWIGTYPE_p_NetworkManager);
+  }
+  
+  (arg1)->initNetSys();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -24011,6 +24106,7 @@ static swig_lua_attribute swig_NetworkManager_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_NetworkManager_methods[]= {
+    { "initNetSys", _wrap_NetworkManager_initNetSys},
     { "CreateClientConnection", _wrap_NetworkManager_CreateClientConnection},
     { "CreateServer", _wrap_NetworkManager_CreateServer},
     { "AcceptTCPClient", _wrap_NetworkManager_AcceptTCPClient},
@@ -24425,6 +24521,29 @@ fail:
 }
 
 
+static int _wrap_IOManager_initIOSys(lua_State* L) {
+  int SWIG_arg = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  
+  SWIG_check_num_args("IOManager::initIOSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("IOManager::initIOSys",1,"IOManager *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_IOManager,0))){
+    SWIG_fail_ptr("IOManager_initIOSys",1,SWIGTYPE_p_IOManager);
+  }
+  
+  (arg1)->initIOSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_IOManager_GetFile(lua_State* L) {
   int SWIG_arg = 0;
   IOManager *arg1 = (IOManager *) 0 ;
@@ -24694,6 +24813,7 @@ static swig_lua_attribute swig_IOManager_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_IOManager_methods[]= {
+    { "initIOSys", _wrap_IOManager_initIOSys},
     { "GetFile", _wrap_IOManager_GetFile},
     { "GetDataBase", _wrap_IOManager_GetDataBase},
     { "RegisterFile", _wrap_IOManager_RegisterFile},
@@ -24995,6 +25115,29 @@ fail:
 }
 
 
+static int _wrap_LayerSystem_initLayerSys(lua_State* L) {
+  int SWIG_arg = 0;
+  LayerSystem *arg1 = (LayerSystem *) 0 ;
+  
+  SWIG_check_num_args("LayerSystem::initLayerSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LayerSystem::initLayerSys",1,"LayerSystem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LayerSystem,0))){
+    SWIG_fail_ptr("LayerSystem_initLayerSys",1,SWIGTYPE_p_LayerSystem);
+  }
+  
+  (arg1)->initLayerSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_LayerSystem_AddLayer(lua_State* L) {
   int SWIG_arg = 0;
   LayerSystem *arg1 = (LayerSystem *) 0 ;
@@ -25193,6 +25336,7 @@ static swig_lua_attribute swig_LayerSystem_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_LayerSystem_methods[]= {
+    { "initLayerSys", _wrap_LayerSystem_initLayerSys},
     { "AddLayer", _wrap_LayerSystem_AddLayer},
     { "AddLayerSet", _wrap_LayerSystem_AddLayerSet},
     { "DeleteLayer", _wrap_LayerSystem_DeleteLayer},
@@ -28551,6 +28695,29 @@ fail:
 }
 
 
+static int _wrap_TriggerManager_initTriggerSys(lua_State* L) {
+  int SWIG_arg = 0;
+  TriggerManager *arg1 = (TriggerManager *) 0 ;
+  
+  SWIG_check_num_args("TriggerManager::initTriggerSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("TriggerManager::initTriggerSys",1,"TriggerManager *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_TriggerManager,0))){
+    SWIG_fail_ptr("TriggerManager_initTriggerSys",1,SWIGTYPE_p_TriggerManager);
+  }
+  
+  (arg1)->initTriggerSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_TriggerManager_RegisterTrigger(lua_State* L) {
   int SWIG_arg = 0;
   TriggerManager *arg1 = (TriggerManager *) 0 ;
@@ -28743,6 +28910,7 @@ static swig_lua_attribute swig_TriggerManager_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_TriggerManager_methods[]= {
+    { "initTriggerSys", _wrap_TriggerManager_initTriggerSys},
     { "RegisterTrigger", _wrap_TriggerManager_RegisterTrigger},
     { "UnRegisterTrigger", _wrap_TriggerManager_UnRegisterTrigger},
     { "GetTrigger", _wrap_TriggerManager_GetTrigger},
@@ -28794,6 +28962,29 @@ static int _wrap_new_TimerSystem(lua_State* L) {
   
   result = (TimerSystem *)new TimerSystem(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_TimerSystem,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_TimerSystem_initTimerSys(lua_State* L) {
+  int SWIG_arg = 0;
+  TimerSystem *arg1 = (TimerSystem *) 0 ;
+  
+  SWIG_check_num_args("TimerSystem::initTimerSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("TimerSystem::initTimerSys",1,"TimerSystem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_TimerSystem,0))){
+    SWIG_fail_ptr("TimerSystem_initTimerSys",1,SWIGTYPE_p_TimerSystem);
+  }
+  
+  (arg1)->initTimerSys();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -29063,6 +29254,7 @@ static swig_lua_attribute swig_TimerSystem_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_TimerSystem_methods[]= {
+    { "initTimerSys", _wrap_TimerSystem_initTimerSys},
     { "GetTicks", _wrap_TimerSystem_GetTicks},
     { "StopTimer", _wrap_TimerSystem_StopTimer},
     { "StartTimer", _wrap_TimerSystem_StartTimer},
@@ -29117,6 +29309,29 @@ static int _wrap_new_UIManager(lua_State* L) {
   
   result = (UIManager *)new UIManager(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_UIManager,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_UIManager_initUISys(lua_State* L) {
+  int SWIG_arg = 0;
+  UIManager *arg1 = (UIManager *) 0 ;
+  
+  SWIG_check_num_args("UIManager::initUISys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("UIManager::initUISys",1,"UIManager *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_UIManager,0))){
+    SWIG_fail_ptr("UIManager_initUISys",1,SWIGTYPE_p_UIManager);
+  }
+  
+  (arg1)->initUISys();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -29350,6 +29565,7 @@ static swig_lua_attribute swig_UIManager_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_UIManager_methods[]= {
+    { "initUISys", _wrap_UIManager_initUISys},
     { "RegisterUI", _wrap_UIManager_RegisterUI},
     { "UnregisterUI", _wrap_UIManager_UnregisterUI},
     { "GetUI", _wrap_UIManager_GetUI},
@@ -29740,6 +29956,29 @@ static int _wrap_new_SoundQueue(lua_State* L) {
   
   result = (SoundQueue *)new SoundQueue(arg1);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_SoundQueue,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_SoundQueue_initSoundSys(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  
+  SWIG_check_num_args("SoundQueue::initSoundSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundQueue::initSoundSys",1,"SoundQueue *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundQueue,0))){
+    SWIG_fail_ptr("SoundQueue_initSoundSys",1,SWIGTYPE_p_SoundQueue);
+  }
+  
+  (arg1)->initSoundSys();
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -30304,6 +30543,7 @@ static swig_lua_attribute swig_SoundQueue_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_SoundQueue_methods[]= {
+    { "initSoundSys", _wrap_SoundQueue_initSoundSys},
     { "AddSoundToQueue", _wrap_SoundQueue_AddSoundToQueue},
     { "AddSoundBufferToQueue", _wrap_SoundQueue_AddSoundBufferToQueue},
     { "FlipMusic", _wrap_SoundQueue_FlipMusic},
@@ -31072,6 +31312,29 @@ fail:
 }
 
 
+static int _wrap_VideoPlayer_initVideoSys(lua_State* L) {
+  int SWIG_arg = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  
+  SWIG_check_num_args("VideoPlayer::initVideoSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("VideoPlayer::initVideoSys",1,"VideoPlayer *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VideoPlayer,0))){
+    SWIG_fail_ptr("VideoPlayer_initVideoSys",1,SWIGTYPE_p_VideoPlayer);
+  }
+  
+  (arg1)->initVideoSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_VideoPlayer_LoadVideoFile(lua_State* L) {
   int SWIG_arg = 0;
   VideoPlayer *arg1 = (VideoPlayer *) 0 ;
@@ -31301,6 +31564,7 @@ static swig_lua_attribute swig_VideoPlayer_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_VideoPlayer_methods[]= {
+    { "initVideoSys", _wrap_VideoPlayer_initVideoSys},
     { "LoadVideoFile", _wrap_VideoPlayer_LoadVideoFile},
     { "PlayVideo", _wrap_VideoPlayer_PlayVideo},
     { "StopVideo", _wrap_VideoPlayer_StopVideo},
@@ -31640,6 +31904,29 @@ fail:
 }
 
 
+static int _wrap_Cursor_initCursorSys(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  
+  SWIG_check_num_args("Cursor::initCursorSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::initCursorSys",1,"Cursor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_initCursorSys",1,SWIGTYPE_p_Cursor);
+  }
+  
+  (arg1)->initCursorSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Cursor_RegisterCursor(lua_State* L) {
   int SWIG_arg = 0;
   Cursor *arg1 = (Cursor *) 0 ;
@@ -31756,6 +32043,7 @@ static swig_lua_attribute swig_Cursor_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_Cursor_methods[]= {
+    { "initCursorSys", _wrap_Cursor_initCursorSys},
     { "RegisterCursor", _wrap_Cursor_RegisterCursor},
     { "ChangeToCursor", _wrap_Cursor_ChangeToCursor},
     { "ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab},
@@ -34153,6 +34441,29 @@ fail:
 }
 
 
+static int _wrap_Game_initSubSys(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  
+  SWIG_check_num_args("Game::initSubSys",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::initSubSys",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_initSubSys",1,SWIGTYPE_p_Game);
+  }
+  
+  (arg1)->initSubSys();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Game_loadLevel(lua_State* L) {
   int SWIG_arg = 0;
   Game *arg1 = (Game *) 0 ;
@@ -35157,6 +35468,7 @@ static swig_lua_method swig_Game_methods[]= {
     { "LoadUIs", _wrap_Game_LoadUIs},
     { "initEditorFrameBuffer", _wrap_Game_initEditorFrameBuffer},
     { "init", _wrap_Game_init},
+    { "initSubSys", _wrap_Game_initSubSys},
     { "loadLevel", _wrap_Game_loadLevel},
     { "GetCurrentLevel", _wrap_Game_GetCurrentLevel},
     { "SetHeroIDForCurrentLevel", _wrap_Game_SetHeroIDForCurrentLevel},
@@ -35226,7 +35538,7 @@ static swig_lua_namespace swig_Game_Sf_SwigStatic = {
     0
 };
 static swig_lua_class *swig_Game_bases[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-static const char *swig_Game_base_names[] = {"SoundQueue *","ParticleSystem *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","Cursor *","TimerSystem *","VideoPlayer *","Input *","ThreadSystem *","GameInfo *",0};
+static const char *swig_Game_base_names[] = {"ThreadSystem *","GameInfo *","ModuleSystem *","UnitManager *","IOManager *","UIManager *","NetworkManager *","TriggerManager *","LayerSystem *","Cursor *","TimerSystem *","VideoPlayer *","Input *","SoundQueue *","ParticleSystem *",0};
 static swig_lua_class _wrap_class_Game = { "Game", "Game", &SWIGTYPE_p_Game,_proxy__wrap_new_Game, swig_delete_Game, swig_Game_methods, swig_Game_attributes, &swig_Game_Sf_SwigStatic, swig_Game_meta, swig_Game_bases, swig_Game_base_names };
 
 static int _wrap_helperDrawFunction(lua_State* L) {
@@ -35588,14 +35900,14 @@ static void *_p_InputTo_p_InputKeyboard(void *x, int *SWIGUNUSEDPARM(newmemory))
 static void *_p_GameTo_p_VideoPlayer(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VideoPlayer *)  ((Game *) x));
 }
+static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ThreadSystem *)  ((Game *) x));
+}
 static void *_p_GameTo_p_LayerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((LayerSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((TimerSystem *)  ((Game *) x));
-}
-static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((ThreadSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_InputMouse(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((InputMouse *) (Input *) ((Game *) x));

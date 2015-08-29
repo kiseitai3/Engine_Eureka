@@ -74,9 +74,13 @@ DataBase* IONode::GetDataBase()
 IOManager::IOManager(Game* owner)
 {
     owner_ref = owner;
+}
+
+void IOManager::initIOSys()
+{
     //Create mutexes and obtain their ids
-    mutex_io_id = owner->SpawnMutex();
-    mutex_db_id = owner->SpawnMutex();
+    mutex_io_id = owner_ref->SpawnMutex();
+    mutex_db_id = owner_ref->SpawnMutex();
 }
 
 IOManager::~IOManager()

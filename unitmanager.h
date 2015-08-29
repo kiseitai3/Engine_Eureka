@@ -26,6 +26,7 @@ public:
     //ctors and dtor
     UnitManager(Game* owner);
     ~UnitManager();
+    void initUnitSys();
 
     //Setters
     size_t SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars);

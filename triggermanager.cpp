@@ -9,8 +9,12 @@
 
 TriggerManager::TriggerManager(Game* owner)
 {
-    mutex_trigger_id = owner->SpawnMutex();
     owner_ref = owner;
+}
+
+void TriggerManager::initTriggerSys()
+{
+   mutex_trigger_id = owner_ref->SpawnMutex();
 }
 
 TriggerManager::~TriggerManager()

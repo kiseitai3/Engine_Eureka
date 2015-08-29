@@ -11,8 +11,12 @@
 UIManager::UIManager(Game* owner)
 {
     owner_ref = owner;
+}
+
+void UIManager::initUISys()
+{
     //Create mutex
-    mutex_ui_id = owner->SpawnMutex();
+    mutex_ui_id = owner_ref->SpawnMutex();
 }
 
 UIManager::~UIManager()

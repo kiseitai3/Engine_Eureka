@@ -1308,6 +1308,9 @@ class ModuleSystem(_object):
     __swig_destroy__ = _EE.delete_ModuleSystem
     __del__ = lambda self: None
 
+    def initModSys(self):
+        return _EE.ModuleSystem_initModSys(self)
+
     def RegisterModule(self, file, threaded=False):
         return _EE.ModuleSystem_RegisterModule(self, file, threaded)
 
@@ -1388,6 +1391,9 @@ class UnitManager(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_UnitManager
     __del__ = lambda self: None
+
+    def initUnitSys(self):
+        return _EE.UnitManager_initUnitSys(self)
 
     def SpawnUnit(self, type, BlitOrder, loc, file, hero, hasBars):
         return _EE.UnitManager_SpawnUnit(self, type, BlitOrder, loc, file, hero, hasBars)
@@ -1579,6 +1585,9 @@ class ParticleSystem(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_ParticleSystem
     __del__ = lambda self: None
+
+    def initParticleSys(self):
+        return _EE.ParticleSystem_initParticleSys(self)
 
     def RegisterUnitParticle(self, *args):
         return _EE.ParticleSystem_RegisterUnitParticle(self, *args)
@@ -1844,6 +1853,9 @@ class NetworkManager(_object):
     __swig_destroy__ = _EE.delete_NetworkManager
     __del__ = lambda self: None
 
+    def initNetSys(self):
+        return _EE.NetworkManager_initNetSys(self)
+
     def CreateClientConnection(self, host, port, udp=False):
         return _EE.NetworkManager_CreateClientConnection(self, host, port, udp)
 
@@ -1970,6 +1982,9 @@ class IOManager(_object):
     __swig_destroy__ = _EE.delete_IOManager
     __del__ = lambda self: None
 
+    def initIOSys(self):
+        return _EE.IOManager_initIOSys(self)
+
     def GetFile(self, file_id):
         return _EE.IOManager_GetFile(self, file_id)
 
@@ -2035,6 +2050,9 @@ class LayerSystem(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_LayerSystem
     __del__ = lambda self: None
+
+    def initLayerSys(self):
+        return _EE.LayerSystem_initLayerSys(self)
 
     def AddLayer(self, file):
         return _EE.LayerSystem_AddLayer(self, file)
@@ -2190,6 +2208,9 @@ class TriggerManager(_object):
     __swig_destroy__ = _EE.delete_TriggerManager
     __del__ = lambda self: None
 
+    def initTriggerSys(self):
+        return _EE.TriggerManager_initTriggerSys(self)
+
     def RegisterTrigger(self, file):
         return _EE.TriggerManager_RegisterTrigger(self, file)
 
@@ -2225,6 +2246,9 @@ class TimerSystem(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_TimerSystem
     __del__ = lambda self: None
+
+    def initTimerSys(self):
+        return _EE.TimerSystem_initTimerSys(self)
 
     def GetTicks(self, t_id):
         return _EE.TimerSystem_GetTicks(self, t_id)
@@ -2270,6 +2294,9 @@ class UIManager(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_UIManager
     __del__ = lambda self: None
+
+    def initUISys(self):
+        return _EE.UIManager_initUISys(self)
 
     def RegisterUI(self, file):
         return _EE.UIManager_RegisterUI(self, file)
@@ -2366,6 +2393,9 @@ class SoundQueue(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_SoundQueue
     __del__ = lambda self: None
+
+    def initSoundSys(self):
+        return _EE.SoundQueue_initSoundSys(self)
 
     def AddSoundToQueue(self, soundFile, music=False):
         return _EE.SoundQueue_AddSoundToQueue(self, soundFile, music)
@@ -2534,6 +2564,9 @@ class VideoPlayer(_object):
     __swig_destroy__ = _EE.delete_VideoPlayer
     __del__ = lambda self: None
 
+    def initVideoSys(self):
+        return _EE.VideoPlayer_initVideoSys(self)
+
     def LoadVideoFile(self, file):
         return _EE.VideoPlayer_LoadVideoFile(self, file)
 
@@ -2612,6 +2645,9 @@ class Cursor(_object):
             self.this = this
     __swig_destroy__ = _EE.delete_Cursor
     __del__ = lambda self: None
+
+    def initCursorSys(self):
+        return _EE.Cursor_initCursorSys(self)
 
     def RegisterCursor(self, file):
         return _EE.Cursor_RegisterCursor(self, file)
@@ -2877,13 +2913,13 @@ class Input(InputMouse, InputKeyboard):
 Input_swigregister = _EE.Input_swigregister
 Input_swigregister(Input)
 
-class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo):
+class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, SoundQueue, ParticleSystem):
     __swig_setmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo]:
+    for _s in [ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, SoundQueue, ParticleSystem]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, Game, name, value)
     __swig_getmethods__ = {}
-    for _s in [SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, ThreadSystem, GameInfo]:
+    for _s in [ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManager, NetworkManager, TriggerManager, LayerSystem, Cursor, TimerSystem, VideoPlayer, Input, SoundQueue, ParticleSystem]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, Game, name)
     __repr__ = _swig_repr
@@ -2914,6 +2950,9 @@ class Game(SoundQueue, ParticleSystem, ModuleSystem, UnitManager, IOManager, UIM
 
     def init(self):
         return _EE.Game_init(self)
+
+    def initSubSys(self):
+        return _EE.Game_initSubSys(self)
 
     def loadLevel(self, file):
         return _EE.Game_loadLevel(self, file)

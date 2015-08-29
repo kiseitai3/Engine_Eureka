@@ -41,6 +41,7 @@ class IOManager
 public:
     IOManager(Game* owner);
     ~IOManager();
+    void initIOSys();
 
     //Getters
     //Be careful with manipulation of objects below. The engine will crash if someone deletes objects directly!

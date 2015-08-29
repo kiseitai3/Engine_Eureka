@@ -62,6 +62,7 @@ public:
     //Ctors and dtor
     VideoPlayer(Game* owner);
     ~VideoPlayer();
+    void initVideoSys();
 
     //Media
     void LoadVideoFile(cstr file);

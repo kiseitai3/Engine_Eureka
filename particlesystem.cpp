@@ -310,9 +310,13 @@ ParticleSystem::ParticleSystem(Game* owner)
 {
     owner_ref = owner;
     gameCluster = new ParticleCluster(owner);
-    mutex_id_unit = owner->SpawnMutex();
-    mutex_id_game = owner->SpawnMutex();
-    cond_id =  owner->SpawnCondVar();
+}
+
+void ParticleSystem::initParticleSys()
+{
+    mutex_id_unit = owner_ref->SpawnMutex();
+    mutex_id_game = owner_ref->SpawnMutex();
+    cond_id = owner_ref->SpawnCondVar();
 }
 
 ParticleSystem::~ParticleSystem()

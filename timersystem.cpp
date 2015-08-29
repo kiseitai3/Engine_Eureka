@@ -9,7 +9,11 @@
 TimerSystem::TimerSystem(Game* owner)
 {
     owner_ref = owner;
-    mutex_timers_id = owner->SpawnMutex();
+}
+
+void TimerSystem::initTimerSys()
+{
+    mutex_timers_id = owner_ref->SpawnMutex();
 }
 
 TimerSystem::~TimerSystem()

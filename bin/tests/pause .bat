@@ -1,0 +1,2 @@
+net_test_server.exe
+pause

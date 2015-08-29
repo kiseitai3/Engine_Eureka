@@ -7,51 +7,90 @@
 //ENGINE_NAMESPACE
 
 
-NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool udp, int maxConn)
+NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool p_udp, int maxConn)
 {
     nodeID = id;
-    SDLNet_ResolveHost(&ip, host.c_str(), portValue);
+    if(SDLNet_ResolveHost(&ip, host.c_str(), portValue) == -1)
+        std::cerr << "NetNode Error: Failed to resolve address! SDL_Net: " << SDLNet_GetError() << std::endl;
     badNode = false;
-    if(udp)
+    if(p_udp)
     {
-        usocket = SDLNet_UDP_Open(0);
+        /*The struct ip will contain the ip of the remote host and the port that host is operating on.*/
+        UDPpacket connectPacket, ackPacket;
+        size_t trys = 0;
+        usocket = SDLNet_UDP_Open(NET_ANYUDPPORT);
         if(!usocket)//An error occurred
         {
-            std::cerr << "NetNode Error: Failed to create UDP socket! " << SDLNet_GetError() << std::endl;
+            std::cerr << "NetNode Error: Failed to create UDP socket! SDL_Net: " << SDLNet_GetError() << std::endl;
             badNode = true;
         }
         //Bind to a channel
-        /*udpChannel = SDLNet_UDP_Bind(usocket, -1, &ip);
+        //udpChannel = randUniform(Range(0, SDLNET_MAX_UDPCHANNELS - 1));
+        udpChannel = SDLNet_UDP_Bind(usocket, ANY_CHANNEL, &ip);
         if(udpChannel == -1)
         {
             std::cerr << "NetNode Error: Failed to bind UDP socket to IP address! " << SDLNet_GetError() << std::endl;
             badNode = true;
-        }*/
+        }
+        /*Now that we are ready to send data over the protocol, let's fill a packet with a connect signal so the server can acknowledge
+        this client connection!*/
+        connectPacket.data = (Uint8*)new byte[10];//data buffer
+        strcpy((char*)connectPacket.data, "CONNECT\0");//fill data buffer
+        connectPacket.address = ip;//ip address of remote target
+        connectPacket.channel = udpChannel;//This client's channel!
+        connectPacket.len = 8;//size of msg
+        connectPacket.maxlen = 10; //max size that can be expected from packet!
+        //Let's send the signal and hope the server got it! Then, wait for acknowledgement signal
+        SDLNet_UDP_Send(usocket, udpChannel, &connectPacket);
+        //Let's set up a data buffer for the acknowledge packet
+        ackPacket.data = new byte[10];
+        ackPacket.maxlen = 10;
+        while(SDLNet_UDP_Recv(usocket, &ackPacket) != -1)
+        {
+            if(!strcmp((const char*)ackPacket.data, "ACK\0"))
+            {
+                std::cout << "Server acknowledged connection!" << std::endl;
+                break;
+            }
+            if(trys == TIMEOUT_TRYS)
+            {
+                std::cout << "Connection attempt timed out! :(" << std::endl;
+                break;
+            }
+            trys++;
+            sleep(100000);
+        }
+        //let's clean up
+        delete[] connectPacket.data;
+        delete[] ackPacket.data;
     }
     else
     {
         tsocket = SDLNet_TCP_Open(&ip);
         if(!tsocket)//An error occurred
         {
-            std::cerr << "NetNode Error: Failed to create TCP socket! " << SDLNet_GetError() << std::endl;
+            std::cerr << "NetNode Error: Failed to create TCP socket! SDL_Net: " << SDLNet_GetError() << std::endl;
             badNode = true;
         }
     }
     maxConnections = maxConn;
+    port = portValue;
     server = false;
+    udp = p_udp;
 }
 
-NetNode::NetNode(size_t id, size_t portValue, bool udp, int maxConn)
+NetNode::NetNode(size_t id, size_t portValue, bool p_udp, int maxConn)
 {
     nodeID = id;
-    SDLNet_ResolveHost(&ip, "localhost", portValue);
+    if(SDLNet_ResolveHost(&ip, NULL, portValue) == -1)
+        std::cerr << "NetNode Error: Failed to resolve address! SDL_Net: " << SDLNet_GetError() << std::endl;
     badNode = false;
-    if(udp)
+    if(p_udp)
     {
         usocket = SDLNet_UDP_Open(portValue);
         if(!usocket)//An error occurred
         {
-            std::cerr << "NetNode Error: Failed to create UDP socket! " << SDLNet_GetError() << std::endl;
+            std::cerr << "NetNode Error: Failed to create UDP socket! SDL_Net: " << SDLNet_GetError() << std::endl;
             badNode = true;
         }
         //Bind to a channel
@@ -67,12 +106,14 @@ NetNode::NetNode(size_t id, size_t portValue, bool udp, int maxConn)
         tsocket = SDLNet_TCP_Open(&ip);
         if(!tsocket)//An error occurred
         {
-            std::cerr << "NetNode Error: Failed to create TCP socket! " << SDLNet_GetError() << std::endl;
+            std::cerr << "NetNode Error: Failed to create TCP socket! SDL_Net: " << SDLNet_GetError() << std::endl;
             badNode = true;
         }
     }
     maxConnections = maxConn;
+    port = portValue;
     server = true;
+    udp = p_udp;
 }
 
 NetNode::~NetNode()
@@ -111,15 +152,19 @@ UDPsocket& NetNode::GetUDPSocket()
     return usocket;
 }
 
-UDPClient NetNode::GetUDPClientInfo(int channel) const
+UDPClient NetNode::GetUDPClientInfo(int client_id) const
 {
-    for(std::list<UDPClient>::const_iterator itr = udpClients.begin(); itr != udpClients.end(); itr++)
+    UDPClient c;
+    if(client_id == NO_CLIENT)
     {
-        if(itr->serverChannel == channel)
-            return *itr;
+        c.ip = ip;
+        c.udp = true;
+        return c;
     }
+    if(udpClients.search(client_id, c))
+        c = c;
     //Return default instance of udpclient if there was no client in channel! Default one has all channels set to -1!
-    return UDPClient();
+    return c;
 }
 
 size_t NetNode::GetPort() const
@@ -139,21 +184,17 @@ size_t NetNode::GetClientCount() const
     return udpClients.size();
 }
 
-size_t NetNode::GenerateUDPChannel()
+int NetNode::GenerateUDPID()
 {
     //Create a random initial id
-    size_t id = randUniform(Range(0, SDLNET_MAX_UDPCHANNELS));
+    int id = randUniform(Range(0, maxConnections));
     //Now, let's verify it is not taken and keep making ids until we find an empty spot.
     //We also check that the socket is not saturated with clients!
-    if(udpClients.size() == SDLNET_MAX_UDPCHANNELS)
-        return SDLNET_MAX_UDPCHANNELS;
-
-    while(isUDPChannelFull(id))
+    while(isUDPIDUsed(id))
     {
-        id = randUniform(Range(0, SDLNET_MAX_UDPCHANNELS));
+        id = randUniform(Range(0, maxConnections));
     }
-
-    //return id;
+    return id;
 }
 
 bool NetNode::isUDP() const
@@ -173,20 +214,14 @@ bool NetNode::isBad() const
 
 bool NetNode::hasID(size_t client_id)
 {
-    TCPClient tmp = tcpClients[client_id];
-    if(tmp.host_name == "INVALID")
-        return false;
-    return true;
+    TCPClient tmp;
+    return tcpClients.search(client_id, tmp);
 }
 
-bool NetNode::isUDPChannelFull(int channel) const
+bool NetNode::isUDPIDUsed(int client_id) const
 {
-    for(std::list<UDPClient>::const_iterator itr = udpClients.begin(); itr != udpClients.end(); itr++)
-    {
-        if(itr->serverChannel == channel)
-            return true;
-    }
-    return false;
+    UDPClient tmp;
+    return udpClients.search(client_id, tmp);
 }
 
 size_t NetNode::AcceptTCPClient()
@@ -199,10 +234,10 @@ size_t NetNode::AcceptTCPClient()
     if(tmp)
     {
         //Request hash for id
-        size_t id = hasher() % maxConnections;
-        while(id < GetMaxValueSizeT() && hasID(id))//Make sure the max value of size_t is reserved
+        size_t id = randUniform(Range(0, maxConnections));
+        while(id < size_t(maxConnections) && hasID(id))//Make sure the max value of size_t is reserved
         {
-            id = hasher() % maxConnections;
+            id = randUniform(Range(0, maxConnections));
         }
         //Fill client info!
         client.sock = tmp;
@@ -214,39 +249,28 @@ size_t NetNode::AcceptTCPClient()
         tcpClients.insert(id, client);
         return id;
     }
-    else
+    /*else
     {
         std::cerr << "NetNode Error: Failed to accept TCP client! " << SDLNet_GetError() << std::endl;
-    }
+    }*/
     return GetMaxValueSizeT();//Return max value of size_t on error;
 }
 
-void NetNode::RegisterUDPClient(const IPaddress& ip, int channel)
+int NetNode::RegisterUDPClient(const IPaddress& ip, int channel)
 {
     //Let's create a storage place for this client!
     UDPClient uclient;
     //Let's store metadata
     uclient.ip = ip;
-    uclient.nativeChannel = channel;
-    uclient.serverChannel = GenerateUDPChannel();
-    //Let's make sure we have a valid channel before we attempt to bind it!
-    if(uclient.serverChannel == SDLNET_MAX_UDPCHANNELS)
-    {
-        //Write an error message!
-        std::cerr << "Holy cow! It seems this socket is full! Address dropped: " << uclient.ip.host << std::endl;
-        //Quit this method!
-        return;
-    }
-    //Bind to a channel
-    int chRes = SDLNet_UDP_Bind(usocket, uclient.serverChannel, &ip);
-    if(chRes != uclient.serverChannel)
-    {
-        std::cerr << "NetNode Error: Failed to bind client IP to server socket! " << SDLNet_GetError() << std::endl;
-    }
+    uclient.id = GenerateUDPID();
+    udpClients.insert(uclient.id, uclient);
+    return uclient.id;
 }
 
 void NetNode::UnRegisterTCPClient(int client_id)
 {
+    if(client_id < 0)
+        return;
     TCPClient tmp;
     tcpClients.search(client_id, tmp);//Find client socket
     if(tmp.sock)
@@ -264,8 +288,12 @@ void NetNode::UnRegisterUDPClient(int channel)
 NetworkManager::NetworkManager(Game* owner)
 {
     owner_ref = owner;
-    mutex_net_id = owner->SpawnMutex();
     mtu = 1;
+}
+
+void NetworkManager::initNetSys()
+{
+    mutex_net_id = owner_ref->SpawnMutex();
 }
 
 NetworkManager::~NetworkManager()
@@ -305,8 +333,10 @@ size_t NetworkManager::CreateClientConnection(const std::string& host, size_t po
 
 bool NetworkManager::hasNetNode(size_t conn_id)
 {
+    if(!connections.size())
+        return false;
     NetNode* tmp = NULL;
-    tmp = connections[conn_id];
+    connections.search(conn_id, tmp);
     if(tmp)
         return true;
     return false;
@@ -349,13 +379,15 @@ size_t NetworkManager::AcceptTCPClient(size_t socket_id)
     return client_id;
 }
 
-size_t NetworkManager::AcceptUDPClient(size_t socket_id)
+int NetworkManager::AcceptUDPClient(size_t socket_id)
 {
     NetNode* tmp = NULL;
-    size_t res = 0;
+    size_t res = 0, client_id;
     UDPpacket p = RecvUDPSignal(socket_id, res);//Read 1st packet
-    while((const char*)p.data != "CONNET\0" && res <= 0)
+    while(strcmp((const char*)p.data, "CONNET\0") && res <= 0)
     {
+        sleep(1000);
+        delete[] p.data;
         p = RecvUDPSignal(socket_id, res);
     }
     //Lock mutex
@@ -365,12 +397,18 @@ size_t NetworkManager::AcceptUDPClient(size_t socket_id)
     //Make sure it is a server
     if(tmp && tmp->isServer())
     {
-        if(p.data[0] != '\0')
-            tmp->RegisterUDPClient(p.address, p.channel);
+        //Since we received a connection signal, let's register the client
+        client_id = tmp->RegisterUDPClient(p.address, p.channel);
     }
+    //Now, we reuse the packet to send an acknowledgment signal!
+    strcpy((char*) p.data, "ACK\0");
+    SDLNet_UDP_Send(tmp->GetUDPSocket(), ANY_CHANNEL, &p);
+    //let's clean up
+    delete[] p.data;
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_net_id);
-    return p.channel;
+    //return the channel id. It will serve the same purpose as the client id in the TCP component of this library
+    return client_id;
 }
 
 
@@ -406,18 +444,27 @@ void NetworkManager::SendData(void_ptr data, size_t len, size_t socket_id, int c
         if(tmp->isUDP())
         {
             UDPsocket& soc = tmp->GetUDPSocket();
+            UDPClient c;
+            if(howmany == 0)
+                howmany = 1;
             std::string packetBuffers[howmany];
             packets = SDLNet_AllocPacketV(howmany, mtu);//Pre-alloc vector of packets
             if(packets)
             {
+                c = tmp->GetUDPClientInfo(client_id);
                for(size_t i = 0; i < howmany; i++)//Fill packets
             {
-                packetBuffers[i] = buff.substr(i * mtu, mtu - 1);//allocate new copy of token
+                packetBuffers[i] = buff.substr(i * mtu, mtu);//allocate new copy of token
                 packetBuffers[i] += '\0';
                 strcpy((char*)packets[i]->data, packetBuffers[i].c_str());//copy contents
+                packets[i]->address = c.ip;//ip address of remote target
+                packets[i]->len = packetBuffers[i].size();//size of msg
+                packets[i]->maxlen = mtu;
+                packets[i]->channel = ANY_CHANNEL;
             }
             //Send packets
-            SDLNet_UDP_SendV(soc, packets, howmany);
+            if(!SDLNet_UDP_SendV(soc, packets, howmany))
+                std::cout << "Error sending packets! @SendData! SDL_Net: " << SDLNet_GetError();
             }
             else
             {
@@ -430,14 +477,14 @@ void NetworkManager::SendData(void_ptr data, size_t len, size_t socket_id, int c
         }
         else
         {
-            TCPsocket& soc = tmp->GetTCPSocket();
             if(SDLNet_TCP_Send(tmp->GetTCPSocket(client_id), data, len) < len)
             {
                 std::clog << "NetworkManager Error: Could not send data to client " << client_id << ": "
                 << SDLNet_TCP_GetPeerAddress(tmp->GetTCPSocket(client_id))->host << std::endl;
                 std::clog << SDLNet_GetError() << std::endl;
                 std::clog << "Client will be disconnected!" << std::endl;
-                tmp->UnRegisterTCPClient(client_id);
+                if(tmp->isServer())
+                    tmp->UnRegisterTCPClient(client_id);
             }
         }
     }
@@ -491,6 +538,8 @@ void NetworkManager::RecvData(void_ptr data, size_t maxlen, size_t socket_id, in
         if(tmp->isUDP())
         {
             UDPsocket& soc = tmp->GetUDPSocket();
+            if(howmany == 0)
+                howmany = 1;
             packets = SDLNet_AllocPacketV(howmany, mtu);//Pre-alloc vector of packets
             if(packets)
             {
@@ -502,15 +551,14 @@ void NetworkManager::RecvData(void_ptr data, size_t maxlen, size_t socket_id, in
                         __LINE__ << ": " << SDLNet_GetError() << std::endl;
                     static_cast<char*>(data)[0] = '\0';//Set the first spot as a null character to indicate nothing could be received!
                 }
-                else
+                else if(res > 0)
                 {
                     for(size_t i = 0; i < res; i++)//extract and package data buffers
                     {
                         dataBuff += (char*)packets[i]->data;
                     }
                     //copy final buffer
-                    strncpy((char*) data, dataBuff.c_str(), maxlen - 1);
-                    static_cast<char*>(data)[maxlen - 1] = '\0';
+                    strcpy((char*) data, dataBuff.c_str());
                 }
             }
             else
@@ -523,8 +571,7 @@ void NetworkManager::RecvData(void_ptr data, size_t maxlen, size_t socket_id, in
         }
         else
         {
-            TCPsocket& soc = tmp->GetTCPSocket();
-            if(SDLNet_TCP_Recv(tmp->GetTCPSocket(client_id), data, maxlen) < maxlen)
+            if(SDLNet_TCP_Recv(tmp->GetTCPSocket(client_id), data, maxlen) < 0)
             {
                 std::clog << "NetworkManager Error: Could not receive data from client " << client_id << ": "
                 << SDLNet_TCP_GetPeerAddress(tmp->GetTCPSocket(client_id))->host << std::endl;
@@ -543,13 +590,7 @@ void NetworkManager::RecvDataStr(std::string& data, size_t maxlen, size_t socket
 {
     char* tmp = new char[maxlen];
     RecvData(tmp, maxlen, socket_id, client_id);
-    if(tmp[0] == '\0')
-    {
-        std::clog << "Error @ RecvDataStr!" << std::endl;
-        data = tmp;
-    }
-    else
-        data = tmp;
+    data = tmp;
     delete[] tmp;
 }
 
@@ -558,13 +599,7 @@ void NetworkManager::RecvDataInt(int& data, size_t socket_id, int client_id)
     size_t len = sizeof(int);
     char* tmp = new char[len];
     RecvData(tmp, len, socket_id, client_id);
-    if(tmp[0] == '\0')
-    {
-        std::clog << "Error @ RecvDataInt!" << std::endl;
-        data = 0;
-    }
-    else
-        data = (int)(*tmp);
+    data = (int)(*tmp);
     delete[] tmp;
 }
 
@@ -573,13 +608,7 @@ void NetworkManager::RecvDataChar(char& data, size_t socket_id, int client_id)
     size_t len = sizeof(char);
     char* tmp = new char[len];
     RecvData(tmp, len, socket_id, client_id);
-    if(tmp[0] == '\0')
-    {
-        std::clog << "Error @ RecvDataChar!" << std::endl;
-        data = 0;
-    }
-    else
-        data = (char)(tmp[0]);
+    data = (char)(tmp[0]);
     delete[] tmp;
 }
 
@@ -588,13 +617,7 @@ void NetworkManager::RecvDataBoolean(bool& data, size_t socket_id, int client_id
     size_t len = sizeof(bool);
     char* tmp = new char[len];
     RecvData(tmp, len, socket_id, client_id);
-    if(tmp[0] == '0')
-    {
-        std::clog << "Error @ RecvDataBool!" << std::endl;
-        data = 0;
-    }
-    else
-        data = (bool)(*tmp);
+    data = (bool)(*tmp);
     delete[] tmp;
 }
 
@@ -603,13 +626,7 @@ void NetworkManager::RecvDataDouble(double& data, size_t socket_id, int client_i
     size_t len = sizeof(double);
     char* tmp = new char[len];
     RecvData(tmp, len, socket_id, client_id);
-    if(tmp[0] == '\0')
-    {
-        std::clog << "Error @ RecvDataDouble!" << std::endl;
-        data = 0;
-    }
-    else
-        data = (double)(*tmp);
+    data = (double)(*tmp);
     delete[] tmp;
 }
 
@@ -617,6 +634,7 @@ UDPpacket NetworkManager::RecvUDPSignal(size_t socket_id, size_t& r)
 {
     NetNode* tmp = NULL;
     UDPpacket p;
+    p.data = new byte[10];
     //Lock mutex
     owner_ref->LockMutex(mutex_net_id);
     //Grab socket
@@ -629,10 +647,16 @@ UDPpacket NetworkManager::RecvUDPSignal(size_t socket_id, size_t& r)
             UDPsocket& soc = tmp->GetUDPSocket();
             r = SDLNet_UDP_Recv(soc, &p);
             if(r > 0)
+            {
+                //Unlock mutex
+                owner_ref->UnlockMutex(mutex_net_id);
                 return p;
+            }
         }
     }
     p.data[0] = '\0';
+    //Unlock mutex
+    owner_ref->UnlockMutex(mutex_net_id);
     return p;
 }
 
@@ -640,15 +664,24 @@ void NetworkManager::PingUDPClient(size_t socket_id, int channel, size_t timeout
 {
     NetNode* tmp = NULL;
     UDPpacket p;
-    size_t result;
+    size_t result, trys = 0;
     SendUDPSignal(socket_id, "PING");//Broadcast ping command
     sleep(timeout);//Give some time for the response to arrive
     p = RecvUDPSignal(socket_id, result);//attempt to get response
+    while(p.data[0] == '\0')//Repeat a couple of times to rule out data transmission corruption
+    {
+        if(trys == TIMEOUT_TRYS)
+            break;
+        p = RecvUDPSignal(socket_id, result);//attempt to get response
+        trys++;
+    }
     if(p.data[0] == '\0')//If response failed to return a non empty message, kill the channel
     {
         p.channel = channel;
         CloseUDPClient(socket_id, p.channel);//kill the client
     }
+    //lets clean up
+    delete[] p.data;
 }
 
 size_t NetworkManager::GetMaxNumUDPChannels()
@@ -658,12 +691,16 @@ size_t NetworkManager::GetMaxNumUDPChannels()
 
 UDPClient NetworkManager::GetUDPClientInfo(size_t socket_id, int channel)
 {
-    return connections[socket_id]->GetUDPClientInfo(channel);
+    NetNode* tmp = NULL;
+    connections.search(socket_id, tmp);
+    return tmp->GetUDPClientInfo(channel);
 }
 
 TCPClient NetworkManager::GetTCPClientInfo(size_t socket_id, size_t client_id)
 {
-   return connections[socket_id]->GetTCPClientInfo(client_id);
+    NetNode* tmp = NULL;
+    connections.search(socket_id, tmp);
+   return tmp->GetTCPClientInfo(client_id);
 }
 
 void NetworkManager::SetMTU(size_t max)

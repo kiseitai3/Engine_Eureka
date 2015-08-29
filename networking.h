@@ -10,20 +10,21 @@
 //Engine name space macro
 //ENGINE_NAMESPACE
 
+#define NO_CLIENT -1
+#define TIMEOUT_TRYS 50
+#define NET_ANYUDPPORT 0
+#define ANY_CHANNEL -1
 
 class Game;
 
 struct UDPClient
 {
     IPaddress ip;
-    int nativeChannel;
-    int serverChannel;
+    int id;
     bool udp;
 
     UDPClient()
     {
-        nativeChannel = -1;
-        serverChannel = -1;
         udp = true;
     }
 };
@@ -46,8 +47,8 @@ class NetNode
 {
 public:
     //ctors and dtor
-    NetNode(size_t id, const std::string& host, size_t portValue, bool udp = false, int maxConn = 0);//Client constructor
-    NetNode(size_t id, size_t portValue, bool udp = false, int maxConn = 0);//Server constructor
+    NetNode(size_t id, const std::string& host, size_t portValue, bool p_udp = false, int maxConn = 100);//Client constructor
+    NetNode(size_t id, size_t portValue, bool p_udp = false, int maxConn = 100);//Server constructor
     ~NetNode();
 
     //Getters
@@ -55,19 +56,19 @@ public:
     TCPsocket& GetTCPSocket(int client_id = -1);
     TCPClient GetTCPClientInfo(size_t client_id);
     UDPsocket& GetUDPSocket();
-    UDPClient GetUDPClientInfo(int channel) const;
+    UDPClient GetUDPClientInfo(int client_id) const;
     size_t GetPort() const;
     size_t GetNodeID() const;
     size_t GetClientCount() const;
-    size_t GenerateUDPChannel();
+    int GenerateUDPID();
     bool isUDP() const;
     bool isServer() const;
     bool isBad() const;
-    bool isUDPChannelFull(int channel) const;
+    bool isUDPIDUsed(int client_id) const;
 
     //Setters
     size_t AcceptTCPClient();
-    void RegisterUDPClient(const IPaddress& ip, int channel);
+    int RegisterUDPClient(const IPaddress& ip, int channel);
     void UnRegisterTCPClient(int client_id);
     void UnRegisterUDPClient(int channel);
 
@@ -87,10 +88,11 @@ private:
     UDPsocket usocket;
     //Connection stuff
     int maxConnections;
+    int udpChannel;
 
     //Clients
     BinarySearchTree<size_t, TCPClient> tcpClients;
-    std::list<UDPClient> udpClients;
+    BinarySearchTree<int, UDPClient> udpClients;
 
     bool hasID(size_t client_id);
 };
@@ -101,12 +103,13 @@ public:
     //ctors and dtor
     NetworkManager(Game* owner);
     ~NetworkManager();
+    void initNetSys();
 
     //Setters
     size_t CreateClientConnection(const std::string& host, size_t port, bool udp = false);
     size_t CreateServer(size_t port, bool udp = false);
     size_t AcceptTCPClient(size_t socket_id);
-    size_t AcceptUDPClient(size_t socket_id);
+    int AcceptUDPClient(size_t socket_id);
     void CloseUDPClient(size_t socket_id, int channel);
     void SetMTU(size_t max);
 

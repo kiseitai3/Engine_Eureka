@@ -14,6 +14,7 @@ public:
     //Constructors and dtor
     SoundQueue(Game* owner);
     ~SoundQueue();
+    void initSoundSys();
 
     //Setter
     void AddSoundToQueue(cstr soundFile, bool music = false);

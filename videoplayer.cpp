@@ -25,8 +25,12 @@ SubFrame::SubFrame()
 VideoPlayer::VideoPlayer(Game* owner)
 {
     owner_ref = owner;
-    mutex_vid_id = owner->SpawnMutex();
-    timer_id = owner->CreateTimer();
+}
+
+void VideoPlayer::initVideoSys()
+{
+    mutex_vid_id = owner_ref->SpawnMutex();
+    timer_id = owner_ref->CreateTimer();
 }
 
 void VideoPlayer::InitVideoSystem()

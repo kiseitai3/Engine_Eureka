@@ -115,6 +115,7 @@ public:
     //Constructors and Destructor
     ParticleSystem(Game* owner);
     ~ParticleSystem();
+    void initParticleSys();
 
     //Resgister
     size_t RegisterUnitParticle(Unit& target, const math_point& loc, cstr particle, char axis = 'a');

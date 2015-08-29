@@ -24,9 +24,13 @@ UnitNode::UnitNode()
 UnitManager::UnitManager(Game* owner)
 {
     owner_ref = owner;
-    mutex_id = owner->SpawnMutex();
     UnitNode* tmp = new UnitNode();
     gameObjects.insert(0, tmp);
+}
+
+void UnitManager::initUnitSys()
+{
+    mutex_id = owner_ref->SpawnMutex();
 }
 
 size_t UnitManager::SpawnUnit(const char type, int BlitOrder, math_point loc, std::string file, bool hero, bool hasBars)

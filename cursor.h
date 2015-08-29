@@ -25,6 +25,7 @@ public:
     //Ctors and dtor
     Cursor(Game* owner);
     ~Cursor();
+    void initCursorSys();
 
     //Setters
     size_t RegisterCursor(cstr file);

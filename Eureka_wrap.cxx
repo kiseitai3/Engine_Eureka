@@ -17399,6 +17399,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ModuleSystem_initModSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ModuleSystem *arg1 = (ModuleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ModuleSystem_initModSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ModuleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ModuleSystem_initModSys" "', argument " "1"" of type '" "ModuleSystem *""'"); 
+  }
+  arg1 = reinterpret_cast< ModuleSystem * >(argp1);
+  (arg1)->initModSys();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_ModuleSystem_RegisterModule__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ModuleSystem *arg1 = (ModuleSystem *) 0 ;
@@ -18274,6 +18295,27 @@ SWIGINTERN PyObject *_wrap_delete_UnitManager(PyObject *SWIGUNUSEDPARM(self), Py
   }
   arg1 = reinterpret_cast< UnitManager * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UnitManager_initUnitSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UnitManager *arg1 = (UnitManager *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:UnitManager_initUnitSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UnitManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UnitManager_initUnitSys" "', argument " "1"" of type '" "UnitManager *""'"); 
+  }
+  arg1 = reinterpret_cast< UnitManager * >(argp1);
+  (arg1)->initUnitSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -20719,6 +20761,27 @@ SWIGINTERN PyObject *_wrap_delete_ParticleSystem(PyObject *SWIGUNUSEDPARM(self),
   }
   arg1 = reinterpret_cast< ParticleSystem * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ParticleSystem_initParticleSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ParticleSystem *arg1 = (ParticleSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ParticleSystem_initParticleSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ParticleSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ParticleSystem_initParticleSys" "', argument " "1"" of type '" "ParticleSystem *""'"); 
+  }
+  arg1 = reinterpret_cast< ParticleSystem * >(argp1);
+  (arg1)->initParticleSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -23760,6 +23823,27 @@ SWIGINTERN PyObject *_wrap_delete_NetworkManager(PyObject *SWIGUNUSEDPARM(self),
   }
   arg1 = reinterpret_cast< NetworkManager * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NetworkManager_initNetSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NetworkManager *arg1 = (NetworkManager *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NetworkManager_initNetSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NetworkManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NetworkManager_initNetSys" "', argument " "1"" of type '" "NetworkManager *""'"); 
+  }
+  arg1 = reinterpret_cast< NetworkManager * >(argp1);
+  (arg1)->initNetSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -26866,6 +26950,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_IOManager_initIOSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:IOManager_initIOSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_IOManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IOManager_initIOSys" "', argument " "1"" of type '" "IOManager *""'"); 
+  }
+  arg1 = reinterpret_cast< IOManager * >(argp1);
+  (arg1)->initIOSys();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_IOManager_GetFile(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IOManager *arg1 = (IOManager *) 0 ;
@@ -27421,6 +27526,27 @@ SWIGINTERN PyObject *_wrap_delete_LayerSystem(PyObject *SWIGUNUSEDPARM(self), Py
   }
   arg1 = reinterpret_cast< LayerSystem * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LayerSystem_initLayerSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LayerSystem *arg1 = (LayerSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LayerSystem_initLayerSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LayerSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LayerSystem_initLayerSys" "', argument " "1"" of type '" "LayerSystem *""'"); 
+  }
+  arg1 = reinterpret_cast< LayerSystem * >(argp1);
+  (arg1)->initLayerSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -32052,6 +32178,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_TriggerManager_initTriggerSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TriggerManager *arg1 = (TriggerManager *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TriggerManager_initTriggerSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TriggerManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TriggerManager_initTriggerSys" "', argument " "1"" of type '" "TriggerManager *""'"); 
+  }
+  arg1 = reinterpret_cast< TriggerManager * >(argp1);
+  (arg1)->initTriggerSys();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_TriggerManager_RegisterTrigger(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   TriggerManager *arg1 = (TriggerManager *) 0 ;
@@ -32306,6 +32453,27 @@ SWIGINTERN PyObject *_wrap_delete_TimerSystem(PyObject *SWIGUNUSEDPARM(self), Py
   }
   arg1 = reinterpret_cast< TimerSystem * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_TimerSystem_initTimerSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  TimerSystem *arg1 = (TimerSystem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:TimerSystem_initTimerSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TimerSystem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TimerSystem_initTimerSys" "', argument " "1"" of type '" "TimerSystem *""'"); 
+  }
+  arg1 = reinterpret_cast< TimerSystem * >(argp1);
+  (arg1)->initTimerSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -32621,6 +32789,27 @@ SWIGINTERN PyObject *_wrap_delete_UIManager(PyObject *SWIGUNUSEDPARM(self), PyOb
   }
   arg1 = reinterpret_cast< UIManager * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UIManager_initUISys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UIManager *arg1 = (UIManager *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:UIManager_initUISys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UIManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UIManager_initUISys" "', argument " "1"" of type '" "UIManager *""'"); 
+  }
+  arg1 = reinterpret_cast< UIManager * >(argp1);
+  (arg1)->initUISys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -33204,6 +33393,27 @@ SWIGINTERN PyObject *_wrap_delete_SoundQueue(PyObject *SWIGUNUSEDPARM(self), PyO
   }
   arg1 = reinterpret_cast< SoundQueue * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundQueue_initSoundSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundQueue *arg1 = (SoundQueue *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundQueue_initSoundSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundQueue, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundQueue_initSoundSys" "', argument " "1"" of type '" "SoundQueue *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundQueue * >(argp1);
+  (arg1)->initSoundSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -34468,6 +34678,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_VideoPlayer_initVideoSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  VideoPlayer *arg1 = (VideoPlayer *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:VideoPlayer_initVideoSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_VideoPlayer, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "VideoPlayer_initVideoSys" "', argument " "1"" of type '" "VideoPlayer *""'"); 
+  }
+  arg1 = reinterpret_cast< VideoPlayer * >(argp1);
+  (arg1)->initVideoSys();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_VideoPlayer_LoadVideoFile(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   VideoPlayer *arg1 = (VideoPlayer *) 0 ;
@@ -34978,6 +35209,27 @@ SWIGINTERN PyObject *_wrap_delete_Cursor(PyObject *SWIGUNUSEDPARM(self), PyObjec
   }
   arg1 = reinterpret_cast< Cursor * >(argp1);
   delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_initCursorSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Cursor_initCursorSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_initCursorSys" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  (arg1)->initCursorSys();
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -37549,6 +37801,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Game_initSubSys(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_initSubSys",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_initSubSys" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->initSubSys();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Game_loadLevel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Game *arg1 = (Game *) 0 ;
@@ -39030,6 +39303,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Module_swigregister", Module_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ModuleSystem", _wrap_new_ModuleSystem, METH_VARARGS, NULL},
 	 { (char *)"delete_ModuleSystem", _wrap_delete_ModuleSystem, METH_VARARGS, NULL},
+	 { (char *)"ModuleSystem_initModSys", _wrap_ModuleSystem_initModSys, METH_VARARGS, NULL},
 	 { (char *)"ModuleSystem_RegisterModule", _wrap_ModuleSystem_RegisterModule, METH_VARARGS, NULL},
 	 { (char *)"ModuleSystem_RegisterFunction", _wrap_ModuleSystem_RegisterFunction, METH_VARARGS, NULL},
 	 { (char *)"ModuleSystem_RegisterFunctionFromFile", _wrap_ModuleSystem_RegisterFunctionFromFile, METH_VARARGS, NULL},
@@ -39053,6 +39327,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"UnitNode_swigregister", UnitNode_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_UnitManager", _wrap_new_UnitManager, METH_VARARGS, NULL},
 	 { (char *)"delete_UnitManager", _wrap_delete_UnitManager, METH_VARARGS, NULL},
+	 { (char *)"UnitManager_initUnitSys", _wrap_UnitManager_initUnitSys, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_SpawnUnit", _wrap_UnitManager_SpawnUnit, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_SpawnUnitFromFile", _wrap_UnitManager_SpawnUnitFromFile, METH_VARARGS, NULL},
 	 { (char *)"UnitManager_SpawnUnitFromList", _wrap_UnitManager_SpawnUnitFromList, METH_VARARGS, NULL},
@@ -39103,6 +39378,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ParticleCluster_swigregister", ParticleCluster_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ParticleSystem", _wrap_new_ParticleSystem, METH_VARARGS, NULL},
 	 { (char *)"delete_ParticleSystem", _wrap_delete_ParticleSystem, METH_VARARGS, NULL},
+	 { (char *)"ParticleSystem_initParticleSys", _wrap_ParticleSystem_initParticleSys, METH_VARARGS, NULL},
 	 { (char *)"ParticleSystem_RegisterUnitParticle", _wrap_ParticleSystem_RegisterUnitParticle, METH_VARARGS, NULL},
 	 { (char *)"ParticleSystem_RegisterGameParticle", _wrap_ParticleSystem_RegisterGameParticle, METH_VARARGS, NULL},
 	 { (char *)"ParticleSystem_RenderParticleFromUnit", _wrap_ParticleSystem_RenderParticleFromUnit, METH_VARARGS, NULL},
@@ -39182,6 +39458,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"NetNode_swigregister", NetNode_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_NetworkManager", _wrap_new_NetworkManager, METH_VARARGS, NULL},
 	 { (char *)"delete_NetworkManager", _wrap_delete_NetworkManager, METH_VARARGS, NULL},
+	 { (char *)"NetworkManager_initNetSys", _wrap_NetworkManager_initNetSys, METH_VARARGS, NULL},
 	 { (char *)"NetworkManager_CreateClientConnection", _wrap_NetworkManager_CreateClientConnection, METH_VARARGS, NULL},
 	 { (char *)"NetworkManager_CreateServer", _wrap_NetworkManager_CreateServer, METH_VARARGS, NULL},
 	 { (char *)"NetworkManager_AcceptTCPClient", _wrap_NetworkManager_AcceptTCPClient, METH_VARARGS, NULL},
@@ -39218,6 +39495,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"IONode_swigregister", IONode_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_IOManager", _wrap_new_IOManager, METH_VARARGS, NULL},
 	 { (char *)"delete_IOManager", _wrap_delete_IOManager, METH_VARARGS, NULL},
+	 { (char *)"IOManager_initIOSys", _wrap_IOManager_initIOSys, METH_VARARGS, NULL},
 	 { (char *)"IOManager_GetFile", _wrap_IOManager_GetFile, METH_VARARGS, NULL},
 	 { (char *)"IOManager_GetDataBase", _wrap_IOManager_GetDataBase, METH_VARARGS, NULL},
 	 { (char *)"IOManager_RegisterFile", _wrap_IOManager_RegisterFile, METH_VARARGS, NULL},
@@ -39236,6 +39514,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Layer_swigregister", Layer_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_LayerSystem", _wrap_new_LayerSystem, METH_VARARGS, NULL},
 	 { (char *)"delete_LayerSystem", _wrap_delete_LayerSystem, METH_VARARGS, NULL},
+	 { (char *)"LayerSystem_initLayerSys", _wrap_LayerSystem_initLayerSys, METH_VARARGS, NULL},
 	 { (char *)"LayerSystem_AddLayer", _wrap_LayerSystem_AddLayer, METH_VARARGS, NULL},
 	 { (char *)"LayerSystem_AddLayerSet", _wrap_LayerSystem_AddLayerSet, METH_VARARGS, NULL},
 	 { (char *)"LayerSystem_DeleteLayer", _wrap_LayerSystem_DeleteLayer, METH_VARARGS, NULL},
@@ -39274,6 +39553,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"GameInfo_swigregister", GameInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_TriggerManager", _wrap_new_TriggerManager, METH_VARARGS, NULL},
 	 { (char *)"delete_TriggerManager", _wrap_delete_TriggerManager, METH_VARARGS, NULL},
+	 { (char *)"TriggerManager_initTriggerSys", _wrap_TriggerManager_initTriggerSys, METH_VARARGS, NULL},
 	 { (char *)"TriggerManager_RegisterTrigger", _wrap_TriggerManager_RegisterTrigger, METH_VARARGS, NULL},
 	 { (char *)"TriggerManager_UnRegisterTrigger", _wrap_TriggerManager_UnRegisterTrigger, METH_VARARGS, NULL},
 	 { (char *)"TriggerManager_GetTrigger", _wrap_TriggerManager_GetTrigger, METH_VARARGS, NULL},
@@ -39283,6 +39563,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TriggerManager_swigregister", TriggerManager_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_TimerSystem", _wrap_new_TimerSystem, METH_VARARGS, NULL},
 	 { (char *)"delete_TimerSystem", _wrap_delete_TimerSystem, METH_VARARGS, NULL},
+	 { (char *)"TimerSystem_initTimerSys", _wrap_TimerSystem_initTimerSys, METH_VARARGS, NULL},
 	 { (char *)"TimerSystem_GetTicks", _wrap_TimerSystem_GetTicks, METH_VARARGS, NULL},
 	 { (char *)"TimerSystem_StopTimer", _wrap_TimerSystem_StopTimer, METH_VARARGS, NULL},
 	 { (char *)"TimerSystem_StartTimer", _wrap_TimerSystem_StartTimer, METH_VARARGS, NULL},
@@ -39295,6 +39576,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"TimerSystem_swigregister", TimerSystem_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_UIManager", _wrap_new_UIManager, METH_VARARGS, NULL},
 	 { (char *)"delete_UIManager", _wrap_delete_UIManager, METH_VARARGS, NULL},
+	 { (char *)"UIManager_initUISys", _wrap_UIManager_initUISys, METH_VARARGS, NULL},
 	 { (char *)"UIManager_RegisterUI", _wrap_UIManager_RegisterUI, METH_VARARGS, NULL},
 	 { (char *)"UIManager_UnregisterUI", _wrap_UIManager_UnregisterUI, METH_VARARGS, NULL},
 	 { (char *)"UIManager_GetUI", _wrap_UIManager_GetUI, METH_VARARGS, NULL},
@@ -39320,6 +39602,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Level_swigregister", Level_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_SoundQueue", _wrap_new_SoundQueue, METH_VARARGS, NULL},
 	 { (char *)"delete_SoundQueue", _wrap_delete_SoundQueue, METH_VARARGS, NULL},
+	 { (char *)"SoundQueue_initSoundSys", _wrap_SoundQueue_initSoundSys, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_AddSoundToQueue", _wrap_SoundQueue_AddSoundToQueue, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_AddSoundBufferToQueue", _wrap_SoundQueue_AddSoundBufferToQueue, METH_VARARGS, NULL},
 	 { (char *)"SoundQueue_FlipMusic", _wrap_SoundQueue_FlipMusic, METH_VARARGS, NULL},
@@ -39362,6 +39645,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SoundChunk_swigregister", SoundChunk_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_VideoPlayer", _wrap_new_VideoPlayer, METH_VARARGS, NULL},
 	 { (char *)"delete_VideoPlayer", _wrap_delete_VideoPlayer, METH_VARARGS, NULL},
+	 { (char *)"VideoPlayer_initVideoSys", _wrap_VideoPlayer_initVideoSys, METH_VARARGS, NULL},
 	 { (char *)"VideoPlayer_LoadVideoFile", _wrap_VideoPlayer_LoadVideoFile, METH_VARARGS, NULL},
 	 { (char *)"VideoPlayer_PlayVideo", _wrap_VideoPlayer_PlayVideo, METH_VARARGS, NULL},
 	 { (char *)"VideoPlayer_StopVideo", _wrap_VideoPlayer_StopVideo, METH_VARARGS, NULL},
@@ -39385,6 +39669,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"CursorNode_swigregister", CursorNode_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Cursor", _wrap_new_Cursor, METH_VARARGS, NULL},
 	 { (char *)"delete_Cursor", _wrap_delete_Cursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_initCursorSys", _wrap_Cursor_initCursorSys, METH_VARARGS, NULL},
 	 { (char *)"Cursor_RegisterCursor", _wrap_Cursor_RegisterCursor, METH_VARARGS, NULL},
 	 { (char *)"Cursor_ChangeToCursor", _wrap_Cursor_ChangeToCursor, METH_VARARGS, NULL},
 	 { (char *)"Cursor_ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab, METH_VARARGS, NULL},
@@ -39479,6 +39764,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Game_LoadUIs", _wrap_Game_LoadUIs, METH_VARARGS, NULL},
 	 { (char *)"Game_initEditorFrameBuffer", _wrap_Game_initEditorFrameBuffer, METH_VARARGS, NULL},
 	 { (char *)"Game_init", _wrap_Game_init, METH_VARARGS, NULL},
+	 { (char *)"Game_initSubSys", _wrap_Game_initSubSys, METH_VARARGS, NULL},
 	 { (char *)"Game_loadLevel", _wrap_Game_loadLevel, METH_VARARGS, NULL},
 	 { (char *)"Game_GetCurrentLevel", _wrap_Game_GetCurrentLevel, METH_VARARGS, NULL},
 	 { (char *)"Game_SetHeroIDForCurrentLevel", _wrap_Game_SetHeroIDForCurrentLevel, METH_VARARGS, NULL},
@@ -39548,14 +39834,14 @@ static void *_p_InputTo_p_InputKeyboard(void *x, int *SWIGUNUSEDPARM(newmemory))
 static void *_p_GameTo_p_VideoPlayer(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VideoPlayer *)  ((Game *) x));
 }
+static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ThreadSystem *)  ((Game *) x));
+}
 static void *_p_GameTo_p_LayerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((LayerSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_TimerSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((TimerSystem *)  ((Game *) x));
-}
-static void *_p_GameTo_p_ThreadSystem(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((ThreadSystem *)  ((Game *) x));
 }
 static void *_p_GameTo_p_InputMouse(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((InputMouse *) (Input *) ((Game *) x));

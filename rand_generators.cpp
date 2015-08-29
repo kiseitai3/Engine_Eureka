@@ -9,32 +9,40 @@
 
 size_t hasher()
 {
+    size_t val;
     size_t max_t = 0;
     max_t--;
     std::mt19937 engine(time(NULL));
     std::normal_distribution<double> distribution(0, max_t);
-    return static_cast<size_t>(numToInt(distribution(engine)));
+    val = static_cast<size_t>(numToInt(distribution(engine)));
+    return val;
 }
 
 size_t randNormal(Range limits)
 {
+    size_t val;
     std::mt19937 engine(time(NULL));
     std::normal_distribution<double> distribution(limits.i, limits.f);
-    return static_cast<size_t>(numToInt(distribution(engine)));
+    val = static_cast<size_t>(numToInt(distribution(engine)));
+    return val;
 }
 
 size_t randUniform(Range limits)
 {
+    size_t val;
     std::mt19937 engine(time(NULL));
     std::uniform_int_distribution<size_t> distribution(limits.i, limits.f);
-    return distribution(engine);
+    val = distribution(engine);
+    return val;
 }
 
 size_t randBinomial(Range limits)
 {
+    size_t val;
     std::mt19937 engine(time(NULL));
     std::binomial_distribution<size_t> distribution(limits.i, limits.f);
-    return distribution(engine);
+    val = distribution(engine);
+    return val;
 }
 
 size_t GetMaxValueSizeT()

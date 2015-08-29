@@ -4,9 +4,13 @@
 Cursor::Cursor(Game* owner)
 {
     owner_ref = owner;
-    mutex_cursor_id = owner->SpawnMutex();
     //Hide system cursor
     SDL_ShowCursor(SDL_DISABLE);
+}
+
+void Cursor::initCursorSys()
+{
+    mutex_cursor_id = owner_ref->SpawnMutex();
 }
 
 size_t Cursor::RegisterCursor(cstr file)

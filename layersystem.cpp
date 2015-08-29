@@ -28,8 +28,12 @@ Layer::~Layer()
 
 LayerSystem::LayerSystem(Game* owner)
 {
-    mutex_layer_id = owner->SpawnMutex();
     owner_ref = owner;
+}
+
+void LayerSystem::initLayerSys()
+{
+    mutex_layer_id = owner_ref->SpawnMutex();
 }
 
 LayerSystem::~LayerSystem()

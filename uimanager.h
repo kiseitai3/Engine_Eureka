@@ -18,6 +18,7 @@ public:
     //ctors and dtorp
     UIManager(Game* owner);
     ~UIManager();
+    void initUISys();
 
     //Setter
     size_t RegisterUI(cstr file);

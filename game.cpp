@@ -100,22 +100,40 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
     loading = false;
     frameBuffer = NULL;
     requestFrame = editor;
+    initSubSys();
 }
 
-Game::Game(bool editor): SoundQueue(this), ParticleSystem(this), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+Game::Game(bool editor): ThreadSystem(), GameInfo(), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
     NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), Input(this),
-    ThreadSystem(), GameInfo()
+    SoundQueue(this), ParticleSystem(this)
 {
     closeEngine = false;
     loading = false;
     frameBuffer = NULL;
     requestFrame = editor;
+    initSubSys();
 }
 
 void Game::initEditorFrameBuffer()
 {
     frameSize = GetScreenWidth() * GetScreenHeight() * 4;//Size of the buffer that will be exposed to the game editor. 4 = 4 basic components of a pixel!
     frameBuffer = new char[frameSize];
+}
+
+void Game::initSubSys()
+{
+    initModSys();
+    initLayerSys();
+    initCursorSys();
+    initUISys();
+    initUnitSys();
+    initNetSys();
+    initParticleSys();
+    initIOSys();
+    initTimerSys();
+    initVideoSys();
+    initTriggerSys();
+    initSoundSys();
 }
 
 void Game::LoadGame(cstr file)

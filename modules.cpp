@@ -17,7 +17,11 @@ ModuleNode::ModuleNode(Game* owner, cstr file, bool independent, size_t pthread_
 ModuleSystem::ModuleSystem(Game* owner)
 {
     owner_ref = owner;
-    mutex_id = owner->SpawnMutex();
+}
+
+void ModuleSystem::initModSys()
+{
+    mutex_id = owner_ref->SpawnMutex();
     modules.insert(0, NULL);
 }
 

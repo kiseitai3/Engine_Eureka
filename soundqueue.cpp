@@ -6,13 +6,16 @@
 
 SoundQueue::SoundQueue(Game* owner)
 {
-    mutex_sound_id = owner->SpawnMutex();
     owner_ref = owner;
     musicSound = NULL;
     backBuffer = NULL;
     playingSound = NULL;
     fadeInT = 5000;
+}
 
+void SoundQueue::initSoundSys()
+{
+    mutex_sound_id = owner_ref->SpawnMutex();
     //Set up the queues
     size_t queue_size = owner_ref->GetSoundChunkSize(); //Choosing this number will gives us a nice buffer space to work with
 

@@ -4,18 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>29-08-2015 at 13:45.11</u><br />
-Build ended on: <u>29-08-2015 at 13:45.13</u><p />
-<b>-------------- Build: network_test_tcp_server in Eureka (compiler: GNU GCC Compiler)---------------</b><br />
-mingw32-g++.exe -std=c++11 -g -ftrapv -D__STDC_CONSTANT_MACROS -DSERVER_TEST -DTCP_TEST -Ic:\Python27\include -IDependencies\SDL2-2.0.0\include -IDependencies\SDL2_image-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\include\SDL2 -IDependencies\SDL2_ttf-2.0.12\i686-w64-mingw32\include\SDL2 -IDependencies\lua-5.2.3\src -IDependencies\sqlite3 -IDependencies\mysql-connector-c-6.1.5-win32\include -IDependencies\mysql-connector-c++-noinstall-1.1.4-win32\include -IDependencies\libFFmpeg\include -IDependencies\CRC -IDependencies\SDL2_net-2.0.0\i686-w64-mingw32\include\SDL2 -I..\..\..\..\..\MinGW\msys\1.0\local\include\boost -I..\..\..\..\..\MinGW\msys\1.0\local\include -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include\boost" -I"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\include" -c C:\Users\Luis\Documents\DevCB\Engine_Eureka\Unit_tests\network_test.cpp -o .objs\Unit_tests\network_test.o<br />
-In file included from C:\Users\Luis\Documents\DevCB\Engine_Eureka\Unit_tests\../eureka.h:16:0,<br />
-                 from C:\Users\Luis\Documents\DevCB\Engine_Eureka\Unit_tests\network_test.cpp:1:<br />
-<font color="#0000ff">C:\Users\Luis\Documents\DevCB\Engine_Eureka\Unit_tests\../input.h:25:1: warning: 'typedef' was ignored in this declaration [enabled by default]</font><br />
-<font color="#0000ff">C:\Users\Luis\Documents\DevCB\Engine_Eureka\Unit_tests\../input.h:41:2: warning: 'typedef' was ignored in this declaration [enabled by default]</font><br />
-mingw32-g++.exe -Lc:\Python27\libs -LDependencies\SDL2-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_image-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_ttf-2.0.12\i686-w64-mingw32\lib -LDependencies\lua-5.2.3\src -LDependencies\sqlite3\win32_lib -LDependencies\mysql-connector-c-6.1.5-win32\lib -LDependencies\mysql-connector-c++-noinstall-1.1.4-win32\lib -LDependencies\libFFmpeg\lib -LDependencies\CRC -LDependencies\SDL2_net-2.0.0\i686-w64-mingw32\lib -L..\..\..\..\..\MinGW\msys\1.0\local\lib -L"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\lib" -Lbin\engine -Lbin\engine -o bin\tests\net_test_server.exe .objs\Unit_tests\network_test.o   -lmingw32 -lSDL2main -lSDL2.dll -lSDL2_mixer -lpython27 -lSDL2_ttf -lSDL2_image -llua -lsqlite3 -lmysqlcppconn -lSDL2_net -lpthread -lEureka -lFlags -lNetwork -lThreading<br />
-Output file is bin\tests\net_test_server.exe with size 1.31 MB<br />
+Build started on: <u>30-08-2015 at 20:46.57</u><br />
+Build ended on: <u>30-08-2015 at 20:46.58</u><p />
+<b>-------------- Build: IO in Eureka (compiler: GNU GCC Compiler)---------------</b><br />
+mingw32-g++.exe -shared -Wl,--output-def=bin\engine\libIO.def -Wl,--out-implib=bin\engine\libIO.a -Wl,--dll -Lc:\Python27\libs -LDependencies\SDL2-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_mixer-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_image-2.0.0\i686-w64-mingw32\lib -LDependencies\SDL2_ttf-2.0.12\i686-w64-mingw32\lib -LDependencies\lua-5.2.3\src -LDependencies\sqlite3\win32_lib -LDependencies\mysql-connector-c-6.1.5-win32\lib -LDependencies\mysql-connector-c++-noinstall-1.1.4-win32\lib -LDependencies\libFFmpeg\lib -LDependencies\CRC -LDependencies\SDL2_net-2.0.0\i686-w64-mingw32\lib -L..\..\..\..\..\MinGW\msys\1.0\local\lib -L"..\..\..\..\..\Program Files (x86)\CodeBlocks\MinGW\msys\1.0\local\lib" -Lbin\engine .objs\iomanager.o  -o bin\engine\IO.dll  -lmingw32 -lSDL2main -lSDL2.dll -lSDL2_mixer -lpython27 -lSDL2_ttf -lSDL2_image -llua -lsqlite3 -lmysqlcppconn -lSDL2_net -lpthread -lCore -lthreading<br />
+Creating library file: bin\engine\libIO.a<br />
+Output file is bin\engine\IO.dll with size 1.53 MB<br />
 <font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
-<font color="#0000ff">0 error(s), 2 warning(s) (0 minute(s), 1 second(s))</font><br />
+<font color="#0000ff">0 error(s), 0 warning(s) (0 minute(s), 1 second(s))</font><br />
 </tt>
 </body>
 </html>

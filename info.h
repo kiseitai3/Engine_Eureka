@@ -1,5 +1,6 @@
 #ifndef INFO_H_INCLUDED
 #define INFO_H_INCLUDED
+#include <SDL.h>
 #include <iostream>
 #include <string>
 #include "typedefs.h"
@@ -7,14 +8,30 @@
 //Engine name space macro
 //ENGINE_NAMESPACE
 
+struct ExpansionItem
+{
+    size_t id;
+    std::string name;
+    std::string path;
+};
+
+class ExpansionInfo
+{
+public:
+
+private:
+
+};
 
 class ScreenInfo
 {
  public:
      ScreenInfo();
      /*Setter*/
-     void SetScreenInfo(size_t displayCount = 1, size_t display = 0, size_t frames_per_second = 60, size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32);
-    void SetScreenLoc(int x = 0, int y = 0);
+     void SetScreenInfo(size_t displayCount = 1, size_t display = 0, size_t frames_per_second = 60,
+                        size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32, const std::string& driver = ScreenInfo::OPENGL,
+                        size_t screenmode = ScreenInfo::FULLSCREEN);
+     void SetScreenLoc(int x = 0, int y = 0);
      /*Getters*/
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
@@ -23,8 +40,20 @@ class ScreenInfo
      size_t GetScreenBPP() const;
      size_t GetDisplayIndex() const;
      size_t GetDisplayCount() const;
+     size_t GetScreenMode() const;
+     std::string GetRenderDriver() const;
+
+
+     //globals
+     const static size_t FULLSCREEN = SDL_WINDOW_FULLSCREEN;
+     const static size_t RESIZABLE = SDL_WINDOW_RESIZABLE;
+     const static size_t MAXIMIZED = SDL_WINDOW_MAXIMIZED;
+     const static std::string OPENGL;
+     const static std::string DIRECT3D;
+     const static std::string SOFTWARE;
  private:
-    size_t m_frames_per_second, m_screen_width, m_screen_height, m_screen_bpp, m_display, m_display_count;
+    size_t m_frames_per_second, m_screen_width, m_screen_height, m_screen_bpp, m_display, m_display_count, m_screenmode;
+    std::string video_driver;
     math_point screenLoc;
 };
 
@@ -50,11 +79,13 @@ public:
     void SetInfo(const std::string& rootdata = EMPTY, const std::string& mod = EMPTY, const std::string& saveloc = EMPTY,
             const std::string& name = EMPTY, const std::string& icon = EMPTY, const std::string& renderQuality = EMPTY,
             size_t displayCount = 1, size_t display = 0, size_t frames_per_second = 60, size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32,
-            size_t blitlevels = 50, size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096);
+            size_t blitlevels = 50, size_t screenmode = ScreenInfo::FULLSCREEN, const std::string& driver = ScreenInfo::OPENGL,
+            size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096);
     /*Getters*/
     std::string GetRootDirectory() const;
     std::string GetModName() const;
     std::string GetGameName() const;
+    std::string GetIconLoc() const;
     size_t GetBlitLevels() const;
     std::string GetRenderQuality() const;
 

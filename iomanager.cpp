@@ -172,6 +172,7 @@ size_t IOManager::RegisterDataBase(cstr file)
             if(std::string(file) == tmpObjs[i]->GetPath())
             {
                 tmp = tmpObjs[i];
+                break;
             }
         }
 

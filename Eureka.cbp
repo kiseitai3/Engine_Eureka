@@ -508,6 +508,9 @@
 		<Unit filename="Unit_tests/sqlite3_test.cpp">
 			<Option target="sqlite3_test" />
 		</Unit>
+		<Unit filename="Unit_tests/video_player_test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="ai_store.cpp">
 			<Option target="Core" />
 		</Unit>

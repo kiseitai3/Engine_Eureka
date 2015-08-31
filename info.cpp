@@ -3,8 +3,12 @@
 //Engine name space macro
 //ENGINE_NAMESPACE
 
-
 /*ScreenInfo*/
+
+const std::string ScreenInfo::OPENGL = "opengl";
+const std::string ScreenInfo::DIRECT3D = "direct3d";
+const std::string ScreenInfo::SOFTWARE = "software";
+
 ScreenInfo::ScreenInfo()
 {
     m_frames_per_second = 0;
@@ -13,7 +17,8 @@ ScreenInfo::ScreenInfo()
     m_screen_bpp = 0;
 }
 
-void ScreenInfo::SetScreenInfo(size_t displayCount, size_t display, size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP)
+void ScreenInfo::SetScreenInfo(size_t displayCount, size_t display, size_t frames_per_second, size_t screenWidth,
+                               size_t screenHeight, size_t screenBPP, const std::string& driver, size_t screenmode)
 {
     m_display_count = displayCount;
     m_display = display;
@@ -21,6 +26,8 @@ void ScreenInfo::SetScreenInfo(size_t displayCount, size_t display, size_t frame
     m_screen_width = screenWidth;
     m_screen_height = screenHeight;
     m_screen_bpp = screenBPP;
+    m_screenmode = screenmode;
+    video_driver = driver;
 }
 
 math_point& ScreenInfo::GetScreenLoc()
@@ -62,6 +69,16 @@ void ScreenInfo::SetScreenLoc(int x, int y)
 {
     screenLoc.X = x;
     screenLoc.Y = y;
+}
+
+size_t ScreenInfo::GetScreenMode() const
+{
+    return m_screenmode;
+}
+
+std::string ScreenInfo::GetRenderDriver() const
+{
+    return video_driver;
 }
 /*End of ScreenInfo*/
 
@@ -114,9 +131,9 @@ GameInfo::GameInfo():ScreenInfo(), SoundInfo()
 void GameInfo::SetInfo(const std::string& rootdata, const std::string& mod, const std::string& saveloc,
             const std::string& name, const std::string& icon, const std::string& renderQuality,
             size_t displayCount, size_t display, size_t frames_per_second, size_t screenWidth, size_t screenHeight, size_t screenBPP,
-            size_t blitlevels, size_t frequency, size_t channels, size_t chunksize)
+            size_t blitlevels, size_t screenmode, const std::string& driver, size_t frequency, size_t channels, size_t chunksize)
 {
-    SetScreenInfo(displayCount, display, frames_per_second, screenWidth, screenHeight, screenBPP);
+    SetScreenInfo(displayCount, display, frames_per_second, screenWidth, screenHeight, screenBPP, driver, screenmode);
     SetSoundInfo(frequency, channels, chunksize);
     m_rootdata = rootdata;
     m_mod = mod;
@@ -139,6 +156,11 @@ std::string GameInfo::GetModName() const
 std::string GameInfo::GetGameName() const
 {
     return m_name;
+}
+
+std::string GameInfo::GetIconLoc() const
+{
+    return m_icon;
 }
 
 size_t GameInfo::GetBlitLevels() const

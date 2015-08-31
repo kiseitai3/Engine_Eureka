@@ -23808,7 +23808,7 @@
 	<stack>
 	"game.h"
 
-1440697908 c:\users\luis\documents\devcb\engine_eureka\game.h
+1440984356 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23823,7 +23823,8 @@
 	<SDL_net.h>
 	"typedefs.h"
 
-1426395123 c:\users\luis\documents\devcb\engine_eureka\info.h
+1440985374 c:\users\luis\documents\devcb\engine_eureka\info.h
+	<SDL.h>
 	<iostream>
 	<string>
 	"typedefs.h"
@@ -24281,7 +24282,7 @@
 
 1422197357 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\iterator
 
-1426395123 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
+1440985334 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
 	"info.h"
 
 1423981031 source:c:\users\luis\documents\devcb\engine_eureka\mysql.cpp
@@ -27444,7 +27445,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1440697778 source:c:\users\luis\documents\devcb\engine_eureka\iomanager.cpp
+1440963533 source:c:\users\luis\documents\devcb\engine_eureka\iomanager.cpp
 	"iomanager.h"
 	"eureka.h"
 	"database.h"
@@ -27511,7 +27512,7 @@
 	"trigger.h"
 	"BST.h"
 
-1440865213 source:c:\users\luis\documents\devcb\engine_eureka\networking.cpp
+1440872697 source:c:\users\luis\documents\devcb\engine_eureka\networking.cpp
 	"networking.h"
 	"rand_generators.h"
 	"eureka.h"

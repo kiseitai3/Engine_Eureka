@@ -81,7 +81,7 @@ void_ptr helperUpdateFunction(void_ptr game)
         if(tmp->isPlayingVideo())
             tmp->UpdateVideo();
         else
-           tmp->UpdateTriggers(tmp->GetHeroID());
+            tmp->UpdateTriggers(tmp->GetHeroID());
     }
     return NULL;
 }
@@ -167,70 +167,191 @@ void Game::LoadGame(cstr file)
     mainMenuID = FindUIByName("MainMenu");
 }
 
-void Game::LoadGameConstants(cstr file)
+void Game::LoadGameConstants(cstr file, bool hasdb)
 {
     //Load file
     data_base gameDOM(file);
+    DataBase* tmpDB = NULL;
+    tmpDB = GetDataBase(dbID);
     //Basic variables
-    std::string rootDir, modLoc, saveLoc, gameName, icon, renderQuality;
-    size_t fps, width, height, bpp, blitlvls, freq, chan, chunksize, displayIndex, displayCount;
+    std::string rootDir, modLoc, saveLoc, gameName, icon, renderQuality, driver;
+    size_t fps, width, height, bpp, blitlvls, freq, chan, chunksize, displayIndex, displayCount, screenmode;
     bool detectVid, detectAud, saveConstToFile;
 
-    //Extract data
-    saveConstToFile = false;
-    char* tmp = SDL_GetBasePath();
-    rootDir = tmp;
-    SDL_free(tmp);
-    rootDir += gameDOM.GetStrFromData("root");
-
-    modLoc = gameDOM.GetStrFromData("selected_mod");
-    gameName = gameDOM.GetStrFromData("game_name");
-    icon = gameDOM.GetStrFromData("icon");
-    displayIndex = gameDOM.GetIntFromData("current_display");
-    renderQuality = gameDOM.GetStrFromData("render_quality");
-    fps = gameDOM.GetIntFromData("frames_per_second");
-    width = gameDOM.GetIntFromData("screen_width");
-    height = gameDOM.GetIntFromData("screen_height");
-    bpp = gameDOM.GetIntFromData("screen_bpp");
-    blitlvls = gameDOM.GetIntFromData("blit_levels");
-    freq = gameDOM.GetIntFromData("frequency");
-    chan = gameDOM.GetIntFromData("channels");
-    chunksize = gameDOM.GetIntFromData("chunk_size");
-    detectVid = gameDOM.GetIntFromData("auto_video");
-    multithreaded = gameDOM.GetIntFromData("multithreaded");
-
-    displayCount = SDL_GetNumVideoDisplays();
-
-    //Some final modifications
-    if(detectVid)//Video auto detection
+    //Since we have setting data in a file and also in the save file (custom settings), we have to give priority to the user's settings!
+    if((tmpDB && tmpDB->isConnected()) || hasdb)
     {
-        SDL_DisplayMode current;
-        if(!SDL_GetCurrentDisplayMode(displayIndex, &current))
+        //Extract data
+        std::string tmpStr;
+        saveConstToFile = false;
+        char* tmp = SDL_GetBasePath();
+        rootDir = tmp;
+        SDL_free(tmp);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=root","","",SELECT|WHERE));
+        tmpDB->GetResult(tmpStr);
+        rootDir += tmpStr;
+
+        //Mod
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=current_mod","","",SELECT|WHERE));
+        tmpDB->GetResult(modLoc);
+        //Game Name
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=game_name","","",SELECT|WHERE));
+        tmpDB->GetResult(gameName);
+        //Icon
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=icon","","",SELECT|WHERE));
+        tmpDB->GetResult(icon);
+        //Current display
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=current_display","","",SELECT|WHERE));
+        tmpDB->GetResult(displayIndex);
+        //The rendering quality
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=render_quality","","",SELECT|WHERE));
+        tmpDB->GetResult(renderQuality);
+        //fps limit
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=frames_per_second","","",SELECT|WHERE));
+        tmpDB->GetResult(fps);
+        //Screen variables
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_width","","",SELECT|WHERE));
+        tmpDB->GetResult(width);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_height","","",SELECT|WHERE));
+        tmpDB->GetResult(height);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_bpp","","",SELECT|WHERE));
+        tmpDB->GetResult(bpp);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=blit_levels","","",SELECT|WHERE));
+        tmpDB->GetResult(blitlvls);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_mode","","",SELECT|WHERE));
+        tmpDB->GetResult(screenmode);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=renderer","","",SELECT|WHERE));
+        tmpDB->GetResult(driver);
+        //Sound settings
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=frequency","","",SELECT|WHERE));
+        tmpDB->GetResult(freq);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=channels","","",SELECT|WHERE));
+        tmpDB->GetResult(chan);
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=chunk_size","","",SELECT|WHERE));
+        tmpDB->GetResult(chunksize);
+        //Auto detect video settings?
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=auto_video","","",SELECT|WHERE));
+        tmpDB->GetResult(detectVid);
+        //Run the game in multithreading mode?
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=multithreaded","","",SELECT|WHERE));
+        tmpDB->GetResult(multithreaded);
+
+        displayCount = SDL_GetNumVideoDisplays();
+
+        //Some final modifications
+        if(detectVid)//Video auto detection
         {
-            std::cout << SDL_GetError() << std::endl;
+            SDL_DisplayMode current;
+            if(!SDL_GetCurrentDisplayMode(displayIndex, &current))
+            {
+                std::cout << SDL_GetError() << std::endl;
+            }
+            width = current.w;
+            height = current.h;
+            bpp = current.format;
+            saveConstToFile = true;
         }
-        width = current.w;
-        height = current.h;
-        bpp = current.format;
-        saveConstToFile = true;
+
+        //Save constants
+        SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
+                displayCount, displayIndex, fps, width, height, bpp,
+                blitlvls, screenmode, driver, freq, chan, chunksize);
+
+        if(saveConstToFile)
+        {
+            //Game Name
+            tmpDB->query(tmpDB->prepareStatement("settings", intToStr(width), "variable=screen_width","","",UPDATE));
+            tmpDB->query(tmpDB->prepareStatement("settings", intToStr(height), "variable=screen_height","","",UPDATE));
+            tmpDB->query(tmpDB->prepareStatement("settings", intToStr(bpp), "variable=screen_bpp","","",UPDATE));
+        }
     }
-
-    //Save constants
-    SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
-            displayCount, displayIndex, fps, width, height, bpp,
-            blitlvls, freq, chan, chunksize);
-
-    if(saveConstToFile)
+    else
     {
-        gameDOM.CloseFile();
-        gameDOM.OpenFile(file, false);
-        gameDOM.WriteValue(intToStr(width), "screen_width");
-        gameDOM.WriteValue(intToStr(height), "screen_height");
-        gameDOM.WriteValue(intToStr(bpp), "screen_bpp");
+        //Extract data
+        saveConstToFile = false;
+        char* tmp = SDL_GetBasePath();
+        rootDir = tmp;
+        SDL_free(tmp);
+        rootDir += gameDOM.GetStrFromData("root");
+
+        modLoc = gameDOM.GetStrFromData("selected_mod");
+        gameName = gameDOM.GetStrFromData("game_name");
+        icon = gameDOM.GetStrFromData("icon");
+        displayIndex = gameDOM.GetIntFromData("current_display");
+        renderQuality = gameDOM.GetStrFromData("render_quality");
+        fps = gameDOM.GetIntFromData("frames_per_second");
+        width = gameDOM.GetIntFromData("screen_width");
+        height = gameDOM.GetIntFromData("screen_height");
+        bpp = gameDOM.GetIntFromData("screen_bpp");
+        blitlvls = gameDOM.GetIntFromData("blit_levels");
+        screenmode = gameDOM.GetIntFromData("screen_mode");
+        driver = gameDOM.GetStrFromData("video_driver");
+        freq = gameDOM.GetIntFromData("frequency");
+        chan = gameDOM.GetIntFromData("channels");
+        chunksize = gameDOM.GetIntFromData("chunk_size");
+        detectVid = gameDOM.GetIntFromData("auto_video");
+        multithreaded = gameDOM.GetIntFromData("multithreaded");
+
+        displayCount = SDL_GetNumVideoDisplays();
+
+        //Some final modifications
+        if(detectVid)//Video auto detection
+        {
+            SDL_DisplayMode current;
+            if(!SDL_GetCurrentDisplayMode(displayIndex, &current))
+            {
+                std::cout << SDL_GetError() << std::endl;
+            }
+            width = current.w;
+            height = current.h;
+            bpp = current.format;
+            saveConstToFile = true;
+        }
+
+        //Save constants
+        SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
+                displayCount, displayIndex, fps, width, height, bpp,
+                blitlvls, screenmode, driver, freq, chan, chunksize);
     }
 
     if(fps)
         frameCapped = true;
+}
+
+void Game::SaveGameSettings()
+{
+    DataBase* tmpDB = GetSaveDataHandle();
+    tmpDB->query(tmpDB->prepareStatement("settings", GetRootDirectory(), "variable=root","","",UPDATE));
+
+    //Mod
+    tmpDB->query(tmpDB->prepareStatement("settings", GetModName(), "variable=current_mod","","",UPDATE));
+    //Game Name
+    tmpDB->query(tmpDB->prepareStatement("settings", GetGameName(), "variable=game_name","","",UPDATE));
+    //Icon
+    tmpDB->query(tmpDB->prepareStatement("settings", GetIconLoc(), "variable=icon","","",UPDATE));
+    //Current display
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetDisplayIndex()), "variable=current_display","","",UPDATE));
+    //The rendering quality
+    tmpDB->query(tmpDB->prepareStatement("settings", GetRenderQuality(), "variable=render_quality","","",UPDATE));
+    //fps limit
+    tmpDB->query(tmpDB->prepareStatement("settings",  intToStr(GetMaxFramesPerSec()), "variable=frames_per_second","","",UPDATE));
+    //Screen variables
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetScreenWidth()), "variable=screen_width","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetScreenHeight()), "variable=screen_height","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetScreenBPP()), "variable=screen_bpp","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetBlitLevels()), "variable=blit_levels","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetScreenMode()), "variable=screen_mode","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", GetRenderDriver(), "variable=renderer","","",UPDATE));
+    //Sound settings
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetSoundFrequency()), "variable=frequency","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetSoundChannels()), "variable=channels","","",UPDATE));
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetSoundChunkSize()), "variable=chunk_size","","",UPDATE));
+    //Auto detect video settings?
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(0), "variable=auto_video","","",UPDATE));
+    //Run the game in multithreading mode?
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(multithreaded), "variable=multithreaded","","",UPDATE));
+
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetDisplayCount()), "variable=display_count","","",UPDATE));
 }
 
 void Game::LoadGlobalModules(cstr file)
@@ -271,8 +392,26 @@ void Game::LoadUIs(cstr file)
 void Game::loadSaveData(const std::string& saveData)
 {
     data_base gameDOM(saveData.c_str());
+    DataBase* tmpDB;
     //Load Database!
     dbID = RegisterDataBase(gameDOM.GetStrFromData("save").c_str());
+    tmpDB = GetDataBase(dbID);
+    if(!tmpDB->isConnected())
+    {
+        /*If the database does not exist, it is probably because this is the "first" time the game is ran.
+        As a result, the file must be copied to the target location!*/
+        std::cout << "Warning: Save file missing! Copying default copy! Ignore if this is the first time you run the game!" << std::endl;
+        std::string data;
+        data_base dst();
+        data_base src(gameDOM.GetStrFromData("save").c_str())
+        dst.OpenBinFileForQuickWrite(gameDOM.GetStrFromData("save_destination").c_str());
+        data = src.GetStrBuffer();
+        dst.WriteValueAndFlush(data);//copy data
+        tmpDB->connect(gameDOM.GetStrFromData("save").c_str());//attempt to connect again
+    }
+
+    /*The save file (sqlite) database will contain tables with save data, but also the input settings for the game!*/
+    LoadCurrentKeyBindings(dbID);
 }
 
 bool Game::loadLevel(cstr file)
@@ -309,7 +448,7 @@ bool Game::init()
     }
 
     //Set up the screen
-    win = SDL_CreateWindow(GetGameName().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, GetScreenWidth(), GetScreenHeight(), SDL_WINDOW_FULLSCREEN);
+    win = SDL_CreateWindow(GetGameName().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, GetScreenMode());
 
     //If there was an error in setting up the screen
     if( win == NULL )
@@ -319,8 +458,9 @@ bool Game::init()
     }
     else
     {
+        SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
         screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
-        SDL_SetHint(GetRenderQuality().c_str(), "linear");  // make the scaled rendering look smoother.
+        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
         SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
     }
 
@@ -364,6 +504,51 @@ void Game::ClearEditorFrameBuffer()
     {
         frameBuffer[i] = 0;//Clear contents of buffer
     }
+}
+
+void Game::RestartRenderer()
+{
+    //Free the previous renderer
+    SDL_DestroyRenderer(screen);
+    screen = NULL;
+    //Build new renderer
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
+    screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
+    SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
+}
+
+void Game::RestartVideoAndSound()
+{
+    //Restart video
+    RestartVideo();
+    //Restart audio
+    RestartAudio();
+}
+
+void Game::RestartAudio()
+{
+    //Close audio
+    Mix_CloseAudio();
+    //Open audio
+    if( Mix_OpenAudio( GetSoundFrequency(), MIX_DEFAULT_FORMAT, GetSoundChannels(), GetSoundChunkSize() ) == -1 )
+        std::cerr << "Engine error: Could not restart audio system!" << std::endl;
+}
+
+void Game::RestartVideo()
+{
+    //Free the previous renderer and screen
+    SDL_DestroyRenderer(screen);
+    SDL_DestroyWindow(win);
+    screen = NULL;
+    win = NULL;
+    //Create new window
+    win = SDL_CreateWindow(GetGameName().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, GetScreenMode());
+    //Create new renderer
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
+    screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
+    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
+    SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
 }
 
 void Game::drawWorld()

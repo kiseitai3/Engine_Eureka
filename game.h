@@ -18,6 +18,7 @@
 //#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
 #include "typedefs.h"
 
+
 //Engine name space macro
 //ENGINE_NAMESPACE
 
@@ -52,7 +53,7 @@ public:
 
     /*Init*/
     void LoadGame(cstr file);
-    void LoadGameConstants(cstr file);
+    void LoadGameConstants(cstr file, bool hasdb = false);
     void LoadGlobalModules(cstr file);
     void LoadUIs(cstr file);
     void initEditorFrameBuffer();
@@ -82,11 +83,16 @@ public:
     /*Save methods*/
     void loadSaveData(const std::string& file);
     void SaveData(const std::string& query);//Done on a database so you must query
+    void SaveGameSettings();
     DataBase* GetSaveDataHandle();
 
     /*Frame adjustment*/
     void FrameCapper();
     void ClearEditorFrameBuffer();
+    void RestartRenderer();
+    void RestartVideoAndSound();
+    void RestartAudio();
+    void RestartVideo();
 
     /*Below are the methods that will be called by the main thread or independent threads (if in multithreaded mode).*/
     void drawWorld();
@@ -114,7 +120,8 @@ public:
     void ReplaceVideoHUD(cstr file);
 
     static const size_t loadRate;
-
+    static const size_t WINDOW_WIDTH = 640;
+    static const size_t WINDOW_HEIGHT = 480;
 private:
     //Renderer
     SDL_Renderer *screen;

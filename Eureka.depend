@@ -6044,7 +6044,7 @@
 	<boost/python/detail/value_arg.hpp>
 	<boost/mpl/assert.hpp>
 
-1398869634 c:\python27\include\python.h
+1398866034 c:\python27\include\python.h
 	"patchlevel.h"
 	"pyconfig.h"
 	"pymacconfig.h"
@@ -6114,9 +6114,9 @@
 	"pyfpe.h"
 	<pth.h>
 
-1418239882 c:\python27\include\patchlevel.h
+1418236282 c:\python27\include\patchlevel.h
 
-1414255498 c:\python27\include\pyconfig.h
+1414251898 c:\python27\include\pyconfig.h
 	<io.h>
 	<stdlib.h>
 	<float.h>
@@ -6124,9 +6124,9 @@
 	<io.h>
 	<stdio.h>
 
-1398869634 c:\python27\include\pymacconfig.h
+1398866034 c:\python27\include\pymacconfig.h
 
-1398869634 c:\python27\include\pyport.h
+1398866034 c:\python27\include\pyport.h
 	"pyconfig.h"
 	<inttypes.h>
 	<stdint.h>
@@ -6150,130 +6150,130 @@
 	<ctype.h>
 	<wctype.h>
 
-1398869634 c:\python27\include\pymath.h
+1398866034 c:\python27\include\pymath.h
 	"pyconfig.h"
 
-1398869634 c:\python27\include\pymem.h
+1398866034 c:\python27\include\pymem.h
 	"pyport.h"
 
-1416956830 c:\python27\include\object.h
+1416953230 c:\python27\include\object.h
 
-1398869634 c:\python27\include\objimpl.h
+1398866034 c:\python27\include\objimpl.h
 	"pymem.h"
 
-1398869634 c:\python27\include\pydebug.h
+1398866034 c:\python27\include\pydebug.h
 
-1398869634 c:\python27\include\unicodeobject.h
+1398866034 c:\python27\include\unicodeobject.h
 	<stdarg.h>
 	<ctype.h>
 	<time.h>
 	<wchar.h>
 	<wctype.h>
 
-1398869634 c:\python27\include\intobject.h
+1398866034 c:\python27\include\intobject.h
 
-1398869634 c:\python27\include\boolobject.h
+1398866034 c:\python27\include\boolobject.h
 
-1398869634 c:\python27\include\longobject.h
+1398866034 c:\python27\include\longobject.h
 
-1398869634 c:\python27\include\floatobject.h
+1398866034 c:\python27\include\floatobject.h
 
-1398869634 c:\python27\include\complexobject.h
+1398866034 c:\python27\include\complexobject.h
 
-1398869634 c:\python27\include\rangeobject.h
+1398866034 c:\python27\include\rangeobject.h
 
-1398869634 c:\python27\include\stringobject.h
+1398866034 c:\python27\include\stringobject.h
 	<stdarg.h>
 
-1398869634 c:\python27\include\memoryobject.h
+1398866034 c:\python27\include\memoryobject.h
 
-1398869634 c:\python27\include\bufferobject.h
+1398866034 c:\python27\include\bufferobject.h
 
-1398869634 c:\python27\include\bytesobject.h
+1398866034 c:\python27\include\bytesobject.h
 
-1398869634 c:\python27\include\bytearrayobject.h
+1398866034 c:\python27\include\bytearrayobject.h
 	<stdarg.h>
 
-1398869634 c:\python27\include\tupleobject.h
+1398866034 c:\python27\include\tupleobject.h
 
-1401457528 c:\python27\include\listobject.h
+1401453928 c:\python27\include\listobject.h
 
-1398869634 c:\python27\include\dictobject.h
+1398866034 c:\python27\include\dictobject.h
 
-1398869634 c:\python27\include\enumobject.h
+1398866034 c:\python27\include\enumobject.h
 
-1398869634 c:\python27\include\setobject.h
+1398866034 c:\python27\include\setobject.h
 
-1398869634 c:\python27\include\methodobject.h
+1398866034 c:\python27\include\methodobject.h
 
-1398869634 c:\python27\include\moduleobject.h
+1398866034 c:\python27\include\moduleobject.h
 
-1398869634 c:\python27\include\funcobject.h
+1398866034 c:\python27\include\funcobject.h
 
-1398869634 c:\python27\include\classobject.h
+1398866034 c:\python27\include\classobject.h
 
-1398869634 c:\python27\include\fileobject.h
+1398866034 c:\python27\include\fileobject.h
 
-1398869634 c:\python27\include\cobject.h
+1398866034 c:\python27\include\cobject.h
 
-1398869634 c:\python27\include\pycapsule.h
+1398866034 c:\python27\include\pycapsule.h
 
-1398869634 c:\python27\include\traceback.h
+1398866034 c:\python27\include\traceback.h
 
-1398869634 c:\python27\include\sliceobject.h
+1398866034 c:\python27\include\sliceobject.h
 
-1398869634 c:\python27\include\cellobject.h
+1398866034 c:\python27\include\cellobject.h
 
-1398869634 c:\python27\include\iterobject.h
+1398866034 c:\python27\include\iterobject.h
 
-1398869634 c:\python27\include\genobject.h
+1398866034 c:\python27\include\genobject.h
 
-1398869634 c:\python27\include\descrobject.h
+1398866034 c:\python27\include\descrobject.h
 
-1398869634 c:\python27\include\warnings.h
+1398866034 c:\python27\include\warnings.h
 
-1398869634 c:\python27\include\weakrefobject.h
+1398866034 c:\python27\include\weakrefobject.h
 
-1398869634 c:\python27\include\codecs.h
+1398866034 c:\python27\include\codecs.h
 
-1398869634 c:\python27\include\pyerrors.h
+1398866034 c:\python27\include\pyerrors.h
 	<stdarg.h>
 
-1398869634 c:\python27\include\pystate.h
+1398866034 c:\python27\include\pystate.h
 
-1398869634 c:\python27\include\pyarena.h
+1398866034 c:\python27\include\pyarena.h
 
-1398869634 c:\python27\include\modsupport.h
+1398866034 c:\python27\include\modsupport.h
 	<stdarg.h>
 
-1416956830 c:\python27\include\pythonrun.h
+1416953230 c:\python27\include\pythonrun.h
 
-1398869634 c:\python27\include\ceval.h
+1398866034 c:\python27\include\ceval.h
 
-1416956830 c:\python27\include\sysmodule.h
+1416953230 c:\python27\include\sysmodule.h
 
-1398869634 c:\python27\include\intrcheck.h
+1398866034 c:\python27\include\intrcheck.h
 
-1398869634 c:\python27\include\import.h
+1398866034 c:\python27\include\import.h
 
-1398869634 c:\python27\include\abstract.h
+1398866034 c:\python27\include\abstract.h
 
-1398869634 c:\python27\include\compile.h
+1398866034 c:\python27\include\compile.h
 	"code.h"
 
-1398869634 c:\python27\include\code.h
+1398866034 c:\python27\include\code.h
 
-1398869634 c:\python27\include\eval.h
+1398866034 c:\python27\include\eval.h
 
-1398869634 c:\python27\include\pyctype.h
+1398866034 c:\python27\include\pyctype.h
 
-1398869634 c:\python27\include\pystrtod.h
+1398866034 c:\python27\include\pystrtod.h
 
-1398869634 c:\python27\include\pystrcmp.h
+1398866034 c:\python27\include\pystrcmp.h
 
-1398869634 c:\python27\include\dtoa.h
+1398866034 c:\python27\include\dtoa.h
 
-1398869634 c:\python27\include\pyfpe.h
+1398866034 c:\python27\include\pyfpe.h
 	<signal.h>
 	<setjmp.h>
 	<math.h>
@@ -21744,7 +21744,7 @@
 	"boost/detail/workaround.hpp"
 	"boost/move/move.hpp"
 
-1429413788 c:\mingw\msys\1.0\local\include\boost\iterator
+1429410188 c:\mingw\msys\1.0\local\include\boost\iterator
 
 1393230648 c:\mingw\msys\1.0\local\include\boost\move\move.hpp
 	<boost/move/detail/config_begin.hpp>
@@ -23315,7 +23315,7 @@
 	<SDL_image.h>
 	"eureka.h"
 
-1430255076 c:\users\luis\documents\devcb\engine_eureka\textbox.h
+1430251476 c:\users\luis\documents\devcb\engine_eureka\textbox.h
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -23326,7 +23326,7 @@
 
 1428164887 D
 
-1429733118 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
+1429729518 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	<string>
 	"texture_store.h"
@@ -23703,40 +23703,40 @@
 	"begin_code.h"
 	"close_code.h"
 
-1428119158 c:\users\luis\documents\devcb\engine_eureka\data_base.h
+1428115558 c:\users\luis\documents\devcb\engine_eureka\data_base.h
 	<fstream>
 	<string>
 	"conversion.h"
 	<iostream>
 
-1426372623 c:\users\luis\documents\devcb\engine_eureka\conversion.h
+1426369023 c:\users\luis\documents\devcb\engine_eureka\conversion.h
 	<string>
 	"config.h"
 	"utf8.h"
 
-1419532461 c:\users\luis\documents\devcb\engine_eureka\config.h
+1419528861 c:\users\luis\documents\devcb\engine_eureka\config.h
 
-1411092858 c:\users\luis\documents\devcb\engine_eureka\utf8.h
+1411089258 c:\users\luis\documents\devcb\engine_eureka\utf8.h
 	"utf8/checked.h"
 	"utf8/unchecked.h"
 
-1411092858 c:\users\luis\documents\devcb\engine_eureka\utf8\checked.h
+1411089258 c:\users\luis\documents\devcb\engine_eureka\utf8\checked.h
 	"core.h"
 	<stdexcept>
 
-1411092858 c:\users\luis\documents\devcb\engine_eureka\utf8\core.h
+1411089258 c:\users\luis\documents\devcb\engine_eureka\utf8\core.h
 	<iterator>
 
-1411092858 c:\users\luis\documents\devcb\engine_eureka\utf8\unchecked.h
+1411089258 c:\users\luis\documents\devcb\engine_eureka\utf8\unchecked.h
 	"core.h"
 
-1425772567 c:\users\luis\documents\devcb\engine_eureka\physics.h
+1425768967 c:\users\luis\documents\devcb\engine_eureka\physics.h
 	"typedefs.h"
 	<string>
 	<SDL.h>
 	<vector>
 
-1429732679 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
+1429729079 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
 	<string>
 	<unistd.h>
 	<unistd.h>
@@ -23755,11 +23755,11 @@
 	"scriptwrap.h"
 	"typedefs.h"
 
-1425827144 c:\users\luis\documents\devcb\engine_eureka\scriptwrap.h
+1425823544 c:\users\luis\documents\devcb\engine_eureka\scriptwrap.h
 	<vector>
 	"typedefs.h"
 
-1427579285 c:\users\luis\documents\devcb\engine_eureka\pywrap.h
+1427575685 c:\users\luis\documents\devcb\engine_eureka\pywrap.h
 	<Python.h>
 	<string>
 	<vector>
@@ -23808,7 +23808,7 @@
 	<stack>
 	"game.h"
 
-1440984356 c:\users\luis\documents\devcb\engine_eureka\game.h
+1441306477 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23823,13 +23823,14 @@
 	<SDL_net.h>
 	"typedefs.h"
 
-1440985374 c:\users\luis\documents\devcb\engine_eureka\info.h
+1441154451 c:\users\luis\documents\devcb\engine_eureka\info.h
 	<SDL.h>
 	<iostream>
 	<string>
+	"BST.h"
 	"typedefs.h"
 
-1439959161 c:\users\luis\documents\devcb\engine_eureka\ui.h
+1439955561 c:\users\luis\documents\devcb\engine_eureka\ui.h
 	<list>
 	<map>
 	<string>
@@ -23837,7 +23838,7 @@
 	"textbox.h"
 	"typedefs.h"
 
-1440128622 c:\users\luis\documents\devcb\engine_eureka\unit.h
+1440125022 c:\users\luis\documents\devcb\engine_eureka\unit.h
 	<string>
 	<map>
 	<SDL.h>
@@ -23846,7 +23847,7 @@
 	"ai_store.h"
 	"typedefs.h"
 
-1429733272 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
+1429729672 c:\users\luis\documents\devcb\engine_eureka\sound_base.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23854,7 +23855,7 @@
 	"physics.h"
 	"typedefs.h"
 
-1411092749 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_mixer-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+1411089149 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_mixer-2.0.0\i686-w64-mingw32\include\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
@@ -23863,7 +23864,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1425772567 c:\users\luis\documents\devcb\engine_eureka\timer.h
+1425768967 c:\users\luis\documents\devcb\engine_eureka\timer.h
 	"typedefs.h"
 
 1425772567 c:\users\luis\documents\devcb\engine_eureka\plugin.h
@@ -23874,7 +23875,7 @@
 	<dlfcn.h>
 	<windows.h>
 
-1440697703 c:\users\luis\documents\devcb\engine_eureka\modules.h
+1440694103 c:\users\luis\documents\devcb\engine_eureka\modules.h
 	"BST.h"
 	"typedefs.h"
 
@@ -23887,38 +23888,38 @@
 	<vector>
 	<string>
 
-1428075425 c:\users\luis\documents\devcb\engine_eureka\threading.h
+1428071825 c:\users\luis\documents\devcb\engine_eureka\threading.h
 	<iostream>
 	<pthread.h>
 	<list>
 	"typedefs.h"
 
-1440696844 c:\users\luis\documents\devcb\engine_eureka\unitmanager.h
+1440693244 c:\users\luis\documents\devcb\engine_eureka\unitmanager.h
 	"unit.h"
 	"BST.h"
 	"typedefs.h"
 
-1440697069 c:\users\luis\documents\devcb\engine_eureka\iomanager.h
+1440693469 c:\users\luis\documents\devcb\engine_eureka\iomanager.h
 	"BST.h"
 	<iostream>
 	<string>
 	"data_base.h"
 	"typedefs.h"
 
-1440697115 c:\users\luis\documents\devcb\engine_eureka\uimanager.h
+1440693515 c:\users\luis\documents\devcb\engine_eureka\uimanager.h
 	<iostream>
 	<string>
 	"ui.h"
 	"BST.h"
 	"typedefs.h"
 
-1424126214 c:\users\luis\documents\devcb\engine_eureka\bst.h
+1424122614 c:\users\luis\documents\devcb\engine_eureka\bst.h
 	<iostream>
 	<vector>
 	<cassert>
 	"BST.cc"
 
-1427997628 c:\users\luis\documents\devcb\engine_eureka\bst.cc
+1427994028 c:\users\luis\documents\devcb\engine_eureka\bst.cc
 
 1428120377 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
@@ -23928,12 +23929,12 @@
 	"conversion.h"
 	"data_base.h"
 
-1426386884 source:c:\users\luis\documents\devcb\engine_eureka\database.cpp
+1441078506 source:c:\users\luis\documents\devcb\engine_eureka\database.cpp
 	"database.h"
 	"data_base.h"
 	"mysql.h"
 
-1426386884 c:\users\luis\documents\devcb\engine_eureka\database.h
+1441078432 c:\users\luis\documents\devcb\engine_eureka\database.h
 	"sqlitewrap.h"
 	<string>
 
@@ -24041,7 +24042,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1440624937 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1441125390 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24088,7 +24089,7 @@
 	"input.h"
 	"game.h"
 
-1425772567 c:\users\luis\documents\devcb\engine_eureka\trigger.h
+1425768967 c:\users\luis\documents\devcb\engine_eureka\trigger.h
 	"typedefs.h"
 
 1411085222 c:\users\luis\documents\devcb\engine_eureka\sound_baseb.h
@@ -24097,18 +24098,18 @@
 	<string.h>
 	<SDL_mixer.h>
 
-1425784304 c:\users\luis\documents\devcb\engine_eureka\progressbar.h
+1425780704 c:\users\luis\documents\devcb\engine_eureka\progressbar.h
 	"physics.h"
 	<SDL.h>
 
-1440696966 c:\users\luis\documents\devcb\engine_eureka\input.h
+1441302214 c:\users\luis\documents\devcb\engine_eureka\input.h
 	<SDL.h>
 	<string>
 	<map>
 	"BST.h"
 	"typedefs.h"
 
-1440624936 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1441125389 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -24150,7 +24151,7 @@
 	<limits.h>
 	<ieeefp.h>
 
-1440169413 source:c:\users\luis\documents\devcb\engine_eureka\input.cpp
+1441309120 source:c:\users\luis\documents\devcb\engine_eureka\input.cpp
 	<SDL.h>
 	<string>
 	"physics.h"
@@ -24160,7 +24161,7 @@
 	"database.h"
 	"game.h"
 
-1440624467 source:c:\users\luis\documents\devcb\engine_eureka\level.cpp
+1440620867 source:c:\users\luis\documents\devcb\engine_eureka\level.cpp
 	<SDL.h>
 	<list>
 	<string>
@@ -24177,13 +24178,13 @@
 	"ui.h"
 	<iostream>
 
-1440624467 c:\users\luis\documents\devcb\engine_eureka\level.h
+1440620867 c:\users\luis\documents\devcb\engine_eureka\level.h
 	<SDL.h>
 	<list>
 	<string>
 	"BST.h"
 
-1427564763 source:c:\users\luis\documents\devcb\engine_eureka\luawrap.cpp
+1441134591 source:c:\users\luis\documents\devcb\engine_eureka\luawrap.cpp
 	"luawrap.h"
 	<cmath>
 	"conversion.h"
@@ -24282,8 +24283,10 @@
 
 1422197357 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\iterator
 
-1440985334 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
+1441158051 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
 	"info.h"
+	"database.h"
+	"data_base.h"
 
 1423981031 source:c:\users\luis\documents\devcb\engine_eureka\mysql.cpp
 	"mysql.h"
@@ -27400,7 +27403,7 @@
 
 1422197389 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\random
 
-1440105891 c:\users\luis\documents\devcb\engine_eureka\eureka.h
+1440102291 c:\users\luis\documents\devcb\engine_eureka\eureka.h
 	"unitmanager.h"
 	"particlesystem.h"
 	"networking.h"
@@ -27419,7 +27422,7 @@
 	"input.h"
 	"game.h"
 
-1440697400 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
+1440693800 c:\users\luis\documents\devcb\engine_eureka\particlesystem.h
 	<string>
 	<pthread.h>
 	<queue>
@@ -27429,7 +27432,7 @@
 	"BST.h"
 	"typedefs.h"
 
-1440869665 c:\users\luis\documents\devcb\engine_eureka\networking.h
+1440866065 c:\users\luis\documents\devcb\engine_eureka\networking.h
 	<iostream>
 	<string>
 	<list>
@@ -27437,7 +27440,7 @@
 	"BST.h"
 	"typedefs.h"
 
-1376160103 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_net-2.0.0\i686-w64-mingw32\include\sdl2\sdl_net.h
+1376156503 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_net-2.0.0\i686-w64-mingw32\include\sdl2\sdl_net.h
 	<stdint.h>
 	"SDL.h"
 	"SDL_endian.h"
@@ -27455,7 +27458,7 @@
 	"threading.h"
 	"rand_generators.h"
 
-1427581712 c:\users\luis\documents\devcb\engine_eureka\rand_generators.h
+1427578112 c:\users\luis\documents\devcb\engine_eureka\rand_generators.h
 	<iostream>
 	"typedefs.h"
 
@@ -27465,7 +27468,7 @@
 	"rand_generators.h"
 	"conversion.h"
 
-1440697711 source:c:\users\luis\documents\devcb\engine_eureka\unitmanager.cpp
+1441310546 source:c:\users\luis\documents\devcb\engine_eureka\unitmanager.cpp
 	"unitmanager.h"
 	"eureka.h"
 	"rand_generators.h"
@@ -27494,18 +27497,18 @@
 	"modadapter.h"
 	"eureka.h"
 
-1440697448 source:c:\users\luis\documents\devcb\engine_eureka\particlesystem.cpp
+1441310525 source:c:\users\luis\documents\devcb\engine_eureka\particlesystem.cpp
 	"particlesystem.h"
 	"eureka.h"
 	"rand_generators.h"
 	"data_base.h"
 
-1440697653 source:c:\users\luis\documents\devcb\engine_eureka\triggermanager.cpp
+1440694053 source:c:\users\luis\documents\devcb\engine_eureka\triggermanager.cpp
 	"triggermanager.h"
 	"rand_generators.h"
 	"eureka.h"
 
-1440697628 c:\users\luis\documents\devcb\engine_eureka\triggermanager.h
+1440694028 c:\users\luis\documents\devcb\engine_eureka\triggermanager.h
 	<iostream>
 	<string>
 	"typedefs.h"
@@ -27517,25 +27520,25 @@
 	"rand_generators.h"
 	"eureka.h"
 
-1440700432 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
+1441310730 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
 	"eureka.h"
 	"level.h"
 	<SDL_image.h>
 	"database.h"
 
-1440697481 c:\users\luis\documents\devcb\engine_eureka\timersystem.h
+1440693881 c:\users\luis\documents\devcb\engine_eureka\timersystem.h
 	"Timer.h"
 	"BST.h"
 	<iostream>
 	"typedefs.h"
 
-1440697326 c:\users\luis\documents\devcb\engine_eureka\layersystem.h
+1440693726 c:\users\luis\documents\devcb\engine_eureka\layersystem.h
 	"typedefs.h"
 	<iostream>
 	<vector>
 	<list>
 
-1440697347 source:c:\users\luis\documents\devcb\engine_eureka\layersystem.cpp
+1441306640 source:c:\users\luis\documents\devcb\engine_eureka\layersystem.cpp
 	"rand_generators.h"
 	"eureka.h"
 	"conversion.h"
@@ -27548,10 +27551,10 @@
 	"rand_generators.h"
 	"eureka.h"
 
-1440097245 source:c:\users\luis\documents\devcb\engine_eureka\core.cpp
+1441310730 source:c:\users\luis\documents\devcb\engine_eureka\core.cpp
 	"eureka.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -27582,12 +27585,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_main.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_stdinc.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -27614,32 +27617,32 @@
 	<stdlib.h>
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_config.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_config.h
 	"SDL_platform.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_platform.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\begin_code.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\begin_code.h
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\close_code.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\close_code.h
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_assert.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_atomic.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_audio.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -27649,24 +27652,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_error.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_endian.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_mutex.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_thread.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -27675,18 +27678,18 @@
 	<process.h>
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_rwops.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_clipboard.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_cpuinfo.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -27698,7 +27701,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_events.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -27712,7 +27715,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_video.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -27720,12 +27723,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_pixels.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_pixels.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_rect.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -27733,7 +27736,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_surface.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -27742,11 +27745,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_blendmode.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_keyboard.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -27754,27 +27757,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_keycode.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_scancode.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_mouse.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_joystick.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_gamecontroller.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
@@ -27782,11 +27785,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_quit.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_gesture.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -27794,60 +27797,60 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_touch.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_filesystem.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_haptic.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_hints.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_loadso.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_log.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_messagebox.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_power.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_render.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_system.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -27855,18 +27858,18 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_timer.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394257193 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_version.h
+1394253593 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2-2.0.0\include\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1440697138 source:c:\users\luis\documents\devcb\engine_eureka\uimanager.cpp
+1441310596 source:c:\users\luis\documents\devcb\engine_eureka\uimanager.cpp
 	"uimanager.h"
 	"eureka.h"
 	"input.h"
@@ -27876,7 +27879,7 @@
 	<vector>
 	"../data_base.h"
 
-1440697200 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
+1440693600 c:\users\luis\documents\devcb\engine_eureka\soundqueue.h
 	<iostream>
 	"Queue.h"
 	"typedefs.h"
@@ -27888,7 +27891,7 @@
 	"physics.h"
 	"sound_base.h"
 
-1440696876 c:\users\luis\documents\devcb\engine_eureka\videoplayer.h
+1440693276 c:\users\luis\documents\devcb\engine_eureka\videoplayer.h
 	<libavcodec/avcodec.h>
 	<libavformat/avformat.h>
 	<libswscale/swscale.h>
@@ -28050,14 +28053,14 @@
 1426504904 c:\mingw\msys\1.0\local\include\libswscale\version.h
 	"libavutil/version.h"
 
-1440696928 source:c:\users\luis\documents\devcb\engine_eureka\videoplayer.cpp
+1441306784 source:c:\users\luis\documents\devcb\engine_eureka\videoplayer.cpp
 	"videoplayer.h"
 	"eureka.h"
 	<libavutil/common.h>
 	<libavutil/opt.h>
 	<libavformat/avformat.h>
 
-1427283281 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\avcodec.h
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\avcodec.h
 	<errno.h>
 	"libavutil/samplefmt.h"
 	"libavutil/attributes.h"
@@ -28073,12 +28076,12 @@
 	"version.h"
 	"old_codec_ids.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\samplefmt.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\samplefmt.h
 	<stdint.h>
 	"avutil.h"
 	"attributes.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avutil.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avutil.h
 	"common.h"
 	"error.h"
 	"rational.h"
@@ -28088,7 +28091,7 @@
 	"log.h"
 	"pixfmt.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\common.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\common.h
 	<errno.h>
 	<inttypes.h>
 	<limits.h>
@@ -28106,68 +28109,68 @@
 	"mem.h"
 	"internal.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\attributes.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\attributes.h
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\version.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\version.h
 	"macros.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\macros.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\macros.h
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avconfig.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\avconfig.h
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mem.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mem.h
 	<limits.h>
 	<stdint.h>
 	"attributes.h"
 	"error.h"
 	"avutil.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\error.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\error.h
 	<errno.h>
 	<stddef.h>
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mathematics.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\mathematics.h
 	<stdint.h>
 	<math.h>
 	"attributes.h"
 	"rational.h"
 	"intfloat.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\rational.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\rational.h
 	<stdint.h>
 	<limits.h>
 	"attributes.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\intfloat.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\intfloat.h
 	<stdint.h>
 	"attributes.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\log.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\log.h
 	<stdarg.h>
 	"avutil.h"
 	"attributes.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\pixfmt.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\pixfmt.h
 	"libavutil/avconfig.h"
 	"version.h"
 	"old_pix_fmts.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\old_pix_fmts.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\old_pix_fmts.h
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\buffer.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\buffer.h
 	<stdint.h>
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\cpu.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\cpu.h
 	"attributes.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\channel_layout.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\channel_layout.h
 	<stdint.h>
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\dict.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\dict.h
 	<stdint.h>
 	"version.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\frame.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\frame.h
 	<stdint.h>
 	"avutil.h"
 	"buffer.h"
@@ -28177,12 +28180,12 @@
 	"pixfmt.h"
 	"version.h"
 
-1427283281 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\version.h
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\version.h
 	"libavutil/version.h"
 
-1427283281 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\old_codec_ids.h
+1427279681 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavcodec\old_codec_ids.h
 
-1427283280 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avformat.h
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avformat.h
 	<time.h>
 	<stdio.h>
 	"libavcodec/avcodec.h"
@@ -28191,27 +28194,27 @@
 	"avio.h"
 	"libavformat/version.h"
 
-1427283280 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avio.h
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\avio.h
 	<stdint.h>
 	"libavutil/common.h"
 	"libavutil/dict.h"
 	"libavutil/log.h"
 	"libavformat/version.h"
 
-1427283280 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\version.h
+1427279680 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavformat\version.h
 	"libavutil/version.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\swscale.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\swscale.h
 	<stdint.h>
 	"libavutil/avutil.h"
 	"libavutil/log.h"
 	"libavutil/pixfmt.h"
 	"version.h"
 
-1427283282 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\version.h
+1427279682 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libswscale\version.h
 	"libavutil/version.h"
 
-1427283283 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\opt.h
+1427279683 c:\users\luis\documents\devcb\engine_eureka\dependencies\libffmpeg\include\libavutil\opt.h
 	"rational.h"
 	"avutil.h"
 	"dict.h"
@@ -28227,7 +28230,7 @@
 	<string>
 	"../sqlitewrap.h"
 
-1376160143 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+1376156543 c:\users\luis\documents\devcb\engine_eureka\dependencies\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
@@ -28572,7 +28575,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1440697555 c:\users\luis\documents\devcb\engine_eureka\cursor.h
+1440693955 c:\users\luis\documents\devcb\engine_eureka\cursor.h
 	<istream>
 	"BST.h"
 	"typedefs.h"
@@ -28618,16 +28621,16 @@
 	<stdio.h>
 	"lua.h"
 
-1440697583 source:c:\users\luis\documents\devcb\engine_eureka\cursor.cpp
+1441310689 source:c:\users\luis\documents\devcb\engine_eureka\cursor.cpp
 	"eureka.h"
 	"scriptwrap.h"
 
-1428018614 c:\users\luis\documents\devcb\engine_eureka\queue.h
+1428015014 c:\users\luis\documents\devcb\engine_eureka\queue.h
 	<iostream>
 	<cstdlib>
 	"Queue.cc"
 
-1428018848 c:\users\luis\documents\devcb\engine_eureka\queue.cc
+1428015248 c:\users\luis\documents\devcb\engine_eureka\queue.cc
 	<iostream>
 	<cstdlib>
 	<cassert>
@@ -28649,7 +28652,7 @@
 	"../timersystem.h"
 	"../Dependencies/CRC/crc.h"
 
-1439749129 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
+1439745529 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
 	<iostream>
 	<string>
 	<SDL.h>
@@ -28669,7 +28672,7 @@
 
 1429572097 
 
-1439751408 c:\users\luis\documents\devcb\engine_eureka\ai_store.h
+1439747808 c:\users\luis\documents\devcb\engine_eureka\ai_store.h
 	<iostream>
 	<string>
 	<pthread.h>
@@ -28684,9 +28687,13 @@
 	"ai_store.h"
 	<crc.h>
 
-1440867408 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\network_test.cpp
+1441082360 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\network_test.cpp
 	"../eureka.h"
 	<SDL_net.h>
 	<iostream>
 	<string>
+
+1446944215 source:c:\users\luis\documents\devcb\engine_eureka\main.cpp
+	<iostream>
+	"eureka.h"
 

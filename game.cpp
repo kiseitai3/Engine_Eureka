@@ -98,6 +98,7 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
     LoadGame(file);
     closeEngine = false;
     loading = false;
+    gamePaused = false;
     frameBuffer = NULL;
     requestFrame = editor;
     initSubSys();
@@ -109,6 +110,7 @@ Game::Game(bool editor): ThreadSystem(), GameInfo(), ModuleSystem(this), UnitMan
 {
     closeEngine = false;
     loading = false;
+    gamePaused = false;
     frameBuffer = NULL;
     requestFrame = editor;
     initSubSys();
@@ -134,6 +136,7 @@ void Game::initSubSys()
     initVideoSys();
     initTriggerSys();
     initSoundSys();
+    game_mutex_id = SpawnMutex();
 }
 
 void Game::LoadGame(cstr file)
@@ -143,19 +146,19 @@ void Game::LoadGame(cstr file)
     filePath += file;
     //Create a timer
     mainTimer = CreateTimer();
-    //First, load constants as they are important values for the bootloading process
+    //First, load save database
+    LoadSaveData(filePath.c_str());
+    //Second, load constants as they are important values for the bootloading process
     LoadGameConstants(filePath.c_str());
-    //Second, initialize SDL and the extension libraries
+    //Third, initialize SDL and the extension libraries
     if(!this->init())
     {
         std::cout << "Error: Could not initialize subsystems! Maybe, the initial file is wrong or not present!" << std::endl;
     }
-    //Third, load global modules
+    //Fourth, load global modules
     LoadGlobalModules(filePath.c_str());
-    //Fourth, load global UIs
+    //Fifth, load global UIs
     LoadUIs(filePath.c_str());
-    //Fifth, load save database
-    loadSaveData(filePath.c_str());
     //Sixth, load initial level (Title Screen!)
     if(loadLevel(filePath.c_str()))
     {
@@ -257,6 +260,15 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
 
+        //Load all of the expansion basic data!
+        LoadExpansionInfo(tmpDB);
+
+        //First, we load the default keybindings
+        LoadDefaultKeyBindings((GetModName() + gameDOM.GetStrFromData("keybindings_file")).c_str());
+
+        /*The save file (sqlite) database will contain tables with save data, but also the input settings for the game!*/
+        LoadCurrentKeyBindings(dbID);
+
         if(saveConstToFile)
         {
             //Game Name
@@ -312,6 +324,12 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
+
+        //We load the default keybindings
+        LoadDefaultKeyBindings((modLoc + gameDOM.GetStrFromData("keybindings_file")).c_str());
+
+        //Load all of the expansion basic data!
+        LoadExpansionInfo(file);
     }
 
     if(fps)
@@ -389,12 +407,12 @@ void Game::LoadUIs(cstr file)
     }
 }
 
-void Game::loadSaveData(const std::string& saveData)
+void Game::LoadSaveData(const std::string& saveData)
 {
     data_base gameDOM(saveData.c_str());
     DataBase* tmpDB;
     //Load Database!
-    dbID = RegisterDataBase(gameDOM.GetStrFromData("save").c_str());
+    dbID = RegisterDataBase(gameDOM.GetStrFromData("save_destination").c_str());
     tmpDB = GetDataBase(dbID);
     if(!tmpDB->isConnected())
     {
@@ -402,16 +420,13 @@ void Game::loadSaveData(const std::string& saveData)
         As a result, the file must be copied to the target location!*/
         std::cout << "Warning: Save file missing! Copying default copy! Ignore if this is the first time you run the game!" << std::endl;
         std::string data;
-        data_base dst();
-        data_base src(gameDOM.GetStrFromData("save").c_str())
+        data_base dst;
+        data_base src(gameDOM.GetStrFromData("save").c_str());
         dst.OpenBinFileForQuickWrite(gameDOM.GetStrFromData("save_destination").c_str());
         data = src.GetStrBuffer();
         dst.WriteValueAndFlush(data);//copy data
         tmpDB->connect(gameDOM.GetStrFromData("save").c_str());//attempt to connect again
     }
-
-    /*The save file (sqlite) database will contain tables with save data, but also the input settings for the game!*/
-    LoadCurrentKeyBindings(dbID);
 }
 
 bool Game::loadLevel(cstr file)
@@ -458,7 +473,7 @@ bool Game::init()
     }
     else
     {
-        SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
+        SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str());
         screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
         SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
@@ -508,14 +523,16 @@ void Game::ClearEditorFrameBuffer()
 
 void Game::RestartRenderer()
 {
+    LockMutex(game_mutex_id);
     //Free the previous renderer
     SDL_DestroyRenderer(screen);
     screen = NULL;
     //Build new renderer
-    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str());
     screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
     SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
+    UnlockMutex(game_mutex_id);
 }
 
 void Game::RestartVideoAndSound()
@@ -528,15 +545,18 @@ void Game::RestartVideoAndSound()
 
 void Game::RestartAudio()
 {
+    LockMutex(game_mutex_id);
     //Close audio
     Mix_CloseAudio();
     //Open audio
     if( Mix_OpenAudio( GetSoundFrequency(), MIX_DEFAULT_FORMAT, GetSoundChannels(), GetSoundChunkSize() ) == -1 )
         std::cerr << "Engine error: Could not restart audio system!" << std::endl;
+    UnlockMutex(game_mutex_id);
 }
 
 void Game::RestartVideo()
 {
+    LockMutex(game_mutex_id);
     //Free the previous renderer and screen
     SDL_DestroyRenderer(screen);
     SDL_DestroyWindow(win);
@@ -545,10 +565,11 @@ void Game::RestartVideo()
     //Create new window
     win = SDL_CreateWindow(GetGameName().c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WINDOW_WIDTH, WINDOW_HEIGHT, GetScreenMode());
     //Create new renderer
-    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str())
+    SDL_SetHint(SDL_HINT_RENDER_DRIVER, GetRenderDriver().c_str());
     screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
     SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
+    UnlockMutex(game_mutex_id);
 }
 
 void Game::drawWorld()

@@ -11,13 +11,15 @@
 
 Layer::Layer(cstr file, Game* owner, size_t l_id)
 {
+    size_t id;
     data_base lDOM(file);
     id = l_id;
     layer = new draw_base();
-    layer->Load_Texture(file, owner->GetRenderer());
+    layer->Load_Texture(file, owner->GetRenderer(id));
     loc.X = lDOM.GetIntFromData("x");
     loc.Y = lDOM.GetIntFromData("y");
     loc.Z = lDOM.GetIntFromData("z");
+    owner->UnlockRenderer(id);
 }
 
 Layer::~Layer()
@@ -120,11 +122,13 @@ size_t LayerSystem::GetLayerCount() const
 
 void LayerSystem::DrawLayers()
 {
+    size_t id;
     //Lock mutex
     owner_ref->LockMutex(mutex_layer_id);
     for(std::list<Layer>::iterator itr = layers.begin(); itr != layers.end(); itr++)//Iterate through every layer
     {
-        itr->layer->apply_surface(itr->loc.X, itr->loc.Y, owner_ref->GetRenderer());//Draw
+        itr->layer->apply_surface(itr->loc.X, itr->loc.Y, owner_ref->GetRenderer(id));//Draw
+        owner_ref->UnlockRenderer(id);
     }
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_layer_id);

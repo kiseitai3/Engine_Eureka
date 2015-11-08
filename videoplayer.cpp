@@ -10,9 +10,11 @@ extern "C"
 
 VideoFrame::VideoFrame(Game* owner, int h, int w)
 {
+    size_t id;
     pts = 0;
     repeats = 0;
-    pYUV420PText = SDL_CreateTexture(&owner->GetRenderer(), SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, w, h);
+    pYUV420PText = SDL_CreateTexture(&owner->GetRenderer(id), SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, w, h);
+    owner->UnlockRenderer(id);
 }
 
 SubFrame::SubFrame()
@@ -219,6 +221,7 @@ void VideoPlayer::PlayVideo()
 
 void VideoPlayer::UpdateVideo()
 {
+    size_t id;
     //Clear all temporary variables
     //ClearTemporaryBuffers();
     int frameFinished = false;
@@ -296,7 +299,8 @@ void VideoPlayer::UpdateVideo()
             tmpSub.rect.y = vidScreen.h - ((((double)vidScreen.h - tmpSub.rect.h) / (vidScreen.h)) * vidScreen.h);
 
             //Now we process the subtitle image
-            tmpSub.subtitle = SDL_CreateTexture(&owner_ref->GetRenderer(), SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, tmpSub.rect.w, tmpSub.rect.h);
+            tmpSub.subtitle = SDL_CreateTexture(&owner_ref->GetRenderer(id), SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, tmpSub.rect.w, tmpSub.rect.h);
+            owner_ref->UnlockRenderer(id);
             size_t numBytes = avpicture_get_size(AV_PIX_FMT_YUV420P, tmpSub.rect.w, tmpSub.rect.h);
             pixelBuffer = (uint8_t *)av_malloc(numBytes*sizeof(uint8_t));
             avpicture_fill((AVPicture*)pframeYUV420P, pixelBuffer, AV_PIX_FMT_YUV420P, tmpSub.rect.w, tmpSub.rect.h);
@@ -314,6 +318,7 @@ void VideoPlayer::UpdateVideo()
 
 void VideoPlayer::DrawVideo()
 {
+    size_t id;
     //Lock mutex
     owner_ref->LockMutex(mutex_vid_id);
     //First we draw the actual video frame
@@ -324,7 +329,8 @@ void VideoPlayer::DrawVideo()
         if(ticks >= tmp->pts && ticks < (tmp->pts * tmp->repeats))
         {
             //If the timing is within the time indicated by FFmpeg, draw the frame
-            SDL_RenderCopy(&owner_ref->GetRenderer(), tmp->pYUV420PText, &vidScreen, &vidScreen);
+            SDL_RenderCopy(&owner_ref->GetRenderer(id), tmp->pYUV420PText, &vidScreen, &vidScreen);
+            owner_ref->UnlockRenderer(id);
         }
         else if(ticks > (tmp->pts * tmp->repeats))
         {
@@ -342,7 +348,8 @@ void VideoPlayer::DrawVideo()
         if(ticks >= tmp->beg_time && ticks < tmp->pts)
         {
             //If the timing is within the time indicated by FFmpeg, draw the frame
-            SDL_RenderCopy(&owner_ref->GetRenderer(), tmp->subtitle, &tmp->rect, &tmp->rect);
+            SDL_RenderCopy(&owner_ref->GetRenderer(id), tmp->subtitle, &tmp->rect, &tmp->rect);
+            owner_ref->UnlockRenderer(id);
         }
         else if(ticks > tmp->pts)
         {

@@ -5,6 +5,7 @@
 
 //Engine name space macro
 //ENGINE_NAMESPACE
+extern "C" int luaopen_EE(lua_State* L); // declare the wrapped module
 
 
 LuaWrap::LuaWrap(const char* file)
@@ -13,6 +14,7 @@ LuaWrap::LuaWrap(const char* file)
     //Initialization of the Lua State variable
     Lua = luaL_newstate();
     luaL_openlibs(Lua);
+    luaopen_EE(Lua);
     //Let's open the file!
     if(luaL_dofile(Lua, file))
     {

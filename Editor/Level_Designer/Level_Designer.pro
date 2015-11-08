@@ -16,13 +16,22 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     data_base.cpp \
     startup.cpp \
-    conversion.cpp
+    conversion.cpp \
+    texturesettings.cpp \
+    unitsettings.cpp \
+    physicssettings.cpp
 
 HEADERS  += mainwindow.h \
     data_base.h \
     startup.h \
     conversion.h \
-    globals.h
+    globals.h \
+    texturesettings.h \
+    unitsettings.h \
+    physicssettings.h
 
 FORMS    += mainwindow.ui \
-    startup.ui
+    startup.ui \
+    texturesettings.ui \
+    unitsettings.ui \
+    physicssettings.ui

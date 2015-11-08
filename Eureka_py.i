@@ -2,7 +2,8 @@
 %module EE
 
 
-
+%define static 
+%enddef
 /*SWIG includes for propper operations of wrapper*/
 %include carrays.i
 %include cstring.i
@@ -49,6 +50,7 @@
 #define IN 0x8000
 %}
 
+%include "sdl_defines.i"
 /* Let's just grab the original header file here */
 %include "rand_generators.h"
 %include "sqlkeywords.h"

@@ -130,7 +130,7 @@ void Input::LoadDefaultKeyBindings(cstr file)
     for(size_t i = 0; i < keybindingsCount; i++)
     {
         name = "key_" + intToStr(i);
-        key = DOM.GetIntFromData(name);
+        key = SDL_GetScancodeFromName(DOM.GetStrFromData(name).c_str());
         name = "key_" + intToStr(i) + "_function";
         fxn = DOM.GetStrFromData(name);
         keys.insert(key, KeyNode(key, fxn));
@@ -150,16 +150,21 @@ void Input::SaveKeyBindings(size_t db_id)
     std::vector<KeyNode> tmpObjs = keys.getContents();
     std::string data = "";
 
-    for(std::vector<KeyNode>::iterator itr = tmpObjs.begin(); itr != tmpObjs.end(); itr++)
+    for(size_t i = 0; i < tmpObjs.size(); i++)
     {
-        data = intToStr(itr->key) + itr->val;
-        db->query(db->prepareStatement("keybindings", data,std::string("keys=")+intToStr(itr->key),"","",UPDATE | WHERE));
+        data = intToStr(tmpObjs[i].key) + "," + tmpObjs[i].val;
+        db->query(db->prepareStatement("keybindings", data,std::string("id=")+intToStr(i),"","",UPDATE | WHERE));
     }
 }
 
 const raw_input& Input::GetRawInput() const
 {
     return state;
+}
+
+std::string Input::GetKeyName(size_t key) const
+{
+    return SDL_GetKeyName(SDL_GetKeyFromScancode((SDL_Scancode)key));
 }
 
 void Input::ProcessUIInput(Button* bt, textbox* txt)
@@ -237,6 +242,18 @@ void Input::UpdateInput(SDL_Event* pEvent)
         break;
     case SDL_CONTROLLERBUTTONUP:
     case SDL_CONTROLLERBUTTONDOWN:
+        //Add state code here if you wish to support controller input!
+        break;
+    case SDL_APP_WILLENTERBACKGROUND:
+        owner_ref->PauseGame();
+        break;
+    case SDL_APP_WILLENTERFOREGROUND:
+        owner_ref->ResumeGame();
+        break;
+    case SDL_APP_TERMINATING:
+        break;
+    case SDL_APP_LOWMEMORY:
+        std::cerr << "SDL informed the engine it is running low on memory! This could become fatal!" << std::endl;
         break;
     default:
         std::cout << "Unknown input type!" << std::endl;

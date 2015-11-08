@@ -24,6 +24,9 @@
      </rect>
     </property>
     <layout class="QGridLayout" name="gLWindow">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
      <item row="0" column="0">
       <widget class="QTabWidget" name="twTabs">
        <property name="currentIndex">
@@ -70,7 +73,7 @@
            <rect>
             <x>10</x>
             <y>20</y>
-            <width>191</width>
+            <width>221</width>
             <height>16</height>
            </rect>
           </property>
@@ -83,7 +86,7 @@
            <rect>
             <x>10</x>
             <y>90</y>
-            <width>241</width>
+            <width>281</width>
             <height>16</height>
            </rect>
           </property>
@@ -182,8 +185,8 @@
           <rect>
            <x>10</x>
            <y>500</y>
-           <width>75</width>
-           <height>23</height>
+           <width>101</width>
+           <height>31</height>
           </rect>
          </property>
          <property name="text">
@@ -200,7 +203,7 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>411</width>
+           <width>431</width>
            <height>241</height>
           </rect>
          </property>
@@ -235,7 +238,7 @@
            <rect>
             <x>20</x>
             <y>50</y>
-            <width>201</width>
+            <width>231</width>
             <height>16</height>
            </rect>
           </property>
@@ -246,17 +249,20 @@
          <widget class="QSpinBox" name="sbHeight">
           <property name="geometry">
            <rect>
-            <x>240</x>
+            <x>250</x>
             <y>50</y>
             <width>42</width>
             <height>22</height>
            </rect>
           </property>
+          <property name="maximum">
+           <number>99999999</number>
+          </property>
          </widget>
          <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>290</x>
+            <x>300</x>
             <y>50</y>
             <width>16</width>
             <height>16</height>
@@ -269,11 +275,14 @@
          <widget class="QSpinBox" name="sbWidth">
           <property name="geometry">
            <rect>
-            <x>310</x>
+            <x>320</x>
             <y>50</y>
             <width>42</width>
             <height>22</height>
            </rect>
+          </property>
+          <property name="maximum">
+           <number>99999999</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_7">
@@ -298,13 +307,16 @@
             <height>22</height>
            </rect>
           </property>
+          <property name="maximum">
+           <number>99999999</number>
+          </property>
          </widget>
          <widget class="QLabel" name="label_8">
           <property name="geometry">
            <rect>
             <x>150</x>
             <y>90</y>
-            <width>191</width>
+            <width>231</width>
             <height>16</height>
            </rect>
           </property>
@@ -315,11 +327,14 @@
          <widget class="QSpinBox" name="sbAnimCounter">
           <property name="geometry">
            <rect>
-            <x>350</x>
+            <x>380</x>
             <y>90</y>
             <width>42</width>
             <height>22</height>
            </rect>
+          </property>
+          <property name="maximum">
+           <number>99999999</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_9">
@@ -327,7 +342,7 @@
            <rect>
             <x>20</x>
             <y>120</y>
-            <width>191</width>
+            <width>241</width>
             <height>16</height>
            </rect>
           </property>
@@ -338,11 +353,14 @@
          <widget class="QSpinBox" name="sbTimePerFrame">
           <property name="geometry">
            <rect>
-            <x>220</x>
+            <x>260</x>
             <y>120</y>
             <width>42</width>
             <height>22</height>
            </rect>
+          </property>
+          <property name="maximum">
+           <number>99999999</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_10">
@@ -350,7 +368,7 @@
            <rect>
             <x>20</x>
             <y>150</y>
-            <width>161</width>
+            <width>191</width>
             <height>16</height>
            </rect>
           </property>
@@ -364,7 +382,7 @@
          <widget class="QSpinBox" name="sbAnimNum">
           <property name="geometry">
            <rect>
-            <x>190</x>
+            <x>210</x>
             <y>150</y>
             <width>42</width>
             <height>22</height>
@@ -376,7 +394,7 @@
            <rect>
             <x>20</x>
             <y>180</y>
-            <width>151</width>
+            <width>181</width>
             <height>16</height>
            </rect>
           </property>
@@ -387,7 +405,7 @@
          <widget class="QSpinBox" name="sbLoop">
           <property name="geometry">
            <rect>
-            <x>170</x>
+            <x>200</x>
             <y>180</y>
             <width>42</width>
             <height>22</height>
@@ -400,10 +418,10 @@
          <widget class="QPushButton" name="pbRegTexture">
           <property name="geometry">
            <rect>
-            <x>320</x>
-            <y>210</y>
+            <x>330</x>
+            <y>202</y>
             <width>75</width>
-            <height>23</height>
+            <height>31</height>
            </rect>
           </property>
           <property name="text">
@@ -415,7 +433,7 @@
            <rect>
             <x>20</x>
             <y>210</y>
-            <width>101</width>
+            <width>131</width>
             <height>16</height>
            </rect>
           </property>
@@ -426,12 +444,318 @@
          <widget class="QLineEdit" name="leTexName">
           <property name="geometry">
            <rect>
-            <x>130</x>
+            <x>150</x>
             <y>210</y>
-            <width>113</width>
+            <width>161</width>
             <height>20</height>
            </rect>
           </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>2</width>
+           <height>2</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetNoConstraint</enum>
+          </property>
+         </layout>
+        </widget>
+        <widget class="QGroupBox" name="groupBox_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>250</y>
+           <width>431</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Sound</string>
+         </property>
+         <widget class="QComboBox" name="comboBox">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>20</y>
+            <width>101</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Music (m)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Effect (e)</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Random audio (a)</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_13">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Sound type: </string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_14">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Sound Location:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_15">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>50</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>X-&gt;</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBox">
+          <property name="geometry">
+           <rect>
+            <x>150</x>
+            <y>50</y>
+            <width>42</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>99999999</number>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBox_2">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>50</y>
+            <width>42</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>99999999</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_16">
+          <property name="geometry">
+           <rect>
+            <x>200</x>
+            <y>50</y>
+            <width>21</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Y-&gt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_17">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Sound file: </string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>80</y>
+            <width>191</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>80</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="geometry">
+           <rect>
+            <x>290</x>
+            <y>120</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tabAssets">
+        <attribute name="title">
+         <string>Assets</string>
+        </attribute>
+        <widget class="QGroupBox" name="gbBaseAssets">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>481</width>
+           <height>551</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Base Assets</string>
+         </property>
+         <widget class="QTreeView" name="tvBaseAssets">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>461</width>
+            <height>441</height>
+           </rect>
+          </property>
+          <property name="uniformRowHeights">
+           <bool>false</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pbDelAsset">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>470</y>
+            <width>151</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Delete Selected Asset</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="gbRegisteredObjects">
+         <property name="geometry">
+          <rect>
+           <x>490</x>
+           <y>10</y>
+           <width>511</width>
+           <height>551</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Game Objects</string>
+         </property>
+         <widget class="QTreeView" name="tvRegisteredObjects">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>491</width>
+            <height>441</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pbNewObj">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>470</y>
+            <width>131</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Create New Object</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pbDelObj">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>510</y>
+            <width>161</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Delete Selected Object</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cbObjType">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>470</y>
+            <width>351</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Environment Object</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Unit</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Trigger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>UI</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </widget>
@@ -439,6 +763,173 @@
         <attribute name="title">
          <string>Level Designer</string>
         </attribute>
+        <widget class="QGroupBox" name="gbObjects">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>281</width>
+           <height>561</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Objects Toolbox</string>
+         </property>
+         <widget class="QTreeView" name="tvObjList">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>281</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <property name="uniformRowHeights">
+           <bool>true</bool>
+          </property>
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+          <property name="animated">
+           <bool>true</bool>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>530</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Undo</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QGroupBox" name="gbGamePreview">
+         <property name="geometry">
+          <rect>
+           <x>290</x>
+           <y>0</y>
+           <width>721</width>
+           <height>561</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>Game World Preview (real time)</string>
+         </property>
+         <widget class="QGraphicsView" name="gvGamePreview">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>711</width>
+            <height>531</height>
+           </rect>
+          </property>
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="renderHints">
+           <set>QPainter::Antialiasing|QPainter::HighQualityAntialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tabUIDesigner">
+        <attribute name="title">
+         <string>UI Designer</string>
+        </attribute>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>10</y>
+           <width>261</width>
+           <height>551</height>
+          </rect>
+         </property>
+         <property name="title">
+          <string>UI Toolbox</string>
+         </property>
+         <widget class="QTreeView" name="treeView">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>241</width>
+            <height>461</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>490</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Undo</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>520</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>490</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Save UI</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="geometry">
+          <rect>
+           <x>270</x>
+           <y>20</y>
+           <width>731</width>
+           <height>541</height>
+          </rect>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>729</width>
+            <height>539</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
        </widget>
       </widget>
      </item>
@@ -451,7 +942,7 @@
      <x>0</x>
      <y>0</y>
      <width>1019</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

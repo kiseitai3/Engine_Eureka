@@ -16,6 +16,7 @@ void traversalRender(const size_t& id, ParticleNode*& node)
 /*Particle*/
 Particle::Particle(Game* owner, cstr file, const math_point& location, draw_base* refParticle) : Physics()
 {
+    size_t id;
     data_base settings(file);
     particle = NULL;
     if(settings.GetStateOfInternalBuffer())//Let's make sure we could actually load the particle file
@@ -42,7 +43,8 @@ Particle::Particle(Game* owner, cstr file, const math_point& location, draw_base
 
         if(particle && !refParticle)//If allocation was successful, try to load settings for the particle texture
         {
-            particle->Load_Texture(settings.GetStrFromData("texture_file").c_str(), owner->GetRenderer(), settings.GetIntFromData("fps"));
+            particle->Load_Texture(settings.GetStrFromData("texture_file").c_str(), owner->GetRenderer(id), settings.GetIntFromData("fps"));
+            owner->UnlockRenderer(id);
         }
         else
         {
@@ -72,7 +74,9 @@ Particle::Particle(Game* owner, cstr file, const math_point& location, draw_base
 
 void Particle::RenderParticle()//Let's draw the texture
 {
-    particle->apply_surface(GetLoc().X, GetLoc().Y, owner_ref->GetRenderer());
+    size_t id;
+    particle->apply_surface(GetLoc().X, GetLoc().Y, owner_ref->GetRenderer(id));
+    owner_ref->UnlockRenderer(id);
     if(t && t->get_ticks() >= life)
     {
         dead = true;

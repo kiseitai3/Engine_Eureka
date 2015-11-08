@@ -2942,90 +2942,93 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_Cursor swig_types[2]
 #define SWIGTYPE_p_CursorNode swig_types[3]
 #define SWIGTYPE_p_DataBase swig_types[4]
-#define SWIGTYPE_p_Game swig_types[5]
-#define SWIGTYPE_p_GameInfo swig_types[6]
-#define SWIGTYPE_p_IOManager swig_types[7]
-#define SWIGTYPE_p_IONode swig_types[8]
-#define SWIGTYPE_p_IPaddress swig_types[9]
-#define SWIGTYPE_p_Input swig_types[10]
-#define SWIGTYPE_p_InputKeyboard swig_types[11]
-#define SWIGTYPE_p_InputMouse swig_types[12]
-#define SWIGTYPE_p_KeyNode swig_types[13]
-#define SWIGTYPE_p_Layer swig_types[14]
-#define SWIGTYPE_p_LayerSystem swig_types[15]
-#define SWIGTYPE_p_Level swig_types[16]
-#define SWIGTYPE_p_ModAdapter swig_types[17]
-#define SWIGTYPE_p_ModuleNode swig_types[18]
-#define SWIGTYPE_p_ModuleSystem swig_types[19]
-#define SWIGTYPE_p_NetNode swig_types[20]
-#define SWIGTYPE_p_NetworkManager swig_types[21]
-#define SWIGTYPE_p_Particle swig_types[22]
-#define SWIGTYPE_p_ParticleCluster swig_types[23]
-#define SWIGTYPE_p_ParticleNode swig_types[24]
-#define SWIGTYPE_p_ParticleSystem swig_types[25]
-#define SWIGTYPE_p_Physics swig_types[26]
-#define SWIGTYPE_p_Range swig_types[27]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[28]
-#define SWIGTYPE_p_SDL_Event swig_types[29]
-#define SWIGTYPE_p_SDL_Rect swig_types[30]
-#define SWIGTYPE_p_SDL_Renderer swig_types[31]
-#define SWIGTYPE_p_SDL_Texture swig_types[32]
-#define SWIGTYPE_p_SQLGenerator swig_types[33]
-#define SWIGTYPE_p_ScreenInfo swig_types[34]
-#define SWIGTYPE_p_ScriptWrap swig_types[35]
-#define SWIGTYPE_p_SoundChunk swig_types[36]
-#define SWIGTYPE_p_SoundInfo swig_types[37]
-#define SWIGTYPE_p_SoundQueue swig_types[38]
-#define SWIGTYPE_p_SubFrame swig_types[39]
-#define SWIGTYPE_p_SynchData swig_types[40]
-#define SWIGTYPE_p_TCPClient swig_types[41]
-#define SWIGTYPE_p_TCPsocket swig_types[42]
-#define SWIGTYPE_p_TextureStore swig_types[43]
-#define SWIGTYPE_p_ThreadSystem swig_types[44]
-#define SWIGTYPE_p_Timer swig_types[45]
-#define SWIGTYPE_p_TimerSystem swig_types[46]
-#define SWIGTYPE_p_Trigger swig_types[47]
-#define SWIGTYPE_p_TriggerManager swig_types[48]
-#define SWIGTYPE_p_UDPClient swig_types[49]
-#define SWIGTYPE_p_UDPsocket swig_types[50]
-#define SWIGTYPE_p_UI swig_types[51]
-#define SWIGTYPE_p_UIManager swig_types[52]
-#define SWIGTYPE_p_Uint8 swig_types[53]
-#define SWIGTYPE_p_Unit swig_types[54]
-#define SWIGTYPE_p_UnitManager swig_types[55]
-#define SWIGTYPE_p_UnitNode swig_types[56]
-#define SWIGTYPE_p_VideoFrame swig_types[57]
-#define SWIGTYPE_p_VideoPlayer swig_types[58]
-#define SWIGTYPE_p_bool swig_types[59]
-#define SWIGTYPE_p_char swig_types[60]
-#define SWIGTYPE_p_data_base swig_types[61]
-#define SWIGTYPE_p_double swig_types[62]
-#define SWIGTYPE_p_draw_base swig_types[63]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[64]
-#define SWIGTYPE_p_int swig_types[65]
-#define SWIGTYPE_p_math_VECTOR swig_types[66]
-#define SWIGTYPE_p_math_point swig_types[67]
-#define SWIGTYPE_p_pChar swig_types[68]
-#define SWIGTYPE_p_p_ParticleNode swig_types[69]
-#define SWIGTYPE_p_psudo_type swig_types[70]
-#define SWIGTYPE_p_pthread_cond_t swig_types[71]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[72]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[73]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[74]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[75]
-#define SWIGTYPE_p_raw_input swig_types[76]
-#define SWIGTYPE_p_size_t swig_types[77]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[78]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[79]
-#define SWIGTYPE_p_std__string swig_types[80]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[81]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[82]
-#define SWIGTYPE_p_textbox swig_types[83]
-#define SWIGTYPE_p_unsigned_char swig_types[84]
-#define SWIGTYPE_p_unsigned_short swig_types[85]
-#define SWIGTYPE_p_void swig_types[86]
-static swig_type_info *swig_types[88];
-static swig_module_info swig_module = {swig_types, 87, 0, 0, 0, 0};
+#define SWIGTYPE_p_ExpansionInfo swig_types[5]
+#define SWIGTYPE_p_ExpansionItem swig_types[6]
+#define SWIGTYPE_p_Game swig_types[7]
+#define SWIGTYPE_p_GameInfo swig_types[8]
+#define SWIGTYPE_p_IOManager swig_types[9]
+#define SWIGTYPE_p_IONode swig_types[10]
+#define SWIGTYPE_p_IPaddress swig_types[11]
+#define SWIGTYPE_p_Input swig_types[12]
+#define SWIGTYPE_p_InputKeyboard swig_types[13]
+#define SWIGTYPE_p_InputMouse swig_types[14]
+#define SWIGTYPE_p_KeyNode swig_types[15]
+#define SWIGTYPE_p_Layer swig_types[16]
+#define SWIGTYPE_p_LayerSystem swig_types[17]
+#define SWIGTYPE_p_Level swig_types[18]
+#define SWIGTYPE_p_ModAdapter swig_types[19]
+#define SWIGTYPE_p_ModuleNode swig_types[20]
+#define SWIGTYPE_p_ModuleSystem swig_types[21]
+#define SWIGTYPE_p_NetNode swig_types[22]
+#define SWIGTYPE_p_NetworkManager swig_types[23]
+#define SWIGTYPE_p_Particle swig_types[24]
+#define SWIGTYPE_p_ParticleCluster swig_types[25]
+#define SWIGTYPE_p_ParticleNode swig_types[26]
+#define SWIGTYPE_p_ParticleSystem swig_types[27]
+#define SWIGTYPE_p_Physics swig_types[28]
+#define SWIGTYPE_p_Range swig_types[29]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[30]
+#define SWIGTYPE_p_SDL_Event swig_types[31]
+#define SWIGTYPE_p_SDL_Rect swig_types[32]
+#define SWIGTYPE_p_SDL_Renderer swig_types[33]
+#define SWIGTYPE_p_SDL_Scancode swig_types[34]
+#define SWIGTYPE_p_SDL_Texture swig_types[35]
+#define SWIGTYPE_p_SQLGenerator swig_types[36]
+#define SWIGTYPE_p_ScreenInfo swig_types[37]
+#define SWIGTYPE_p_ScriptWrap swig_types[38]
+#define SWIGTYPE_p_SoundChunk swig_types[39]
+#define SWIGTYPE_p_SoundInfo swig_types[40]
+#define SWIGTYPE_p_SoundQueue swig_types[41]
+#define SWIGTYPE_p_SubFrame swig_types[42]
+#define SWIGTYPE_p_SynchData swig_types[43]
+#define SWIGTYPE_p_TCPClient swig_types[44]
+#define SWIGTYPE_p_TCPsocket swig_types[45]
+#define SWIGTYPE_p_TextureStore swig_types[46]
+#define SWIGTYPE_p_ThreadSystem swig_types[47]
+#define SWIGTYPE_p_Timer swig_types[48]
+#define SWIGTYPE_p_TimerSystem swig_types[49]
+#define SWIGTYPE_p_Trigger swig_types[50]
+#define SWIGTYPE_p_TriggerManager swig_types[51]
+#define SWIGTYPE_p_UDPClient swig_types[52]
+#define SWIGTYPE_p_UDPsocket swig_types[53]
+#define SWIGTYPE_p_UI swig_types[54]
+#define SWIGTYPE_p_UIManager swig_types[55]
+#define SWIGTYPE_p_Uint8 swig_types[56]
+#define SWIGTYPE_p_Unit swig_types[57]
+#define SWIGTYPE_p_UnitManager swig_types[58]
+#define SWIGTYPE_p_UnitNode swig_types[59]
+#define SWIGTYPE_p_VideoFrame swig_types[60]
+#define SWIGTYPE_p_VideoPlayer swig_types[61]
+#define SWIGTYPE_p_bool swig_types[62]
+#define SWIGTYPE_p_char swig_types[63]
+#define SWIGTYPE_p_data_base swig_types[64]
+#define SWIGTYPE_p_double swig_types[65]
+#define SWIGTYPE_p_draw_base swig_types[66]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[67]
+#define SWIGTYPE_p_int swig_types[68]
+#define SWIGTYPE_p_math_VECTOR swig_types[69]
+#define SWIGTYPE_p_math_point swig_types[70]
+#define SWIGTYPE_p_pChar swig_types[71]
+#define SWIGTYPE_p_p_ParticleNode swig_types[72]
+#define SWIGTYPE_p_psudo_type swig_types[73]
+#define SWIGTYPE_p_pthread_cond_t swig_types[74]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[75]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[76]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[77]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[78]
+#define SWIGTYPE_p_raw_input swig_types[79]
+#define SWIGTYPE_p_size_t swig_types[80]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[81]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[82]
+#define SWIGTYPE_p_std__string swig_types[83]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[84]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[85]
+#define SWIGTYPE_p_textbox swig_types[86]
+#define SWIGTYPE_p_unsigned_char swig_types[87]
+#define SWIGTYPE_p_unsigned_short swig_types[88]
+#define SWIGTYPE_p_void swig_types[89]
+static swig_type_info *swig_types[91];
+static swig_module_info swig_module = {swig_types, 90, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3140,7 +3143,9 @@ typedef struct SWIGCDATA {
 extern "C"  {    
 
 
-static SWIGCDATA cdata_void(void *ptr, size_t nelements)
+/*@SWIG:..\..\Eureka_py.i,5,static@*/
+/*@SWIG@*/ SWIGCDATA cdata_void(void *ptr, size_t nelements)
+
 
 
 
@@ -3461,6 +3466,45 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 #define IN 0x8000
 
 
+#include <SDL_scancode.h>
+typedef enum EE_Enum
+{    /* Joystick events */
+    EE_JOYAXISMOTION  = 0x600, /**< Joystick axis motion */
+    EE_JOYBALLMOTION,          /**< Joystick trackball motion */
+    EE_JOYHATMOTION,           /**< Joystick hat position change */
+    EE_JOYBUTTONDOWN,          /**< Joystick button pressed */
+    EE_JOYBUTTONUP,            /**< Joystick button released */
+    EE_JOYDEVICEADDED,         /**< A new joystick has been inserted into the system */
+    EE_JOYDEVICEREMOVED,       /**< An opened joystick has been removed */
+
+    /* Game controller events */
+    EE_CONTROLLERAXISMOTION  = 0x650, /**< Game controller axis motion */
+    EE_CONTROLLERBUTTONDOWN,          /**< Game controller button pressed */
+    EE_CONTROLLERBUTTONUP,            /**< Game controller button released */
+    EE_CONTROLLERDEVICEADDED,         /**< A new Game controller has been inserted into the system */
+    EE_CONTROLLERDEVICEREMOVED,       /**< An opened Game controller has been removed */
+    EE_CONTROLLERDEVICEREMAPPED,      /**< The controller mapping was updated */
+
+    /* Touch events */
+    EE_FINGERDOWN      = 0x700,
+    EE_FINGERUP,
+    EE_FINGERMOTION,
+
+    /* Gesture events */
+    EE_DOLLARGESTURE   = 0x800,
+    EE_DOLLARRECORD,
+    EE_MULTIGESTURE,
+};
+
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_int  (int value)
+{
+  return PyInt_FromLong((long) value);
+}
+
+
   #define SWIG_From_long   PyLong_FromLong 
 
 
@@ -3476,13 +3520,6 @@ SWIGINTERNINLINE PyObject *
 SWIG_From_size_t  (size_t value)
 {    
   return SWIG_From_unsigned_SS_long  (static_cast< unsigned long >(value));
-}
-
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
-{
-  return PyInt_FromLong((long) value);
 }
 
 
@@ -3507,8 +3544,10 @@ SWIG_AsPtr_std_string (PyObject * obj, std::string **val)
       return SWIG_OLDOBJ;
     }
   } else {
-    static int init = 0;
-    static swig_type_info* descriptor = 0;
+    /*@SWIG:..\..\Eureka_py.i,5,static@*/
+/*@SWIG@*/ int init = 0;
+    /*@SWIG:..\..\Eureka_py.i,5,static@*/
+/*@SWIG@*/ swig_type_info* descriptor = 0;
     if (!init) {
       descriptor = SWIG_TypeQuery("std::string" " *");
       init = 1;
@@ -3819,6 +3858,2668 @@ SWIGINTERN PyObject *_wrap_memmove(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_UNKNOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_UNKNOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_UNKNOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_A_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_A",SWIG_From_int(static_cast< int >(SDL_SCANCODE_A)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_B_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_B",SWIG_From_int(static_cast< int >(SDL_SCANCODE_B)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_C_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_C",SWIG_From_int(static_cast< int >(SDL_SCANCODE_C)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_D_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_D",SWIG_From_int(static_cast< int >(SDL_SCANCODE_D)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_E_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_E",SWIG_From_int(static_cast< int >(SDL_SCANCODE_E)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_G_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_G",SWIG_From_int(static_cast< int >(SDL_SCANCODE_G)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_H_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_H",SWIG_From_int(static_cast< int >(SDL_SCANCODE_H)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_I_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_I",SWIG_From_int(static_cast< int >(SDL_SCANCODE_I)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_J_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_J",SWIG_From_int(static_cast< int >(SDL_SCANCODE_J)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_K_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_K",SWIG_From_int(static_cast< int >(SDL_SCANCODE_K)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_L_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_L",SWIG_From_int(static_cast< int >(SDL_SCANCODE_L)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_M_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_M",SWIG_From_int(static_cast< int >(SDL_SCANCODE_M)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_N_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_N",SWIG_From_int(static_cast< int >(SDL_SCANCODE_N)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_O_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_O",SWIG_From_int(static_cast< int >(SDL_SCANCODE_O)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_P_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_P",SWIG_From_int(static_cast< int >(SDL_SCANCODE_P)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_Q_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_Q",SWIG_From_int(static_cast< int >(SDL_SCANCODE_Q)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_R_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_R",SWIG_From_int(static_cast< int >(SDL_SCANCODE_R)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_S_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_S",SWIG_From_int(static_cast< int >(SDL_SCANCODE_S)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_T_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_T",SWIG_From_int(static_cast< int >(SDL_SCANCODE_T)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_U_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_U",SWIG_From_int(static_cast< int >(SDL_SCANCODE_U)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_V_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_V",SWIG_From_int(static_cast< int >(SDL_SCANCODE_V)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_W_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_W",SWIG_From_int(static_cast< int >(SDL_SCANCODE_W)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_X_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_X",SWIG_From_int(static_cast< int >(SDL_SCANCODE_X)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_Y_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_Y",SWIG_From_int(static_cast< int >(SDL_SCANCODE_Y)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_Z_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_Z",SWIG_From_int(static_cast< int >(SDL_SCANCODE_Z)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_3_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_3",SWIG_From_int(static_cast< int >(SDL_SCANCODE_3)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_4_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_4",SWIG_From_int(static_cast< int >(SDL_SCANCODE_4)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_5_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_5",SWIG_From_int(static_cast< int >(SDL_SCANCODE_5)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_6_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_6",SWIG_From_int(static_cast< int >(SDL_SCANCODE_6)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_7_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_7",SWIG_From_int(static_cast< int >(SDL_SCANCODE_7)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_8_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_8",SWIG_From_int(static_cast< int >(SDL_SCANCODE_8)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_9_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_9",SWIG_From_int(static_cast< int >(SDL_SCANCODE_9)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_0_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_0",SWIG_From_int(static_cast< int >(SDL_SCANCODE_0)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RETURN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RETURN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RETURN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_ESCAPE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_ESCAPE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_ESCAPE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_BACKSPACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_BACKSPACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_BACKSPACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_TAB_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_TAB",SWIG_From_int(static_cast< int >(SDL_SCANCODE_TAB)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SPACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SPACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SPACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MINUS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MINUS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MINUS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_EQUALS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_EQUALS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_EQUALS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LEFTBRACKET_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LEFTBRACKET",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LEFTBRACKET)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RIGHTBRACKET_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RIGHTBRACKET",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RIGHTBRACKET)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_BACKSLASH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_BACKSLASH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_BACKSLASH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_NONUSHASH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_NONUSHASH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_NONUSHASH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SEMICOLON_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SEMICOLON",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SEMICOLON)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_APOSTROPHE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_APOSTROPHE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_APOSTROPHE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_GRAVE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_GRAVE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_GRAVE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_COMMA_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_COMMA",SWIG_From_int(static_cast< int >(SDL_SCANCODE_COMMA)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PERIOD_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PERIOD",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PERIOD)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SLASH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SLASH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SLASH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CAPSLOCK_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CAPSLOCK",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CAPSLOCK)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F3_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F3",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F3)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F4_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F4",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F4)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F5_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F5",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F5)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F6_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F6",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F6)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F7_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F7",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F7)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F8_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F8",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F8)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F9_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F9",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F9)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F10_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F10",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F10)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F11_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F11",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F11)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F12_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F12",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F12)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PRINTSCREEN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PRINTSCREEN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PRINTSCREEN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SCROLLLOCK_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SCROLLLOCK",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SCROLLLOCK)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PAUSE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PAUSE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PAUSE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INSERT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INSERT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INSERT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_HOME_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_HOME",SWIG_From_int(static_cast< int >(SDL_SCANCODE_HOME)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PAGEUP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PAGEUP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PAGEUP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_DELETE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_DELETE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_DELETE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_END_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_END",SWIG_From_int(static_cast< int >(SDL_SCANCODE_END)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PAGEDOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PAGEDOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PAGEDOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RIGHT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RIGHT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RIGHT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LEFT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LEFT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LEFT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_DOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_DOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_DOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_UP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_UP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_UP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_NUMLOCKCLEAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_NUMLOCKCLEAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_NUMLOCKCLEAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_DIVIDE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_DIVIDE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_DIVIDE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MULTIPLY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MULTIPLY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MULTIPLY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MINUS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MINUS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MINUS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_PLUS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_PLUS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_PLUS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_ENTER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_ENTER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_ENTER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_3_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_3",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_3)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_4_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_4",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_4)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_5_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_5",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_5)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_6_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_6",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_6)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_7_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_7",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_7)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_8_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_8",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_8)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_9_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_9",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_9)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_0_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_0",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_0)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_PERIOD_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_PERIOD",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_PERIOD)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_NONUSBACKSLASH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_NONUSBACKSLASH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_NONUSBACKSLASH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_APPLICATION_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_APPLICATION",SWIG_From_int(static_cast< int >(SDL_SCANCODE_APPLICATION)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_POWER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_POWER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_POWER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_EQUALS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_EQUALS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_EQUALS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F13_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F13",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F13)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F14_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F14",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F14)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F15_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F15",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F15)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F16_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F16",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F16)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F17_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F17",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F17)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F18_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F18",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F18)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F19_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F19",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F19)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F20_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F20",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F20)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F21_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F21",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F21)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F22_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F22",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F22)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F23_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F23",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F23)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_F24_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_F24",SWIG_From_int(static_cast< int >(SDL_SCANCODE_F24)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_EXECUTE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_EXECUTE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_EXECUTE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_HELP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_HELP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_HELP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MENU_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MENU",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MENU)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SELECT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SELECT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SELECT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_STOP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_STOP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_STOP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AGAIN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AGAIN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AGAIN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_UNDO_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_UNDO",SWIG_From_int(static_cast< int >(SDL_SCANCODE_UNDO)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CUT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CUT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CUT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_COPY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_COPY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_COPY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PASTE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PASTE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PASTE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_FIND_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_FIND",SWIG_From_int(static_cast< int >(SDL_SCANCODE_FIND)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MUTE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MUTE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MUTE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_VOLUMEUP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_VOLUMEUP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_VOLUMEUP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_VOLUMEDOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_VOLUMEDOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_VOLUMEDOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_COMMA_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_COMMA",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_COMMA)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_EQUALSAS400_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_EQUALSAS400",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_EQUALSAS400)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL3_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL3",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL3)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL4_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL4",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL4)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL5_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL5",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL5)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL6_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL6",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL6)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL7_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL7",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL7)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL8_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL8",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL8)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_INTERNATIONAL9_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_INTERNATIONAL9",SWIG_From_int(static_cast< int >(SDL_SCANCODE_INTERNATIONAL9)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG3_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG3",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG3)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG4_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG4",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG4)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG5_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG5",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG5)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG6_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG6",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG6)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG7_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG7",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG7)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG8_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG8",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG8)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LANG9_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LANG9",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LANG9)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_ALTERASE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_ALTERASE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_ALTERASE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SYSREQ_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SYSREQ",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SYSREQ)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CANCEL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CANCEL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CANCEL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CLEAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CLEAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CLEAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_PRIOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_PRIOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_PRIOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RETURN2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RETURN2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RETURN2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SEPARATOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SEPARATOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SEPARATOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_OUT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_OUT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_OUT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_OPER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_OPER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_OPER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CLEARAGAIN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CLEARAGAIN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CLEARAGAIN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CRSEL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CRSEL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CRSEL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_EXSEL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_EXSEL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_EXSEL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_00_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_00",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_00)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_000_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_000",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_000)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_THOUSANDSSEPARATOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_THOUSANDSSEPARATOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_THOUSANDSSEPARATOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_DECIMALSEPARATOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_DECIMALSEPARATOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_DECIMALSEPARATOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CURRENCYUNIT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CURRENCYUNIT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CURRENCYUNIT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CURRENCYSUBUNIT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CURRENCYSUBUNIT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CURRENCYSUBUNIT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_LEFTPAREN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_LEFTPAREN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_LEFTPAREN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_RIGHTPAREN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_RIGHTPAREN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_RIGHTPAREN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_LEFTBRACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_LEFTBRACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_LEFTBRACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_RIGHTBRACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_RIGHTBRACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_RIGHTBRACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_TAB_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_TAB",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_TAB)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_BACKSPACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_BACKSPACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_BACKSPACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_A_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_A",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_A)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_B_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_B",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_B)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_C_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_C",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_C)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_D_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_D",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_D)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_E_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_E",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_E)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_F_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_F",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_F)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_XOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_XOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_XOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_POWER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_POWER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_POWER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_PERCENT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_PERCENT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_PERCENT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_LESS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_LESS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_LESS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_GREATER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_GREATER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_GREATER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_AMPERSAND_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_AMPERSAND",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_AMPERSAND)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_DBLAMPERSAND_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_DBLAMPERSAND",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_DBLAMPERSAND)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_VERTICALBAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_VERTICALBAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_VERTICALBAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_DBLVERTICALBAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_DBLVERTICALBAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_DBLVERTICALBAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_COLON_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_COLON",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_COLON)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_HASH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_HASH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_HASH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_SPACE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_SPACE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_SPACE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_AT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_AT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_AT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_EXCLAM_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_EXCLAM",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_EXCLAM)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMSTORE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMSTORE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMSTORE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMRECALL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMRECALL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMRECALL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMCLEAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMCLEAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMCLEAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMADD_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMADD",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMADD)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMSUBTRACT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMSUBTRACT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMSUBTRACT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMMULTIPLY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMMULTIPLY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMMULTIPLY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_MEMDIVIDE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_MEMDIVIDE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_MEMDIVIDE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_PLUSMINUS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_PLUSMINUS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_PLUSMINUS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_CLEAR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_CLEAR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_CLEAR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_CLEARENTRY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_CLEARENTRY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_CLEARENTRY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_BINARY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_BINARY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_BINARY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_OCTAL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_OCTAL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_OCTAL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_DECIMAL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_DECIMAL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_DECIMAL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KP_HEXADECIMAL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KP_HEXADECIMAL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KP_HEXADECIMAL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LCTRL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LCTRL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LCTRL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LSHIFT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LSHIFT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LSHIFT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LALT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LALT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LALT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_LGUI_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_LGUI",SWIG_From_int(static_cast< int >(SDL_SCANCODE_LGUI)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RCTRL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RCTRL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RCTRL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RSHIFT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RSHIFT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RSHIFT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RALT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RALT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RALT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_RGUI_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_RGUI",SWIG_From_int(static_cast< int >(SDL_SCANCODE_RGUI)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MODE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MODE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MODE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AUDIONEXT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AUDIONEXT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AUDIONEXT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AUDIOPREV_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AUDIOPREV",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AUDIOPREV)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AUDIOSTOP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AUDIOSTOP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AUDIOSTOP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AUDIOPLAY_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AUDIOPLAY",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AUDIOPLAY)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AUDIOMUTE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AUDIOMUTE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AUDIOMUTE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MEDIASELECT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MEDIASELECT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MEDIASELECT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_WWW_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_WWW",SWIG_From_int(static_cast< int >(SDL_SCANCODE_WWW)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_MAIL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_MAIL",SWIG_From_int(static_cast< int >(SDL_SCANCODE_MAIL)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_CALCULATOR_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_CALCULATOR",SWIG_From_int(static_cast< int >(SDL_SCANCODE_CALCULATOR)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_COMPUTER_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_COMPUTER",SWIG_From_int(static_cast< int >(SDL_SCANCODE_COMPUTER)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_SEARCH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_SEARCH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_SEARCH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_HOME_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_HOME",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_HOME)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_BACK_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_BACK",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_BACK)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_FORWARD_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_FORWARD",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_FORWARD)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_STOP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_STOP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_STOP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_REFRESH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_REFRESH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_REFRESH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_AC_BOOKMARKS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_AC_BOOKMARKS",SWIG_From_int(static_cast< int >(SDL_SCANCODE_AC_BOOKMARKS)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_BRIGHTNESSDOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_BRIGHTNESSDOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_BRIGHTNESSDOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_BRIGHTNESSUP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_BRIGHTNESSUP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_BRIGHTNESSUP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_DISPLAYSWITCH_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_DISPLAYSWITCH",SWIG_From_int(static_cast< int >(SDL_SCANCODE_DISPLAYSWITCH)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KBDILLUMTOGGLE_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KBDILLUMTOGGLE",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KBDILLUMTOGGLE)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KBDILLUMDOWN_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KBDILLUMDOWN",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KBDILLUMDOWN)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_KBDILLUMUP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_KBDILLUMUP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_KBDILLUMUP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_EJECT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_EJECT",SWIG_From_int(static_cast< int >(SDL_SCANCODE_EJECT)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_SLEEP_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_SLEEP",SWIG_From_int(static_cast< int >(SDL_SCANCODE_SLEEP)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_APP1_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_APP1",SWIG_From_int(static_cast< int >(SDL_SCANCODE_APP1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_SCANCODE_APP2_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_SCANCODE_APP2",SWIG_From_int(static_cast< int >(SDL_SCANCODE_APP2)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *SDL_NUM_SCANCODES_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "SDL_NUM_SCANCODES",SWIG_From_int(static_cast< int >(SDL_NUM_SCANCODES)));
+  return SWIG_Py_Void();
 }
 
 
@@ -4486,17 +7187,25 @@ SWIGINTERN PyObject *Swig_var_Keywords_get(void) {
 }
 
 
-SWIGINTERN int Swig_var_SQLQuery_WILDCARD_set(PyObject *) {
-  SWIG_Error(SWIG_AttributeError,"Variable SQLQuery_WILDCARD is read-only.");
-  return 1;
-}
-
-
-SWIGINTERN PyObject *Swig_var_SQLQuery_WILDCARD_get(void) {
-  PyObject *pyobj = 0;
+SWIGINTERN PyObject *_wrap_SQLQuery_WILDCARD_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SQLGenerator *arg1 = (SQLGenerator *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
   
-  pyobj = SWIG_From_std_string(static_cast< std::string >(SQLGenerator::WILDCARD));
-  return pyobj;
+  if (!PyArg_ParseTuple(args,(char *)"O:SQLQuery_WILDCARD_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SQLGenerator, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SQLQuery_WILDCARD_get" "', argument " "1"" of type '" "SQLGenerator *""'"); 
+  }
+  arg1 = reinterpret_cast< SQLGenerator * >(argp1);
+  result = (std::string *) & ((arg1)->WILDCARD);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -8319,24 +11028,33 @@ fail:
 
 SWIGINTERN PyObject *_wrap_data_base_CreateNewFile_static(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  char *arg1 = (char *) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
+  data_base *arg1 = (data_base *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:data_base_CreateNewFile_static",&obj0)) SWIG_fail;
-  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!PyArg_ParseTuple(args,(char *)"OO:data_base_CreateNewFile_static",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_data_base, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data_base_CreateNewFile_static" "', argument " "1"" of type '" "char const *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data_base_CreateNewFile_static" "', argument " "1"" of type '" "data_base *""'"); 
   }
-  arg1 = reinterpret_cast< char * >(buf1);
-  data_base::CreateNewFile_static((char const *)arg1);
+  arg1 = reinterpret_cast< data_base * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "data_base_CreateNewFile_static" "', argument " "2"" of type '" "char const *""'");
+  }
+  arg2 = reinterpret_cast< char * >(buf2);
+  (arg1)->CreateNewFile_static((char const *)arg2);
   resultobj = SWIG_Py_Void();
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return resultobj;
 fail:
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return NULL;
 }
 
@@ -8362,45 +11080,63 @@ fail:
 }
 
 
-SWIGINTERN int Swig_var_data_base_BUFFER_set(PyObject *_val) {
-  {
-    char *cptr = 0; size_t csize = 0; int alloc = SWIG_NEWOBJ;
-    int res = SWIG_AsCharPtrAndSize(_val, &cptr, &csize, &alloc);
-    if (!SWIG_IsOK(res)) {
-      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""data_base::BUFFER""' of type '""char const *""'");
-    }
-    if (alloc == SWIG_NEWOBJ) {
-      data_base::BUFFER = cptr;
-    } else {
-      data_base::BUFFER = csize ? (char const *)reinterpret_cast< char* >(memcpy((new char[csize]), cptr, sizeof(char)*(csize))) : 0;
-    }
-  }
-  return 0;
-fail:
-  return 1;
-}
-
-
-SWIGINTERN PyObject *Swig_var_data_base_BUFFER_get(void) {
-  PyObject *pyobj = 0;
-  
-  pyobj = SWIG_FromCharPtr(data_base::BUFFER);
-  return pyobj;
-}
-
-
-SWIGINTERN PyObject *_wrap_data_base_BUFFER_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
-  return Swig_var_data_base_BUFFER_get();
-}
-
-
 SWIGINTERN PyObject *_wrap_data_base_BUFFER_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  int res;
-  PyObject *value;
+  PyObject *resultobj = 0;
+  data_base *arg1 = (data_base *) 0 ;
+  char *arg2 = (char *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:set",&value)) return NULL;
-  res = Swig_var_data_base_BUFFER_set(value);
-  return !res ? SWIG_Py_Void() : NULL;
+  if (!PyArg_ParseTuple(args,(char *)"OO:data_base_BUFFER_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_data_base, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data_base_BUFFER_set" "', argument " "1"" of type '" "data_base *""'"); 
+  }
+  arg1 = reinterpret_cast< data_base * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "data_base_BUFFER_set" "', argument " "2"" of type '" "char const *""'");
+  }
+  arg2 = reinterpret_cast< char * >(buf2);
+  if (arg2) {
+    size_t size = strlen(reinterpret_cast< const char * >(reinterpret_cast< const char * >(arg2))) + 1;
+    arg1->BUFFER = (char const *)reinterpret_cast< char* >(memcpy((new char[size]), arg2, sizeof(char)*(size)));
+  } else {
+    arg1->BUFFER = 0;
+  }
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_data_base_BUFFER_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  data_base *arg1 = (data_base *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  char *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:data_base_BUFFER_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_data_base, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "data_base_BUFFER_get" "', argument " "1"" of type '" "data_base *""'"); 
+  }
+  arg1 = reinterpret_cast< data_base * >(argp1);
+  result = (char *) ((arg1)->BUFFER);
+  resultobj = SWIG_FromCharPtr((const char *)result);
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -9572,48 +12308,63 @@ fail:
 }
 
 
-SWIGINTERN int Swig_var_draw_base_textures_set(PyObject *_val) {
+SWIGINTERN PyObject *_wrap_draw_base_textures_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  draw_base *arg1 = (draw_base *) 0 ;
+  TextureStore arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:draw_base_textures_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "draw_base_textures_set" "', argument " "1"" of type '" "draw_base *""'"); 
+  }
+  arg1 = reinterpret_cast< draw_base * >(argp1);
   {
-    void *argp = 0;
-    int res = SWIG_ConvertPtr(_val, &argp, SWIGTYPE_p_TextureStore,  0  | 0);
-    if (!SWIG_IsOK(res)) {
-      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""draw_base::textures""' of type '""TextureStore""'");
-    }
-    if (!argp) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""draw_base::textures""' of type '""TextureStore""'");
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TextureStore,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "draw_base_textures_set" "', argument " "2"" of type '" "TextureStore""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "draw_base_textures_set" "', argument " "2"" of type '" "TextureStore""'");
     } else {
-      TextureStore * temp;
-      temp  = reinterpret_cast< TextureStore * >(argp);
-      draw_base::textures = *temp;
-      if (SWIG_IsNewObj(res)) delete temp;
+      TextureStore * temp = reinterpret_cast< TextureStore * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
     }
   }
-  return 0;
+  if (arg1) (arg1)->textures = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
 fail:
-  return 1;
+  return NULL;
 }
 
 
-SWIGINTERN PyObject *Swig_var_draw_base_textures_get(void) {
-  PyObject *pyobj = 0;
+SWIGINTERN PyObject *_wrap_draw_base_textures_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  draw_base *arg1 = (draw_base *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TextureStore result;
   
-  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&draw_base::textures), SWIGTYPE_p_TextureStore,  0 );
-  return pyobj;
-}
-
-
-SWIGINTERN PyObject *_wrap_draw_base_textures_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
-  return Swig_var_draw_base_textures_get();
-}
-
-
-SWIGINTERN PyObject *_wrap_draw_base_textures_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  int res;
-  PyObject *value;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:set",&value)) return NULL;
-  res = Swig_var_draw_base_textures_set(value);
-  return !res ? SWIG_Py_Void() : NULL;
+  if (!PyArg_ParseTuple(args,(char *)"O:draw_base_textures_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "draw_base_textures_get" "', argument " "1"" of type '" "draw_base *""'"); 
+  }
+  arg1 = reinterpret_cast< draw_base * >(argp1);
+  result =  ((arg1)->textures);
+  resultobj = SWIG_NewPointerObj((new TextureStore(static_cast< const TextureStore& >(result))), SWIGTYPE_p_TextureStore, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -12032,27 +14783,36 @@ fail:
 
 SWIGINTERN PyObject *_wrap_Unit_RotateSprite(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  draw_base *arg1 = (draw_base *) 0 ;
-  double arg2 ;
+  Unit *arg1 = (Unit *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
+  double arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:Unit_RotateSprite",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Unit_RotateSprite",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_RotateSprite" "', argument " "1"" of type '" "draw_base *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_RotateSprite" "', argument " "1"" of type '" "Unit *""'"); 
   }
-  arg1 = reinterpret_cast< draw_base * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Unit_RotateSprite" "', argument " "2"" of type '" "double""'");
+  arg1 = reinterpret_cast< Unit * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Unit_RotateSprite" "', argument " "2"" of type '" "draw_base *""'"); 
+  }
+  arg2 = reinterpret_cast< draw_base * >(argp2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Unit_RotateSprite" "', argument " "3"" of type '" "double""'");
   } 
-  arg2 = static_cast< double >(val2);
-  Unit::RotateSprite(arg1,arg2);
+  arg3 = static_cast< double >(val3);
+  (arg1)->RotateSprite(arg2,arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12062,27 +14822,36 @@ fail:
 
 SWIGINTERN PyObject *_wrap_Unit_FlipSprite__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  draw_base *arg1 = (draw_base *) 0 ;
-  size_t arg2 ;
+  Unit *arg1 = (Unit *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
+  size_t arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  size_t val2 ;
-  int ecode2 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:Unit_FlipSprite",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Unit_FlipSprite",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_FlipSprite" "', argument " "1"" of type '" "draw_base *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_FlipSprite" "', argument " "1"" of type '" "Unit *""'"); 
   }
-  arg1 = reinterpret_cast< draw_base * >(argp1);
-  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Unit_FlipSprite" "', argument " "2"" of type '" "size_t""'");
+  arg1 = reinterpret_cast< Unit * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Unit_FlipSprite" "', argument " "2"" of type '" "draw_base *""'"); 
+  }
+  arg2 = reinterpret_cast< draw_base * >(argp2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Unit_FlipSprite" "', argument " "3"" of type '" "size_t""'");
   } 
-  arg2 = static_cast< size_t >(val2);
-  Unit::FlipSprite(arg1,arg2);
+  arg3 = static_cast< size_t >(val3);
+  (arg1)->FlipSprite(arg2,arg3);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12092,18 +14861,27 @@ fail:
 
 SWIGINTERN PyObject *_wrap_Unit_FlipSprite__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  draw_base *arg1 = (draw_base *) 0 ;
+  Unit *arg1 = (Unit *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Unit_FlipSprite",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:Unit_FlipSprite",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_FlipSprite" "', argument " "1"" of type '" "draw_base *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_FlipSprite" "', argument " "1"" of type '" "Unit *""'"); 
   }
-  arg1 = reinterpret_cast< draw_base * >(argp1);
-  Unit::FlipSprite(arg1);
+  arg1 = reinterpret_cast< Unit * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Unit_FlipSprite" "', argument " "2"" of type '" "draw_base *""'"); 
+  }
+  arg2 = reinterpret_cast< draw_base * >(argp2);
+  (arg1)->FlipSprite(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12113,35 +14891,45 @@ fail:
 
 SWIGINTERN PyObject *_wrap_Unit_FlipSprite(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[3];
+  PyObject *argv[4];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 1) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_draw_base, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      return _wrap_Unit_FlipSprite__SWIG_1(self, args);
-    }
   }
   if (argc == 2) {
     int _v;
     void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_draw_base, 0);
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Unit, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      {
-        int res = SWIG_AsVal_size_t(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_draw_base, 0);
+      _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap_Unit_FlipSprite__SWIG_0(self, args);
+        return _wrap_Unit_FlipSprite__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Unit, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_draw_base, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Unit_FlipSprite__SWIG_0(self, args);
+        }
       }
     }
   }
@@ -12157,18 +14945,27 @@ fail:
 
 SWIGINTERN PyObject *_wrap_Unit_ResetRotation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  draw_base *arg1 = (draw_base *) 0 ;
+  Unit *arg1 = (Unit *) 0 ;
+  draw_base *arg2 = (draw_base *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Unit_ResetRotation",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:Unit_ResetRotation",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_ResetRotation" "', argument " "1"" of type '" "draw_base *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_ResetRotation" "', argument " "1"" of type '" "Unit *""'"); 
   }
-  arg1 = reinterpret_cast< draw_base * >(argp1);
-  Unit::ResetRotation(arg1);
+  arg1 = reinterpret_cast< Unit * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Unit_ResetRotation" "', argument " "2"" of type '" "draw_base *""'"); 
+  }
+  arg2 = reinterpret_cast< draw_base * >(argp2);
+  (arg1)->ResetRotation(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -12396,48 +15193,63 @@ fail:
 }
 
 
-SWIGINTERN int Swig_var_Unit_ai_set(PyObject *_val) {
+SWIGINTERN PyObject *_wrap_Unit_ai_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  AIStore arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Unit_ai_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_ai_set" "', argument " "1"" of type '" "Unit *""'"); 
+  }
+  arg1 = reinterpret_cast< Unit * >(argp1);
   {
-    void *argp = 0;
-    int res = SWIG_ConvertPtr(_val, &argp, SWIGTYPE_p_AIStore,  0  | 0);
-    if (!SWIG_IsOK(res)) {
-      SWIG_exception_fail(SWIG_ArgError(res), "in variable '""Unit::ai""' of type '""AIStore""'");
-    }
-    if (!argp) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in variable '""Unit::ai""' of type '""AIStore""'");
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_AIStore,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Unit_ai_set" "', argument " "2"" of type '" "AIStore""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Unit_ai_set" "', argument " "2"" of type '" "AIStore""'");
     } else {
-      AIStore * temp;
-      temp  = reinterpret_cast< AIStore * >(argp);
-      Unit::ai = *temp;
-      if (SWIG_IsNewObj(res)) delete temp;
+      AIStore * temp = reinterpret_cast< AIStore * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
     }
   }
-  return 0;
+  if (arg1) (arg1)->ai = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
 fail:
-  return 1;
+  return NULL;
 }
 
 
-SWIGINTERN PyObject *Swig_var_Unit_ai_get(void) {
-  PyObject *pyobj = 0;
+SWIGINTERN PyObject *_wrap_Unit_ai_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  AIStore result;
   
-  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&Unit::ai), SWIGTYPE_p_AIStore,  0 );
-  return pyobj;
-}
-
-
-SWIGINTERN PyObject *_wrap_Unit_ai_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
-  return Swig_var_Unit_ai_get();
-}
-
-
-SWIGINTERN PyObject *_wrap_Unit_ai_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  int res;
-  PyObject *value;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:set",&value)) return NULL;
-  res = Swig_var_Unit_ai_set(value);
-  return !res ? SWIG_Py_Void() : NULL;
+  if (!PyArg_ParseTuple(args,(char *)"O:Unit_ai_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Unit, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Unit_ai_get" "', argument " "1"" of type '" "Unit *""'"); 
+  }
+  arg1 = reinterpret_cast< Unit * >(argp1);
+  result =  ((arg1)->ai);
+  resultobj = SWIG_NewPointerObj((new AIStore(static_cast< const AIStore& >(result))), SWIGTYPE_p_AIStore, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -14601,7 +17413,7 @@ fail:
 SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   DataBase *arg1 = (DataBase *) 0 ;
-  char *arg2 = 0 ;
+  size_t *arg2 = 0 ;
   size_t arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14619,14 +17431,14 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_2(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
   }
   arg1 = reinterpret_cast< DataBase * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_char,  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_size_t,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "char &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "size_t &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "char &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "size_t &""'"); 
   }
-  arg2 = reinterpret_cast< char * >(argp2);
+  arg2 = reinterpret_cast< size_t * >(argp2);
   ecode3 = SWIG_AsVal_size_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DataBase_GetResult" "', argument " "3"" of type '" "size_t""'");
@@ -14643,6 +17455,81 @@ fail:
 SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   DataBase *arg1 = (DataBase *) 0 ;
+  size_t *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:DataBase_GetResult",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
+  }
+  arg1 = reinterpret_cast< DataBase * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_size_t,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "size_t &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "size_t &""'"); 
+  }
+  arg2 = reinterpret_cast< size_t * >(argp2);
+  (arg1)->GetResult(*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  DataBase *arg1 = (DataBase *) 0 ;
+  char *arg2 = 0 ;
+  size_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:DataBase_GetResult",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
+  }
+  arg1 = reinterpret_cast< DataBase * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_char,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "char &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "char &""'"); 
+  }
+  arg2 = reinterpret_cast< char * >(argp2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DataBase_GetResult" "', argument " "3"" of type '" "size_t""'");
+  } 
+  arg3 = static_cast< size_t >(val3);
+  (arg1)->GetResult(*arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  DataBase *arg1 = (DataBase *) 0 ;
   char *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14673,85 +17560,10 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  DataBase *arg1 = (DataBase *) 0 ;
-  bool *arg2 = 0 ;
-  size_t arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  size_t val3 ;
-  int ecode3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:DataBase_GetResult",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
-  }
-  arg1 = reinterpret_cast< DataBase * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_bool,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
-  }
-  arg2 = reinterpret_cast< bool * >(argp2);
-  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DataBase_GetResult" "', argument " "3"" of type '" "size_t""'");
-  } 
-  arg3 = static_cast< size_t >(val3);
-  (arg1)->GetResult(*arg2,arg3);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  DataBase *arg1 = (DataBase *) 0 ;
-  bool *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:DataBase_GetResult",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
-  }
-  arg1 = reinterpret_cast< DataBase * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_bool,  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
-  }
-  arg2 = reinterpret_cast< bool * >(argp2);
-  (arg1)->GetResult(*arg2);
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   DataBase *arg1 = (DataBase *) 0 ;
-  std::string *arg2 = 0 ;
+  bool *arg2 = 0 ;
   size_t arg3 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14769,14 +17581,14 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_6(PyObject *SWIGUNUSEDPARM(s
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
   }
   arg1 = reinterpret_cast< DataBase * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_bool,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "std::string &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "std::string &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
   }
-  arg2 = reinterpret_cast< std::string * >(argp2);
+  arg2 = reinterpret_cast< bool * >(argp2);
   ecode3 = SWIG_AsVal_size_t(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DataBase_GetResult" "', argument " "3"" of type '" "size_t""'");
@@ -14793,6 +17605,81 @@ fail:
 SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   DataBase *arg1 = (DataBase *) 0 ;
+  bool *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:DataBase_GetResult",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
+  }
+  arg1 = reinterpret_cast< DataBase * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_bool,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "bool &""'"); 
+  }
+  arg2 = reinterpret_cast< bool * >(argp2);
+  (arg1)->GetResult(*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  DataBase *arg1 = (DataBase *) 0 ;
+  std::string *arg2 = 0 ;
+  size_t arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:DataBase_GetResult",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DataBase_GetResult" "', argument " "1"" of type '" "DataBase *""'"); 
+  }
+  arg1 = reinterpret_cast< DataBase * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__string,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "std::string &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DataBase_GetResult" "', argument " "2"" of type '" "std::string &""'"); 
+  }
+  arg2 = reinterpret_cast< std::string * >(argp2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "DataBase_GetResult" "', argument " "3"" of type '" "size_t""'");
+  } 
+  arg3 = static_cast< size_t >(val3);
+  (arg1)->GetResult(*arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  DataBase *arg1 = (DataBase *) 0 ;
   std::string *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14823,7 +17710,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_DataBase_GetResult__SWIG_10(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   DataBase *arg1 = (DataBase *) 0 ;
   std::vector< fuzzy_obj > *arg2 = 0 ;
@@ -14896,7 +17783,7 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_char, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_size_t, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         return _wrap_DataBase_GetResult__SWIG_3(self, args);
@@ -14910,7 +17797,7 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_bool, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_char, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         return _wrap_DataBase_GetResult__SWIG_5(self, args);
@@ -14924,30 +17811,24 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__string, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_bool, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         return _wrap_DataBase_GetResult__SWIG_7(self, args);
       }
     }
   }
-  if (argc == 3) {
+  if (argc == 2) {
     int _v;
     void *vptr = 0;
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_DataBase, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_bool, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__string, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
-        {
-          int res = SWIG_AsVal_size_t(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          return _wrap_DataBase_GetResult__SWIG_4(self, args);
-        }
+        return _wrap_DataBase_GetResult__SWIG_9(self, args);
       }
     }
   }
@@ -14958,7 +17839,7 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_char, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_size_t, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         {
@@ -14978,7 +17859,7 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__string, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_bool, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         {
@@ -15018,7 +17899,7 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__string, 0);
       _v = SWIG_CheckState(res);
       if (_v) {
         {
@@ -15031,12 +17912,54 @@ SWIGINTERN PyObject *_wrap_DataBase_GetResult(PyObject *self, PyObject *args) {
       }
     }
   }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_DataBase, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_char, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_DataBase_GetResult__SWIG_4(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_DataBase, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_std__vectorT_psudo_type_t, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_DataBase_GetResult__SWIG_10(self, args);
+        }
+      }
+    }
+  }
   
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'DataBase_GetResult'.\n"
     "  Possible C/C++ prototypes are:\n"
     "    DataBase::GetResult(int &,size_t)\n"
     "    DataBase::GetResult(int &)\n"
+    "    DataBase::GetResult(size_t &,size_t)\n"
+    "    DataBase::GetResult(size_t &)\n"
     "    DataBase::GetResult(char &,size_t)\n"
     "    DataBase::GetResult(char &)\n"
     "    DataBase::GetResult(bool &,size_t)\n"
@@ -22218,6 +25141,50 @@ SWIGINTERN PyObject *ThreadSystem_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *NO_CLIENT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "NO_CLIENT",SWIG_From_int(static_cast< int >(-1)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *TIMEOUT_TRYS_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "TIMEOUT_TRYS",SWIG_From_int(static_cast< int >(50)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *NET_ANYUDPPORT_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "NET_ANYUDPPORT",SWIG_From_int(static_cast< int >(0)));
+  return SWIG_Py_Void();
+}
+
+
+SWIGINTERN PyObject *ANY_CHANNEL_swigconstant(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *module;
+  PyObject *d;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigconstant", &module)) return NULL;
+  d = PyModule_GetDict(module);
+  if (!d) return NULL;
+  SWIG_Python_SetConstant(d, "ANY_CHANNEL",SWIG_From_int(static_cast< int >(-1)));
+  return SWIG_Py_Void();
+}
+
+
 SWIGINTERN PyObject *_wrap_UDPClient_ip_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   UDPClient *arg1 = (UDPClient *) 0 ;
@@ -22278,7 +25245,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_UDPClient_nativeChannel_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_UDPClient_id_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   UDPClient *arg1 = (UDPClient *) 0 ;
   int arg2 ;
@@ -22289,18 +25256,18 @@ SWIGINTERN PyObject *_wrap_UDPClient_nativeChannel_set(PyObject *SWIGUNUSEDPARM(
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:UDPClient_nativeChannel_set",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:UDPClient_id_set",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UDPClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_nativeChannel_set" "', argument " "1"" of type '" "UDPClient *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_id_set" "', argument " "1"" of type '" "UDPClient *""'"); 
   }
   arg1 = reinterpret_cast< UDPClient * >(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "UDPClient_nativeChannel_set" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "UDPClient_id_set" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = static_cast< int >(val2);
-  if (arg1) (arg1)->nativeChannel = arg2;
+  if (arg1) (arg1)->id = arg2;
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -22308,7 +25275,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_UDPClient_nativeChannel_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_UDPClient_id_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   UDPClient *arg1 = (UDPClient *) 0 ;
   void *argp1 = 0 ;
@@ -22316,65 +25283,13 @@ SWIGINTERN PyObject *_wrap_UDPClient_nativeChannel_get(PyObject *SWIGUNUSEDPARM(
   PyObject * obj0 = 0 ;
   int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:UDPClient_nativeChannel_get",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:UDPClient_id_get",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UDPClient, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_nativeChannel_get" "', argument " "1"" of type '" "UDPClient *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_id_get" "', argument " "1"" of type '" "UDPClient *""'"); 
   }
   arg1 = reinterpret_cast< UDPClient * >(argp1);
-  result = (int) ((arg1)->nativeChannel);
-  resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_UDPClient_serverChannel_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  UDPClient *arg1 = (UDPClient *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:UDPClient_serverChannel_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UDPClient, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_serverChannel_set" "', argument " "1"" of type '" "UDPClient *""'"); 
-  }
-  arg1 = reinterpret_cast< UDPClient * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "UDPClient_serverChannel_set" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
-  if (arg1) (arg1)->serverChannel = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_UDPClient_serverChannel_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  UDPClient *arg1 = (UDPClient *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:UDPClient_serverChannel_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UDPClient, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UDPClient_serverChannel_get" "', argument " "1"" of type '" "UDPClient *""'"); 
-  }
-  arg1 = reinterpret_cast< UDPClient * >(argp1);
-  result = (int) ((arg1)->serverChannel);
+  result = (int) ((arg1)->id);
   resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
@@ -23537,22 +26452,22 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_NetNode_GenerateUDPChannel(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_NetNode_GenerateUDPID(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   NetNode *arg1 = (NetNode *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
-  size_t result;
+  int result;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:NetNode_GenerateUDPChannel",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"O:NetNode_GenerateUDPID",&obj0)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NetNode, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NetNode_GenerateUDPChannel" "', argument " "1"" of type '" "NetNode *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NetNode_GenerateUDPID" "', argument " "1"" of type '" "NetNode *""'"); 
   }
   arg1 = reinterpret_cast< NetNode * >(argp1);
-  result = (arg1)->GenerateUDPChannel();
-  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  result = (int)(arg1)->GenerateUDPID();
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -23625,7 +26540,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_NetNode_isUDPChannelFull(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_NetNode_isUDPIDUsed(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   NetNode *arg1 = (NetNode *) 0 ;
   int arg2 ;
@@ -23637,18 +26552,18 @@ SWIGINTERN PyObject *_wrap_NetNode_isUDPChannelFull(PyObject *SWIGUNUSEDPARM(sel
   PyObject * obj1 = 0 ;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:NetNode_isUDPChannelFull",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:NetNode_isUDPIDUsed",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NetNode, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NetNode_isUDPChannelFull" "', argument " "1"" of type '" "NetNode const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NetNode_isUDPIDUsed" "', argument " "1"" of type '" "NetNode const *""'"); 
   }
   arg1 = reinterpret_cast< NetNode * >(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NetNode_isUDPChannelFull" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NetNode_isUDPIDUsed" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = static_cast< int >(val2);
-  result = (bool)((NetNode const *)arg1)->isUDPChannelFull(arg2);
+  result = (bool)((NetNode const *)arg1)->isUDPIDUsed(arg2);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -23692,6 +26607,7 @@ SWIGINTERN PyObject *_wrap_NetNode_RegisterUDPClient(PyObject *SWIGUNUSEDPARM(se
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  int result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOO:NetNode_RegisterUDPClient",&obj0,&obj1,&obj2)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NetNode, 0 |  0 );
@@ -23712,8 +26628,8 @@ SWIGINTERN PyObject *_wrap_NetNode_RegisterUDPClient(PyObject *SWIGUNUSEDPARM(se
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "NetNode_RegisterUDPClient" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = static_cast< int >(val3);
-  (arg1)->RegisterUDPClient((IPaddress const &)*arg2,arg3);
-  resultobj = SWIG_Py_Void();
+  result = (int)(arg1)->RegisterUDPClient((IPaddress const &)*arg2,arg3);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -24186,7 +27102,7 @@ SWIGINTERN PyObject *_wrap_NetworkManager_AcceptUDPClient(PyObject *SWIGUNUSEDPA
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  size_t result;
+  int result;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:NetworkManager_AcceptUDPClient",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NetworkManager, 0 |  0 );
@@ -24199,8 +27115,8 @@ SWIGINTERN PyObject *_wrap_NetworkManager_AcceptUDPClient(PyObject *SWIGUNUSEDPA
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NetworkManager_AcceptUDPClient" "', argument " "2"" of type '" "size_t""'");
   } 
   arg2 = static_cast< size_t >(val2);
-  result = (arg1)->AcceptUDPClient(arg2);
-  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  result = (int)(arg1)->AcceptUDPClient(arg2);
+  resultobj = SWIG_From_int(static_cast< int >(result));
   return resultobj;
 fail:
   return NULL;
@@ -27754,6 +30670,641 @@ SWIGINTERN PyObject *LayerSystem_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_ExpansionItem_id_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionItem_id_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_id_set" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ExpansionItem_id_set" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  if (arg1) (arg1)->id = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_id_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionItem_id_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_id_get" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  result =  ((arg1)->id);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_name_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionItem_name_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_name_set" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionItem_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ExpansionItem_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->name = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_name_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionItem_name_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_name_get" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  result = (std::string *) & ((arg1)->name);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_path_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionItem_path_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_path_set" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionItem_path_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ExpansionItem_path_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->path = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_path_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionItem_path_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_path_get" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  result = (std::string *) & ((arg1)->path);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ExpansionItem__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  size_t arg1 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  ExpansionItem *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_ExpansionItem",&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_ExpansionItem" "', argument " "1"" of type '" "size_t""'");
+  } 
+  arg1 = static_cast< size_t >(val1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_ExpansionItem" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_ExpansionItem" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_ExpansionItem" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_ExpansionItem" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  result = (ExpansionItem *)new ExpansionItem(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExpansionItem, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ExpansionItem__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  ExpansionItem *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_ExpansionItem",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_ExpansionItem,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_ExpansionItem" "', argument " "1"" of type '" "ExpansionItem const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_ExpansionItem" "', argument " "1"" of type '" "ExpansionItem const &""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  result = (ExpansionItem *)new ExpansionItem((ExpansionItem const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExpansionItem, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ExpansionItem__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_ExpansionItem")) SWIG_fail;
+  result = (ExpansionItem *)new ExpansionItem();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExpansionItem, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ExpansionItem(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_ExpansionItem__SWIG_2(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_ExpansionItem, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_ExpansionItem__SWIG_1(self, args);
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    {
+      int res = SWIG_AsVal_size_t(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_ExpansionItem__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ExpansionItem'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ExpansionItem::ExpansionItem(size_t,std::string const &,std::string const &)\n"
+    "    ExpansionItem::ExpansionItem(ExpansionItem const &)\n"
+    "    ExpansionItem::ExpansionItem()\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_ExpansionItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_ExpansionItem",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_ExpansionItem" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *ExpansionItem_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_ExpansionItem, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_delete_ExpansionInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_ExpansionInfo",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_ExpansionInfo" "', argument " "1"" of type '" "ExpansionInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_LoadExpansionInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_LoadExpansionInfo",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_LoadExpansionInfo" "', argument " "1"" of type '" "ExpansionInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionInfo_LoadExpansionInfo" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  (arg1)->LoadExpansionInfo(arg2);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_LoadExpansionInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  DataBase *arg2 = (DataBase *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_LoadExpansionInfo",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_LoadExpansionInfo" "', argument " "1"" of type '" "ExpansionInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionInfo_LoadExpansionInfo" "', argument " "2"" of type '" "DataBase *""'"); 
+  }
+  arg2 = reinterpret_cast< DataBase * >(argp2);
+  (arg1)->LoadExpansionInfo(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_LoadExpansionInfo(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ExpansionInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_DataBase, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ExpansionInfo_LoadExpansionInfo__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ExpansionInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_ExpansionInfo_LoadExpansionInfo__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ExpansionInfo_LoadExpansionInfo'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    ExpansionInfo::LoadExpansionInfo(cstr)\n"
+    "    ExpansionInfo::LoadExpansionInfo(DataBase *)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_GetExpansionName(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_GetExpansionName",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_GetExpansionName" "', argument " "1"" of type '" "ExpansionInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ExpansionInfo_GetExpansionName" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = ((ExpansionInfo const *)arg1)->GetExpansionName(arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_GetExpansionPath(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_GetExpansionPath",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_GetExpansionPath" "', argument " "1"" of type '" "ExpansionInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ExpansionInfo_GetExpansionPath" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = ((ExpansionInfo const *)arg1)->GetExpansionPath(arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_GenerateExpansionID(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_GenerateExpansionID",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_GenerateExpansionID" "', argument " "1"" of type '" "ExpansionInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionInfo_GenerateExpansionID" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ExpansionInfo_GenerateExpansionID" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = ((ExpansionInfo const *)arg1)->GenerateExpansionID((std::string const &)*arg2);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_GetExpansionCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionInfo_GetExpansionCount",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_GetExpansionCount" "', argument " "1"" of type '" "ExpansionInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  result = ((ExpansionInfo const *)arg1)->GetExpansionCount();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_INVALID_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionInfo_INVALID_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_INVALID_get" "', argument " "1"" of type '" "ExpansionInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  result = (std::string *) & ((arg1)->INVALID);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_ExpansionInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_ExpansionInfo")) SWIG_fail;
+  result = (ExpansionInfo *)new ExpansionInfo();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExpansionInfo, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *ExpansionInfo_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_ExpansionInfo, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_ScreenInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *result = 0 ;
@@ -27768,6 +31319,197 @@ fail:
 
 
 SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  size_t arg4 ;
+  size_t arg5 ;
+  size_t arg6 ;
+  size_t arg7 ;
+  std::string *arg8 = 0 ;
+  size_t arg9 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  size_t val4 ;
+  int ecode4 = 0 ;
+  size_t val5 ;
+  int ecode5 = 0 ;
+  size_t val6 ;
+  int ecode6 = 0 ;
+  size_t val7 ;
+  int ecode7 = 0 ;
+  int res8 = SWIG_OLDOBJ ;
+  size_t val9 ;
+  int ecode9 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOO:ScreenInfo_SetScreenInfo",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "3"" of type '" "size_t""'");
+  } 
+  arg3 = static_cast< size_t >(val3);
+  ecode4 = SWIG_AsVal_size_t(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "4"" of type '" "size_t""'");
+  } 
+  arg4 = static_cast< size_t >(val4);
+  ecode5 = SWIG_AsVal_size_t(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "5"" of type '" "size_t""'");
+  } 
+  arg5 = static_cast< size_t >(val5);
+  ecode6 = SWIG_AsVal_size_t(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "6"" of type '" "size_t""'");
+  } 
+  arg6 = static_cast< size_t >(val6);
+  ecode7 = SWIG_AsVal_size_t(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "7"" of type '" "size_t""'");
+  } 
+  arg7 = static_cast< size_t >(val7);
+  {
+    std::string *ptr = (std::string *)0;
+    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScreenInfo_SetScreenInfo" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  ecode9 = SWIG_AsVal_size_t(obj8, &val9);
+  if (!SWIG_IsOK(ecode9)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode9), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "9"" of type '" "size_t""'");
+  } 
+  arg9 = static_cast< size_t >(val9);
+  (arg1)->SetScreenInfo(arg2,arg3,arg4,arg5,arg6,arg7,(std::string const &)*arg8,arg9);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  size_t arg2 ;
+  size_t arg3 ;
+  size_t arg4 ;
+  size_t arg5 ;
+  size_t arg6 ;
+  size_t arg7 ;
+  std::string *arg8 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  size_t val4 ;
+  int ecode4 = 0 ;
+  size_t val5 ;
+  int ecode5 = 0 ;
+  size_t val6 ;
+  int ecode6 = 0 ;
+  size_t val7 ;
+  int ecode7 = 0 ;
+  int res8 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOO:ScreenInfo_SetScreenInfo",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  ecode3 = SWIG_AsVal_size_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "3"" of type '" "size_t""'");
+  } 
+  arg3 = static_cast< size_t >(val3);
+  ecode4 = SWIG_AsVal_size_t(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "4"" of type '" "size_t""'");
+  } 
+  arg4 = static_cast< size_t >(val4);
+  ecode5 = SWIG_AsVal_size_t(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "5"" of type '" "size_t""'");
+  } 
+  arg5 = static_cast< size_t >(val5);
+  ecode6 = SWIG_AsVal_size_t(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "6"" of type '" "size_t""'");
+  } 
+  arg6 = static_cast< size_t >(val6);
+  ecode7 = SWIG_AsVal_size_t(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "7"" of type '" "size_t""'");
+  } 
+  arg7 = static_cast< size_t >(val7);
+  {
+    std::string *ptr = (std::string *)0;
+    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "ScreenInfo_SetScreenInfo" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ScreenInfo_SetScreenInfo" "', argument " "8"" of type '" "std::string const &""'"); 
+    }
+    arg8 = ptr;
+  }
+  (arg1)->SetScreenInfo(arg2,arg3,arg4,arg5,arg6,arg7,(std::string const &)*arg8);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res8)) delete arg8;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -27842,7 +31584,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -27908,7 +31650,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -27965,7 +31707,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -28013,7 +31755,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -28052,7 +31794,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   size_t arg2 ;
@@ -28082,7 +31824,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
   void *argp1 = 0 ;
@@ -28105,12 +31847,12 @@ fail:
 
 SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[8];
+  PyObject *argv[10];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 7) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 9) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 1) {
@@ -28119,7 +31861,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScreenInfo, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_ScreenInfo_SetScreenInfo__SWIG_6(self, args);
+      return _wrap_ScreenInfo_SetScreenInfo__SWIG_8(self, args);
     }
   }
   if (argc == 2) {
@@ -28133,7 +31875,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
         _v = SWIG_CheckState(res);
       }
       if (_v) {
-        return _wrap_ScreenInfo_SetScreenInfo__SWIG_5(self, args);
+        return _wrap_ScreenInfo_SetScreenInfo__SWIG_7(self, args);
       }
     }
   }
@@ -28153,7 +31895,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
           _v = SWIG_CheckState(res);
         }
         if (_v) {
-          return _wrap_ScreenInfo_SetScreenInfo__SWIG_4(self, args);
+          return _wrap_ScreenInfo_SetScreenInfo__SWIG_6(self, args);
         }
       }
     }
@@ -28179,7 +31921,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
             _v = SWIG_CheckState(res);
           }
           if (_v) {
-            return _wrap_ScreenInfo_SetScreenInfo__SWIG_3(self, args);
+            return _wrap_ScreenInfo_SetScreenInfo__SWIG_5(self, args);
           }
         }
       }
@@ -28211,7 +31953,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
               _v = SWIG_CheckState(res);
             }
             if (_v) {
-              return _wrap_ScreenInfo_SetScreenInfo__SWIG_2(self, args);
+              return _wrap_ScreenInfo_SetScreenInfo__SWIG_4(self, args);
             }
           }
         }
@@ -28249,7 +31991,7 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
                 _v = SWIG_CheckState(res);
               }
               if (_v) {
-                return _wrap_ScreenInfo_SetScreenInfo__SWIG_1(self, args);
+                return _wrap_ScreenInfo_SetScreenInfo__SWIG_3(self, args);
               }
             }
           }
@@ -28293,7 +32035,111 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
                   _v = SWIG_CheckState(res);
                 }
                 if (_v) {
-                  return _wrap_ScreenInfo_SetScreenInfo__SWIG_0(self, args);
+                  return _wrap_ScreenInfo_SetScreenInfo__SWIG_2(self, args);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 8) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScreenInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_size_t(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_size_t(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_size_t(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                {
+                  int res = SWIG_AsVal_size_t(argv[6], NULL);
+                  _v = SWIG_CheckState(res);
+                }
+                if (_v) {
+                  int res = SWIG_AsPtr_std_string(argv[7], (std::string**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    return _wrap_ScreenInfo_SetScreenInfo__SWIG_1(self, args);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 9) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_ScreenInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_size_t(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_size_t(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_size_t(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                {
+                  int res = SWIG_AsVal_size_t(argv[6], NULL);
+                  _v = SWIG_CheckState(res);
+                }
+                if (_v) {
+                  int res = SWIG_AsPtr_std_string(argv[7], (std::string**)(0));
+                  _v = SWIG_CheckState(res);
+                  if (_v) {
+                    {
+                      int res = SWIG_AsVal_size_t(argv[8], NULL);
+                      _v = SWIG_CheckState(res);
+                    }
+                    if (_v) {
+                      return _wrap_ScreenInfo_SetScreenInfo__SWIG_0(self, args);
+                    }
+                  }
                 }
               }
             }
@@ -28306,6 +32152,8 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_SetScreenInfo(PyObject *self, PyObject *ar
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'ScreenInfo_SetScreenInfo'.\n"
     "  Possible C/C++ prototypes are:\n"
+    "    ScreenInfo::SetScreenInfo(size_t,size_t,size_t,size_t,size_t,size_t,std::string const &,size_t)\n"
+    "    ScreenInfo::SetScreenInfo(size_t,size_t,size_t,size_t,size_t,size_t,std::string const &)\n"
     "    ScreenInfo::SetScreenInfo(size_t,size_t,size_t,size_t,size_t,size_t)\n"
     "    ScreenInfo::SetScreenInfo(size_t,size_t,size_t,size_t,size_t)\n"
     "    ScreenInfo::SetScreenInfo(size_t,size_t,size_t,size_t)\n"
@@ -28621,6 +32469,182 @@ SWIGINTERN PyObject *_wrap_ScreenInfo_GetDisplayCount(PyObject *SWIGUNUSEDPARM(s
   arg1 = reinterpret_cast< ScreenInfo * >(argp1);
   result = ((ScreenInfo const *)arg1)->GetDisplayCount();
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_GetScreenMode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_GetScreenMode",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_GetScreenMode" "', argument " "1"" of type '" "ScreenInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = ((ScreenInfo const *)arg1)->GetScreenMode();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_GetRenderDriver(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_GetRenderDriver",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_GetRenderDriver" "', argument " "1"" of type '" "ScreenInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = ((ScreenInfo const *)arg1)->GetRenderDriver();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_FULLSCREEN_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_FULLSCREEN_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_FULLSCREEN_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (size_t) ((arg1)->FULLSCREEN);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_RESIZABLE_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_RESIZABLE_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_RESIZABLE_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (size_t) ((arg1)->RESIZABLE);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_MAXIMIZED_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_MAXIMIZED_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_MAXIMIZED_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (size_t) ((arg1)->MAXIMIZED);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_OPENGL_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_OPENGL_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_OPENGL_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (std::string *) & ((arg1)->OPENGL);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_DIRECT3D_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_DIRECT3D_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_DIRECT3D_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (std::string *) & ((arg1)->DIRECT3D);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ScreenInfo_SOFTWARE_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_SOFTWARE_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_SOFTWARE_get" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  result = (std::string *) & ((arg1)->SOFTWARE);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
   return resultobj;
 fail:
   return NULL;
@@ -29024,7 +33048,462 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
   size_t arg13 ;
   size_t arg14 ;
   size_t arg15 ;
-  size_t arg16 ;
+  std::string *arg16 = 0 ;
+  size_t arg17 ;
+  size_t arg18 ;
+  size_t arg19 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  int res7 = SWIG_OLDOBJ ;
+  size_t val8 ;
+  int ecode8 = 0 ;
+  size_t val9 ;
+  int ecode9 = 0 ;
+  size_t val10 ;
+  int ecode10 = 0 ;
+  size_t val11 ;
+  int ecode11 = 0 ;
+  size_t val12 ;
+  int ecode12 = 0 ;
+  size_t val13 ;
+  int ecode13 = 0 ;
+  size_t val14 ;
+  int ecode14 = 0 ;
+  size_t val15 ;
+  int ecode15 = 0 ;
+  int res16 = SWIG_OLDOBJ ;
+  size_t val17 ;
+  int ecode17 = 0 ;
+  size_t val18 ;
+  int ecode18 = 0 ;
+  size_t val19 ;
+  int ecode19 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
+  PyObject * obj10 = 0 ;
+  PyObject * obj11 = 0 ;
+  PyObject * obj12 = 0 ;
+  PyObject * obj13 = 0 ;
+  PyObject * obj14 = 0 ;
+  PyObject * obj15 = 0 ;
+  PyObject * obj16 = 0 ;
+  PyObject * obj17 = 0 ;
+  PyObject * obj18 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOOOOOOOOOOOO:GameInfo_SetInfo",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9,&obj10,&obj11,&obj12,&obj13,&obj14,&obj15,&obj16,&obj17,&obj18)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameInfo_SetInfo" "', argument " "1"" of type '" "GameInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< GameInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameInfo_SetInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "GameInfo_SetInfo" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res4 = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "GameInfo_SetInfo" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res5 = SWIG_AsPtr_std_string(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "GameInfo_SetInfo" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res6 = SWIG_AsPtr_std_string(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "GameInfo_SetInfo" "', argument " "6"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "6"" of type '" "std::string const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "GameInfo_SetInfo" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  ecode8 = SWIG_AsVal_size_t(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "GameInfo_SetInfo" "', argument " "8"" of type '" "size_t""'");
+  } 
+  arg8 = static_cast< size_t >(val8);
+  ecode9 = SWIG_AsVal_size_t(obj8, &val9);
+  if (!SWIG_IsOK(ecode9)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode9), "in method '" "GameInfo_SetInfo" "', argument " "9"" of type '" "size_t""'");
+  } 
+  arg9 = static_cast< size_t >(val9);
+  ecode10 = SWIG_AsVal_size_t(obj9, &val10);
+  if (!SWIG_IsOK(ecode10)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode10), "in method '" "GameInfo_SetInfo" "', argument " "10"" of type '" "size_t""'");
+  } 
+  arg10 = static_cast< size_t >(val10);
+  ecode11 = SWIG_AsVal_size_t(obj10, &val11);
+  if (!SWIG_IsOK(ecode11)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode11), "in method '" "GameInfo_SetInfo" "', argument " "11"" of type '" "size_t""'");
+  } 
+  arg11 = static_cast< size_t >(val11);
+  ecode12 = SWIG_AsVal_size_t(obj11, &val12);
+  if (!SWIG_IsOK(ecode12)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode12), "in method '" "GameInfo_SetInfo" "', argument " "12"" of type '" "size_t""'");
+  } 
+  arg12 = static_cast< size_t >(val12);
+  ecode13 = SWIG_AsVal_size_t(obj12, &val13);
+  if (!SWIG_IsOK(ecode13)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode13), "in method '" "GameInfo_SetInfo" "', argument " "13"" of type '" "size_t""'");
+  } 
+  arg13 = static_cast< size_t >(val13);
+  ecode14 = SWIG_AsVal_size_t(obj13, &val14);
+  if (!SWIG_IsOK(ecode14)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode14), "in method '" "GameInfo_SetInfo" "', argument " "14"" of type '" "size_t""'");
+  } 
+  arg14 = static_cast< size_t >(val14);
+  ecode15 = SWIG_AsVal_size_t(obj14, &val15);
+  if (!SWIG_IsOK(ecode15)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode15), "in method '" "GameInfo_SetInfo" "', argument " "15"" of type '" "size_t""'");
+  } 
+  arg15 = static_cast< size_t >(val15);
+  {
+    std::string *ptr = (std::string *)0;
+    res16 = SWIG_AsPtr_std_string(obj15, &ptr);
+    if (!SWIG_IsOK(res16)) {
+      SWIG_exception_fail(SWIG_ArgError(res16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    arg16 = ptr;
+  }
+  ecode17 = SWIG_AsVal_size_t(obj16, &val17);
+  if (!SWIG_IsOK(ecode17)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode17), "in method '" "GameInfo_SetInfo" "', argument " "17"" of type '" "size_t""'");
+  } 
+  arg17 = static_cast< size_t >(val17);
+  ecode18 = SWIG_AsVal_size_t(obj17, &val18);
+  if (!SWIG_IsOK(ecode18)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode18), "in method '" "GameInfo_SetInfo" "', argument " "18"" of type '" "size_t""'");
+  } 
+  arg18 = static_cast< size_t >(val18);
+  ecode19 = SWIG_AsVal_size_t(obj18, &val19);
+  if (!SWIG_IsOK(ecode19)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode19), "in method '" "GameInfo_SetInfo" "', argument " "19"" of type '" "size_t""'");
+  } 
+  arg19 = static_cast< size_t >(val19);
+  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,(std::string const &)*arg16,arg17,arg18,arg19);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameInfo *arg1 = (GameInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  std::string *arg5 = 0 ;
+  std::string *arg6 = 0 ;
+  std::string *arg7 = 0 ;
+  size_t arg8 ;
+  size_t arg9 ;
+  size_t arg10 ;
+  size_t arg11 ;
+  size_t arg12 ;
+  size_t arg13 ;
+  size_t arg14 ;
+  size_t arg15 ;
+  std::string *arg16 = 0 ;
+  size_t arg17 ;
+  size_t arg18 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  int res7 = SWIG_OLDOBJ ;
+  size_t val8 ;
+  int ecode8 = 0 ;
+  size_t val9 ;
+  int ecode9 = 0 ;
+  size_t val10 ;
+  int ecode10 = 0 ;
+  size_t val11 ;
+  int ecode11 = 0 ;
+  size_t val12 ;
+  int ecode12 = 0 ;
+  size_t val13 ;
+  int ecode13 = 0 ;
+  size_t val14 ;
+  int ecode14 = 0 ;
+  size_t val15 ;
+  int ecode15 = 0 ;
+  int res16 = SWIG_OLDOBJ ;
+  size_t val17 ;
+  int ecode17 = 0 ;
+  size_t val18 ;
+  int ecode18 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  PyObject * obj8 = 0 ;
+  PyObject * obj9 = 0 ;
+  PyObject * obj10 = 0 ;
+  PyObject * obj11 = 0 ;
+  PyObject * obj12 = 0 ;
+  PyObject * obj13 = 0 ;
+  PyObject * obj14 = 0 ;
+  PyObject * obj15 = 0 ;
+  PyObject * obj16 = 0 ;
+  PyObject * obj17 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOOOOOOOOOOOOO:GameInfo_SetInfo",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7,&obj8,&obj9,&obj10,&obj11,&obj12,&obj13,&obj14,&obj15,&obj16,&obj17)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameInfo_SetInfo" "', argument " "1"" of type '" "GameInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< GameInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameInfo_SetInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "GameInfo_SetInfo" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res4 = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "GameInfo_SetInfo" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res5 = SWIG_AsPtr_std_string(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "GameInfo_SetInfo" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "5"" of type '" "std::string const &""'"); 
+    }
+    arg5 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res6 = SWIG_AsPtr_std_string(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "GameInfo_SetInfo" "', argument " "6"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "6"" of type '" "std::string const &""'"); 
+    }
+    arg6 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "GameInfo_SetInfo" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "7"" of type '" "std::string const &""'"); 
+    }
+    arg7 = ptr;
+  }
+  ecode8 = SWIG_AsVal_size_t(obj7, &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "GameInfo_SetInfo" "', argument " "8"" of type '" "size_t""'");
+  } 
+  arg8 = static_cast< size_t >(val8);
+  ecode9 = SWIG_AsVal_size_t(obj8, &val9);
+  if (!SWIG_IsOK(ecode9)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode9), "in method '" "GameInfo_SetInfo" "', argument " "9"" of type '" "size_t""'");
+  } 
+  arg9 = static_cast< size_t >(val9);
+  ecode10 = SWIG_AsVal_size_t(obj9, &val10);
+  if (!SWIG_IsOK(ecode10)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode10), "in method '" "GameInfo_SetInfo" "', argument " "10"" of type '" "size_t""'");
+  } 
+  arg10 = static_cast< size_t >(val10);
+  ecode11 = SWIG_AsVal_size_t(obj10, &val11);
+  if (!SWIG_IsOK(ecode11)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode11), "in method '" "GameInfo_SetInfo" "', argument " "11"" of type '" "size_t""'");
+  } 
+  arg11 = static_cast< size_t >(val11);
+  ecode12 = SWIG_AsVal_size_t(obj11, &val12);
+  if (!SWIG_IsOK(ecode12)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode12), "in method '" "GameInfo_SetInfo" "', argument " "12"" of type '" "size_t""'");
+  } 
+  arg12 = static_cast< size_t >(val12);
+  ecode13 = SWIG_AsVal_size_t(obj12, &val13);
+  if (!SWIG_IsOK(ecode13)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode13), "in method '" "GameInfo_SetInfo" "', argument " "13"" of type '" "size_t""'");
+  } 
+  arg13 = static_cast< size_t >(val13);
+  ecode14 = SWIG_AsVal_size_t(obj13, &val14);
+  if (!SWIG_IsOK(ecode14)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode14), "in method '" "GameInfo_SetInfo" "', argument " "14"" of type '" "size_t""'");
+  } 
+  arg14 = static_cast< size_t >(val14);
+  ecode15 = SWIG_AsVal_size_t(obj14, &val15);
+  if (!SWIG_IsOK(ecode15)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode15), "in method '" "GameInfo_SetInfo" "', argument " "15"" of type '" "size_t""'");
+  } 
+  arg15 = static_cast< size_t >(val15);
+  {
+    std::string *ptr = (std::string *)0;
+    res16 = SWIG_AsPtr_std_string(obj15, &ptr);
+    if (!SWIG_IsOK(res16)) {
+      SWIG_exception_fail(SWIG_ArgError(res16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    arg16 = ptr;
+  }
+  ecode17 = SWIG_AsVal_size_t(obj16, &val17);
+  if (!SWIG_IsOK(ecode17)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode17), "in method '" "GameInfo_SetInfo" "', argument " "17"" of type '" "size_t""'");
+  } 
+  arg17 = static_cast< size_t >(val17);
+  ecode18 = SWIG_AsVal_size_t(obj17, &val18);
+  if (!SWIG_IsOK(ecode18)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode18), "in method '" "GameInfo_SetInfo" "', argument " "18"" of type '" "size_t""'");
+  } 
+  arg18 = static_cast< size_t >(val18);
+  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,(std::string const &)*arg16,arg17,arg18);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  if (SWIG_IsNewObj(res5)) delete arg5;
+  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameInfo *arg1 = (GameInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  std::string *arg4 = 0 ;
+  std::string *arg5 = 0 ;
+  std::string *arg6 = 0 ;
+  std::string *arg7 = 0 ;
+  size_t arg8 ;
+  size_t arg9 ;
+  size_t arg10 ;
+  size_t arg11 ;
+  size_t arg12 ;
+  size_t arg13 ;
+  size_t arg14 ;
+  size_t arg15 ;
+  std::string *arg16 = 0 ;
   size_t arg17 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -29050,8 +33529,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
   int ecode14 = 0 ;
   size_t val15 ;
   int ecode15 = 0 ;
-  size_t val16 ;
-  int ecode16 = 0 ;
+  int res16 = SWIG_OLDOBJ ;
   size_t val17 ;
   int ecode17 = 0 ;
   PyObject * obj0 = 0 ;
@@ -29184,17 +33662,23 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(ecode15), "in method '" "GameInfo_SetInfo" "', argument " "15"" of type '" "size_t""'");
   } 
   arg15 = static_cast< size_t >(val15);
-  ecode16 = SWIG_AsVal_size_t(obj15, &val16);
-  if (!SWIG_IsOK(ecode16)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "size_t""'");
-  } 
-  arg16 = static_cast< size_t >(val16);
+  {
+    std::string *ptr = (std::string *)0;
+    res16 = SWIG_AsPtr_std_string(obj15, &ptr);
+    if (!SWIG_IsOK(res16)) {
+      SWIG_exception_fail(SWIG_ArgError(res16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    arg16 = ptr;
+  }
   ecode17 = SWIG_AsVal_size_t(obj16, &val17);
   if (!SWIG_IsOK(ecode17)) {
     SWIG_exception_fail(SWIG_ArgError(ecode17), "in method '" "GameInfo_SetInfo" "', argument " "17"" of type '" "size_t""'");
   } 
   arg17 = static_cast< size_t >(val17);
-  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,arg16,arg17);
+  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,(std::string const &)*arg16,arg17);
   resultobj = SWIG_Py_Void();
   if (SWIG_IsNewObj(res2)) delete arg2;
   if (SWIG_IsNewObj(res3)) delete arg3;
@@ -29202,6 +33686,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(sel
   if (SWIG_IsNewObj(res5)) delete arg5;
   if (SWIG_IsNewObj(res6)) delete arg6;
   if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
   return resultobj;
 fail:
   if (SWIG_IsNewObj(res2)) delete arg2;
@@ -29210,11 +33695,12 @@ fail:
   if (SWIG_IsNewObj(res5)) delete arg5;
   if (SWIG_IsNewObj(res6)) delete arg6;
   if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -29231,7 +33717,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
   size_t arg13 ;
   size_t arg14 ;
   size_t arg15 ;
-  size_t arg16 ;
+  std::string *arg16 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
@@ -29256,8 +33742,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
   int ecode14 = 0 ;
   size_t val15 ;
   int ecode15 = 0 ;
-  size_t val16 ;
-  int ecode16 = 0 ;
+  int res16 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -29387,12 +33872,18 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(ecode15), "in method '" "GameInfo_SetInfo" "', argument " "15"" of type '" "size_t""'");
   } 
   arg15 = static_cast< size_t >(val15);
-  ecode16 = SWIG_AsVal_size_t(obj15, &val16);
-  if (!SWIG_IsOK(ecode16)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "size_t""'");
-  } 
-  arg16 = static_cast< size_t >(val16);
-  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,arg16);
+  {
+    std::string *ptr = (std::string *)0;
+    res16 = SWIG_AsPtr_std_string(obj15, &ptr);
+    if (!SWIG_IsOK(res16)) {
+      SWIG_exception_fail(SWIG_ArgError(res16), "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameInfo_SetInfo" "', argument " "16"" of type '" "std::string const &""'"); 
+    }
+    arg16 = ptr;
+  }
+  (arg1)->SetInfo((std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4,(std::string const &)*arg5,(std::string const &)*arg6,(std::string const &)*arg7,arg8,arg9,arg10,arg11,arg12,arg13,arg14,arg15,(std::string const &)*arg16);
   resultobj = SWIG_Py_Void();
   if (SWIG_IsNewObj(res2)) delete arg2;
   if (SWIG_IsNewObj(res3)) delete arg3;
@@ -29400,6 +33891,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(sel
   if (SWIG_IsNewObj(res5)) delete arg5;
   if (SWIG_IsNewObj(res6)) delete arg6;
   if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
   return resultobj;
 fail:
   if (SWIG_IsNewObj(res2)) delete arg2;
@@ -29408,11 +33900,12 @@ fail:
   if (SWIG_IsNewObj(res5)) delete arg5;
   if (SWIG_IsNewObj(res6)) delete arg6;
   if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res16)) delete arg16;
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -29601,7 +34094,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -29781,7 +34274,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -29952,7 +34445,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30114,7 +34607,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30267,7 +34760,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30411,7 +34904,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_8(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_10(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30546,7 +35039,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_9(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_11(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30672,7 +35165,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_10(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_12(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30789,7 +35282,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_11(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_13(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30890,7 +35383,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_12(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_14(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -30975,7 +35468,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_13(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_15(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -31044,7 +35537,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_14(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_16(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -31097,7 +35590,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_15(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_17(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   std::string *arg2 = 0 ;
@@ -31134,7 +35627,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_16(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameInfo_SetInfo__SWIG_18(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GameInfo *arg1 = (GameInfo *) 0 ;
   void *argp1 = 0 ;
@@ -31157,12 +35650,12 @@ fail:
 
 SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[18];
+  PyObject *argv[20];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 17) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 19) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 1) {
@@ -31171,7 +35664,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_GameInfo, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_GameInfo_SetInfo__SWIG_16(self, args);
+      return _wrap_GameInfo_SetInfo__SWIG_18(self, args);
     }
   }
   if (argc == 2) {
@@ -31183,7 +35676,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
       int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
       _v = SWIG_CheckState(res);
       if (_v) {
-        return _wrap_GameInfo_SetInfo__SWIG_15(self, args);
+        return _wrap_GameInfo_SetInfo__SWIG_17(self, args);
       }
     }
   }
@@ -31199,7 +35692,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
         int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_GameInfo_SetInfo__SWIG_14(self, args);
+          return _wrap_GameInfo_SetInfo__SWIG_16(self, args);
         }
       }
     }
@@ -31219,7 +35712,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
           int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
           _v = SWIG_CheckState(res);
           if (_v) {
-            return _wrap_GameInfo_SetInfo__SWIG_13(self, args);
+            return _wrap_GameInfo_SetInfo__SWIG_15(self, args);
           }
         }
       }
@@ -31243,7 +35736,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
             int res = SWIG_AsPtr_std_string(argv[4], (std::string**)(0));
             _v = SWIG_CheckState(res);
             if (_v) {
-              return _wrap_GameInfo_SetInfo__SWIG_12(self, args);
+              return _wrap_GameInfo_SetInfo__SWIG_14(self, args);
             }
           }
         }
@@ -31271,7 +35764,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
               int res = SWIG_AsPtr_std_string(argv[5], (std::string**)(0));
               _v = SWIG_CheckState(res);
               if (_v) {
-                return _wrap_GameInfo_SetInfo__SWIG_11(self, args);
+                return _wrap_GameInfo_SetInfo__SWIG_13(self, args);
               }
             }
           }
@@ -31303,7 +35796,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                 int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
                 _v = SWIG_CheckState(res);
                 if (_v) {
-                  return _wrap_GameInfo_SetInfo__SWIG_10(self, args);
+                  return _wrap_GameInfo_SetInfo__SWIG_12(self, args);
                 }
               }
             }
@@ -31341,7 +35834,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                     _v = SWIG_CheckState(res);
                   }
                   if (_v) {
-                    return _wrap_GameInfo_SetInfo__SWIG_9(self, args);
+                    return _wrap_GameInfo_SetInfo__SWIG_11(self, args);
                   }
                 }
               }
@@ -31385,7 +35878,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                       _v = SWIG_CheckState(res);
                     }
                     if (_v) {
-                      return _wrap_GameInfo_SetInfo__SWIG_8(self, args);
+                      return _wrap_GameInfo_SetInfo__SWIG_10(self, args);
                     }
                   }
                 }
@@ -31435,7 +35928,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                         _v = SWIG_CheckState(res);
                       }
                       if (_v) {
-                        return _wrap_GameInfo_SetInfo__SWIG_7(self, args);
+                        return _wrap_GameInfo_SetInfo__SWIG_9(self, args);
                       }
                     }
                   }
@@ -31491,7 +35984,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                           _v = SWIG_CheckState(res);
                         }
                         if (_v) {
-                          return _wrap_GameInfo_SetInfo__SWIG_6(self, args);
+                          return _wrap_GameInfo_SetInfo__SWIG_8(self, args);
                         }
                       }
                     }
@@ -31553,7 +36046,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                             _v = SWIG_CheckState(res);
                           }
                           if (_v) {
-                            return _wrap_GameInfo_SetInfo__SWIG_5(self, args);
+                            return _wrap_GameInfo_SetInfo__SWIG_7(self, args);
                           }
                         }
                       }
@@ -31621,7 +36114,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                               _v = SWIG_CheckState(res);
                             }
                             if (_v) {
-                              return _wrap_GameInfo_SetInfo__SWIG_4(self, args);
+                              return _wrap_GameInfo_SetInfo__SWIG_6(self, args);
                             }
                           }
                         }
@@ -31695,7 +36188,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                                 _v = SWIG_CheckState(res);
                               }
                               if (_v) {
-                                return _wrap_GameInfo_SetInfo__SWIG_3(self, args);
+                                return _wrap_GameInfo_SetInfo__SWIG_5(self, args);
                               }
                             }
                           }
@@ -31775,7 +36268,7 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                                   _v = SWIG_CheckState(res);
                                 }
                                 if (_v) {
-                                  return _wrap_GameInfo_SetInfo__SWIG_2(self, args);
+                                  return _wrap_GameInfo_SetInfo__SWIG_4(self, args);
                                 }
                               }
                             }
@@ -31856,12 +36349,10 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                                   _v = SWIG_CheckState(res);
                                 }
                                 if (_v) {
-                                  {
-                                    int res = SWIG_AsVal_size_t(argv[15], NULL);
-                                    _v = SWIG_CheckState(res);
-                                  }
+                                  int res = SWIG_AsPtr_std_string(argv[15], (std::string**)(0));
+                                  _v = SWIG_CheckState(res);
                                   if (_v) {
-                                    return _wrap_GameInfo_SetInfo__SWIG_1(self, args);
+                                    return _wrap_GameInfo_SetInfo__SWIG_3(self, args);
                                   }
                                 }
                               }
@@ -31943,17 +36434,215 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
                                   _v = SWIG_CheckState(res);
                                 }
                                 if (_v) {
-                                  {
-                                    int res = SWIG_AsVal_size_t(argv[15], NULL);
-                                    _v = SWIG_CheckState(res);
-                                  }
+                                  int res = SWIG_AsPtr_std_string(argv[15], (std::string**)(0));
+                                  _v = SWIG_CheckState(res);
                                   if (_v) {
                                     {
                                       int res = SWIG_AsVal_size_t(argv[16], NULL);
                                       _v = SWIG_CheckState(res);
                                     }
                                     if (_v) {
-                                      return _wrap_GameInfo_SetInfo__SWIG_0(self, args);
+                                      return _wrap_GameInfo_SetInfo__SWIG_2(self, args);
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 18) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_GameInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_AsPtr_std_string(argv[4], (std::string**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = SWIG_AsPtr_std_string(argv[5], (std::string**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  {
+                    int res = SWIG_AsVal_size_t(argv[7], NULL);
+                    _v = SWIG_CheckState(res);
+                  }
+                  if (_v) {
+                    {
+                      int res = SWIG_AsVal_size_t(argv[8], NULL);
+                      _v = SWIG_CheckState(res);
+                    }
+                    if (_v) {
+                      {
+                        int res = SWIG_AsVal_size_t(argv[9], NULL);
+                        _v = SWIG_CheckState(res);
+                      }
+                      if (_v) {
+                        {
+                          int res = SWIG_AsVal_size_t(argv[10], NULL);
+                          _v = SWIG_CheckState(res);
+                        }
+                        if (_v) {
+                          {
+                            int res = SWIG_AsVal_size_t(argv[11], NULL);
+                            _v = SWIG_CheckState(res);
+                          }
+                          if (_v) {
+                            {
+                              int res = SWIG_AsVal_size_t(argv[12], NULL);
+                              _v = SWIG_CheckState(res);
+                            }
+                            if (_v) {
+                              {
+                                int res = SWIG_AsVal_size_t(argv[13], NULL);
+                                _v = SWIG_CheckState(res);
+                              }
+                              if (_v) {
+                                {
+                                  int res = SWIG_AsVal_size_t(argv[14], NULL);
+                                  _v = SWIG_CheckState(res);
+                                }
+                                if (_v) {
+                                  int res = SWIG_AsPtr_std_string(argv[15], (std::string**)(0));
+                                  _v = SWIG_CheckState(res);
+                                  if (_v) {
+                                    {
+                                      int res = SWIG_AsVal_size_t(argv[16], NULL);
+                                      _v = SWIG_CheckState(res);
+                                    }
+                                    if (_v) {
+                                      {
+                                        int res = SWIG_AsVal_size_t(argv[17], NULL);
+                                        _v = SWIG_CheckState(res);
+                                      }
+                                      if (_v) {
+                                        return _wrap_GameInfo_SetInfo__SWIG_1(self, args);
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 19) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_GameInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            int res = SWIG_AsPtr_std_string(argv[4], (std::string**)(0));
+            _v = SWIG_CheckState(res);
+            if (_v) {
+              int res = SWIG_AsPtr_std_string(argv[5], (std::string**)(0));
+              _v = SWIG_CheckState(res);
+              if (_v) {
+                int res = SWIG_AsPtr_std_string(argv[6], (std::string**)(0));
+                _v = SWIG_CheckState(res);
+                if (_v) {
+                  {
+                    int res = SWIG_AsVal_size_t(argv[7], NULL);
+                    _v = SWIG_CheckState(res);
+                  }
+                  if (_v) {
+                    {
+                      int res = SWIG_AsVal_size_t(argv[8], NULL);
+                      _v = SWIG_CheckState(res);
+                    }
+                    if (_v) {
+                      {
+                        int res = SWIG_AsVal_size_t(argv[9], NULL);
+                        _v = SWIG_CheckState(res);
+                      }
+                      if (_v) {
+                        {
+                          int res = SWIG_AsVal_size_t(argv[10], NULL);
+                          _v = SWIG_CheckState(res);
+                        }
+                        if (_v) {
+                          {
+                            int res = SWIG_AsVal_size_t(argv[11], NULL);
+                            _v = SWIG_CheckState(res);
+                          }
+                          if (_v) {
+                            {
+                              int res = SWIG_AsVal_size_t(argv[12], NULL);
+                              _v = SWIG_CheckState(res);
+                            }
+                            if (_v) {
+                              {
+                                int res = SWIG_AsVal_size_t(argv[13], NULL);
+                                _v = SWIG_CheckState(res);
+                              }
+                              if (_v) {
+                                {
+                                  int res = SWIG_AsVal_size_t(argv[14], NULL);
+                                  _v = SWIG_CheckState(res);
+                                }
+                                if (_v) {
+                                  int res = SWIG_AsPtr_std_string(argv[15], (std::string**)(0));
+                                  _v = SWIG_CheckState(res);
+                                  if (_v) {
+                                    {
+                                      int res = SWIG_AsVal_size_t(argv[16], NULL);
+                                      _v = SWIG_CheckState(res);
+                                    }
+                                    if (_v) {
+                                      {
+                                        int res = SWIG_AsVal_size_t(argv[17], NULL);
+                                        _v = SWIG_CheckState(res);
+                                      }
+                                      if (_v) {
+                                        {
+                                          int res = SWIG_AsVal_size_t(argv[18], NULL);
+                                          _v = SWIG_CheckState(res);
+                                        }
+                                        if (_v) {
+                                          return _wrap_GameInfo_SetInfo__SWIG_0(self, args);
+                                        }
+                                      }
                                     }
                                   }
                                 }
@@ -31976,8 +36665,10 @@ SWIGINTERN PyObject *_wrap_GameInfo_SetInfo(PyObject *self, PyObject *args) {
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'GameInfo_SetInfo'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t)\n"
-    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t)\n"
+    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,std::string const &,size_t,size_t,size_t)\n"
+    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,std::string const &,size_t,size_t)\n"
+    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,std::string const &,size_t)\n"
+    "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t,std::string const &)\n"
     "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t,size_t)\n"
     "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t,size_t)\n"
     "    GameInfo::SetInfo(std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,std::string const &,size_t,size_t,size_t,size_t,size_t,size_t)\n"
@@ -32056,6 +36747,28 @@ SWIGINTERN PyObject *_wrap_GameInfo_GetGameName(PyObject *SWIGUNUSEDPARM(self), 
   }
   arg1 = reinterpret_cast< GameInfo * >(argp1);
   result = ((GameInfo const *)arg1)->GetGameName();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameInfo_GetIconLoc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameInfo *arg1 = (GameInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameInfo_GetIconLoc",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameInfo_GetIconLoc" "', argument " "1"" of type '" "GameInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< GameInfo * >(argp1);
+  result = ((GameInfo const *)arg1)->GetIconLoc();
   resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
@@ -37447,6 +42160,37 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Input_GetKeyName(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Input *arg1 = (Input *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Input_GetKeyName",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Input, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Input_GetKeyName" "', argument " "1"" of type '" "Input const *""'"); 
+  }
+  arg1 = reinterpret_cast< Input * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Input_GetKeyName" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = ((Input const *)arg1)->GetKeyName(arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *Input_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -37659,7 +42403,49 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Game_LoadGameConstants(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Game_LoadGameConstants__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  bool arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Game_LoadGameConstants",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_LoadGameConstants" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Game_LoadGameConstants" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  ecode3 = SWIG_AsVal_bool(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Game_LoadGameConstants" "', argument " "3"" of type '" "bool""'");
+  } 
+  arg3 = static_cast< bool >(val3);
+  (arg1)->LoadGameConstants(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_LoadGameConstants__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Game *arg1 = (Game *) 0 ;
   cstr arg2 = (cstr) 0 ;
@@ -37689,6 +42475,58 @@ SWIGINTERN PyObject *_wrap_Game_LoadGameConstants(PyObject *SWIGUNUSEDPARM(self)
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_LoadGameConstants(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Game, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Game_LoadGameConstants__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Game, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_bool(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Game_LoadGameConstants__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Game_LoadGameConstants'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    Game::LoadGameConstants(cstr,bool)\n"
+    "    Game::LoadGameConstants(cstr)\n");
+  return 0;
 }
 
 
@@ -37953,18 +42791,30 @@ fail:
 SWIGINTERN PyObject *_wrap_Game_GetRenderer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Game *arg1 = (Game *) 0 ;
+  size_t *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
   PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
   SDL_Renderer *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:Game_GetRenderer",&obj0)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:Game_GetRenderer",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_GetRenderer" "', argument " "1"" of type '" "Game *""'"); 
   }
   arg1 = reinterpret_cast< Game * >(argp1);
-  result = (SDL_Renderer *) &(arg1)->GetRenderer();
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_size_t,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Game_GetRenderer" "', argument " "2"" of type '" "size_t &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Game_GetRenderer" "', argument " "2"" of type '" "size_t &""'"); 
+  }
+  arg2 = reinterpret_cast< size_t * >(argp2);
+  result = (SDL_Renderer *) &(arg1)->GetRenderer(*arg2);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SDL_Renderer, 0 |  0 );
   return resultobj;
 fail:
@@ -38053,6 +42903,28 @@ SWIGINTERN PyObject *_wrap_Game_isMultithreaded(PyObject *SWIGUNUSEDPARM(self), 
   }
   arg1 = reinterpret_cast< Game * >(argp1);
   result = (bool)((Game const *)arg1)->isMultithreaded();
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_isGamePaused(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_isGamePaused",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_isGamePaused" "', argument " "1"" of type '" "Game const *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (bool)((Game const *)arg1)->isGamePaused();
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   return resultobj;
 fail:
@@ -38192,7 +43064,49 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Game_loadSaveData(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Game_PauseGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_PauseGame",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_PauseGame" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->PauseGame();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_ResumeGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_ResumeGame",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_ResumeGame" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->ResumeGame();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_LoadSaveData(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Game *arg1 = (Game *) 0 ;
   std::string *arg2 = 0 ;
@@ -38202,24 +43116,24 @@ SWIGINTERN PyObject *_wrap_Game_loadSaveData(PyObject *SWIGUNUSEDPARM(self), PyO
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OO:Game_loadSaveData",&obj0,&obj1)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OO:Game_LoadSaveData",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_loadSaveData" "', argument " "1"" of type '" "Game *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_LoadSaveData" "', argument " "1"" of type '" "Game *""'"); 
   }
   arg1 = reinterpret_cast< Game * >(argp1);
   {
     std::string *ptr = (std::string *)0;
     res2 = SWIG_AsPtr_std_string(obj1, &ptr);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Game_loadSaveData" "', argument " "2"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Game_LoadSaveData" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Game_loadSaveData" "', argument " "2"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Game_LoadSaveData" "', argument " "2"" of type '" "std::string const &""'"); 
     }
     arg2 = ptr;
   }
-  (arg1)->loadSaveData((std::string const &)*arg2);
+  (arg1)->LoadSaveData((std::string const &)*arg2);
   resultobj = SWIG_Py_Void();
   if (SWIG_IsNewObj(res2)) delete arg2;
   return resultobj;
@@ -38262,6 +43176,27 @@ SWIGINTERN PyObject *_wrap_Game_SaveData(PyObject *SWIGUNUSEDPARM(self), PyObjec
   return resultobj;
 fail:
   if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_SaveGameSettings(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_SaveGameSettings",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_SaveGameSettings" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->SaveGameSettings();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
   return NULL;
 }
 
@@ -38323,6 +43258,120 @@ SWIGINTERN PyObject *_wrap_Game_ClearEditorFrameBuffer(PyObject *SWIGUNUSEDPARM(
   }
   arg1 = reinterpret_cast< Game * >(argp1);
   (arg1)->ClearEditorFrameBuffer();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_RestartRenderer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_RestartRenderer",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_RestartRenderer" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->RestartRenderer();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_RestartVideoAndSound(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_RestartVideoAndSound",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_RestartVideoAndSound" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->RestartVideoAndSound();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_RestartAudio(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_RestartAudio",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_RestartAudio" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->RestartAudio();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_RestartVideo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_RestartVideo",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_RestartVideo" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  (arg1)->RestartVideo();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_UnlockRenderer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Game_UnlockRenderer",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_UnlockRenderer" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Game_UnlockRenderer" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  (arg1)->UnlockRenderer(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -38786,17 +43835,69 @@ fail:
 }
 
 
-SWIGINTERN int Swig_var_Game_loadRate_set(PyObject *) {
-  SWIG_Error(SWIG_AttributeError,"Variable Game_loadRate is read-only.");
-  return 1;
+SWIGINTERN PyObject *_wrap_Game_loadRate_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_loadRate_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_loadRate_get" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (size_t) ((arg1)->loadRate);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
-SWIGINTERN PyObject *Swig_var_Game_loadRate_get(void) {
-  PyObject *pyobj = 0;
+SWIGINTERN PyObject *_wrap_Game_WINDOW_WIDTH_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
   
-  pyobj = SWIG_From_size_t(static_cast< size_t >(Game::loadRate));
-  return pyobj;
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_WINDOW_WIDTH_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_WINDOW_WIDTH_get" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (size_t) ((arg1)->WINDOW_WIDTH);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_WINDOW_HEIGHT_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_WINDOW_HEIGHT_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_WINDOW_HEIGHT_get" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (size_t) ((arg1)->WINDOW_HEIGHT);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
 }
 
 
@@ -38951,6 +44052,248 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"cdata", _wrap_cdata, METH_VARARGS, NULL},
 	 { (char *)"memmove", _wrap_memmove, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_UNKNOWN_swigconstant", SDL_SCANCODE_UNKNOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_A_swigconstant", SDL_SCANCODE_A_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_B_swigconstant", SDL_SCANCODE_B_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_C_swigconstant", SDL_SCANCODE_C_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_D_swigconstant", SDL_SCANCODE_D_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_E_swigconstant", SDL_SCANCODE_E_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F_swigconstant", SDL_SCANCODE_F_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_G_swigconstant", SDL_SCANCODE_G_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_H_swigconstant", SDL_SCANCODE_H_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_I_swigconstant", SDL_SCANCODE_I_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_J_swigconstant", SDL_SCANCODE_J_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_K_swigconstant", SDL_SCANCODE_K_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_L_swigconstant", SDL_SCANCODE_L_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_M_swigconstant", SDL_SCANCODE_M_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_N_swigconstant", SDL_SCANCODE_N_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_O_swigconstant", SDL_SCANCODE_O_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_P_swigconstant", SDL_SCANCODE_P_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_Q_swigconstant", SDL_SCANCODE_Q_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_R_swigconstant", SDL_SCANCODE_R_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_S_swigconstant", SDL_SCANCODE_S_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_T_swigconstant", SDL_SCANCODE_T_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_U_swigconstant", SDL_SCANCODE_U_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_V_swigconstant", SDL_SCANCODE_V_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_W_swigconstant", SDL_SCANCODE_W_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_X_swigconstant", SDL_SCANCODE_X_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_Y_swigconstant", SDL_SCANCODE_Y_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_Z_swigconstant", SDL_SCANCODE_Z_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_1_swigconstant", SDL_SCANCODE_1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_2_swigconstant", SDL_SCANCODE_2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_3_swigconstant", SDL_SCANCODE_3_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_4_swigconstant", SDL_SCANCODE_4_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_5_swigconstant", SDL_SCANCODE_5_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_6_swigconstant", SDL_SCANCODE_6_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_7_swigconstant", SDL_SCANCODE_7_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_8_swigconstant", SDL_SCANCODE_8_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_9_swigconstant", SDL_SCANCODE_9_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_0_swigconstant", SDL_SCANCODE_0_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RETURN_swigconstant", SDL_SCANCODE_RETURN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_ESCAPE_swigconstant", SDL_SCANCODE_ESCAPE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_BACKSPACE_swigconstant", SDL_SCANCODE_BACKSPACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_TAB_swigconstant", SDL_SCANCODE_TAB_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SPACE_swigconstant", SDL_SCANCODE_SPACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MINUS_swigconstant", SDL_SCANCODE_MINUS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_EQUALS_swigconstant", SDL_SCANCODE_EQUALS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LEFTBRACKET_swigconstant", SDL_SCANCODE_LEFTBRACKET_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RIGHTBRACKET_swigconstant", SDL_SCANCODE_RIGHTBRACKET_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_BACKSLASH_swigconstant", SDL_SCANCODE_BACKSLASH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_NONUSHASH_swigconstant", SDL_SCANCODE_NONUSHASH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SEMICOLON_swigconstant", SDL_SCANCODE_SEMICOLON_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_APOSTROPHE_swigconstant", SDL_SCANCODE_APOSTROPHE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_GRAVE_swigconstant", SDL_SCANCODE_GRAVE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_COMMA_swigconstant", SDL_SCANCODE_COMMA_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PERIOD_swigconstant", SDL_SCANCODE_PERIOD_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SLASH_swigconstant", SDL_SCANCODE_SLASH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CAPSLOCK_swigconstant", SDL_SCANCODE_CAPSLOCK_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F1_swigconstant", SDL_SCANCODE_F1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F2_swigconstant", SDL_SCANCODE_F2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F3_swigconstant", SDL_SCANCODE_F3_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F4_swigconstant", SDL_SCANCODE_F4_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F5_swigconstant", SDL_SCANCODE_F5_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F6_swigconstant", SDL_SCANCODE_F6_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F7_swigconstant", SDL_SCANCODE_F7_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F8_swigconstant", SDL_SCANCODE_F8_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F9_swigconstant", SDL_SCANCODE_F9_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F10_swigconstant", SDL_SCANCODE_F10_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F11_swigconstant", SDL_SCANCODE_F11_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F12_swigconstant", SDL_SCANCODE_F12_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PRINTSCREEN_swigconstant", SDL_SCANCODE_PRINTSCREEN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SCROLLLOCK_swigconstant", SDL_SCANCODE_SCROLLLOCK_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PAUSE_swigconstant", SDL_SCANCODE_PAUSE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INSERT_swigconstant", SDL_SCANCODE_INSERT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_HOME_swigconstant", SDL_SCANCODE_HOME_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PAGEUP_swigconstant", SDL_SCANCODE_PAGEUP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_DELETE_swigconstant", SDL_SCANCODE_DELETE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_END_swigconstant", SDL_SCANCODE_END_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PAGEDOWN_swigconstant", SDL_SCANCODE_PAGEDOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RIGHT_swigconstant", SDL_SCANCODE_RIGHT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LEFT_swigconstant", SDL_SCANCODE_LEFT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_DOWN_swigconstant", SDL_SCANCODE_DOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_UP_swigconstant", SDL_SCANCODE_UP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_NUMLOCKCLEAR_swigconstant", SDL_SCANCODE_NUMLOCKCLEAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_DIVIDE_swigconstant", SDL_SCANCODE_KP_DIVIDE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MULTIPLY_swigconstant", SDL_SCANCODE_KP_MULTIPLY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MINUS_swigconstant", SDL_SCANCODE_KP_MINUS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_PLUS_swigconstant", SDL_SCANCODE_KP_PLUS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_ENTER_swigconstant", SDL_SCANCODE_KP_ENTER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_1_swigconstant", SDL_SCANCODE_KP_1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_2_swigconstant", SDL_SCANCODE_KP_2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_3_swigconstant", SDL_SCANCODE_KP_3_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_4_swigconstant", SDL_SCANCODE_KP_4_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_5_swigconstant", SDL_SCANCODE_KP_5_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_6_swigconstant", SDL_SCANCODE_KP_6_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_7_swigconstant", SDL_SCANCODE_KP_7_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_8_swigconstant", SDL_SCANCODE_KP_8_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_9_swigconstant", SDL_SCANCODE_KP_9_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_0_swigconstant", SDL_SCANCODE_KP_0_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_PERIOD_swigconstant", SDL_SCANCODE_KP_PERIOD_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_NONUSBACKSLASH_swigconstant", SDL_SCANCODE_NONUSBACKSLASH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_APPLICATION_swigconstant", SDL_SCANCODE_APPLICATION_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_POWER_swigconstant", SDL_SCANCODE_POWER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_EQUALS_swigconstant", SDL_SCANCODE_KP_EQUALS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F13_swigconstant", SDL_SCANCODE_F13_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F14_swigconstant", SDL_SCANCODE_F14_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F15_swigconstant", SDL_SCANCODE_F15_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F16_swigconstant", SDL_SCANCODE_F16_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F17_swigconstant", SDL_SCANCODE_F17_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F18_swigconstant", SDL_SCANCODE_F18_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F19_swigconstant", SDL_SCANCODE_F19_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F20_swigconstant", SDL_SCANCODE_F20_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F21_swigconstant", SDL_SCANCODE_F21_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F22_swigconstant", SDL_SCANCODE_F22_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F23_swigconstant", SDL_SCANCODE_F23_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_F24_swigconstant", SDL_SCANCODE_F24_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_EXECUTE_swigconstant", SDL_SCANCODE_EXECUTE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_HELP_swigconstant", SDL_SCANCODE_HELP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MENU_swigconstant", SDL_SCANCODE_MENU_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SELECT_swigconstant", SDL_SCANCODE_SELECT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_STOP_swigconstant", SDL_SCANCODE_STOP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AGAIN_swigconstant", SDL_SCANCODE_AGAIN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_UNDO_swigconstant", SDL_SCANCODE_UNDO_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CUT_swigconstant", SDL_SCANCODE_CUT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_COPY_swigconstant", SDL_SCANCODE_COPY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PASTE_swigconstant", SDL_SCANCODE_PASTE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_FIND_swigconstant", SDL_SCANCODE_FIND_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MUTE_swigconstant", SDL_SCANCODE_MUTE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_VOLUMEUP_swigconstant", SDL_SCANCODE_VOLUMEUP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_VOLUMEDOWN_swigconstant", SDL_SCANCODE_VOLUMEDOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_COMMA_swigconstant", SDL_SCANCODE_KP_COMMA_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_EQUALSAS400_swigconstant", SDL_SCANCODE_KP_EQUALSAS400_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL1_swigconstant", SDL_SCANCODE_INTERNATIONAL1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL2_swigconstant", SDL_SCANCODE_INTERNATIONAL2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL3_swigconstant", SDL_SCANCODE_INTERNATIONAL3_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL4_swigconstant", SDL_SCANCODE_INTERNATIONAL4_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL5_swigconstant", SDL_SCANCODE_INTERNATIONAL5_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL6_swigconstant", SDL_SCANCODE_INTERNATIONAL6_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL7_swigconstant", SDL_SCANCODE_INTERNATIONAL7_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL8_swigconstant", SDL_SCANCODE_INTERNATIONAL8_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_INTERNATIONAL9_swigconstant", SDL_SCANCODE_INTERNATIONAL9_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG1_swigconstant", SDL_SCANCODE_LANG1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG2_swigconstant", SDL_SCANCODE_LANG2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG3_swigconstant", SDL_SCANCODE_LANG3_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG4_swigconstant", SDL_SCANCODE_LANG4_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG5_swigconstant", SDL_SCANCODE_LANG5_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG6_swigconstant", SDL_SCANCODE_LANG6_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG7_swigconstant", SDL_SCANCODE_LANG7_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG8_swigconstant", SDL_SCANCODE_LANG8_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LANG9_swigconstant", SDL_SCANCODE_LANG9_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_ALTERASE_swigconstant", SDL_SCANCODE_ALTERASE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SYSREQ_swigconstant", SDL_SCANCODE_SYSREQ_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CANCEL_swigconstant", SDL_SCANCODE_CANCEL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CLEAR_swigconstant", SDL_SCANCODE_CLEAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_PRIOR_swigconstant", SDL_SCANCODE_PRIOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RETURN2_swigconstant", SDL_SCANCODE_RETURN2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SEPARATOR_swigconstant", SDL_SCANCODE_SEPARATOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_OUT_swigconstant", SDL_SCANCODE_OUT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_OPER_swigconstant", SDL_SCANCODE_OPER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CLEARAGAIN_swigconstant", SDL_SCANCODE_CLEARAGAIN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CRSEL_swigconstant", SDL_SCANCODE_CRSEL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_EXSEL_swigconstant", SDL_SCANCODE_EXSEL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_00_swigconstant", SDL_SCANCODE_KP_00_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_000_swigconstant", SDL_SCANCODE_KP_000_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_THOUSANDSSEPARATOR_swigconstant", SDL_SCANCODE_THOUSANDSSEPARATOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_DECIMALSEPARATOR_swigconstant", SDL_SCANCODE_DECIMALSEPARATOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CURRENCYUNIT_swigconstant", SDL_SCANCODE_CURRENCYUNIT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CURRENCYSUBUNIT_swigconstant", SDL_SCANCODE_CURRENCYSUBUNIT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_LEFTPAREN_swigconstant", SDL_SCANCODE_KP_LEFTPAREN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_RIGHTPAREN_swigconstant", SDL_SCANCODE_KP_RIGHTPAREN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_LEFTBRACE_swigconstant", SDL_SCANCODE_KP_LEFTBRACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_RIGHTBRACE_swigconstant", SDL_SCANCODE_KP_RIGHTBRACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_TAB_swigconstant", SDL_SCANCODE_KP_TAB_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_BACKSPACE_swigconstant", SDL_SCANCODE_KP_BACKSPACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_A_swigconstant", SDL_SCANCODE_KP_A_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_B_swigconstant", SDL_SCANCODE_KP_B_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_C_swigconstant", SDL_SCANCODE_KP_C_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_D_swigconstant", SDL_SCANCODE_KP_D_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_E_swigconstant", SDL_SCANCODE_KP_E_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_F_swigconstant", SDL_SCANCODE_KP_F_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_XOR_swigconstant", SDL_SCANCODE_KP_XOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_POWER_swigconstant", SDL_SCANCODE_KP_POWER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_PERCENT_swigconstant", SDL_SCANCODE_KP_PERCENT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_LESS_swigconstant", SDL_SCANCODE_KP_LESS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_GREATER_swigconstant", SDL_SCANCODE_KP_GREATER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_AMPERSAND_swigconstant", SDL_SCANCODE_KP_AMPERSAND_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_DBLAMPERSAND_swigconstant", SDL_SCANCODE_KP_DBLAMPERSAND_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_VERTICALBAR_swigconstant", SDL_SCANCODE_KP_VERTICALBAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_DBLVERTICALBAR_swigconstant", SDL_SCANCODE_KP_DBLVERTICALBAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_COLON_swigconstant", SDL_SCANCODE_KP_COLON_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_HASH_swigconstant", SDL_SCANCODE_KP_HASH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_SPACE_swigconstant", SDL_SCANCODE_KP_SPACE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_AT_swigconstant", SDL_SCANCODE_KP_AT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_EXCLAM_swigconstant", SDL_SCANCODE_KP_EXCLAM_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMSTORE_swigconstant", SDL_SCANCODE_KP_MEMSTORE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMRECALL_swigconstant", SDL_SCANCODE_KP_MEMRECALL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMCLEAR_swigconstant", SDL_SCANCODE_KP_MEMCLEAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMADD_swigconstant", SDL_SCANCODE_KP_MEMADD_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMSUBTRACT_swigconstant", SDL_SCANCODE_KP_MEMSUBTRACT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMMULTIPLY_swigconstant", SDL_SCANCODE_KP_MEMMULTIPLY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_MEMDIVIDE_swigconstant", SDL_SCANCODE_KP_MEMDIVIDE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_PLUSMINUS_swigconstant", SDL_SCANCODE_KP_PLUSMINUS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_CLEAR_swigconstant", SDL_SCANCODE_KP_CLEAR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_CLEARENTRY_swigconstant", SDL_SCANCODE_KP_CLEARENTRY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_BINARY_swigconstant", SDL_SCANCODE_KP_BINARY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_OCTAL_swigconstant", SDL_SCANCODE_KP_OCTAL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_DECIMAL_swigconstant", SDL_SCANCODE_KP_DECIMAL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KP_HEXADECIMAL_swigconstant", SDL_SCANCODE_KP_HEXADECIMAL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LCTRL_swigconstant", SDL_SCANCODE_LCTRL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LSHIFT_swigconstant", SDL_SCANCODE_LSHIFT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LALT_swigconstant", SDL_SCANCODE_LALT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_LGUI_swigconstant", SDL_SCANCODE_LGUI_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RCTRL_swigconstant", SDL_SCANCODE_RCTRL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RSHIFT_swigconstant", SDL_SCANCODE_RSHIFT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RALT_swigconstant", SDL_SCANCODE_RALT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_RGUI_swigconstant", SDL_SCANCODE_RGUI_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MODE_swigconstant", SDL_SCANCODE_MODE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AUDIONEXT_swigconstant", SDL_SCANCODE_AUDIONEXT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AUDIOPREV_swigconstant", SDL_SCANCODE_AUDIOPREV_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AUDIOSTOP_swigconstant", SDL_SCANCODE_AUDIOSTOP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AUDIOPLAY_swigconstant", SDL_SCANCODE_AUDIOPLAY_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AUDIOMUTE_swigconstant", SDL_SCANCODE_AUDIOMUTE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MEDIASELECT_swigconstant", SDL_SCANCODE_MEDIASELECT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_WWW_swigconstant", SDL_SCANCODE_WWW_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_MAIL_swigconstant", SDL_SCANCODE_MAIL_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_CALCULATOR_swigconstant", SDL_SCANCODE_CALCULATOR_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_COMPUTER_swigconstant", SDL_SCANCODE_COMPUTER_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_SEARCH_swigconstant", SDL_SCANCODE_AC_SEARCH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_HOME_swigconstant", SDL_SCANCODE_AC_HOME_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_BACK_swigconstant", SDL_SCANCODE_AC_BACK_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_FORWARD_swigconstant", SDL_SCANCODE_AC_FORWARD_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_STOP_swigconstant", SDL_SCANCODE_AC_STOP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_REFRESH_swigconstant", SDL_SCANCODE_AC_REFRESH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_AC_BOOKMARKS_swigconstant", SDL_SCANCODE_AC_BOOKMARKS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_BRIGHTNESSDOWN_swigconstant", SDL_SCANCODE_BRIGHTNESSDOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_BRIGHTNESSUP_swigconstant", SDL_SCANCODE_BRIGHTNESSUP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_DISPLAYSWITCH_swigconstant", SDL_SCANCODE_DISPLAYSWITCH_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KBDILLUMTOGGLE_swigconstant", SDL_SCANCODE_KBDILLUMTOGGLE_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KBDILLUMDOWN_swigconstant", SDL_SCANCODE_KBDILLUMDOWN_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_KBDILLUMUP_swigconstant", SDL_SCANCODE_KBDILLUMUP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_EJECT_swigconstant", SDL_SCANCODE_EJECT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_SLEEP_swigconstant", SDL_SCANCODE_SLEEP_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_APP1_swigconstant", SDL_SCANCODE_APP1_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_SCANCODE_APP2_swigconstant", SDL_SCANCODE_APP2_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SDL_NUM_SCANCODES_swigconstant", SDL_NUM_SCANCODES_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"hasher", _wrap_hasher, METH_VARARGS, NULL},
 	 { (char *)"randUniform", _wrap_randUniform, METH_VARARGS, NULL},
 	 { (char *)"randBinomial", _wrap_randBinomial, METH_VARARGS, NULL},
@@ -38991,6 +44334,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"FULL_OUTER_JOIN_swigconstant", FULL_OUTER_JOIN_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"INTO_SELECT_swigconstant", INTO_SELECT_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"UNION_swigconstant", UNION_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"SQLQuery_WILDCARD_get", _wrap_SQLQuery_WILDCARD_get, METH_VARARGS, NULL},
 	 { (char *)"SQLQuery_prepareStatement", _wrap_SQLQuery_prepareStatement, METH_VARARGS, NULL},
 	 { (char *)"new_SQLQuery", _wrap_new_SQLQuery, METH_VARARGS, NULL},
 	 { (char *)"delete_SQLQuery", _wrap_delete_SQLQuery, METH_VARARGS, NULL},
@@ -39061,8 +44405,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"data_base_CreateNewFile", _wrap_data_base_CreateNewFile, METH_VARARGS, NULL},
 	 { (char *)"data_base_CreateNewFile_static", _wrap_data_base_CreateNewFile_static, METH_VARARGS, NULL},
 	 { (char *)"delete_data_base", _wrap_delete_data_base, METH_VARARGS, NULL},
-	 { (char *)"data_base_BUFFER_get", _wrap_data_base_BUFFER_get, METH_VARARGS, NULL},
 	 { (char *)"data_base_BUFFER_set", _wrap_data_base_BUFFER_set, METH_VARARGS, NULL},
+	 { (char *)"data_base_BUFFER_get", _wrap_data_base_BUFFER_get, METH_VARARGS, NULL},
 	 { (char *)"data_base_swigregister", data_base_swigregister, METH_VARARGS, NULL},
 	 { (char *)"copyfile", _wrap_copyfile, METH_VARARGS, NULL},
 	 { (char *)"get_bin_buffer", _wrap_get_bin_buffer, METH_VARARGS, NULL},
@@ -39086,8 +44430,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"draw_base_SetTextureFromRef", _wrap_draw_base_SetTextureFromRef, METH_VARARGS, NULL},
 	 { (char *)"new_draw_base", _wrap_new_draw_base, METH_VARARGS, NULL},
 	 { (char *)"delete_draw_base", _wrap_delete_draw_base, METH_VARARGS, NULL},
-	 { (char *)"draw_base_textures_get", _wrap_draw_base_textures_get, METH_VARARGS, NULL},
 	 { (char *)"draw_base_textures_set", _wrap_draw_base_textures_set, METH_VARARGS, NULL},
+	 { (char *)"draw_base_textures_get", _wrap_draw_base_textures_get, METH_VARARGS, NULL},
 	 { (char *)"draw_base_swigregister", draw_base_swigregister, METH_VARARGS, NULL},
 	 { (char *)"apply_surface", _wrap_apply_surface, METH_VARARGS, NULL},
 	 { (char *)"LoadTexture", _wrap_LoadTexture, METH_VARARGS, NULL},
@@ -39159,8 +44503,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Unit_isColliding", _wrap_Unit_isColliding, METH_VARARGS, NULL},
 	 { (char *)"Unit_Update_Physics", _wrap_Unit_Update_Physics, METH_VARARGS, NULL},
 	 { (char *)"Unit_OnCollision", _wrap_Unit_OnCollision, METH_VARARGS, NULL},
-	 { (char *)"Unit_ai_get", _wrap_Unit_ai_get, METH_VARARGS, NULL},
 	 { (char *)"Unit_ai_set", _wrap_Unit_ai_set, METH_VARARGS, NULL},
+	 { (char *)"Unit_ai_get", _wrap_Unit_ai_get, METH_VARARGS, NULL},
 	 { (char *)"Unit_swigregister", Unit_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Trigger", _wrap_new_Trigger, METH_VARARGS, NULL},
 	 { (char *)"delete_Trigger", _wrap_delete_Trigger, METH_VARARGS, NULL},
@@ -39412,12 +44756,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ThreadSystem_DeleteMutex", _wrap_ThreadSystem_DeleteMutex, METH_VARARGS, NULL},
 	 { (char *)"ThreadSystem_DeleteConditionVariable", _wrap_ThreadSystem_DeleteConditionVariable, METH_VARARGS, NULL},
 	 { (char *)"ThreadSystem_swigregister", ThreadSystem_swigregister, METH_VARARGS, NULL},
+	 { (char *)"NO_CLIENT_swigconstant", NO_CLIENT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"TIMEOUT_TRYS_swigconstant", TIMEOUT_TRYS_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"NET_ANYUDPPORT_swigconstant", NET_ANYUDPPORT_swigconstant, METH_VARARGS, NULL},
+	 { (char *)"ANY_CHANNEL_swigconstant", ANY_CHANNEL_swigconstant, METH_VARARGS, NULL},
 	 { (char *)"UDPClient_ip_set", _wrap_UDPClient_ip_set, METH_VARARGS, NULL},
 	 { (char *)"UDPClient_ip_get", _wrap_UDPClient_ip_get, METH_VARARGS, NULL},
-	 { (char *)"UDPClient_nativeChannel_set", _wrap_UDPClient_nativeChannel_set, METH_VARARGS, NULL},
-	 { (char *)"UDPClient_nativeChannel_get", _wrap_UDPClient_nativeChannel_get, METH_VARARGS, NULL},
-	 { (char *)"UDPClient_serverChannel_set", _wrap_UDPClient_serverChannel_set, METH_VARARGS, NULL},
-	 { (char *)"UDPClient_serverChannel_get", _wrap_UDPClient_serverChannel_get, METH_VARARGS, NULL},
+	 { (char *)"UDPClient_id_set", _wrap_UDPClient_id_set, METH_VARARGS, NULL},
+	 { (char *)"UDPClient_id_get", _wrap_UDPClient_id_get, METH_VARARGS, NULL},
 	 { (char *)"UDPClient_udp_set", _wrap_UDPClient_udp_set, METH_VARARGS, NULL},
 	 { (char *)"UDPClient_udp_get", _wrap_UDPClient_udp_get, METH_VARARGS, NULL},
 	 { (char *)"new_UDPClient", _wrap_new_UDPClient, METH_VARARGS, NULL},
@@ -39446,11 +44792,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"NetNode_GetPort", _wrap_NetNode_GetPort, METH_VARARGS, NULL},
 	 { (char *)"NetNode_GetNodeID", _wrap_NetNode_GetNodeID, METH_VARARGS, NULL},
 	 { (char *)"NetNode_GetClientCount", _wrap_NetNode_GetClientCount, METH_VARARGS, NULL},
-	 { (char *)"NetNode_GenerateUDPChannel", _wrap_NetNode_GenerateUDPChannel, METH_VARARGS, NULL},
+	 { (char *)"NetNode_GenerateUDPID", _wrap_NetNode_GenerateUDPID, METH_VARARGS, NULL},
 	 { (char *)"NetNode_isUDP", _wrap_NetNode_isUDP, METH_VARARGS, NULL},
 	 { (char *)"NetNode_isServer", _wrap_NetNode_isServer, METH_VARARGS, NULL},
 	 { (char *)"NetNode_isBad", _wrap_NetNode_isBad, METH_VARARGS, NULL},
-	 { (char *)"NetNode_isUDPChannelFull", _wrap_NetNode_isUDPChannelFull, METH_VARARGS, NULL},
+	 { (char *)"NetNode_isUDPIDUsed", _wrap_NetNode_isUDPIDUsed, METH_VARARGS, NULL},
 	 { (char *)"NetNode_AcceptTCPClient", _wrap_NetNode_AcceptTCPClient, METH_VARARGS, NULL},
 	 { (char *)"NetNode_RegisterUDPClient", _wrap_NetNode_RegisterUDPClient, METH_VARARGS, NULL},
 	 { (char *)"NetNode_UnRegisterTCPClient", _wrap_NetNode_UnRegisterTCPClient, METH_VARARGS, NULL},
@@ -39523,6 +44869,24 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"LayerSystem_GetLayerCount", _wrap_LayerSystem_GetLayerCount, METH_VARARGS, NULL},
 	 { (char *)"LayerSystem_DrawLayers", _wrap_LayerSystem_DrawLayers, METH_VARARGS, NULL},
 	 { (char *)"LayerSystem_swigregister", LayerSystem_swigregister, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_id_set", _wrap_ExpansionItem_id_set, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_id_get", _wrap_ExpansionItem_id_get, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_name_set", _wrap_ExpansionItem_name_set, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_name_get", _wrap_ExpansionItem_name_get, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_path_set", _wrap_ExpansionItem_path_set, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_path_get", _wrap_ExpansionItem_path_get, METH_VARARGS, NULL},
+	 { (char *)"new_ExpansionItem", _wrap_new_ExpansionItem, METH_VARARGS, NULL},
+	 { (char *)"delete_ExpansionItem", _wrap_delete_ExpansionItem, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_swigregister", ExpansionItem_swigregister, METH_VARARGS, NULL},
+	 { (char *)"delete_ExpansionInfo", _wrap_delete_ExpansionInfo, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_LoadExpansionInfo", _wrap_ExpansionInfo_LoadExpansionInfo, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_GetExpansionName", _wrap_ExpansionInfo_GetExpansionName, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_GetExpansionPath", _wrap_ExpansionInfo_GetExpansionPath, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_GenerateExpansionID", _wrap_ExpansionInfo_GenerateExpansionID, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_GetExpansionCount", _wrap_ExpansionInfo_GetExpansionCount, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_INVALID_get", _wrap_ExpansionInfo_INVALID_get, METH_VARARGS, NULL},
+	 { (char *)"new_ExpansionInfo", _wrap_new_ExpansionInfo, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_swigregister", ExpansionInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ScreenInfo", _wrap_new_ScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenInfo", _wrap_ScreenInfo_SetScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenLoc", _wrap_ScreenInfo_SetScreenLoc, METH_VARARGS, NULL},
@@ -39533,6 +44897,14 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ScreenInfo_GetScreenBPP", _wrap_ScreenInfo_GetScreenBPP, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_GetDisplayIndex", _wrap_ScreenInfo_GetDisplayIndex, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_GetDisplayCount", _wrap_ScreenInfo_GetDisplayCount, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_GetScreenMode", _wrap_ScreenInfo_GetScreenMode, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_GetRenderDriver", _wrap_ScreenInfo_GetRenderDriver, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_FULLSCREEN_get", _wrap_ScreenInfo_FULLSCREEN_get, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_RESIZABLE_get", _wrap_ScreenInfo_RESIZABLE_get, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_MAXIMIZED_get", _wrap_ScreenInfo_MAXIMIZED_get, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_OPENGL_get", _wrap_ScreenInfo_OPENGL_get, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_DIRECT3D_get", _wrap_ScreenInfo_DIRECT3D_get, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_SOFTWARE_get", _wrap_ScreenInfo_SOFTWARE_get, METH_VARARGS, NULL},
 	 { (char *)"delete_ScreenInfo", _wrap_delete_ScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_swigregister", ScreenInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_SoundInfo", _wrap_new_SoundInfo, METH_VARARGS, NULL},
@@ -39547,6 +44919,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"GameInfo_GetRootDirectory", _wrap_GameInfo_GetRootDirectory, METH_VARARGS, NULL},
 	 { (char *)"GameInfo_GetModName", _wrap_GameInfo_GetModName, METH_VARARGS, NULL},
 	 { (char *)"GameInfo_GetGameName", _wrap_GameInfo_GetGameName, METH_VARARGS, NULL},
+	 { (char *)"GameInfo_GetIconLoc", _wrap_GameInfo_GetIconLoc, METH_VARARGS, NULL},
 	 { (char *)"GameInfo_GetBlitLevels", _wrap_GameInfo_GetBlitLevels, METH_VARARGS, NULL},
 	 { (char *)"GameInfo_GetRenderQuality", _wrap_GameInfo_GetRenderQuality, METH_VARARGS, NULL},
 	 { (char *)"delete_GameInfo", _wrap_delete_GameInfo, METH_VARARGS, NULL},
@@ -39755,6 +45128,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Input_ChangeKeyBinding", _wrap_Input_ChangeKeyBinding, METH_VARARGS, NULL},
 	 { (char *)"Input_SaveKeyBindings", _wrap_Input_SaveKeyBindings, METH_VARARGS, NULL},
 	 { (char *)"Input_GetRawInput", _wrap_Input_GetRawInput, METH_VARARGS, NULL},
+	 { (char *)"Input_GetKeyName", _wrap_Input_GetKeyName, METH_VARARGS, NULL},
 	 { (char *)"Input_swigregister", Input_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Game", _wrap_new_Game, METH_VARARGS, NULL},
 	 { (char *)"delete_Game", _wrap_delete_Game, METH_VARARGS, NULL},
@@ -39775,17 +45149,26 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Game_GetMainTimer", _wrap_Game_GetMainTimer, METH_VARARGS, NULL},
 	 { (char *)"Game_GetHeroID", _wrap_Game_GetHeroID, METH_VARARGS, NULL},
 	 { (char *)"Game_isMultithreaded", _wrap_Game_isMultithreaded, METH_VARARGS, NULL},
+	 { (char *)"Game_isGamePaused", _wrap_Game_isGamePaused, METH_VARARGS, NULL},
 	 { (char *)"Game_GetRelativity", _wrap_Game_GetRelativity, METH_VARARGS, NULL},
 	 { (char *)"Game_isEngineClosing", _wrap_Game_isEngineClosing, METH_VARARGS, NULL},
 	 { (char *)"Game_noHero", _wrap_Game_noHero, METH_VARARGS, NULL},
 	 { (char *)"Game_GetFrameBuffer", _wrap_Game_GetFrameBuffer, METH_VARARGS, NULL},
 	 { (char *)"Game_GetSizeOfFrameBuffer", _wrap_Game_GetSizeOfFrameBuffer, METH_VARARGS, NULL},
 	 { (char *)"Game_GetWinID", _wrap_Game_GetWinID, METH_VARARGS, NULL},
-	 { (char *)"Game_loadSaveData", _wrap_Game_loadSaveData, METH_VARARGS, NULL},
+	 { (char *)"Game_PauseGame", _wrap_Game_PauseGame, METH_VARARGS, NULL},
+	 { (char *)"Game_ResumeGame", _wrap_Game_ResumeGame, METH_VARARGS, NULL},
+	 { (char *)"Game_LoadSaveData", _wrap_Game_LoadSaveData, METH_VARARGS, NULL},
 	 { (char *)"Game_SaveData", _wrap_Game_SaveData, METH_VARARGS, NULL},
+	 { (char *)"Game_SaveGameSettings", _wrap_Game_SaveGameSettings, METH_VARARGS, NULL},
 	 { (char *)"Game_GetSaveDataHandle", _wrap_Game_GetSaveDataHandle, METH_VARARGS, NULL},
 	 { (char *)"Game_FrameCapper", _wrap_Game_FrameCapper, METH_VARARGS, NULL},
 	 { (char *)"Game_ClearEditorFrameBuffer", _wrap_Game_ClearEditorFrameBuffer, METH_VARARGS, NULL},
+	 { (char *)"Game_RestartRenderer", _wrap_Game_RestartRenderer, METH_VARARGS, NULL},
+	 { (char *)"Game_RestartVideoAndSound", _wrap_Game_RestartVideoAndSound, METH_VARARGS, NULL},
+	 { (char *)"Game_RestartAudio", _wrap_Game_RestartAudio, METH_VARARGS, NULL},
+	 { (char *)"Game_RestartVideo", _wrap_Game_RestartVideo, METH_VARARGS, NULL},
+	 { (char *)"Game_UnlockRenderer", _wrap_Game_UnlockRenderer, METH_VARARGS, NULL},
 	 { (char *)"Game_drawWorld", _wrap_Game_drawWorld, METH_VARARGS, NULL},
 	 { (char *)"Game_playSounds", _wrap_Game_playSounds, METH_VARARGS, NULL},
 	 { (char *)"Game_runPhysics", _wrap_Game_runPhysics, METH_VARARGS, NULL},
@@ -39805,6 +45188,9 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Game_ShowVideoHUD", _wrap_Game_ShowVideoHUD, METH_VARARGS, NULL},
 	 { (char *)"Game_HideVideoHUD", _wrap_Game_HideVideoHUD, METH_VARARGS, NULL},
 	 { (char *)"Game_ReplaceVideoHUD", _wrap_Game_ReplaceVideoHUD, METH_VARARGS, NULL},
+	 { (char *)"Game_loadRate_get", _wrap_Game_loadRate_get, METH_VARARGS, NULL},
+	 { (char *)"Game_WINDOW_WIDTH_get", _wrap_Game_WINDOW_WIDTH_get, METH_VARARGS, NULL},
+	 { (char *)"Game_WINDOW_HEIGHT_get", _wrap_Game_WINDOW_HEIGHT_get, METH_VARARGS, NULL},
 	 { (char *)"Game_swigregister", Game_swigregister, METH_VARARGS, NULL},
 	 { (char *)"helperDrawFunction", _wrap_helperDrawFunction, METH_VARARGS, NULL},
 	 { (char *)"helperSoundFunction", _wrap_helperSoundFunction, METH_VARARGS, NULL},
@@ -39821,6 +45207,12 @@ static PyMethodDef SwigMethods[] = {
 
 static void *_p_DataBaseTo_p_SQLGenerator(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SQLGenerator *)  ((DataBase *) x));
+}
+static void *_p_GameInfoTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ExpansionInfo *)  ((GameInfo *) x));
+}
+static void *_p_GameTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((ExpansionInfo *) (GameInfo *) ((Game *) x));
 }
 static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundQueue *)  ((Game *) x));
@@ -39876,9 +45268,6 @@ static void *_p_GameTo_p_ScreenInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static void *_p_GameTo_p_GameInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((GameInfo *)  ((Game *) x));
 }
-static void *_p_GameTo_p_NetworkManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((NetworkManager *)  ((Game *) x));
-}
 static void *_p_GameTo_p_UIManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UIManager *)  ((Game *) x));
 }
@@ -39887,6 +45276,9 @@ static void *_p_GameTo_p_IOManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 }
 static void *_p_GameTo_p_UnitManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UnitManager *)  ((Game *) x));
+}
+static void *_p_GameTo_p_NetworkManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((NetworkManager *)  ((Game *) x));
 }
 static void *_p_GameTo_p_TriggerManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((TriggerManager *)  ((Game *) x));
@@ -39908,6 +45300,8 @@ static swig_type_info _swigt__p_Button = {"_p_Button", "Button *", 0, 0, (void*)
 static swig_type_info _swigt__p_Cursor = {"_p_Cursor", "Cursor *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_CursorNode = {"_p_CursorNode", "CursorNode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_DataBase = {"_p_DataBase", "DataBase *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_ExpansionInfo = {"_p_ExpansionInfo", "ExpansionInfo *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_ExpansionItem = {"_p_ExpansionItem", "ExpansionItem *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Game = {"_p_Game", "Game *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameInfo = {"_p_GameInfo", "GameInfo *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_IOManager = {"_p_IOManager", "IOManager *", 0, 0, (void*)0, 0};
@@ -39935,6 +45329,7 @@ static swig_type_info _swigt__p_SDL_BlendMode = {"_p_SDL_BlendMode", "SDL_BlendM
 static swig_type_info _swigt__p_SDL_Event = {"_p_SDL_Event", "SDL_Event *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Rect = {"_p_SDL_Rect", "SDL_Rect *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Renderer = {"_p_SDL_Renderer", "SDL_Renderer *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_SDL_Scancode = {"_p_SDL_Scancode", "enum SDL_Scancode *|SDL_Scancode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Texture = {"_p_SDL_Texture", "SDL_Texture *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SQLGenerator = {"_p_SQLGenerator", "SQLGenerator *|SQLQuery *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ScreenInfo = {"_p_ScreenInfo", "ScreenInfo *", 0, 0, (void*)0, 0};
@@ -39997,6 +45392,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Cursor,
   &_swigt__p_CursorNode,
   &_swigt__p_DataBase,
+  &_swigt__p_ExpansionInfo,
+  &_swigt__p_ExpansionItem,
   &_swigt__p_Game,
   &_swigt__p_GameInfo,
   &_swigt__p_IOManager,
@@ -40024,6 +45421,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_SDL_Event,
   &_swigt__p_SDL_Rect,
   &_swigt__p_SDL_Renderer,
+  &_swigt__p_SDL_Scancode,
   &_swigt__p_SDL_Texture,
   &_swigt__p_SQLGenerator,
   &_swigt__p_ScreenInfo,
@@ -40086,6 +45484,8 @@ static swig_cast_info _swigc__p_Button[] = {  {&_swigt__p_Button, 0, 0, 0},{0, 0
 static swig_cast_info _swigc__p_Cursor[] = {  {&_swigt__p_Game, _p_GameTo_p_Cursor, 0, 0},  {&_swigt__p_Cursor, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CursorNode[] = {  {&_swigt__p_CursorNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_DataBase[] = {  {&_swigt__p_DataBase, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ExpansionInfo[] = {  {&_swigt__p_ExpansionInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_ExpansionInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ExpansionInfo, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_ExpansionItem[] = {  {&_swigt__p_ExpansionItem, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Game[] = {  {&_swigt__p_Game, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameInfo[] = {  {&_swigt__p_GameInfo, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_GameInfo, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_IOManager[] = {  {&_swigt__p_IOManager, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_IOManager, 0, 0},{0, 0, 0, 0}};
@@ -40113,6 +45513,7 @@ static swig_cast_info _swigc__p_SDL_BlendMode[] = {  {&_swigt__p_SDL_BlendMode, 
 static swig_cast_info _swigc__p_SDL_Event[] = {  {&_swigt__p_SDL_Event, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Rect[] = {  {&_swigt__p_SDL_Rect, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Renderer[] = {  {&_swigt__p_SDL_Renderer, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_SDL_Scancode[] = {  {&_swigt__p_SDL_Scancode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Texture[] = {  {&_swigt__p_SDL_Texture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SQLGenerator[] = {  {&_swigt__p_SQLGenerator, 0, 0, 0},  {&_swigt__p_DataBase, _p_DataBaseTo_p_SQLGenerator, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ScreenInfo[] = {  {&_swigt__p_ScreenInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_ScreenInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ScreenInfo, 0, 0},{0, 0, 0, 0}};
@@ -40175,6 +45576,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Cursor,
   _swigc__p_CursorNode,
   _swigc__p_DataBase,
+  _swigc__p_ExpansionInfo,
+  _swigc__p_ExpansionItem,
   _swigc__p_Game,
   _swigc__p_GameInfo,
   _swigc__p_IOManager,
@@ -40202,6 +45605,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_SDL_Event,
   _swigc__p_SDL_Rect,
   _swigc__p_SDL_Renderer,
+  _swigc__p_SDL_Scancode,
   _swigc__p_SDL_Texture,
   _swigc__p_SQLGenerator,
   _swigc__p_ScreenInfo,
@@ -40942,12 +46346,7 @@ SWIG_init(void) {
   
   PyDict_SetItemString(md,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"Keywords",Swig_var_Keywords_get, Swig_var_Keywords_set);
-  SWIG_addvarlink(SWIG_globals(),(char*)"SQLQuery_WILDCARD",Swig_var_SQLQuery_WILDCARD_get, Swig_var_SQLQuery_WILDCARD_set);
-  SWIG_addvarlink(SWIG_globals(),(char*)"data_base_BUFFER",Swig_var_data_base_BUFFER_get, Swig_var_data_base_BUFFER_set);
-  SWIG_addvarlink(SWIG_globals(),(char*)"draw_base_textures",Swig_var_draw_base_textures_get, Swig_var_draw_base_textures_set);
-  SWIG_addvarlink(SWIG_globals(),(char*)"Unit_ai",Swig_var_Unit_ai_get, Swig_var_Unit_ai_set);
   SWIG_addvarlink(SWIG_globals(),(char*)"maxConn",Swig_var_maxConn_get, Swig_var_maxConn_set);
-  SWIG_addvarlink(SWIG_globals(),(char*)"Game_loadRate",Swig_var_Game_loadRate_get, Swig_var_Game_loadRate_set);
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

@@ -3,24 +3,41 @@
 #include <SDL.h>
 #include <iostream>
 #include <string>
+#include "BST.h"
 #include "typedefs.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
+class DataBase;
 
 struct ExpansionItem
 {
     size_t id;
     std::string name;
     std::string path;
+    ExpansionItem(size_t id, const std::string& name, const std::string& path);
+    ExpansionItem(const ExpansionItem& item);
+    ExpansionItem();
 };
 
 class ExpansionInfo
 {
 public:
+    //dtor
+    ~ExpansionInfo();
+    //Loading methods
+    void LoadExpansionInfo(cstr file);
+    void LoadExpansionInfo(DataBase* db);
+    //Getters
+    std::string GetExpansionName(size_t id) const;
+    std::string GetExpansionPath(size_t id) const;
+    size_t GenerateExpansionID(const std::string& name) const;
+    size_t GetExpansionCount() const;
+
+    static const std::string INVALID;
 
 private:
-
+    BinarySearchTree<size_t, ExpansionItem*> mods;
 };
 
 class ScreenInfo
@@ -45,9 +62,9 @@ class ScreenInfo
 
 
      //globals
-     const static size_t FULLSCREEN = SDL_WINDOW_FULLSCREEN;
-     const static size_t RESIZABLE = SDL_WINDOW_RESIZABLE;
-     const static size_t MAXIMIZED = SDL_WINDOW_MAXIMIZED;
+     const static size_t FULLSCREEN;
+     const static size_t RESIZABLE;
+     const static size_t MAXIMIZED;
      const static std::string OPENGL;
      const static std::string DIRECT3D;
      const static std::string SOFTWARE;
@@ -71,7 +88,7 @@ class SoundInfo
     size_t m_frequency, m_channels, m_chunksize;
 };
 
-class GameInfo : public ScreenInfo, public SoundInfo
+class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo
 {
 public:
     GameInfo();

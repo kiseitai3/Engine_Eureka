@@ -36,6 +36,9 @@
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+				</Linker>
 			</Target>
 			<Target title="IO">
 				<Option output="bin/engine/IO" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
@@ -165,6 +168,9 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Threading" />
+				</Linker>
 			</Target>
 			<Target title="Timer">
 				<Option output="bin/engine/Timer" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
@@ -182,6 +188,9 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="_EE" />
+				</Linker>
 			</Target>
 			<Target title="Input">
 				<Option output="bin/engine/Input" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
@@ -203,6 +212,9 @@
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
 				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-fPIC" />
+				</Compiler>
 				<Linker>
 					<Add library="Core" />
 					<Add library="plugins" />
@@ -649,6 +661,7 @@
 		</Unit>
 		<Unit filename="main.cpp">
 			<Option target="staticlib_all" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="modadapter.cpp">
 			<Option target="Plugins" />
@@ -910,13 +923,13 @@
 			<debugger />
 			<envvars />
 			<DoxyBlocks>
-				<comment_style block="0" line="0" />
+				<comment_style block="5" line="0" />
 				<doxyfile_project />
 				<doxyfile_build />
-				<doxyfile_warnings />
-				<doxyfile_output />
+				<doxyfile_warnings warn_if_undocumented="1" />
+				<doxyfile_output html_help="1" latex="1" rtf="1" man="1" xml="1" />
 				<doxyfile_dot />
-				<general />
+				<general use_at_in_tags="1" />
 			</DoxyBlocks>
 		</Extensions>
 	</Project>

@@ -68,11 +68,12 @@ public:
     void UnsetHeroUnitAsLoaded();
 
     /*Getters*/
-    SDL_Renderer& GetRenderer();
+    SDL_Renderer& GetRenderer(size_t& game_mutex);
     SDL_Event& GetEvents();
     size_t GetMainTimer() const;
     size_t GetHeroID() const;
     bool isMultithreaded() const;
+    bool isGamePaused() const;
     bool GetRelativity() const;
     bool isEngineClosing() const;
     bool noHero() const;
@@ -80,8 +81,12 @@ public:
     size_t GetSizeOfFrameBuffer() const;
     size_t GetWinID() const;
 
+    /*Setters*/
+    void PauseGame();
+    void ResumeGame();
+
     /*Save methods*/
-    void loadSaveData(const std::string& file);
+    void LoadSaveData(const std::string& file);
     void SaveData(const std::string& query);//Done on a database so you must query
     void SaveGameSettings();
     DataBase* GetSaveDataHandle();
@@ -93,6 +98,7 @@ public:
     void RestartVideoAndSound();
     void RestartAudio();
     void RestartVideo();
+    void UnlockRenderer(size_t mutex_id);
 
     /*Below are the methods that will be called by the main thread or independent threads (if in multithreaded mode).*/
     void drawWorld();
@@ -136,12 +142,14 @@ private:
     bool loading;
     bool heroLoaded;
     bool requestFrame;
+    bool gamePaused;
 
     //IDs
     size_t mainTimer;//Timer
     size_t dbID;//Save database
     size_t drawThread, eventsThread, gcThread, soundThread, pluginThread, updateThread;
     size_t loadID, hudID, mainMenuID, videoHUD_ID;//Main ui ids
+    size_t game_mutex_id;
     std::list<size_t> moduleList;
     std::list<size_t> uiList;
 

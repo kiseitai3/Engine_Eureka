@@ -97,6 +97,7 @@ public:
 
     //Getter
     const raw_input& GetRawInput() const;
+    std::string GetKeyName(size_t key) const;
 
 private:
     ScriptWrap* script;

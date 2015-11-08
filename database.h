@@ -16,6 +16,7 @@ public:
     void query(const std::string& query);
     /*Getters*/
     void GetResult(int& response, size_t col = 0);
+    void GetResult(size_t& response, size_t col = 0);
     void GetResult(char& response, size_t col = 0);
     void GetResult(bool& response, size_t col = 0);
     void GetResult(std::string& response, size_t col = 0);

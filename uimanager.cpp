@@ -39,6 +39,7 @@ UIManager::~UIManager()
 
 size_t UIManager::RegisterUI(cstr file)
 {
+    size_t r_id;
     size_t id = hasher();
     //Lock mutex
     owner_ref->LockMutex(mutex_ui_id);
@@ -48,7 +49,8 @@ size_t UIManager::RegisterUI(cstr file)
         id = hasher();
     }
     //Create object
-    uis.insert(id, new UI(file, owner_ref->GetRenderer()));
+    uis.insert(id, new UI(file, owner_ref->GetRenderer(r_id)));
+    owner_ref->UnlockRenderer(r_id);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_ui_id);
     return id;

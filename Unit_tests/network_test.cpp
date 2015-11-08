@@ -194,6 +194,7 @@ std::string Receive(Game& g, size_t socket_id, size_t client_id, bool server)
         d = "<empty>\0";
         return d;
     }
+    sleep(10000000);
     if(d.size() > 0)
         return d.substr(1, d.find("11") - 1);
     return d;

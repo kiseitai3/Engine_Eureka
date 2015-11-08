@@ -77,6 +77,11 @@ void DataBase::query(const std::string& query)
     }
 }
 
+void DataBase::GetResult(size_t& response, size_t col)
+{
+    GetResult((int&)response, col);
+}
+
 void DataBase::GetResult(bool& response, size_t col)
 {
     switch(db_type)

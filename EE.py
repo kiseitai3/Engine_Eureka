@@ -99,6 +99,732 @@ def memmove(data, indata):
     return _EE.memmove(data, indata)
 memmove = _EE.memmove
 
+_EE.SDL_SCANCODE_UNKNOWN_swigconstant(_EE)
+SDL_SCANCODE_UNKNOWN = _EE.SDL_SCANCODE_UNKNOWN
+
+_EE.SDL_SCANCODE_A_swigconstant(_EE)
+SDL_SCANCODE_A = _EE.SDL_SCANCODE_A
+
+_EE.SDL_SCANCODE_B_swigconstant(_EE)
+SDL_SCANCODE_B = _EE.SDL_SCANCODE_B
+
+_EE.SDL_SCANCODE_C_swigconstant(_EE)
+SDL_SCANCODE_C = _EE.SDL_SCANCODE_C
+
+_EE.SDL_SCANCODE_D_swigconstant(_EE)
+SDL_SCANCODE_D = _EE.SDL_SCANCODE_D
+
+_EE.SDL_SCANCODE_E_swigconstant(_EE)
+SDL_SCANCODE_E = _EE.SDL_SCANCODE_E
+
+_EE.SDL_SCANCODE_F_swigconstant(_EE)
+SDL_SCANCODE_F = _EE.SDL_SCANCODE_F
+
+_EE.SDL_SCANCODE_G_swigconstant(_EE)
+SDL_SCANCODE_G = _EE.SDL_SCANCODE_G
+
+_EE.SDL_SCANCODE_H_swigconstant(_EE)
+SDL_SCANCODE_H = _EE.SDL_SCANCODE_H
+
+_EE.SDL_SCANCODE_I_swigconstant(_EE)
+SDL_SCANCODE_I = _EE.SDL_SCANCODE_I
+
+_EE.SDL_SCANCODE_J_swigconstant(_EE)
+SDL_SCANCODE_J = _EE.SDL_SCANCODE_J
+
+_EE.SDL_SCANCODE_K_swigconstant(_EE)
+SDL_SCANCODE_K = _EE.SDL_SCANCODE_K
+
+_EE.SDL_SCANCODE_L_swigconstant(_EE)
+SDL_SCANCODE_L = _EE.SDL_SCANCODE_L
+
+_EE.SDL_SCANCODE_M_swigconstant(_EE)
+SDL_SCANCODE_M = _EE.SDL_SCANCODE_M
+
+_EE.SDL_SCANCODE_N_swigconstant(_EE)
+SDL_SCANCODE_N = _EE.SDL_SCANCODE_N
+
+_EE.SDL_SCANCODE_O_swigconstant(_EE)
+SDL_SCANCODE_O = _EE.SDL_SCANCODE_O
+
+_EE.SDL_SCANCODE_P_swigconstant(_EE)
+SDL_SCANCODE_P = _EE.SDL_SCANCODE_P
+
+_EE.SDL_SCANCODE_Q_swigconstant(_EE)
+SDL_SCANCODE_Q = _EE.SDL_SCANCODE_Q
+
+_EE.SDL_SCANCODE_R_swigconstant(_EE)
+SDL_SCANCODE_R = _EE.SDL_SCANCODE_R
+
+_EE.SDL_SCANCODE_S_swigconstant(_EE)
+SDL_SCANCODE_S = _EE.SDL_SCANCODE_S
+
+_EE.SDL_SCANCODE_T_swigconstant(_EE)
+SDL_SCANCODE_T = _EE.SDL_SCANCODE_T
+
+_EE.SDL_SCANCODE_U_swigconstant(_EE)
+SDL_SCANCODE_U = _EE.SDL_SCANCODE_U
+
+_EE.SDL_SCANCODE_V_swigconstant(_EE)
+SDL_SCANCODE_V = _EE.SDL_SCANCODE_V
+
+_EE.SDL_SCANCODE_W_swigconstant(_EE)
+SDL_SCANCODE_W = _EE.SDL_SCANCODE_W
+
+_EE.SDL_SCANCODE_X_swigconstant(_EE)
+SDL_SCANCODE_X = _EE.SDL_SCANCODE_X
+
+_EE.SDL_SCANCODE_Y_swigconstant(_EE)
+SDL_SCANCODE_Y = _EE.SDL_SCANCODE_Y
+
+_EE.SDL_SCANCODE_Z_swigconstant(_EE)
+SDL_SCANCODE_Z = _EE.SDL_SCANCODE_Z
+
+_EE.SDL_SCANCODE_1_swigconstant(_EE)
+SDL_SCANCODE_1 = _EE.SDL_SCANCODE_1
+
+_EE.SDL_SCANCODE_2_swigconstant(_EE)
+SDL_SCANCODE_2 = _EE.SDL_SCANCODE_2
+
+_EE.SDL_SCANCODE_3_swigconstant(_EE)
+SDL_SCANCODE_3 = _EE.SDL_SCANCODE_3
+
+_EE.SDL_SCANCODE_4_swigconstant(_EE)
+SDL_SCANCODE_4 = _EE.SDL_SCANCODE_4
+
+_EE.SDL_SCANCODE_5_swigconstant(_EE)
+SDL_SCANCODE_5 = _EE.SDL_SCANCODE_5
+
+_EE.SDL_SCANCODE_6_swigconstant(_EE)
+SDL_SCANCODE_6 = _EE.SDL_SCANCODE_6
+
+_EE.SDL_SCANCODE_7_swigconstant(_EE)
+SDL_SCANCODE_7 = _EE.SDL_SCANCODE_7
+
+_EE.SDL_SCANCODE_8_swigconstant(_EE)
+SDL_SCANCODE_8 = _EE.SDL_SCANCODE_8
+
+_EE.SDL_SCANCODE_9_swigconstant(_EE)
+SDL_SCANCODE_9 = _EE.SDL_SCANCODE_9
+
+_EE.SDL_SCANCODE_0_swigconstant(_EE)
+SDL_SCANCODE_0 = _EE.SDL_SCANCODE_0
+
+_EE.SDL_SCANCODE_RETURN_swigconstant(_EE)
+SDL_SCANCODE_RETURN = _EE.SDL_SCANCODE_RETURN
+
+_EE.SDL_SCANCODE_ESCAPE_swigconstant(_EE)
+SDL_SCANCODE_ESCAPE = _EE.SDL_SCANCODE_ESCAPE
+
+_EE.SDL_SCANCODE_BACKSPACE_swigconstant(_EE)
+SDL_SCANCODE_BACKSPACE = _EE.SDL_SCANCODE_BACKSPACE
+
+_EE.SDL_SCANCODE_TAB_swigconstant(_EE)
+SDL_SCANCODE_TAB = _EE.SDL_SCANCODE_TAB
+
+_EE.SDL_SCANCODE_SPACE_swigconstant(_EE)
+SDL_SCANCODE_SPACE = _EE.SDL_SCANCODE_SPACE
+
+_EE.SDL_SCANCODE_MINUS_swigconstant(_EE)
+SDL_SCANCODE_MINUS = _EE.SDL_SCANCODE_MINUS
+
+_EE.SDL_SCANCODE_EQUALS_swigconstant(_EE)
+SDL_SCANCODE_EQUALS = _EE.SDL_SCANCODE_EQUALS
+
+_EE.SDL_SCANCODE_LEFTBRACKET_swigconstant(_EE)
+SDL_SCANCODE_LEFTBRACKET = _EE.SDL_SCANCODE_LEFTBRACKET
+
+_EE.SDL_SCANCODE_RIGHTBRACKET_swigconstant(_EE)
+SDL_SCANCODE_RIGHTBRACKET = _EE.SDL_SCANCODE_RIGHTBRACKET
+
+_EE.SDL_SCANCODE_BACKSLASH_swigconstant(_EE)
+SDL_SCANCODE_BACKSLASH = _EE.SDL_SCANCODE_BACKSLASH
+
+_EE.SDL_SCANCODE_NONUSHASH_swigconstant(_EE)
+SDL_SCANCODE_NONUSHASH = _EE.SDL_SCANCODE_NONUSHASH
+
+_EE.SDL_SCANCODE_SEMICOLON_swigconstant(_EE)
+SDL_SCANCODE_SEMICOLON = _EE.SDL_SCANCODE_SEMICOLON
+
+_EE.SDL_SCANCODE_APOSTROPHE_swigconstant(_EE)
+SDL_SCANCODE_APOSTROPHE = _EE.SDL_SCANCODE_APOSTROPHE
+
+_EE.SDL_SCANCODE_GRAVE_swigconstant(_EE)
+SDL_SCANCODE_GRAVE = _EE.SDL_SCANCODE_GRAVE
+
+_EE.SDL_SCANCODE_COMMA_swigconstant(_EE)
+SDL_SCANCODE_COMMA = _EE.SDL_SCANCODE_COMMA
+
+_EE.SDL_SCANCODE_PERIOD_swigconstant(_EE)
+SDL_SCANCODE_PERIOD = _EE.SDL_SCANCODE_PERIOD
+
+_EE.SDL_SCANCODE_SLASH_swigconstant(_EE)
+SDL_SCANCODE_SLASH = _EE.SDL_SCANCODE_SLASH
+
+_EE.SDL_SCANCODE_CAPSLOCK_swigconstant(_EE)
+SDL_SCANCODE_CAPSLOCK = _EE.SDL_SCANCODE_CAPSLOCK
+
+_EE.SDL_SCANCODE_F1_swigconstant(_EE)
+SDL_SCANCODE_F1 = _EE.SDL_SCANCODE_F1
+
+_EE.SDL_SCANCODE_F2_swigconstant(_EE)
+SDL_SCANCODE_F2 = _EE.SDL_SCANCODE_F2
+
+_EE.SDL_SCANCODE_F3_swigconstant(_EE)
+SDL_SCANCODE_F3 = _EE.SDL_SCANCODE_F3
+
+_EE.SDL_SCANCODE_F4_swigconstant(_EE)
+SDL_SCANCODE_F4 = _EE.SDL_SCANCODE_F4
+
+_EE.SDL_SCANCODE_F5_swigconstant(_EE)
+SDL_SCANCODE_F5 = _EE.SDL_SCANCODE_F5
+
+_EE.SDL_SCANCODE_F6_swigconstant(_EE)
+SDL_SCANCODE_F6 = _EE.SDL_SCANCODE_F6
+
+_EE.SDL_SCANCODE_F7_swigconstant(_EE)
+SDL_SCANCODE_F7 = _EE.SDL_SCANCODE_F7
+
+_EE.SDL_SCANCODE_F8_swigconstant(_EE)
+SDL_SCANCODE_F8 = _EE.SDL_SCANCODE_F8
+
+_EE.SDL_SCANCODE_F9_swigconstant(_EE)
+SDL_SCANCODE_F9 = _EE.SDL_SCANCODE_F9
+
+_EE.SDL_SCANCODE_F10_swigconstant(_EE)
+SDL_SCANCODE_F10 = _EE.SDL_SCANCODE_F10
+
+_EE.SDL_SCANCODE_F11_swigconstant(_EE)
+SDL_SCANCODE_F11 = _EE.SDL_SCANCODE_F11
+
+_EE.SDL_SCANCODE_F12_swigconstant(_EE)
+SDL_SCANCODE_F12 = _EE.SDL_SCANCODE_F12
+
+_EE.SDL_SCANCODE_PRINTSCREEN_swigconstant(_EE)
+SDL_SCANCODE_PRINTSCREEN = _EE.SDL_SCANCODE_PRINTSCREEN
+
+_EE.SDL_SCANCODE_SCROLLLOCK_swigconstant(_EE)
+SDL_SCANCODE_SCROLLLOCK = _EE.SDL_SCANCODE_SCROLLLOCK
+
+_EE.SDL_SCANCODE_PAUSE_swigconstant(_EE)
+SDL_SCANCODE_PAUSE = _EE.SDL_SCANCODE_PAUSE
+
+_EE.SDL_SCANCODE_INSERT_swigconstant(_EE)
+SDL_SCANCODE_INSERT = _EE.SDL_SCANCODE_INSERT
+
+_EE.SDL_SCANCODE_HOME_swigconstant(_EE)
+SDL_SCANCODE_HOME = _EE.SDL_SCANCODE_HOME
+
+_EE.SDL_SCANCODE_PAGEUP_swigconstant(_EE)
+SDL_SCANCODE_PAGEUP = _EE.SDL_SCANCODE_PAGEUP
+
+_EE.SDL_SCANCODE_DELETE_swigconstant(_EE)
+SDL_SCANCODE_DELETE = _EE.SDL_SCANCODE_DELETE
+
+_EE.SDL_SCANCODE_END_swigconstant(_EE)
+SDL_SCANCODE_END = _EE.SDL_SCANCODE_END
+
+_EE.SDL_SCANCODE_PAGEDOWN_swigconstant(_EE)
+SDL_SCANCODE_PAGEDOWN = _EE.SDL_SCANCODE_PAGEDOWN
+
+_EE.SDL_SCANCODE_RIGHT_swigconstant(_EE)
+SDL_SCANCODE_RIGHT = _EE.SDL_SCANCODE_RIGHT
+
+_EE.SDL_SCANCODE_LEFT_swigconstant(_EE)
+SDL_SCANCODE_LEFT = _EE.SDL_SCANCODE_LEFT
+
+_EE.SDL_SCANCODE_DOWN_swigconstant(_EE)
+SDL_SCANCODE_DOWN = _EE.SDL_SCANCODE_DOWN
+
+_EE.SDL_SCANCODE_UP_swigconstant(_EE)
+SDL_SCANCODE_UP = _EE.SDL_SCANCODE_UP
+
+_EE.SDL_SCANCODE_NUMLOCKCLEAR_swigconstant(_EE)
+SDL_SCANCODE_NUMLOCKCLEAR = _EE.SDL_SCANCODE_NUMLOCKCLEAR
+
+_EE.SDL_SCANCODE_KP_DIVIDE_swigconstant(_EE)
+SDL_SCANCODE_KP_DIVIDE = _EE.SDL_SCANCODE_KP_DIVIDE
+
+_EE.SDL_SCANCODE_KP_MULTIPLY_swigconstant(_EE)
+SDL_SCANCODE_KP_MULTIPLY = _EE.SDL_SCANCODE_KP_MULTIPLY
+
+_EE.SDL_SCANCODE_KP_MINUS_swigconstant(_EE)
+SDL_SCANCODE_KP_MINUS = _EE.SDL_SCANCODE_KP_MINUS
+
+_EE.SDL_SCANCODE_KP_PLUS_swigconstant(_EE)
+SDL_SCANCODE_KP_PLUS = _EE.SDL_SCANCODE_KP_PLUS
+
+_EE.SDL_SCANCODE_KP_ENTER_swigconstant(_EE)
+SDL_SCANCODE_KP_ENTER = _EE.SDL_SCANCODE_KP_ENTER
+
+_EE.SDL_SCANCODE_KP_1_swigconstant(_EE)
+SDL_SCANCODE_KP_1 = _EE.SDL_SCANCODE_KP_1
+
+_EE.SDL_SCANCODE_KP_2_swigconstant(_EE)
+SDL_SCANCODE_KP_2 = _EE.SDL_SCANCODE_KP_2
+
+_EE.SDL_SCANCODE_KP_3_swigconstant(_EE)
+SDL_SCANCODE_KP_3 = _EE.SDL_SCANCODE_KP_3
+
+_EE.SDL_SCANCODE_KP_4_swigconstant(_EE)
+SDL_SCANCODE_KP_4 = _EE.SDL_SCANCODE_KP_4
+
+_EE.SDL_SCANCODE_KP_5_swigconstant(_EE)
+SDL_SCANCODE_KP_5 = _EE.SDL_SCANCODE_KP_5
+
+_EE.SDL_SCANCODE_KP_6_swigconstant(_EE)
+SDL_SCANCODE_KP_6 = _EE.SDL_SCANCODE_KP_6
+
+_EE.SDL_SCANCODE_KP_7_swigconstant(_EE)
+SDL_SCANCODE_KP_7 = _EE.SDL_SCANCODE_KP_7
+
+_EE.SDL_SCANCODE_KP_8_swigconstant(_EE)
+SDL_SCANCODE_KP_8 = _EE.SDL_SCANCODE_KP_8
+
+_EE.SDL_SCANCODE_KP_9_swigconstant(_EE)
+SDL_SCANCODE_KP_9 = _EE.SDL_SCANCODE_KP_9
+
+_EE.SDL_SCANCODE_KP_0_swigconstant(_EE)
+SDL_SCANCODE_KP_0 = _EE.SDL_SCANCODE_KP_0
+
+_EE.SDL_SCANCODE_KP_PERIOD_swigconstant(_EE)
+SDL_SCANCODE_KP_PERIOD = _EE.SDL_SCANCODE_KP_PERIOD
+
+_EE.SDL_SCANCODE_NONUSBACKSLASH_swigconstant(_EE)
+SDL_SCANCODE_NONUSBACKSLASH = _EE.SDL_SCANCODE_NONUSBACKSLASH
+
+_EE.SDL_SCANCODE_APPLICATION_swigconstant(_EE)
+SDL_SCANCODE_APPLICATION = _EE.SDL_SCANCODE_APPLICATION
+
+_EE.SDL_SCANCODE_POWER_swigconstant(_EE)
+SDL_SCANCODE_POWER = _EE.SDL_SCANCODE_POWER
+
+_EE.SDL_SCANCODE_KP_EQUALS_swigconstant(_EE)
+SDL_SCANCODE_KP_EQUALS = _EE.SDL_SCANCODE_KP_EQUALS
+
+_EE.SDL_SCANCODE_F13_swigconstant(_EE)
+SDL_SCANCODE_F13 = _EE.SDL_SCANCODE_F13
+
+_EE.SDL_SCANCODE_F14_swigconstant(_EE)
+SDL_SCANCODE_F14 = _EE.SDL_SCANCODE_F14
+
+_EE.SDL_SCANCODE_F15_swigconstant(_EE)
+SDL_SCANCODE_F15 = _EE.SDL_SCANCODE_F15
+
+_EE.SDL_SCANCODE_F16_swigconstant(_EE)
+SDL_SCANCODE_F16 = _EE.SDL_SCANCODE_F16
+
+_EE.SDL_SCANCODE_F17_swigconstant(_EE)
+SDL_SCANCODE_F17 = _EE.SDL_SCANCODE_F17
+
+_EE.SDL_SCANCODE_F18_swigconstant(_EE)
+SDL_SCANCODE_F18 = _EE.SDL_SCANCODE_F18
+
+_EE.SDL_SCANCODE_F19_swigconstant(_EE)
+SDL_SCANCODE_F19 = _EE.SDL_SCANCODE_F19
+
+_EE.SDL_SCANCODE_F20_swigconstant(_EE)
+SDL_SCANCODE_F20 = _EE.SDL_SCANCODE_F20
+
+_EE.SDL_SCANCODE_F21_swigconstant(_EE)
+SDL_SCANCODE_F21 = _EE.SDL_SCANCODE_F21
+
+_EE.SDL_SCANCODE_F22_swigconstant(_EE)
+SDL_SCANCODE_F22 = _EE.SDL_SCANCODE_F22
+
+_EE.SDL_SCANCODE_F23_swigconstant(_EE)
+SDL_SCANCODE_F23 = _EE.SDL_SCANCODE_F23
+
+_EE.SDL_SCANCODE_F24_swigconstant(_EE)
+SDL_SCANCODE_F24 = _EE.SDL_SCANCODE_F24
+
+_EE.SDL_SCANCODE_EXECUTE_swigconstant(_EE)
+SDL_SCANCODE_EXECUTE = _EE.SDL_SCANCODE_EXECUTE
+
+_EE.SDL_SCANCODE_HELP_swigconstant(_EE)
+SDL_SCANCODE_HELP = _EE.SDL_SCANCODE_HELP
+
+_EE.SDL_SCANCODE_MENU_swigconstant(_EE)
+SDL_SCANCODE_MENU = _EE.SDL_SCANCODE_MENU
+
+_EE.SDL_SCANCODE_SELECT_swigconstant(_EE)
+SDL_SCANCODE_SELECT = _EE.SDL_SCANCODE_SELECT
+
+_EE.SDL_SCANCODE_STOP_swigconstant(_EE)
+SDL_SCANCODE_STOP = _EE.SDL_SCANCODE_STOP
+
+_EE.SDL_SCANCODE_AGAIN_swigconstant(_EE)
+SDL_SCANCODE_AGAIN = _EE.SDL_SCANCODE_AGAIN
+
+_EE.SDL_SCANCODE_UNDO_swigconstant(_EE)
+SDL_SCANCODE_UNDO = _EE.SDL_SCANCODE_UNDO
+
+_EE.SDL_SCANCODE_CUT_swigconstant(_EE)
+SDL_SCANCODE_CUT = _EE.SDL_SCANCODE_CUT
+
+_EE.SDL_SCANCODE_COPY_swigconstant(_EE)
+SDL_SCANCODE_COPY = _EE.SDL_SCANCODE_COPY
+
+_EE.SDL_SCANCODE_PASTE_swigconstant(_EE)
+SDL_SCANCODE_PASTE = _EE.SDL_SCANCODE_PASTE
+
+_EE.SDL_SCANCODE_FIND_swigconstant(_EE)
+SDL_SCANCODE_FIND = _EE.SDL_SCANCODE_FIND
+
+_EE.SDL_SCANCODE_MUTE_swigconstant(_EE)
+SDL_SCANCODE_MUTE = _EE.SDL_SCANCODE_MUTE
+
+_EE.SDL_SCANCODE_VOLUMEUP_swigconstant(_EE)
+SDL_SCANCODE_VOLUMEUP = _EE.SDL_SCANCODE_VOLUMEUP
+
+_EE.SDL_SCANCODE_VOLUMEDOWN_swigconstant(_EE)
+SDL_SCANCODE_VOLUMEDOWN = _EE.SDL_SCANCODE_VOLUMEDOWN
+
+_EE.SDL_SCANCODE_KP_COMMA_swigconstant(_EE)
+SDL_SCANCODE_KP_COMMA = _EE.SDL_SCANCODE_KP_COMMA
+
+_EE.SDL_SCANCODE_KP_EQUALSAS400_swigconstant(_EE)
+SDL_SCANCODE_KP_EQUALSAS400 = _EE.SDL_SCANCODE_KP_EQUALSAS400
+
+_EE.SDL_SCANCODE_INTERNATIONAL1_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL1 = _EE.SDL_SCANCODE_INTERNATIONAL1
+
+_EE.SDL_SCANCODE_INTERNATIONAL2_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL2 = _EE.SDL_SCANCODE_INTERNATIONAL2
+
+_EE.SDL_SCANCODE_INTERNATIONAL3_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL3 = _EE.SDL_SCANCODE_INTERNATIONAL3
+
+_EE.SDL_SCANCODE_INTERNATIONAL4_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL4 = _EE.SDL_SCANCODE_INTERNATIONAL4
+
+_EE.SDL_SCANCODE_INTERNATIONAL5_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL5 = _EE.SDL_SCANCODE_INTERNATIONAL5
+
+_EE.SDL_SCANCODE_INTERNATIONAL6_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL6 = _EE.SDL_SCANCODE_INTERNATIONAL6
+
+_EE.SDL_SCANCODE_INTERNATIONAL7_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL7 = _EE.SDL_SCANCODE_INTERNATIONAL7
+
+_EE.SDL_SCANCODE_INTERNATIONAL8_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL8 = _EE.SDL_SCANCODE_INTERNATIONAL8
+
+_EE.SDL_SCANCODE_INTERNATIONAL9_swigconstant(_EE)
+SDL_SCANCODE_INTERNATIONAL9 = _EE.SDL_SCANCODE_INTERNATIONAL9
+
+_EE.SDL_SCANCODE_LANG1_swigconstant(_EE)
+SDL_SCANCODE_LANG1 = _EE.SDL_SCANCODE_LANG1
+
+_EE.SDL_SCANCODE_LANG2_swigconstant(_EE)
+SDL_SCANCODE_LANG2 = _EE.SDL_SCANCODE_LANG2
+
+_EE.SDL_SCANCODE_LANG3_swigconstant(_EE)
+SDL_SCANCODE_LANG3 = _EE.SDL_SCANCODE_LANG3
+
+_EE.SDL_SCANCODE_LANG4_swigconstant(_EE)
+SDL_SCANCODE_LANG4 = _EE.SDL_SCANCODE_LANG4
+
+_EE.SDL_SCANCODE_LANG5_swigconstant(_EE)
+SDL_SCANCODE_LANG5 = _EE.SDL_SCANCODE_LANG5
+
+_EE.SDL_SCANCODE_LANG6_swigconstant(_EE)
+SDL_SCANCODE_LANG6 = _EE.SDL_SCANCODE_LANG6
+
+_EE.SDL_SCANCODE_LANG7_swigconstant(_EE)
+SDL_SCANCODE_LANG7 = _EE.SDL_SCANCODE_LANG7
+
+_EE.SDL_SCANCODE_LANG8_swigconstant(_EE)
+SDL_SCANCODE_LANG8 = _EE.SDL_SCANCODE_LANG8
+
+_EE.SDL_SCANCODE_LANG9_swigconstant(_EE)
+SDL_SCANCODE_LANG9 = _EE.SDL_SCANCODE_LANG9
+
+_EE.SDL_SCANCODE_ALTERASE_swigconstant(_EE)
+SDL_SCANCODE_ALTERASE = _EE.SDL_SCANCODE_ALTERASE
+
+_EE.SDL_SCANCODE_SYSREQ_swigconstant(_EE)
+SDL_SCANCODE_SYSREQ = _EE.SDL_SCANCODE_SYSREQ
+
+_EE.SDL_SCANCODE_CANCEL_swigconstant(_EE)
+SDL_SCANCODE_CANCEL = _EE.SDL_SCANCODE_CANCEL
+
+_EE.SDL_SCANCODE_CLEAR_swigconstant(_EE)
+SDL_SCANCODE_CLEAR = _EE.SDL_SCANCODE_CLEAR
+
+_EE.SDL_SCANCODE_PRIOR_swigconstant(_EE)
+SDL_SCANCODE_PRIOR = _EE.SDL_SCANCODE_PRIOR
+
+_EE.SDL_SCANCODE_RETURN2_swigconstant(_EE)
+SDL_SCANCODE_RETURN2 = _EE.SDL_SCANCODE_RETURN2
+
+_EE.SDL_SCANCODE_SEPARATOR_swigconstant(_EE)
+SDL_SCANCODE_SEPARATOR = _EE.SDL_SCANCODE_SEPARATOR
+
+_EE.SDL_SCANCODE_OUT_swigconstant(_EE)
+SDL_SCANCODE_OUT = _EE.SDL_SCANCODE_OUT
+
+_EE.SDL_SCANCODE_OPER_swigconstant(_EE)
+SDL_SCANCODE_OPER = _EE.SDL_SCANCODE_OPER
+
+_EE.SDL_SCANCODE_CLEARAGAIN_swigconstant(_EE)
+SDL_SCANCODE_CLEARAGAIN = _EE.SDL_SCANCODE_CLEARAGAIN
+
+_EE.SDL_SCANCODE_CRSEL_swigconstant(_EE)
+SDL_SCANCODE_CRSEL = _EE.SDL_SCANCODE_CRSEL
+
+_EE.SDL_SCANCODE_EXSEL_swigconstant(_EE)
+SDL_SCANCODE_EXSEL = _EE.SDL_SCANCODE_EXSEL
+
+_EE.SDL_SCANCODE_KP_00_swigconstant(_EE)
+SDL_SCANCODE_KP_00 = _EE.SDL_SCANCODE_KP_00
+
+_EE.SDL_SCANCODE_KP_000_swigconstant(_EE)
+SDL_SCANCODE_KP_000 = _EE.SDL_SCANCODE_KP_000
+
+_EE.SDL_SCANCODE_THOUSANDSSEPARATOR_swigconstant(_EE)
+SDL_SCANCODE_THOUSANDSSEPARATOR = _EE.SDL_SCANCODE_THOUSANDSSEPARATOR
+
+_EE.SDL_SCANCODE_DECIMALSEPARATOR_swigconstant(_EE)
+SDL_SCANCODE_DECIMALSEPARATOR = _EE.SDL_SCANCODE_DECIMALSEPARATOR
+
+_EE.SDL_SCANCODE_CURRENCYUNIT_swigconstant(_EE)
+SDL_SCANCODE_CURRENCYUNIT = _EE.SDL_SCANCODE_CURRENCYUNIT
+
+_EE.SDL_SCANCODE_CURRENCYSUBUNIT_swigconstant(_EE)
+SDL_SCANCODE_CURRENCYSUBUNIT = _EE.SDL_SCANCODE_CURRENCYSUBUNIT
+
+_EE.SDL_SCANCODE_KP_LEFTPAREN_swigconstant(_EE)
+SDL_SCANCODE_KP_LEFTPAREN = _EE.SDL_SCANCODE_KP_LEFTPAREN
+
+_EE.SDL_SCANCODE_KP_RIGHTPAREN_swigconstant(_EE)
+SDL_SCANCODE_KP_RIGHTPAREN = _EE.SDL_SCANCODE_KP_RIGHTPAREN
+
+_EE.SDL_SCANCODE_KP_LEFTBRACE_swigconstant(_EE)
+SDL_SCANCODE_KP_LEFTBRACE = _EE.SDL_SCANCODE_KP_LEFTBRACE
+
+_EE.SDL_SCANCODE_KP_RIGHTBRACE_swigconstant(_EE)
+SDL_SCANCODE_KP_RIGHTBRACE = _EE.SDL_SCANCODE_KP_RIGHTBRACE
+
+_EE.SDL_SCANCODE_KP_TAB_swigconstant(_EE)
+SDL_SCANCODE_KP_TAB = _EE.SDL_SCANCODE_KP_TAB
+
+_EE.SDL_SCANCODE_KP_BACKSPACE_swigconstant(_EE)
+SDL_SCANCODE_KP_BACKSPACE = _EE.SDL_SCANCODE_KP_BACKSPACE
+
+_EE.SDL_SCANCODE_KP_A_swigconstant(_EE)
+SDL_SCANCODE_KP_A = _EE.SDL_SCANCODE_KP_A
+
+_EE.SDL_SCANCODE_KP_B_swigconstant(_EE)
+SDL_SCANCODE_KP_B = _EE.SDL_SCANCODE_KP_B
+
+_EE.SDL_SCANCODE_KP_C_swigconstant(_EE)
+SDL_SCANCODE_KP_C = _EE.SDL_SCANCODE_KP_C
+
+_EE.SDL_SCANCODE_KP_D_swigconstant(_EE)
+SDL_SCANCODE_KP_D = _EE.SDL_SCANCODE_KP_D
+
+_EE.SDL_SCANCODE_KP_E_swigconstant(_EE)
+SDL_SCANCODE_KP_E = _EE.SDL_SCANCODE_KP_E
+
+_EE.SDL_SCANCODE_KP_F_swigconstant(_EE)
+SDL_SCANCODE_KP_F = _EE.SDL_SCANCODE_KP_F
+
+_EE.SDL_SCANCODE_KP_XOR_swigconstant(_EE)
+SDL_SCANCODE_KP_XOR = _EE.SDL_SCANCODE_KP_XOR
+
+_EE.SDL_SCANCODE_KP_POWER_swigconstant(_EE)
+SDL_SCANCODE_KP_POWER = _EE.SDL_SCANCODE_KP_POWER
+
+_EE.SDL_SCANCODE_KP_PERCENT_swigconstant(_EE)
+SDL_SCANCODE_KP_PERCENT = _EE.SDL_SCANCODE_KP_PERCENT
+
+_EE.SDL_SCANCODE_KP_LESS_swigconstant(_EE)
+SDL_SCANCODE_KP_LESS = _EE.SDL_SCANCODE_KP_LESS
+
+_EE.SDL_SCANCODE_KP_GREATER_swigconstant(_EE)
+SDL_SCANCODE_KP_GREATER = _EE.SDL_SCANCODE_KP_GREATER
+
+_EE.SDL_SCANCODE_KP_AMPERSAND_swigconstant(_EE)
+SDL_SCANCODE_KP_AMPERSAND = _EE.SDL_SCANCODE_KP_AMPERSAND
+
+_EE.SDL_SCANCODE_KP_DBLAMPERSAND_swigconstant(_EE)
+SDL_SCANCODE_KP_DBLAMPERSAND = _EE.SDL_SCANCODE_KP_DBLAMPERSAND
+
+_EE.SDL_SCANCODE_KP_VERTICALBAR_swigconstant(_EE)
+SDL_SCANCODE_KP_VERTICALBAR = _EE.SDL_SCANCODE_KP_VERTICALBAR
+
+_EE.SDL_SCANCODE_KP_DBLVERTICALBAR_swigconstant(_EE)
+SDL_SCANCODE_KP_DBLVERTICALBAR = _EE.SDL_SCANCODE_KP_DBLVERTICALBAR
+
+_EE.SDL_SCANCODE_KP_COLON_swigconstant(_EE)
+SDL_SCANCODE_KP_COLON = _EE.SDL_SCANCODE_KP_COLON
+
+_EE.SDL_SCANCODE_KP_HASH_swigconstant(_EE)
+SDL_SCANCODE_KP_HASH = _EE.SDL_SCANCODE_KP_HASH
+
+_EE.SDL_SCANCODE_KP_SPACE_swigconstant(_EE)
+SDL_SCANCODE_KP_SPACE = _EE.SDL_SCANCODE_KP_SPACE
+
+_EE.SDL_SCANCODE_KP_AT_swigconstant(_EE)
+SDL_SCANCODE_KP_AT = _EE.SDL_SCANCODE_KP_AT
+
+_EE.SDL_SCANCODE_KP_EXCLAM_swigconstant(_EE)
+SDL_SCANCODE_KP_EXCLAM = _EE.SDL_SCANCODE_KP_EXCLAM
+
+_EE.SDL_SCANCODE_KP_MEMSTORE_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMSTORE = _EE.SDL_SCANCODE_KP_MEMSTORE
+
+_EE.SDL_SCANCODE_KP_MEMRECALL_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMRECALL = _EE.SDL_SCANCODE_KP_MEMRECALL
+
+_EE.SDL_SCANCODE_KP_MEMCLEAR_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMCLEAR = _EE.SDL_SCANCODE_KP_MEMCLEAR
+
+_EE.SDL_SCANCODE_KP_MEMADD_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMADD = _EE.SDL_SCANCODE_KP_MEMADD
+
+_EE.SDL_SCANCODE_KP_MEMSUBTRACT_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMSUBTRACT = _EE.SDL_SCANCODE_KP_MEMSUBTRACT
+
+_EE.SDL_SCANCODE_KP_MEMMULTIPLY_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMMULTIPLY = _EE.SDL_SCANCODE_KP_MEMMULTIPLY
+
+_EE.SDL_SCANCODE_KP_MEMDIVIDE_swigconstant(_EE)
+SDL_SCANCODE_KP_MEMDIVIDE = _EE.SDL_SCANCODE_KP_MEMDIVIDE
+
+_EE.SDL_SCANCODE_KP_PLUSMINUS_swigconstant(_EE)
+SDL_SCANCODE_KP_PLUSMINUS = _EE.SDL_SCANCODE_KP_PLUSMINUS
+
+_EE.SDL_SCANCODE_KP_CLEAR_swigconstant(_EE)
+SDL_SCANCODE_KP_CLEAR = _EE.SDL_SCANCODE_KP_CLEAR
+
+_EE.SDL_SCANCODE_KP_CLEARENTRY_swigconstant(_EE)
+SDL_SCANCODE_KP_CLEARENTRY = _EE.SDL_SCANCODE_KP_CLEARENTRY
+
+_EE.SDL_SCANCODE_KP_BINARY_swigconstant(_EE)
+SDL_SCANCODE_KP_BINARY = _EE.SDL_SCANCODE_KP_BINARY
+
+_EE.SDL_SCANCODE_KP_OCTAL_swigconstant(_EE)
+SDL_SCANCODE_KP_OCTAL = _EE.SDL_SCANCODE_KP_OCTAL
+
+_EE.SDL_SCANCODE_KP_DECIMAL_swigconstant(_EE)
+SDL_SCANCODE_KP_DECIMAL = _EE.SDL_SCANCODE_KP_DECIMAL
+
+_EE.SDL_SCANCODE_KP_HEXADECIMAL_swigconstant(_EE)
+SDL_SCANCODE_KP_HEXADECIMAL = _EE.SDL_SCANCODE_KP_HEXADECIMAL
+
+_EE.SDL_SCANCODE_LCTRL_swigconstant(_EE)
+SDL_SCANCODE_LCTRL = _EE.SDL_SCANCODE_LCTRL
+
+_EE.SDL_SCANCODE_LSHIFT_swigconstant(_EE)
+SDL_SCANCODE_LSHIFT = _EE.SDL_SCANCODE_LSHIFT
+
+_EE.SDL_SCANCODE_LALT_swigconstant(_EE)
+SDL_SCANCODE_LALT = _EE.SDL_SCANCODE_LALT
+
+_EE.SDL_SCANCODE_LGUI_swigconstant(_EE)
+SDL_SCANCODE_LGUI = _EE.SDL_SCANCODE_LGUI
+
+_EE.SDL_SCANCODE_RCTRL_swigconstant(_EE)
+SDL_SCANCODE_RCTRL = _EE.SDL_SCANCODE_RCTRL
+
+_EE.SDL_SCANCODE_RSHIFT_swigconstant(_EE)
+SDL_SCANCODE_RSHIFT = _EE.SDL_SCANCODE_RSHIFT
+
+_EE.SDL_SCANCODE_RALT_swigconstant(_EE)
+SDL_SCANCODE_RALT = _EE.SDL_SCANCODE_RALT
+
+_EE.SDL_SCANCODE_RGUI_swigconstant(_EE)
+SDL_SCANCODE_RGUI = _EE.SDL_SCANCODE_RGUI
+
+_EE.SDL_SCANCODE_MODE_swigconstant(_EE)
+SDL_SCANCODE_MODE = _EE.SDL_SCANCODE_MODE
+
+_EE.SDL_SCANCODE_AUDIONEXT_swigconstant(_EE)
+SDL_SCANCODE_AUDIONEXT = _EE.SDL_SCANCODE_AUDIONEXT
+
+_EE.SDL_SCANCODE_AUDIOPREV_swigconstant(_EE)
+SDL_SCANCODE_AUDIOPREV = _EE.SDL_SCANCODE_AUDIOPREV
+
+_EE.SDL_SCANCODE_AUDIOSTOP_swigconstant(_EE)
+SDL_SCANCODE_AUDIOSTOP = _EE.SDL_SCANCODE_AUDIOSTOP
+
+_EE.SDL_SCANCODE_AUDIOPLAY_swigconstant(_EE)
+SDL_SCANCODE_AUDIOPLAY = _EE.SDL_SCANCODE_AUDIOPLAY
+
+_EE.SDL_SCANCODE_AUDIOMUTE_swigconstant(_EE)
+SDL_SCANCODE_AUDIOMUTE = _EE.SDL_SCANCODE_AUDIOMUTE
+
+_EE.SDL_SCANCODE_MEDIASELECT_swigconstant(_EE)
+SDL_SCANCODE_MEDIASELECT = _EE.SDL_SCANCODE_MEDIASELECT
+
+_EE.SDL_SCANCODE_WWW_swigconstant(_EE)
+SDL_SCANCODE_WWW = _EE.SDL_SCANCODE_WWW
+
+_EE.SDL_SCANCODE_MAIL_swigconstant(_EE)
+SDL_SCANCODE_MAIL = _EE.SDL_SCANCODE_MAIL
+
+_EE.SDL_SCANCODE_CALCULATOR_swigconstant(_EE)
+SDL_SCANCODE_CALCULATOR = _EE.SDL_SCANCODE_CALCULATOR
+
+_EE.SDL_SCANCODE_COMPUTER_swigconstant(_EE)
+SDL_SCANCODE_COMPUTER = _EE.SDL_SCANCODE_COMPUTER
+
+_EE.SDL_SCANCODE_AC_SEARCH_swigconstant(_EE)
+SDL_SCANCODE_AC_SEARCH = _EE.SDL_SCANCODE_AC_SEARCH
+
+_EE.SDL_SCANCODE_AC_HOME_swigconstant(_EE)
+SDL_SCANCODE_AC_HOME = _EE.SDL_SCANCODE_AC_HOME
+
+_EE.SDL_SCANCODE_AC_BACK_swigconstant(_EE)
+SDL_SCANCODE_AC_BACK = _EE.SDL_SCANCODE_AC_BACK
+
+_EE.SDL_SCANCODE_AC_FORWARD_swigconstant(_EE)
+SDL_SCANCODE_AC_FORWARD = _EE.SDL_SCANCODE_AC_FORWARD
+
+_EE.SDL_SCANCODE_AC_STOP_swigconstant(_EE)
+SDL_SCANCODE_AC_STOP = _EE.SDL_SCANCODE_AC_STOP
+
+_EE.SDL_SCANCODE_AC_REFRESH_swigconstant(_EE)
+SDL_SCANCODE_AC_REFRESH = _EE.SDL_SCANCODE_AC_REFRESH
+
+_EE.SDL_SCANCODE_AC_BOOKMARKS_swigconstant(_EE)
+SDL_SCANCODE_AC_BOOKMARKS = _EE.SDL_SCANCODE_AC_BOOKMARKS
+
+_EE.SDL_SCANCODE_BRIGHTNESSDOWN_swigconstant(_EE)
+SDL_SCANCODE_BRIGHTNESSDOWN = _EE.SDL_SCANCODE_BRIGHTNESSDOWN
+
+_EE.SDL_SCANCODE_BRIGHTNESSUP_swigconstant(_EE)
+SDL_SCANCODE_BRIGHTNESSUP = _EE.SDL_SCANCODE_BRIGHTNESSUP
+
+_EE.SDL_SCANCODE_DISPLAYSWITCH_swigconstant(_EE)
+SDL_SCANCODE_DISPLAYSWITCH = _EE.SDL_SCANCODE_DISPLAYSWITCH
+
+_EE.SDL_SCANCODE_KBDILLUMTOGGLE_swigconstant(_EE)
+SDL_SCANCODE_KBDILLUMTOGGLE = _EE.SDL_SCANCODE_KBDILLUMTOGGLE
+
+_EE.SDL_SCANCODE_KBDILLUMDOWN_swigconstant(_EE)
+SDL_SCANCODE_KBDILLUMDOWN = _EE.SDL_SCANCODE_KBDILLUMDOWN
+
+_EE.SDL_SCANCODE_KBDILLUMUP_swigconstant(_EE)
+SDL_SCANCODE_KBDILLUMUP = _EE.SDL_SCANCODE_KBDILLUMUP
+
+_EE.SDL_SCANCODE_EJECT_swigconstant(_EE)
+SDL_SCANCODE_EJECT = _EE.SDL_SCANCODE_EJECT
+
+_EE.SDL_SCANCODE_SLEEP_swigconstant(_EE)
+SDL_SCANCODE_SLEEP = _EE.SDL_SCANCODE_SLEEP
+
+_EE.SDL_SCANCODE_APP1_swigconstant(_EE)
+SDL_SCANCODE_APP1 = _EE.SDL_SCANCODE_APP1
+
+_EE.SDL_SCANCODE_APP2_swigconstant(_EE)
+SDL_SCANCODE_APP2 = _EE.SDL_SCANCODE_APP2
+
+_EE.SDL_NUM_SCANCODES_swigconstant(_EE)
+SDL_NUM_SCANCODES = _EE.SDL_NUM_SCANCODES
+
 def hasher():
     return _EE.hasher()
 hasher = _EE.hasher
@@ -230,6 +956,9 @@ class SQLQuery(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, SQLQuery, name)
     __repr__ = _swig_repr
+    __swig_getmethods__["WILDCARD"] = _EE.SQLQuery_WILDCARD_get
+    if _newclass:
+        WILDCARD = _swig_property(_EE.SQLQuery_WILDCARD_get)
 
     def prepareStatement(self, *args):
         return _EE.SQLQuery_prepareStatement(self, *args)
@@ -245,7 +974,6 @@ class SQLQuery(_object):
 SQLQuery_swigregister = _EE.SQLQuery_swigregister
 SQLQuery_swigregister(SQLQuery)
 cvar = _EE.cvar
-SQLQuery.WILDCARD = _EE.cvar.SQLQuery_WILDCARD
 
 class Physics(_object):
     __swig_setmethods__ = {}
@@ -459,9 +1187,9 @@ class data_base(_object):
 
     def CreateNewFile(self, *args):
         return _EE.data_base_CreateNewFile(self, *args)
-    __swig_getmethods__["CreateNewFile_static"] = lambda x: _EE.data_base_CreateNewFile_static
-    if _newclass:
-        CreateNewFile_static = staticmethod(_EE.data_base_CreateNewFile_static)
+
+    def CreateNewFile_static(self, location):
+        return _EE.data_base_CreateNewFile_static(self, location)
     __swig_destroy__ = _EE.delete_data_base
     __del__ = lambda self: None
     __swig_setmethods__["BUFFER"] = _EE.data_base_BUFFER_set
@@ -470,10 +1198,6 @@ class data_base(_object):
         BUFFER = _swig_property(_EE.data_base_BUFFER_get, _EE.data_base_BUFFER_set)
 data_base_swigregister = _EE.data_base_swigregister
 data_base_swigregister(data_base)
-
-def data_base_CreateNewFile_static(location):
-    return _EE.data_base_CreateNewFile_static(location)
-data_base_CreateNewFile_static = _EE.data_base_CreateNewFile_static
 
 
 def copyfile(source, destination, binary=True):
@@ -760,15 +1484,15 @@ class Unit(_object):
 
     def DrawImages(self):
         return _EE.Unit_DrawImages(self)
-    __swig_getmethods__["RotateSprite"] = lambda x: _EE.Unit_RotateSprite
-    if _newclass:
-        RotateSprite = staticmethod(_EE.Unit_RotateSprite)
-    __swig_getmethods__["FlipSprite"] = lambda x: _EE.Unit_FlipSprite
-    if _newclass:
-        FlipSprite = staticmethod(_EE.Unit_FlipSprite)
-    __swig_getmethods__["ResetRotation"] = lambda x: _EE.Unit_ResetRotation
-    if _newclass:
-        ResetRotation = staticmethod(_EE.Unit_ResetRotation)
+
+    def RotateSprite(self, sprite, degrees):
+        return _EE.Unit_RotateSprite(self, sprite, degrees)
+
+    def FlipSprite(self, *args):
+        return _EE.Unit_FlipSprite(self, *args)
+
+    def ResetRotation(self, sprite):
+        return _EE.Unit_ResetRotation(self, sprite)
 
     def AddBuff(self, buffName):
         return _EE.Unit_AddBuff(self, buffName)
@@ -796,18 +1520,6 @@ class Unit(_object):
         ai = _swig_property(_EE.Unit_ai_get, _EE.Unit_ai_set)
 Unit_swigregister = _EE.Unit_swigregister
 Unit_swigregister(Unit)
-
-def Unit_RotateSprite(sprite, degrees):
-    return _EE.Unit_RotateSprite(sprite, degrees)
-Unit_RotateSprite = _EE.Unit_RotateSprite
-
-def Unit_FlipSprite(*args):
-    return _EE.Unit_FlipSprite(*args)
-Unit_FlipSprite = _EE.Unit_FlipSprite
-
-def Unit_ResetRotation(sprite):
-    return _EE.Unit_ResetRotation(sprite)
-Unit_ResetRotation = _EE.Unit_ResetRotation
 
 class Trigger(_object):
     __swig_setmethods__ = {}
@@ -1696,6 +2408,18 @@ class ThreadSystem(_object):
 ThreadSystem_swigregister = _EE.ThreadSystem_swigregister
 ThreadSystem_swigregister(ThreadSystem)
 
+
+_EE.NO_CLIENT_swigconstant(_EE)
+NO_CLIENT = _EE.NO_CLIENT
+
+_EE.TIMEOUT_TRYS_swigconstant(_EE)
+TIMEOUT_TRYS = _EE.TIMEOUT_TRYS
+
+_EE.NET_ANYUDPPORT_swigconstant(_EE)
+NET_ANYUDPPORT = _EE.NET_ANYUDPPORT
+
+_EE.ANY_CHANNEL_swigconstant(_EE)
+ANY_CHANNEL = _EE.ANY_CHANNEL
 class UDPClient(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, UDPClient, name, value)
@@ -1706,14 +2430,10 @@ class UDPClient(_object):
     __swig_getmethods__["ip"] = _EE.UDPClient_ip_get
     if _newclass:
         ip = _swig_property(_EE.UDPClient_ip_get, _EE.UDPClient_ip_set)
-    __swig_setmethods__["nativeChannel"] = _EE.UDPClient_nativeChannel_set
-    __swig_getmethods__["nativeChannel"] = _EE.UDPClient_nativeChannel_get
+    __swig_setmethods__["id"] = _EE.UDPClient_id_set
+    __swig_getmethods__["id"] = _EE.UDPClient_id_get
     if _newclass:
-        nativeChannel = _swig_property(_EE.UDPClient_nativeChannel_get, _EE.UDPClient_nativeChannel_set)
-    __swig_setmethods__["serverChannel"] = _EE.UDPClient_serverChannel_set
-    __swig_getmethods__["serverChannel"] = _EE.UDPClient_serverChannel_get
-    if _newclass:
-        serverChannel = _swig_property(_EE.UDPClient_serverChannel_get, _EE.UDPClient_serverChannel_set)
+        id = _swig_property(_EE.UDPClient_id_get, _EE.UDPClient_id_set)
     __swig_setmethods__["udp"] = _EE.UDPClient_udp_set
     __swig_getmethods__["udp"] = _EE.UDPClient_udp_get
     if _newclass:
@@ -1796,8 +2516,8 @@ class NetNode(_object):
     def GetUDPSocket(self):
         return _EE.NetNode_GetUDPSocket(self)
 
-    def GetUDPClientInfo(self, channel):
-        return _EE.NetNode_GetUDPClientInfo(self, channel)
+    def GetUDPClientInfo(self, client_id):
+        return _EE.NetNode_GetUDPClientInfo(self, client_id)
 
     def GetPort(self):
         return _EE.NetNode_GetPort(self)
@@ -1808,8 +2528,8 @@ class NetNode(_object):
     def GetClientCount(self):
         return _EE.NetNode_GetClientCount(self)
 
-    def GenerateUDPChannel(self):
-        return _EE.NetNode_GenerateUDPChannel(self)
+    def GenerateUDPID(self):
+        return _EE.NetNode_GenerateUDPID(self)
 
     def isUDP(self):
         return _EE.NetNode_isUDP(self)
@@ -1820,8 +2540,8 @@ class NetNode(_object):
     def isBad(self):
         return _EE.NetNode_isBad(self)
 
-    def isUDPChannelFull(self, channel):
-        return _EE.NetNode_isUDPChannelFull(self, channel)
+    def isUDPIDUsed(self, client_id):
+        return _EE.NetNode_isUDPIDUsed(self, client_id)
 
     def AcceptTCPClient(self):
         return _EE.NetNode_AcceptTCPClient(self)
@@ -2077,6 +2797,72 @@ class LayerSystem(_object):
 LayerSystem_swigregister = _EE.LayerSystem_swigregister
 LayerSystem_swigregister(LayerSystem)
 
+class ExpansionItem(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ExpansionItem, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ExpansionItem, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["id"] = _EE.ExpansionItem_id_set
+    __swig_getmethods__["id"] = _EE.ExpansionItem_id_get
+    if _newclass:
+        id = _swig_property(_EE.ExpansionItem_id_get, _EE.ExpansionItem_id_set)
+    __swig_setmethods__["name"] = _EE.ExpansionItem_name_set
+    __swig_getmethods__["name"] = _EE.ExpansionItem_name_get
+    if _newclass:
+        name = _swig_property(_EE.ExpansionItem_name_get, _EE.ExpansionItem_name_set)
+    __swig_setmethods__["path"] = _EE.ExpansionItem_path_set
+    __swig_getmethods__["path"] = _EE.ExpansionItem_path_get
+    if _newclass:
+        path = _swig_property(_EE.ExpansionItem_path_get, _EE.ExpansionItem_path_set)
+
+    def __init__(self, *args):
+        this = _EE.new_ExpansionItem(*args)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _EE.delete_ExpansionItem
+    __del__ = lambda self: None
+ExpansionItem_swigregister = _EE.ExpansionItem_swigregister
+ExpansionItem_swigregister(ExpansionItem)
+
+class ExpansionInfo(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ExpansionInfo, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ExpansionInfo, name)
+    __repr__ = _swig_repr
+    __swig_destroy__ = _EE.delete_ExpansionInfo
+    __del__ = lambda self: None
+
+    def LoadExpansionInfo(self, *args):
+        return _EE.ExpansionInfo_LoadExpansionInfo(self, *args)
+
+    def GetExpansionName(self, id):
+        return _EE.ExpansionInfo_GetExpansionName(self, id)
+
+    def GetExpansionPath(self, id):
+        return _EE.ExpansionInfo_GetExpansionPath(self, id)
+
+    def GenerateExpansionID(self, name):
+        return _EE.ExpansionInfo_GenerateExpansionID(self, name)
+
+    def GetExpansionCount(self):
+        return _EE.ExpansionInfo_GetExpansionCount(self)
+    __swig_getmethods__["INVALID"] = _EE.ExpansionInfo_INVALID_get
+    if _newclass:
+        INVALID = _swig_property(_EE.ExpansionInfo_INVALID_get)
+
+    def __init__(self):
+        this = _EE.new_ExpansionInfo()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+ExpansionInfo_swigregister = _EE.ExpansionInfo_swigregister
+ExpansionInfo_swigregister(ExpansionInfo)
+
 class ScreenInfo(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ScreenInfo, name, value)
@@ -2091,8 +2877,8 @@ class ScreenInfo(_object):
         except:
             self.this = this
 
-    def SetScreenInfo(self, displayCount=1, display=0, frames_per_second=60, screenWidth=640, screenHeight=480, screenBPP=32):
-        return _EE.ScreenInfo_SetScreenInfo(self, displayCount, display, frames_per_second, screenWidth, screenHeight, screenBPP)
+    def SetScreenInfo(self, *args):
+        return _EE.ScreenInfo_SetScreenInfo(self, *args)
 
     def SetScreenLoc(self, x=0, y=0):
         return _EE.ScreenInfo_SetScreenLoc(self, x, y)
@@ -2117,6 +2903,30 @@ class ScreenInfo(_object):
 
     def GetDisplayCount(self):
         return _EE.ScreenInfo_GetDisplayCount(self)
+
+    def GetScreenMode(self):
+        return _EE.ScreenInfo_GetScreenMode(self)
+
+    def GetRenderDriver(self):
+        return _EE.ScreenInfo_GetRenderDriver(self)
+    __swig_getmethods__["FULLSCREEN"] = _EE.ScreenInfo_FULLSCREEN_get
+    if _newclass:
+        FULLSCREEN = _swig_property(_EE.ScreenInfo_FULLSCREEN_get)
+    __swig_getmethods__["RESIZABLE"] = _EE.ScreenInfo_RESIZABLE_get
+    if _newclass:
+        RESIZABLE = _swig_property(_EE.ScreenInfo_RESIZABLE_get)
+    __swig_getmethods__["MAXIMIZED"] = _EE.ScreenInfo_MAXIMIZED_get
+    if _newclass:
+        MAXIMIZED = _swig_property(_EE.ScreenInfo_MAXIMIZED_get)
+    __swig_getmethods__["OPENGL"] = _EE.ScreenInfo_OPENGL_get
+    if _newclass:
+        OPENGL = _swig_property(_EE.ScreenInfo_OPENGL_get)
+    __swig_getmethods__["DIRECT3D"] = _EE.ScreenInfo_DIRECT3D_get
+    if _newclass:
+        DIRECT3D = _swig_property(_EE.ScreenInfo_DIRECT3D_get)
+    __swig_getmethods__["SOFTWARE"] = _EE.ScreenInfo_SOFTWARE_get
+    if _newclass:
+        SOFTWARE = _swig_property(_EE.ScreenInfo_SOFTWARE_get)
     __swig_destroy__ = _EE.delete_ScreenInfo
     __del__ = lambda self: None
 ScreenInfo_swigregister = _EE.ScreenInfo_swigregister
@@ -2152,13 +2962,13 @@ class SoundInfo(_object):
 SoundInfo_swigregister = _EE.SoundInfo_swigregister
 SoundInfo_swigregister(SoundInfo)
 
-class GameInfo(ScreenInfo, SoundInfo):
+class GameInfo(ScreenInfo, SoundInfo, ExpansionInfo):
     __swig_setmethods__ = {}
-    for _s in [ScreenInfo, SoundInfo]:
+    for _s in [ScreenInfo, SoundInfo, ExpansionInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, GameInfo, name, value)
     __swig_getmethods__ = {}
-    for _s in [ScreenInfo, SoundInfo]:
+    for _s in [ScreenInfo, SoundInfo, ExpansionInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, GameInfo, name)
     __repr__ = _swig_repr
@@ -2181,6 +2991,9 @@ class GameInfo(ScreenInfo, SoundInfo):
 
     def GetGameName(self):
         return _EE.GameInfo_GetGameName(self)
+
+    def GetIconLoc(self):
+        return _EE.GameInfo_GetIconLoc(self)
 
     def GetBlitLevels(self):
         return _EE.GameInfo_GetBlitLevels(self)
@@ -2910,6 +3723,9 @@ class Input(InputMouse, InputKeyboard):
 
     def GetRawInput(self):
         return _EE.Input_GetRawInput(self)
+
+    def GetKeyName(self, key):
+        return _EE.Input_GetKeyName(self, key)
 Input_swigregister = _EE.Input_swigregister
 Input_swigregister(Input)
 
@@ -2936,8 +3752,8 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
     def LoadGame(self, file):
         return _EE.Game_LoadGame(self, file)
 
-    def LoadGameConstants(self, file):
-        return _EE.Game_LoadGameConstants(self, file)
+    def LoadGameConstants(self, file, hasdb=False):
+        return _EE.Game_LoadGameConstants(self, file, hasdb)
 
     def LoadGlobalModules(self, file):
         return _EE.Game_LoadGlobalModules(self, file)
@@ -2969,8 +3785,8 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
     def UnsetHeroUnitAsLoaded(self):
         return _EE.Game_UnsetHeroUnitAsLoaded(self)
 
-    def GetRenderer(self):
-        return _EE.Game_GetRenderer(self)
+    def GetRenderer(self, game_mutex):
+        return _EE.Game_GetRenderer(self, game_mutex)
 
     def GetEvents(self):
         return _EE.Game_GetEvents(self)
@@ -2983,6 +3799,9 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
 
     def isMultithreaded(self):
         return _EE.Game_isMultithreaded(self)
+
+    def isGamePaused(self):
+        return _EE.Game_isGamePaused(self)
 
     def GetRelativity(self):
         return _EE.Game_GetRelativity(self)
@@ -3002,11 +3821,20 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
     def GetWinID(self):
         return _EE.Game_GetWinID(self)
 
-    def loadSaveData(self, file):
-        return _EE.Game_loadSaveData(self, file)
+    def PauseGame(self):
+        return _EE.Game_PauseGame(self)
+
+    def ResumeGame(self):
+        return _EE.Game_ResumeGame(self)
+
+    def LoadSaveData(self, file):
+        return _EE.Game_LoadSaveData(self, file)
 
     def SaveData(self, query):
         return _EE.Game_SaveData(self, query)
+
+    def SaveGameSettings(self):
+        return _EE.Game_SaveGameSettings(self)
 
     def GetSaveDataHandle(self):
         return _EE.Game_GetSaveDataHandle(self)
@@ -3016,6 +3844,21 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
 
     def ClearEditorFrameBuffer(self):
         return _EE.Game_ClearEditorFrameBuffer(self)
+
+    def RestartRenderer(self):
+        return _EE.Game_RestartRenderer(self)
+
+    def RestartVideoAndSound(self):
+        return _EE.Game_RestartVideoAndSound(self)
+
+    def RestartAudio(self):
+        return _EE.Game_RestartAudio(self)
+
+    def RestartVideo(self):
+        return _EE.Game_RestartVideo(self)
+
+    def UnlockRenderer(self, mutex_id):
+        return _EE.Game_UnlockRenderer(self, mutex_id)
 
     def drawWorld(self):
         return _EE.Game_drawWorld(self)
@@ -3073,9 +3916,17 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
 
     def ReplaceVideoHUD(self, file):
         return _EE.Game_ReplaceVideoHUD(self, file)
+    __swig_getmethods__["loadRate"] = _EE.Game_loadRate_get
+    if _newclass:
+        loadRate = _swig_property(_EE.Game_loadRate_get)
+    __swig_getmethods__["WINDOW_WIDTH"] = _EE.Game_WINDOW_WIDTH_get
+    if _newclass:
+        WINDOW_WIDTH = _swig_property(_EE.Game_WINDOW_WIDTH_get)
+    __swig_getmethods__["WINDOW_HEIGHT"] = _EE.Game_WINDOW_HEIGHT_get
+    if _newclass:
+        WINDOW_HEIGHT = _swig_property(_EE.Game_WINDOW_HEIGHT_get)
 Game_swigregister = _EE.Game_swigregister
 Game_swigregister(Game)
-Game.loadRate = _EE.cvar.Game_loadRate
 
 
 def helperDrawFunction(game):

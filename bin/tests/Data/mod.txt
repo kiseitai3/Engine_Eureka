@@ -1,7 +1,8 @@
 //Main constants;
 mod_number = 1;
 selected_mod = campaign;
-mod1 = campaign;
+mod_1_name = campaign;
+mod_1_path = campaign;
 root = Data;
 game_name = Pokemeds;
 icon = pm.ico;
@@ -29,6 +30,10 @@ ui = UI/gameUI.txt
 
 //Save file;
 save = save/save;
+save_destination = LOCALAPPDATA\Pokemeds\save;
 
 //Initial level
 initial_lvl = menu/lvl.txt
+
+//keybinding default files
+keybindings_file = key_bindings.txt;

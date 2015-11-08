@@ -15,7 +15,7 @@ void Cursor::initCursorSys()
 
 size_t Cursor::RegisterCursor(cstr file)
 {
-    size_t id;
+    size_t id, r_id;
     CursorNode tmp;
     data_base curDOM(file);
     //Lock mutex
@@ -25,7 +25,8 @@ size_t Cursor::RegisterCursor(cstr file)
     tmp.name = curDOM.GetStrFromData("cur_name");
     tmp.soundFile = curDOM.GetStrFromData("cur_sound_file");
     tmp.cursor = new draw_base();
-    tmp.cursor->Load_Texture(curDOM.GetStrFromData("cur_texture").c_str(), owner_ref->GetRenderer(), curDOM.GetIntFromData("cur_fps"));
+    tmp.cursor->Load_Texture(curDOM.GetStrFromData("cur_texture").c_str(), owner_ref->GetRenderer(r_id), curDOM.GetIntFromData("cur_fps"));
+    owner_ref->UnlockRenderer(r_id);
     if(!tmp.cursor)
         std::cout << "Cursor: error loading cursor!" << std::endl;
     cursors.insert(id, tmp);
@@ -46,9 +47,11 @@ void Cursor::ToggleMouseGrab()
 
 void Cursor::DrawCursor()
 {
+    size_t id;
     //Lock mutex
     owner_ref->LockMutex(mutex_cursor_id);
-    selected.cursor->apply_surface(owner_ref->GetRawInput().mx, owner_ref->GetRawInput().my, owner_ref->GetRenderer());
+    selected.cursor->apply_surface(owner_ref->GetRawInput().mx, owner_ref->GetRawInput().my, owner_ref->GetRenderer(id));
+    owner_ref->UnlockRenderer(id);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_cursor_id);
 }

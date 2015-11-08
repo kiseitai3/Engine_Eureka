@@ -1,4 +1,6 @@
 #include "info.h"
+#include "database.h"
+#include "data_base.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -8,6 +10,9 @@
 const std::string ScreenInfo::OPENGL = "opengl";
 const std::string ScreenInfo::DIRECT3D = "direct3d";
 const std::string ScreenInfo::SOFTWARE = "software";
+const size_t ScreenInfo::FULLSCREEN = SDL_WINDOW_FULLSCREEN;
+const size_t ScreenInfo::RESIZABLE = SDL_WINDOW_RESIZABLE;
+const size_t ScreenInfo::MAXIMIZED = SDL_WINDOW_MAXIMIZED;
 
 ScreenInfo::ScreenInfo()
 {
@@ -173,6 +178,116 @@ std::string GameInfo::GetRenderQuality() const
     return m_render_quality;
 }
 /*End of GameInfo*/
+
+/*ExpansionItem*/
+ExpansionItem::ExpansionItem(const ExpansionItem& item)
+{
+    id = item.id;
+    name = item.name;
+    path = item.path;
+}
+
+ExpansionItem::ExpansionItem(size_t ID, const std::string& n, const std::string& p)
+{
+    id = ID;
+    name = n;
+    path = p;
+}
+
+ExpansionItem::ExpansionItem()
+{
+    id = 0;
+    name = "";
+    path = "";
+}
+
+/*ExpansionInfo*/
+
+const std::string ExpansionInfo::INVALID = "<invalid>";
+
+ExpansionInfo::~ExpansionInfo()
+{
+    //delete all expansion items
+    std::vector<ExpansionItem*> tmpObjs = mods.getContents();
+    for(size_t i = 0; i < tmpObjs.size(); i++)
+    {
+        if(tmpObjs[i])
+            delete tmpObjs[i];
+    }
+}
+
+size_t ExpansionInfo::GenerateExpansionID(const std::string& name) const
+{
+    size_t val = 0;
+    for(size_t i = 0; i < name.size(); i++)
+    {
+        val += name[i];
+    }
+    return val;
+}
+
+std::string ExpansionInfo::GetExpansionName(size_t id) const
+{
+    ExpansionItem* tmp = NULL;
+    mods.search(id, tmp);
+    if(tmp)
+        return tmp->name;
+    return INVALID;
+}
+
+std::string ExpansionInfo::GetExpansionPath(size_t id) const
+{
+    ExpansionItem* tmp = NULL;
+    mods.search(id, tmp);
+    if(tmp)
+        return tmp->path;
+    return INVALID;
+}
+
+size_t ExpansionInfo::GetExpansionCount() const
+{
+    return mods.size();
+}
+
+void ExpansionInfo::LoadExpansionInfo(cstr file)
+{
+    data_base data(file);
+    std::string name;
+    ExpansionItem tmp;
+    int modCount = 0;
+
+    modCount = data.GetIntFromData("mod_number");
+    for(int i = 0; i < modCount; i++)
+    {
+        name = "mod_" + intToStr(i);
+        tmp.name = data.GetStrFromData(name + "_name");
+        tmp.path = data.GetStrFromData(name + "_path");
+        tmp.id = GenerateExpansionID(tmp.name);
+        mods.insert(tmp.id, new ExpansionItem(tmp));
+    }
+}
+
+void ExpansionInfo::LoadExpansionInfo(DataBase* db)
+{
+    int rowCount = 0;
+    ExpansionItem tmp;
+
+    //First, we get the number of records in the database!
+    db->query(db->prepareStatement("modifications", "id","","","",SELECT));
+    db->GetResult(rowCount);
+    //Now we go through every record until the end
+    for(int i = 0; i < rowCount; i++)
+    {
+        db->query(db->prepareStatement("modifications", "name,path","id=" + intToStr(i),"","",SELECT));
+        //extract record data
+        db->GetResult(tmp.name);
+        db->GetResult(tmp.path, 1);
+        //Generate an actual id from the name field
+        tmp.id = GenerateExpansionID(tmp.name);
+        //copy this item into the heap and BST!
+        mods.insert(tmp.id, new ExpansionItem(tmp));
+    }
+}
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END

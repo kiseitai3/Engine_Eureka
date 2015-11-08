@@ -1,6 +1,8 @@
 /* File : Eureka.i */
 %module EE
 
+%define static 
+%enddef
 /*SWIG includes for propper operations of wrapper*/
 %include carrays.i
 %include cstring.i
@@ -52,6 +54,7 @@
 /*Renaming clashes*/
 %rename(SetForceCountDouble) SetForceCount(double,char);
 %rename(searchCharIndex_char) searchCharIndex(char,char[]);
+%include "sdl_defines.i"
 
 /* Let's just grab the original header file here */
 %include "rand_generators.h"

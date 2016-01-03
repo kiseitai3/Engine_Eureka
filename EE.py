@@ -2815,6 +2815,10 @@ class ExpansionItem(_object):
     __swig_getmethods__["path"] = _EE.ExpansionItem_path_get
     if _newclass:
         path = _swig_property(_EE.ExpansionItem_path_get, _EE.ExpansionItem_path_set)
+    __swig_setmethods__["description"] = _EE.ExpansionItem_description_set
+    __swig_getmethods__["description"] = _EE.ExpansionItem_description_get
+    if _newclass:
+        description = _swig_property(_EE.ExpansionItem_description_get, _EE.ExpansionItem_description_set)
 
     def __init__(self, *args):
         this = _EE.new_ExpansionItem(*args)
@@ -2844,6 +2848,9 @@ class ExpansionInfo(_object):
 
     def GetExpansionPath(self, id):
         return _EE.ExpansionInfo_GetExpansionPath(self, id)
+
+    def GetExpansionDescription(self, id):
+        return _EE.ExpansionInfo_GetExpansionDescription(self, id)
 
     def GenerateExpansionID(self, name):
         return _EE.ExpansionInfo_GenerateExpansionID(self, name)

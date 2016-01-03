@@ -651,6 +651,12 @@
 			<Option target="Eureka" />
 			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="locale.cpp">
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="locale.h">
+			<Option target="IO" />
+		</Unit>
 		<Unit filename="luawrap.cpp">
 			<Option target="LuaWrap" />
 			<Option target="staticlib_all" />

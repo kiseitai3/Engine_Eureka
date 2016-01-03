@@ -2,7 +2,6 @@
 #define UNIT_H
 #include <string>
 #include <map>
-#include <SDL.h>
 #include <list>
 #include "Timer.h"
 #include "ai_store.h"
@@ -19,6 +18,7 @@ class draw_base;
 class data_base;
 class Physics;
 class Game;
+class SDL_Renderer;
 
 //General purpose script loader
 void LoadScript(ScriptWrap* script, const char *file);
@@ -27,7 +27,7 @@ class Unit
 {
     public:
         /** Default constructor */
-        Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer &screen, size_t t_id, bool hero = false, bool hasPBar = false);//PBar = progressbar
+        Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer* screen, size_t t_id, bool hero = false, bool hasPBar = false);//PBar = progressbar
         /** Default destructor */
         ~Unit();
         //Question methods
@@ -79,7 +79,7 @@ class Unit
         void PlaySounds(const math_point& screenLoc);
         void DrawImages();
         static void RotateSprite(draw_base* sprite, double degrees);
-        static void FlipSprite(draw_base* sprite, size_t direction = TextureFlipDirection::NOFLIP);
+        static void FlipSprite(draw_base* sprite, size_t direction = NOFLIP);
         static void ResetRotation(draw_base* sprite);
 
         //Handle buffs

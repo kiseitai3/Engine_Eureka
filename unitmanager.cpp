@@ -13,7 +13,7 @@ UnitNode::UnitNode(Game* owner, char type, int BlitOrder, math_point loc, cstr f
     size_t id;
     Type = type;
     pData = NULL;
-    pData = new Unit(BlitOrder, file, loc, owner->GetRenderer(id), owner->GetMainTimer(), hero, hasBars);
+    pData = new Unit(BlitOrder, file, loc, &owner->GetRenderer(id), owner->GetMainTimer(), hero, hasBars);
     owner->UnlockRenderer(id);
 }
 

@@ -15,7 +15,8 @@ struct ExpansionItem
     size_t id;
     std::string name;
     std::string path;
-    ExpansionItem(size_t id, const std::string& name, const std::string& path);
+    std::string description;
+    ExpansionItem(size_t id, const std::string& name, const std::string& path, const std::string& descrip);
     ExpansionItem(const ExpansionItem& item);
     ExpansionItem();
 };
@@ -31,6 +32,7 @@ public:
     //Getters
     std::string GetExpansionName(size_t id) const;
     std::string GetExpansionPath(size_t id) const;
+    std::string GetExpansionDescription(size_t id) const;
     size_t GenerateExpansionID(const std::string& name) const;
     size_t GetExpansionCount() const;
 

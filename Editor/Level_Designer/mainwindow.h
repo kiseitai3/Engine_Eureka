@@ -2,9 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "mod_picker.h"
 
+
+class Game;
 class data_base;
 class QFileDialog;
+class QGraphicsScene;
 
 namespace Ui {
   class MainWindow;
@@ -37,8 +41,14 @@ private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;
   QFileDialog *open;
+  QGraphicsScene* textPrev, *worldPrev;
+  std::string modName, modDescription, modPath, modRootPath;
+  Game* engine;
 
   //Methods
+  bool modExists(size_t& index);
 };
+
+void build_new_directory_tree(const std::string source, const std::string &target);
 
 #endif // MAINWINDOW_H

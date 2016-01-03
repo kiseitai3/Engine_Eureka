@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\data_base.o
+./debug\conversion.o
+./debug\texturesettings.o
+./debug\unitsettings.o
+./debug\physicssettings.o
+./debug\mod_picker.o
+./debug\moc_mainwindow.o
+./debug\moc_texturesettings.o
+./debug\moc_unitsettings.o
+./debug\moc_physicssettings.o
+./debug\moc_mod_picker.o
+);

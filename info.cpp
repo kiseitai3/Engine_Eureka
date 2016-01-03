@@ -185,13 +185,15 @@ ExpansionItem::ExpansionItem(const ExpansionItem& item)
     id = item.id;
     name = item.name;
     path = item.path;
+    description = item.description;
 }
 
-ExpansionItem::ExpansionItem(size_t ID, const std::string& n, const std::string& p)
+ExpansionItem::ExpansionItem(size_t ID, const std::string& n, const std::string& p, const std::string& descrip)
 {
     id = ID;
     name = n;
     path = p;
+    description = descrip;
 }
 
 ExpansionItem::ExpansionItem()
@@ -241,6 +243,15 @@ std::string ExpansionInfo::GetExpansionPath(size_t id) const
     mods.search(id, tmp);
     if(tmp)
         return tmp->path;
+    return INVALID;
+}
+
+std::string ExpansionInfo::GetExpansionDescription(size_t id) const
+{
+    ExpansionItem* tmp = NULL;
+    mods.search(id, tmp);
+    if(tmp)
+        return tmp->description;
     return INVALID;
 }
 

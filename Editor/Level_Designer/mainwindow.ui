@@ -120,6 +120,35 @@
            <string>Browse</string>
           </property>
          </widget>
+         <widget class="QLineEdit" name="leModNamePrev">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>170</y>
+            <width>281</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>NONAME</string>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_26">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Mod Name</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="geometry">
@@ -154,6 +183,9 @@
             <width>291</width>
             <height>20</height>
            </rect>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
           </property>
          </widget>
          <widget class="QLabel" name="label_4">
@@ -195,6 +227,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="tabRegisterAssets">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <attribute name="title">
          <string>Register Assets</string>
         </attribute>
@@ -251,7 +286,7 @@
            <rect>
             <x>250</x>
             <y>50</y>
-            <width>42</width>
+            <width>71</width>
             <height>22</height>
            </rect>
           </property>
@@ -262,7 +297,7 @@
          <widget class="QLabel" name="label_6">
           <property name="geometry">
            <rect>
-            <x>300</x>
+            <x>330</x>
             <y>50</y>
             <width>16</width>
             <height>16</height>
@@ -275,9 +310,9 @@
          <widget class="QSpinBox" name="sbWidth">
           <property name="geometry">
            <rect>
-            <x>320</x>
+            <x>350</x>
             <y>50</y>
-            <width>42</width>
+            <width>71</width>
             <height>22</height>
            </rect>
           </property>
@@ -307,6 +342,9 @@
             <height>22</height>
            </rect>
           </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
           <property name="maximum">
            <number>99999999</number>
           </property>
@@ -332,6 +370,9 @@
             <width>42</width>
             <height>22</height>
            </rect>
+          </property>
+          <property name="minimum">
+           <number>1</number>
           </property>
           <property name="maximum">
            <number>99999999</number>
@@ -359,8 +400,14 @@
             <height>22</height>
            </rect>
           </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
           <property name="maximum">
            <number>99999999</number>
+          </property>
+          <property name="value">
+           <number>1</number>
           </property>
          </widget>
          <widget class="QLabel" name="label_10">
@@ -449,6 +496,9 @@
             <width>161</width>
             <height>20</height>
            </rect>
+          </property>
+          <property name="text">
+           <string>Pepito</string>
           </property>
          </widget>
         </widget>
@@ -964,6 +1014,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="tabAssets">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <attribute name="title">
          <string>Assets</string>
         </attribute>
@@ -1073,12 +1126,37 @@
           </item>
           <item>
            <property name="text">
-            <string>Unit</string>
+            <string>Cursor</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cursorset</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Layer</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Layerset</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Locale</string>
            </property>
           </item>
           <item>
            <property name="text">
             <string>Trigger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Unit</string>
            </property>
           </item>
           <item>
@@ -1090,6 +1168,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="tabDesigner">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <attribute name="title">
          <string>Level Designer</string>
         </attribute>
@@ -1172,6 +1253,9 @@
         </widget>
        </widget>
        <widget class="QWidget" name="tabUIDesigner">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <attribute name="title">
          <string>UI Designer</string>
         </attribute>

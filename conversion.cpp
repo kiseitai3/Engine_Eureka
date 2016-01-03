@@ -264,7 +264,7 @@ std::string numToStr(const double num)
     return s.str();
 }
 
-bool changeProgramWorkingDirectory(char* newPath)
+bool changeProgramWorkingDirectory(const char* newPath)
 {
     //This function allows the calling program to change the current working directory
     if(chdir(newPath) == ERROR)

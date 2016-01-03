@@ -67,7 +67,7 @@ std::string removeLeadingWhiteSpace(const std::string& source);
 char* getCharArrayFromConstArray(const std::string& s);
 double roundDecimal(double value, int precision);
 int iroundDecimal(double value, int precision);
-bool changeProgramWorkingDirectory(char* newPath);
+bool changeProgramWorkingDirectory(const char* newPath);
 char capitalizeChar(const char character);
 char lowerCaseChar(const char character);
 std::string scientificFormat(const std::string& num, size_t precision = 3);

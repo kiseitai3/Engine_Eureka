@@ -2,6 +2,7 @@
 #define TYPEDEFS_H_INCLUDED
 
 #include <string>
+#include <inttypes.h>
 
 #define ENGINE_NAMESPACE namespace Eureka{
 #define ENGINE_NAMESPACE_END }

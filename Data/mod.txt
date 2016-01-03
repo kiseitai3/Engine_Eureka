@@ -1,8 +1,10 @@
 //Main constants;
 mod_number = 1;
 selected_mod = campaign;
-mod_1_name = campaign;
-mod_1_path = campaign;
+mod_0_name = campaign;
+mod_0_path = campaign;
+mod_0_description = The campaign!;
+mod_section_end;
 root = Data;
 game_name = Pokemeds;
 icon = pm.ico;

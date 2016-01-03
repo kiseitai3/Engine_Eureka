@@ -9030,7 +9030,7 @@ static int _wrap_new_Unit__SWIG_0(lua_State* L) {
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   bool arg6 ;
   bool arg7 ;
@@ -9042,7 +9042,7 @@ static int _wrap_new_Unit__SWIG_0(lua_State* L) {
   if(!lua_isnumber(L,1)) SWIG_fail_arg("Unit::Unit",1,"int");
   if(!lua_isstring(L,2)) SWIG_fail_arg("Unit::Unit",2,"std::string const &");
   if(!lua_isuserdata(L,3)) SWIG_fail_arg("Unit::Unit",3,"math_point");
-  if(!lua_isuserdata(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer &");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer *");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("Unit::Unit",5,"size_t");
   if(!lua_isboolean(L,6)) SWIG_fail_arg("Unit::Unit",6,"bool");
   if(!lua_isboolean(L,7)) SWIG_fail_arg("Unit::Unit",7,"bool");
@@ -9063,7 +9063,7 @@ static int _wrap_new_Unit__SWIG_0(lua_State* L) {
   arg5 = (size_t)lua_tonumber(L, 5);
   arg6 = (lua_toboolean(L, 6)!=0);
   arg7 = (lua_toboolean(L, 7)!=0);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5,arg6,arg7);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5,arg6,arg7);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Unit,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -9080,7 +9080,7 @@ static int _wrap_new_Unit__SWIG_1(lua_State* L) {
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   bool arg6 ;
   std::string temp2 ;
@@ -9091,7 +9091,7 @@ static int _wrap_new_Unit__SWIG_1(lua_State* L) {
   if(!lua_isnumber(L,1)) SWIG_fail_arg("Unit::Unit",1,"int");
   if(!lua_isstring(L,2)) SWIG_fail_arg("Unit::Unit",2,"std::string const &");
   if(!lua_isuserdata(L,3)) SWIG_fail_arg("Unit::Unit",3,"math_point");
-  if(!lua_isuserdata(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer &");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer *");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("Unit::Unit",5,"size_t");
   if(!lua_isboolean(L,6)) SWIG_fail_arg("Unit::Unit",6,"bool");
   arg1 = (int)lua_tonumber(L, 1);
@@ -9110,7 +9110,7 @@ static int _wrap_new_Unit__SWIG_1(lua_State* L) {
   SWIG_contract_assert((lua_tonumber(L,5)>=0),"number must not be negative")
   arg5 = (size_t)lua_tonumber(L, 5);
   arg6 = (lua_toboolean(L, 6)!=0);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5,arg6);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5,arg6);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Unit,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -9127,7 +9127,7 @@ static int _wrap_new_Unit__SWIG_2(lua_State* L) {
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   std::string temp2 ;
   math_point *argp3 ;
@@ -9137,7 +9137,7 @@ static int _wrap_new_Unit__SWIG_2(lua_State* L) {
   if(!lua_isnumber(L,1)) SWIG_fail_arg("Unit::Unit",1,"int");
   if(!lua_isstring(L,2)) SWIG_fail_arg("Unit::Unit",2,"std::string const &");
   if(!lua_isuserdata(L,3)) SWIG_fail_arg("Unit::Unit",3,"math_point");
-  if(!lua_isuserdata(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer &");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("Unit::Unit",4,"SDL_Renderer *");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("Unit::Unit",5,"size_t");
   arg1 = (int)lua_tonumber(L, 1);
   temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
@@ -9154,7 +9154,7 @@ static int _wrap_new_Unit__SWIG_2(lua_State* L) {
   
   SWIG_contract_assert((lua_tonumber(L,5)>=0),"number must not be negative")
   arg5 = (size_t)lua_tonumber(L, 5);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Unit,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -9194,7 +9194,7 @@ static int _wrap_new_Unit(lua_State* L) {
         if (_v) {
           {
             void *ptr;
-            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
+            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
               _v = 0;
             } else {
               _v = 1;
@@ -9233,7 +9233,7 @@ static int _wrap_new_Unit(lua_State* L) {
         if (_v) {
           {
             void *ptr;
-            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
+            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
               _v = 0;
             } else {
               _v = 1;
@@ -9277,7 +9277,7 @@ static int _wrap_new_Unit(lua_State* L) {
         if (_v) {
           {
             void *ptr;
-            if (lua_isuserdata(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
+            if (SWIG_isptrtype(L,argv[3])==0 || SWIG_ConvertPtr(L,argv[3], (void **) &ptr, SWIGTYPE_p_SDL_Renderer, 0)) {
               _v = 0;
             } else {
               _v = 1;
@@ -9308,9 +9308,9 @@ static int _wrap_new_Unit(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_Unit'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t,bool,bool)\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t,bool)\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t)\n");
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t,bool,bool)\n"
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t,bool)\n"
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t)\n");
   lua_error(L);return 0;
 }
 
@@ -25738,24 +25738,79 @@ fail:
 }
 
 
+static int _wrap_ExpansionItem_description_set(lua_State* L) {
+  int SWIG_arg = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("ExpansionItem::description",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ExpansionItem::description",1,"ExpansionItem *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("ExpansionItem::description",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ExpansionItem,0))){
+    SWIG_fail_ptr("ExpansionItem_description_set",1,SWIGTYPE_p_ExpansionItem);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->description = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_ExpansionItem_description_get(lua_State* L) {
+  int SWIG_arg = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("ExpansionItem::description",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ExpansionItem::description",1,"ExpansionItem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ExpansionItem,0))){
+    SWIG_fail_ptr("ExpansionItem_description_get",1,SWIGTYPE_p_ExpansionItem);
+  }
+  
+  result = (std::string *) & ((arg1)->description);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_ExpansionItem__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   size_t arg1 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
+  std::string *arg4 = 0 ;
   std::string temp2 ;
   std::string temp3 ;
+  std::string temp4 ;
   ExpansionItem *result = 0 ;
   
-  SWIG_check_num_args("ExpansionItem::ExpansionItem",3,3)
+  SWIG_check_num_args("ExpansionItem::ExpansionItem",4,4)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("ExpansionItem::ExpansionItem",1,"size_t");
   if(!lua_isstring(L,2)) SWIG_fail_arg("ExpansionItem::ExpansionItem",2,"std::string const &");
   if(!lua_isstring(L,3)) SWIG_fail_arg("ExpansionItem::ExpansionItem",3,"std::string const &");
+  if(!lua_isstring(L,4)) SWIG_fail_arg("ExpansionItem::ExpansionItem",4,"std::string const &");
   SWIG_contract_assert((lua_tonumber(L,1)>=0),"number must not be negative")
   arg1 = (size_t)lua_tonumber(L, 1);
   temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
   temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
-  result = (ExpansionItem *)new ExpansionItem(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  temp4.assign(lua_tostring(L,4),lua_rawlen(L,4)); arg4=&temp4;
+  result = (ExpansionItem *)new ExpansionItem(arg1,(std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_ExpansionItem,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -25810,8 +25865,8 @@ fail:
 
 static int _wrap_new_ExpansionItem(lua_State* L) {
   int argc;
-  int argv[4]={
-    1,2,3,4
+  int argv[5]={
+    1,2,3,4,5
   };
   
   argc = lua_gettop(L);
@@ -25832,7 +25887,7 @@ static int _wrap_new_ExpansionItem(lua_State* L) {
       return _wrap_new_ExpansionItem__SWIG_1(L);
     }
   }
-  if (argc == 3) {
+  if (argc == 4) {
     int _v;
     {
       _v = lua_isnumber(L,argv[0]);
@@ -25846,7 +25901,12 @@ static int _wrap_new_ExpansionItem(lua_State* L) {
           _v = lua_isstring(L,argv[2]);
         }
         if (_v) {
-          return _wrap_new_ExpansionItem__SWIG_0(L);
+          {
+            _v = lua_isstring(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_new_ExpansionItem__SWIG_0(L);
+          }
         }
       }
     }
@@ -25854,7 +25914,7 @@ static int _wrap_new_ExpansionItem(lua_State* L) {
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_ExpansionItem'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    ExpansionItem::ExpansionItem(size_t,std::string const &,std::string const &)\n"
+    "    ExpansionItem::ExpansionItem(size_t,std::string const &,std::string const &,std::string const &)\n"
     "    ExpansionItem::ExpansionItem(ExpansionItem const &)\n"
     "    ExpansionItem::ExpansionItem()\n");
   lua_error(L);return 0;
@@ -25877,6 +25937,7 @@ static swig_lua_attribute swig_ExpansionItem_attributes[] = {
     { "id", _wrap_ExpansionItem_id_get, _wrap_ExpansionItem_id_set },
     { "name", _wrap_ExpansionItem_name_get, _wrap_ExpansionItem_name_set },
     { "path", _wrap_ExpansionItem_path_get, _wrap_ExpansionItem_path_set },
+    { "description", _wrap_ExpansionItem_description_get, _wrap_ExpansionItem_description_set },
     {0,0,0}
 };
 static swig_lua_method swig_ExpansionItem_methods[]= {
@@ -26082,6 +26143,34 @@ fail:
 }
 
 
+static int _wrap_ExpansionInfo_GetExpansionDescription(lua_State* L) {
+  int SWIG_arg = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  size_t arg2 ;
+  std::string result;
+  
+  SWIG_check_num_args("ExpansionInfo::GetExpansionDescription",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ExpansionInfo::GetExpansionDescription",1,"ExpansionInfo const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("ExpansionInfo::GetExpansionDescription",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ExpansionInfo,0))){
+    SWIG_fail_ptr("ExpansionInfo_GetExpansionDescription",1,SWIGTYPE_p_ExpansionInfo);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = ((ExpansionInfo const *)arg1)->GetExpansionDescription(arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ExpansionInfo_GenerateExpansionID(lua_State* L) {
   int SWIG_arg = 0;
   ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
@@ -26195,6 +26284,7 @@ static swig_lua_method swig_ExpansionInfo_methods[]= {
     { "LoadExpansionInfo", _wrap_ExpansionInfo_LoadExpansionInfo},
     { "GetExpansionName", _wrap_ExpansionInfo_GetExpansionName},
     { "GetExpansionPath", _wrap_ExpansionInfo_GetExpansionPath},
+    { "GetExpansionDescription", _wrap_ExpansionInfo_GetExpansionDescription},
     { "GenerateExpansionID", _wrap_ExpansionInfo_GenerateExpansionID},
     { "GetExpansionCount", _wrap_ExpansionInfo_GetExpansionCount},
     {0,0}

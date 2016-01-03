@@ -7,6 +7,11 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QThread>
+#include <QDir>
+#include <QFile>
+#include <QPixmap>
+#include <QGraphicsScene>
+#include <QImage>
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -15,55 +20,11 @@ MainWindow::MainWindow(QWidget *parent) :
   ui->setupUi(this);
   DOM = NULL;
   DOMWriter = NULL;
-  //Once the file path was written to our global variables, open the file in read mode.
-  std::string tmpPath = getProjectDirectory();
-  tmpPath += getProjectName();
-  DOM = new data_base(tmpPath.c_str());
-  //Let's check if the file is empty! If it's empty, the file is a new project and the program has to be set up accordingly.
-  if(DOM->SearchTermExists("this_is_a_project_file"))
-    {
-      //Let's parse the file and set the settings in the main window!
-      setBasicSettings(getProjectDirectory(), getProjectName(), DOM->GetStrFromData("mod_loc").c_str());
-      ui->leMod->setText(DOM->GetStrFromData("mod_loc").c_str());
-      ui->leModInstall->setText(DOM->GetStrFromData("mod_install_loc").c_str());
-      ui->leModName->setText(DOM->GetStrFromData("mod_name").c_str());
-      ui->teModDescription->setPlainText(DOM->GetStrFromData("mod_description").c_str());
-    }
-  else
-    {
-      //File is empty or potentially corrupted, so we have to regenerate its contents with default settings.
-      DOM->CreateNewFile(tmpPath.c_str());
-      DOM->OpenFileForQuickWrite(tmpPath.c_str());
-      /*Let's generate the data fields. I can generate the fields and give them values, but the code will be harder
-      to read, so I will separate both processes! Also, some fields require further input from the user.
-      */
-      DOM->WriteValueAndFlush("proj_name = ;\n");
-      DOM->WriteValueAndFlush("mod_loc = ;\n");
-      DOM->WriteValueAndFlush("texture_count = ;\n");
-      DOM->WriteValueAndFlush("sound_count = ;\n");
-      DOM->WriteValueAndFlush("script_count = ;\n");
-      DOM->WriteValueAndFlush("mod_install_loc = ;\n");
-      DOM->WriteValueAndFlush("mod_description = ;\n");
-      DOM->WriteValueAndFlush("mod_name = ;\n");
-      //Let's validate the file by tagging it with the check field.
-      DOM->WriteValueAndFlush("this_is_a_project_file = ;:EOF:");
-      //Let's set the values!
-      DOM->CloseFile();
-      DOM->OpenFile(tmpPath.c_str(), false);
-      DOM->WriteValue(removeCharFromStr('/', getProjectName().c_str()), "proj_name");
-      DOM->WriteValue("", "mod_loc");
-      std::string test = intToStr(0);
-      DOM->WriteValue(test, "texture_count");
-      DOM->WriteValue(intToStr(0), "sound_count");
-      DOM->WriteValue(intToStr(0), "script_count");
-      DOM->CloseFile();
-      DOM->OpenFile(tmpPath.c_str());
-    }
-  open = new QFileDialog(this);
-  DOMWriter = new data_base(tmpPath.c_str(), false);
-  //QMessageBox::information(NULL,"test", DOMWriter->GetStrBuffer().c_str());
-  DOMWriter->RestoreFileContents();
-  changeProgramWorkingDirectory(getMODPath().c_str());
+  open = new QFileDialog();
+  worldPrev = NULL;
+  textPrev = new QGraphicsScene(this);
+  ui->gvTexturePreview->setScene(textPrev);
+  engine = new Game(true);
 }
 
 MainWindow::~MainWindow()
@@ -78,8 +39,53 @@ void MainWindow::on_action_Exit_triggered()
 
 void MainWindow::on_pbModBrowse_clicked()
 {
+    size_t tmpIndex = 0;
     open->setFileMode(QFileDialog::Directory);
     ui->leMod->setText(open->getExistingDirectory(this, "Open Folder Dialog", "."));
+    if(DOM)
+        delete DOM;
+    //Open mod file
+    DOM = new data_base((ui->leMod->text() + "/mod.txt").toStdString().c_str());
+
+    //Check to see if the file exists
+    if(!DOM->GetStateOfInternalBuffer())
+    {
+        delete DOM;
+        //If file doesn't exists, then we will want to copy one of our templates to the target directory!
+        //In fact, at this stage, this problem is likely due to the fact the user is starting a new Data structure!
+        //As a result, it is time to copy Data to the target!
+        build_new_directory_tree(QDir::currentPath().toStdString() + "/templates", ui->leMod->text().toStdString());
+
+        //Retry reading the new copy of mod.txt
+        DOM = new data_base((ui->leMod->text() + "/mod.txt").toStdString().c_str());
+    }
+
+    //summon the mod picker window so the user has a chance to select among mods saved in the current file tree!
+    modName = getModName(*DOM, modDescription);
+
+    //Update window
+    ui->leModName->setText(modName.c_str());
+    ui->leModNamePrev->setText(modName.c_str());
+    ui->teModDescription->setText(modDescription.c_str());
+
+    //Create mod directory if it is a new mod
+    if(!modExists(tmpIndex) && modName != "")
+    {
+        QDir dir(ui->leMod->text());
+        dir.mkdir(modName.c_str());
+        //copy folder tree for the mod
+        build_new_directory_tree("templates/campaign", (ui->leMod->text().toStdString() + "/" + modName).c_str());
+    }
+
+    //Let's store a quick paths to the mod directories
+    modRootPath = ui->leMod->text().toStdString();
+    modPath = modRootPath + "/" + modName;
+
+    //Finally, we enable the other tabs and allow the user to do his/her work
+    ui->tabRegisterAssets->setEnabled(true);
+    ui->tabAssets->setEnabled(true);
+    ui->tabDesigner->setEnabled(true);
+    ui->tabUIDesigner->setEnabled(true);
 }
 
 void MainWindow::on_pBInstallBrowse_clicked()
@@ -95,7 +101,11 @@ void MainWindow::on_pbModSave_clicked()
   //Let's capture the string in the Mod's description.
     std::string tmp = ui->teModDescription->toPlainText().toStdString();
     std::string replacement = "";
+    std::string output;
+    size_t count = 0;
     size_t index = 0;
+    size_t mod_num = 0;
+    bool exists = false;
     //Let's clean the string of new line and ; characters since they interfere with the file parser.
     while(searchChar('\n', tmp) && tmp != "")
       {
@@ -116,17 +126,43 @@ void MainWindow::on_pbModSave_clicked()
         tmp.insert(index, replacement);
       }
 
-    //We are ready to write settings to project file
-    DOMWriter->WriteValue(tmp, "mod_description");
-    DOMWriter->WriteValue(ui->leModName->text().toStdString(), "mod_name");
-    DOMWriter->WriteValue(ui->leModInstall->text().toStdString(), "mod_install_loc");
-    DOMWriter->WriteValue(ui->leMod->text().toStdString(), "mod_loc");
-    DOM->RefreshFile();
+    //Let's read the data
+    count = DOM->GetIntFromData("mod_number");
+    //Let's prepare the writer
+    if(DOMWriter)
+        delete DOMWriter;
+    DOMWriter = new data_base((ui->leMod->text().toStdString() + "/mod.txt").c_str(), false);
+    //Prepare output block iff this is a new mod
+    exists = modExists(mod_num);
+
+    if(!exists)
+    {
+        output = DOM->GetStrBuffer();
+        output = output.substr(0, output.find("mod_section_end"));
+        output += "mod_" + intToStr(count) + "_name = " + modName + ";\n\r";
+        output += "mod_" + intToStr(count) + "_path = " + modName + ";\n\r";
+        output += "mod_" + intToStr(count) + "_description = " + tmp + ";\n\r";
+        output += DOM->GetStrBuffer().substr(DOM->GetStrBuffer().find("mod_section_end"));
+        //We are ready to write settings to project file
+        DOMWriter->WriteValueAndFlush(output);
+        //Increase counter
+        count++;
+        DOMWriter->WriteValue(intToStr(count), "mod_number");
+    }
+    else
+    {
+        DOMWriter->WriteValue(tmp, "mod_" + intToStr(mod_num) + "_description");
+        DOMWriter->CloseFile();
+    }
+
 }
 
 void MainWindow::on_MainWindow_destroyed()
 {
-    DOM->CloseFile();
+    if(DOM)
+        DOM->CloseFile();
+    if(DOMWriter)
+        DOMWriter->CloseFile();
 }
 
 
@@ -135,8 +171,23 @@ void MainWindow::on_pbTextureBrowse_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
     std::string tmp = open->getOpenFileName(NULL, "Select Texture","" ,"Textures (*.png *.tiff *.tex *.bmp *.jpg *.jpeg)").toStdString();
-    tmp = tmp.replace(0, getMODPath().size(),"");
+   // tmp = tmp.replace(0, getMODPath().size(),"");
     ui->leTexturePath->setText(tmp.c_str());
+    if(!textPrev->items().empty())
+        textPrev->removeItem(textPrev->items()[0]);
+    QPixmap p(ui->leTexturePath->text().toStdString().c_str());
+    QImage img(ui->leTexturePath->text().toStdString().c_str());
+
+    //Preview the image
+    textPrev->addPixmap(p);
+    textPrev->update();
+    ui->gvTexturePreview->show();
+
+    //Present the real size of the image
+    ui->lbTextInfo->setText(("Texture size (HxW): " + intToStr(img.height()) + "x" + intToStr(img.width())).c_str());
+    //set up basic values
+    ui->sbHeight->setValue(img.height());
+    ui->sbWidth->setValue(img.width());
 }
 
 void MainWindow::on_pbRegTexture_clicked()
@@ -149,11 +200,20 @@ void MainWindow::on_pbRegTexture_clicked()
     {
       data_base tmp;
       //First, we need to build the file path we need for this io operation!
+      std::string text_fileName;
       std::string path = "Textures/";
-      path += ui->leTexName->text().toStdString();
+      //Let's cleanup the file name
+      text_fileName = ui->leTexName->text().toStdString();
+      if(searchChar('\\', text_fileName))
+          text_fileName = text_fileName.substr(text_fileName.rfind('\\'));
+      else
+          text_fileName = text_fileName.substr(text_fileName.rfind('/'));
+
+      //Now, let's build a relative path assuming the modRoot directory as the root
+      path += text_fileName;
       path += ".txt";
       //Now, we create a new and empty file!
-      tmp.CreateNewFile(path.c_str());
+      tmp.CreateNewFile((modPath + "/" + path).c_str());
       //Now, let's generate the data fields in the file!
       tmp.OpenFileForQuickWrite(path.c_str());
       tmp.WriteValueAndFlush("tex_texture = ;\n");
@@ -166,15 +226,72 @@ void MainWindow::on_pbRegTexture_clicked()
       tmp.WriteValueAndFlush("tex_noloop = 0;\n");
       //Now, let's initialize the fields!
       tmp.CloseFile();
-      tmp.OpenFile(path.c_str());
-      tmp.WriteValue(ui->leTexturePath->text().toStdString(), "tex_texture");
+      tmp.OpenFile((modPath + "/" + path).c_str());
+      tmp.WriteValue(modName + "/" + path, "tex_texture");
       tmp.WriteValue(intToStr(ui->sbFrames->value()), "tex_frames");
       tmp.WriteValue(intToStr(ui->sbHeight->value()), "tex_height");
       tmp.WriteValue(intToStr(ui->sbWidth->value()), "tex_width");
       tmp.WriteValue(intToStr(ui->sbAnimCounter->value()), "tex_anim_counter");
       tmp.WriteValue(intToStr(ui->sbAnimNum->value()), "tex_anim_num");
       tmp.WriteValue(intToStr(ui->sbTimePerFrame->value()), "tex_time_on_frames");
-      tmp.WriteValue(!ui->sbLoop->value(), "tex_noloop");
+      tmp.WriteValue(intToStr(ui->sbLoop->value()), "tex_noloop");
       tmp.CloseFile();
+      //Now, copy the actual texture to the target
+      copyfile(ui->leTexturePath->text().toStdString(), modPath + "/Textures/" + text_fileName);
+  }
+}
+
+bool MainWindow::modExists(size_t &index)
+{
+    for(size_t i = 0; i < DOM->GetIntFromData("mod_number"); i++)
+    {
+        if(modName == DOM->GetStrFromData("mod_" + intToStr(i) + "_name"))
+        {
+            index = i;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
+
+//Global functions
+
+void build_new_directory_tree(const std::string source, const std::string &target)
+{
+    std::cout << source << std::endl;
+    QDir src(source.c_str());
+    QDir dst(target.c_str());
+    QFileInfo info;
+    QStringList objs;
+    std::string path, path_target;
+
+    //Check if directory is valid
+    if(!src.exists())
+        return;
+    //The null scenario. If no files, simply exit!
+    if(src.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).empty())
+        return;
+    else
+        objs = src.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot);
+    //Otherwise, iterate through each
+    for(size_t i = 0; i < objs.count(); i++)
+    {
+        path = source + "/" + objs[i].toStdString();
+        path_target = target + "/" + objs[i].toStdString();
+
+        info.setFile(path.c_str());
+
+        if(info.isDir())//If it is a directory
+        {
+            dst.mkdir(path_target.c_str());
+            build_new_directory_tree(path, path_target);
+        }
+        else if(info.isFile())
+        {
+            QFile::copy(path.c_str(), path_target.c_str());
+        }
     }
 }

@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\data_base.o
+./release\conversion.o
+./release\texturesettings.o
+./release\unitsettings.o
+./release\physicssettings.o
+./release\mod_picker.o
+./release\moc_mainwindow.o
+./release\moc_texturesettings.o
+./release\moc_unitsettings.o
+./release\moc_physicssettings.o
+./release\moc_mod_picker.o
+);

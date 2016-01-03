@@ -13207,7 +13207,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyOb
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   bool arg6 ;
   bool arg7 ;
@@ -13263,12 +13263,9 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyOb
       if (SWIG_IsNewObj(res3)) delete temp;
     }
   }
-  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_SDL_Renderer,  0 );
+  res4 = SWIG_ConvertPtr(obj3, &argp4,SWIGTYPE_p_SDL_Renderer, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
-  }
-  if (!argp4) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer *""'"); 
   }
   arg4 = reinterpret_cast< SDL_Renderer * >(argp4);
   ecode5 = SWIG_AsVal_size_t(obj4, &val5);
@@ -13286,7 +13283,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyOb
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "new_Unit" "', argument " "7"" of type '" "bool""'");
   } 
   arg7 = static_cast< bool >(val7);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5,arg6,arg7);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5,arg6,arg7);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Unit, SWIG_POINTER_NEW |  0 );
   if (SWIG_IsNewObj(res2)) delete arg2;
   return resultobj;
@@ -13301,7 +13298,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyOb
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   bool arg6 ;
   int val1 ;
@@ -13353,12 +13350,9 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyOb
       if (SWIG_IsNewObj(res3)) delete temp;
     }
   }
-  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_SDL_Renderer,  0 );
+  res4 = SWIG_ConvertPtr(obj3, &argp4,SWIGTYPE_p_SDL_Renderer, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
-  }
-  if (!argp4) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer *""'"); 
   }
   arg4 = reinterpret_cast< SDL_Renderer * >(argp4);
   ecode5 = SWIG_AsVal_size_t(obj4, &val5);
@@ -13371,7 +13365,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyOb
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "new_Unit" "', argument " "6"" of type '" "bool""'");
   } 
   arg6 = static_cast< bool >(val6);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5,arg6);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5,arg6);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Unit, SWIG_POINTER_NEW |  0 );
   if (SWIG_IsNewObj(res2)) delete arg2;
   return resultobj;
@@ -13386,7 +13380,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyOb
   int arg1 ;
   std::string *arg2 = 0 ;
   math_point arg3 ;
-  SDL_Renderer *arg4 = 0 ;
+  SDL_Renderer *arg4 = (SDL_Renderer *) 0 ;
   size_t arg5 ;
   int val1 ;
   int ecode1 = 0 ;
@@ -13434,12 +13428,9 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyOb
       if (SWIG_IsNewObj(res3)) delete temp;
     }
   }
-  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_SDL_Renderer,  0 );
+  res4 = SWIG_ConvertPtr(obj3, &argp4,SWIGTYPE_p_SDL_Renderer, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
-  }
-  if (!argp4) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Unit" "', argument " "4"" of type '" "SDL_Renderer *""'"); 
   }
   arg4 = reinterpret_cast< SDL_Renderer * >(argp4);
   ecode5 = SWIG_AsVal_size_t(obj4, &val5);
@@ -13447,7 +13438,7 @@ SWIGINTERN PyObject *_wrap_new_Unit__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyOb
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_Unit" "', argument " "5"" of type '" "size_t""'");
   } 
   arg5 = static_cast< size_t >(val5);
-  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,*arg4,arg5);
+  result = (Unit *)new Unit(arg1,(std::string const &)*arg2,arg3,arg4,arg5);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Unit, SWIG_POINTER_NEW |  0 );
   if (SWIG_IsNewObj(res2)) delete arg2;
   return resultobj;
@@ -13576,9 +13567,9 @@ SWIGINTERN PyObject *_wrap_new_Unit(PyObject *self, PyObject *args) {
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Unit'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t,bool,bool)\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t,bool)\n"
-    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer &,size_t)\n");
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t,bool,bool)\n"
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t,bool)\n"
+    "    Unit::Unit(int,std::string const &,math_point,SDL_Renderer *,size_t)\n");
   return 0;
 }
 
@@ -30840,21 +30831,83 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ExpansionItem_description_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionItem_description_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_description_set" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ExpansionItem_description_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "ExpansionItem_description_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->description = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionItem_description_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionItem *arg1 = (ExpansionItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ExpansionItem_description_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionItem_description_get" "', argument " "1"" of type '" "ExpansionItem *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionItem * >(argp1);
+  result = (std::string *) & ((arg1)->description);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_ExpansionItem__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   size_t arg1 ;
   std::string *arg2 = 0 ;
   std::string *arg3 = 0 ;
+  std::string *arg4 = 0 ;
   size_t val1 ;
   int ecode1 = 0 ;
   int res2 = SWIG_OLDOBJ ;
   int res3 = SWIG_OLDOBJ ;
+  int res4 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
   ExpansionItem *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:new_ExpansionItem",&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_ExpansionItem",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   ecode1 = SWIG_AsVal_size_t(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_ExpansionItem" "', argument " "1"" of type '" "size_t""'");
@@ -30882,14 +30935,27 @@ SWIGINTERN PyObject *_wrap_new_ExpansionItem__SWIG_0(PyObject *SWIGUNUSEDPARM(se
     }
     arg3 = ptr;
   }
-  result = (ExpansionItem *)new ExpansionItem(arg1,(std::string const &)*arg2,(std::string const &)*arg3);
+  {
+    std::string *ptr = (std::string *)0;
+    res4 = SWIG_AsPtr_std_string(obj3, &ptr);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_ExpansionItem" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_ExpansionItem" "', argument " "4"" of type '" "std::string const &""'"); 
+    }
+    arg4 = ptr;
+  }
+  result = (ExpansionItem *)new ExpansionItem(arg1,(std::string const &)*arg2,(std::string const &)*arg3,(std::string const &)*arg4);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ExpansionItem, SWIG_POINTER_NEW |  0 );
   if (SWIG_IsNewObj(res2)) delete arg2;
   if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
   return resultobj;
 fail:
   if (SWIG_IsNewObj(res2)) delete arg2;
   if (SWIG_IsNewObj(res3)) delete arg3;
+  if (SWIG_IsNewObj(res4)) delete arg4;
   return NULL;
 }
 
@@ -30934,12 +31000,12 @@ fail:
 
 SWIGINTERN PyObject *_wrap_new_ExpansionItem(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[4];
+  PyObject *argv[5];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 0) {
@@ -30953,7 +31019,7 @@ SWIGINTERN PyObject *_wrap_new_ExpansionItem(PyObject *self, PyObject *args) {
       return _wrap_new_ExpansionItem__SWIG_1(self, args);
     }
   }
-  if (argc == 3) {
+  if (argc == 4) {
     int _v;
     {
       int res = SWIG_AsVal_size_t(argv[0], NULL);
@@ -30966,7 +31032,11 @@ SWIGINTERN PyObject *_wrap_new_ExpansionItem(PyObject *self, PyObject *args) {
         int res = SWIG_AsPtr_std_string(argv[2], (std::string**)(0));
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_new_ExpansionItem__SWIG_0(self, args);
+          int res = SWIG_AsPtr_std_string(argv[3], (std::string**)(0));
+          _v = SWIG_CheckState(res);
+          if (_v) {
+            return _wrap_new_ExpansionItem__SWIG_0(self, args);
+          }
         }
       }
     }
@@ -30975,7 +31045,7 @@ SWIGINTERN PyObject *_wrap_new_ExpansionItem(PyObject *self, PyObject *args) {
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_ExpansionItem'.\n"
     "  Possible C/C++ prototypes are:\n"
-    "    ExpansionItem::ExpansionItem(size_t,std::string const &,std::string const &)\n"
+    "    ExpansionItem::ExpansionItem(size_t,std::string const &,std::string const &,std::string const &)\n"
     "    ExpansionItem::ExpansionItem(ExpansionItem const &)\n"
     "    ExpansionItem::ExpansionItem()\n");
   return 0;
@@ -31196,6 +31266,37 @@ SWIGINTERN PyObject *_wrap_ExpansionInfo_GetExpansionPath(PyObject *SWIGUNUSEDPA
   } 
   arg2 = static_cast< size_t >(val2);
   result = ((ExpansionInfo const *)arg1)->GetExpansionPath(arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_ExpansionInfo_GetExpansionDescription(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ExpansionInfo_GetExpansionDescription",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ExpansionInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ExpansionInfo_GetExpansionDescription" "', argument " "1"" of type '" "ExpansionInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< ExpansionInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ExpansionInfo_GetExpansionDescription" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = ((ExpansionInfo const *)arg1)->GetExpansionDescription(arg2);
   resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
@@ -44875,6 +44976,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ExpansionItem_name_get", _wrap_ExpansionItem_name_get, METH_VARARGS, NULL},
 	 { (char *)"ExpansionItem_path_set", _wrap_ExpansionItem_path_set, METH_VARARGS, NULL},
 	 { (char *)"ExpansionItem_path_get", _wrap_ExpansionItem_path_get, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_description_set", _wrap_ExpansionItem_description_set, METH_VARARGS, NULL},
+	 { (char *)"ExpansionItem_description_get", _wrap_ExpansionItem_description_get, METH_VARARGS, NULL},
 	 { (char *)"new_ExpansionItem", _wrap_new_ExpansionItem, METH_VARARGS, NULL},
 	 { (char *)"delete_ExpansionItem", _wrap_delete_ExpansionItem, METH_VARARGS, NULL},
 	 { (char *)"ExpansionItem_swigregister", ExpansionItem_swigregister, METH_VARARGS, NULL},
@@ -44882,6 +44985,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ExpansionInfo_LoadExpansionInfo", _wrap_ExpansionInfo_LoadExpansionInfo, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_GetExpansionName", _wrap_ExpansionInfo_GetExpansionName, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_GetExpansionPath", _wrap_ExpansionInfo_GetExpansionPath, METH_VARARGS, NULL},
+	 { (char *)"ExpansionInfo_GetExpansionDescription", _wrap_ExpansionInfo_GetExpansionDescription, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_GenerateExpansionID", _wrap_ExpansionInfo_GenerateExpansionID, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_GetExpansionCount", _wrap_ExpansionInfo_GetExpansionCount, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_INVALID_get", _wrap_ExpansionInfo_INVALID_get, METH_VARARGS, NULL},

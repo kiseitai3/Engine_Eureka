@@ -334,6 +334,8 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
 
     if(fps)
         frameCapped = true;
+    changeProgramWorkingDirectory(rootDir.c_str());
+    sleep(1000);
 }
 
 void Game::SaveGameSettings()

@@ -6,6 +6,7 @@
 #include "conversion.h"
 #include "scriptwrap.h"
 #include <map>
+#include <SDL.h>
 #include <string>
 #include <iostream>
 #include <list>
@@ -17,7 +18,7 @@
 
 AIStore Unit::ai;
 
-Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer& screen, size_t t_id, bool hero, bool hasPBar)
+Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer* screen, size_t t_id, bool hero, bool hasPBar)
 {
     DOM = NULL;
     DOM = new data_base(path.c_str());
@@ -31,7 +32,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
             num = intToStr(i);
             names = DOM->GetStrFromData("unit_texture_" + num + "_name");
             draw_base *temp = new draw_base();
-            temp->Load_Texture(DOM->GetStrFromData("unit_texture_" + num).c_str(), screen);
+            temp->Load_Texture(DOM->GetStrFromData("unit_texture_" + num).c_str(), *screen);
             if(temp > 0)//do a validity check on the pointer
             {
                 images[names] = temp;
@@ -73,7 +74,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
             LoadScript(BuffScripts, DOM->GetStrFromData("unit_buffscripts").c_str());
         }
         //Grab parameters
-        ren = &screen;
+        ren = screen;
         blitOrder = BlitOrder;
         mapPoint = loc;
         gameTime = t_id;
@@ -100,11 +101,11 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer&
             //Compute location of the mana bar!
             locBar.X = mapPoint.X - (tmpIMG->GetWidthOfMainRect() / 2);
             locBar.Y = mapPoint.Y - (tmpIMG->GetHeightOfMainRect() / 2) - 2;// -2 is to keep the bars slightly off the unit
-            manaB = new ProgressBar(DOM->GetStrFromData("unit_mana_bar_tex").c_str(), &mana, locBar, screen);
+            manaB = new ProgressBar(DOM->GetStrFromData("unit_mana_bar_tex").c_str(), &mana, locBar, *screen);
             manaB->SetRectangleDimensions(DOM->GetIntFromData("unit_mana_bar_w"), DOM->GetIntFromData("unit_mana_bar_h"));
             //Compute location of the hp bar!
             locBar.Y -= DOM->GetIntFromData("unit_hp_bar_h");// -2 is to keep the bars slightly off the unit
-            hpB = new ProgressBar(DOM->GetStrFromData("unit_hp_bar_tex").c_str(), &hp, locBar, screen);
+            hpB = new ProgressBar(DOM->GetStrFromData("unit_hp_bar_tex").c_str(), &hp, locBar, *screen);
             hpB->SetRectangleDimensions(DOM->GetIntFromData("unit_hp_bar_w"), DOM->GetIntFromData("unit_hp_bar_h"));
         }
     }

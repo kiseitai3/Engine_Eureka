@@ -4,7 +4,6 @@ selected_mod = campaign;
 mod_0_name = campaign;
 mod_0_path = campaign;
 mod_0_description = The campaign!;
-mod_section_end;
 root = Data;
 game_name = Pokemeds;
 icon = pm.ico;
@@ -22,6 +21,7 @@ channels = 2;
 chunk_size = 4096;
 auto_video = 1;
 multithreaded = 1;
+sound_volume = 100;
 
 
 //Global Modules file;

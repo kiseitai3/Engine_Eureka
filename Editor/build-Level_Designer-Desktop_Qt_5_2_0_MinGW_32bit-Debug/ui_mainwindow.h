@@ -86,17 +86,19 @@ public:
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout;
     QGroupBox *groupBox_5;
-    QComboBox *comboBox;
+    QComboBox *cbSoundType;
     QLabel *label_13;
     QLabel *label_14;
     QLabel *label_15;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
+    QSpinBox *sbSoundX;
+    QSpinBox *sbSoundY;
     QLabel *label_16;
     QLabel *label_17;
     QLineEdit *leSoundLoc;
     QPushButton *pbSoundBrowse;
     QPushButton *pbRegSound;
+    QLabel *label_27;
+    QSpinBox *sbSoundRange;
     QGroupBox *groupBox_6;
     QLabel *label_18;
     QLineEdit *leCodeLoc;
@@ -308,9 +310,9 @@ public:
         groupBox_5 = new QGroupBox(tabRegisterAssets);
         groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
         groupBox_5->setGeometry(QRect(0, 250, 431, 151));
-        comboBox = new QComboBox(groupBox_5);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(90, 20, 101, 22));
+        cbSoundType = new QComboBox(groupBox_5);
+        cbSoundType->setObjectName(QStringLiteral("cbSoundType"));
+        cbSoundType->setGeometry(QRect(90, 20, 101, 22));
         label_13 = new QLabel(groupBox_5);
         label_13->setObjectName(QStringLiteral("label_13"));
         label_13->setGeometry(QRect(10, 20, 71, 16));
@@ -320,14 +322,14 @@ public:
         label_15 = new QLabel(groupBox_5);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(120, 50, 21, 16));
-        spinBox = new QSpinBox(groupBox_5);
-        spinBox->setObjectName(QStringLiteral("spinBox"));
-        spinBox->setGeometry(QRect(150, 50, 42, 22));
-        spinBox->setMaximum(99999999);
-        spinBox_2 = new QSpinBox(groupBox_5);
-        spinBox_2->setObjectName(QStringLiteral("spinBox_2"));
-        spinBox_2->setGeometry(QRect(230, 50, 42, 22));
-        spinBox_2->setMaximum(99999999);
+        sbSoundX = new QSpinBox(groupBox_5);
+        sbSoundX->setObjectName(QStringLiteral("sbSoundX"));
+        sbSoundX->setGeometry(QRect(150, 50, 42, 22));
+        sbSoundX->setMaximum(99999999);
+        sbSoundY = new QSpinBox(groupBox_5);
+        sbSoundY->setObjectName(QStringLiteral("sbSoundY"));
+        sbSoundY->setGeometry(QRect(230, 50, 42, 22));
+        sbSoundY->setMaximum(99999999);
         label_16 = new QLabel(groupBox_5);
         label_16->setObjectName(QStringLiteral("label_16"));
         label_16->setGeometry(QRect(200, 50, 21, 16));
@@ -343,6 +345,14 @@ public:
         pbRegSound = new QPushButton(groupBox_5);
         pbRegSound->setObjectName(QStringLiteral("pbRegSound"));
         pbRegSound->setGeometry(QRect(290, 120, 93, 28));
+        label_27 = new QLabel(groupBox_5);
+        label_27->setObjectName(QStringLiteral("label_27"));
+        label_27->setGeometry(QRect(10, 110, 91, 16));
+        sbSoundRange = new QSpinBox(groupBox_5);
+        sbSoundRange->setObjectName(QStringLiteral("sbSoundRange"));
+        sbSoundRange->setGeometry(QRect(120, 110, 71, 22));
+        sbSoundRange->setMinimum(1);
+        sbSoundRange->setMaximum(99999);
         groupBox_6 = new QGroupBox(tabRegisterAssets);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 410, 431, 81));
@@ -529,7 +539,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        twTabs->setCurrentIndex(0);
+        twTabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -568,8 +578,8 @@ public:
         label_12->setText(QApplication::translate("MainWindow", "Name for this object:", 0));
         leTexName->setText(QApplication::translate("MainWindow", "Pepito", 0));
         groupBox_5->setTitle(QApplication::translate("MainWindow", "Sound", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
+        cbSoundType->clear();
+        cbSoundType->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Music (m)", 0)
          << QApplication::translate("MainWindow", "Effect (e)", 0)
          << QApplication::translate("MainWindow", "Random audio (a)", 0)
@@ -581,6 +591,7 @@ public:
         label_17->setText(QApplication::translate("MainWindow", "Sound file: ", 0));
         pbSoundBrowse->setText(QApplication::translate("MainWindow", "Browse", 0));
         pbRegSound->setText(QApplication::translate("MainWindow", "Register", 0));
+        label_27->setText(QApplication::translate("MainWindow", "Sound Range: ", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Code", 0));
         label_18->setText(QApplication::translate("MainWindow", "Location:", 0));
         pbCodeBrowse->setText(QApplication::translate("MainWindow", "Browse", 0));

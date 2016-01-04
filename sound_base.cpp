@@ -143,6 +143,7 @@ sound_base::sound_base(bool random_blob)
     type = 'a';
     effect = NULL;
     music = NULL;
+    s_range = 0;
 }
 
 void sound_base::clearSounds()
@@ -180,6 +181,8 @@ void sound_base::Load_Sound (const char* source)
     // This point is to create the fading effect of an ambient sound as you move away from a place.
     Location.X = AudioDOM.GetIntFromData("sound_x");
     Location.Y = AudioDOM.GetIntFromData("sound_y");
+    //Load sound range
+    s_range = AudioDOM.GetIntFromData("range");
 }
 
 void sound_base::Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool headerlessWav)
@@ -230,7 +233,10 @@ void sound_base::Pause()
 
 void sound_base::SetVol(int volume)
 {
-    Mix_VolumeMusic(volume);
+    if(music)
+        Mix_VolumeMusic(volume);
+    else
+        Mix_VolumeChunk(effect, volume);
 }
 
 bool sound_base::isPlaying() const
@@ -288,34 +294,15 @@ void sound_base::Update_Sound_Position(int x, int y)
     Location.X = x;
     Location.Y = y;
 }
-void sound_base::Update_Sound_Distance(math_point target, int range)// default minimum is 126
+void sound_base::Update_Sound_Distance(math_point target, int masterVol)
 {
     int distance = 0;
-    int multiplier = 0; // Basically, I will use the multiplier if a bigger range is especified. I know 126 pixels may be awkward since it will be in range of the display, but I was doing it for lazyness.
+    int multiplier = s_range / distance;
     distance = int (sqrt(((Location.X - target.X)^2)-((Location.Y-target.Y)^2)));
-    if(range <= 126)
-    {
-    if(distance > 126)
-    {
-        SetVol(0);
-    }
-    if(distance < 0)
-    {
-        SetVol(126);
-    }
-    if((distance > 0)&&(distance < 126))
-    {
-        SetVol(distance);
-    }
-    }
+    if(distance > s_range)
+        SetVol(multiplier * masterVol);
     else
-    {
-        multiplier = range/126;
-        if(range !=0&&range>126)
-        {
-            SetVol(distance/multiplier);
-        }
-    }
+        SetVol(masterVol);
 }
 
 //Private functions

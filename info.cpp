@@ -102,6 +102,11 @@ void SoundInfo::SetSoundInfo(size_t frequency, size_t channels, size_t chunksize
     m_chunksize = chunksize;
 }
 
+void SoundInfo::SetSoundVolume(size_t vol)
+{
+    m_volume = vol;
+}
+
 size_t SoundInfo::GetSoundFrequency() const
 {
     return m_frequency;
@@ -115,6 +120,11 @@ size_t SoundInfo::GetSoundChannels() const
 size_t SoundInfo::GetSoundChunkSize() const
 {
     return m_chunksize;
+}
+
+size_t SoundInfo::GetMasterVolume() const
+{
+    return m_volume;
 }
 
 /*End of SoundInfo*/

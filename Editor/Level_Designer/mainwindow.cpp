@@ -203,11 +203,8 @@ void MainWindow::on_pbRegTexture_clicked()
       std::string text_fileName;
       std::string path = "Textures/";
       //Let's cleanup the file name
-      text_fileName = ui->leTexName->text().toStdString();
-      if(searchChar('\\', text_fileName))
-          text_fileName = text_fileName.substr(text_fileName.rfind('\\'));
-      else
-          text_fileName = text_fileName.substr(text_fileName.rfind('/'));
+      text_fileName = extract_file_name(ui->leTexName->text().toStdString());
+
 
       //Now, let's build a relative path assuming the modRoot directory as the root
       path += text_fileName;
@@ -254,6 +251,48 @@ bool MainWindow::modExists(size_t &index)
     return false;
 }
 
+void MainWindow::on_pbSoundBrowse_clicked()
+{
+    open->setFileMode(QFileDialog::AnyFile);
+    ui->leSoundLoc->setText(open->getExistingDirectory(this, "Open File Dialog", "."));
+}
+
+void MainWindow::on_pbRegSound_clicked()
+{
+    data_base tmp;
+    std::string file = extract_file_name(ui->leSoundLoc->text().toStdString());
+    std::string path = modPath + "/Creatures/" + file + ".txt";
+    //Copy the actual sound file
+    copyfile(ui->leSoundLoc->text().toStdString(), modPath + "/Sounds/" + file);
+
+    //Now, we write descriptor
+    copyfile(modPath + "/Creatures/template_sound.txt", path);
+
+    //Now, let's initialize the fields!
+    tmp.OpenFile(path.c_str());
+    switch(ui->cbSoundType->currentIndex())
+    {
+    case 0:
+        tmp.WriteValue("m", "sound_type");
+        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "music_loc");
+        break;
+    case 1:
+        tmp.WriteValue("e", "sound_type");
+        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "effect_loc");
+        break;
+    case 2:
+        tmp.WriteValue("a", "sound_type");
+        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "effect_loc");
+        break;
+    default:
+        break;
+    }
+    tmp.WriteValue(intToStr(ui->sbSoundX->value()), "sound_x");
+    tmp.WriteValue(intToStr(ui->sbSoundY->value()), "sound_y");
+    tmp.WriteValue(intToStr(ui->sbSoundRange->value()), "range");
+    //Save file and close it!
+    tmp.CloseFile();
+}
 
 
 
@@ -294,4 +333,11 @@ void build_new_directory_tree(const std::string source, const std::string &targe
             QFile::copy(path.c_str(), path_target.c_str());
         }
     }
+}
+
+std::string extract_file_name(const std::string& path)
+{
+    if(searchChar('\\', path))
+        return path.substr(path.rfind('\\'));
+    return path.substr(path.rfind('/'));
 }

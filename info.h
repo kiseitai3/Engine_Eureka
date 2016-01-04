@@ -82,12 +82,14 @@ class SoundInfo
       SoundInfo();
       /*Setter*/
       void SetSoundInfo(size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096)  ;
+      void SetSoundVolume(size_t vol);
       /*Getter*/
       size_t GetSoundFrequency() const;
       size_t GetSoundChannels() const;
       size_t GetSoundChunkSize() const;
+      size_t GetMasterVolume() const;
   private:
-    size_t m_frequency, m_channels, m_chunksize;
+    size_t m_frequency, m_channels, m_chunksize, m_volume;
 };
 
 class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo

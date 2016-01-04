@@ -37,6 +37,10 @@ private slots:
 
   void on_pbRegTexture_clicked();
 
+  void on_pbSoundBrowse_clicked();
+
+  void on_pbRegSound_clicked();
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;
@@ -50,5 +54,6 @@ private:
 };
 
 void build_new_directory_tree(const std::string source, const std::string &target);
+std::string extract_file_name(const std::string& path);
 
 #endif // MAINWINDOW_H

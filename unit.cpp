@@ -610,7 +610,7 @@ void Unit::PlaySounds(const math_point& screenLoc)
     }
     tmp = sounds["default"];
     tmp->Update_Sound_Position(phys->GetLoc().X, phys->GetLoc().Y);
-    tmp->Update_Sound_Distance(screenLoc);
+    tmp->Update_Sound_Distance(screenLoc, owner_ref->GetMasterVolume());
     if(tmp->SoundType()=='e' || tmp->SoundType() == 'a')
     {
         tmp->PlayEffect(soundLoops);

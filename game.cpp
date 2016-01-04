@@ -178,7 +178,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
     tmpDB = GetDataBase(dbID);
     //Basic variables
     std::string rootDir, modLoc, saveLoc, gameName, icon, renderQuality, driver;
-    size_t fps, width, height, bpp, blitlvls, freq, chan, chunksize, displayIndex, displayCount, screenmode;
+    size_t fps, width, height, bpp, blitlvls, freq, chan, chunksize, displayIndex, displayCount, screenmode, vol;
     bool detectVid, detectAud, saveConstToFile;
 
     //Since we have setting data in a file and also in the save file (custom settings), we have to give priority to the user's settings!
@@ -238,6 +238,9 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         //Run the game in multithreading mode?
         tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=multithreaded","","",SELECT|WHERE));
         tmpDB->GetResult(multithreaded);
+        //Sound volume
+        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=sound_volume","","",SELECT|WHERE));
+        tmpDB->GetResult(vol);
 
         displayCount = SDL_GetNumVideoDisplays();
 
@@ -259,6 +262,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
+        SetSoundVolume(vol);
 
         //Load all of the expansion basic data!
         LoadExpansionInfo(tmpDB);
@@ -303,6 +307,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         chunksize = gameDOM.GetIntFromData("chunk_size");
         detectVid = gameDOM.GetIntFromData("auto_video");
         multithreaded = gameDOM.GetIntFromData("multithreaded");
+        vol = gameDOM.GetIntFromData("sound_volume");
 
         displayCount = SDL_GetNumVideoDisplays();
 
@@ -372,6 +377,8 @@ void Game::SaveGameSettings()
     tmpDB->query(tmpDB->prepareStatement("settings", intToStr(multithreaded), "variable=multithreaded","","",UPDATE));
 
     tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetDisplayCount()), "variable=display_count","","",UPDATE));
+
+    tmpDB->query(tmpDB->prepareStatement("settings", intToStr(GetMasterVolume()), "variable=sound_volume","","",UPDATE));
 }
 
 void Game::LoadGlobalModules(cstr file)

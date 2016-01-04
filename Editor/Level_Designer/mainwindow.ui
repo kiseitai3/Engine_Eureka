@@ -30,7 +30,7 @@
      <item row="0" column="0">
       <widget class="QTabWidget" name="twTabs">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tabGeneral">
         <attribute name="title">
@@ -529,7 +529,7 @@
          <property name="title">
           <string>Sound</string>
          </property>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="cbSoundType">
           <property name="geometry">
            <rect>
             <x>90</x>
@@ -593,7 +593,7 @@
            <string>X-&gt;</string>
           </property>
          </widget>
-         <widget class="QSpinBox" name="spinBox">
+         <widget class="QSpinBox" name="sbSoundX">
           <property name="geometry">
            <rect>
             <x>150</x>
@@ -606,7 +606,7 @@
            <number>99999999</number>
           </property>
          </widget>
-         <widget class="QSpinBox" name="spinBox_2">
+         <widget class="QSpinBox" name="sbSoundY">
           <property name="geometry">
            <rect>
             <x>230</x>
@@ -679,6 +679,35 @@
           </property>
           <property name="text">
            <string>Register</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_27">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>110</y>
+            <width>91</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Sound Range: </string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="sbSoundRange">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>110</y>
+            <width>71</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
           </property>
          </widget>
         </widget>

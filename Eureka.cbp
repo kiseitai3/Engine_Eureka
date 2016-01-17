@@ -651,10 +651,10 @@
 			<Option target="Eureka" />
 			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="locale.cpp">
+		<Unit filename="localesystem.cpp">
 			<Option target="IO" />
 		</Unit>
-		<Unit filename="locale.h">
+		<Unit filename="localesystem.h">
 			<Option target="IO" />
 		</Unit>
 		<Unit filename="luawrap.cpp">

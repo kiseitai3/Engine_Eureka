@@ -23,9 +23,26 @@ size_t mod_picker::getSelectedModIndex() const
     return ui->lstMods->currentIndex().row();
 }
 
+std::vector<std::string> mod_picker::getStringList() const
+{
+    std::vector<std::string> data;
+
+    for(size_t i = 0; i < ui->lstMods->count(); i++)
+    {
+        data.push_back(ui->lstMods->item(i)->text().toStdString());
+    }
+
+    return data;
+}
+
 std::string mod_picker::getSelectedMod() const
 {
     return ui->lstMods->currentItem()->text().toStdString();
+}
+
+void mod_picker::setDialogTitle(const std::string& title)
+{
+    ui->groupBox->setTitle(title.c_str());
 }
 
 mod_picker::~mod_picker()
@@ -62,9 +79,43 @@ std::string getModName(const data_base& dom, std::string& description)
 void mod_picker::on_pbAddMod_clicked()
 {
     ui->lstMods->addItem(ui->leModName->text());
+    ui->lstMods->setCurrentItem(ui->lstMods->item(ui->lstMods->count() - 1));
 }
 
 void mod_picker::on_buttonBox_accepted()
 {
     this->hide();
+}
+
+std::vector<std::string> getList(const SearchPacket& p,
+                                 const std::string title,
+                                 size_t searchType)
+{
+    mod_picker dialog;
+    data_base f(p.path.c_str());
+
+    switch(searchType)
+    {
+    case PARTIALSEARCH:
+        for(size_t i = 0; i < f.GetIntFromData(p.term); i++)
+        {
+            dialog.AddMod(f.GetStrFromData(p.prefix + intToStr(i)));
+        }
+        break;
+    case FULLSEARCH:
+        for(size_t i = 0; i < f.GetIntFromData(p.term); i++)
+        {
+            dialog.AddMod(f.GetStrFromData(p.prefix + intToStr(i) + p.suffix));
+        }
+        break;
+    default:
+        break;
+    }
+
+    dialog.setDialogTitle(title);
+
+    dialog.exec();
+
+    return dialog.getStringList();
+
 }

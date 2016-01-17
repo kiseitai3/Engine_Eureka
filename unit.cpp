@@ -136,13 +136,13 @@ Unit::~Unit()
     {
         num = intToStr(i);
         names = DOM->GetStrFromData("unit_sound_" + num + "_name");
-        draw_base *temp = images[names];
+        sound_base *temp = sounds[names];
         if(temp > 0)
         {
             delete(temp);
         }
 
-        images[names] = 0;
+        sounds[names] = 0;
     }
     if(DOM > 0)
     {
@@ -441,6 +441,16 @@ void Unit::SetID(unsigned int id)
 void Unit::SetOwner(Game* owner)
 {
     owner_ref = owner;
+}
+
+void Unit::SetCurrentAnimation(const std::string& name)
+{
+    drawImage = name;
+}
+
+void Unit::SetCurrentSound(const std::string& name)
+{
+    soundName = name;
 }
 
 bool Unit::GetDeath() const

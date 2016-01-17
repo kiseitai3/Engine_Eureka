@@ -1488,8 +1488,8 @@ class Unit(_object):
     def RotateSprite(self, sprite, degrees):
         return _EE.Unit_RotateSprite(self, sprite, degrees)
 
-    def FlipSprite(self, *args):
-        return _EE.Unit_FlipSprite(self, *args)
+    def FlipSprite(self, sprite, direction=NOFLIP):
+        return _EE.Unit_FlipSprite(self, sprite, direction)
 
     def ResetRotation(self, sprite):
         return _EE.Unit_ResetRotation(self, sprite)
@@ -2956,6 +2956,9 @@ class SoundInfo(_object):
     def SetSoundInfo(self, frequency=22050, channels=2, chunksize=4096):
         return _EE.SoundInfo_SetSoundInfo(self, frequency, channels, chunksize)
 
+    def SetSoundVolume(self, vol):
+        return _EE.SoundInfo_SetSoundVolume(self, vol)
+
     def GetSoundFrequency(self):
         return _EE.SoundInfo_GetSoundFrequency(self)
 
@@ -2964,6 +2967,9 @@ class SoundInfo(_object):
 
     def GetSoundChunkSize(self):
         return _EE.SoundInfo_GetSoundChunkSize(self)
+
+    def GetMasterVolume(self):
+        return _EE.SoundInfo_GetMasterVolume(self)
     __swig_destroy__ = _EE.delete_SoundInfo
     __del__ = lambda self: None
 SoundInfo_swigregister = _EE.SoundInfo_swigregister

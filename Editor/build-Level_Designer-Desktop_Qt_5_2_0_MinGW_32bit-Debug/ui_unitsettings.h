@@ -15,20 +15,37 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_UnitSettings
 {
 public:
+    QTabWidget *tabWidget;
+    QWidget *tabStats;
+    QWidget *tab_2;
 
     void setupUi(QDialog *UnitSettings)
     {
         if (UnitSettings->objectName().isEmpty())
             UnitSettings->setObjectName(QStringLiteral("UnitSettings"));
-        UnitSettings->resize(400, 300);
+        UnitSettings->resize(937, 519);
+        tabWidget = new QTabWidget(UnitSettings);
+        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        tabWidget->setGeometry(QRect(0, 0, 931, 511));
+        tabStats = new QWidget();
+        tabStats->setObjectName(QStringLiteral("tabStats"));
+        tabWidget->addTab(tabStats, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tabWidget->addTab(tab_2, QString());
 
         retranslateUi(UnitSettings);
+
+        tabWidget->setCurrentIndex(1);
+
 
         QMetaObject::connectSlotsByName(UnitSettings);
     } // setupUi
@@ -36,6 +53,8 @@ public:
     void retranslateUi(QDialog *UnitSettings)
     {
         UnitSettings->setWindowTitle(QApplication::translate("UnitSettings", "Dialog", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tabStats), QApplication::translate("UnitSettings", "Unit Stats", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("UnitSettings", "Unit Textures", 0));
     } // retranslateUi
 
 };

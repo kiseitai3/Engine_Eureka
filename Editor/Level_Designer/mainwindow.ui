@@ -213,6 +213,9 @@
          </widget>
         </widget>
         <widget class="QPushButton" name="pbModSave">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -785,7 +788,7 @@
            <string>Type:</string>
           </property>
          </widget>
-         <widget class="QComboBox" name="comboBox_2">
+         <widget class="QComboBox" name="cbCodeType">
           <property name="geometry">
            <rect>
             <x>70</x>
@@ -936,7 +939,7 @@
            <string>Mu:</string>
           </property>
          </widget>
-         <widget class="QDoubleSpinBox" name="doubleSpinBox">
+         <widget class="QDoubleSpinBox" name="dsbMu">
           <property name="geometry">
            <rect>
             <x>60</x>
@@ -946,7 +949,7 @@
            </rect>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkBox">
+         <widget class="QCheckBox" name="cbUnmovable">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -965,7 +968,7 @@
            <bool>true</bool>
           </property>
          </widget>
-         <widget class="QCheckBox" name="checkBox_2">
+         <widget class="QCheckBox" name="cbHasMagnetic">
           <property name="geometry">
            <rect>
             <x>120</x>
@@ -975,7 +978,7 @@
            </rect>
           </property>
           <property name="text">
-           <string>Does the object have a magnetic field?</string>
+           <string>Does the object have a magnetic field?:</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -994,7 +997,7 @@
            <string>Magnitude of magnetic field:</string>
           </property>
          </widget>
-         <widget class="QSpinBox" name="spinBox_3">
+         <widget class="QSpinBox" name="sbMagneticField">
           <property name="geometry">
            <rect>
             <x>300</x>
@@ -1017,7 +1020,7 @@
            <string>Elasticity of collisions:</string>
           </property>
          </widget>
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+         <widget class="QDoubleSpinBox" name="dsbElasticity">
           <property name="geometry">
            <rect>
             <x>150</x>
@@ -1025,6 +1028,15 @@
             <width>71</width>
             <height>22</height>
            </rect>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.500000000000000</double>
           </property>
          </widget>
          <widget class="QPushButton" name="pbRegPhys">
@@ -1039,6 +1051,26 @@
           <property name="text">
            <string>Register</string>
           </property>
+         </widget>
+         <widget class="QComboBox" name="cbMagneticDirection">
+          <property name="geometry">
+           <rect>
+            <x>380</x>
+            <y>80</y>
+            <width>51</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>in</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>out</string>
+           </property>
+          </item>
          </widget>
         </widget>
        </widget>

@@ -73,6 +73,8 @@ class Unit
         void SetOwner(Game* game);
         bool GetDeath() const;
         void ToggleDeath();
+        void SetCurrentAnimation(const std::string& name);
+        void SetCurrentSound(const std::string& name);
         void copy(const Unit& obj);
 
         //Handle assets

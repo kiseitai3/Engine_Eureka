@@ -70,6 +70,7 @@ void data_base::LoadStringBuffer(bool closeFile)
     char* buff = new char[s];
     file.seekg(0, std::ios::beg);
     file.read(buff, s);
+    buff[s-1] = '\0';
     buffer = buff;//Load the string to the internal buffer
     delete[] buff;// free the temporary buffer
     for(size_t i = 0; i <buffer.size(); i++)

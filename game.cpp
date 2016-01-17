@@ -336,7 +336,12 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         //Load all of the expansion basic data!
         LoadExpansionInfo(file);
     }
-
+    //Now we load the script file that will handle input for the chosen mod!
+    LoadKeyScript(modLoc + gameDOM.GetStrFromData("key_script").c_str());
+    /*Finally, we load the main cursor set! Although the game scripts and plugins can load additional cursors, it is important to
+    load an initial set of cursors for the game. If the cursor set file is empty, then no cursors should be loaded or errors issued!
+    */
+    LoadCursors(modLoc + gameDOM.GetStrFromData("cursor_set").c_str());
     if(fps)
         frameCapped = true;
     changeProgramWorkingDirectory(rootDir.c_str());
@@ -384,17 +389,25 @@ void Game::SaveGameSettings()
 void Game::LoadGlobalModules(cstr file)
 {
     data_base gameDOM(file);
+    data_base tmp;
     std::string modPath = gameDOM.GetStrFromData("plugins");
     gameDOM.CloseFile();
     gameDOM.OpenFile(modPath.c_str());
+    size_t mod_id;
 
     /*Game modules!*/
     std::string nameString = "module_";
     for(int i = 0; i < gameDOM.GetIntFromData("module_number"); i++)
     {
+        path = gameDOM.GetStrFromData(nameString).c_str();
         nameString += intToStr(i);
-        moduleList.push_back(RegisterModule(gameDOM.GetStrFromData(nameString).c_str()));
+        mod_id = RegisterModule(path.c_str());
+        moduleList.push_back(mod_id);
         nameString = "module_";
+        //Check for possible descriptor files
+        tmp.OpenFile(path.C_str());
+        if(tmp.GetStateOfInternalBuffer())
+            RegisterFunctionFromFile((path + ".txt").c_str(), mod_id);
     }
 }
 

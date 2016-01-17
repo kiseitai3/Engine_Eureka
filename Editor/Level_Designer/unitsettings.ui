@@ -1,17 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>UnitSettings</class>
- <widget name="UnitSettings" class="QDialog">
+ <widget class="QDialog" name="UnitSettings">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>937</width>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>931</width>
+     <height>511</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tabStats">
+    <attribute name="title">
+     <string>Unit Stats</string>
+    </attribute>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>241</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Base Stats</string>
+     </property>
+     <widget class="QSpinBox" name="sbAP">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>120</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>AP:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbHP">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HP:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>21</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>AD:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbAD">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>90</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Attack Speed:</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="dsbASpeed">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>150</y>
+        <width>62</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>999999.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+      <property name="value">
+       <double>1.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Vision Range:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbVRange">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>180</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Attack Range:</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbRange">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>210</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbMana">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>60</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mana:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unit name:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>280</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="sbMSpeed">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>240</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="suffix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <number>1</number>
+      </property>
+      <property name="maximum">
+       <number>99999</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>240</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Movement Speed:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>310</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unit type:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>310</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>350</y>
+       <width>661</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Bars</string>
+     </property>
+     <widget class="QCheckBox" name="cbHasBars">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>191</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unit has hp and mana bars?</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>HP bar texture:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leHPBar">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>50</y>
+        <width>391</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbHPBar">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>50</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leManaBar">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>80</y>
+        <width>381</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbManaBar">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>80</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Browse</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mana bar texture:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>0</y>
+       <width>551</width>
+       <height>351</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Other options</string>
+     </property>
+     <widget class="QCheckBox" name="cbHasBars_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unit is melee?</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbHasBars_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Unit has buffs?</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leBuffLoc">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>90</y>
+        <width>321</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbBuffBrowse">
+      <property name="geometry">
+       <rect>
+        <x>432</x>
+        <y>90</y>
+        <width>81</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>130</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>General Script:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leGenScriptLoc">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>130</y>
+        <width>321</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbGenScriptBrowse">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>130</y>
+        <width>81</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>90</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Buff Script:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leAILoc">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>170</y>
+        <width>321</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>AI Script:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbAIBrowse">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>170</y>
+        <width>81</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="pbCreateUnit">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>360</y>
+       <width>191</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Create Unit</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabUnitText">
+    <attribute name="title">
+     <string>Unit Textures</string>
+    </attribute>
+    <widget class="QListWidget" name="lstTextures">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>901</width>
+       <height>411</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbBrowseTexture">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>420</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbAddTexture">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>420</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbRemTexture">
+     <property name="geometry">
+      <rect>
+       <x>802</x>
+       <y>420</y>
+       <width>111</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Remove Selected</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leTextLoc">
+     <property name="geometry">
+      <rect>
+       <x>212</x>
+       <y>420</y>
+       <width>311</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leTextName">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>450</y>
+       <width>311</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>420</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Location of Texture:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>450</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name of Texture:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Unit Sounds</string>
+    </attribute>
+    <widget class="QListWidget" name="lstSounds">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>0</y>
+       <width>901</width>
+       <height>411</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbAddSound">
+     <property name="geometry">
+      <rect>
+       <x>698</x>
+       <y>420</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>88</x>
+       <y>420</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Location of Texture:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>88</x>
+       <y>450</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Name of Texture:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbRemSound">
+     <property name="geometry">
+      <rect>
+       <x>800</x>
+       <y>420</y>
+       <width>111</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Remove Selected</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leSoundLoc">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>420</y>
+       <width>311</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pbBrowseSound">
+     <property name="geometry">
+      <rect>
+       <x>528</x>
+       <y>420</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leSoundName">
+     <property name="geometry">
+      <rect>
+       <x>208</x>
+       <y>450</y>
+       <width>311</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
  </widget>
  <resources/>
  <connections/>

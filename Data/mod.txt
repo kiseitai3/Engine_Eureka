@@ -1,9 +1,13 @@
 //Main constants;
-mod_number = 1;
+mod_number = 2;
 selected_mod = campaign;
 mod_0_name = campaign;
 mod_0_path = campaign;
 mod_0_description = The campaign!;
+mod_1_name = pokemeds;
+mod_1_path = pokemeds;
+mod_1_description = ;
+mod_section_end;
 root = Data;
 game_name = Pokemeds;
 icon = pm.ico;
@@ -34,8 +38,15 @@ ui = UI/gameUI.txt
 save = save/save;
 save_destination = LOCALAPPDATA/Pokemeds/save;
 
-//Initial level
+//Initial level;
 initial_lvl = menu/lvl.txt
 
-//keybinding default files
+//keybinding default files;
 keybindings_file = /key_bindings.txt;
+
+//Input script file location;
+key_script = /Scripts/input.py;
+
+//Cursor set;
+cursor_set = /Cursor/template_cursor_set.txt;
+

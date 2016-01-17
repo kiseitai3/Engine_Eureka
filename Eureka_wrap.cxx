@@ -19555,10 +19555,10 @@ SWIGINTERN PyObject *_wrap_changeProgramWorkingDirectory(PyObject *SWIGUNUSEDPAR
   if (!PyArg_ParseTuple(args,(char *)"O:changeProgramWorkingDirectory",&obj0)) SWIG_fail;
   res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "changeProgramWorkingDirectory" "', argument " "1"" of type '" "char *""'");
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "changeProgramWorkingDirectory" "', argument " "1"" of type '" "char const *""'");
   }
   arg1 = reinterpret_cast< char * >(buf1);
-  result = (bool)changeProgramWorkingDirectory(arg1);
+  result = (bool)changeProgramWorkingDirectory((char const *)arg1);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
   return resultobj;
@@ -33025,6 +33025,36 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_SoundInfo_SetSoundVolume(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:SoundInfo_SetSoundVolume",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundInfo_SetSoundVolume" "', argument " "1"" of type '" "SoundInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "SoundInfo_SetSoundVolume" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  (arg1)->SetSoundVolume(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_SoundInfo_GetSoundFrequency(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   SoundInfo *arg1 = (SoundInfo *) 0 ;
@@ -33084,6 +33114,28 @@ SWIGINTERN PyObject *_wrap_SoundInfo_GetSoundChunkSize(PyObject *SWIGUNUSEDPARM(
   }
   arg1 = reinterpret_cast< SoundInfo * >(argp1);
   result = ((SoundInfo const *)arg1)->GetSoundChunkSize();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundInfo_GetMasterVolume(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundInfo_GetMasterVolume",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundInfo_GetMasterVolume" "', argument " "1"" of type '" "SoundInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundInfo * >(argp1);
+  result = ((SoundInfo const *)arg1)->GetMasterVolume();
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
   return resultobj;
 fail:
@@ -45013,9 +45065,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ScreenInfo_swigregister", ScreenInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_SoundInfo", _wrap_new_SoundInfo, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_SetSoundInfo", _wrap_SoundInfo_SetSoundInfo, METH_VARARGS, NULL},
+	 { (char *)"SoundInfo_SetSoundVolume", _wrap_SoundInfo_SetSoundVolume, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundFrequency", _wrap_SoundInfo_GetSoundFrequency, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundChannels", _wrap_SoundInfo_GetSoundChannels, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundChunkSize", _wrap_SoundInfo_GetSoundChunkSize, METH_VARARGS, NULL},
+	 { (char *)"SoundInfo_GetMasterVolume", _wrap_SoundInfo_GetMasterVolume, METH_VARARGS, NULL},
 	 { (char *)"delete_SoundInfo", _wrap_delete_SoundInfo, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_swigregister", SoundInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_GameInfo", _wrap_new_GameInfo, METH_VARARGS, NULL},

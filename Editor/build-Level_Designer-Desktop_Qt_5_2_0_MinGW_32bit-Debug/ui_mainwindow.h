@@ -105,7 +105,7 @@ public:
     QPushButton *pbCodeBrowse;
     QPushButton *pbRegCode;
     QLabel *label_19;
-    QComboBox *comboBox_2;
+    QComboBox *cbCodeType;
     QGroupBox *groupBox_7;
     QLabel *lbTextInfo;
     QGraphicsView *gvTexturePreview;
@@ -117,14 +117,15 @@ public:
     QLabel *label_22;
     QSpinBox *sbCharge;
     QLabel *label_23;
-    QDoubleSpinBox *doubleSpinBox;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
+    QDoubleSpinBox *dsbMu;
+    QCheckBox *cbUnmovable;
+    QCheckBox *cbHasMagnetic;
     QLabel *label_24;
-    QSpinBox *spinBox_3;
+    QSpinBox *sbMagneticField;
     QLabel *label_25;
-    QDoubleSpinBox *doubleSpinBox_2;
+    QDoubleSpinBox *dsbElasticity;
     QPushButton *pbRegPhys;
+    QComboBox *cbMagneticDirection;
     QWidget *tabAssets;
     QGroupBox *gbBaseAssets;
     QTreeView *tvBaseAssets;
@@ -223,6 +224,7 @@ public:
         teModDescription->setGeometry(QRect(10, 100, 471, 131));
         pbModSave = new QPushButton(tabGeneral);
         pbModSave->setObjectName(QStringLiteral("pbModSave"));
+        pbModSave->setEnabled(false);
         pbModSave->setGeometry(QRect(10, 500, 181, 31));
         twTabs->addTab(tabGeneral, QString());
         tabRegisterAssets = new QWidget();
@@ -371,9 +373,9 @@ public:
         label_19 = new QLabel(groupBox_6);
         label_19->setObjectName(QStringLiteral("label_19"));
         label_19->setGeometry(QRect(10, 50, 31, 16));
-        comboBox_2 = new QComboBox(groupBox_6);
-        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
-        comboBox_2->setGeometry(QRect(70, 50, 191, 22));
+        cbCodeType = new QComboBox(groupBox_6);
+        cbCodeType->setObjectName(QStringLiteral("cbCodeType"));
+        cbCodeType->setGeometry(QRect(70, 50, 191, 22));
         groupBox_7 = new QGroupBox(tabRegisterAssets);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
         groupBox_7->setGeometry(QRect(430, 0, 571, 241));
@@ -407,32 +409,38 @@ public:
         label_23 = new QLabel(groupBox_8);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(10, 110, 31, 16));
-        doubleSpinBox = new QDoubleSpinBox(groupBox_8);
-        doubleSpinBox->setObjectName(QStringLiteral("doubleSpinBox"));
-        doubleSpinBox->setGeometry(QRect(60, 110, 51, 22));
-        checkBox = new QCheckBox(groupBox_8);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(120, 50, 171, 20));
-        checkBox->setChecked(true);
-        checkBox_2 = new QCheckBox(groupBox_8);
-        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
-        checkBox_2->setGeometry(QRect(120, 80, 251, 20));
-        checkBox_2->setChecked(true);
+        dsbMu = new QDoubleSpinBox(groupBox_8);
+        dsbMu->setObjectName(QStringLiteral("dsbMu"));
+        dsbMu->setGeometry(QRect(60, 110, 51, 22));
+        cbUnmovable = new QCheckBox(groupBox_8);
+        cbUnmovable->setObjectName(QStringLiteral("cbUnmovable"));
+        cbUnmovable->setGeometry(QRect(120, 50, 171, 20));
+        cbUnmovable->setChecked(true);
+        cbHasMagnetic = new QCheckBox(groupBox_8);
+        cbHasMagnetic->setObjectName(QStringLiteral("cbHasMagnetic"));
+        cbHasMagnetic->setGeometry(QRect(120, 80, 251, 20));
+        cbHasMagnetic->setChecked(true);
         label_24 = new QLabel(groupBox_8);
         label_24->setObjectName(QStringLiteral("label_24"));
         label_24->setGeometry(QRect(120, 110, 171, 16));
-        spinBox_3 = new QSpinBox(groupBox_8);
-        spinBox_3->setObjectName(QStringLiteral("spinBox_3"));
-        spinBox_3->setGeometry(QRect(300, 110, 42, 22));
+        sbMagneticField = new QSpinBox(groupBox_8);
+        sbMagneticField->setObjectName(QStringLiteral("sbMagneticField"));
+        sbMagneticField->setGeometry(QRect(300, 110, 42, 22));
         label_25 = new QLabel(groupBox_8);
         label_25->setObjectName(QStringLiteral("label_25"));
         label_25->setGeometry(QRect(10, 140, 131, 16));
-        doubleSpinBox_2 = new QDoubleSpinBox(groupBox_8);
-        doubleSpinBox_2->setObjectName(QStringLiteral("doubleSpinBox_2"));
-        doubleSpinBox_2->setGeometry(QRect(150, 140, 71, 22));
+        dsbElasticity = new QDoubleSpinBox(groupBox_8);
+        dsbElasticity->setObjectName(QStringLiteral("dsbElasticity"));
+        dsbElasticity->setGeometry(QRect(150, 140, 71, 22));
+        dsbElasticity->setMaximum(1);
+        dsbElasticity->setSingleStep(0.01);
+        dsbElasticity->setValue(0.5);
         pbRegPhys = new QPushButton(groupBox_8);
         pbRegPhys->setObjectName(QStringLiteral("pbRegPhys"));
         pbRegPhys->setGeometry(QRect(440, 130, 93, 28));
+        cbMagneticDirection = new QComboBox(groupBox_8);
+        cbMagneticDirection->setObjectName(QStringLiteral("cbMagneticDirection"));
+        cbMagneticDirection->setGeometry(QRect(380, 80, 51, 22));
         twTabs->addTab(tabRegisterAssets, QString());
         tabAssets = new QWidget();
         tabAssets->setObjectName(QStringLiteral("tabAssets"));
@@ -597,8 +605,8 @@ public:
         pbCodeBrowse->setText(QApplication::translate("MainWindow", "Browse", 0));
         pbRegCode->setText(QApplication::translate("MainWindow", "Register", 0));
         label_19->setText(QApplication::translate("MainWindow", "Type:", 0));
-        comboBox_2->clear();
-        comboBox_2->insertItems(0, QStringList()
+        cbCodeType->clear();
+        cbCodeType->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Plugin", 0)
          << QApplication::translate("MainWindow", "Script", 0)
         );
@@ -610,13 +618,18 @@ public:
         label_22->setText(QApplication::translate("MainWindow", "Charge:", 0));
         label_23->setText(QApplication::translate("MainWindow", "Mu:", 0));
 #ifndef QT_NO_TOOLTIP
-        checkBox->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Warning</span>: checking this box will mean that the engine will ignore updating the objects physical position despite computing the forces that act on it!</p></body></html>", 0));
+        cbUnmovable->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Warning</span>: checking this box will mean that the engine will ignore updating the objects physical position despite computing the forces that act on it!</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        checkBox->setText(QApplication::translate("MainWindow", "Is the object unmovable?", 0));
-        checkBox_2->setText(QApplication::translate("MainWindow", "Does the object have a magnetic field?", 0));
+        cbUnmovable->setText(QApplication::translate("MainWindow", "Is the object unmovable?", 0));
+        cbHasMagnetic->setText(QApplication::translate("MainWindow", "Does the object have a magnetic field?:", 0));
         label_24->setText(QApplication::translate("MainWindow", "Magnitude of magnetic field:", 0));
         label_25->setText(QApplication::translate("MainWindow", "Elasticity of collisions:", 0));
         pbRegPhys->setText(QApplication::translate("MainWindow", "Register", 0));
+        cbMagneticDirection->clear();
+        cbMagneticDirection->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "in", 0)
+         << QApplication::translate("MainWindow", "out", 0)
+        );
         twTabs->setTabText(twTabs->indexOf(tabRegisterAssets), QApplication::translate("MainWindow", "Register Assets", 0));
         gbBaseAssets->setTitle(QApplication::translate("MainWindow", "Base Assets", 0));
         pbDelAsset->setText(QApplication::translate("MainWindow", "Delete Selected Asset", 0));

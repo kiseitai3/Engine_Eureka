@@ -16,24 +16,18 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     data_base.cpp \
     conversion.cpp \
-    texturesettings.cpp \
     unitsettings.cpp \
-    physicssettings.cpp \
     mod_picker.cpp
 
 HEADERS  += mainwindow.h \
     data_base.h \
     conversion.h \
-    texturesettings.h \
     unitsettings.h \
-    physicssettings.h \
     mod_picker.h \
     globals.h
 
 FORMS    += mainwindow.ui \
-    texturesettings.ui \
     unitsettings.ui \
-    physicssettings.ui \
     mod_picker.ui
 
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2-2.0.0/include

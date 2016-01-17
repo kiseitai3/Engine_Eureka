@@ -14988,9 +14988,9 @@ static int _wrap_changeProgramWorkingDirectory(lua_State* L) {
   bool result;
   
   SWIG_check_num_args("changeProgramWorkingDirectory",1,1)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("changeProgramWorkingDirectory",1,"char *");
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("changeProgramWorkingDirectory",1,"char const *");
   arg1 = (char *)lua_tostring(L, 1);
-  result = (bool)changeProgramWorkingDirectory(arg1);
+  result = (bool)changeProgramWorkingDirectory((char const *)arg1);
   lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
   return SWIG_arg;
   
@@ -27828,6 +27828,33 @@ static int _wrap_SoundInfo_SetSoundInfo(lua_State* L) {
 }
 
 
+static int _wrap_SoundInfo_SetSoundVolume(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("SoundInfo::SetSoundVolume",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundInfo::SetSoundVolume",1,"SoundInfo *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("SoundInfo::SetSoundVolume",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundInfo,0))){
+    SWIG_fail_ptr("SoundInfo_SetSoundVolume",1,SWIGTYPE_p_SoundInfo);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  (arg1)->SetSoundVolume(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_SoundInfo_GetSoundFrequency(lua_State* L) {
   int SWIG_arg = 0;
   SoundInfo *arg1 = (SoundInfo *) 0 ;
@@ -27900,6 +27927,30 @@ fail:
 }
 
 
+static int _wrap_SoundInfo_GetMasterVolume(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("SoundInfo::GetMasterVolume",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundInfo::GetMasterVolume",1,"SoundInfo const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundInfo,0))){
+    SWIG_fail_ptr("SoundInfo_GetMasterVolume",1,SWIGTYPE_p_SoundInfo);
+  }
+  
+  result = ((SoundInfo const *)arg1)->GetMasterVolume();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_SoundInfo(void *obj) {
 SoundInfo *arg1 = (SoundInfo *) obj;
 delete arg1;
@@ -27917,9 +27968,11 @@ static swig_lua_attribute swig_SoundInfo_attributes[] = {
 };
 static swig_lua_method swig_SoundInfo_methods[]= {
     { "SetSoundInfo", _wrap_SoundInfo_SetSoundInfo},
+    { "SetSoundVolume", _wrap_SoundInfo_SetSoundVolume},
     { "GetSoundFrequency", _wrap_SoundInfo_GetSoundFrequency},
     { "GetSoundChannels", _wrap_SoundInfo_GetSoundChannels},
     { "GetSoundChunkSize", _wrap_SoundInfo_GetSoundChunkSize},
+    { "GetMasterVolume", _wrap_SoundInfo_GetMasterVolume},
     {0,0}
 };
 static swig_lua_method swig_SoundInfo_meta[] = {

@@ -41,6 +41,14 @@ private slots:
 
   void on_pbRegSound_clicked();
 
+  void on_pbCodeBrowse_clicked();
+
+  void on_pbRegCode_clicked();
+
+  void on_pbRegPhys_clicked();
+
+  void on_cbHasMagnetic_clicked();
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;
@@ -55,5 +63,6 @@ private:
 
 void build_new_directory_tree(const std::string source, const std::string &target);
 std::string extract_file_name(const std::string& path);
+bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index);
 
 #endif // MAINWINDOW_H

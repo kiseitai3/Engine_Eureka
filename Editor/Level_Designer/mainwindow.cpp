@@ -41,7 +41,10 @@ void MainWindow::on_pbModBrowse_clicked()
 {
     size_t tmpIndex = 0;
     open->setFileMode(QFileDialog::Directory);
-    ui->leMod->setText(open->getExistingDirectory(this, "Open Folder Dialog", "."));
+    if(ui->leMod->text().toStdString().empty())
+        ui->leMod->setText(open->getExistingDirectory(this, "Open Folder Dialog", "."));
+    else
+        ui->leMod->setText(open->getExistingDirectory(this, "Open Folder Dialog", modRootPath.c_str()));
     if(DOM)
         delete DOM;
     //Open mod file
@@ -86,6 +89,7 @@ void MainWindow::on_pbModBrowse_clicked()
     ui->tabAssets->setEnabled(true);
     ui->tabDesigner->setEnabled(true);
     ui->tabUIDesigner->setEnabled(true);
+    ui->pbModSave->setEnabled(true);
 }
 
 void MainWindow::on_pBInstallBrowse_clicked()
@@ -131,30 +135,37 @@ void MainWindow::on_pbModSave_clicked()
     //Let's prepare the writer
     if(DOMWriter)
         delete DOMWriter;
-    DOMWriter = new data_base((ui->leMod->text().toStdString() + "/mod.txt").c_str(), false);
-    //Prepare output block iff this is a new mod
+    DOMWriter = new data_base();//Prepare output block iff this is a new mod
     exists = modExists(mod_num);
 
     if(!exists)
     {
-        output = DOM->GetStrBuffer();
-        output = output.substr(0, output.find("mod_section_end"));
-        output += "mod_" + intToStr(count) + "_name = " + modName + ";\n\r";
-        output += "mod_" + intToStr(count) + "_path = " + modName + ";\n\r";
-        output += "mod_" + intToStr(count) + "_description = " + tmp + ";\n\r";
-        output += DOM->GetStrBuffer().substr(DOM->GetStrBuffer().find("mod_section_end"));
+        DOMWriter->CloseFile();
+        DOMWriter->OpenBinFileForQuickWrite((ui->leMod->text().toStdString() + "/mod.txt").c_str());
+        std::string buff = DOM->GetStrBuffer();
+        size_t loc = buff.find("mod_section_end");
+        output = buff;
+        output = output.substr(0, loc);
         //We are ready to write settings to project file
         DOMWriter->WriteValueAndFlush(output);
+        DOMWriter->WriteValueAndFlush("mod_" + intToStr(count) + "_name = " + modName + ";\n");
+        DOMWriter->WriteValueAndFlush("mod_" + intToStr(count) + "_path = " + modName + ";\n");
+        DOMWriter->WriteValueAndFlush("mod_" + intToStr(count) + "_description = " + tmp + ";\n");
+        DOMWriter->WriteValueAndFlush(buff.substr(loc, buff.size() - loc));
         //Increase counter
         count++;
+        DOMWriter->CloseFile();
+        DOMWriter->OpenFile((ui->leMod->text().toStdString() + "/mod.txt").c_str(), false);
         DOMWriter->WriteValue(intToStr(count), "mod_number");
     }
     else
     {
+        DOMWriter->OpenFile((ui->leMod->text().toStdString() + "/mod.txt").c_str(), false);
         DOMWriter->WriteValue(tmp, "mod_" + intToStr(mod_num) + "_description");
-        DOMWriter->CloseFile();
     }
-
+    DOMWriter->CloseFile();
+    DOM->CloseFile();
+    DOM->OpenFile((ui->leMod->text().toStdString() + "/mod.txt").c_str());
 }
 
 void MainWindow::on_MainWindow_destroyed()
@@ -203,7 +214,7 @@ void MainWindow::on_pbRegTexture_clicked()
       std::string text_fileName;
       std::string path = "Textures/";
       //Let's cleanup the file name
-      text_fileName = extract_file_name(ui->leTexName->text().toStdString());
+      text_fileName = extract_file_name(ui->leTexturePath->text().toStdString());
 
 
       //Now, let's build a relative path assuming the modRoot directory as the root
@@ -212,7 +223,7 @@ void MainWindow::on_pbRegTexture_clicked()
       //Now, we create a new and empty file!
       tmp.CreateNewFile((modPath + "/" + path).c_str());
       //Now, let's generate the data fields in the file!
-      tmp.OpenFileForQuickWrite(path.c_str());
+      tmp.OpenFileForQuickWrite((modPath + "/" + path).c_str());
       tmp.WriteValueAndFlush("tex_texture = ;\n");
       tmp.WriteValueAndFlush("tex_frames = 1;\n");
       tmp.WriteValueAndFlush("tex_height = 0;\n");
@@ -223,8 +234,8 @@ void MainWindow::on_pbRegTexture_clicked()
       tmp.WriteValueAndFlush("tex_noloop = 0;\n");
       //Now, let's initialize the fields!
       tmp.CloseFile();
-      tmp.OpenFile((modPath + "/" + path).c_str());
-      tmp.WriteValue(modName + "/" + path, "tex_texture");
+      tmp.OpenFile((modPath + "/" + path).c_str(), false);
+      tmp.WriteValue(modName + "/Textures" + text_fileName, "tex_texture");
       tmp.WriteValue(intToStr(ui->sbFrames->value()), "tex_frames");
       tmp.WriteValue(intToStr(ui->sbHeight->value()), "tex_height");
       tmp.WriteValue(intToStr(ui->sbWidth->value()), "tex_width");
@@ -248,13 +259,14 @@ bool MainWindow::modExists(size_t &index)
             return true;
         }
     }
+    index = 0;
     return false;
 }
 
 void MainWindow::on_pbSoundBrowse_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    ui->leSoundLoc->setText(open->getExistingDirectory(this, "Open File Dialog", "."));
+    ui->leSoundLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str()));
 }
 
 void MainWindow::on_pbRegSound_clicked()
@@ -269,20 +281,20 @@ void MainWindow::on_pbRegSound_clicked()
     copyfile(modPath + "/Creatures/template_sound.txt", path);
 
     //Now, let's initialize the fields!
-    tmp.OpenFile(path.c_str());
+    tmp.OpenFile(path.c_str(), false);
     switch(ui->cbSoundType->currentIndex())
     {
     case 0:
         tmp.WriteValue("m", "sound_type");
-        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "music_loc");
+        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "music_loc");
         break;
     case 1:
         tmp.WriteValue("e", "sound_type");
-        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "effect_loc");
         break;
     case 2:
         tmp.WriteValue("a", "sound_type");
-        tmp.WriteValue(modName + "/Creatures/" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "effect_loc");
         break;
     default:
         break;
@@ -294,13 +306,131 @@ void MainWindow::on_pbRegSound_clicked()
     tmp.CloseFile();
 }
 
+void MainWindow::on_pbCodeBrowse_clicked()
+{
+    open->setFileMode(QFileDialog::AnyFile);
+    ui->leCodeLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str()));
+}
 
+void MainWindow::on_pbRegCode_clicked()
+{
+    data_base tmp;
+    std::string file = extract_file_name(ui->leCodeLoc->text().toStdString());
+    std::string path = modPath + "/plugins/" + file + ".txt";
+    std::vector<std::string> data;
+    SearchPacket p;
+    size_t index, count;
+
+    switch(ui->cbCodeType->currentIndex())
+    {
+    case PLUGIN:
+        //Set up search type
+        p.prefix = "func_";
+        p.suffix = "_name";
+        p.fileName = file + ".txt";
+        p.term = "func_count";
+        p.path = modRootPath + "/plugins/" + p.fileName;
+        //Copy the actual plugin file
+        copyfile(ui->leCodeLoc->text().toStdString(), modRootPath + "/plugins" + file);
+        //create function list
+        data = getList(p, "Function List!", FULLSEARCH);
+        data_base::CreateNewFile_static((modRootPath + "/plugins" + p.fileName).c_str());
+
+        //Add functions
+        tmp.OpenFileForQuickWrite(p.path.c_str());
+        tmp.WriteValue("func_count = " + intToStr(data.size()) + ";\n");
+        for(size_t i = 0; i < data.size(); i++)
+        {
+            tmp.WriteValue("func_" + intToStr(i) + "_name = " + data[i] + ";\n");
+        }
+        tmp.CloseFile();
+
+        //Now, we update plugins.txt
+        tmp.OpenFile((modRootPath + "/plugins/plugins.txt").c_str());
+        count = tmp.GetIntFromData("module_number");
+        tmp.CloseFile();
+
+        if(pluginExists(p.path, tmp, index))
+        {
+            tmp.OpenFile((modRootPath + "/plugins/plugins.txt").c_str(), false);
+            tmp.WriteValue("/plugins" + file, "module_" + intToStr(index));
+        }
+        else
+        {
+            tmp.OpenFileForQuickWrite((modRootPath + "/plugins/plugins.txt").c_str());
+            tmp.WriteValueAndFlush("module_" + intToStr(count) + "= " + "/plugins" + file + ";\n");
+            count++;
+            tmp.CloseFile();
+            tmp.OpenFile((modRootPath + "/plugins/plugins.txt").c_str(), false);
+            tmp.WriteValue(intToStr(count), "module_number");
+        }
+        tmp.CloseFile();
+        break;
+    default://If it is a script
+        //Set up search type
+        p.prefix = "func_";
+        p.suffix = "_name";
+        p.fileName = file + ".txt";
+        p.term = "func_count";
+        p.path = modPath + "/Scripts" + p.fileName;
+        //Copy the actual plugin file
+        copyfile(ui->leCodeLoc->text().toStdString(), modPath + "/Scripts" + file);
+        //create function list
+        data = getList(p, "Function List!", FULLSEARCH);
+        data_base::CreateNewFile_static((modPath + "/Scripts" + p.fileName).c_str());
+
+        //Add functions
+        tmp.OpenFileForQuickWrite(p.path.c_str());
+        tmp.WriteValue("func_count = " + intToStr(data.size()) + ";\n");
+        for(size_t i = 0; i < data.size(); i++)
+        {
+            tmp.WriteValue("func_" + intToStr(i) + "_name = " + data[i] + ";\n");
+        }
+        tmp.CloseFile();
+        break;
+    }
+}
+
+void MainWindow::on_pbRegPhys_clicked()
+{
+    //Create writer
+    data_base fileWriter;
+    std::string path = modPath + "/Physics/" + ui->lePhysName->text().toStdString() + ".txt";
+    //Let's copy the template
+    copyfile(modPath + "/Physics/template.txt", path);
+    //Let's update file
+    fileWriter.OpenFile(path.c_str(), false);
+    fileWriter.WriteValue(intToStr(ui->sbCharge->value()), "C");
+    fileWriter.WriteValue(intToStr(ui->sbMass->value()), "mass");
+    fileWriter.WriteValue(numToStr(ui->dsbElasticity->value()), "elasticity");
+    fileWriter.WriteValue(numToStr(ui->dsbMu->value()), "mu");
+    if(ui->cbUnmovable->isChecked())
+        fileWriter.WriteValue("1", "unmovable");
+    else
+        fileWriter.WriteValue("0", "unmovable");
+    if(ui->cbHasMagnetic->isChecked())
+    {
+        fileWriter.WriteValue(ui->cbMagneticDirection->currentText().toStdString(), "B");
+        fileWriter.WriteValue(intToStr(ui->sbMagneticField->value()), "B_magnitude");
+    }
+    else
+        fileWriter.WriteValue("None", "B");
+    //Flush buffer
+    fileWriter.CloseFile();
+}
+
+void MainWindow::on_cbHasMagnetic_clicked()
+{
+   if(ui->cbHasMagnetic->isChecked())
+       ui->sbMagneticField->setEnabled(true);
+   else
+       ui->sbMagneticField->setEnabled(false);
+}
 
 //Global functions
 
 void build_new_directory_tree(const std::string source, const std::string &target)
 {
-    std::cout << source << std::endl;
     QDir src(source.c_str());
     QDir dst(target.c_str());
     QFileInfo info;
@@ -341,3 +471,20 @@ std::string extract_file_name(const std::string& path)
         return path.substr(path.rfind('\\'));
     return path.substr(path.rfind('/'));
 }
+
+bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index)
+{
+    std::string fileName = extract_file_name(searchTerm);
+    for(size_t i = 0; i < file.GetIntFromData("module_number"); i++)
+    {
+        if(fileName == file.GetStrFromData("module_" + intToStr(i)))
+        {
+            index = i;
+            return true;
+        }
+    }
+    index = 0;
+    return false;
+}
+
+

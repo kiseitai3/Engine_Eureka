@@ -53,6 +53,7 @@ class Unit
         draw_base *GetDefaultDrawObject();
         void ToggleMelee();
         int GetHP() const;
+        int GetMana() const;
         int GetAD() const;
         int GetAP() const;
         int GetAttackSpeed() const;
@@ -63,6 +64,7 @@ class Unit
         std::string GetType() const;
         int GetBlitOrder() const;
         void SetHP(int val);
+        void SetMana(int val);
         void SetAD(int val);
         void SetAP(int val);
         void SetAttackSpeed(int val);

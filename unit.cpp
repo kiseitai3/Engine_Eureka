@@ -83,6 +83,7 @@ Unit::Unit(int BlitOrder, const std::string& path, math_point loc, SDL_Renderer*
         drawImage = "default";
         soundName = "default";
         hp = DOM->GetIntFromData("unit_hp");
+        mana = DOM->GetIntFromData("unit_mana");
         ad = DOM->GetIntFromData("unit_ad");
         ap = DOM->GetIntFromData("unit_ap");
         mana = DOM->GetIntFromData("unit_mana");
@@ -353,6 +354,11 @@ int Unit::GetHP() const
     return hp;
 }
 
+int Unit::GetMana() const
+{
+    return mana;
+}
+
 int Unit::GetAD() const
 {
     return ad;
@@ -401,6 +407,11 @@ int Unit::GetBlitOrder() const
 void Unit::SetHP(int val)
 {
     hp = val;
+}
+
+void Unit::SetMana(int val)
+{
+    mana = val;
 }
 
 void Unit::SetAD(int val)

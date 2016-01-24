@@ -63,6 +63,7 @@ private:
 
 void build_new_directory_tree(const std::string source, const std::string &target);
 std::string extract_file_name(const std::string& path);
+std::string extract_correct_path(const std::string& fullPath, const std::string& modName);
 bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index);
 
 #endif // MAINWINDOW_H

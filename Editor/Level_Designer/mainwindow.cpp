@@ -181,7 +181,7 @@ void MainWindow::on_MainWindow_destroyed()
 void MainWindow::on_pbTextureBrowse_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    std::string tmp = open->getOpenFileName(NULL, "Select Texture","" ,"Textures (*.png *.tiff *.tex *.bmp *.jpg *.jpeg)").toStdString();
+    std::string tmp = open->getOpenFileName(NULL, "Select Texture","" ,"All Files (*.*);; Textures (*.png *.tiff *.tex *.bmp *.jpg *.jpeg)").toStdString();
    // tmp = tmp.replace(0, getMODPath().size(),"");
     ui->leTexturePath->setText(tmp.c_str());
     if(!textPrev->items().empty())
@@ -266,19 +266,19 @@ bool MainWindow::modExists(size_t &index)
 void MainWindow::on_pbSoundBrowse_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    ui->leSoundLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str()));
+    ui->leSoundLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str(), "All Files (*.*);; Sound Files (*.ogg *.wav *.mp3 *.wmv *.m4a)"));
 }
 
 void MainWindow::on_pbRegSound_clicked()
 {
     data_base tmp;
     std::string file = extract_file_name(ui->leSoundLoc->text().toStdString());
-    std::string path = modPath + "/Creatures/" + file + ".txt";
+    std::string path = modPath + "/Sounds/" + file + ".txt";
     //Copy the actual sound file
     copyfile(ui->leSoundLoc->text().toStdString(), modPath + "/Sounds/" + file);
 
     //Now, we write descriptor
-    copyfile(modPath + "/Creatures/template_sound.txt", path);
+    copyfile(modPath + "/Sounds/template_sound.txt", path);
 
     //Now, let's initialize the fields!
     tmp.OpenFile(path.c_str(), false);
@@ -286,15 +286,15 @@ void MainWindow::on_pbRegSound_clicked()
     {
     case 0:
         tmp.WriteValue("m", "sound_type");
-        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "music_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "music_loc");
         break;
     case 1:
         tmp.WriteValue("e", "sound_type");
-        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "effect_loc");
         break;
     case 2:
         tmp.WriteValue("a", "sound_type");
-        tmp.WriteValue(modName + "/Creatures" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "effect_loc");
         break;
     default:
         break;
@@ -309,7 +309,8 @@ void MainWindow::on_pbRegSound_clicked()
 void MainWindow::on_pbCodeBrowse_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    ui->leCodeLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str()));
+    ui->leCodeLoc->setText(open->getOpenFileName(this, "Open File Dialog", modRootPath.c_str(),
+                                                 "All Files (*.*);; Scripts (*.py *.pyc *.lua *.luo);; Plugins (*.dll *.dylib *.so)"));
 }
 
 void MainWindow::on_pbRegCode_clicked()
@@ -487,4 +488,8 @@ bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& 
     return false;
 }
 
+std::string extract_correct_path(const std::string& fullPath, const std::string& modName)
+{
+    return fullPath.substr(fullPath.find(modName));
+}
 

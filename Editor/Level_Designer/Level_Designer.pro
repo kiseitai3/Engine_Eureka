@@ -17,18 +17,24 @@ SOURCES += main.cpp\
     data_base.cpp \
     conversion.cpp \
     unitsettings.cpp \
-    mod_picker.cpp
+    mod_picker.cpp \
+    cursorsettings.cpp \
+    layersettings.cpp
 
 HEADERS  += mainwindow.h \
     data_base.h \
     conversion.h \
     unitsettings.h \
     mod_picker.h \
-    globals.h
+    globals.h \
+    cursorsettings.h \
+    layersettings.h
 
 FORMS    += mainwindow.ui \
     unitsettings.ui \
-    mod_picker.ui
+    mod_picker.ui \
+    cursorsettings.ui \
+    layersettings.ui
 
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2-2.0.0/include
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2

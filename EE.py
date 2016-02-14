@@ -1416,6 +1416,9 @@ class Unit(_object):
     def GetHP(self):
         return _EE.Unit_GetHP(self)
 
+    def GetMana(self):
+        return _EE.Unit_GetMana(self)
+
     def GetAD(self):
         return _EE.Unit_GetAD(self)
 
@@ -1446,6 +1449,9 @@ class Unit(_object):
     def SetHP(self, val):
         return _EE.Unit_SetHP(self, val)
 
+    def SetMana(self, val):
+        return _EE.Unit_SetMana(self, val)
+
     def SetAD(self, val):
         return _EE.Unit_SetAD(self, val)
 
@@ -1475,6 +1481,12 @@ class Unit(_object):
 
     def ToggleDeath(self):
         return _EE.Unit_ToggleDeath(self)
+
+    def SetCurrentAnimation(self, name):
+        return _EE.Unit_SetCurrentAnimation(self, name)
+
+    def SetCurrentSound(self, name):
+        return _EE.Unit_SetCurrentSound(self, name)
 
     def copy(self, obj):
         return _EE.Unit_copy(self, obj)
@@ -1745,6 +1757,32 @@ class Range(_object):
     __del__ = lambda self: None
 Range_swigregister = _EE.Range_swigregister
 Range_swigregister(Range)
+
+class Resolution(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Resolution, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Resolution, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["height"] = _EE.Resolution_height_set
+    __swig_getmethods__["height"] = _EE.Resolution_height_get
+    if _newclass:
+        height = _swig_property(_EE.Resolution_height_get, _EE.Resolution_height_set)
+    __swig_setmethods__["width"] = _EE.Resolution_width_set
+    __swig_getmethods__["width"] = _EE.Resolution_width_get
+    if _newclass:
+        width = _swig_property(_EE.Resolution_width_get, _EE.Resolution_width_set)
+
+    def __init__(self):
+        this = _EE.new_Resolution()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _EE.delete_Resolution
+    __del__ = lambda self: None
+Resolution_swigregister = _EE.Resolution_swigregister
+Resolution_swigregister(Resolution)
 
 
 _EE.NONE_swigconstant(_EE)
@@ -2890,6 +2928,9 @@ class ScreenInfo(_object):
     def SetScreenLoc(self, x=0, y=0):
         return _EE.ScreenInfo_SetScreenLoc(self, x, y)
 
+    def SetScreenDeviceStr(self, gfx_card):
+        return _EE.ScreenInfo_SetScreenDeviceStr(self, gfx_card)
+
     def GetMaxFramesPerSec(self):
         return _EE.ScreenInfo_GetMaxFramesPerSec(self)
 
@@ -2916,6 +2957,9 @@ class ScreenInfo(_object):
 
     def GetRenderDriver(self):
         return _EE.ScreenInfo_GetRenderDriver(self)
+
+    def GetGraphicsDeviceName(self):
+        return _EE.ScreenInfo_GetGraphicsDeviceName(self)
     __swig_getmethods__["FULLSCREEN"] = _EE.ScreenInfo_FULLSCREEN_get
     if _newclass:
         FULLSCREEN = _swig_property(_EE.ScreenInfo_FULLSCREEN_get)
@@ -2959,6 +3003,9 @@ class SoundInfo(_object):
     def SetSoundVolume(self, vol):
         return _EE.SoundInfo_SetSoundVolume(self, vol)
 
+    def SetSoundDeviceStr(self, sound_card):
+        return _EE.SoundInfo_SetSoundDeviceStr(self, sound_card)
+
     def GetSoundFrequency(self):
         return _EE.SoundInfo_GetSoundFrequency(self)
 
@@ -2970,6 +3017,9 @@ class SoundInfo(_object):
 
     def GetMasterVolume(self):
         return _EE.SoundInfo_GetMasterVolume(self)
+
+    def GetSoundDeviceName(self):
+        return _EE.SoundInfo_GetSoundDeviceName(self)
     __swig_destroy__ = _EE.delete_SoundInfo
     __del__ = lambda self: None
 SoundInfo_swigregister = _EE.SoundInfo_swigregister

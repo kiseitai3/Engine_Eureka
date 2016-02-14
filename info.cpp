@@ -35,6 +35,17 @@ void ScreenInfo::SetScreenInfo(size_t displayCount, size_t display, size_t frame
     video_driver = driver;
 }
 
+void ScreenInfo::SetScreenLoc(int x, int y)
+{
+    screenLoc.X = x;
+    screenLoc.Y = y;
+}
+
+void ScreenInfo::SetScreenDeviceStr(const std::string& gfx_card)
+{
+    video_card = gfx_card;
+}
+
 math_point& ScreenInfo::GetScreenLoc()
 {
     return screenLoc;
@@ -70,12 +81,6 @@ size_t ScreenInfo::GetDisplayCount() const
     return m_display_count;
 }
 
-void ScreenInfo::SetScreenLoc(int x, int y)
-{
-    screenLoc.X = x;
-    screenLoc.Y = y;
-}
-
 size_t ScreenInfo::GetScreenMode() const
 {
     return m_screenmode;
@@ -84,6 +89,11 @@ size_t ScreenInfo::GetScreenMode() const
 std::string ScreenInfo::GetRenderDriver() const
 {
     return video_driver;
+}
+
+std::string ScreenInfo::GetGraphicsDeviceName() const
+{
+    return video_card;
 }
 /*End of ScreenInfo*/
 
@@ -107,6 +117,11 @@ void SoundInfo::SetSoundVolume(size_t vol)
     m_volume = vol;
 }
 
+void SoundInfo::SetSoundDeviceStr(const std::string& sound_card)
+{
+    card = sound_card;
+}
+
 size_t SoundInfo::GetSoundFrequency() const
 {
     return m_frequency;
@@ -125,6 +140,11 @@ size_t SoundInfo::GetSoundChunkSize() const
 size_t SoundInfo::GetMasterVolume() const
 {
     return m_volume;
+}
+
+std::string SoundInfo::GetSoundDeviceName() const
+{
+    return card;
 }
 
 /*End of SoundInfo*/

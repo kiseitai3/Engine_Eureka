@@ -49,6 +49,8 @@ private slots:
 
   void on_cbHasMagnetic_clicked();
 
+  void on_pbNewObj_clicked();
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;

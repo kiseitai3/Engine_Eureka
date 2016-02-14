@@ -109,6 +109,11 @@ typedef struct psudo_type{
       }
   };
 
+  struct Resolution
+  {
+      size_t height, width;
+  };
+
 //Enums
 enum FileTypes
 {

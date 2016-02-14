@@ -263,6 +263,8 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
         SetSoundVolume(vol);
+        SetSoundDeviceStr(SDL_GetAudioDeviceName(0));
+        SetScreenDeviceStr(SDL_GetDisplayName(0));
 
         //Load all of the expansion basic data!
         LoadExpansionInfo(tmpDB);
@@ -329,6 +331,9 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
+        SetSoundVolume(vol);
+        SetSoundDeviceStr(SDL_GetAudioDeviceName(0));
+        SetScreenDeviceStr(SDL_GetDisplayName(0));
 
         //We load the default keybindings
         LoadDefaultKeyBindings((modLoc + gameDOM.GetStrFromData("keybindings_file")).c_str());

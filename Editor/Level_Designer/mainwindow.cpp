@@ -12,6 +12,8 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QImage>
+#include "cursorsettings.h"
+#include "unitsettings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -493,3 +495,35 @@ std::string extract_correct_path(const std::string& fullPath, const std::string&
     return fullPath.substr(fullPath.find(modName));
 }
 
+
+void MainWindow::on_pbNewObj_clicked()
+{
+    switch(ui->cbObjType->currentIndex())
+    {
+    case 0://Environmental object
+    case 7://Unit settings
+    {
+        UnitSettings unit(this);
+        unit.show();
+        break;
+    }
+    case 1://Cursor
+    case 2://Cursor set
+    {
+        cursorsettings cursor(this);
+        cursor.show();
+        break;
+    }
+    case 3://Layer
+    case 4://Layer set
+        break;
+    case 5://Locale
+        break;
+    case 6://Trigger
+        break;
+    case 8://UI
+        break;
+    default:
+        break;
+    }
+}

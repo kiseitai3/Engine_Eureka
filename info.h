@@ -51,6 +51,7 @@ class ScreenInfo
                         size_t screenWidth = 640, size_t screenHeight = 480, size_t screenBPP = 32, const std::string& driver = ScreenInfo::OPENGL,
                         size_t screenmode = ScreenInfo::FULLSCREEN);
      void SetScreenLoc(int x = 0, int y = 0);
+     void SetScreenDeviceStr(const std::string& gfx_card);
      /*Getters*/
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
@@ -61,6 +62,7 @@ class ScreenInfo
      size_t GetDisplayCount() const;
      size_t GetScreenMode() const;
      std::string GetRenderDriver() const;
+     std::string GetGraphicsDeviceName() const;
 
 
      //globals
@@ -72,7 +74,7 @@ class ScreenInfo
      const static std::string SOFTWARE;
  private:
     size_t m_frames_per_second, m_screen_width, m_screen_height, m_screen_bpp, m_display, m_display_count, m_screenmode;
-    std::string video_driver;
+    std::string video_driver, video_card;
     math_point screenLoc;
 };
 
@@ -83,13 +85,16 @@ class SoundInfo
       /*Setter*/
       void SetSoundInfo(size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096)  ;
       void SetSoundVolume(size_t vol);
+      void SetSoundDeviceStr(const std::string& sound_card);
       /*Getter*/
       size_t GetSoundFrequency() const;
       size_t GetSoundChannels() const;
       size_t GetSoundChunkSize() const;
       size_t GetMasterVolume() const;
+      std::string GetSoundDeviceName() const;
   private:
     size_t m_frequency, m_channels, m_chunksize, m_volume;
+    std::string card;
 };
 
 class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo

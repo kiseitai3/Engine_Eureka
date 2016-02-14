@@ -2671,69 +2671,70 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_ParticleSystem swig_types[27]
 #define SWIGTYPE_p_Physics swig_types[28]
 #define SWIGTYPE_p_Range swig_types[29]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[30]
-#define SWIGTYPE_p_SDL_Event swig_types[31]
-#define SWIGTYPE_p_SDL_Rect swig_types[32]
-#define SWIGTYPE_p_SDL_Renderer swig_types[33]
-#define SWIGTYPE_p_SDL_Scancode swig_types[34]
-#define SWIGTYPE_p_SDL_Texture swig_types[35]
-#define SWIGTYPE_p_SQLGenerator swig_types[36]
-#define SWIGTYPE_p_SWIGCDATA swig_types[37]
-#define SWIGTYPE_p_ScreenInfo swig_types[38]
-#define SWIGTYPE_p_ScriptWrap swig_types[39]
-#define SWIGTYPE_p_SoundChunk swig_types[40]
-#define SWIGTYPE_p_SoundInfo swig_types[41]
-#define SWIGTYPE_p_SoundQueue swig_types[42]
-#define SWIGTYPE_p_SubFrame swig_types[43]
-#define SWIGTYPE_p_SynchData swig_types[44]
-#define SWIGTYPE_p_TCPClient swig_types[45]
-#define SWIGTYPE_p_TCPsocket swig_types[46]
-#define SWIGTYPE_p_TextureStore swig_types[47]
-#define SWIGTYPE_p_ThreadSystem swig_types[48]
-#define SWIGTYPE_p_Timer swig_types[49]
-#define SWIGTYPE_p_TimerSystem swig_types[50]
-#define SWIGTYPE_p_Trigger swig_types[51]
-#define SWIGTYPE_p_TriggerManager swig_types[52]
-#define SWIGTYPE_p_UDPClient swig_types[53]
-#define SWIGTYPE_p_UDPsocket swig_types[54]
-#define SWIGTYPE_p_UI swig_types[55]
-#define SWIGTYPE_p_UIManager swig_types[56]
-#define SWIGTYPE_p_Uint8 swig_types[57]
-#define SWIGTYPE_p_Unit swig_types[58]
-#define SWIGTYPE_p_UnitManager swig_types[59]
-#define SWIGTYPE_p_UnitNode swig_types[60]
-#define SWIGTYPE_p_VideoFrame swig_types[61]
-#define SWIGTYPE_p_VideoPlayer swig_types[62]
-#define SWIGTYPE_p_bool swig_types[63]
-#define SWIGTYPE_p_char swig_types[64]
-#define SWIGTYPE_p_data_base swig_types[65]
-#define SWIGTYPE_p_double swig_types[66]
-#define SWIGTYPE_p_draw_base swig_types[67]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[68]
-#define SWIGTYPE_p_int swig_types[69]
-#define SWIGTYPE_p_math_VECTOR swig_types[70]
-#define SWIGTYPE_p_math_point swig_types[71]
-#define SWIGTYPE_p_pChar swig_types[72]
-#define SWIGTYPE_p_p_ParticleNode swig_types[73]
-#define SWIGTYPE_p_psudo_type swig_types[74]
-#define SWIGTYPE_p_pthread_cond_t swig_types[75]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[76]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[77]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[79]
-#define SWIGTYPE_p_raw_input swig_types[80]
-#define SWIGTYPE_p_size_t swig_types[81]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[82]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[83]
-#define SWIGTYPE_p_std__string swig_types[84]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[85]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[86]
-#define SWIGTYPE_p_textbox swig_types[87]
-#define SWIGTYPE_p_unsigned_char swig_types[88]
-#define SWIGTYPE_p_unsigned_short swig_types[89]
-#define SWIGTYPE_p_void swig_types[90]
-static swig_type_info *swig_types[92];
-static swig_module_info swig_module = {swig_types, 91, 0, 0, 0, 0};
+#define SWIGTYPE_p_Resolution swig_types[30]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[31]
+#define SWIGTYPE_p_SDL_Event swig_types[32]
+#define SWIGTYPE_p_SDL_Rect swig_types[33]
+#define SWIGTYPE_p_SDL_Renderer swig_types[34]
+#define SWIGTYPE_p_SDL_Scancode swig_types[35]
+#define SWIGTYPE_p_SDL_Texture swig_types[36]
+#define SWIGTYPE_p_SQLGenerator swig_types[37]
+#define SWIGTYPE_p_SWIGCDATA swig_types[38]
+#define SWIGTYPE_p_ScreenInfo swig_types[39]
+#define SWIGTYPE_p_ScriptWrap swig_types[40]
+#define SWIGTYPE_p_SoundChunk swig_types[41]
+#define SWIGTYPE_p_SoundInfo swig_types[42]
+#define SWIGTYPE_p_SoundQueue swig_types[43]
+#define SWIGTYPE_p_SubFrame swig_types[44]
+#define SWIGTYPE_p_SynchData swig_types[45]
+#define SWIGTYPE_p_TCPClient swig_types[46]
+#define SWIGTYPE_p_TCPsocket swig_types[47]
+#define SWIGTYPE_p_TextureStore swig_types[48]
+#define SWIGTYPE_p_ThreadSystem swig_types[49]
+#define SWIGTYPE_p_Timer swig_types[50]
+#define SWIGTYPE_p_TimerSystem swig_types[51]
+#define SWIGTYPE_p_Trigger swig_types[52]
+#define SWIGTYPE_p_TriggerManager swig_types[53]
+#define SWIGTYPE_p_UDPClient swig_types[54]
+#define SWIGTYPE_p_UDPsocket swig_types[55]
+#define SWIGTYPE_p_UI swig_types[56]
+#define SWIGTYPE_p_UIManager swig_types[57]
+#define SWIGTYPE_p_Uint8 swig_types[58]
+#define SWIGTYPE_p_Unit swig_types[59]
+#define SWIGTYPE_p_UnitManager swig_types[60]
+#define SWIGTYPE_p_UnitNode swig_types[61]
+#define SWIGTYPE_p_VideoFrame swig_types[62]
+#define SWIGTYPE_p_VideoPlayer swig_types[63]
+#define SWIGTYPE_p_bool swig_types[64]
+#define SWIGTYPE_p_char swig_types[65]
+#define SWIGTYPE_p_data_base swig_types[66]
+#define SWIGTYPE_p_double swig_types[67]
+#define SWIGTYPE_p_draw_base swig_types[68]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[69]
+#define SWIGTYPE_p_int swig_types[70]
+#define SWIGTYPE_p_math_VECTOR swig_types[71]
+#define SWIGTYPE_p_math_point swig_types[72]
+#define SWIGTYPE_p_pChar swig_types[73]
+#define SWIGTYPE_p_p_ParticleNode swig_types[74]
+#define SWIGTYPE_p_psudo_type swig_types[75]
+#define SWIGTYPE_p_pthread_cond_t swig_types[76]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[77]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[78]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[79]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[80]
+#define SWIGTYPE_p_raw_input swig_types[81]
+#define SWIGTYPE_p_size_t swig_types[82]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[83]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[84]
+#define SWIGTYPE_p_std__string swig_types[85]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[86]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[87]
+#define SWIGTYPE_p_textbox swig_types[88]
+#define SWIGTYPE_p_unsigned_char swig_types[89]
+#define SWIGTYPE_p_unsigned_short swig_types[90]
+#define SWIGTYPE_p_void swig_types[91]
+static swig_type_info *swig_types[93];
+static swig_module_info swig_module = {swig_types, 92, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -9904,6 +9905,30 @@ fail:
 }
 
 
+static int _wrap_Unit_GetMana(lua_State* L) {
+  int SWIG_arg = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("Unit::GetMana",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Unit::GetMana",1,"Unit const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Unit,0))){
+    SWIG_fail_ptr("Unit_GetMana",1,SWIGTYPE_p_Unit);
+  }
+  
+  result = (int)((Unit const *)arg1)->GetMana();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Unit_GetAD(lua_State* L) {
   int SWIG_arg = 0;
   Unit *arg1 = (Unit *) 0 ;
@@ -10135,6 +10160,32 @@ static int _wrap_Unit_SetHP(lua_State* L) {
   
   arg2 = (int)lua_tonumber(L, 2);
   (arg1)->SetHP(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Unit_SetMana(lua_State* L) {
+  int SWIG_arg = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("Unit::SetMana",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Unit::SetMana",1,"Unit *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Unit::SetMana",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Unit,0))){
+    SWIG_fail_ptr("Unit_SetMana",1,SWIGTYPE_p_Unit);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  (arg1)->SetMana(arg2);
   
   return SWIG_arg;
   
@@ -10395,6 +10446,60 @@ static int _wrap_Unit_ToggleDeath(lua_State* L) {
   }
   
   (arg1)->ToggleDeath();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Unit_SetCurrentAnimation(lua_State* L) {
+  int SWIG_arg = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("Unit::SetCurrentAnimation",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Unit::SetCurrentAnimation",1,"Unit *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("Unit::SetCurrentAnimation",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Unit,0))){
+    SWIG_fail_ptr("Unit_SetCurrentAnimation",1,SWIGTYPE_p_Unit);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  (arg1)->SetCurrentAnimation((std::string const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Unit_SetCurrentSound(lua_State* L) {
+  int SWIG_arg = 0;
+  Unit *arg1 = (Unit *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("Unit::SetCurrentSound",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Unit::SetCurrentSound",1,"Unit *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("Unit::SetCurrentSound",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Unit,0))){
+    SWIG_fail_ptr("Unit_SetCurrentSound",1,SWIGTYPE_p_Unit);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  (arg1)->SetCurrentSound((std::string const &)*arg2);
   
   return SWIG_arg;
   
@@ -10973,6 +11078,7 @@ static swig_lua_method swig_Unit_methods[]= {
     { "GetDefaultDrawObject", _wrap_Unit_GetDefaultDrawObject},
     { "ToggleMelee", _wrap_Unit_ToggleMelee},
     { "GetHP", _wrap_Unit_GetHP},
+    { "GetMana", _wrap_Unit_GetMana},
     { "GetAD", _wrap_Unit_GetAD},
     { "GetAP", _wrap_Unit_GetAP},
     { "GetAttackSpeed", _wrap_Unit_GetAttackSpeed},
@@ -10983,6 +11089,7 @@ static swig_lua_method swig_Unit_methods[]= {
     { "GetType", _wrap_Unit_GetType},
     { "GetBlitOrder", _wrap_Unit_GetBlitOrder},
     { "SetHP", _wrap_Unit_SetHP},
+    { "SetMana", _wrap_Unit_SetMana},
     { "SetAD", _wrap_Unit_SetAD},
     { "SetAP", _wrap_Unit_SetAP},
     { "SetAttackSpeed", _wrap_Unit_SetAttackSpeed},
@@ -10993,6 +11100,8 @@ static swig_lua_method swig_Unit_methods[]= {
     { "SetOwner", _wrap_Unit_SetOwner},
     { "GetDeath", _wrap_Unit_GetDeath},
     { "ToggleDeath", _wrap_Unit_ToggleDeath},
+    { "SetCurrentAnimation", _wrap_Unit_SetCurrentAnimation},
+    { "SetCurrentSound", _wrap_Unit_SetCurrentSound},
     { "copy", _wrap_Unit_copy},
     { "PlaySounds", _wrap_Unit_PlaySounds},
     { "DrawImages", _wrap_Unit_DrawImages},
@@ -12884,6 +12993,174 @@ static swig_lua_namespace swig_Range_Sf_SwigStatic = {
 static swig_lua_class *swig_Range_bases[] = {0};
 static const char *swig_Range_base_names[] = {0};
 static swig_lua_class _wrap_class_Range = { "Range", "Range", &SWIGTYPE_p_Range,_proxy__wrap_new_Range, swig_delete_Range, swig_Range_methods, swig_Range_attributes, &swig_Range_Sf_SwigStatic, swig_Range_meta, swig_Range_bases, swig_Range_base_names };
+
+static int _wrap_Resolution_height_set(lua_State* L) {
+  int SWIG_arg = 0;
+  Resolution *arg1 = (Resolution *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("Resolution::height",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Resolution::height",1,"Resolution *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Resolution::height",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Resolution,0))){
+    SWIG_fail_ptr("Resolution_height_set",1,SWIGTYPE_p_Resolution);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->height = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Resolution_height_get(lua_State* L) {
+  int SWIG_arg = 0;
+  Resolution *arg1 = (Resolution *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("Resolution::height",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Resolution::height",1,"Resolution *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Resolution,0))){
+    SWIG_fail_ptr("Resolution_height_get",1,SWIGTYPE_p_Resolution);
+  }
+  
+  result =  ((arg1)->height);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Resolution_width_set(lua_State* L) {
+  int SWIG_arg = 0;
+  Resolution *arg1 = (Resolution *) 0 ;
+  size_t arg2 ;
+  
+  SWIG_check_num_args("Resolution::width",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Resolution::width",1,"Resolution *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Resolution::width",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Resolution,0))){
+    SWIG_fail_ptr("Resolution_width_set",1,SWIGTYPE_p_Resolution);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  if (arg1) (arg1)->width = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Resolution_width_get(lua_State* L) {
+  int SWIG_arg = 0;
+  Resolution *arg1 = (Resolution *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("Resolution::width",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Resolution::width",1,"Resolution *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Resolution,0))){
+    SWIG_fail_ptr("Resolution_width_get",1,SWIGTYPE_p_Resolution);
+  }
+  
+  result =  ((arg1)->width);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Resolution(lua_State* L) {
+  int SWIG_arg = 0;
+  Resolution *result = 0 ;
+  
+  SWIG_check_num_args("Resolution::Resolution",0,0)
+  result = (Resolution *)new Resolution();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Resolution,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_Resolution(void *obj) {
+Resolution *arg1 = (Resolution *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_Resolution(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_Resolution);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_Resolution_attributes[] = {
+    { "height", _wrap_Resolution_height_get, _wrap_Resolution_height_set },
+    { "width", _wrap_Resolution_width_get, _wrap_Resolution_width_set },
+    {0,0,0}
+};
+static swig_lua_method swig_Resolution_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_Resolution_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_Resolution_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_Resolution_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_Resolution_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_Resolution_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_Resolution_Sf_SwigStatic = {
+    "Resolution",
+    swig_Resolution_Sf_SwigStatic_methods,
+    swig_Resolution_Sf_SwigStatic_attributes,
+    swig_Resolution_Sf_SwigStatic_constants,
+    swig_Resolution_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_Resolution_bases[] = {0};
+static const char *swig_Resolution_base_names[] = {0};
+static swig_lua_class _wrap_class_Resolution = { "Resolution", "Resolution", &SWIGTYPE_p_Resolution,_proxy__wrap_new_Resolution, swig_delete_Resolution, swig_Resolution_methods, swig_Resolution_attributes, &swig_Resolution_Sf_SwigStatic, swig_Resolution_meta, swig_Resolution_bases, swig_Resolution_base_names };
 
 static int _wrap_maxConn_set(lua_State* L) {
   int SWIG_arg = 0;
@@ -27167,6 +27444,33 @@ static int _wrap_ScreenInfo_SetScreenLoc(lua_State* L) {
 }
 
 
+static int _wrap_ScreenInfo_SetScreenDeviceStr(lua_State* L) {
+  int SWIG_arg = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("ScreenInfo::SetScreenDeviceStr",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScreenInfo::SetScreenDeviceStr",1,"ScreenInfo *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("ScreenInfo::SetScreenDeviceStr",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScreenInfo,0))){
+    SWIG_fail_ptr("ScreenInfo_SetScreenDeviceStr",1,SWIGTYPE_p_ScreenInfo);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  (arg1)->SetScreenDeviceStr((std::string const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ScreenInfo_GetMaxFramesPerSec(lua_State* L) {
   int SWIG_arg = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
@@ -27383,6 +27687,30 @@ fail:
 }
 
 
+static int _wrap_ScreenInfo_GetGraphicsDeviceName(lua_State* L) {
+  int SWIG_arg = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  std::string result;
+  
+  SWIG_check_num_args("ScreenInfo::GetGraphicsDeviceName",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScreenInfo::GetGraphicsDeviceName",1,"ScreenInfo const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScreenInfo,0))){
+    SWIG_fail_ptr("ScreenInfo_GetGraphicsDeviceName",1,SWIGTYPE_p_ScreenInfo);
+  }
+  
+  result = ((ScreenInfo const *)arg1)->GetGraphicsDeviceName();
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ScreenInfo_FULLSCREEN_get(lua_State* L) {
   int SWIG_arg = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
@@ -27551,6 +27879,7 @@ static swig_lua_attribute swig_ScreenInfo_attributes[] = {
 static swig_lua_method swig_ScreenInfo_methods[]= {
     { "SetScreenInfo", _wrap_ScreenInfo_SetScreenInfo},
     { "SetScreenLoc", _wrap_ScreenInfo_SetScreenLoc},
+    { "SetScreenDeviceStr", _wrap_ScreenInfo_SetScreenDeviceStr},
     { "GetMaxFramesPerSec", _wrap_ScreenInfo_GetMaxFramesPerSec},
     { "GetScreenWidth", _wrap_ScreenInfo_GetScreenWidth},
     { "GetScreenHeight", _wrap_ScreenInfo_GetScreenHeight},
@@ -27560,6 +27889,7 @@ static swig_lua_method swig_ScreenInfo_methods[]= {
     { "GetDisplayCount", _wrap_ScreenInfo_GetDisplayCount},
     { "GetScreenMode", _wrap_ScreenInfo_GetScreenMode},
     { "GetRenderDriver", _wrap_ScreenInfo_GetRenderDriver},
+    { "GetGraphicsDeviceName", _wrap_ScreenInfo_GetGraphicsDeviceName},
     {0,0}
 };
 static swig_lua_method swig_ScreenInfo_meta[] = {
@@ -27855,6 +28185,33 @@ fail:
 }
 
 
+static int _wrap_SoundInfo_SetSoundDeviceStr(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("SoundInfo::SetSoundDeviceStr",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundInfo::SetSoundDeviceStr",1,"SoundInfo *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("SoundInfo::SetSoundDeviceStr",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundInfo,0))){
+    SWIG_fail_ptr("SoundInfo_SetSoundDeviceStr",1,SWIGTYPE_p_SoundInfo);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  (arg1)->SetSoundDeviceStr((std::string const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_SoundInfo_GetSoundFrequency(lua_State* L) {
   int SWIG_arg = 0;
   SoundInfo *arg1 = (SoundInfo *) 0 ;
@@ -27951,6 +28308,30 @@ fail:
 }
 
 
+static int _wrap_SoundInfo_GetSoundDeviceName(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  std::string result;
+  
+  SWIG_check_num_args("SoundInfo::GetSoundDeviceName",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundInfo::GetSoundDeviceName",1,"SoundInfo const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundInfo,0))){
+    SWIG_fail_ptr("SoundInfo_GetSoundDeviceName",1,SWIGTYPE_p_SoundInfo);
+  }
+  
+  result = ((SoundInfo const *)arg1)->GetSoundDeviceName();
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_SoundInfo(void *obj) {
 SoundInfo *arg1 = (SoundInfo *) obj;
 delete arg1;
@@ -27969,10 +28350,12 @@ static swig_lua_attribute swig_SoundInfo_attributes[] = {
 static swig_lua_method swig_SoundInfo_methods[]= {
     { "SetSoundInfo", _wrap_SoundInfo_SetSoundInfo},
     { "SetSoundVolume", _wrap_SoundInfo_SetSoundVolume},
+    { "SetSoundDeviceStr", _wrap_SoundInfo_SetSoundDeviceStr},
     { "GetSoundFrequency", _wrap_SoundInfo_GetSoundFrequency},
     { "GetSoundChannels", _wrap_SoundInfo_GetSoundChannels},
     { "GetSoundChunkSize", _wrap_SoundInfo_GetSoundChunkSize},
     { "GetMasterVolume", _wrap_SoundInfo_GetMasterVolume},
+    { "GetSoundDeviceName", _wrap_SoundInfo_GetSoundDeviceName},
     {0,0}
 };
 static swig_lua_method swig_SoundInfo_meta[] = {
@@ -38287,6 +38670,7 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_math_VECTOR,
 &_wrap_class_math_point,
 &_wrap_class_Range,
+&_wrap_class_Resolution,
 &_wrap_class_DataBase,
 &_wrap_class_pChar,
 &_wrap_class_Module,
@@ -38469,6 +38853,7 @@ static swig_type_info _swigt__p_ParticleNode = {"_p_ParticleNode", "ParticleNode
 static swig_type_info _swigt__p_ParticleSystem = {"_p_ParticleSystem", "ParticleSystem *", 0, 0, (void*)&_wrap_class_ParticleSystem, 0};
 static swig_type_info _swigt__p_Physics = {"_p_Physics", "Physics *", 0, 0, (void*)&_wrap_class_Physics, 0};
 static swig_type_info _swigt__p_Range = {"_p_Range", "Range *", 0, 0, (void*)&_wrap_class_Range, 0};
+static swig_type_info _swigt__p_Resolution = {"_p_Resolution", "Resolution *", 0, 0, (void*)&_wrap_class_Resolution, 0};
 static swig_type_info _swigt__p_SDL_BlendMode = {"_p_SDL_BlendMode", "SDL_BlendMode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Event = {"_p_SDL_Event", "SDL_Event *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SDL_Rect = {"_p_SDL_Rect", "SDL_Rect *", 0, 0, (void*)0, 0};
@@ -38562,6 +38947,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_ParticleSystem,
   &_swigt__p_Physics,
   &_swigt__p_Range,
+  &_swigt__p_Resolution,
   &_swigt__p_SDL_BlendMode,
   &_swigt__p_SDL_Event,
   &_swigt__p_SDL_Rect,
@@ -38655,6 +39041,7 @@ static swig_cast_info _swigc__p_ParticleNode[] = {  {&_swigt__p_ParticleNode, 0,
 static swig_cast_info _swigc__p_ParticleSystem[] = {  {&_swigt__p_Game, _p_GameTo_p_ParticleSystem, 0, 0},  {&_swigt__p_ParticleSystem, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Physics[] = {  {&_swigt__p_Physics, 0, 0, 0},  {&_swigt__p_Particle, _p_ParticleTo_p_Physics, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Range[] = {  {&_swigt__p_Range, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Resolution[] = {  {&_swigt__p_Resolution, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_BlendMode[] = {  {&_swigt__p_SDL_BlendMode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Event[] = {  {&_swigt__p_SDL_Event, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SDL_Rect[] = {  {&_swigt__p_SDL_Rect, 0, 0, 0},{0, 0, 0, 0}};
@@ -38748,6 +39135,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_ParticleSystem,
   _swigc__p_Physics,
   _swigc__p_Range,
+  _swigc__p_Resolution,
   _swigc__p_SDL_BlendMode,
   _swigc__p_SDL_Event,
   _swigc__p_SDL_Rect,

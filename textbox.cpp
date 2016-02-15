@@ -31,7 +31,7 @@ textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer& ren, in
         }
         else
         {
-            background->Load_Texture(textboxFile, ren);//load background texture using the filepath in the settings file.
+            background->Load_Texture(data->GetStrFromData("texture_file").c_str(), ren);//load background texture using the filepath in the settings file.
         }
         color = {data->GetIntFromData("textbox_colorbyte1"),//Loading bytes that make up the color for the text
                 data->GetIntFromData("textbox_colorbyte2"),

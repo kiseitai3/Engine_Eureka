@@ -11,15 +11,15 @@
 
 Layer::Layer(cstr file, Game* owner, size_t l_id)
 {
-    size_t id;
+    size_t mutex_id;
     data_base lDOM(file);
     id = l_id;
     layer = new draw_base();
-    layer->Load_Texture(file, owner->GetRenderer(id));
+    layer->Load_Texture(lDOM.GetStrFromData("texture_file").c_str(), owner->GetRenderer(mutex_id));
     loc.X = lDOM.GetIntFromData("x");
     loc.Y = lDOM.GetIntFromData("y");
     loc.Z = lDOM.GetIntFromData("z");
-    owner->UnlockRenderer(id);
+    owner->UnlockRenderer(mutex_id);
 }
 
 Layer::~Layer()

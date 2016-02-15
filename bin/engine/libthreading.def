@@ -32,7 +32,7 @@ EXPORTS
     _Z25removeMultipleCharFromStrcPKc @31
     _Z26getCharArrayFromConstArrayRKSs @32
     _Z26shiftLeadingExponentZeroesPcj @33
-    _Z29changeProgramWorkingDirectoryPc @34
+    _Z29changeProgramWorkingDirectoryPKc @34
     _Z5isNumRSs @35
     _Z6hasherv @36
     _Z8fuseStrsSsSs @37

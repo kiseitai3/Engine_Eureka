@@ -7,9 +7,13 @@ INPUT(
 ./release/mod_picker.o
 ./release/cursorsettings.o
 ./release/layersettings.o
+./release/ui_elements.o
+./release/color_picker.o
 ./release/moc_mainwindow.o
 ./release/moc_unitsettings.o
 ./release/moc_mod_picker.o
 ./release/moc_cursorsettings.o
 ./release/moc_layersettings.o
+./release/moc_ui_elements.o
+./release/moc_color_picker.o
 );

@@ -263,7 +263,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
         SetSoundVolume(vol);
-        SetSoundDeviceStr(SDL_GetAudioDeviceName(0));
+        SetSoundDeviceStr(SDL_GetAudioDeviceName(0, 0));
         SetScreenDeviceStr(SDL_GetDisplayName(0));
 
         //Load all of the expansion basic data!
@@ -332,7 +332,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
                 displayCount, displayIndex, fps, width, height, bpp,
                 blitlvls, screenmode, driver, freq, chan, chunksize);
         SetSoundVolume(vol);
-        SetSoundDeviceStr(SDL_GetAudioDeviceName(0));
+        SetSoundDeviceStr(SDL_GetAudioDeviceName(0,0));
         SetScreenDeviceStr(SDL_GetDisplayName(0));
 
         //We load the default keybindings
@@ -342,11 +342,11 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         LoadExpansionInfo(file);
     }
     //Now we load the script file that will handle input for the chosen mod!
-    LoadKeyScript(modLoc + gameDOM.GetStrFromData("key_script").c_str());
+    LoadKeyScript((modLoc + gameDOM.GetStrFromData("key_script")).c_str());
     /*Finally, we load the main cursor set! Although the game scripts and plugins can load additional cursors, it is important to
     load an initial set of cursors for the game. If the cursor set file is empty, then no cursors should be loaded or errors issued!
     */
-    LoadCursors(modLoc + gameDOM.GetStrFromData("cursor_set").c_str());
+    LoadCursors((modLoc + gameDOM.GetStrFromData("cursor_set")).c_str());
     if(fps)
         frameCapped = true;
     changeProgramWorkingDirectory(rootDir.c_str());
@@ -396,6 +396,7 @@ void Game::LoadGlobalModules(cstr file)
     data_base gameDOM(file);
     data_base tmp;
     std::string modPath = gameDOM.GetStrFromData("plugins");
+    std::string path;
     gameDOM.CloseFile();
     gameDOM.OpenFile(modPath.c_str());
     size_t mod_id;
@@ -410,7 +411,7 @@ void Game::LoadGlobalModules(cstr file)
         moduleList.push_back(mod_id);
         nameString = "module_";
         //Check for possible descriptor files
-        tmp.OpenFile(path.C_str());
+        tmp.OpenFile(path.c_str());
         if(tmp.GetStateOfInternalBuffer())
             RegisterFunctionFromFile((path + ".txt").c_str(), mod_id);
     }

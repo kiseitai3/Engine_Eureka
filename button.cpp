@@ -17,7 +17,7 @@
 //ENGINE_NAMESPACE
 
 
-Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
+Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, data_base(file).GetStrFromData("textbox_file").c_str(), ren, blitOrderI)
 {
     if(!GetDOM())
     {

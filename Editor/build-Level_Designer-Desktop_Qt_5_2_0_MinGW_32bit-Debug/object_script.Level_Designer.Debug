@@ -7,9 +7,13 @@ INPUT(
 ./debug/mod_picker.o
 ./debug/cursorsettings.o
 ./debug/layersettings.o
+./debug/ui_elements.o
+./debug/color_picker.o
 ./debug/moc_mainwindow.o
 ./debug/moc_unitsettings.o
 ./debug/moc_mod_picker.o
 ./debug/moc_cursorsettings.o
 ./debug/moc_layersettings.o
+./debug/moc_ui_elements.o
+./debug/moc_color_picker.o
 );

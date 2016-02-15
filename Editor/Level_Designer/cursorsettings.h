@@ -20,6 +20,7 @@ public:
 
     void SetRootLocation(const std::string &modName, const std::string &modPath);
     void LoadSet(const std::string& loc);
+    void LoadCursor(const std::string& loc);
 private slots:
     void on_pbSound_clicked();
 

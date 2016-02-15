@@ -12,8 +12,10 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QImage>
+
 #include "cursorsettings.h"
 #include "unitsettings.h"
+#include "layersettings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -516,7 +518,11 @@ void MainWindow::on_pbNewObj_clicked()
     }
     case 3://Layer
     case 4://Layer set
+    {
+        Layersettings settings(this);
+        settings.show();
         break;
+    }
     case 5://Locale
         break;
     case 6://Trigger

@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     unitsettings.cpp \
     mod_picker.cpp \
     cursorsettings.cpp \
-    layersettings.cpp
+    layersettings.cpp \
+    ui_elements.cpp \
+    color_picker.cpp
 
 HEADERS  += mainwindow.h \
     data_base.h \
@@ -28,13 +30,17 @@ HEADERS  += mainwindow.h \
     mod_picker.h \
     globals.h \
     cursorsettings.h \
-    layersettings.h
+    layersettings.h \
+    ui_elements.h \
+    color_picker.h
 
 FORMS    += mainwindow.ui \
     unitsettings.ui \
     mod_picker.ui \
     cursorsettings.ui \
-    layersettings.ui
+    layersettings.ui \
+    ui_elements.ui \
+    color_picker.ui
 
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2-2.0.0/include
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2

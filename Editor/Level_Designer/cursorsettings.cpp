@@ -1,5 +1,6 @@
 #include "cursorsettings.h"
 #include "ui_cursorsettings.h"
+#include <QMessageBox>
 
 cursorsettings::cursorsettings(QWidget *parent) :
     QDialog(parent),
@@ -20,10 +21,24 @@ void cursorsettings::LoadSet(const std::string &loc)
     data_base DOM(loc.c_str());
     size_t count = DOM.GetIntFromData("cursor_count");
 
+    std::string name = extract_file_name(loc);
+    name = name.substr(name.find(".txt"));
+    ui->leNameSet->setText(name.c_str());
+
     for(size_t i = 0; i < count; i++)
     {
         ui->lstSet->addItem(DOM.GetStrFromData("cursor_" + intToStr(i) + "_name").c_str());
     }
+}
+
+void cursorsettings::LoadCursor(const std::string &loc)
+{
+    data_base DOM(loc.c_str());
+
+    ui->leName->setText(DOM.GetStrFromData("cur_name").c_str());
+    ui->leSound->setText(DOM.GetStrFromData("cur_sound_file").c_str());
+    ui->leTexture->setText(DOM.GetStrFromData("cur_texture").c_str());
+    ui->sbFrames->setValue(DOM.GetIntFromData("cur_fps"));
 }
 
 cursorsettings::~cursorsettings()
@@ -47,25 +62,39 @@ void cursorsettings::on_pbTexture_clicked()
 
 void cursorsettings::on_pbCreate_clicked()
 {
-    std::string file = ModPath + "/Cursor/" + ui->leName->text().toStdString() + ".txt";
-    std::string sound_file = extract_file_name(ui->leSound->text().toStdString());
-    std::string texture_file = extract_file_name(ui->leTexture->text().toStdString());
+    if(ui->leName->text() == "")
+    {
+       QMessageBox::critical(this, "Error!", "Error: Either the filename or the object name was not specified. Fill the missing fields and try again!");
+    }
+    else
+    {
+        std::string file = ModPath + "/Cursor/" + ui->leName->text().toStdString() + ".txt";
+        std::string sound_file = extract_file_name(ui->leSound->text().toStdString());
+        std::string texture_file = extract_file_name(ui->leTexture->text().toStdString());
 
-    copyfile(ModPath + "/Cursor/template_cursor.txt", file);
-    data_base writer(file.c_str(), false);
+        copyfile(ModPath + "/Cursor/template_cursor.txt", file);
+        data_base writer(file.c_str(), false);
 
-    writer.WriteValue(ui->leName->text().toStdString(), "cur_name");
-    writer.WriteValue(ModName + "/Sounds/" + sound_file, "cur_sound_file");
-    writer.WriteValue(ModName + "/Textures/" + texture_file, "cur_texture");
-    writer.WriteValue(intToStr(ui->sbFrames->value()), "cur_fps");
+        writer.WriteValue(ui->leName->text().toStdString(), "cur_name");
+        writer.WriteValue(ModName + "/Sounds/" + sound_file, "cur_sound_file");
+        writer.WriteValue(ModName + "/Textures/" + texture_file, "cur_texture");
+        writer.WriteValue(intToStr(ui->sbFrames->value()), "cur_fps");
 
-    writer.CloseFile();
+        writer.CloseFile();
+    }
 }
 
 void cursorsettings::on_pbCreateAdd_clicked()
 {
-    on_pbCreate_clicked();
-    ui->lstSet->addItem(ui->leName->text());
+    if(ui->leName->text() == "")
+    {
+       QMessageBox::critical(this, "Error!", "Error: Either the filename or the object name was not specified. Fill the missing fields and try again!");
+    }
+    else
+    {
+        on_pbCreate_clicked();
+        ui->lstSet->addItem(ui->leName->text());
+    }
 }
 
 void cursorsettings::on_pbRemove_clicked()
@@ -75,10 +104,11 @@ void cursorsettings::on_pbRemove_clicked()
 
 void cursorsettings::on_pbAdd_clicked()
 {
+    open->setFileMode(QFileDialog::AnyFile);
     std::string file_name = extract_file_name(open->getOpenFileName(NULL, "Select Cursor Descriptor File","" ,"All Files (*.*);; Cursor Descriptor (*.txt)").toStdString());
     file_name = file_name.substr(file_name.find(".txt"));
-    open->setFileMode(QFileDialog::AnyFile);
     ui->lstSet->addItem(file_name.c_str());
+    ui->lstSet->setCurrentIndex(ui->lstSet->currentIndex());
 }
 
 void cursorsettings::on_pbLoadSet_clicked()
@@ -89,20 +119,24 @@ void cursorsettings::on_pbLoadSet_clicked()
 
 void cursorsettings::on_pbSaveSet_clicked()
 {
-    std::string file = ModPath + "/Cursor/" + ui->leNameSet->text().toStdString() + ".txt";
-
-    copyfile(ModPath + "/Cursor/template_cursor_set.txt", file);
-    data_base writer(file.c_str(), false);
-
-    writer.WriteValue(intToStr(ui->lstSet->count()), "cur_count");
-    for(size_t i = 0; i < ui->lstSet->count(); i++)
+    if(ui->leNameSet->text() == "")
     {
-        writer.WriteValue("cursor_" + intToStr(i) + "_name = ;");
-        writer.WriteValue("cursor_" + intToStr(i) + "_file = ;");
-
-        writer.WriteValue(ui->lstSet->item(i)->text().toStdString(), "cursor_" + intToStr(i) + "_name");
-        writer.WriteValue(ModName + "/Cursor/" + ui->lstSet->item(i)->text().toStdString() + ".txt", "cursor_" + intToStr(i) + "_file");
+       QMessageBox::critical(this, "Error!", "Error: Either the filename or the object name was not specified. Fill the missing fields and try again!");
     }
+    else
+    {
+        std::string file = ModPath + "/Cursor/" + ui->leNameSet->text().toStdString() + ".txt";
 
-    writer.CloseFile();
+        copyfile(ModPath + "/Cursor/template_cursor_set.txt", file);
+        data_base writer(file.c_str(), false);
+
+        writer.WriteValue(intToStr(ui->lstSet->count()), "cur_count");
+        for(size_t i = 0; i < ui->lstSet->count(); i++)
+        {
+            writer.WriteValue(ui->lstSet->item(i)->text().toStdString(), "cursor_" + intToStr(i) + "_name");
+            writer.WriteValue(ModName + "/Cursor/" + ui->lstSet->item(i)->text().toStdString() + ".txt", "cursor_" + intToStr(i) + "_file");
+        }
+
+        writer.CloseFile();
+    }
 }

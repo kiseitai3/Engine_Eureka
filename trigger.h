@@ -32,7 +32,7 @@ public:
     //Behavior
     bool isUnitOnTrigger(Unit *target) const;
     void ConsumeTrigger(Game* owner, Unit *target);
-    void UpdateTriggerLoc(int X, int Y, int Z);
+    void UpdateTriggerLoc(int X, int Y, int Z = 0);
 };
 
 

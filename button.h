@@ -9,13 +9,13 @@
 #include "typedefs.h"
 
 class textbox;
-SDL_Texture* LoadTexture(const char *file, SDL_Renderer& ren);
+TextureNode* LoadTexture(const char *file, SDL_Renderer& ren);
 
 
 class Button: public textbox
 {
 private:
-    std::map<std::string, SDL_Texture*> textures;
+    std::map<std::string, TextureNode*> textures;
 
 public:
     Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI);

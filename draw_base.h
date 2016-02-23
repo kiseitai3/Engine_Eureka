@@ -21,6 +21,7 @@ class draw_base
     int GetAnimCounter() const;
     bool isNoLoop() const;
     SDL_Texture& GetTexture() const;
+    TextureNode* GetTextureNode() const;
     void setColor( Uint8 red, Uint8 green, Uint8 blue );
     void setBlendMode( SDL_BlendMode blending );
     void setAlpha( Uint8 alpha );
@@ -30,8 +31,8 @@ class draw_base
     void copy(const draw_base& obj, bool realloc_texture = false, SDL_Renderer* ren = NULL);
     void resetRotation();
     void ClearTexture();
-    void SetTextureFromPointer(SDL_Texture* ptr);
-    void SetTextureFromRef(SDL_Texture& tex);
+    void SetTextureFromPointer(TextureNode* ptr);
+    void SetTextureFromRef(TextureNode& tex);
     draw_base();
     ~draw_base();
 
@@ -49,7 +50,7 @@ class draw_base
     int timeBetweenFrames;//In cycles. This is the time each frame will spend on the screen. Useful when you have an animation with < FRAMEs_PER_SECOND and you want it to last more than or about a second.
     int timeSpentOnFrame; //Keeps track of how draw cycles have passed on the frame.
     SDL_RendererFlip flipDir;//The direction to flip
-    SDL_Texture* SpriteSheet;
+    TextureNode* SpriteSheet;
     SDL_Rect src, target;
     SDL_Point pivot;
     int noLoop;
@@ -60,7 +61,7 @@ class draw_base
 };
 
 void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& SpriteSheet, int height = 40, int width = 40); //Non-animation drawing function
-SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren);//Non-class loading function
+TextureNode *LoadTexture(const char* file, SDL_Renderer& ren);//Non-class loading function
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END

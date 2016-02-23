@@ -1,0 +1,8 @@
+tex_texture = dummy_textbox.png;
+tex_frames = 1;
+tex_height = 100;
+tex_width = 200;
+tex_anim_num = 0;
+tex_anim_counter = 1;
+tex_noloop = 1;
+tex_time_on_frames = 1;

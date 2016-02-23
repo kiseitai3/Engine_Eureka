@@ -1235,6 +1235,9 @@ class draw_base(_object):
     def GetTexture(self):
         return _EE.draw_base_GetTexture(self)
 
+    def GetTextureNode(self):
+        return _EE.draw_base_GetTextureNode(self)
+
     def setColor(self, red, green, blue):
         return _EE.draw_base_setColor(self, red, green, blue)
 

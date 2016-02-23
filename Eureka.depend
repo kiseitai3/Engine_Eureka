@@ -23301,7 +23301,7 @@
 1411758549 source:c:\users\kiseitai2\documents\devcb\engine_eureka\info.cpp
 	"info.h"
 
-1455561262 source:c:\users\luis\documents\devcb\engine_eureka\button.cpp
+1456182257 source:c:\users\luis\documents\devcb\engine_eureka\button.cpp
 	"textbox.h"
 	"button.h"
 	<string>
@@ -23315,7 +23315,7 @@
 	<SDL_image.h>
 	"eureka.h"
 
-1430251476 c:\users\luis\documents\devcb\engine_eureka\textbox.h
+1455657510 c:\users\luis\documents\devcb\engine_eureka\textbox.h
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -23326,7 +23326,7 @@
 
 1428164887 D
 
-1429729518 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
+1456182385 c:\users\luis\documents\devcb\engine_eureka\draw_base.h
 	<SDL.h>
 	<string>
 	"texture_store.h"
@@ -23747,7 +23747,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1440112203 c:\users\luis\documents\devcb\engine_eureka\button.h
+1456178546 c:\users\luis\documents\devcb\engine_eureka\button.h
 	<string>
 	<iostream>
 	<SDL.h>
@@ -23913,13 +23913,13 @@
 	"BST.h"
 	"typedefs.h"
 
-1424122614 c:\users\luis\documents\devcb\engine_eureka\bst.h
+1456180518 c:\users\luis\documents\devcb\engine_eureka\bst.h
 	<iostream>
 	<vector>
 	<cassert>
 	"BST.cc"
 
-1427994028 c:\users\luis\documents\devcb\engine_eureka\bst.cc
+1456180880 c:\users\luis\documents\devcb\engine_eureka\bst.cc
 
 1428116777 source:c:\users\luis\documents\devcb\engine_eureka\data_base.cpp
 	<fstream>
@@ -24032,7 +24032,7 @@
 	<iostream>
 	"typedefs.h"
 
-1439745788 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
+1456182188 source:c:\users\luis\documents\devcb\engine_eureka\draw_base.cpp
 	<SDL.h>
 	<SDL_image.h>
 	"data_base.h"
@@ -24099,8 +24099,9 @@
 	<string.h>
 	<SDL_mixer.h>
 
-1425780704 c:\users\luis\documents\devcb\engine_eureka\progressbar.h
+1456100164 c:\users\luis\documents\devcb\engine_eureka\progressbar.h
 	"physics.h"
+	"draw_base.h"
 	<SDL.h>
 
 1441302214 c:\users\luis\documents\devcb\engine_eureka\input.h
@@ -24194,7 +24195,7 @@
 1425768967 source:c:\users\luis\documents\devcb\engine_eureka\plugin.cpp
 	"plugin.h"
 
-1425821740 source:c:\users\luis\documents\devcb\engine_eureka\progressbar.cpp
+1456101667 source:c:\users\luis\documents\devcb\engine_eureka\progressbar.cpp
 	"progressbar.h"
 	"physics.h"
 	"draw_base.h"
@@ -24237,7 +24238,7 @@
 1420518233 source:c:\users\luis\documents\devcb\engine_eureka\sqlkeywords.cpp
 	"sqlkeywords.h"
 
-1455561262 source:c:\users\luis\documents\devcb\engine_eureka\textbox.cpp
+1455569058 source:c:\users\luis\documents\devcb\engine_eureka\textbox.cpp
 	<iostream>
 	<string>
 	"draw_base.h"
@@ -28638,7 +28639,7 @@
 	<cstdlib>
 	<cassert>
 
-1430272803 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
+1430269203 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\base_components_test.cpp
 	<iostream>
 	<string>
 	<SDL_mixer.h>
@@ -28655,7 +28656,7 @@
 	"../timersystem.h"
 	"../Dependencies/CRC/crc.h"
 
-1439745529 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
+1456182023 c:\users\luis\documents\devcb\engine_eureka\texture_store.h
 	<iostream>
 	<string>
 	<SDL.h>
@@ -28663,9 +28664,10 @@
 	"BST.h"
 	"typedefs.h"
 
-1439745714 source:c:\users\luis\documents\devcb\engine_eureka\texture_store.cpp
+1456182023 source:c:\users\luis\documents\devcb\engine_eureka\texture_store.cpp
 	<cstdlib>
 	"texture_store.h"
+	"data_base.h"
 	<crc.h>
 	<SDL.h>
 	<SDL_image.h>

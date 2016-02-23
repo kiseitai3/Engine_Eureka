@@ -2984,52 +2984,53 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_SynchData swig_types[44]
 #define SWIGTYPE_p_TCPClient swig_types[45]
 #define SWIGTYPE_p_TCPsocket swig_types[46]
-#define SWIGTYPE_p_TextureStore swig_types[47]
-#define SWIGTYPE_p_ThreadSystem swig_types[48]
-#define SWIGTYPE_p_Timer swig_types[49]
-#define SWIGTYPE_p_TimerSystem swig_types[50]
-#define SWIGTYPE_p_Trigger swig_types[51]
-#define SWIGTYPE_p_TriggerManager swig_types[52]
-#define SWIGTYPE_p_UDPClient swig_types[53]
-#define SWIGTYPE_p_UDPsocket swig_types[54]
-#define SWIGTYPE_p_UI swig_types[55]
-#define SWIGTYPE_p_UIManager swig_types[56]
-#define SWIGTYPE_p_Uint8 swig_types[57]
-#define SWIGTYPE_p_Unit swig_types[58]
-#define SWIGTYPE_p_UnitManager swig_types[59]
-#define SWIGTYPE_p_UnitNode swig_types[60]
-#define SWIGTYPE_p_VideoFrame swig_types[61]
-#define SWIGTYPE_p_VideoPlayer swig_types[62]
-#define SWIGTYPE_p_bool swig_types[63]
-#define SWIGTYPE_p_char swig_types[64]
-#define SWIGTYPE_p_data_base swig_types[65]
-#define SWIGTYPE_p_double swig_types[66]
-#define SWIGTYPE_p_draw_base swig_types[67]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[68]
-#define SWIGTYPE_p_int swig_types[69]
-#define SWIGTYPE_p_math_VECTOR swig_types[70]
-#define SWIGTYPE_p_math_point swig_types[71]
-#define SWIGTYPE_p_pChar swig_types[72]
-#define SWIGTYPE_p_p_ParticleNode swig_types[73]
-#define SWIGTYPE_p_psudo_type swig_types[74]
-#define SWIGTYPE_p_pthread_cond_t swig_types[75]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[76]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[77]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[79]
-#define SWIGTYPE_p_raw_input swig_types[80]
-#define SWIGTYPE_p_size_t swig_types[81]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[82]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[83]
-#define SWIGTYPE_p_std__string swig_types[84]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[85]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[86]
-#define SWIGTYPE_p_textbox swig_types[87]
-#define SWIGTYPE_p_unsigned_char swig_types[88]
-#define SWIGTYPE_p_unsigned_short swig_types[89]
-#define SWIGTYPE_p_void swig_types[90]
-static swig_type_info *swig_types[92];
-static swig_module_info swig_module = {swig_types, 91, 0, 0, 0, 0};
+#define SWIGTYPE_p_TextureNode swig_types[47]
+#define SWIGTYPE_p_TextureStore swig_types[48]
+#define SWIGTYPE_p_ThreadSystem swig_types[49]
+#define SWIGTYPE_p_Timer swig_types[50]
+#define SWIGTYPE_p_TimerSystem swig_types[51]
+#define SWIGTYPE_p_Trigger swig_types[52]
+#define SWIGTYPE_p_TriggerManager swig_types[53]
+#define SWIGTYPE_p_UDPClient swig_types[54]
+#define SWIGTYPE_p_UDPsocket swig_types[55]
+#define SWIGTYPE_p_UI swig_types[56]
+#define SWIGTYPE_p_UIManager swig_types[57]
+#define SWIGTYPE_p_Uint8 swig_types[58]
+#define SWIGTYPE_p_Unit swig_types[59]
+#define SWIGTYPE_p_UnitManager swig_types[60]
+#define SWIGTYPE_p_UnitNode swig_types[61]
+#define SWIGTYPE_p_VideoFrame swig_types[62]
+#define SWIGTYPE_p_VideoPlayer swig_types[63]
+#define SWIGTYPE_p_bool swig_types[64]
+#define SWIGTYPE_p_char swig_types[65]
+#define SWIGTYPE_p_data_base swig_types[66]
+#define SWIGTYPE_p_double swig_types[67]
+#define SWIGTYPE_p_draw_base swig_types[68]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[69]
+#define SWIGTYPE_p_int swig_types[70]
+#define SWIGTYPE_p_math_VECTOR swig_types[71]
+#define SWIGTYPE_p_math_point swig_types[72]
+#define SWIGTYPE_p_pChar swig_types[73]
+#define SWIGTYPE_p_p_ParticleNode swig_types[74]
+#define SWIGTYPE_p_psudo_type swig_types[75]
+#define SWIGTYPE_p_pthread_cond_t swig_types[76]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[77]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[78]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[79]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[80]
+#define SWIGTYPE_p_raw_input swig_types[81]
+#define SWIGTYPE_p_size_t swig_types[82]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[83]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[84]
+#define SWIGTYPE_p_std__string swig_types[85]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[86]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[87]
+#define SWIGTYPE_p_textbox swig_types[88]
+#define SWIGTYPE_p_unsigned_char swig_types[89]
+#define SWIGTYPE_p_unsigned_short swig_types[90]
+#define SWIGTYPE_p_void swig_types[91]
+static swig_type_info *swig_types[93];
+static swig_module_info swig_module = {swig_types, 92, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -11656,6 +11657,28 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_draw_base_GetTextureNode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  draw_base *arg1 = (draw_base *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  TextureNode *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:draw_base_GetTextureNode",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_draw_base, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "draw_base_GetTextureNode" "', argument " "1"" of type '" "draw_base const *""'"); 
+  }
+  arg1 = reinterpret_cast< draw_base * >(argp1);
+  result = (TextureNode *)((draw_base const *)arg1)->GetTextureNode();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_TextureNode, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_draw_base_setColor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   draw_base *arg1 = (draw_base *) 0 ;
@@ -12215,7 +12238,7 @@ fail:
 SWIGINTERN PyObject *_wrap_draw_base_SetTextureFromPointer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   draw_base *arg1 = (draw_base *) 0 ;
-  SDL_Texture *arg2 = (SDL_Texture *) 0 ;
+  TextureNode *arg2 = (TextureNode *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -12229,11 +12252,11 @@ SWIGINTERN PyObject *_wrap_draw_base_SetTextureFromPointer(PyObject *SWIGUNUSEDP
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "draw_base_SetTextureFromPointer" "', argument " "1"" of type '" "draw_base *""'"); 
   }
   arg1 = reinterpret_cast< draw_base * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_SDL_Texture, 0 |  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_TextureNode, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "draw_base_SetTextureFromPointer" "', argument " "2"" of type '" "SDL_Texture *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "draw_base_SetTextureFromPointer" "', argument " "2"" of type '" "TextureNode *""'"); 
   }
-  arg2 = reinterpret_cast< SDL_Texture * >(argp2);
+  arg2 = reinterpret_cast< TextureNode * >(argp2);
   (arg1)->SetTextureFromPointer(arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -12245,7 +12268,7 @@ fail:
 SWIGINTERN PyObject *_wrap_draw_base_SetTextureFromRef(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   draw_base *arg1 = (draw_base *) 0 ;
-  SDL_Texture *arg2 = 0 ;
+  TextureNode *arg2 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp2 = 0 ;
@@ -12259,14 +12282,14 @@ SWIGINTERN PyObject *_wrap_draw_base_SetTextureFromRef(PyObject *SWIGUNUSEDPARM(
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "draw_base_SetTextureFromRef" "', argument " "1"" of type '" "draw_base *""'"); 
   }
   arg1 = reinterpret_cast< draw_base * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_SDL_Texture,  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_TextureNode,  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "draw_base_SetTextureFromRef" "', argument " "2"" of type '" "SDL_Texture &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "draw_base_SetTextureFromRef" "', argument " "2"" of type '" "TextureNode &""'"); 
   }
   if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "draw_base_SetTextureFromRef" "', argument " "2"" of type '" "SDL_Texture &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "draw_base_SetTextureFromRef" "', argument " "2"" of type '" "TextureNode &""'"); 
   }
-  arg2 = reinterpret_cast< SDL_Texture * >(argp2);
+  arg2 = reinterpret_cast< TextureNode * >(argp2);
   (arg1)->SetTextureFromRef(*arg2);
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -12693,7 +12716,7 @@ SWIGINTERN PyObject *_wrap_LoadTexture(PyObject *SWIGUNUSEDPARM(self), PyObject 
   int res2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  SDL_Texture *result = 0 ;
+  TextureNode *result = 0 ;
   
   if (!PyArg_ParseTuple(args,(char *)"OO:LoadTexture",&obj0,&obj1)) SWIG_fail;
   res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
@@ -12709,8 +12732,8 @@ SWIGINTERN PyObject *_wrap_LoadTexture(PyObject *SWIGUNUSEDPARM(self), PyObject 
     SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LoadTexture" "', argument " "2"" of type '" "SDL_Renderer &""'"); 
   }
   arg2 = reinterpret_cast< SDL_Renderer * >(argp2);
-  result = (SDL_Texture *)LoadTexture((char const *)arg1,*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SDL_Texture, 0 |  0 );
+  result = (TextureNode *)LoadTexture((char const *)arg1,*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_TextureNode, 0 |  0 );
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
   return resultobj;
 fail:
@@ -44960,6 +44983,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"draw_base_GetAnimCounter", _wrap_draw_base_GetAnimCounter, METH_VARARGS, NULL},
 	 { (char *)"draw_base_isNoLoop", _wrap_draw_base_isNoLoop, METH_VARARGS, NULL},
 	 { (char *)"draw_base_GetTexture", _wrap_draw_base_GetTexture, METH_VARARGS, NULL},
+	 { (char *)"draw_base_GetTextureNode", _wrap_draw_base_GetTextureNode, METH_VARARGS, NULL},
 	 { (char *)"draw_base_setColor", _wrap_draw_base_setColor, METH_VARARGS, NULL},
 	 { (char *)"draw_base_setBlendMode", _wrap_draw_base_setBlendMode, METH_VARARGS, NULL},
 	 { (char *)"draw_base_setAlpha", _wrap_draw_base_setAlpha, METH_VARARGS, NULL},
@@ -45905,6 +45929,7 @@ static swig_type_info _swigt__p_SubFrame = {"_p_SubFrame", "SubFrame *", 0, 0, (
 static swig_type_info _swigt__p_SynchData = {"_p_SynchData", "SynchData *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TCPClient = {"_p_TCPClient", "TCPClient *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TCPsocket = {"_p_TCPsocket", "TCPsocket *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TextureNode = {"_p_TextureNode", "TextureNode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TextureStore = {"_p_TextureStore", "TextureStore *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ThreadSystem = {"_p_ThreadSystem", "ThreadSystem *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Timer = {"_p_Timer", "Timer *", 0, 0, (void*)0, 0};
@@ -45998,6 +46023,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_SynchData,
   &_swigt__p_TCPClient,
   &_swigt__p_TCPsocket,
+  &_swigt__p_TextureNode,
   &_swigt__p_TextureStore,
   &_swigt__p_ThreadSystem,
   &_swigt__p_Timer,
@@ -46091,6 +46117,7 @@ static swig_cast_info _swigc__p_SubFrame[] = {  {&_swigt__p_SubFrame, 0, 0, 0},{
 static swig_cast_info _swigc__p_SynchData[] = {  {&_swigt__p_SynchData, 0, 0, 0},  {&_swigt__p_VideoFrame, _p_VideoFrameTo_p_SynchData, 0, 0},  {&_swigt__p_SoundChunk, _p_SoundChunkTo_p_SynchData, 0, 0},  {&_swigt__p_SubFrame, _p_SubFrameTo_p_SynchData, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPClient[] = {  {&_swigt__p_TCPClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPsocket[] = {  {&_swigt__p_TCPsocket, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TextureNode[] = {  {&_swigt__p_TextureNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TextureStore[] = {  {&_swigt__p_TextureStore, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ThreadSystem[] = {  {&_swigt__p_ThreadSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ThreadSystem, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Timer[] = {  {&_swigt__p_Timer, 0, 0, 0},{0, 0, 0, 0}};
@@ -46184,6 +46211,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_SynchData,
   _swigc__p_TCPClient,
   _swigc__p_TCPsocket,
+  _swigc__p_TextureNode,
   _swigc__p_TextureStore,
   _swigc__p_ThreadSystem,
   _swigc__p_Timer,

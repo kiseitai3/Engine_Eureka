@@ -33,7 +33,7 @@ void ProgressBar::Update(int x, int y)
 
 void ProgressBar::Draw(const SDL_Renderer& ren)
 {
-    SDL_RenderCopy( (SDL_Renderer*)&ren, bar, &src, &target );
+    SDL_RenderCopy( (SDL_Renderer*)&ren, getTextureFromNode(bar), &src, &target );
 }
 
 void ProgressBar::SetRectangleDimensions(int w, int h)
@@ -58,7 +58,7 @@ ProgressBar::~ProgressBar()
 {
     if(bar > 0)
     {
-        SDL_DestroyTexture(bar);
+        draw_base::textures.DeleteUniqueTexture(bar);
     }
 }
 

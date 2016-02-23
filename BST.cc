@@ -46,6 +46,13 @@ bool BinarySearchTree<KeyTy, ValueTy>::search(const KeyTy& key, ValueTy& value) 
 }
 
 template<typename KeyTy, typename ValueTy>
+bool BinarySearchTree<KeyTy, ValueTy>::rsearch(const ValueTy& value, KeyTy& key) const
+{
+ /*This is a wrapper method. Check out the recursive funtions. */
+  return rsearchNode(Root, value, key);
+}
+
+template<typename KeyTy, typename ValueTy>
 void BinarySearchTree<KeyTy, ValueTy>::remove(const KeyTy& key)
 {
  /*This is a wrapper method. Check out the recursive funtions. */
@@ -179,6 +186,33 @@ bool BinarySearchTree<KeyTy,ValueTy>::searchNode(TreeNode* root,
   else if(root->Key < key)
   {
    return  searchNode(root->pRight, key, value);
+  }
+
+  return false;
+}
+
+template<typename KeyTy, typename ValueTy>
+bool BinarySearchTree<KeyTy,ValueTy>::rsearchNode(TreeNode* root,
+				  const ValueTy& value,  KeyTy& key) const
+{
+  /*This method searches for a node and returns true or false if found.
+    Furthermore, it returns the key of the node via the parameter value.
+  */
+  if(!root)//Base case
+    return false;
+
+  if(root->Value == value)//We got lucky
+  {
+    key = root->Key;
+    return true;
+  }
+  else if(root->Value > value)//Keep searching
+  {
+    return rsearchNode(root->pLeft, value, key);
+  }
+  else if(root->Value < value)
+  {
+   return  rsearchNode(root->pRight, value, key);
   }
 
   return false;

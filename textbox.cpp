@@ -71,6 +71,7 @@ textbox::textbox(std::string msg, const char *textboxFile, SDL_Renderer& ren, in
         txt_rect.h = data->GetIntFromData("textbox_txt_h");
         txt_rect.w = data->GetIntFromData("textbox_txt_w");
         type = data->GetStrFromData("textbox_type");
+        name = data->GetStrFromData("name");
         writable = bool(data->GetIntFromData("textbox_writemode"));
     }
     dead = false;
@@ -88,6 +89,11 @@ void textbox::Draw(SDL_Renderer& ren)
 {
     background->apply_surface(loc.X, loc.Y, ren);
     apply_surface(loc.X + txt_rect.x, loc.Y + txt_rect.y, ren, *message, txt_rect.h, txt_rect.w);
+}
+
+std::string textbox::GetName() const
+{
+    return name;
 }
 
 int textbox::GetBlitOrder() const

@@ -36,11 +36,11 @@ Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrd
 Button::~Button()
 {
     //Clean up the heap before losing the pointers! :)
-    SDL_DestroyTexture(textures["enter"]);
-    SDL_DestroyTexture(textures["clicking"]);
-    SDL_DestroyTexture(textures["idle"]);
-    SDL_DestroyTexture(textures["selected"]);
-    SDL_DestroyTexture(textures["down"]);
+    draw_base::textures.DeleteUniqueTexture(textures["enter"]);
+    draw_base::textures.DeleteUniqueTexture(textures["clicking"]);
+    draw_base::textures.DeleteUniqueTexture(textures["idle"]);
+    draw_base::textures.DeleteUniqueTexture(textures["selected"]);
+    draw_base::textures.DeleteUniqueTexture(textures["down"]);
 
 }
 

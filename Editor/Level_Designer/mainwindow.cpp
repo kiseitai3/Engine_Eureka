@@ -16,6 +16,7 @@
 #include "cursorsettings.h"
 #include "unitsettings.h"
 #include "layersettings.h"
+#include "ui_elements.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -526,9 +527,15 @@ void MainWindow::on_pbNewObj_clicked()
     case 5://Locale
         break;
     case 6://Trigger
+    {
         break;
+    }
     case 8://UI
+    {
+        UI_Elements ui_stuff(this);
+        ui_stuff.show();
         break;
+    }
     default:
         break;
     }

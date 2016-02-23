@@ -28,7 +28,7 @@ private:
     UI *owner;
     int fontSize;
     int blitOrder;
-    std::string type;
+    std::string type, name;
     std::string text;
     bool dead, writable;
 
@@ -38,6 +38,7 @@ public:
     void Draw(SDL_Renderer& ren);
     //Getters and setters
     void SetLoc(int x, int y);
+    std::string GetName() const;
     std::string GetType() const;
     bool GetDeath() const;
     int GetBlitOrder() const;//Gets the blit order assigned to this object. This number tells the renderer to draw this object only when it reaches the blit number in blitOrder.

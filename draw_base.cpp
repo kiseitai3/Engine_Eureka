@@ -60,7 +60,7 @@ void draw_base::apply_surface( int x, int y, SDL_Renderer& destination)
     target.y = y;
 
     //Blit
-    SDL_RenderCopyEx(&destination, SpriteSheet, &src, &target, rotationDeg, &pivot, flipDir);
+    SDL_RenderCopyEx(&destination, getTextureFromNode(SpriteSheet), &src, &target, rotationDeg, &pivot, flipDir);
     if((frame != frames) && !noLoop)
     {
         if(timeSpentOnFrame == timeBetweenFrames)
@@ -94,7 +94,12 @@ int draw_base::GetAnimCounter() const
 
 SDL_Texture& draw_base::GetTexture() const
 {
-    return *SpriteSheet;
+    return *getTextureFromNode(SpriteSheet);
+}
+
+TextureNode* draw_base::GetTextureNode() const
+{
+    return SpriteSheet;
 }
 
 void draw_base::ClearTexture()
@@ -104,36 +109,34 @@ void draw_base::ClearTexture()
     SpriteSheet = 0;
 }
 
-void draw_base::SetTextureFromPointer(SDL_Texture *ptr)
+void draw_base::SetTextureFromPointer(TextureNode *ptr)
 {
     ClearTexture();
-    SpriteSheet = ptr;
-    textures.IncrementTextLife(SpriteSheet);
+    textures.changeTexture(SpriteSheet, ptr);
 }
 
-void draw_base::SetTextureFromRef(SDL_Texture& tex)
+void draw_base::SetTextureFromRef(TextureNode& tex)
 {
     ClearTexture();
-    SpriteSheet = &tex;
-    textures.IncrementTextLife(SpriteSheet);
+    textures.changeTexture(SpriteSheet, &tex);
 }
 
 void draw_base::setColor( Uint8 red, Uint8 green, Uint8 blue )
 {
 	//Modulate texture rgb
-	SDL_SetTextureColorMod( SpriteSheet, red, green, blue );
+	SDL_SetTextureColorMod( getTextureFromNode(SpriteSheet), red, green, blue );
 }
 
 void draw_base::setBlendMode( SDL_BlendMode blending )
 {
 	//Set blending function
-	SDL_SetTextureBlendMode( SpriteSheet, blending );
+	SDL_SetTextureBlendMode( getTextureFromNode(SpriteSheet), blending );
 }
 
 void draw_base::setAlpha( Uint8 alpha )
 {
 	//Modulate texture alpha
-	SDL_SetTextureAlphaMod( SpriteSheet, alpha );
+	SDL_SetTextureAlphaMod( getTextureFromNode(SpriteSheet), alpha );
 }
 
 void draw_base::setRotationPivot(math_point p)
@@ -241,9 +244,9 @@ void apply_surface( int x, int y, SDL_Renderer& destination, SDL_Texture& Sprite
 
  }
 
-SDL_Texture *LoadTexture(const char* file, SDL_Renderer& ren)
+TextureNode *LoadTexture(const char* file, SDL_Renderer& ren)
 {
-    SDL_Texture* SpriteSheet;
+    TextureNode* SpriteSheet;
     SpriteSheet = draw_base::textures.LoadUniqueTexture(file, ren);
     if(!SpriteSheet)
     {

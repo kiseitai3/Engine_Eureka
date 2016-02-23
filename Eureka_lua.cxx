@@ -2689,52 +2689,53 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_SynchData swig_types[45]
 #define SWIGTYPE_p_TCPClient swig_types[46]
 #define SWIGTYPE_p_TCPsocket swig_types[47]
-#define SWIGTYPE_p_TextureStore swig_types[48]
-#define SWIGTYPE_p_ThreadSystem swig_types[49]
-#define SWIGTYPE_p_Timer swig_types[50]
-#define SWIGTYPE_p_TimerSystem swig_types[51]
-#define SWIGTYPE_p_Trigger swig_types[52]
-#define SWIGTYPE_p_TriggerManager swig_types[53]
-#define SWIGTYPE_p_UDPClient swig_types[54]
-#define SWIGTYPE_p_UDPsocket swig_types[55]
-#define SWIGTYPE_p_UI swig_types[56]
-#define SWIGTYPE_p_UIManager swig_types[57]
-#define SWIGTYPE_p_Uint8 swig_types[58]
-#define SWIGTYPE_p_Unit swig_types[59]
-#define SWIGTYPE_p_UnitManager swig_types[60]
-#define SWIGTYPE_p_UnitNode swig_types[61]
-#define SWIGTYPE_p_VideoFrame swig_types[62]
-#define SWIGTYPE_p_VideoPlayer swig_types[63]
-#define SWIGTYPE_p_bool swig_types[64]
-#define SWIGTYPE_p_char swig_types[65]
-#define SWIGTYPE_p_data_base swig_types[66]
-#define SWIGTYPE_p_double swig_types[67]
-#define SWIGTYPE_p_draw_base swig_types[68]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[69]
-#define SWIGTYPE_p_int swig_types[70]
-#define SWIGTYPE_p_math_VECTOR swig_types[71]
-#define SWIGTYPE_p_math_point swig_types[72]
-#define SWIGTYPE_p_pChar swig_types[73]
-#define SWIGTYPE_p_p_ParticleNode swig_types[74]
-#define SWIGTYPE_p_psudo_type swig_types[75]
-#define SWIGTYPE_p_pthread_cond_t swig_types[76]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[77]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[79]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[80]
-#define SWIGTYPE_p_raw_input swig_types[81]
-#define SWIGTYPE_p_size_t swig_types[82]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[83]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[84]
-#define SWIGTYPE_p_std__string swig_types[85]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[86]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[87]
-#define SWIGTYPE_p_textbox swig_types[88]
-#define SWIGTYPE_p_unsigned_char swig_types[89]
-#define SWIGTYPE_p_unsigned_short swig_types[90]
-#define SWIGTYPE_p_void swig_types[91]
-static swig_type_info *swig_types[93];
-static swig_module_info swig_module = {swig_types, 92, 0, 0, 0, 0};
+#define SWIGTYPE_p_TextureNode swig_types[48]
+#define SWIGTYPE_p_TextureStore swig_types[49]
+#define SWIGTYPE_p_ThreadSystem swig_types[50]
+#define SWIGTYPE_p_Timer swig_types[51]
+#define SWIGTYPE_p_TimerSystem swig_types[52]
+#define SWIGTYPE_p_Trigger swig_types[53]
+#define SWIGTYPE_p_TriggerManager swig_types[54]
+#define SWIGTYPE_p_UDPClient swig_types[55]
+#define SWIGTYPE_p_UDPsocket swig_types[56]
+#define SWIGTYPE_p_UI swig_types[57]
+#define SWIGTYPE_p_UIManager swig_types[58]
+#define SWIGTYPE_p_Uint8 swig_types[59]
+#define SWIGTYPE_p_Unit swig_types[60]
+#define SWIGTYPE_p_UnitManager swig_types[61]
+#define SWIGTYPE_p_UnitNode swig_types[62]
+#define SWIGTYPE_p_VideoFrame swig_types[63]
+#define SWIGTYPE_p_VideoPlayer swig_types[64]
+#define SWIGTYPE_p_bool swig_types[65]
+#define SWIGTYPE_p_char swig_types[66]
+#define SWIGTYPE_p_data_base swig_types[67]
+#define SWIGTYPE_p_double swig_types[68]
+#define SWIGTYPE_p_draw_base swig_types[69]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[70]
+#define SWIGTYPE_p_int swig_types[71]
+#define SWIGTYPE_p_math_VECTOR swig_types[72]
+#define SWIGTYPE_p_math_point swig_types[73]
+#define SWIGTYPE_p_pChar swig_types[74]
+#define SWIGTYPE_p_p_ParticleNode swig_types[75]
+#define SWIGTYPE_p_psudo_type swig_types[76]
+#define SWIGTYPE_p_pthread_cond_t swig_types[77]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[78]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[79]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[80]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[81]
+#define SWIGTYPE_p_raw_input swig_types[82]
+#define SWIGTYPE_p_size_t swig_types[83]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[84]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[85]
+#define SWIGTYPE_p_std__string swig_types[86]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[87]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[88]
+#define SWIGTYPE_p_textbox swig_types[89]
+#define SWIGTYPE_p_unsigned_char swig_types[90]
+#define SWIGTYPE_p_unsigned_short swig_types[91]
+#define SWIGTYPE_p_void swig_types[92]
+static swig_type_info *swig_types[94];
+static swig_module_info swig_module = {swig_types, 93, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -7555,6 +7556,30 @@ fail:
 }
 
 
+static int _wrap_draw_base_GetTextureNode(lua_State* L) {
+  int SWIG_arg = 0;
+  draw_base *arg1 = (draw_base *) 0 ;
+  TextureNode *result = 0 ;
+  
+  SWIG_check_num_args("draw_base::GetTextureNode",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("draw_base::GetTextureNode",1,"draw_base const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_draw_base,0))){
+    SWIG_fail_ptr("draw_base_GetTextureNode",1,SWIGTYPE_p_draw_base);
+  }
+  
+  result = (TextureNode *)((draw_base const *)arg1)->GetTextureNode();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_TextureNode,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_draw_base_setColor(lua_State* L) {
   int SWIG_arg = 0;
   draw_base *arg1 = (draw_base *) 0 ;
@@ -8087,19 +8112,19 @@ fail:
 static int _wrap_draw_base_SetTextureFromPointer(lua_State* L) {
   int SWIG_arg = 0;
   draw_base *arg1 = (draw_base *) 0 ;
-  SDL_Texture *arg2 = (SDL_Texture *) 0 ;
+  TextureNode *arg2 = (TextureNode *) 0 ;
   
   SWIG_check_num_args("draw_base::SetTextureFromPointer",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("draw_base::SetTextureFromPointer",1,"draw_base *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("draw_base::SetTextureFromPointer",2,"SDL_Texture *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("draw_base::SetTextureFromPointer",2,"TextureNode *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_draw_base,0))){
     SWIG_fail_ptr("draw_base_SetTextureFromPointer",1,SWIGTYPE_p_draw_base);
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SDL_Texture,0))){
-    SWIG_fail_ptr("draw_base_SetTextureFromPointer",2,SWIGTYPE_p_SDL_Texture);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_TextureNode,0))){
+    SWIG_fail_ptr("draw_base_SetTextureFromPointer",2,SWIGTYPE_p_TextureNode);
   }
   
   (arg1)->SetTextureFromPointer(arg2);
@@ -8117,19 +8142,19 @@ fail:
 static int _wrap_draw_base_SetTextureFromRef(lua_State* L) {
   int SWIG_arg = 0;
   draw_base *arg1 = (draw_base *) 0 ;
-  SDL_Texture *arg2 = 0 ;
+  TextureNode *arg2 = 0 ;
   
   SWIG_check_num_args("draw_base::SetTextureFromRef",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("draw_base::SetTextureFromRef",1,"draw_base *");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("draw_base::SetTextureFromRef",2,"SDL_Texture &");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("draw_base::SetTextureFromRef",2,"TextureNode &");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_draw_base,0))){
     SWIG_fail_ptr("draw_base_SetTextureFromRef",1,SWIGTYPE_p_draw_base);
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_SDL_Texture,0))){
-    SWIG_fail_ptr("draw_base_SetTextureFromRef",2,SWIGTYPE_p_SDL_Texture);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_TextureNode,0))){
+    SWIG_fail_ptr("draw_base_SetTextureFromRef",2,SWIGTYPE_p_TextureNode);
   }
   
   (arg1)->SetTextureFromRef(*arg2);
@@ -8244,6 +8269,7 @@ static swig_lua_method swig_draw_base_methods[]= {
     { "GetAnimCounter", _wrap_draw_base_GetAnimCounter},
     { "isNoLoop", _wrap_draw_base_isNoLoop},
     { "GetTexture", _wrap_draw_base_GetTexture},
+    { "GetTextureNode", _wrap_draw_base_GetTextureNode},
     { "setColor", _wrap_draw_base_setColor},
     { "setBlendMode", _wrap_draw_base_setBlendMode},
     { "setAlpha", _wrap_draw_base_setAlpha},
@@ -8541,7 +8567,7 @@ static int _wrap_LoadTexture(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
   SDL_Renderer *arg2 = 0 ;
-  SDL_Texture *result = 0 ;
+  TextureNode *result = 0 ;
   
   SWIG_check_num_args("LoadTexture",2,2)
   if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("LoadTexture",1,"char const *");
@@ -8552,8 +8578,8 @@ static int _wrap_LoadTexture(lua_State* L) {
     SWIG_fail_ptr("LoadTexture",2,SWIGTYPE_p_SDL_Renderer);
   }
   
-  result = (SDL_Texture *)LoadTexture((char const *)arg1,*arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_SDL_Texture,0); SWIG_arg++; 
+  result = (TextureNode *)LoadTexture((char const *)arg1,*arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_TextureNode,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -38871,6 +38897,7 @@ static swig_type_info _swigt__p_SubFrame = {"_p_SubFrame", "SubFrame *", 0, 0, (
 static swig_type_info _swigt__p_SynchData = {"_p_SynchData", "SynchData *", 0, 0, (void*)&_wrap_class_SynchData, 0};
 static swig_type_info _swigt__p_TCPClient = {"_p_TCPClient", "TCPClient *", 0, 0, (void*)&_wrap_class_TCPClient, 0};
 static swig_type_info _swigt__p_TCPsocket = {"_p_TCPsocket", "TCPsocket *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_TextureNode = {"_p_TextureNode", "TextureNode *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TextureStore = {"_p_TextureStore", "TextureStore *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ThreadSystem = {"_p_ThreadSystem", "ThreadSystem *", 0, 0, (void*)&_wrap_class_ThreadSystem, 0};
 static swig_type_info _swigt__p_Timer = {"_p_Timer", "Timer *", 0, 0, (void*)&_wrap_class_Timer, 0};
@@ -38965,6 +38992,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_SynchData,
   &_swigt__p_TCPClient,
   &_swigt__p_TCPsocket,
+  &_swigt__p_TextureNode,
   &_swigt__p_TextureStore,
   &_swigt__p_ThreadSystem,
   &_swigt__p_Timer,
@@ -39059,6 +39087,7 @@ static swig_cast_info _swigc__p_SubFrame[] = {  {&_swigt__p_SubFrame, 0, 0, 0},{
 static swig_cast_info _swigc__p_SynchData[] = {  {&_swigt__p_SynchData, 0, 0, 0},  {&_swigt__p_VideoFrame, _p_VideoFrameTo_p_SynchData, 0, 0},  {&_swigt__p_SoundChunk, _p_SoundChunkTo_p_SynchData, 0, 0},  {&_swigt__p_SubFrame, _p_SubFrameTo_p_SynchData, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPClient[] = {  {&_swigt__p_TCPClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TCPsocket[] = {  {&_swigt__p_TCPsocket, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_TextureNode[] = {  {&_swigt__p_TextureNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TextureStore[] = {  {&_swigt__p_TextureStore, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ThreadSystem[] = {  {&_swigt__p_ThreadSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_ThreadSystem, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Timer[] = {  {&_swigt__p_Timer, 0, 0, 0},{0, 0, 0, 0}};
@@ -39153,6 +39182,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_SynchData,
   _swigc__p_TCPClient,
   _swigc__p_TCPsocket,
+  _swigc__p_TextureNode,
   _swigc__p_TextureStore,
   _swigc__p_ThreadSystem,
   _swigc__p_Timer,

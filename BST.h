@@ -34,6 +34,7 @@ public:
   //Mostly wrappers
   void insert(const KeyTy& key, const ValueTy& value);//inserts a node
   bool search(const KeyTy& key, ValueTy& value) const;//finds a node
+  bool rsearch(const ValueTy& value, KeyTy& key) const;//finds the key of the node
   void remove(const KeyTy& key);// removes a node
   bool empty() const;//Returns true if empty
   size_t size() const;//Returns the size;
@@ -64,6 +65,7 @@ public:
   //Recursive methods (see wrappers)
   void insertNode(TreeNode*& root, const KeyTy& key, const ValueTy& value);
   bool searchNode(TreeNode* root, const KeyTy& key,  ValueTy& value) const;
+  bool rsearchNode(TreeNode* root, const ValueTy& value,  KeyTy& key) const;
   void removeNode(TreeNode*& root, const KeyTy& key);
   void rem_swapNode(TreeNode*& root, TreeNode*& current);
   size_t computeHeight(TreeNode* root) const;

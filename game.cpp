@@ -685,7 +685,8 @@ void Game::run()
         while(!isEngineClosing())
         {
             //Update
-            UpdateTriggers(currentLvl->GetHeroID());
+            if(!isPlayingVideo())
+                UpdateTriggers(currentLvl->GetHeroID());
             UIUpdate();
             if(isPlayingVideo())
                 UpdateVideo();

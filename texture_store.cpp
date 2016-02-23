@@ -1,8 +1,27 @@
 #include <cstdlib>
 #include "texture_store.h"
+#include "data_base.h"
 #include <crc.h>
 #include <SDL.h>
 #include <SDL_image.h>
+
+typedef struct TexturePacket
+{
+    SDL_Texture* texture;
+    SDL_Surface* tmp;
+    uint64_t hash;
+    uint64_t textureLife;
+}TextureNode;
+
+SDL_Texture* getTextureFromNode(TextureNode* tex)
+{
+    return tex->texture;
+}
+
+uint64_t getTextureHash(TextureNode* tex)
+{
+    tex->hash;
+}
 
 TextureStore::TextureStore()
 {
@@ -11,37 +30,50 @@ TextureStore::TextureStore()
 
 bool TextureStore::hasTexture(uint64_t hash)
 {
-    SDL_Texture* tmp = NULL;
+    TextureNode* tmp;
     return storage.search(hash, tmp);
 }
 
-SDL_Texture* TextureStore::createTexture(cstr file, SDL_Renderer& ren)
+TextureNode TextureStore::createTexture(const std::string& file, SDL_Renderer& ren)
 {
-    SDL_Texture* tex = NULL;
-    SDL_Surface* tmp = IMG_Load(file);
-    if(!tmp)
+    TextureNode tex;
+    tex.texture = NULL;
+
+    if(file.find(data_base::BUFFER) < file.size())
+    {
+        SDL_RWops* rwops = SDL_RWFromMem((void*)file.substr(strlen(data_base::BUFFER)).c_str(), file.size());
+        if(rwops)
+            tex.tmp = IMG_Load_RW(rwops, 0);
+        else
+            std::cout << "TextureStore: SDL failed to build rwops for texture buffer!" << std::endl;
+    }
+    else
+        tex.tmp = IMG_Load(file.c_str());
+
+    if(!tex.tmp)
     {
         std::cout << "Failed to load the surface!" << std::endl;
     }
     else
     {
-        SDL_SetColorKey(tmp, SDL_TRUE, SDL_MapRGB( tmp->format, 0xFF, 0xFF, 0xFF ));
-        tex = SDL_CreateTextureFromSurface(&ren, tmp);
-        SDL_FreeSurface(tmp);
+        SDL_SetColorKey(tex.tmp, SDL_TRUE, SDL_MapRGB( tex.tmp->format, 0xFF, 0xFF, 0xFF ));
+        tex.texture = SDL_CreateTextureFromSurface(&ren, tex.tmp);
+        //SDL_FreeSurface(tmp);
     }
 
-    if(tex)
-        return tex;
-    return NULL;
+    return tex;
 }
 
-SDL_Texture* TextureStore::LoadUniqueTexture(cstr file, SDL_Renderer& ren)
+TextureNode* TextureStore::LoadUniqueTexture(const std::string& file, SDL_Renderer& ren)
 {
     uint64_t crc_hash = 0;
-    SDL_Texture* tmp = NULL;
+    TextureNode* tmp = new TextureNode;
 
     //Let's compute the crc hash
-    crc_hash = crc64_on_file_fast(file);
+    if(file.find(data_base::BUFFER) > file.size())
+        crc_hash = crc64_on_file_fast(file.c_str());
+    else
+        crc_hash = crc64(file.c_str(), file.size());
 
     //For safety's sake, let's lock the mutex
     pthread_mutex_lock(&mutex);
@@ -49,18 +81,17 @@ SDL_Texture* TextureStore::LoadUniqueTexture(cstr file, SDL_Renderer& ren)
     //Let's see if the texture was already loaded!
     if(hasTexture(crc_hash))
     {
-        tmp = storage[crc_hash];
-        textureLife[tmp]++;
+        storage[crc_hash]->textureLife++;
         //For sanity's sake, let's unlock the mutex so we don't get stuck!
         pthread_mutex_unlock(&mutex);
-        return tmp;
+        return storage[crc_hash];
     }
 
     //If we get here, the caller wants a texture handle but the texture was never loaded in the first place
-    tmp = createTexture(file, ren);
+    *tmp = createTexture(file, ren);
+    tmp->hash = crc_hash;
+    tmp->textureLife = 1;
     storage.insert(crc_hash, tmp);
-    hashCache.insert(tmp, crc_hash);
-    textureLife.insert(tmp, 1);
 
     //For sanity's sake, let's unlock the mutex so we don't get stuck!
     pthread_mutex_unlock(&mutex);
@@ -68,7 +99,7 @@ SDL_Texture* TextureStore::LoadUniqueTexture(cstr file, SDL_Renderer& ren)
     return tmp;
 }
 
-void TextureStore::DeleteUniqueTexture(SDL_Texture* tex)
+void TextureStore::DeleteUniqueTexture(TextureNode* tex)
 {
     uint64_t crc_hash;
     uint64_t tex_life = 0;
@@ -76,32 +107,40 @@ void TextureStore::DeleteUniqueTexture(SDL_Texture* tex)
     pthread_mutex_lock(&mutex);
     if(hasHash(tex))
     {
-        crc_hash = hashCache[tex];
-        tex_life = textureLife[tex];
+        crc_hash = tex->hash;
+        tex_life = tex->textureLife;
         if(hasTexture(crc_hash) && tex_life == 0)
         {
             storage.remove(crc_hash);
-            hashCache.remove(tex);
-            textureLife.remove(tex);
         }
         else
-            textureLife[tex]--;//Decrement the life of the texture!
+            tex->textureLife--;//Decrement the life of the texture!
     }
     //For sanity's sake, let's unlock the mutex so we don't get stuck!
     pthread_mutex_unlock(&mutex);
 
     //Destroy the texture
     if(tex_life == 0)
-        SDL_DestroyTexture(tex);
+    {
+        SDL_FreeSurface(tex->tmp);
+        SDL_DestroyTexture(tex->texture);
+        delete tex;
+    }
 }
 
-bool TextureStore::hasHash(SDL_Texture* tex)
+bool TextureStore::hasHash(TextureNode* tex)
 {
-    uint64_t hash;
-    return hashCache.search(tex, hash);
+    return tex->hash > 0;
 }
 
-void TextureStore::IncrementTextLife(SDL_Texture* tex)
+void TextureStore::IncrementTextLife(TextureNode* tex)
 {
-    textureLife[tex]++;
+    tex->textureLife++;
+}
+
+TextureNode* TextureStore::changeTexture(TextureNode* oldTex, TextureNode* newTex)
+{
+    DeleteUniqueTexture(oldTex);
+    IncrementTextLife(newTex);
+    return newTex;
 }

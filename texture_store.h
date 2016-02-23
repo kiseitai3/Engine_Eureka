@@ -7,27 +7,31 @@
 #include "BST.h"
 #include "typedefs.h"
 
+typedef struct TexturePacket TextureNode;
+
 class TextureStore
 {
 public:
     TextureStore();
 
-    SDL_Texture* LoadUniqueTexture(cstr file, SDL_Renderer& ren);
-    void DeleteUniqueTexture(SDL_Texture* tex);
+    TextureNode* LoadUniqueTexture(const std::string& file, SDL_Renderer& ren);
+    void DeleteUniqueTexture(TextureNode* tex);
     bool hasTexture(uint64_t hash);
-    bool hasHash(SDL_Texture* tex);
-    void IncrementTextLife(SDL_Texture* tex);
+    bool hasHash(TextureNode* tex);
+    void IncrementTextLife(TextureNode* tex);
+    TextureNode* changeTexture(TextureNode* oldTex, TextureNode* newTex);
 
 private:
-    BinarySearchTree<uint64_t, SDL_Texture*> storage;//Storage of unmodified textures
-    BinarySearchTree<SDL_Texture*, uint64_t> hashCache;//Cache of hashes that can be accessed when we get the texture pointer
-    BinarySearchTree<SDL_Texture*, uint64_t> textureLife;//Storage of lifetime of texture!
+    BinarySearchTree<uint64_t, TextureNode*> storage;//Storage of unmodified textures
     pthread_mutex_t mutex;
 
     //Methods
 
-    SDL_Texture* createTexture(cstr file, SDL_Renderer& ren);
+    TextureNode createTexture(const std::string& file, SDL_Renderer& ren);
 };
+
+SDL_Texture* getTextureFromNode(TextureNode* tex);
+uint64_t getTextureHash(TextureNode* tex);
 
 
 #endif // TEXTURE_STORE_H_INCLUDED

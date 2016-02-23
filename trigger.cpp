@@ -44,6 +44,8 @@ Trigger::Trigger()
 
 Trigger::~Trigger()
 {
+    if(Scripts)
+        delete Scripts;
 }
 
 //Getters and setters

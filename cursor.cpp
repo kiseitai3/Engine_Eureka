@@ -56,6 +56,15 @@ void Cursor::DrawCursor()
     owner_ref->UnlockMutex(mutex_cursor_id);
 }
 
+void Cursor::PlayCursorSound()
+{
+    //Lock mutex
+    owner_ref->LockMutex(mutex_cursor_id);
+    owner_ref->AddSoundToQueue(selected.soundFile.c_str());
+    //Unlock mutex
+    owner_ref->UnlockMutex(mutex_cursor_id);
+}
+
 void Cursor::ChangeToCursor(size_t id)
 {
     //Lock mutex

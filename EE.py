@@ -1573,7 +1573,7 @@ class Trigger(_object):
     def ConsumeTrigger(self, owner, target):
         return _EE.Trigger_ConsumeTrigger(self, owner, target)
 
-    def UpdateTriggerLoc(self, X, Y, Z):
+    def UpdateTriggerLoc(self, X, Y, Z=0):
         return _EE.Trigger_UpdateTriggerLoc(self, X, Y, Z)
 Trigger_swigregister = _EE.Trigger_swigregister
 Trigger_swigregister(Trigger)
@@ -3539,6 +3539,9 @@ class Cursor(_object):
 
     def DrawCursor(self):
         return _EE.Cursor_DrawCursor(self)
+
+    def PlayCursorSound(self):
+        return _EE.Cursor_PlayCursorSound(self)
 Cursor_swigregister = _EE.Cursor_swigregister
 Cursor_swigregister(Cursor)
 

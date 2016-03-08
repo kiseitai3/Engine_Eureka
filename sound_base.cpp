@@ -172,11 +172,11 @@ void sound_base::Load_Sound (const char* source)
     type = AudioDOM.GetStrFromData("sound_type").c_str()[0];
     if(type == 'm')
     {
-        music = Mix_LoadMUS(AudioDOM.GetStrFromData("music_loc").c_str());
+        music = Mix_LoadMUS(AudioDOM.GetStrFromData("file_loc").c_str());
     }
     if(type == 'e' || type == 'a')
     {
-        effect = Mix_LoadWAV(AudioDOM.GetStrFromData("effect_loc").c_str());
+        effect = Mix_LoadWAV(AudioDOM.GetStrFromData("file_loc").c_str());
     }
     // This point is to create the fading effect of an ambient sound as you move away from a place.
     Location.X = AudioDOM.GetIntFromData("sound_x");

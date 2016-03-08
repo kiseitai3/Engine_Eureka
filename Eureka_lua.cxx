@@ -11430,7 +11430,7 @@ fail:
 }
 
 
-static int _wrap_Trigger_UpdateTriggerLoc(lua_State* L) {
+static int _wrap_Trigger_UpdateTriggerLoc__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   Trigger *arg1 = (Trigger *) 0 ;
   int arg2 ;
@@ -11459,6 +11459,104 @@ static int _wrap_Trigger_UpdateTriggerLoc(lua_State* L) {
 fail:
   lua_error(L);
   return SWIG_arg;
+}
+
+
+static int _wrap_Trigger_UpdateTriggerLoc__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  Trigger *arg1 = (Trigger *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  
+  SWIG_check_num_args("Trigger::UpdateTriggerLoc",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Trigger::UpdateTriggerLoc",1,"Trigger *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Trigger::UpdateTriggerLoc",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("Trigger::UpdateTriggerLoc",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Trigger,0))){
+    SWIG_fail_ptr("Trigger_UpdateTriggerLoc",1,SWIGTYPE_p_Trigger);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  (arg1)->UpdateTriggerLoc(arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Trigger_UpdateTriggerLoc(lua_State* L) {
+  int argc;
+  int argv[5]={
+    1,2,3,4,5
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 3) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_Trigger, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_Trigger_UpdateTriggerLoc__SWIG_1(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_Trigger, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          {
+            _v = lua_isnumber(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_Trigger_UpdateTriggerLoc__SWIG_0(L);
+          }
+        }
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'Trigger_UpdateTriggerLoc'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    Trigger::UpdateTriggerLoc(int,int,int)\n"
+    "    Trigger::UpdateTriggerLoc(int,int)\n");
+  lua_error(L);return 0;
 }
 
 
@@ -34259,6 +34357,29 @@ fail:
 }
 
 
+static int _wrap_Cursor_PlayCursorSound(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  
+  SWIG_check_num_args("Cursor::PlayCursorSound",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::PlayCursorSound",1,"Cursor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_PlayCursorSound",1,SWIGTYPE_p_Cursor);
+  }
+  
+  (arg1)->PlayCursorSound();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_Cursor(void *obj) {
 Cursor *arg1 = (Cursor *) obj;
 delete arg1;
@@ -34280,6 +34401,7 @@ static swig_lua_method swig_Cursor_methods[]= {
     { "ChangeToCursor", _wrap_Cursor_ChangeToCursor},
     { "ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab},
     { "DrawCursor", _wrap_Cursor_DrawCursor},
+    { "PlayCursorSound", _wrap_Cursor_PlayCursorSound},
     {0,0}
 };
 static swig_lua_method swig_Cursor_meta[] = {

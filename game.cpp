@@ -652,6 +652,8 @@ void Game::playSounds()
     PlayMusicSound();//Game music
     if(!isPlayingVideo())
         PlayUnitSounds();//Unit manager sounds
+
+    PlayCursorSound();
     PlayNextSound();//Other sound effects
 }
 

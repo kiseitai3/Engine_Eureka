@@ -3,6 +3,7 @@
 #include "startup.h"
 #include "data_base.h"
 #include "globals.h"
+#include <cstdio>
 #include <string>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -79,6 +80,7 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
 
 void MainWindow::RemoveAsset(const std::string &name)
 {
+    remove_asset_contents(assets[name.c_str()].path, assets[name.c_str()].type);
     assets.erase(name.c_str());
 }
 
@@ -362,15 +364,15 @@ void MainWindow::on_pbRegSound_clicked()
     {
     case 0:
         tmp.WriteValue("m", "sound_type");
-        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "music_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "file_loc");
         break;
     case 1:
         tmp.WriteValue("e", "sound_type");
-        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "file_loc");
         break;
     case 2:
         tmp.WriteValue("a", "sound_type");
-        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "effect_loc");
+        tmp.WriteValue(modName + "/Sounds" + file + ".txt", "file_loc");
         break;
     default:
         break;
@@ -690,4 +692,86 @@ void MainWindow::on_twTabs_currentChanged(int index)
 void MainWindow::on_tvRegisteredObjects_itemEntered(QTreeWidgetItem *item, int column)
 {
 
+}
+
+void remove_asset_contents(const QString &path, size_t type)
+{
+    data_base file(path.toStdString().c_str());
+    size_t count;
+    std::string buffer, tmp;
+
+    switch(type)
+    {
+    //All textures
+    case TEXTURE:
+    case OBJTYPE|TEXTURE:
+        remove(file.GetStrFromData("tex_texture").c_str());
+        file.CloseFile();
+        remove(path.toStdString().c_str());
+        break;
+    //All sounds
+    case SOUND:
+    case OBJTYPE|SOUND:
+        remove(file.GetStrFromData("file_loc").c_str());
+        file.CloseFile();
+        remove(path.toStdString().c_str());
+        break;
+    case CODETYPE|PLUGIN:
+    {
+        file.CloseFile();
+        tmp = (path.toStdString().substr(path.toStdString().rfind("/")) + "plugins.txt");
+        file.OpenFile(tmp.c_str());
+        count = file.GetIntFromData("module_number");
+        for(size_t i = 0; i < count; i++)
+        {
+            if(file.GetStrFromData("module_" + intToStr(i)) == path.toStdString())
+            {
+                size_t pos = file.GetStrBuffer().find("module_" + intToStr(i));
+                size_t offset = std::string("module_" + intToStr(i)).size();
+                size_t remaining = file.GetStrBuffer().size() - offset;
+                file.CloseFile();
+                file.OpenFile(tmp.c_str(), false);
+                file.WriteValue(intToStr(count - 1), "module_number");
+                file.CloseFile();
+                file.OpenFile(tmp.c_str());
+                buffer += file.GetStrBuffer().substr(pos);
+                buffer += file.GetStrBuffer().substr(pos + offset, remaining);
+
+                for(size_t j = 0; j < count; j++)
+                {
+                    buffer.replace(buffer.find("module_" + intToStr(j)), std::string("module_" + intToStr(j)).size(), "module_" + intToStr(j-1));
+                }
+                file.CloseFile();
+                file.OpenFileForQuickWrite(tmp.c_str());
+                file.WriteValueAndFlush(buffer);
+            }
+        }
+
+        remove((path.toStdString() + ".txt").c_str());
+    }
+    case CODETYPE|SCRIPT:
+    //All unit kind of objects
+    case UNIT:
+    case OBJECT:
+    case PROJECTILE:
+    case OBJTYPE|UNIT:
+    case OBJTYPE|OBJECT:
+    case OBJTYPE|PROJECTILE:
+    //All triggers
+    case TRIGGER:
+    case OBJTYPE|TRIGGER:
+    //All cursors
+    case CURSOR:
+    case OBJTYPE|CURSOR:
+    case LAYER:
+    case OBJTYPE|LAYER:
+    case LAYERSET:
+    case OBJTYPE|LAYERSET:
+    case UITYPE:
+    case PHYSICS:
+    default:
+        file.CloseFile();
+        remove(path.toStdString().c_str());
+        break;
+    }
 }

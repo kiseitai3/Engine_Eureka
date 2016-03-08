@@ -34,6 +34,7 @@ public:
 
     //Manipulation
     void DrawCursor();
+    void PlayCursorSound();
 
 private:
     BinarySearchTree<size_t, CursorNode> cursors;

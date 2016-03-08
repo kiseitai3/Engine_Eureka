@@ -15678,7 +15678,7 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_Trigger_UpdateTriggerLoc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_Trigger_UpdateTriggerLoc__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Trigger *arg1 = (Trigger *) 0 ;
   int arg2 ;
@@ -15723,6 +15723,113 @@ SWIGINTERN PyObject *_wrap_Trigger_UpdateTriggerLoc(PyObject *SWIGUNUSEDPARM(sel
   return resultobj;
 fail:
   return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Trigger_UpdateTriggerLoc__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Trigger *arg1 = (Trigger *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Trigger_UpdateTriggerLoc",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Trigger, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Trigger_UpdateTriggerLoc" "', argument " "1"" of type '" "Trigger *""'"); 
+  }
+  arg1 = reinterpret_cast< Trigger * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Trigger_UpdateTriggerLoc" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Trigger_UpdateTriggerLoc" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  (arg1)->UpdateTriggerLoc(arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Trigger_UpdateTriggerLoc(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Trigger, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_int(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Trigger_UpdateTriggerLoc__SWIG_1(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_Trigger, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_int(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_int(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_Trigger_UpdateTriggerLoc__SWIG_0(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Trigger_UpdateTriggerLoc'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    Trigger::UpdateTriggerLoc(int,int,int)\n"
+    "    Trigger::UpdateTriggerLoc(int,int)\n");
+  return 0;
 }
 
 
@@ -40622,6 +40729,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Cursor_PlayCursorSound(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Cursor_PlayCursorSound",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_PlayCursorSound" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  (arg1)->PlayCursorSound();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *Cursor_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -45634,6 +45762,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Cursor_ChangeToCursor", _wrap_Cursor_ChangeToCursor, METH_VARARGS, NULL},
 	 { (char *)"Cursor_ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab, METH_VARARGS, NULL},
 	 { (char *)"Cursor_DrawCursor", _wrap_Cursor_DrawCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_PlayCursorSound", _wrap_Cursor_PlayCursorSound, METH_VARARGS, NULL},
 	 { (char *)"Cursor_swigregister", Cursor_swigregister, METH_VARARGS, NULL},
 	 { (char *)"raw_input_eventType_set", _wrap_raw_input_eventType_set, METH_VARARGS, NULL},
 	 { (char *)"raw_input_eventType_get", _wrap_raw_input_eventType_get, METH_VARARGS, NULL},

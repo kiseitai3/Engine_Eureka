@@ -78,6 +78,7 @@ private:
 void build_new_directory_tree(const std::string source, const std::string &target);
 std::string extract_file_name(const std::string& path);
 std::string extract_correct_path(const std::string& fullPath, const std::string& modName);
+void remove_asset_contents(const QString& path, size_t type);
 bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index);
 std::string getType(char type);
 

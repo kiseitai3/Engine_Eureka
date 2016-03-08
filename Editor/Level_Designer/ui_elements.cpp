@@ -5,12 +5,13 @@
 
 #include <QRgb>
 
-UI_Elements::UI_Elements(QWidget *parent) :
+UI_Elements::UI_Elements(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::UI_Elements)
 {
     ui->setupUi(this);
     open = new QFileDialog();
+    win = parent;
 }
 
 UI_Elements::~UI_Elements()
@@ -127,7 +128,12 @@ void UI_Elements::on_pbSave_clicked()
         writer.WriteValue(extract_correct_path(ui->leTextureIdle->text().toStdString(), ModName), "button_tex_idle");
         writer.WriteValue(extract_correct_path(ui->leTextureSelect->text().toStdString(), ModName), "button_tex_selected");
         writer.WriteValue(extract_correct_path(ui->leTextureDown->text().toStdString(), ModName), "button_tex_down");
+
+
     }
+
+    //Now we start updating the main window
+    win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "UI"));
 
     //Close the file
     writer.CloseFile();

@@ -5,6 +5,7 @@
 #include "globals.h"
 
 class QFileDialog;
+class MainWindow;
 
 namespace Ui {
 class UnitSettings;
@@ -15,7 +16,7 @@ class UnitSettings : public QDialog
     Q_OBJECT
 
 public:
-    explicit UnitSettings(QWidget *parent = 0);
+    explicit UnitSettings(MainWindow *parent = 0);
     ~UnitSettings();
 
     void LoadData(cstr file);
@@ -52,6 +53,7 @@ private slots:
 
 private:
     Ui::UnitSettings *ui;
+    MainWindow* win;
     QFileDialog* doc;
     std::list<AssetNode> textures;
     std::list<AssetNode> sounds;

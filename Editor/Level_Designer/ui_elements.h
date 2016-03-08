@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QFileDialog>
 
+class MainWindow;
+
 namespace Ui {
 class UI_Elements;
 }
@@ -13,7 +15,7 @@ class UI_Elements : public QDialog
     Q_OBJECT
 
 public:
-    explicit UI_Elements(QWidget *parent = 0);
+    explicit UI_Elements(MainWindow *parent = 0);
     ~UI_Elements();
 
     void SetRootLocation(const std::string &modName, const std::string &modPath);
@@ -40,6 +42,7 @@ private:
     Ui::UI_Elements *ui;
     QFileDialog *open;
     std::string ModName, ModPath;
+    MainWindow* win;
 };
 
 #endif // UI_ELEMENTS_H

@@ -2,12 +2,13 @@
 #include "ui_cursorsettings.h"
 #include <QMessageBox>
 
-cursorsettings::cursorsettings(QWidget *parent) :
+cursorsettings::cursorsettings(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::cursorsettings)
 {
     ui->setupUi(this);
     open = new QFileDialog();
+    win = parent;
 }
 
 void cursorsettings::SetRootLocation(const std::string &modName, const std::string &modPath)
@@ -80,6 +81,9 @@ void cursorsettings::on_pbCreate_clicked()
         writer.WriteValue(ModName + "/Textures/" + texture_file, "cur_texture");
         writer.WriteValue(intToStr(ui->sbFrames->value()), "cur_fps");
 
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Cursor"));
+
         writer.CloseFile();
     }
 }
@@ -136,6 +140,9 @@ void cursorsettings::on_pbSaveSet_clicked()
             writer.WriteValue(ui->lstSet->item(i)->text().toStdString(), "cursor_" + intToStr(i) + "_name");
             writer.WriteValue(ModName + "/Cursor/" + ui->lstSet->item(i)->text().toStdString() + ".txt", "cursor_" + intToStr(i) + "_file");
         }
+
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leNameSet->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Cursorset"));
 
         writer.CloseFile();
     }

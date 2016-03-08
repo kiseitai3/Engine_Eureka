@@ -12,6 +12,11 @@ enum SoundType
     MUSIC, EFFECT, RANDOM
 };
 
+enum TreeViewID
+{
+    OBJECTLIST, UIELEMENTS, BASEASSETS, REGISTEREDOBJS
+};
+
 enum CodeType
 {
     PLUGIN, SCRIPT
@@ -24,7 +29,7 @@ enum SearchType
 
 enum ObjType
 {
-    UNIT, PROJECTILE, OBJECT, TEXTURE, TRIGGER, CURSOR, SOUND
+    UNIT, PROJECTILE, OBJECT, TEXTURE, TRIGGER, CURSOR, SOUND, LAYER, LAYERSET
 };
 
 enum TypeType
@@ -32,7 +37,8 @@ enum TypeType
     NONETYPE = 0x30,
     SOUNDTYPE = 0x40,
     CODETYPE = 0x50,
-    OBJTYPE = 0x60
+    OBJTYPE = 0x60,
+    UITYPE = 0x70
 };
 
 typedef struct SearchPacket
@@ -50,6 +56,24 @@ typedef struct NodeObj
     inline bool operator==(const NodeObj& other)
     {
         if(name == other.name || id == other.id)
+            return true;
+        return false;
+    }
+    inline bool operator==(const std::string& other)
+    {
+        if(name.toStdString() == other)
+            return true;
+        return false;
+    }
+    inline bool operator==(const QString& other)
+    {
+        if(name == other)
+            return true;
+        return false;
+    }
+    inline bool operator==(size_t other)
+    {
+        if(id == other)
             return true;
         return false;
     }

@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QFileDialog>
 
+class MainWindow;
+
 namespace Ui {
 class Layersettings;
 }
@@ -13,7 +15,7 @@ class Layersettings : public QDialog
     Q_OBJECT
 
 public:
-    explicit Layersettings(QWidget *parent = 0);
+    explicit Layersettings(MainWindow *parent = 0);
     ~Layersettings();
 
     void SetRootLocation(const std::string &modName, const std::string &modPath);
@@ -38,6 +40,7 @@ private:
     Ui::Layersettings *ui;
     QFileDialog *open;
     std::string ModPath, ModName;
+    MainWindow* win;
 };
 
 #endif // LAYERSETTINGS_H

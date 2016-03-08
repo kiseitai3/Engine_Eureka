@@ -9,6 +9,7 @@ INPUT(
 ./debug/layersettings.o
 ./debug/ui_elements.o
 ./debug/color_picker.o
+./debug/trigger_settings.o
 ./debug/moc_mainwindow.o
 ./debug/moc_unitsettings.o
 ./debug/moc_mod_picker.o
@@ -16,4 +17,5 @@ INPUT(
 ./debug/moc_layersettings.o
 ./debug/moc_ui_elements.o
 ./debug/moc_color_picker.o
+./debug/moc_trigger_settings.o
 );

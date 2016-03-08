@@ -15,7 +15,7 @@ class cursorsettings : public QDialog
     Q_OBJECT
 
 public:
-    explicit cursorsettings(QWidget *parent = 0);
+    explicit cursorsettings(MainWindow *parent = 0);
     ~cursorsettings();
 
     void SetRootLocation(const std::string &modName, const std::string &modPath);
@@ -42,6 +42,7 @@ private:
     Ui::cursorsettings *ui;
     QFileDialog *open;
     std::string ModName, ModPath;
+    MainWindow* win;
 };
 
 #endif // CURSORSETTINGS_H

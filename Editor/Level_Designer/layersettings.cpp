@@ -4,12 +4,13 @@
 #include "data_base.h"
 #include <QMessageBox>
 
-Layersettings::Layersettings(QWidget *parent) :
+Layersettings::Layersettings(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::Layersettings)
 {
     ui->setupUi(this);
     open = new QFileDialog();
+    win = parent;
 }
 
 Layersettings::~Layersettings()
@@ -72,6 +73,9 @@ void Layersettings::on_pbSave_clicked()
         writer.WriteValue(intToStr(ui->sbX->value()), "x");
         writer.WriteValue(intToStr(ui->sbY->value()), "y");
         writer.WriteValue(intToStr(ui->sbZ->value()), "z");
+
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leLayerName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Layer"));
 
         writer.CloseFile();
     }
@@ -136,6 +140,10 @@ void Layersettings::on_pbSetSave_clicked()
         }
 
         writer.WriteValue(ui->leNameSet->text().toStdString(), "layer_set_name");
+
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leNameSet->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Layerset"));
+
         writer.CloseFile();
     }
 }

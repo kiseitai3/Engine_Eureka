@@ -30,7 +30,7 @@
      <item row="0" column="0">
       <widget class="QTabWidget" name="twTabs">
        <property name="currentIndex">
-        <number>4</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="tabGeneral">
         <attribute name="title">
@@ -1093,22 +1093,6 @@
          <property name="title">
           <string>Base Assets</string>
          </property>
-         <widget class="QTreeView" name="tvBaseAssets">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>461</width>
-            <height>441</height>
-           </rect>
-          </property>
-          <property name="uniformRowHeights">
-           <bool>false</bool>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
          <widget class="QPushButton" name="pbDelAsset">
           <property name="geometry">
            <rect>
@@ -1121,6 +1105,49 @@
           <property name="text">
            <string>Delete Selected Asset</string>
           </property>
+         </widget>
+         <widget class="QTreeWidget" name="tvBaseAssets">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>461</width>
+            <height>441</height>
+           </rect>
+          </property>
+          <property name="allColumnsShowFocus">
+           <bool>false</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Texture</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sound</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Plugin</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Script</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Physics</string>
+           </property>
+          </item>
          </widget>
         </widget>
         <widget class="QGroupBox" name="gbRegisteredObjects">
@@ -1135,16 +1162,6 @@
          <property name="title">
           <string>Game Objects</string>
          </property>
-         <widget class="QTreeView" name="tvRegisteredObjects">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>491</width>
-            <height>441</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QPushButton" name="pbNewObj">
           <property name="geometry">
            <rect>
@@ -1226,6 +1243,61 @@
            </property>
           </item>
          </widget>
+         <widget class="QTreeWidget" name="tvRegisteredObjects">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>491</width>
+            <height>441</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Unit</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Trigger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Locale</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>UI</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cursor</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cursorset</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Layer</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Layerset</string>
+           </property>
+          </item>
+         </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="tabDesigner">
@@ -1247,28 +1319,6 @@
          <property name="title">
           <string>Objects Toolbox</string>
          </property>
-         <widget class="QTreeView" name="tvObjList">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>20</y>
-            <width>281</width>
-            <height>501</height>
-           </rect>
-          </property>
-          <property name="uniformRowHeights">
-           <bool>true</bool>
-          </property>
-          <property name="sortingEnabled">
-           <bool>false</bool>
-          </property>
-          <property name="animated">
-           <bool>true</bool>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
          <widget class="QPushButton" name="pushButton_4">
           <property name="geometry">
            <rect>
@@ -1281,6 +1331,21 @@
           <property name="text">
            <string>Undo</string>
           </property>
+         </widget>
+         <widget class="QTreeWidget" name="tvObjList">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>271</width>
+            <height>501</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
          </widget>
         </widget>
         <widget class="QGroupBox" name="gbGamePreview">
@@ -1332,16 +1397,6 @@
          <property name="title">
           <string>UI Toolbox</string>
          </property>
-         <widget class="QTreeView" name="treeView">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>20</y>
-            <width>241</width>
-            <height>461</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QPushButton" name="pushButton">
           <property name="geometry">
            <rect>
@@ -1380,6 +1435,21 @@
           <property name="text">
            <string>Save UI</string>
           </property>
+         </widget>
+         <widget class="QTreeWidget" name="tvUIElements">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>241</width>
+            <height>461</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
          </widget>
         </widget>
         <widget class="QScrollArea" name="scrollArea">

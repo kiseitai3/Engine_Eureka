@@ -4,7 +4,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 
-UnitSettings::UnitSettings(QWidget *parent) :
+UnitSettings::UnitSettings(MainWindow *parent) :
     QDialog(parent),
     ui(new Ui::UnitSettings)
 {
@@ -12,6 +12,7 @@ UnitSettings::UnitSettings(QWidget *parent) :
     ui->setupUi(this);
     doc = new QFileDialog();
     unit_descriptor.type = NONETYPE;
+    win = parent;
 }
 
 UnitSettings::~UnitSettings()
@@ -366,6 +367,9 @@ void UnitSettings::on_pbCreateUnit_clicked()
             }
             i++;
         }
+
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leUnitName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Unit"));
 
         //Save file
         writer.CloseFile();

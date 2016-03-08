@@ -18,6 +18,8 @@
 #include "layersettings.h"
 #include "ui_elements.h"
 
+void doNothing(){}
+
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
   ui(new Ui::MainWindow)
@@ -34,7 +36,73 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-  delete ui;
+    delete ui;
+}
+
+void MainWindow::AddTreeViewItem(char treeView, const std::string &name, bool root, QTreeWidgetItem *parent)
+{
+    QTreeWidgetItem* itm = NULL;
+
+    switch(treeView)
+    {
+    case OBJECTLIST:
+        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvObjList) : itm = new QTreeWidgetItem());
+        parent && !root ? parent->addChild(itm) : doNothing();
+        break;
+    case BASEASSETS:
+        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvBaseAssets) : itm = new QTreeWidgetItem(parent));
+        parent && !root ? parent->addChild(itm) : doNothing();
+        break;
+    case UIELEMENTS:
+        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvUIElements) : itm = new QTreeWidgetItem(parent));
+        parent && !root ? parent->addChild(itm) : doNothing();
+        break;
+    default:
+        break;
+    }
+
+    itm->setText(0, name.c_str());
+}
+
+void MainWindow::RegisterAsset(const std::string &name, const std::string &path, size_t type)
+{
+    AssetNode tmp;
+
+    //Update node data
+    tmp.name = name.c_str();
+    tmp.path = path.c_str();
+    tmp.type = type;
+
+    //Copy entry
+    assets[tmp.name] = tmp;
+}
+
+void MainWindow::RemoveAsset(const std::string &name)
+{
+    assets.erase(name.c_str());
+}
+
+QTreeWidgetItem *MainWindow::GetTreeViewRoot(char treeView, const std::string &rowName)
+{
+    QList<QTreeWidgetItem*> clist;
+
+    switch(treeView)
+    {
+    case OBJECTLIST:
+        clist = ui->tvObjList->findItems(rowName.c_str(), Qt::MatchExactly|Qt::MatchRecursive, 0);
+        break;
+    case BASEASSETS:
+        clist = ui->tvBaseAssets->findItems(rowName.c_str(), Qt::MatchExactly|Qt::MatchRecursive, 0);
+        break;
+    case UIELEMENTS:
+        clist = ui->tvUIElements->findItems(rowName.c_str(), Qt::MatchExactly|Qt::MatchRecursive, 0);
+        break;
+    default:
+        clist = ui->tvRegisteredObjects->findItems(rowName.c_str(), Qt::MatchExactly|Qt::MatchRecursive, 0);
+        break;
+    }
+
+    return clist.first();
 }
 
 void MainWindow::on_action_Exit_triggered()
@@ -251,6 +319,9 @@ void MainWindow::on_pbRegTexture_clicked()
       tmp.CloseFile();
       //Now, copy the actual texture to the target
       copyfile(ui->leTexturePath->text().toStdString(), modPath + "/Textures/" + text_fileName);
+
+      //Now we start updating the main window
+      AddTreeViewItem(BASEASSETS, text_fileName, false, GetTreeViewRoot(BASEASSETS, "Texture"));
   }
 }
 
@@ -309,6 +380,9 @@ void MainWindow::on_pbRegSound_clicked()
     tmp.WriteValue(intToStr(ui->sbSoundRange->value()), "range");
     //Save file and close it!
     tmp.CloseFile();
+
+    //Now we start updating the main window
+    AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Sound"));
 }
 
 void MainWindow::on_pbCodeBrowse_clicked()
@@ -371,6 +445,10 @@ void MainWindow::on_pbRegCode_clicked()
             tmp.WriteValue(intToStr(count), "module_number");
         }
         tmp.CloseFile();
+
+        //Now we start updating the main window
+        AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Plugin"));
+
         break;
     default://If it is a script
         //Set up search type
@@ -393,6 +471,10 @@ void MainWindow::on_pbRegCode_clicked()
             tmp.WriteValue("func_" + intToStr(i) + "_name = " + data[i] + ";\n");
         }
         tmp.CloseFile();
+
+        //Now we start updating the main window
+        AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Script"));
+
         break;
     }
 }
@@ -423,6 +505,9 @@ void MainWindow::on_pbRegPhys_clicked()
         fileWriter.WriteValue("None", "B");
     //Flush buffer
     fileWriter.CloseFile();
+
+    //Now we start updating the main window
+    AddTreeViewItem(BASEASSETS, ui->lePhysName->text().toStdString(), false, GetTreeViewRoot(BASEASSETS, "Physics"));
 }
 
 void MainWindow::on_cbHasMagnetic_clicked()
@@ -539,4 +624,70 @@ void MainWindow::on_pbNewObj_clicked()
     default:
         break;
     }
+}
+
+std::string getType(char type)
+{
+    switch(type)
+    {
+    //All unit kind of objects
+    case UNIT:
+    case OBJECT:
+    case PROJECTILE:
+    case OBJTYPE|UNIT:
+    case OBJTYPE|OBJECT:
+    case OBJTYPE|PROJECTILE:
+        return "Unit";
+    //All textures
+    case TEXTURE:
+    case OBJTYPE|TEXTURE:
+        return "Texture";
+    //All triggers
+    case TRIGGER:
+    case OBJTYPE|TRIGGER:
+        return "Trigger";
+     //All sounds
+    case SOUND:
+    case OBJTYPE|SOUND:
+        return "Sound";
+    //All cursors
+    case CURSOR:
+    case OBJTYPE|CURSOR:
+        return "Cursor";
+    case LAYER:
+    case OBJTYPE|LAYER:
+        return "Layer";
+    case LAYERSET:
+    case OBJTYPE|LAYERSET:
+        return "Layerset";
+    case UITYPE:
+        return "UI";
+    case CODETYPE|PLUGIN:
+        return "Plugin";
+    case CODETYPE|SCRIPT:
+        return "Script";
+    default:
+        break;
+    }
+    return "None";
+}
+
+void MainWindow::on_twTabs_currentChanged(int index)
+{
+    if(ui->twTabs->tabText(index) == "Level Designer")
+    {
+        ui->tvObjList->addTopLevelItem(GetTreeViewRoot(REGISTEREDOBJS, "Unit"));
+        ui->tvObjList->addTopLevelItem(GetTreeViewRoot(REGISTEREDOBJS, "Trigger"));
+        ui->tvObjList->addTopLevelItem(GetTreeViewRoot(REGISTEREDOBJS, "Layer"));
+        ui->tvObjList->addTopLevelItem(GetTreeViewRoot(REGISTEREDOBJS, "Layerset"));
+    }
+    else if(ui->twTabs->tabText(index) == "UI Designer")
+    {
+        ui->tvObjList->addTopLevelItem(GetTreeViewRoot(REGISTEREDOBJS, "UI"));
+    }
+}
+
+void MainWindow::on_tvRegisteredObjects_itemEntered(QTreeWidgetItem *item, int column)
+{
+
 }

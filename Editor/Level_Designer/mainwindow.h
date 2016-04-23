@@ -60,6 +60,14 @@ private slots:
 
   void on_tvRegisteredObjects_itemEntered(QTreeWidgetItem *item, int column);
 
+  void on_pbDelAsset_clicked();
+
+  void on_pbDelObj_clicked();
+
+  void on_sbWidth_editingFinished();
+
+  void on_sbWidth_valueChanged(int arg1);
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;
@@ -73,12 +81,16 @@ private:
 
   //Methods
   bool modExists(size_t& index);
+  void loadProjectObjects();
+  void registerProjectObjects(const QStringList& lst, const std::string& path, size_t type);
+  void clearTreeViews(size_t treeView, QTreeWidgetItem* root);
+  std::string getRelPath(const std::string& path);
 };
 
 void build_new_directory_tree(const std::string source, const std::string &target);
 std::string extract_file_name(const std::string& path);
 std::string extract_correct_path(const std::string& fullPath, const std::string& modName);
-void remove_asset_contents(const QString& path, size_t type);
+void remove_asset_contents(const std::string& rootPath, const QString &path, size_t type);
 bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index);
 std::string getType(char type);
 

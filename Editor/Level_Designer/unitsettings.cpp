@@ -370,6 +370,7 @@ void UnitSettings::on_pbCreateUnit_clicked()
 
         //Now we start updating the main window
         win->AddTreeViewItem(REGISTEREDOBJS, ui->leUnitName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Unit"));
+        win->RegisterAsset(ui->leUnitName->text().toStdString(), ModPath + "/Creatures/" + unit_descriptor.name.toStdString(), OBJTYPE|UNIT);
 
         //Save file
         writer.CloseFile();

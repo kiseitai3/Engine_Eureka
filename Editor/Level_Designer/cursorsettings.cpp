@@ -83,6 +83,7 @@ void cursorsettings::on_pbCreate_clicked()
 
         //Now we start updating the main window
         win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Cursor"));
+        win->RegisterAsset(ui->leName->text().toStdString(), file, OBJTYPE|CURSOR);
 
         writer.CloseFile();
     }
@@ -118,7 +119,7 @@ void cursorsettings::on_pbAdd_clicked()
 void cursorsettings::on_pbLoadSet_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    LoadSet(open->getOpenFileName(NULL, "Select Cursor Set Descriptor File","" ,"All Files (*.*);; Cursor Set Descriptor (*.txt)").toStdString());
+    LoadSet(open->getOpenFileName(NULL, "Select Cursor Set Descriptor File","" ,"All Files (*.*);; Cursor Set Descriptor (*.set)").toStdString());
 }
 
 void cursorsettings::on_pbSaveSet_clicked()
@@ -129,7 +130,7 @@ void cursorsettings::on_pbSaveSet_clicked()
     }
     else
     {
-        std::string file = ModPath + "/Cursor/" + ui->leNameSet->text().toStdString() + ".txt";
+        std::string file = ModPath + "/Cursor/" + ui->leNameSet->text().toStdString() + ".set";
 
         copyfile(ModPath + "/Cursor/template_cursor_set.txt", file);
         data_base writer(file.c_str(), false);
@@ -143,6 +144,7 @@ void cursorsettings::on_pbSaveSet_clicked()
 
         //Now we start updating the main window
         win->AddTreeViewItem(REGISTEREDOBJS, ui->leNameSet->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Cursorset"));
+        win->RegisterAsset(ui->leNameSet->text().toStdString(), file, OBJTYPE|CURSORSET);
 
         writer.CloseFile();
     }

@@ -25211,6 +25211,34 @@ fail:
 }
 
 
+static int _wrap_IOManager_ExpandStringFromLocale(lua_State* L) {
+  int SWIG_arg = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  std::string result;
+  
+  SWIG_check_num_args("IOManager::ExpandStringFromLocale",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("IOManager::ExpandStringFromLocale",1,"IOManager *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("IOManager::ExpandStringFromLocale",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_IOManager,0))){
+    SWIG_fail_ptr("IOManager_ExpandStringFromLocale",1,SWIGTYPE_p_IOManager);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->ExpandStringFromLocale((std::string const &)*arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_IOManager_RegisterFile__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   IOManager *arg1 = (IOManager *) 0 ;
@@ -25354,6 +25382,32 @@ fail:
 }
 
 
+static int _wrap_IOManager_SetLocale(lua_State* L) {
+  int SWIG_arg = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  
+  SWIG_check_num_args("IOManager::SetLocale",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("IOManager::SetLocale",1,"IOManager *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("IOManager::SetLocale",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_IOManager,0))){
+    SWIG_fail_ptr("IOManager_SetLocale",1,SWIGTYPE_p_IOManager);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  (arg1)->SetLocale(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_IOManager_CloseFile(lua_State* L) {
   int SWIG_arg = 0;
   IOManager *arg1 = (IOManager *) 0 ;
@@ -25427,8 +25481,10 @@ static swig_lua_method swig_IOManager_methods[]= {
     { "initIOSys", _wrap_IOManager_initIOSys},
     { "GetFile", _wrap_IOManager_GetFile},
     { "GetDataBase", _wrap_IOManager_GetDataBase},
+    { "ExpandStringFromLocale", _wrap_IOManager_ExpandStringFromLocale},
     { "RegisterFile", _wrap_IOManager_RegisterFile},
     { "RegisterDataBase", _wrap_IOManager_RegisterDataBase},
+    { "SetLocale", _wrap_IOManager_SetLocale},
     { "CloseFile", _wrap_IOManager_CloseFile},
     { "CloseDBConnection", _wrap_IOManager_CloseDBConnection},
     {0,0}

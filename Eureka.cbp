@@ -203,6 +203,7 @@
 					<Add library="Flags" />
 					<Add library="threading" />
 					<Add library="IO" />
+					<Add library="Sound" />
 				</Linker>
 			</Target>
 			<Target title="Wrapper">
@@ -397,6 +398,17 @@
 					<Add directory="bin/engine" />
 				</Linker>
 			</Target>
+			<Target title="locale_parser_test">
+				<Option output="bin/tests/locale_parser_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Linker>
+					<Add library="IO" />
+					<Add library="Core" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
@@ -498,6 +510,9 @@
 		</Unit>
 		<Unit filename="Unit_tests/game_managers_test.cpp">
 			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Unit_tests/locale_parser_test.cpp">
+			<Option target="locale_parser_test" />
 		</Unit>
 		<Unit filename="Unit_tests/lua_wrap_test.cpp">
 			<Option target="lua_wrap_test" />

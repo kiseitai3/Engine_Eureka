@@ -2752,11 +2752,17 @@ class IOManager(_object):
     def GetDataBase(self, db_id):
         return _EE.IOManager_GetDataBase(self, db_id)
 
+    def ExpandStringFromLocale(self, raw_input):
+        return _EE.IOManager_ExpandStringFromLocale(self, raw_input)
+
     def RegisterFile(self, file_path, inputMode=True):
         return _EE.IOManager_RegisterFile(self, file_path, inputMode)
 
     def RegisterDataBase(self, file):
         return _EE.IOManager_RegisterDataBase(self, file)
+
+    def SetLocale(self, file):
+        return _EE.IOManager_SetLocale(self, file)
 
     def CloseFile(self, file_id):
         return _EE.IOManager_CloseFile(self, file_id)

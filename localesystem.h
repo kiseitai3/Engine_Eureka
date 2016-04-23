@@ -1,36 +1,47 @@
 #ifndef LOCALE_H_INCLUDED
 #define LOCALE_H_INCLUDED
+#include <list>
+#include "BST.h"
 #include "data_base.h"
 #include "typedefs.h"
+
 
 class LocaleNode
 {
 public:
     /*Constructor and destructor
     id = the line number described by the locale file
-    hash = hash of the actual string (used for quick comparison purposes)
-    pos = starting position of the string on the file
-    size = length of the string on the file
     */
-    LocaleNode(size_t id, size_t hash, size_t pos, size_t size);
-    ~LocaleNode();
+    LocaleNode(const std::string& content);
+    //~LocaleNode();
 
     //Getters
-    size_t GetLocaleID();
-    size_t GetLocaleHash();
-    size_t GetLocalePosition();
-    size_t GetLocaleStringSize();
+    size_t GetLocaleStringSize() const;
+    std::string GetLocaleString();
+
+    bool operator==(const std::string& input)
+    {
+        return m_string == input;
+    }
+
+private:
+    std::string m_string;
 };
 
-class LocaleReader : public data_base
+class LocaleReader
 {
 public:
     //Constructor and destructor
     LocaleReader(cstr file);
-    ~LocaleReader();
+    //~LocaleReader();
 
-    size_t GetLocaleID(size_t hash);
-    std::string GetLocaleString(size_t id);
+    std::string ExpandInputString(const std::string& raw_input);
+    std::string CondenseInputString(const std::string& raw_input);
+
+    std::string GetLocaleName() const;
+private:
+    std::vector<LocaleNode> doc;
+    std::string locale_name;
 };
 
 #endif // LOCALE_H_INCLUDED

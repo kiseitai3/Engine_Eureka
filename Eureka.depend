@@ -23899,7 +23899,7 @@
 	"BST.h"
 	"typedefs.h"
 
-1440693469 c:\users\luis\documents\devcb\engine_eureka\iomanager.h
+1461262092 c:\users\luis\documents\devcb\engine_eureka\iomanager.h
 	"BST.h"
 	<iostream>
 	<string>
@@ -24214,7 +24214,7 @@
 	"luawrap.h"
 	"pywrap.h"
 
-1451867787 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
+1457465097 source:c:\users\luis\documents\devcb\engine_eureka\sound_base.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -24252,7 +24252,7 @@
 	"Timer.h"
 	<SDL.h>
 
-1425768967 source:c:\users\luis\documents\devcb\engine_eureka\trigger.cpp
+1456184013 source:c:\users\luis\documents\devcb\engine_eureka\trigger.cpp
 	<SDL.h>
 	<iostream>
 	"data_base.h"
@@ -27451,11 +27451,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1440959933 source:c:\users\luis\documents\devcb\engine_eureka\iomanager.cpp
+1461262092 source:c:\users\luis\documents\devcb\engine_eureka\iomanager.cpp
 	"iomanager.h"
 	"eureka.h"
 	"database.h"
 	"rand_generators.h"
+	"localesystem.h"
 
 1428089261 source:c:\users\luis\documents\devcb\engine_eureka\threading.cpp
 	"threading.h"
@@ -28704,5 +28705,18 @@
 
 1448501975 source:c:\users\luis\documents\devcb\engine_eureka\locale.cpp
 
-1448501975 source:c:\users\luis\documents\devcb\engine_eureka\localesystem.cpp
+1461262113 source:c:\users\luis\documents\devcb\engine_eureka\localesystem.cpp
+	"localesystem.h"
+
+1461262185 c:\users\luis\documents\devcb\engine_eureka\localesystem.h
+	<list>
+	"BST.h"
+	"data_base.h"
+	"typedefs.h"
+
+1461265715 source:c:\users\luis\documents\devcb\engine_eureka\unit_tests\locale_parser_test.cpp
+	"../localesystem.h"
+	"../data_base.h"
+	<iostream>
+	<string>
 

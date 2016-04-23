@@ -76,6 +76,7 @@ void Layersettings::on_pbSave_clicked()
 
         //Now we start updating the main window
         win->AddTreeViewItem(REGISTEREDOBJS, ui->leLayerName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Layer"));
+        win->RegisterAsset(ui->leLayerName->text().toStdString(), file, OBJTYPE|LAYER);
 
         writer.CloseFile();
     }
@@ -117,7 +118,7 @@ void Layersettings::on_pbSetRemove_clicked()
 void Layersettings::on_pbSetOpen_clicked()
 {
     open->setFileMode(QFileDialog::AnyFile);
-    LoadSet(open->getOpenFileName(NULL, "Select Layer Set Descriptor File","" ,"All Files (*.*);; Layer Set Descriptor (*.txt)").toStdString());
+    LoadSet(open->getOpenFileName(NULL, "Select Layer Set Descriptor File","" ,"All Files (*.*);; Layer Set Descriptor (*.set)").toStdString());
 }
 
 void Layersettings::on_pbSetSave_clicked()
@@ -128,7 +129,7 @@ void Layersettings::on_pbSetSave_clicked()
     }
     else
     {
-        std::string file = ModPath + "/Layers/" + ui->leNameSet->text().toStdString() + ".txt";
+        std::string file = ModPath + "/Layers/" + ui->leNameSet->text().toStdString() + ".set";
 
         copyfile(ModPath + "/Layers/template_layerset.txt", file);
         data_base writer(file.c_str(), false);
@@ -143,6 +144,7 @@ void Layersettings::on_pbSetSave_clicked()
 
         //Now we start updating the main window
         win->AddTreeViewItem(REGISTEREDOBJS, ui->leNameSet->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "Layerset"));
+        win->RegisterAsset(ui->leNameSet->text().toStdString(), file, OBJTYPE|LAYERSET);
 
         writer.CloseFile();
     }

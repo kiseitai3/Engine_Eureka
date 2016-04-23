@@ -13,6 +13,7 @@
 
 class DataBase;
 class Game;
+class LocaleReader;
 
 class IONode
 {
@@ -47,16 +48,19 @@ public:
     //Be careful with manipulation of objects below. The engine will crash if someone deletes objects directly!
     data_base& GetFile(size_t file_id);//Returns reference to data_base object
     DataBase* GetDataBase(size_t db_id);//Returns reference to Database object
+    std::string ExpandStringFromLocale(const std::string& raw_input);
 
     //Setters
     size_t RegisterFile(cstr file_path, bool inputMode = true);
     size_t RegisterDataBase(cstr file);
+    void SetLocale(cstr file);
     void CloseFile(size_t file_id);
     void CloseDBConnection(size_t db_id);
 
 private:
     BinarySearchTree<size_t, IONode*> files;//Storage of file instances
     BinarySearchTree<size_t, IONode*> databases;//Storage of database connections
+    LocaleReader* engine_locale;
     Game* owner_ref;
     size_t mutex_io_id, mutex_db_id;
 };

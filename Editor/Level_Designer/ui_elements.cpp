@@ -110,6 +110,10 @@ void UI_Elements::on_pbSave_clicked()
     writer.WriteValue(intToStr(ui->sbTextH->value()), "textbox_txt_h");
     writer.WriteValue(intToStr(ui->sbTextW->value()), "textbox_txt_w");
 
+    //Now we start updating the main window
+    win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString() + "_textbox", false, win->GetTreeViewRoot(REGISTEREDOBJS, "UI"));
+    win->RegisterAsset(ui->leName->text().toStdString() + "_textbox", textbox_file + ".txt", UITYPE);
+
     //Create button file if it is a button
     if(ui->cbType->isChecked())
     {
@@ -129,11 +133,10 @@ void UI_Elements::on_pbSave_clicked()
         writer.WriteValue(extract_correct_path(ui->leTextureSelect->text().toStdString(), ModName), "button_tex_selected");
         writer.WriteValue(extract_correct_path(ui->leTextureDown->text().toStdString(), ModName), "button_tex_down");
 
-
+        //Now we start updating the main window
+        win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString() + "_button", false, win->GetTreeViewRoot(REGISTEREDOBJS, "UI"));
+        win->RegisterAsset(ui->leName->text().toStdString(), textbox_file + "_button.txt", UITYPE);
     }
-
-    //Now we start updating the main window
-    win->AddTreeViewItem(REGISTEREDOBJS, ui->leName->text().toStdString(), false, win->GetTreeViewRoot(REGISTEREDOBJS, "UI"));
 
     //Close the file
     writer.CloseFile();

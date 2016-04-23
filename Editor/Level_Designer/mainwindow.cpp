@@ -47,21 +47,20 @@ void MainWindow::AddTreeViewItem(char treeView, const std::string &name, bool ro
     switch(treeView)
     {
     case OBJECTLIST:
-        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvObjList) : itm = new QTreeWidgetItem());
-        parent && !root ? parent->addChild(itm) : doNothing();
+        root ? itm = new QTreeWidgetItem(ui->tvObjList) : itm = new QTreeWidgetItem(parent);
         break;
     case BASEASSETS:
-        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvBaseAssets) : itm = new QTreeWidgetItem(parent));
-        parent && !root ? parent->addChild(itm) : doNothing();
+        root ? itm = new QTreeWidgetItem(ui->tvBaseAssets) : itm = new QTreeWidgetItem(parent);
         break;
     case UIELEMENTS:
-        itm = new QTreeWidgetItem(root ? itm = new QTreeWidgetItem(ui->tvUIElements) : itm = new QTreeWidgetItem(parent));
-        parent && !root ? parent->addChild(itm) : doNothing();
+        root ? itm = new QTreeWidgetItem(ui->tvUIElements) : itm = new QTreeWidgetItem(parent);
         break;
     default:
+        root ? itm = new QTreeWidgetItem(ui->tvRegisteredObjects) : itm = new QTreeWidgetItem(parent);
         break;
     }
 
+    parent && !root ? parent->addChild(itm) : doNothing();
     itm->setText(0, name.c_str());
 }
 
@@ -80,7 +79,7 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
 
 void MainWindow::RemoveAsset(const std::string &name)
 {
-    remove_asset_contents(assets[name.c_str()].path, assets[name.c_str()].type);
+    remove_asset_contents(modRootPath, QString((modRootPath + "/").c_str()) + assets[name.c_str()].path, assets[name.c_str()].type);
     assets.erase(name.c_str());
 }
 
@@ -158,6 +157,10 @@ void MainWindow::on_pbModBrowse_clicked()
     //Let's store a quick paths to the mod directories
     modRootPath = ui->leMod->text().toStdString();
     modPath = modRootPath + "/" + modName;
+
+    //Let's load presaved assets
+    loadProjectObjects();
+
 
     //Finally, we enable the other tabs and allow the user to do his/her work
     ui->tabRegisterAssets->setEnabled(true);
@@ -323,7 +326,8 @@ void MainWindow::on_pbRegTexture_clicked()
       copyfile(ui->leTexturePath->text().toStdString(), modPath + "/Textures/" + text_fileName);
 
       //Now we start updating the main window
-      AddTreeViewItem(BASEASSETS, text_fileName, false, GetTreeViewRoot(BASEASSETS, "Texture"));
+      AddTreeViewItem(BASEASSETS, ui->leTexName->text().toStdString(), false, GetTreeViewRoot(BASEASSETS, "Texture"));
+      RegisterAsset(ui->leTexName->text().toStdString(), modName + "/Textures" + text_fileName + ".txt", OBJTYPE|TEXTURE);
   }
 }
 
@@ -339,6 +343,219 @@ bool MainWindow::modExists(size_t &index)
     }
     index = 0;
     return false;
+}
+
+void MainWindow::loadProjectObjects()
+{
+    QDir src(modRootPath.c_str());
+    QFileInfo info;
+    QStringList objLst;
+    QString objName;
+    AssetNode tmp;
+
+    //Set the filter for the file list to the Descriptor format
+    src.setNameFilters(QStringList() << "*.txt");
+
+    //Load plugins. First, enter target directory!
+    src.cd("plugins");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modRootPath + "/plugins", CODETYPE|PLUGIN);
+
+    //Load units
+    src.cdUp();
+    src.cd(modName.c_str());
+    src.cd("Creatures");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Creatures", OBJTYPE|UNIT);
+
+    //Load textures
+    src.cdUp();
+    src.cd("Textures");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Textures", OBJTYPE|TEXTURE);
+
+    //Load sound
+    src.cdUp();
+    src.cd("Sounds");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Sounds", OBJTYPE|SOUND);
+
+    //Load scripts
+    src.cdUp();
+    src.cd("Scripts");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Textures", CODETYPE|SCRIPT);
+
+    //Load cursor
+    src.cdUp();
+    src.cd("Cursor");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Cursor", OBJTYPE|CURSOR);
+
+    //Load physics
+    src.cdUp();
+    src.cd("Physics");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Cursor", OBJTYPE|PHYSICS);
+
+    //Load ui elements
+    src.cdUp();
+    src.cd("UI_elements");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/UI_elements", UITYPE);
+
+    //Load uis
+    src.cdUp();
+    src.cd("UI");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/UI", UITYPE);
+
+    //Load layers
+    src.cdUp();
+    src.cd("Layers");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Layers", OBJTYPE|LAYER);
+
+    //Load triggers
+    src.cdUp();
+    src.cd("Levels/Triggers");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Levels/Triggers", OBJTYPE|TRIGGER);
+
+    //Load sets
+    src.setNameFilters(QStringList() << ".set");
+
+    //Load layerset
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Layers", OBJTYPE|LAYERSET);
+
+    //Load cursorset
+    src.cdUp();
+    src.cd("Cursor");
+    objLst = src.entryList();
+    registerProjectObjects(objLst, modPath + "/Cursor", OBJTYPE|CURSORSET);
+
+    //Load levels!
+
+
+}
+
+void MainWindow::registerProjectObjects(const QStringList &lst, const std::string &path, size_t type)
+{
+    data_base file;
+    std::string name, textbox_file, rowName;
+    char treeView = 0;
+    for(size_t i = 0; i < lst.count(); i++)
+    {
+        /*
+         * */
+        file.OpenFile((path + "/" + lst[i].toStdString()).c_str());
+        switch(type)
+        {
+        //All unit kind of objects
+        case UNIT:
+        case OBJECT:
+        case PROJECTILE:
+        case OBJTYPE|UNIT:
+        case OBJTYPE|OBJECT:
+        case OBJTYPE|PROJECTILE:
+            name = file.GetStrFromData("unit_name");
+            treeView = REGISTEREDOBJS;
+            rowName = "Unit";
+            goto default_actions;
+            //All triggers
+        case TRIGGER:
+        case OBJTYPE|TRIGGER:
+            name = file.GetStrFromData("trigger_name");
+            treeView = REGISTEREDOBJS;
+            rowName = "Trigger";
+            goto default_actions;
+            //All cursors
+        case CURSOR:
+        case OBJTYPE|CURSOR:
+            name = file.GetStrFromData("cur_name");
+            treeView = REGISTEREDOBJS;
+            rowName = "Cursor";
+            goto default_actions;
+        case LAYER:
+        case OBJTYPE|LAYER:
+            name = file.GetStrFromData("layer_name");
+            treeView = REGISTEREDOBJS;
+            rowName = "Layer";
+            goto default_actions;
+        case UITYPE:
+        case UITYPE|BUTTON:
+        case UITYPE|TEXTBOX:
+            file.CloseFile();
+            textbox_file = lst[i].toStdString();
+            textbox_file.find("_button.txt") && textbox_file.find("_button.txt") <= textbox_file.size() ? textbox_file = textbox_file.substr(textbox_file.find("_button.txt")) + ".txt" : textbox_file = textbox_file;
+            file.OpenFile((path + "/" + textbox_file).c_str());
+            name = file.GetStrFromData("name");
+            treeView = REGISTEREDOBJS;
+            rowName = "UI";
+            goto default_actions;
+        case LAYERSET:
+        case OBJTYPE|LAYERSET:
+            treeView = REGISTEREDOBJS;
+            rowName = "Layerset";
+            goto catch_all;
+            //All sounds
+        case SOUND:
+        case OBJTYPE|SOUND:
+            treeView = BASEASSETS;
+            rowName = "Sound";
+            goto catch_all;
+            //All textures
+        case TEXTURE:
+        case OBJTYPE|TEXTURE:
+            treeView = BASEASSETS;
+            rowName = "Texture";
+            goto catch_all;
+        case PHYSICS:
+        case OBJTYPE|PHYSICS:
+            treeView = BASEASSETS;
+            rowName = "Physics";
+            goto catch_all;
+        case CODETYPE|PLUGIN:
+            treeView = BASEASSETS;
+            rowName = "Plugin";
+            goto catch_all;
+        case CODETYPE|SCRIPT:
+            treeView = BASEASSETS;
+            rowName = "Script";
+            goto catch_all;
+        case CURSORSET:
+        case OBJTYPE|CURSORSET:
+            treeView = REGISTEREDOBJS;
+            rowName = "Cursorset";
+
+            catch_all:
+            textbox_file = lst[i].toStdString();
+            textbox_file.find(".set") && textbox_file.find(".set") <= textbox_file.size() ? textbox_file = textbox_file.substr(textbox_file.find(".set")) : textbox_file = textbox_file;
+            name = textbox_file;
+            goto default_actions;
+        default:
+            default_actions:
+            RegisterAsset(name, getRelPath(path) + "/" + lst[i].toStdString(), type);
+            AddTreeViewItem(treeView, name, false, GetTreeViewRoot(treeView, rowName));
+            break;
+        }
+    }
+}
+
+void MainWindow::clearTreeViews(size_t treeView, QTreeWidgetItem *root)
+{
+    //Null case
+    if(root->childCount() == 0)
+    {
+
+    }
+}
+
+std::string MainWindow::getRelPath(const std::string &path)
+{
+    size_t start = path.find(modRootPath);
+    return path.substr(start, path.size() - start);
 }
 
 void MainWindow::on_pbSoundBrowse_clicked()
@@ -385,6 +602,7 @@ void MainWindow::on_pbRegSound_clicked()
 
     //Now we start updating the main window
     AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Sound"));
+    RegisterAsset(file, modName + "/Sounds" + file + ".txt", OBJTYPE|SOUND);
 }
 
 void MainWindow::on_pbCodeBrowse_clicked()
@@ -450,6 +668,7 @@ void MainWindow::on_pbRegCode_clicked()
 
         //Now we start updating the main window
         AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Plugin"));
+        RegisterAsset(file, modRootPath + file, CODETYPE|PLUGIN);
 
         break;
     default://If it is a script
@@ -476,6 +695,7 @@ void MainWindow::on_pbRegCode_clicked()
 
         //Now we start updating the main window
         AddTreeViewItem(BASEASSETS, file, false, GetTreeViewRoot(BASEASSETS, "Script"));
+        RegisterAsset(file, p.path.substr(p.path.find(".txt")), CODETYPE|SCRIPT);
 
         break;
     }
@@ -510,6 +730,7 @@ void MainWindow::on_pbRegPhys_clicked()
 
     //Now we start updating the main window
     AddTreeViewItem(BASEASSETS, ui->lePhysName->text().toStdString(), false, GetTreeViewRoot(BASEASSETS, "Physics"));
+    RegisterAsset(ui->lePhysName->text().toStdString(), path, PHYSICS);
 }
 
 void MainWindow::on_cbHasMagnetic_clicked()
@@ -594,21 +815,21 @@ void MainWindow::on_pbNewObj_clicked()
     case 7://Unit settings
     {
         UnitSettings unit(this);
-        unit.show();
+        unit.exec();
         break;
     }
     case 1://Cursor
     case 2://Cursor set
     {
         cursorsettings cursor(this);
-        cursor.show();
+        cursor.exec();
         break;
     }
     case 3://Layer
     case 4://Layer set
     {
         Layersettings settings(this);
-        settings.show();
+        settings.exec();
         break;
     }
     case 5://Locale
@@ -620,7 +841,7 @@ void MainWindow::on_pbNewObj_clicked()
     case 8://UI
     {
         UI_Elements ui_stuff(this);
-        ui_stuff.show();
+        ui_stuff.exec();
         break;
     }
     default:
@@ -668,6 +889,13 @@ std::string getType(char type)
         return "Plugin";
     case CODETYPE|SCRIPT:
         return "Script";
+    case PHYSICS:
+    case OBJTYPE|PHYSICS:
+        return "Physics";
+    case UITYPE|BUTTON:
+        return "Button";
+    case UITYPE|TEXTBOX:
+        return "Textbox";
     default:
         break;
     }
@@ -694,7 +922,7 @@ void MainWindow::on_tvRegisteredObjects_itemEntered(QTreeWidgetItem *item, int c
 
 }
 
-void remove_asset_contents(const QString &path, size_t type)
+void remove_asset_contents(const std::string& rootPath, const QString &path, size_t type)
 {
     data_base file(path.toStdString().c_str());
     size_t count;
@@ -705,14 +933,16 @@ void remove_asset_contents(const QString &path, size_t type)
     //All textures
     case TEXTURE:
     case OBJTYPE|TEXTURE:
-        remove(file.GetStrFromData("tex_texture").c_str());
+        tmp = rootPath + "/" + file.GetStrFromData("tex_texture");
+        remove(tmp.c_str());
         file.CloseFile();
         remove(path.toStdString().c_str());
         break;
     //All sounds
     case SOUND:
     case OBJTYPE|SOUND:
-        remove(file.GetStrFromData("file_loc").c_str());
+        tmp = rootPath + "/" + file.GetStrFromData("file_loc");
+        remove(tmp.c_str());
         file.CloseFile();
         remove(path.toStdString().c_str());
         break;
@@ -768,10 +998,41 @@ void remove_asset_contents(const QString &path, size_t type)
     case LAYERSET:
     case OBJTYPE|LAYERSET:
     case UITYPE:
+    case UITYPE|BUTTON:
+    case UITYPE|TEXTBOX:
     case PHYSICS:
+    case OBJTYPE|PHYSICS:
     default:
         file.CloseFile();
         remove(path.toStdString().c_str());
         break;
     }
+}
+
+void MainWindow::on_pbDelAsset_clicked()
+{
+    RemoveAsset(ui->tvBaseAssets->currentItem()->text(0).toStdString());
+    delete ui->tvBaseAssets->currentItem();
+}
+
+void MainWindow::on_pbDelObj_clicked()
+{
+    RemoveAsset(ui->tvRegisteredObjects->currentItem()->text(0).toStdString());
+    delete ui->tvRegisteredObjects->currentItem();
+}
+
+void MainWindow::on_sbWidth_editingFinished()
+{
+    size_t width = ui->gvTexturePreview->frameWidth();
+
+    if(width > ui->sbWidth->value())
+        ui->sbFrames->setValue(width / ui->sbWidth->value());
+}
+
+void MainWindow::on_sbWidth_valueChanged(int arg1)
+{
+    size_t width = ui->gvTexturePreview->frameWidth();
+
+    if(width > ui->sbWidth->value())
+        ui->sbFrames->setValue(width / ui->sbWidth->value());
 }

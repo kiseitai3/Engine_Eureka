@@ -30342,6 +30342,44 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_IOManager_ExpandStringFromLocale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:IOManager_ExpandStringFromLocale",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_IOManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IOManager_ExpandStringFromLocale" "', argument " "1"" of type '" "IOManager *""'"); 
+  }
+  arg1 = reinterpret_cast< IOManager * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "IOManager_ExpandStringFromLocale" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "IOManager_ExpandStringFromLocale" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (arg1)->ExpandStringFromLocale((std::string const &)*arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_IOManager_RegisterFile__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   IOManager *arg1 = (IOManager *) 0 ;
@@ -30497,6 +30535,39 @@ SWIGINTERN PyObject *_wrap_IOManager_RegisterDataBase(PyObject *SWIGUNUSEDPARM(s
   arg2 = reinterpret_cast< cstr >(buf2);
   result = (arg1)->RegisterDataBase(arg2);
   resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_IOManager_SetLocale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  IOManager *arg1 = (IOManager *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:IOManager_SetLocale",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_IOManager, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IOManager_SetLocale" "', argument " "1"" of type '" "IOManager *""'"); 
+  }
+  arg1 = reinterpret_cast< IOManager * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "IOManager_SetLocale" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  (arg1)->SetLocale(arg2);
+  resultobj = SWIG_Py_Void();
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return resultobj;
 fail:
@@ -45550,8 +45621,10 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"IOManager_initIOSys", _wrap_IOManager_initIOSys, METH_VARARGS, NULL},
 	 { (char *)"IOManager_GetFile", _wrap_IOManager_GetFile, METH_VARARGS, NULL},
 	 { (char *)"IOManager_GetDataBase", _wrap_IOManager_GetDataBase, METH_VARARGS, NULL},
+	 { (char *)"IOManager_ExpandStringFromLocale", _wrap_IOManager_ExpandStringFromLocale, METH_VARARGS, NULL},
 	 { (char *)"IOManager_RegisterFile", _wrap_IOManager_RegisterFile, METH_VARARGS, NULL},
 	 { (char *)"IOManager_RegisterDataBase", _wrap_IOManager_RegisterDataBase, METH_VARARGS, NULL},
+	 { (char *)"IOManager_SetLocale", _wrap_IOManager_SetLocale, METH_VARARGS, NULL},
 	 { (char *)"IOManager_CloseFile", _wrap_IOManager_CloseFile, METH_VARARGS, NULL},
 	 { (char *)"IOManager_CloseDBConnection", _wrap_IOManager_CloseDBConnection, METH_VARARGS, NULL},
 	 { (char *)"IOManager_swigregister", IOManager_swigregister, METH_VARARGS, NULL},

@@ -255,10 +255,10 @@ public:
         sbWidth->setMaximum(99999999);
         label_7 = new QLabel(groupBox_3);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(20, 90, 61, 16));
+        label_7->setGeometry(QRect(20, 90, 81, 16));
         sbFrames = new QSpinBox(groupBox_3);
         sbFrames->setObjectName(QStringLiteral("sbFrames"));
-        sbFrames->setGeometry(QRect(90, 90, 42, 22));
+        sbFrames->setGeometry(QRect(100, 90, 42, 22));
         sbFrames->setMinimum(1);
         sbFrames->setMaximum(99999999);
         label_8 = new QLabel(groupBox_3);
@@ -291,6 +291,7 @@ public:
         sbLoop->setObjectName(QStringLiteral("sbLoop"));
         sbLoop->setGeometry(QRect(200, 180, 42, 22));
         sbLoop->setMaximum(1);
+        sbLoop->setValue(1);
         pbRegTexture = new QPushButton(groupBox_3);
         pbRegTexture->setObjectName(QStringLiteral("pbRegTexture"));
         pbRegTexture->setGeometry(QRect(330, 202, 75, 31));
@@ -400,18 +401,23 @@ public:
         sbMass = new QSpinBox(groupBox_8);
         sbMass->setObjectName(QStringLiteral("sbMass"));
         sbMass->setGeometry(QRect(60, 50, 42, 22));
+        sbMass->setMaximum(9999999);
         label_22 = new QLabel(groupBox_8);
         label_22->setObjectName(QStringLiteral("label_22"));
         label_22->setGeometry(QRect(10, 80, 51, 16));
         sbCharge = new QSpinBox(groupBox_8);
         sbCharge->setObjectName(QStringLiteral("sbCharge"));
         sbCharge->setGeometry(QRect(60, 80, 42, 22));
+        sbCharge->setMaximum(999999);
         label_23 = new QLabel(groupBox_8);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(10, 110, 31, 16));
         dsbMu = new QDoubleSpinBox(groupBox_8);
         dsbMu->setObjectName(QStringLiteral("dsbMu"));
         dsbMu->setGeometry(QRect(60, 110, 51, 22));
+        dsbMu->setMaximum(1);
+        dsbMu->setSingleStep(0.01);
+        dsbMu->setValue(0.5);
         cbUnmovable = new QCheckBox(groupBox_8);
         cbUnmovable->setObjectName(QStringLiteral("cbUnmovable"));
         cbUnmovable->setGeometry(QRect(120, 50, 171, 20));
@@ -426,6 +432,7 @@ public:
         sbMagneticField = new QSpinBox(groupBox_8);
         sbMagneticField->setObjectName(QStringLiteral("sbMagneticField"));
         sbMagneticField->setGeometry(QRect(300, 110, 42, 22));
+        sbMagneticField->setMaximum(9999999);
         label_25 = new QLabel(groupBox_8);
         label_25->setObjectName(QStringLiteral("label_25"));
         label_25->setGeometry(QRect(10, 140, 131, 16));
@@ -555,7 +562,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        twTabs->setCurrentIndex(1);
+        twTabs->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

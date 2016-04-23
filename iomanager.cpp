@@ -2,6 +2,7 @@
 #include "eureka.h"
 #include "database.h"
 #include "rand_generators.h"
+#include "localesystem.h"
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -81,6 +82,7 @@ void IOManager::initIOSys()
     //Create mutexes and obtain their ids
     mutex_io_id = owner_ref->SpawnMutex();
     mutex_db_id = owner_ref->SpawnMutex();
+    engine_locale = NULL;
 }
 
 IOManager::~IOManager()
@@ -114,6 +116,9 @@ IOManager::~IOManager()
         }
         tmp = NULL;
     }
+
+    if(engine_locale)
+        delete engine_locale;
     //Unlock appropriate mutex
     owner_ref->UnlockMutex(mutex_io_id);
     owner_ref->UnlockMutex(mutex_db_id);
@@ -189,6 +194,25 @@ size_t IOManager::RegisterDataBase(cstr file)
     //Unlock appropriate mutex
     owner_ref->UnlockMutex(mutex_db_id);
     return id;
+}
+
+void IOManager::SetLocale(cstr file)
+{
+    owner_ref->LockMutex(mutex_io_id);
+    if(engine_locale)
+        delete engine_locale;
+
+    engine_locale = new LocaleReader(file);
+    owner_ref->UnlockMutex(mutex_io_id);
+}
+
+std::string IOManager::ExpandStringFromLocale(const std::string& raw_input)
+{
+    std::string result;
+    owner_ref->LockMutex(mutex_io_id);
+    result = engine_locale->ExpandInputString(raw_input);
+    owner_ref->UnlockMutex(mutex_io_id);
+    return result;
 }
 
 data_base& IOManager::GetFile(size_t file_id)

@@ -49,6 +49,8 @@ public:
     /*Ctors and dtor*/
     Game(bool editor = false);
     Game(cstr file, bool editor = false);
+    Game(int argc, char* argv[], bool editor = false);
+    Game(cstr file, int argc, char* argv[], bool editor = false);
     ~Game();
 
     /*Init*/
@@ -153,10 +155,22 @@ private:
     std::list<size_t> moduleList;
     std::list<size_t> uiList;
 
+    //IO Streams
+    std::streambuf *in, *out, *err;
+    std::ofstream *g_out, *g_err;
+    std::ifstream *g_in;
+    std::string g_in_path, g_out_path, g_err_path, g_file_path;
+
     //Other variables
     Level *currentLvl;
     char* frameBuffer;
     size_t frameSize;
+    std::string cmd_no_args;
+
+    //methods
+    void initCMD(int argc, char* argv[]);
+    void initSTDStreams();
+    void processCMD();
 };
 //Global functions
 void_ptr helperDrawFunction(void_ptr game);

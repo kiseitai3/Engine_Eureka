@@ -3012,25 +3012,26 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_math_point swig_types[72]
 #define SWIGTYPE_p_pChar swig_types[73]
 #define SWIGTYPE_p_p_ParticleNode swig_types[74]
-#define SWIGTYPE_p_psudo_type swig_types[75]
-#define SWIGTYPE_p_pthread_cond_t swig_types[76]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[77]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[79]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[80]
-#define SWIGTYPE_p_raw_input swig_types[81]
-#define SWIGTYPE_p_size_t swig_types[82]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[83]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[84]
-#define SWIGTYPE_p_std__string swig_types[85]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[86]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[87]
-#define SWIGTYPE_p_textbox swig_types[88]
-#define SWIGTYPE_p_unsigned_char swig_types[89]
-#define SWIGTYPE_p_unsigned_short swig_types[90]
-#define SWIGTYPE_p_void swig_types[91]
-static swig_type_info *swig_types[93];
-static swig_module_info swig_module = {swig_types, 92, 0, 0, 0, 0};
+#define SWIGTYPE_p_p_char swig_types[75]
+#define SWIGTYPE_p_psudo_type swig_types[76]
+#define SWIGTYPE_p_pthread_cond_t swig_types[77]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[78]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[79]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[80]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[81]
+#define SWIGTYPE_p_raw_input swig_types[82]
+#define SWIGTYPE_p_size_t swig_types[83]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[84]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[85]
+#define SWIGTYPE_p_std__string swig_types[86]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[87]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[88]
+#define SWIGTYPE_p_textbox swig_types[89]
+#define SWIGTYPE_p_unsigned_char swig_types[90]
+#define SWIGTYPE_p_unsigned_short swig_types[91]
+#define SWIGTYPE_p_void swig_types[92]
+static swig_type_info *swig_types[94];
+static swig_module_info swig_module = {swig_types, 93, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -43057,14 +43058,180 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_new_Game__SWIG_4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int arg1 ;
+  char **arg2 ;
+  bool arg3 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  bool val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  Game *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Game",&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Game" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_p_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Game" "', argument " "2"" of type '" "char *[]""'"); 
+  } 
+  arg2 = reinterpret_cast< char ** >(argp2);
+  ecode3 = SWIG_AsVal_bool(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Game" "', argument " "3"" of type '" "bool""'");
+  } 
+  arg3 = static_cast< bool >(val3);
+  result = (Game *)new Game(arg1,arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Game, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Game__SWIG_5(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  int arg1 ;
+  char **arg2 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Game *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Game",&obj0,&obj1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Game" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_p_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_Game" "', argument " "2"" of type '" "char *[]""'"); 
+  } 
+  arg2 = reinterpret_cast< char ** >(argp2);
+  result = (Game *)new Game(arg1,arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Game, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Game__SWIG_6(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cstr arg1 = (cstr) 0 ;
+  int arg2 ;
+  char **arg3 ;
+  bool arg4 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  bool val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  Game *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Game",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Game" "', argument " "1"" of type '" "cstr""'");
+  }
+  arg1 = reinterpret_cast< cstr >(buf1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Game" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_p_char, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Game" "', argument " "3"" of type '" "char *[]""'"); 
+  } 
+  arg3 = reinterpret_cast< char ** >(argp3);
+  ecode4 = SWIG_AsVal_bool(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Game" "', argument " "4"" of type '" "bool""'");
+  } 
+  arg4 = static_cast< bool >(val4);
+  result = (Game *)new Game(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Game, SWIG_POINTER_NEW |  0 );
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Game__SWIG_7(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cstr arg1 = (cstr) 0 ;
+  int arg2 ;
+  char **arg3 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  Game *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Game",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Game" "', argument " "1"" of type '" "cstr""'");
+  }
+  arg1 = reinterpret_cast< cstr >(buf1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Game" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_p_char, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Game" "', argument " "3"" of type '" "char *[]""'"); 
+  } 
+  arg3 = reinterpret_cast< char ** >(argp3);
+  result = (Game *)new Game(arg1,arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Game, SWIG_POINTER_NEW |  0 );
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_Game(PyObject *self, PyObject *args) {
   int argc;
-  PyObject *argv[3];
+  PyObject *argv[5];
   int ii;
   
   if (!PyTuple_Check(args)) SWIG_fail;
   argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
     argv[ii] = PyTuple_GET_ITEM(args,ii);
   }
   if (argc == 0) {
@@ -43090,6 +43257,21 @@ SWIGINTERN PyObject *_wrap_new_Game(PyObject *self, PyObject *args) {
   }
   if (argc == 2) {
     int _v;
+    {
+      int res = SWIG_AsVal_int(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_p_char, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_new_Game__SWIG_5(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
     int res = SWIG_AsCharPtrAndSize(argv[0], 0, NULL, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
@@ -43102,6 +43284,71 @@ SWIGINTERN PyObject *_wrap_new_Game(PyObject *self, PyObject *args) {
       }
     }
   }
+  if (argc == 3) {
+    int _v;
+    {
+      int res = SWIG_AsVal_int(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_p_char, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_bool(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_new_Game__SWIG_4(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    int res = SWIG_AsCharPtrAndSize(argv[0], 0, NULL, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        void *vptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_p_char, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          return _wrap_new_Game__SWIG_7(self, args);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    int res = SWIG_AsCharPtrAndSize(argv[0], 0, NULL, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        void *vptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_p_char, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          {
+            int res = SWIG_AsVal_bool(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_Game__SWIG_6(self, args);
+          }
+        }
+      }
+    }
+  }
   
 fail:
   SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Game'.\n"
@@ -43109,7 +43356,11 @@ fail:
     "    Game::Game(bool)\n"
     "    Game::Game()\n"
     "    Game::Game(cstr,bool)\n"
-    "    Game::Game(cstr)\n");
+    "    Game::Game(cstr)\n"
+    "    Game::Game(int,char *[],bool)\n"
+    "    Game::Game(int,char *[])\n"
+    "    Game::Game(cstr,int,char *[],bool)\n"
+    "    Game::Game(cstr,int,char *[])\n");
   return 0;
 }
 
@@ -46159,6 +46410,7 @@ static swig_type_info _swigt__p_math_VECTOR = {"_p_math_VECTOR", "math_VECTOR *"
 static swig_type_info _swigt__p_math_point = {"_p_math_point", "math_point *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pChar = {"_p_pChar", "pChar *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_ParticleNode = {"_p_p_ParticleNode", "ParticleNode **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *|fuzzy_obj *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pthread_cond_t = {"_p_pthread_cond_t", "pthread_cond_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pthread_mutex_t = {"_p_pthread_mutex_t", "pthread_mutex_t *", 0, 0, (void*)0, 0};
@@ -46253,6 +46505,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_math_point,
   &_swigt__p_pChar,
   &_swigt__p_p_ParticleNode,
+  &_swigt__p_p_char,
   &_swigt__p_psudo_type,
   &_swigt__p_pthread_cond_t,
   &_swigt__p_pthread_mutex_t,
@@ -46347,6 +46600,7 @@ static swig_cast_info _swigc__p_math_VECTOR[] = {  {&_swigt__p_math_VECTOR, 0, 0
 static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_ParticleNode[] = {  {&_swigt__p_p_ParticleNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pthread_cond_t[] = {  {&_swigt__p_pthread_cond_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pthread_mutex_t[] = {  {&_swigt__p_pthread_mutex_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -46441,6 +46695,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_math_point,
   _swigc__p_pChar,
   _swigc__p_p_ParticleNode,
+  _swigc__p_p_char,
   _swigc__p_psudo_type,
   _swigc__p_pthread_cond_t,
   _swigc__p_pthread_mutex_t,

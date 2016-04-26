@@ -3,6 +3,7 @@
 #include "level.h"
 #include <SDL_image.h>
 #include "database.h"
+#include <cmd_utils.h>
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -101,6 +102,7 @@ Game::Game(cstr file, bool editor): SoundQueue(this), ParticleSystem(this), Modu
     gamePaused = false;
     frameBuffer = NULL;
     requestFrame = editor;
+    initSTDStreams();
     initSubSys();
 }
 
@@ -113,6 +115,47 @@ Game::Game(bool editor): ThreadSystem(), GameInfo(), ModuleSystem(this), UnitMan
     gamePaused = false;
     frameBuffer = NULL;
     requestFrame = editor;
+    initSubSys();
+}
+
+Game::Game(int argc, char* argv[], bool editor): ThreadSystem(), GameInfo(), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), Input(this),
+    SoundQueue(this), ParticleSystem(this)
+{
+    closeEngine = false;
+    loading = false;
+    gamePaused = false;
+    frameBuffer = NULL;
+    requestFrame = editor;
+    initCMD(argc, argv);
+
+    //Process cmd
+    processCMD();
+
+    if(g_file_path.size() > 0)
+        LoadGame(g_file_path.c_str());
+    //Replace standard streams with ours
+    initSTDStreams();
+
+
+    initSubSys();
+}
+
+Game::Game(cstr file, int argc, char* argv[], bool editor): ThreadSystem(), GameInfo(), ModuleSystem(this), UnitManager(this), IOManager(this), UIManager(this),
+    NetworkManager(this), TriggerManager(this), LayerSystem(this), Cursor(this), TimerSystem(this), VideoPlayer(this), Input(this),
+    SoundQueue(this), ParticleSystem(this)
+{
+    closeEngine = false;
+    loading = false;
+    gamePaused = false;
+    frameBuffer = NULL;
+    requestFrame = editor;
+    initCMD(argc, argv);
+    //Process cmd
+    processCMD();
+    LoadGame(file);
+    //Replace standard streams with ours
+    initSTDStreams();
     initSubSys();
 }
 
@@ -341,6 +384,10 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         //Load all of the expansion basic data!
         LoadExpansionInfo(file);
     }
+    //Get logging path
+    g_in_path = gameDOM.GetStrFromData("in");
+    g_out_path = gameDOM.GetStrFromData("out");
+    g_err_path = gameDOM.GetStrFromData("err");
     //Now we load the script file that will handle input for the chosen mod!
     LoadKeyScript((modLoc + gameDOM.GetStrFromData("key_script")).c_str());
     /*Finally, we load the main cursor set! Although the game scripts and plugins can load additional cursors, it is important to
@@ -530,6 +577,66 @@ bool Game::init()
 
     //If everything initialized fine
     return true;
+}
+
+void Game::initCMD(int argc, char* argv[])
+{
+    cmd_no_args = "help,h,app_name;";
+    cmd_init(cmd_no_args.c_str(), cmd_no_args.size());
+    cmd_process(argc, argv);
+    /*Example of cmd usage*/
+    /*
+    for(size_t i = 0; i < cmd_get_argc(); i++)
+    {
+        size_t hash = cmd_get_option();
+        if(hash == cmd_generate_hash("-t", 2))
+            printf("%s \n", cmd_get_argument());
+        else
+            printf("%s", "Unknown argument!");
+        cmd_next_arg();
+    }*/
+
+}
+
+void Game::initSTDStreams()
+{
+    //Init our streams
+    g_in =  new std::ifstream(g_in_path.c_str());
+    g_out =  new std::ofstream(g_out_path.c_str());
+    g_err =  new std::ofstream(g_err_path.c_str());
+    //Grab stream buffers
+    in = std::cin.rdbuf();
+    out = std::cout.rdbuf();
+    err = std::cerr.rdbuf();
+    //Replace stream buffers with our own
+    std::cin.rdbuf(g_in->rdbuf());
+    std::cout.rdbuf(g_out->rdbuf());
+    std::cerr.rdbuf(g_err->rdbuf());
+}
+
+void Game::processCMD()
+{
+    for(size_t i = 0; i < cmd_get_argc(); i++)
+    {
+        size_t hash = cmd_get_option();
+        if(hash == cmd_generate_hash("-o", 2))
+        {
+            g_out_path = cmd_get_argument();
+        }
+        if(hash == cmd_generate_hash("-i", 2))
+        {
+            g_in_path = cmd_get_argument();
+        }
+        if(hash == cmd_generate_hash("-e", 2))
+        {
+            g_err_path = cmd_get_argument();
+        }
+        if(hash == cmd_generate_hash("-file", 5))
+        {
+            g_file_path = cmd_get_argument();
+        }
+        cmd_next_arg();
+    }
 }
 
 void Game::FrameCapper()
@@ -905,6 +1012,14 @@ Game::~Game()
     //Delete the editor frame buffer if initialized
     if(frameBuffer)
         delete[] frameBuffer;
+
+    //Restore the standard streams and clean up the custom buffers
+    std::cout.rdbuf(out);
+    std::cin.rdbuf(in);
+    std::cerr.rdbuf(err);
+    delete g_in;
+    delete g_out;
+    delete g_err;
 
     //Delete SDL things
     SDL_DestroyRenderer(screen);

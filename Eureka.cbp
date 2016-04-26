@@ -404,9 +404,24 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
+				<Option parameters='-locale &quot;es_locale.txt&quot; -file &quot;input_messages.txt.out&quot; -o &quot;input_messages.txt.es&quot; -E' />
 				<Linker>
 					<Add library="IO" />
 					<Add library="Core" />
+					<Add library="CMD_Processor" />
+				</Linker>
+			</Target>
+			<Target title="cmd_processor_driver">
+				<Option output="bin/tests/cmd_processor_driver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters='-t &quot;Hello World!&quot; -t &quot;Hello People!&quot;' />
+				<Compiler>
+					<Add option="-std=c99" />
+				</Compiler>
+				<Linker>
+					<Add library="CMD_Processor" />
 				</Linker>
 			</Target>
 		</Build>
@@ -431,6 +446,7 @@
 			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include/boost" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include" />
+			<Add directory="Dependencies/cmd_processor/include" />
 		</Compiler>
 		<Linker>
 			<Add library="libmingw32" />
@@ -460,6 +476,7 @@
 			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/lib" />
 			<Add directory="bin/engine" />
+			<Add directory="Dependencies/cmd_processor/lib/Release" />
 		</Linker>
 		<Unit filename="BST.cc">
 			<Option target="&lt;{~None~}&gt;" />
@@ -501,6 +518,10 @@
 		</Unit>
 		<Unit filename="Unit_tests/c++11_test.cpp">
 			<Option target="c++11_test" />
+		</Unit>
+		<Unit filename="Unit_tests/cmd_processor_driver.c">
+			<Option compilerVar="CC" />
+			<Option target="cmd_processor_driver" />
 		</Unit>
 		<Unit filename="Unit_tests/data_base_test.cpp">
 			<Option target="data_base_test" />

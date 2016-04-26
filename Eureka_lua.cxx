@@ -2717,25 +2717,26 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_math_point swig_types[73]
 #define SWIGTYPE_p_pChar swig_types[74]
 #define SWIGTYPE_p_p_ParticleNode swig_types[75]
-#define SWIGTYPE_p_psudo_type swig_types[76]
-#define SWIGTYPE_p_pthread_cond_t swig_types[77]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[79]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[80]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[81]
-#define SWIGTYPE_p_raw_input swig_types[82]
-#define SWIGTYPE_p_size_t swig_types[83]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[84]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[85]
-#define SWIGTYPE_p_std__string swig_types[86]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[87]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[88]
-#define SWIGTYPE_p_textbox swig_types[89]
-#define SWIGTYPE_p_unsigned_char swig_types[90]
-#define SWIGTYPE_p_unsigned_short swig_types[91]
-#define SWIGTYPE_p_void swig_types[92]
-static swig_type_info *swig_types[94];
-static swig_module_info swig_module = {swig_types, 93, 0, 0, 0, 0};
+#define SWIGTYPE_p_p_char swig_types[76]
+#define SWIGTYPE_p_psudo_type swig_types[77]
+#define SWIGTYPE_p_pthread_cond_t swig_types[78]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[79]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[80]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[81]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[82]
+#define SWIGTYPE_p_raw_input swig_types[83]
+#define SWIGTYPE_p_size_t swig_types[84]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[85]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[86]
+#define SWIGTYPE_p_std__string swig_types[87]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[88]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[89]
+#define SWIGTYPE_p_textbox swig_types[90]
+#define SWIGTYPE_p_unsigned_char swig_types[91]
+#define SWIGTYPE_p_unsigned_short swig_types[92]
+#define SWIGTYPE_p_void swig_types[93]
+static swig_type_info *swig_types[95];
+static swig_module_info swig_module = {swig_types, 94, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -36676,10 +36677,130 @@ fail:
 }
 
 
+static int _wrap_new_Game__SWIG_4(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  char **arg2 ;
+  bool arg3 ;
+  Game *result = 0 ;
+  
+  SWIG_check_num_args("Game::Game",3,3)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("Game::Game",1,"int");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Game::Game",2,"char *[]");
+  if(!lua_isboolean(L,3)) SWIG_fail_arg("Game::Game",3,"bool");
+  arg1 = (int)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_p_char,0))){
+    SWIG_fail_ptr("new_Game",2,SWIGTYPE_p_p_char);
+  }
+  
+  arg3 = (lua_toboolean(L, 3)!=0);
+  result = (Game *)new Game(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Game,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Game__SWIG_5(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  char **arg2 ;
+  Game *result = 0 ;
+  
+  SWIG_check_num_args("Game::Game",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("Game::Game",1,"int");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Game::Game",2,"char *[]");
+  arg1 = (int)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_p_char,0))){
+    SWIG_fail_ptr("new_Game",2,SWIGTYPE_p_p_char);
+  }
+  
+  result = (Game *)new Game(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Game,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Game__SWIG_6(lua_State* L) {
+  int SWIG_arg = 0;
+  cstr arg1 = (cstr) 0 ;
+  int arg2 ;
+  char **arg3 ;
+  bool arg4 ;
+  Game *result = 0 ;
+  
+  SWIG_check_num_args("Game::Game",4,4)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("Game::Game",1,"cstr");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Game::Game",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("Game::Game",3,"char *[]");
+  if(!lua_isboolean(L,4)) SWIG_fail_arg("Game::Game",4,"bool");
+  arg1 = (cstr)lua_tostring(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_p_char,0))){
+    SWIG_fail_ptr("new_Game",3,SWIGTYPE_p_p_char);
+  }
+  
+  arg4 = (lua_toboolean(L, 4)!=0);
+  result = (Game *)new Game(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Game,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Game__SWIG_7(lua_State* L) {
+  int SWIG_arg = 0;
+  cstr arg1 = (cstr) 0 ;
+  int arg2 ;
+  char **arg3 ;
+  Game *result = 0 ;
+  
+  SWIG_check_num_args("Game::Game",3,3)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("Game::Game",1,"cstr");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Game::Game",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("Game::Game",3,"char *[]");
+  arg1 = (cstr)lua_tostring(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_p_char,0))){
+    SWIG_fail_ptr("new_Game",3,SWIGTYPE_p_p_char);
+  }
+  
+  result = (Game *)new Game(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Game,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_Game(lua_State* L) {
   int argc;
-  int argv[3]={
-    1,2,3
+  int argv[5]={
+    1,2,3,4,5
   };
   
   argc = lua_gettop(L);
@@ -36707,6 +36828,25 @@ static int _wrap_new_Game(lua_State* L) {
   if (argc == 2) {
     int _v;
     {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_p_char, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_new_Game__SWIG_5(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
       _v = SWIG_lua_isnilstring(L,argv[0]);
     }
     if (_v) {
@@ -36718,13 +36858,94 @@ static int _wrap_new_Game(lua_State* L) {
       }
     }
   }
+  if (argc == 3) {
+    int _v;
+    {
+      _v = lua_isnumber(L,argv[0]);
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_p_char, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        {
+          _v = lua_isboolean(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_new_Game__SWIG_4(L);
+        }
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    {
+      _v = SWIG_lua_isnilstring(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_p_char, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          return _wrap_new_Game__SWIG_7(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      _v = SWIG_lua_isnilstring(L,argv[0]);
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        {
+          void *ptr;
+          if (SWIG_isptrtype(L,argv[2])==0 || SWIG_ConvertPtr(L,argv[2], (void **) &ptr, SWIGTYPE_p_p_char, 0)) {
+            _v = 0;
+          } else {
+            _v = 1;
+          }
+        }
+        if (_v) {
+          {
+            _v = lua_isboolean(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_new_Game__SWIG_6(L);
+          }
+        }
+      }
+    }
+  }
   
   SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'new_Game'\n"
     "  Possible C/C++ prototypes are:\n"
     "    Game::Game(bool)\n"
     "    Game::Game()\n"
     "    Game::Game(cstr,bool)\n"
-    "    Game::Game(cstr)\n");
+    "    Game::Game(cstr)\n"
+    "    Game::Game(int,char *[],bool)\n"
+    "    Game::Game(int,char *[])\n"
+    "    Game::Game(cstr,int,char *[],bool)\n"
+    "    Game::Game(cstr,int,char *[])\n");
   lua_error(L);return 0;
 }
 
@@ -39103,6 +39324,7 @@ static swig_type_info _swigt__p_math_VECTOR = {"_p_math_VECTOR", "math_VECTOR *"
 static swig_type_info _swigt__p_math_point = {"_p_math_point", "math_point *", 0, 0, (void*)&_wrap_class_math_point, 0};
 static swig_type_info _swigt__p_pChar = {"_p_pChar", "pChar *", 0, 0, (void*)&_wrap_class_pChar, 0};
 static swig_type_info _swigt__p_p_ParticleNode = {"_p_p_ParticleNode", "ParticleNode **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_psudo_type = {"_p_psudo_type", "psudo_type *|unknown_return *|fuzzy_obj *", 0, 0, (void*)&_wrap_class_unknown_return, 0};
 static swig_type_info _swigt__p_pthread_cond_t = {"_p_pthread_cond_t", "pthread_cond_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pthread_mutex_t = {"_p_pthread_mutex_t", "pthread_mutex_t *", 0, 0, (void*)0, 0};
@@ -39198,6 +39420,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_math_point,
   &_swigt__p_pChar,
   &_swigt__p_p_ParticleNode,
+  &_swigt__p_p_char,
   &_swigt__p_psudo_type,
   &_swigt__p_pthread_cond_t,
   &_swigt__p_pthread_mutex_t,
@@ -39293,6 +39516,7 @@ static swig_cast_info _swigc__p_math_VECTOR[] = {  {&_swigt__p_math_VECTOR, 0, 0
 static swig_cast_info _swigc__p_math_point[] = {  {&_swigt__p_math_point, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pChar[] = {  {&_swigt__p_pChar, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_ParticleNode[] = {  {&_swigt__p_p_ParticleNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_psudo_type[] = {  {&_swigt__p_psudo_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pthread_cond_t[] = {  {&_swigt__p_pthread_cond_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pthread_mutex_t[] = {  {&_swigt__p_pthread_mutex_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -39388,6 +39612,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_math_point,
   _swigc__p_pChar,
   _swigc__p_p_ParticleNode,
+  _swigc__p_p_char,
   _swigc__p_psudo_type,
   _swigc__p_pthread_cond_t,
   _swigc__p_pthread_mutex_t,

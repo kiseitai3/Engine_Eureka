@@ -405,6 +405,9 @@
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
 				<Option parameters='-locale &quot;es_locale.txt&quot; -file &quot;input_messages.txt.out&quot; -o &quot;input_messages.txt.es&quot; -E' />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
 				<Linker>
 					<Add library="IO" />
 					<Add library="Core" />

@@ -1,0 +1,7 @@
+trigger_name = trigger_template;
+trigger_height = 50;
+trigger_width = 50;
+trigger_x = 3;
+trigger_y = 50;
+trigger_duration = 5000;
+trigger_script = pokemeds/scripts/Triggers_Scripts.py;

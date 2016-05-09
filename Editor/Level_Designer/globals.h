@@ -46,6 +46,12 @@ enum TypeType
     UITYPE = 0x70
 };
 
+enum SubtypeType
+{
+    INSTANCE = 0x10,
+    BASEASSET = 0x20
+};
+
 typedef struct SearchPacket
 {
     std::string prefix, suffix, term, path, fileName;
@@ -54,9 +60,10 @@ typedef struct SearchPacket
 typedef struct NodeObj
 {
     size_t id;
-    size_t type;
+    size_t type, subtype;
     QString name, path;
     void_ptr obj_ptr;
+    std::vector<size_t> idlist;
 
     inline bool operator==(const NodeObj& other)
     {
@@ -83,5 +90,25 @@ typedef struct NodeObj
         return false;
     }
 }AssetNode;
+
+
+template<typename T> void removeValFromStack(std::stack<T>& container, const T& val)
+{
+    std::stack<T> storage;
+
+    while(container.top() != val)
+    {
+        storage.push(container.top());
+        container.pop();
+    }
+
+    container.pop();
+
+   while(!storage.empty())
+    {
+        container.push(storage.top());
+        storage.pop();
+    }
+}
 
 #endif // GLOBALS_H

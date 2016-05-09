@@ -1,0 +1,2 @@
+func_count = 1;
+func_0_name = printHello;

@@ -78,6 +78,9 @@
     </property>
    </widget>
    <widget class="QSpinBox" name="sbX">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -91,6 +94,9 @@
     </property>
    </widget>
    <widget class="QSpinBox" name="sbY">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>250</x>

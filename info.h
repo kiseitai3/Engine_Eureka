@@ -3,8 +3,11 @@
 #include <SDL.h>
 #include <iostream>
 #include <string>
+#include <list>
 #include "BST.h"
 #include "typedefs.h"
+#undef LocaleInfo
+#undef GetLocaleInfo
 
 //Engine name space macro
 //ENGINE_NAMESPACE
@@ -19,6 +22,12 @@ struct ExpansionItem
     ExpansionItem(size_t id, const std::string& name, const std::string& path, const std::string& descrip);
     ExpansionItem(const ExpansionItem& item);
     ExpansionItem();
+};
+
+struct LocaleItem
+{
+    std::string name;
+    std::string path;
 };
 
 class ExpansionInfo
@@ -40,6 +49,22 @@ public:
 
 private:
     BinarySearchTree<size_t, ExpansionItem*> mods;
+};
+
+class LocaleInfo
+{
+public:
+    void LoadLocaleListFromLoc(const std::string& dir);
+    void LoadLocaleListFromDB(DataBase* db);
+    void AddLocaleToList(const std::string& name, const std::string& path);
+    LocaleItem GetLocaleInfo(const std::string& name) const;
+    LocaleItem GetLocaleInfo(size_t id) const;
+    LocaleItem GetSelectedLocale() const;
+    size_t GetLocaleItemCount() const;
+
+private:
+    LocaleItem selected;
+    std::list<LocaleItem> locales;
 };
 
 class ScreenInfo
@@ -97,7 +122,7 @@ class SoundInfo
     std::string card;
 };
 
-class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo
+class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo, public LocaleInfo
 {
 public:
     GameInfo();

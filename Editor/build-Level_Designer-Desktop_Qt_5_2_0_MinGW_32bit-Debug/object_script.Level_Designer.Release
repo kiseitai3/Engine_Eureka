@@ -10,6 +10,8 @@ INPUT(
 ./release/ui_elements.o
 ./release/color_picker.o
 ./release/trigger_settings.o
+./release/locale_settings.o
+./release/assetmenu.o
 ./release/moc_mainwindow.o
 ./release/moc_unitsettings.o
 ./release/moc_mod_picker.o
@@ -18,4 +20,6 @@ INPUT(
 ./release/moc_ui_elements.o
 ./release/moc_color_picker.o
 ./release/moc_trigger_settings.o
+./release/moc_locale_settings.o
+./release/moc_assetmenu.o
 );

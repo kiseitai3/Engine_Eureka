@@ -2688,6 +2688,60 @@ class NetworkManager(_object):
 NetworkManager_swigregister = _EE.NetworkManager_swigregister
 NetworkManager_swigregister(NetworkManager)
 
+class LocaleNode(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, LocaleNode, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, LocaleNode, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, content):
+        this = _EE.new_LocaleNode(content)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def GetLocaleStringSize(self):
+        return _EE.LocaleNode_GetLocaleStringSize(self)
+
+    def GetLocaleString(self):
+        return _EE.LocaleNode_GetLocaleString(self)
+
+    def __eq__(self, input):
+        return _EE.LocaleNode___eq__(self, input)
+    __swig_destroy__ = _EE.delete_LocaleNode
+    __del__ = lambda self: None
+LocaleNode_swigregister = _EE.LocaleNode_swigregister
+LocaleNode_swigregister(LocaleNode)
+
+class LocaleReader(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, LocaleReader, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, LocaleReader, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, file):
+        this = _EE.new_LocaleReader(file)
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+
+    def ExpandInputString(self, raw_input):
+        return _EE.LocaleReader_ExpandInputString(self, raw_input)
+
+    def CondenseInputString(self, raw_input):
+        return _EE.LocaleReader_CondenseInputString(self, raw_input)
+
+    def GetLocaleName(self):
+        return _EE.LocaleReader_GetLocaleName(self)
+    __swig_destroy__ = _EE.delete_LocaleReader
+    __del__ = lambda self: None
+LocaleReader_swigregister = _EE.LocaleReader_swigregister
+LocaleReader_swigregister(LocaleReader)
+
 class IONode(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, IONode, name, value)
@@ -2878,6 +2932,32 @@ class ExpansionItem(_object):
 ExpansionItem_swigregister = _EE.ExpansionItem_swigregister
 ExpansionItem_swigregister(ExpansionItem)
 
+class LocaleItem(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, LocaleItem, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, LocaleItem, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["name"] = _EE.LocaleItem_name_set
+    __swig_getmethods__["name"] = _EE.LocaleItem_name_get
+    if _newclass:
+        name = _swig_property(_EE.LocaleItem_name_get, _EE.LocaleItem_name_set)
+    __swig_setmethods__["path"] = _EE.LocaleItem_path_set
+    __swig_getmethods__["path"] = _EE.LocaleItem_path_get
+    if _newclass:
+        path = _swig_property(_EE.LocaleItem_path_get, _EE.LocaleItem_path_set)
+
+    def __init__(self):
+        this = _EE.new_LocaleItem()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _EE.delete_LocaleItem
+    __del__ = lambda self: None
+LocaleItem_swigregister = _EE.LocaleItem_swigregister
+LocaleItem_swigregister(LocaleItem)
+
 class ExpansionInfo(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ExpansionInfo, name, value)
@@ -2916,6 +2996,42 @@ class ExpansionInfo(_object):
             self.this = this
 ExpansionInfo_swigregister = _EE.ExpansionInfo_swigregister
 ExpansionInfo_swigregister(ExpansionInfo)
+
+class LocaleInfo(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, LocaleInfo, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, LocaleInfo, name)
+    __repr__ = _swig_repr
+
+    def LoadLocaleListFromLoc(self, dir):
+        return _EE.LocaleInfo_LoadLocaleListFromLoc(self, dir)
+
+    def LoadLocaleListFromDB(self, db):
+        return _EE.LocaleInfo_LoadLocaleListFromDB(self, db)
+
+    def AddLocaleToList(self, name, path):
+        return _EE.LocaleInfo_AddLocaleToList(self, name, path)
+
+    def GetLocaleInfo(self, *args):
+        return _EE.LocaleInfo_GetLocaleInfo(self, *args)
+
+    def GetSelectedLocale(self):
+        return _EE.LocaleInfo_GetSelectedLocale(self)
+
+    def GetLocaleItemCount(self):
+        return _EE.LocaleInfo_GetLocaleItemCount(self)
+
+    def __init__(self):
+        this = _EE.new_LocaleInfo()
+        try:
+            self.this.append(this)
+        except:
+            self.this = this
+    __swig_destroy__ = _EE.delete_LocaleInfo
+    __del__ = lambda self: None
+LocaleInfo_swigregister = _EE.LocaleInfo_swigregister
+LocaleInfo_swigregister(LocaleInfo)
 
 class ScreenInfo(_object):
     __swig_setmethods__ = {}
@@ -3034,13 +3150,13 @@ class SoundInfo(_object):
 SoundInfo_swigregister = _EE.SoundInfo_swigregister
 SoundInfo_swigregister(SoundInfo)
 
-class GameInfo(ScreenInfo, SoundInfo, ExpansionInfo):
+class GameInfo(ScreenInfo, SoundInfo, ExpansionInfo, LocaleInfo):
     __swig_setmethods__ = {}
-    for _s in [ScreenInfo, SoundInfo, ExpansionInfo]:
+    for _s in [ScreenInfo, SoundInfo, ExpansionInfo, LocaleInfo]:
         __swig_setmethods__.update(getattr(_s, '__swig_setmethods__', {}))
     __setattr__ = lambda self, name, value: _swig_setattr(self, GameInfo, name, value)
     __swig_getmethods__ = {}
-    for _s in [ScreenInfo, SoundInfo, ExpansionInfo]:
+    for _s in [ScreenInfo, SoundInfo, ExpansionInfo, LocaleInfo]:
         __swig_getmethods__.update(getattr(_s, '__swig_getmethods__', {}))
     __getattr__ = lambda self, name: _swig_getattr(self, GameInfo, name)
     __repr__ = _swig_repr

@@ -5,6 +5,7 @@
 #include "globals.h"
 #include <cstdio>
 #include <string>
+#include <list>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QThread>
@@ -13,11 +14,14 @@
 #include <QPixmap>
 #include <QGraphicsScene>
 #include <QImage>
+#include <QTimer>
 
 #include "cursorsettings.h"
 #include "unitsettings.h"
 #include "layersettings.h"
 #include "ui_elements.h"
+#include "trigger_settings.h"
+#include "assetmenu.h"
 
 void doNothing(){}
 
@@ -30,9 +34,27 @@ MainWindow::MainWindow(QWidget *parent) :
   DOMWriter = NULL;
   open = new QFileDialog();
   worldPrev = NULL;
+  frame = NULL;
   textPrev = new QGraphicsScene(this);
   ui->gvTexturePreview->setScene(textPrev);
   engine = new Game(true);
+  tvBaseAssetsCount = 0;
+  tvRegisteredObjsCount = 0;
+  tvObjsListCount = 0;
+  tvUIElementsCount = 0;
+
+  tvBaseAssets_bk = new QTreeWidget(this);
+  tvBaseAssets_bk->setVisible(false);
+  for(size_t i = 0; i < ui->tvBaseAssets->topLevelItemCount(); i++)
+  {
+      tvBaseAssets_bk->addTopLevelItem(new QTreeWidgetItem(*ui->tvBaseAssets->topLevelItem(i)));
+  }
+  tvRegisteredObjs_bk = new QTreeWidget(this);
+  tvRegisteredObjs_bk->setVisible(false);
+  for(size_t i = 0; i < ui->tvRegisteredObjects->topLevelItemCount(); i++)
+  {
+      tvRegisteredObjs_bk->addTopLevelItem(new QTreeWidgetItem(*ui->tvRegisteredObjects->topLevelItem(i)));
+  }
 }
 
 MainWindow::~MainWindow()
@@ -48,15 +70,19 @@ void MainWindow::AddTreeViewItem(char treeView, const std::string &name, bool ro
     {
     case OBJECTLIST:
         root ? itm = new QTreeWidgetItem(ui->tvObjList) : itm = new QTreeWidgetItem(parent);
+        tvObjsListCount++;
         break;
     case BASEASSETS:
         root ? itm = new QTreeWidgetItem(ui->tvBaseAssets) : itm = new QTreeWidgetItem(parent);
+        tvBaseAssetsCount++;
         break;
     case UIELEMENTS:
         root ? itm = new QTreeWidgetItem(ui->tvUIElements) : itm = new QTreeWidgetItem(parent);
+        tvUIElementsCount++;
         break;
     default:
         root ? itm = new QTreeWidgetItem(ui->tvRegisteredObjects) : itm = new QTreeWidgetItem(parent);
+        tvRegisteredObjsCount++;
         break;
     }
 
@@ -64,7 +90,7 @@ void MainWindow::AddTreeViewItem(char treeView, const std::string &name, bool ro
     itm->setText(0, name.c_str());
 }
 
-void MainWindow::RegisterAsset(const std::string &name, const std::string &path, size_t type)
+void MainWindow::RegisterAsset(const std::string &name, const std::string &path, size_t type, size_t subtype)
 {
     AssetNode tmp;
 
@@ -72,15 +98,108 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
     tmp.name = name.c_str();
     tmp.path = path.c_str();
     tmp.type = type;
+    tmp.subtype = subtype;
 
     //Copy entry
     assets[tmp.name] = tmp;
+}
+
+void MainWindow::RegisterObject(AssetNode obj)
+{
+    switch(itm.type)
+    {
+    case CODETYPE|SCRIPT:
+    //All unit kind of objects
+    case UNIT:
+    case OBJECT:
+    case PROJECTILE:
+    case OBJTYPE|UNIT:
+    case OBJTYPE|OBJECT:
+    case OBJTYPE|PROJECTILE:
+        //Load the object into the engine with the data!
+        obj.id = engine->SpawnUnitFromFile(obj.path.toStdString().c_str(), GetBlitOrderFromType(obj.type));
+        break;
+    //All triggers
+    case TRIGGER:
+    case OBJTYPE|TRIGGER:
+        obj.id = engine->RegisterTrigger(obj.path.toStdString().c_str());
+        break;
+    //All cursors
+    case CURSOR:
+    case OBJTYPE|CURSOR:
+        obj.id = engine->RegisterCursor(obj.path.toStdString().c_str());
+        break;
+    case CURSORSET:
+    case OBJTYPE|CURSORSET:
+        engine->LoadCursors(obj.path.toStdString().c_str());
+        break;
+    case LAYER:
+    case OBJTYPE|LAYER:
+        obj.id = engine->AddLayer(obj.path.toStdString().c_str());
+        break;
+    case LAYERSET:
+    case OBJTYPE|LAYERSET:
+        obj.idlist = engine->AddLayerSet(obj.path.toStdString().c_str());
+        break;
+    case UITYPE:
+    case UITYPE|BUTTON:
+    case UITYPE|TEXTBOX:
+    case PHYSICS:
+    case OBJTYPE|PHYSICS:
+    default:
+        break;
+    }
+
+    //Update the editor interface
+    objects.push_back(obj);
+    AddTreeViewItem(OBJECTLIST, obj.name.toStdString());
+    objOrder.push(obj.id);
+
 }
 
 void MainWindow::RemoveAsset(const std::string &name)
 {
     remove_asset_contents(modRootPath, QString((modRootPath + "/").c_str()) + assets[name.c_str()].path, assets[name.c_str()].type);
     assets.erase(name.c_str());
+}
+
+void MainWindow::RemoveObj(const std::string &name)
+{
+    AssetNode tmp;
+    for(std::list<AssetNode>::iterator itr = objects.begin(); itr != objects.end(); itr++)
+    {
+        tmp = *itr;
+        if(tmp.name.toStdString() == name)
+        {
+            //Remove from editor
+            objects.remove(tmp);
+            removeValFromStack(objOrder, tmp.id);
+            delete GetTreeViewRoot(OBJECTLIST, tmp.name.toStdString());
+
+            //Remove from engine
+            engine->DeleteUnitByID(tmp.id);
+            return;
+        }
+    }
+}
+
+void MainWindow::RemoveLastObj()
+{
+    AssetNode tmp;
+    for(std::list<AssetNode>::iterator itr = objects.begin(); itr != objects.end(); itr++)
+    {
+        tmp = *itr;
+        if(tmp.id == objOrder.top())
+        {
+            //Remove from editor
+            objects.remove(tmp);
+            objOrder.pop();
+            delete GetTreeViewRoot(OBJECTLIST, tmp.name.toStdString());
+
+            //Remove from engine
+            engine->DeleteUnitByID(tmp.id);
+        }
+    }
 }
 
 QTreeWidgetItem *MainWindow::GetTreeViewRoot(char treeView, const std::string &rowName)
@@ -104,6 +223,96 @@ QTreeWidgetItem *MainWindow::GetTreeViewRoot(char treeView, const std::string &r
     }
 
     return clist.first();
+}
+
+AssetNode MainWindow::GetAsset(const std::string &name)
+{
+    return assets[name.c_str()];
+}
+
+AssetNode MainWindow::GetObjectInstance(const std::string &name) const
+{
+    for(std::list<AssetNode>::const_iterator itr = objects.begin(); itr != objects.end(); itr++)
+    {
+        if(itr->name.toStdString() == name)
+            return *itr;
+    }
+}
+
+void MainWindow::ResetTrees()
+{
+    //texture
+    QTreeWidgetItem* itm = GetTreeViewRoot(BASEASSETS, "Texture");
+    clearAllNodes(itm);
+    //sound
+    itm = GetTreeViewRoot(BASEASSETS, "Sound");
+    clearAllNodes(itm);
+    //Plugin
+    itm = GetTreeViewRoot(BASEASSETS, "Plugin");
+    clearAllNodes(itm);
+    //sound
+    itm = GetTreeViewRoot(BASEASSETS, "Script");
+    clearAllNodes(itm);
+    //physics
+    itm = GetTreeViewRoot(BASEASSETS, "Physics");
+    clearAllNodes(itm);
+
+    //unit
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Unit");
+    clearAllNodes(itm);
+    //trigger
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Trigger");
+    clearAllNodes(itm);
+    //locale
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Locale");
+    clearAllNodes(itm);
+    //ui
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "UI");
+    clearAllNodes(itm);
+    //cursor
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Cursor");
+    clearAllNodes(itm);
+    //cursorset
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Cursorset");
+    clearAllNodes(itm);
+    //layer
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Layer");
+    clearAllNodes(itm);
+    //layerset
+    itm = GetTreeViewRoot(REGISTEREDOBJS, "Layerset");
+    clearAllNodes(itm);
+
+    //clear trees
+    if(tvBaseAssetsCount)
+    {
+        ui->tvBaseAssets->clear();
+        tvBaseAssetsCount = 0;
+        for(size_t i = 0; i < tvBaseAssets_bk->topLevelItemCount(); i++)
+        {
+            QTreeWidgetItem* tmp = new QTreeWidgetItem(*tvBaseAssets_bk->topLevelItem(i));
+            ui->tvBaseAssets->addTopLevelItem(tmp);
+        }
+    }
+    if(tvRegisteredObjsCount)
+    {
+        ui->tvRegisteredObjects->clear();
+        tvRegisteredObjsCount = 0;
+        for(size_t i = 0; i < tvRegisteredObjs_bk->topLevelItemCount(); i++)
+        {
+            QTreeWidgetItem* tmp =new QTreeWidgetItem(*tvRegisteredObjs_bk->topLevelItem(i));
+            ui->tvRegisteredObjects->addTopLevelItem(tmp);
+        }
+    }
+    if(tvObjsListCount)
+    {
+        ui->tvObjList->clear();
+        tvObjsListCount = 0;
+    }
+    if(tvUIElementsCount)
+    {
+        ui->tvUIElements->clear();
+        tvUIElementsCount = 0;
+    }
 }
 
 void MainWindow::on_action_Exit_triggered()
@@ -158,8 +367,17 @@ void MainWindow::on_pbModBrowse_clicked()
     modRootPath = ui->leMod->text().toStdString();
     modPath = modRootPath + "/" + modName;
 
+    //Let's clear the asset lists if they were filled in a previous load
+    ResetTrees();
+
     //Let's load presaved assets
     loadProjectObjects();
+
+    //Load some basic video settings so we can get the engine drawing!
+    loadVideoSettings();
+    frame = new QTimer(this);
+    connect(frame, SIGNAL(timeout()), this, SLOT(drawObjs()));
+    frame->start(17);
 
 
     //Finally, we enable the other tabs and allow the user to do his/her work
@@ -440,16 +658,53 @@ void MainWindow::loadProjectObjects()
 
 }
 
+void MainWindow::loadVideoSettings()
+{
+    //Basic variables
+    std::string rootDir, modLoc, saveLoc, gameName, icon, renderQuality, driver;
+    size_t fps, width, height, bpp, blitlvls, freq, chan, chunksize, displayIndex, displayCount, screenmode, vol;
+    data_base *gameDOM = DOM;
+
+    rootDir = modRootPath;
+
+    modLoc = gameDOM->GetStrFromData("selected_mod");
+    gameName = gameDOM->GetStrFromData("game_name");
+    icon = gameDOM->GetStrFromData("icon");
+    displayIndex = gameDOM->GetIntFromData("current_display");
+    renderQuality = gameDOM->GetStrFromData("render_quality");
+    fps = gameDOM->GetIntFromData("frames_per_second");
+    width = gameDOM->GetIntFromData("screen_width");
+    height = gameDOM->GetIntFromData("screen_height");
+    bpp = gameDOM->GetIntFromData("screen_bpp");
+    blitlvls = gameDOM->GetIntFromData("blit_levels");
+    screenmode = gameDOM->GetIntFromData("screen_mode");
+    driver = gameDOM->GetStrFromData("video_driver");
+    freq = gameDOM->GetIntFromData("frequency");
+    chan = gameDOM->GetIntFromData("channels");
+    chunksize = gameDOM->GetIntFromData("chunk_size");
+    vol = gameDOM->GetIntFromData("sound_volume");
+
+
+    engine->SetInfo(rootDir, modLoc, saveLoc, gameName, icon, renderQuality,
+                    displayCount, displayIndex, fps, width, height, bpp,
+                    blitlvls, screenmode, driver, freq, chan, chunksize);
+    engine->SetSoundVolume(vol);
+}
+
 void MainWindow::registerProjectObjects(const QStringList &lst, const std::string &path, size_t type)
 {
     data_base file;
     std::string name, textbox_file, rowName;
+    bool isSet = false;
     char treeView = 0;
     for(size_t i = 0; i < lst.count(); i++)
     {
         /*
          * */
         file.OpenFile((path + "/" + lst[i].toStdString()).c_str());
+        if(lst[i].toStdString().find("set") < lst[i].size())
+            isSet = true;
+
         switch(type)
         {
         //All unit kind of objects
@@ -473,12 +728,16 @@ void MainWindow::registerProjectObjects(const QStringList &lst, const std::strin
             //All cursors
         case CURSOR:
         case OBJTYPE|CURSOR:
+            if(isSet)
+                break;
             name = file.GetStrFromData("cur_name");
             treeView = REGISTEREDOBJS;
             rowName = "Cursor";
             goto default_actions;
         case LAYER:
         case OBJTYPE|LAYER:
+            if(isSet)
+                break;
             name = file.GetStrFromData("layer_name");
             treeView = REGISTEREDOBJS;
             rowName = "Layer";
@@ -488,9 +747,9 @@ void MainWindow::registerProjectObjects(const QStringList &lst, const std::strin
         case UITYPE|TEXTBOX:
             file.CloseFile();
             textbox_file = lst[i].toStdString();
-            textbox_file.find("_button.txt") && textbox_file.find("_button.txt") <= textbox_file.size() ? textbox_file = textbox_file.substr(textbox_file.find("_button.txt")) + ".txt" : textbox_file = textbox_file;
+            textbox_file.find("_button.txt") && textbox_file.find("_button.txt") < textbox_file.size() ? textbox_file = textbox_file.substr(0, textbox_file.find("_button.txt")) + ".txt" : textbox_file = textbox_file;
             file.OpenFile((path + "/" + textbox_file).c_str());
-            name = file.GetStrFromData("name");
+            name = textbox_file;
             treeView = REGISTEREDOBJS;
             rowName = "UI";
             goto default_actions;
@@ -531,7 +790,7 @@ void MainWindow::registerProjectObjects(const QStringList &lst, const std::strin
 
             catch_all:
             textbox_file = lst[i].toStdString();
-            textbox_file.find(".set") && textbox_file.find(".set") <= textbox_file.size() ? textbox_file = textbox_file.substr(textbox_file.find(".set")) : textbox_file = textbox_file;
+            textbox_file.find(".set") && textbox_file.find(".set") <= textbox_file.size() ? textbox_file = textbox_file.substr(0, textbox_file.find("set")) : textbox_file = textbox_file;
             name = textbox_file;
             goto default_actions;
         default:
@@ -543,12 +802,35 @@ void MainWindow::registerProjectObjects(const QStringList &lst, const std::strin
     }
 }
 
-void MainWindow::clearTreeViews(size_t treeView, QTreeWidgetItem *root)
+void MainWindow::clearAll(QTreeWidgetItem *root)
 {
     //Null case
+    if(root == NULL)
+        return;
+
     if(root->childCount() == 0)
     {
+        AssetNode tmp = assets[root->text(0)];
+        assets.erase(root->text(0));
+        return;
+    }
 
+    if(root->childCount() > 0)
+    {
+        for(size_t i = 0; i < root->childCount(); i++)
+        {
+            clearAll(root->child(i));
+        }
+        return;
+    }
+    return;
+}
+
+void MainWindow::clearAllNodes(QTreeWidgetItem *root)
+{
+    for(size_t i = 0; i < root->childCount(); i++)
+    {
+        clearAll(root->child(i));
     }
 }
 
@@ -556,6 +838,42 @@ std::string MainWindow::getRelPath(const std::string &path)
 {
     size_t start = path.find(modRootPath);
     return path.substr(start, path.size() - start);
+}
+
+size_t MainWindow::GetBlitOrderFromType(size_t type)
+{
+    switch(type)
+    {
+    //All unit kind of objects
+    case UNIT:
+    case OBJECT:
+    case PROJECTILE:
+    case OBJTYPE|UNIT:
+    case OBJTYPE|OBJECT:
+    case OBJTYPE|PROJECTILE:
+    //All gameplay accessories
+    case TRIGGER:
+    case OBJTYPE|TRIGGER:
+    case SOUND:
+    case OBJTYPE|SOUND:
+        return 20;
+    //All interface components
+    case CURSOR:
+    case OBJTYPE|CURSOR:
+    case UITYPE:
+    case UITYPE|BUTTON:
+    case UITYPE|TEXTBOX:
+        return 40;
+    //All background components
+    case LAYER:
+    case OBJTYPE|LAYER:
+    case LAYERSET:
+    case OBJTYPE|LAYERSET:
+        return 10;
+    defaut:
+    //Anything else at same level as most units in the game
+    return 20;
+    }
 }
 
 void MainWindow::on_pbSoundBrowse_clicked()
@@ -815,6 +1133,7 @@ void MainWindow::on_pbNewObj_clicked()
     case 7://Unit settings
     {
         UnitSettings unit(this);
+        unit.SetRootLocation(modName, modPath);
         unit.exec();
         break;
     }
@@ -822,6 +1141,7 @@ void MainWindow::on_pbNewObj_clicked()
     case 2://Cursor set
     {
         cursorsettings cursor(this);
+        cursor.SetRootLocation(modName, modPath);
         cursor.exec();
         break;
     }
@@ -829,6 +1149,7 @@ void MainWindow::on_pbNewObj_clicked()
     case 4://Layer set
     {
         Layersettings settings(this);
+        settings.SetRootLocation(modName, modPath);
         settings.exec();
         break;
     }
@@ -836,11 +1157,15 @@ void MainWindow::on_pbNewObj_clicked()
         break;
     case 6://Trigger
     {
+        trigger_settings trigger;
+        trigger.SetRootLocation(modName, modPath);
+        trigger.exec();
         break;
     }
     case 8://UI
     {
         UI_Elements ui_stuff(this);
+        ui_stuff.SetRootLocation(modName, modPath);
         ui_stuff.exec();
         break;
     }
@@ -1013,12 +1338,16 @@ void MainWindow::on_pbDelAsset_clicked()
 {
     RemoveAsset(ui->tvBaseAssets->currentItem()->text(0).toStdString());
     delete ui->tvBaseAssets->currentItem();
+    if(tvBaseAssetsCount > 0)
+        tvBaseAssetsCount--;
 }
 
 void MainWindow::on_pbDelObj_clicked()
 {
     RemoveAsset(ui->tvRegisteredObjects->currentItem()->text(0).toStdString());
     delete ui->tvRegisteredObjects->currentItem();
+    if(tvRegisteredObjsCount > 0)
+        tvRegisteredObjsCount--;
 }
 
 void MainWindow::on_sbWidth_editingFinished()
@@ -1035,4 +1364,96 @@ void MainWindow::on_sbWidth_valueChanged(int arg1)
 
     if(width > ui->sbWidth->value())
         ui->sbFrames->setValue(width / ui->sbWidth->value());
+}
+
+char getTreeByType(byte type, byte subtype)
+{
+    if(subtype == BASEASSET)
+        switch(type)
+        {
+        //All unit kind of objects
+        case UNIT:
+        case OBJECT:
+        case PROJECTILE:
+        case OBJTYPE|UNIT:
+        case OBJTYPE|OBJECT:
+        case OBJTYPE|PROJECTILE:
+            //All triggers
+        case TRIGGER:
+        case OBJTYPE|TRIGGER:
+            //All cursors
+        case CURSOR:
+        case OBJTYPE|CURSOR:
+        case LAYER:
+        case OBJTYPE|LAYER:
+        case LAYERSET:
+        case OBJTYPE|LAYERSET:
+        case UITYPE:
+        case UITYPE|BUTTON:
+        case UITYPE|TEXTBOX:
+            return REGISTEREDOBJS;
+            //All textures
+        case TEXTURE:
+        case OBJTYPE|TEXTURE:
+            //All sounds
+        case SOUND:
+        case OBJTYPE|SOUND:
+        case CODETYPE|PLUGIN:
+        case CODETYPE|SCRIPT:
+        case PHYSICS:
+        case OBJTYPE|PHYSICS:
+            return BASEASSETS;
+        default:
+            return REGISTEREDOBJS;
+        }
+    else if(subtype == INSTANCE)
+        switch(type)
+        {
+        //All unit kind of objects
+        case UNIT:
+        case OBJECT:
+        case PROJECTILE:
+        case OBJTYPE|UNIT:
+        case OBJTYPE|OBJECT:
+        case OBJTYPE|PROJECTILE:
+            //All triggers
+        case TRIGGER:
+        case OBJTYPE|TRIGGER:
+            //All cursors
+        case CURSOR:
+        case OBJTYPE|CURSOR:
+        case LAYER:
+        case OBJTYPE|LAYER:
+        case LAYERSET:
+        case OBJTYPE|LAYERSET:
+            return OBJECTLIST;
+        case UITYPE:
+        case UITYPE|BUTTON:
+        case UITYPE|TEXTBOX:
+            return UIELEMENTS;
+        default:
+            return OBJECTLIST;
+        }
+}
+
+void MainWindow::on_gvGamePreview_customContextMenuRequested(const QPoint &pos)
+{
+    AssetMenu menu;
+    //QPoint p = this->mapTo(ui->gbGamePreview->window(), pos);//Because mapto is useless
+    QPoint p(pos.x() + this->window()->x() + ui->gbGamePreview->x() + 10,
+             pos.y() + this->window()->y() + ui->gbGamePreview->y() + menu.height() / 2);
+    menu.LoadItems(*ui->tvRegisteredObjects);
+    menu.SetPosition(p.x(), p.y());
+    menu.exec();
+}
+
+
+void MainWindow::on_pbClearUI_clicked()
+{
+    ui->tvUIElements->clear();
+}
+
+void MainWindow::drawObjs()
+{
+    engine->drawWorld();
 }

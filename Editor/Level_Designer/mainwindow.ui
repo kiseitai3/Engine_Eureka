@@ -30,7 +30,7 @@
      <item row="0" column="0">
       <widget class="QTabWidget" name="twTabs">
        <property name="currentIndex">
-        <number>2</number>
+        <number>4</number>
        </property>
        <widget class="QWidget" name="tabGeneral">
         <attribute name="title">
@@ -1338,9 +1338,9 @@
           </rect>
          </property>
          <property name="title">
-          <string>Objects Toolbox</string>
+          <string>Objects </string>
          </property>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="pbUndoObj">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1368,6 +1368,19 @@
            </property>
           </column>
          </widget>
+         <widget class="QPushButton" name="pbRemoveObj">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>530</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Remove</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QGroupBox" name="gbGamePreview">
          <property name="geometry">
@@ -1389,6 +1402,9 @@
             <width>711</width>
             <height>531</height>
            </rect>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
           </property>
           <property name="acceptDrops">
            <bool>false</bool>
@@ -1416,7 +1432,7 @@
           </rect>
          </property>
          <property name="title">
-          <string>UI Toolbox</string>
+          <string>UI Objects</string>
          </property>
          <widget class="QPushButton" name="pushButton">
           <property name="geometry">
@@ -1431,7 +1447,7 @@
            <string>Undo</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="pbClearUI">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1471,6 +1487,19 @@
             <string>Name</string>
            </property>
           </column>
+         </widget>
+         <widget class="QPushButton" name="pbRemovUI">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>520</y>
+            <width>93</width>
+            <height>28</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Remove</string>
+          </property>
          </widget>
         </widget>
         <widget class="QScrollArea" name="scrollArea">

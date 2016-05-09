@@ -1,0 +1,2 @@
+module_number = 1;
+module_0 = /plugins/pyMod.py;

@@ -66,10 +66,12 @@ public:
         label_2->setGeometry(QRect(10, 80, 141, 16));
         sbX = new QSpinBox(groupBox);
         sbX->setObjectName(QStringLiteral("sbX"));
+        sbX->setEnabled(false);
         sbX->setGeometry(QRect(170, 80, 61, 22));
         sbX->setMaximum(999999);
         sbY = new QSpinBox(groupBox);
         sbY->setObjectName(QStringLiteral("sbY"));
+        sbY->setEnabled(false);
         sbY->setGeometry(QRect(250, 80, 61, 22));
         sbY->setMaximum(999999);
         label_3 = new QLabel(groupBox);

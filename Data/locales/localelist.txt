@@ -1,0 +1,3 @@
+locale_count = 1;
+selected_locale = eng_locale.txt;
+locale_0 = /eng_locale.txt;

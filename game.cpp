@@ -5,6 +5,7 @@
 #include "database.h"
 #include <cmd_utils.h>
 
+
 //Engine name space macro
 //ENGINE_NAMESPACE
 
@@ -225,7 +226,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
     bool detectVid, detectAud, saveConstToFile;
 
     //Since we have setting data in a file and also in the save file (custom settings), we have to give priority to the user's settings!
-    if((tmpDB && tmpDB->isConnected()) || hasdb)
+    if(hasdb || (tmpDB && tmpDB->isConnected()))
     {
         //Extract data
         std::string tmpStr;
@@ -233,57 +234,60 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         char* tmp = SDL_GetBasePath();
         rootDir = tmp;
         SDL_free(tmp);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=root","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "root", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(tmpStr);
         rootDir += tmpStr;
 
         //Mod
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=current_mod","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "current_mod", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(modLoc);
         //Game Name
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=game_name","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "game_name", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(gameName);
         //Icon
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=icon","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "icon", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(icon);
         //Current display
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=current_display","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "current_display", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(displayIndex);
         //The rendering quality
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=render_quality","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "render_quality", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(renderQuality);
         //fps limit
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=frames_per_second","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "frames_per_second", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(fps);
         //Screen variables
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_width","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "screen_width", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(width);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_height","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "screen_height", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(height);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_bpp","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "screen_bp", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(bpp);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=blit_levels","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "blit_levels", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(blitlvls);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=screen_mode","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "screen_mode", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(screenmode);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=renderer","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "renderer", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(driver);
         //Sound settings
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=frequency","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "frequency", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(freq);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=channels","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "channels", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(chan);
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=chunk_size","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "chunk_size", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(chunksize);
         //Auto detect video settings?
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=auto_video","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "auto_video", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(detectVid);
         //Run the game in multithreading mode?
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=multithreaded","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "multithreaded", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(multithreaded);
         //Sound volume
-        tmpDB->query(tmpDB->prepareStatement("settings", "value", "variable=sound_volume","","",SELECT|WHERE));
+        tmpDB->query(tmpDB->prepareStatement("settings", "sound_volume", "id=1","","",SELECT|WHERE));
         tmpDB->GetResult(vol);
+        //Save destination
+        tmpDB->query(tmpDB->prepareStatement("settings", "save_destination", "id=1","","",SELECT|WHERE));
+        tmpDB->GetResult(saveLoc);
 
         displayCount = SDL_GetNumVideoDisplays();
 
@@ -317,6 +321,18 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
 
         /*The save file (sqlite) database will contain tables with save data, but also the input settings for the game!*/
         LoadCurrentKeyBindings(dbID);
+
+        /*Load locale data from database*/
+        LoadLocaleListFromDB(tmpDB);
+        SetLocale(GetSelectedLocale().path.c_str());
+
+        //Get logging path
+        tmpDB->query(tmpDB->prepareStatement("Log_Settings", "in", "id=1","","",SELECT|WHERE));
+        tmpDB->GetResult(g_in_path);
+        tmpDB->query(tmpDB->prepareStatement("Log_Settings", "out", "id=1","","",SELECT|WHERE));
+        tmpDB->GetResult(g_out_path);
+        tmpDB->query(tmpDB->prepareStatement("Log_Settings", "err", "id=1","","",SELECT|WHERE));
+        tmpDB->GetResult(g_err_path);
 
         if(saveConstToFile)
         {
@@ -353,6 +369,7 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
         detectVid = gameDOM.GetIntFromData("auto_video");
         multithreaded = gameDOM.GetIntFromData("multithreaded");
         vol = gameDOM.GetIntFromData("sound_volume");
+        saveLoc = gameDOM.GetStrFromData("save_destination");
 
         displayCount = SDL_GetNumVideoDisplays();
 
@@ -383,11 +400,16 @@ void Game::LoadGameConstants(cstr file, bool hasdb)
 
         //Load all of the expansion basic data!
         LoadExpansionInfo(file);
+
+        //Locale data
+        LoadLocaleListFromLoc(rootDir + "/locales");
+        SetLocale(GetSelectedLocale().path.c_str());
+
+        //Get logging path
+        g_in_path = gameDOM.GetStrFromData("in");
+        g_out_path = gameDOM.GetStrFromData("out");
+        g_err_path = gameDOM.GetStrFromData("err");
     }
-    //Get logging path
-    g_in_path = gameDOM.GetStrFromData("in");
-    g_out_path = gameDOM.GetStrFromData("out");
-    g_err_path = gameDOM.GetStrFromData("err");
     //Now we load the script file that will handle input for the chosen mod!
     LoadKeyScript((modLoc + gameDOM.GetStrFromData("key_script")).c_str());
     /*Finally, we load the main cursor set! Although the game scripts and plugins can load additional cursors, it is important to
@@ -500,7 +522,7 @@ void Game::LoadSaveData(const std::string& saveData)
         dst.OpenBinFileForQuickWrite(gameDOM.GetStrFromData("save_destination").c_str());
         data = src.GetStrBuffer();
         dst.WriteValueAndFlush(data);//copy data
-        tmpDB->connect(gameDOM.GetStrFromData("save").c_str());//attempt to connect again
+        tmpDB->connect(gameDOM.GetStrFromData("save_destination").c_str());//attempt to connect again
     }
 }
 

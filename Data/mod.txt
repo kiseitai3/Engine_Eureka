@@ -1,15 +1,12 @@
 //Main constants;
-mod_number = 2;
+mod_number = 1;
 selected_mod = campaign;
 mod_0_name = campaign;
 mod_0_path = campaign;
 mod_0_description = The campaign!;
-mod_1_name = pokemeds;
-mod_1_path = pokemeds;
-mod_1_description = ;
 mod_section_end;
 root = Data;
-game_name = Pokemeds;
+game_name = Campaign;
 icon = pm.ico;
 current_display = 0;
 render_quality = best;
@@ -50,3 +47,8 @@ key_script = /Scripts/input.py;
 //Cursor set;
 cursor_set = /Cursor/template_cursor_set.txt;
 
+//Streams
+in = LOCALAPPDATA/EurekaEngine/in.log
+out = LOCALAPPDATA/EurekaEngine/out.log
+err = LOCALAPPDATA/EurekaEngine/err.log
+

@@ -1,0 +1,7 @@
+mass = 20;
+C = 0;
+mu = 0.5;
+unmovable = 1;
+B = None;
+B_magnitude = 0;
+elasticity = 0.5;ð­ºî

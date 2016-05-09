@@ -2660,83 +2660,87 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_Layer swig_types[16]
 #define SWIGTYPE_p_LayerSystem swig_types[17]
 #define SWIGTYPE_p_Level swig_types[18]
-#define SWIGTYPE_p_ModAdapter swig_types[19]
-#define SWIGTYPE_p_ModuleNode swig_types[20]
-#define SWIGTYPE_p_ModuleSystem swig_types[21]
-#define SWIGTYPE_p_NetNode swig_types[22]
-#define SWIGTYPE_p_NetworkManager swig_types[23]
-#define SWIGTYPE_p_Particle swig_types[24]
-#define SWIGTYPE_p_ParticleCluster swig_types[25]
-#define SWIGTYPE_p_ParticleNode swig_types[26]
-#define SWIGTYPE_p_ParticleSystem swig_types[27]
-#define SWIGTYPE_p_Physics swig_types[28]
-#define SWIGTYPE_p_Range swig_types[29]
-#define SWIGTYPE_p_Resolution swig_types[30]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[31]
-#define SWIGTYPE_p_SDL_Event swig_types[32]
-#define SWIGTYPE_p_SDL_Rect swig_types[33]
-#define SWIGTYPE_p_SDL_Renderer swig_types[34]
-#define SWIGTYPE_p_SDL_Scancode swig_types[35]
-#define SWIGTYPE_p_SDL_Texture swig_types[36]
-#define SWIGTYPE_p_SQLGenerator swig_types[37]
-#define SWIGTYPE_p_SWIGCDATA swig_types[38]
-#define SWIGTYPE_p_ScreenInfo swig_types[39]
-#define SWIGTYPE_p_ScriptWrap swig_types[40]
-#define SWIGTYPE_p_SoundChunk swig_types[41]
-#define SWIGTYPE_p_SoundInfo swig_types[42]
-#define SWIGTYPE_p_SoundQueue swig_types[43]
-#define SWIGTYPE_p_SubFrame swig_types[44]
-#define SWIGTYPE_p_SynchData swig_types[45]
-#define SWIGTYPE_p_TCPClient swig_types[46]
-#define SWIGTYPE_p_TCPsocket swig_types[47]
-#define SWIGTYPE_p_TextureNode swig_types[48]
-#define SWIGTYPE_p_TextureStore swig_types[49]
-#define SWIGTYPE_p_ThreadSystem swig_types[50]
-#define SWIGTYPE_p_Timer swig_types[51]
-#define SWIGTYPE_p_TimerSystem swig_types[52]
-#define SWIGTYPE_p_Trigger swig_types[53]
-#define SWIGTYPE_p_TriggerManager swig_types[54]
-#define SWIGTYPE_p_UDPClient swig_types[55]
-#define SWIGTYPE_p_UDPsocket swig_types[56]
-#define SWIGTYPE_p_UI swig_types[57]
-#define SWIGTYPE_p_UIManager swig_types[58]
-#define SWIGTYPE_p_Uint8 swig_types[59]
-#define SWIGTYPE_p_Unit swig_types[60]
-#define SWIGTYPE_p_UnitManager swig_types[61]
-#define SWIGTYPE_p_UnitNode swig_types[62]
-#define SWIGTYPE_p_VideoFrame swig_types[63]
-#define SWIGTYPE_p_VideoPlayer swig_types[64]
-#define SWIGTYPE_p_bool swig_types[65]
-#define SWIGTYPE_p_char swig_types[66]
-#define SWIGTYPE_p_data_base swig_types[67]
-#define SWIGTYPE_p_double swig_types[68]
-#define SWIGTYPE_p_draw_base swig_types[69]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[70]
-#define SWIGTYPE_p_int swig_types[71]
-#define SWIGTYPE_p_math_VECTOR swig_types[72]
-#define SWIGTYPE_p_math_point swig_types[73]
-#define SWIGTYPE_p_pChar swig_types[74]
-#define SWIGTYPE_p_p_ParticleNode swig_types[75]
-#define SWIGTYPE_p_p_char swig_types[76]
-#define SWIGTYPE_p_psudo_type swig_types[77]
-#define SWIGTYPE_p_pthread_cond_t swig_types[78]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[79]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[80]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[81]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[82]
-#define SWIGTYPE_p_raw_input swig_types[83]
-#define SWIGTYPE_p_size_t swig_types[84]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[85]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[86]
-#define SWIGTYPE_p_std__string swig_types[87]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[88]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[89]
-#define SWIGTYPE_p_textbox swig_types[90]
-#define SWIGTYPE_p_unsigned_char swig_types[91]
-#define SWIGTYPE_p_unsigned_short swig_types[92]
-#define SWIGTYPE_p_void swig_types[93]
-static swig_type_info *swig_types[95];
-static swig_module_info swig_module = {swig_types, 94, 0, 0, 0, 0};
+#define SWIGTYPE_p_LocaleInfo swig_types[19]
+#define SWIGTYPE_p_LocaleItem swig_types[20]
+#define SWIGTYPE_p_LocaleNode swig_types[21]
+#define SWIGTYPE_p_LocaleReader swig_types[22]
+#define SWIGTYPE_p_ModAdapter swig_types[23]
+#define SWIGTYPE_p_ModuleNode swig_types[24]
+#define SWIGTYPE_p_ModuleSystem swig_types[25]
+#define SWIGTYPE_p_NetNode swig_types[26]
+#define SWIGTYPE_p_NetworkManager swig_types[27]
+#define SWIGTYPE_p_Particle swig_types[28]
+#define SWIGTYPE_p_ParticleCluster swig_types[29]
+#define SWIGTYPE_p_ParticleNode swig_types[30]
+#define SWIGTYPE_p_ParticleSystem swig_types[31]
+#define SWIGTYPE_p_Physics swig_types[32]
+#define SWIGTYPE_p_Range swig_types[33]
+#define SWIGTYPE_p_Resolution swig_types[34]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[35]
+#define SWIGTYPE_p_SDL_Event swig_types[36]
+#define SWIGTYPE_p_SDL_Rect swig_types[37]
+#define SWIGTYPE_p_SDL_Renderer swig_types[38]
+#define SWIGTYPE_p_SDL_Scancode swig_types[39]
+#define SWIGTYPE_p_SDL_Texture swig_types[40]
+#define SWIGTYPE_p_SQLGenerator swig_types[41]
+#define SWIGTYPE_p_SWIGCDATA swig_types[42]
+#define SWIGTYPE_p_ScreenInfo swig_types[43]
+#define SWIGTYPE_p_ScriptWrap swig_types[44]
+#define SWIGTYPE_p_SoundChunk swig_types[45]
+#define SWIGTYPE_p_SoundInfo swig_types[46]
+#define SWIGTYPE_p_SoundQueue swig_types[47]
+#define SWIGTYPE_p_SubFrame swig_types[48]
+#define SWIGTYPE_p_SynchData swig_types[49]
+#define SWIGTYPE_p_TCPClient swig_types[50]
+#define SWIGTYPE_p_TCPsocket swig_types[51]
+#define SWIGTYPE_p_TextureNode swig_types[52]
+#define SWIGTYPE_p_TextureStore swig_types[53]
+#define SWIGTYPE_p_ThreadSystem swig_types[54]
+#define SWIGTYPE_p_Timer swig_types[55]
+#define SWIGTYPE_p_TimerSystem swig_types[56]
+#define SWIGTYPE_p_Trigger swig_types[57]
+#define SWIGTYPE_p_TriggerManager swig_types[58]
+#define SWIGTYPE_p_UDPClient swig_types[59]
+#define SWIGTYPE_p_UDPsocket swig_types[60]
+#define SWIGTYPE_p_UI swig_types[61]
+#define SWIGTYPE_p_UIManager swig_types[62]
+#define SWIGTYPE_p_Uint8 swig_types[63]
+#define SWIGTYPE_p_Unit swig_types[64]
+#define SWIGTYPE_p_UnitManager swig_types[65]
+#define SWIGTYPE_p_UnitNode swig_types[66]
+#define SWIGTYPE_p_VideoFrame swig_types[67]
+#define SWIGTYPE_p_VideoPlayer swig_types[68]
+#define SWIGTYPE_p_bool swig_types[69]
+#define SWIGTYPE_p_char swig_types[70]
+#define SWIGTYPE_p_data_base swig_types[71]
+#define SWIGTYPE_p_double swig_types[72]
+#define SWIGTYPE_p_draw_base swig_types[73]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[74]
+#define SWIGTYPE_p_int swig_types[75]
+#define SWIGTYPE_p_math_VECTOR swig_types[76]
+#define SWIGTYPE_p_math_point swig_types[77]
+#define SWIGTYPE_p_pChar swig_types[78]
+#define SWIGTYPE_p_p_ParticleNode swig_types[79]
+#define SWIGTYPE_p_p_char swig_types[80]
+#define SWIGTYPE_p_psudo_type swig_types[81]
+#define SWIGTYPE_p_pthread_cond_t swig_types[82]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[83]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[84]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[85]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[86]
+#define SWIGTYPE_p_raw_input swig_types[87]
+#define SWIGTYPE_p_size_t swig_types[88]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[89]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[90]
+#define SWIGTYPE_p_std__string swig_types[91]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[92]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[93]
+#define SWIGTYPE_p_textbox swig_types[94]
+#define SWIGTYPE_p_unsigned_char swig_types[95]
+#define SWIGTYPE_p_unsigned_short swig_types[96]
+#define SWIGTYPE_p_void swig_types[97]
+static swig_type_info *swig_types[99];
+static swig_module_info swig_module = {swig_types, 98, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2831,6 +2835,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 #include "uimanager.h"
 #include "level.h"
 #include "soundqueue.h"
+#include "localesystem.h"
 #include "videoplayer.h"
 #include "BST.h"
 #include "Queue.h"
@@ -24773,6 +24778,304 @@ static swig_lua_class *swig_NetworkManager_bases[] = {0};
 static const char *swig_NetworkManager_base_names[] = {0};
 static swig_lua_class _wrap_class_NetworkManager = { "NetworkManager", "NetworkManager", &SWIGTYPE_p_NetworkManager,_proxy__wrap_new_NetworkManager, swig_delete_NetworkManager, swig_NetworkManager_methods, swig_NetworkManager_attributes, &swig_NetworkManager_Sf_SwigStatic, swig_NetworkManager_meta, swig_NetworkManager_bases, swig_NetworkManager_base_names };
 
+static int _wrap_new_LocaleNode(lua_State* L) {
+  int SWIG_arg = 0;
+  std::string *arg1 = 0 ;
+  std::string temp1 ;
+  LocaleNode *result = 0 ;
+  
+  SWIG_check_num_args("LocaleNode::LocaleNode",1,1)
+  if(!lua_isstring(L,1)) SWIG_fail_arg("LocaleNode::LocaleNode",1,"std::string const &");
+  temp1.assign(lua_tostring(L,1),lua_rawlen(L,1)); arg1=&temp1;
+  result = (LocaleNode *)new LocaleNode((std::string const &)*arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LocaleNode,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleNode_GetLocaleStringSize(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("LocaleNode::GetLocaleStringSize",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleNode::GetLocaleStringSize",1,"LocaleNode const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleNode,0))){
+    SWIG_fail_ptr("LocaleNode_GetLocaleStringSize",1,SWIGTYPE_p_LocaleNode);
+  }
+  
+  result = ((LocaleNode const *)arg1)->GetLocaleStringSize();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleNode_GetLocaleString(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  std::string result;
+  
+  SWIG_check_num_args("LocaleNode::GetLocaleString",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleNode::GetLocaleString",1,"LocaleNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleNode,0))){
+    SWIG_fail_ptr("LocaleNode_GetLocaleString",1,SWIGTYPE_p_LocaleNode);
+  }
+  
+  result = (arg1)->GetLocaleString();
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleNode___eq(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  bool result;
+  
+  SWIG_check_num_args("LocaleNode::operator ==",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleNode::operator ==",1,"LocaleNode *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleNode::operator ==",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleNode,0))){
+    SWIG_fail_ptr("LocaleNode___eq",1,SWIGTYPE_p_LocaleNode);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (bool)(arg1)->operator ==((std::string const &)*arg2);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_LocaleNode(void *obj) {
+LocaleNode *arg1 = (LocaleNode *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_LocaleNode(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_LocaleNode);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_LocaleNode_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_LocaleNode_methods[]= {
+    { "GetLocaleStringSize", _wrap_LocaleNode_GetLocaleStringSize},
+    { "GetLocaleString", _wrap_LocaleNode_GetLocaleString},
+    { "__eq", _wrap_LocaleNode___eq},
+    {0,0}
+};
+static swig_lua_method swig_LocaleNode_meta[] = {
+    { "__eq", _wrap_LocaleNode___eq},
+    {0,0}
+};
+
+static swig_lua_attribute swig_LocaleNode_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_LocaleNode_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_LocaleNode_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_LocaleNode_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_LocaleNode_Sf_SwigStatic = {
+    "LocaleNode",
+    swig_LocaleNode_Sf_SwigStatic_methods,
+    swig_LocaleNode_Sf_SwigStatic_attributes,
+    swig_LocaleNode_Sf_SwigStatic_constants,
+    swig_LocaleNode_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_LocaleNode_bases[] = {0};
+static const char *swig_LocaleNode_base_names[] = {0};
+static swig_lua_class _wrap_class_LocaleNode = { "LocaleNode", "LocaleNode", &SWIGTYPE_p_LocaleNode,_proxy__wrap_new_LocaleNode, swig_delete_LocaleNode, swig_LocaleNode_methods, swig_LocaleNode_attributes, &swig_LocaleNode_Sf_SwigStatic, swig_LocaleNode_meta, swig_LocaleNode_bases, swig_LocaleNode_base_names };
+
+static int _wrap_new_LocaleReader(lua_State* L) {
+  int SWIG_arg = 0;
+  cstr arg1 = (cstr) 0 ;
+  LocaleReader *result = 0 ;
+  
+  SWIG_check_num_args("LocaleReader::LocaleReader",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("LocaleReader::LocaleReader",1,"cstr");
+  arg1 = (cstr)lua_tostring(L, 1);
+  result = (LocaleReader *)new LocaleReader(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LocaleReader,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleReader_ExpandInputString(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  std::string result;
+  
+  SWIG_check_num_args("LocaleReader::ExpandInputString",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleReader::ExpandInputString",1,"LocaleReader *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleReader::ExpandInputString",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleReader,0))){
+    SWIG_fail_ptr("LocaleReader_ExpandInputString",1,SWIGTYPE_p_LocaleReader);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->ExpandInputString((std::string const &)*arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleReader_CondenseInputString(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  std::string result;
+  
+  SWIG_check_num_args("LocaleReader::CondenseInputString",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleReader::CondenseInputString",1,"LocaleReader *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleReader::CondenseInputString",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleReader,0))){
+    SWIG_fail_ptr("LocaleReader_CondenseInputString",1,SWIGTYPE_p_LocaleReader);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = (arg1)->CondenseInputString((std::string const &)*arg2);
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleReader_GetLocaleName(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  std::string result;
+  
+  SWIG_check_num_args("LocaleReader::GetLocaleName",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleReader::GetLocaleName",1,"LocaleReader const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleReader,0))){
+    SWIG_fail_ptr("LocaleReader_GetLocaleName",1,SWIGTYPE_p_LocaleReader);
+  }
+  
+  result = ((LocaleReader const *)arg1)->GetLocaleName();
+  lua_pushlstring(L,(&result)->data(),(&result)->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_LocaleReader(void *obj) {
+LocaleReader *arg1 = (LocaleReader *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_LocaleReader(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_LocaleReader);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_LocaleReader_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_LocaleReader_methods[]= {
+    { "ExpandInputString", _wrap_LocaleReader_ExpandInputString},
+    { "CondenseInputString", _wrap_LocaleReader_CondenseInputString},
+    { "GetLocaleName", _wrap_LocaleReader_GetLocaleName},
+    {0,0}
+};
+static swig_lua_method swig_LocaleReader_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_LocaleReader_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_LocaleReader_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_LocaleReader_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_LocaleReader_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_LocaleReader_Sf_SwigStatic = {
+    "LocaleReader",
+    swig_LocaleReader_Sf_SwigStatic_methods,
+    swig_LocaleReader_Sf_SwigStatic_attributes,
+    swig_LocaleReader_Sf_SwigStatic_constants,
+    swig_LocaleReader_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_LocaleReader_bases[] = {0};
+static const char *swig_LocaleReader_base_names[] = {0};
+static swig_lua_class _wrap_class_LocaleReader = { "LocaleReader", "LocaleReader", &SWIGTYPE_p_LocaleReader,_proxy__wrap_new_LocaleReader, swig_delete_LocaleReader, swig_LocaleReader_methods, swig_LocaleReader_attributes, &swig_LocaleReader_Sf_SwigStatic, swig_LocaleReader_meta, swig_LocaleReader_bases, swig_LocaleReader_base_names };
+
 static int _wrap_new_IONode__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   bool arg1 ;
@@ -26430,6 +26733,174 @@ static swig_lua_class *swig_ExpansionItem_bases[] = {0};
 static const char *swig_ExpansionItem_base_names[] = {0};
 static swig_lua_class _wrap_class_ExpansionItem = { "ExpansionItem", "ExpansionItem", &SWIGTYPE_p_ExpansionItem,_proxy__wrap_new_ExpansionItem, swig_delete_ExpansionItem, swig_ExpansionItem_methods, swig_ExpansionItem_attributes, &swig_ExpansionItem_Sf_SwigStatic, swig_ExpansionItem_meta, swig_ExpansionItem_bases, swig_ExpansionItem_base_names };
 
+static int _wrap_LocaleItem_name_set(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("LocaleItem::name",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleItem::name",1,"LocaleItem *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleItem::name",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleItem,0))){
+    SWIG_fail_ptr("LocaleItem_name_set",1,SWIGTYPE_p_LocaleItem);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->name = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleItem_name_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("LocaleItem::name",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleItem::name",1,"LocaleItem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleItem,0))){
+    SWIG_fail_ptr("LocaleItem_name_get",1,SWIGTYPE_p_LocaleItem);
+  }
+  
+  result = (std::string *) & ((arg1)->name);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleItem_path_set(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("LocaleItem::path",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleItem::path",1,"LocaleItem *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleItem::path",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleItem,0))){
+    SWIG_fail_ptr("LocaleItem_path_set",1,SWIGTYPE_p_LocaleItem);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  if (arg1) (arg1)->path = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleItem_path_get(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("LocaleItem::path",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleItem::path",1,"LocaleItem *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleItem,0))){
+    SWIG_fail_ptr("LocaleItem_path_get",1,SWIGTYPE_p_LocaleItem);
+  }
+  
+  result = (std::string *) & ((arg1)->path);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_LocaleItem(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleItem *result = 0 ;
+  
+  SWIG_check_num_args("LocaleItem::LocaleItem",0,0)
+  result = (LocaleItem *)new LocaleItem();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LocaleItem,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_LocaleItem(void *obj) {
+LocaleItem *arg1 = (LocaleItem *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_LocaleItem(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_LocaleItem);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_LocaleItem_attributes[] = {
+    { "name", _wrap_LocaleItem_name_get, _wrap_LocaleItem_name_set },
+    { "path", _wrap_LocaleItem_path_get, _wrap_LocaleItem_path_set },
+    {0,0,0}
+};
+static swig_lua_method swig_LocaleItem_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_LocaleItem_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_LocaleItem_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_LocaleItem_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_LocaleItem_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_LocaleItem_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_LocaleItem_Sf_SwigStatic = {
+    "LocaleItem",
+    swig_LocaleItem_Sf_SwigStatic_methods,
+    swig_LocaleItem_Sf_SwigStatic_attributes,
+    swig_LocaleItem_Sf_SwigStatic_constants,
+    swig_LocaleItem_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_LocaleItem_bases[] = {0};
+static const char *swig_LocaleItem_base_names[] = {0};
+static swig_lua_class _wrap_class_LocaleItem = { "LocaleItem", "LocaleItem", &SWIGTYPE_p_LocaleItem,_proxy__wrap_new_LocaleItem, swig_delete_LocaleItem, swig_LocaleItem_methods, swig_LocaleItem_attributes, &swig_LocaleItem_Sf_SwigStatic, swig_LocaleItem_meta, swig_LocaleItem_bases, swig_LocaleItem_base_names };
+
 static int _wrap_ExpansionInfo_LoadExpansionInfo__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
@@ -26775,6 +27246,331 @@ static swig_lua_namespace swig_ExpansionInfo_Sf_SwigStatic = {
 static swig_lua_class *swig_ExpansionInfo_bases[] = {0};
 static const char *swig_ExpansionInfo_base_names[] = {0};
 static swig_lua_class _wrap_class_ExpansionInfo = { "ExpansionInfo", "ExpansionInfo", &SWIGTYPE_p_ExpansionInfo,_proxy__wrap_new_ExpansionInfo, swig_delete_ExpansionInfo, swig_ExpansionInfo_methods, swig_ExpansionInfo_attributes, &swig_ExpansionInfo_Sf_SwigStatic, swig_ExpansionInfo_meta, swig_ExpansionInfo_bases, swig_ExpansionInfo_base_names };
+
+static int _wrap_LocaleInfo_LoadLocaleListFromLoc(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  
+  SWIG_check_num_args("LocaleInfo::LoadLocaleListFromLoc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::LoadLocaleListFromLoc",1,"LocaleInfo *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleInfo::LoadLocaleListFromLoc",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_LoadLocaleListFromLoc",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  (arg1)->LoadLocaleListFromLoc((std::string const &)*arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_LoadLocaleListFromDB(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  DataBase *arg2 = (DataBase *) 0 ;
+  
+  SWIG_check_num_args("LocaleInfo::LoadLocaleListFromDB",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::LoadLocaleListFromDB",1,"LocaleInfo *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("LocaleInfo::LoadLocaleListFromDB",2,"DataBase *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_LoadLocaleListFromDB",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DataBase,0))){
+    SWIG_fail_ptr("LocaleInfo_LoadLocaleListFromDB",2,SWIGTYPE_p_DataBase);
+  }
+  
+  (arg1)->LoadLocaleListFromDB(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_AddLocaleToList(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  std::string temp2 ;
+  std::string temp3 ;
+  
+  SWIG_check_num_args("LocaleInfo::AddLocaleToList",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::AddLocaleToList",1,"LocaleInfo *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleInfo::AddLocaleToList",2,"std::string const &");
+  if(!lua_isstring(L,3)) SWIG_fail_arg("LocaleInfo::AddLocaleToList",3,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_AddLocaleToList",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  temp3.assign(lua_tostring(L,3),lua_rawlen(L,3)); arg3=&temp3;
+  (arg1)->AddLocaleToList((std::string const &)*arg2,(std::string const &)*arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_GetLocaleInfo__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string temp2 ;
+  LocaleItem result;
+  
+  SWIG_check_num_args("LocaleInfo::GetLocaleInfo",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::GetLocaleInfo",1,"LocaleInfo const *");
+  if(!lua_isstring(L,2)) SWIG_fail_arg("LocaleInfo::GetLocaleInfo",2,"std::string const &");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_GetLocaleInfo",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  temp2.assign(lua_tostring(L,2),lua_rawlen(L,2)); arg2=&temp2;
+  result = ((LocaleInfo const *)arg1)->GetLocaleInfo((std::string const &)*arg2);
+  {
+    LocaleItem * resultptr = new LocaleItem((const LocaleItem &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_LocaleItem,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_GetLocaleInfo__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  size_t arg2 ;
+  LocaleItem result;
+  
+  SWIG_check_num_args("LocaleInfo::GetLocaleInfo",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::GetLocaleInfo",1,"LocaleInfo const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("LocaleInfo::GetLocaleInfo",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_GetLocaleInfo",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = ((LocaleInfo const *)arg1)->GetLocaleInfo(arg2);
+  {
+    LocaleItem * resultptr = new LocaleItem((const LocaleItem &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_LocaleItem,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_GetLocaleInfo(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_LocaleInfo, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isnumber(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_LocaleInfo_GetLocaleInfo__SWIG_1(L);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_LocaleInfo, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = lua_isstring(L,argv[1]);
+      }
+      if (_v) {
+        return _wrap_LocaleInfo_GetLocaleInfo__SWIG_0(L);
+      }
+    }
+  }
+  
+  SWIG_Lua_pusherrstring(L,"Wrong arguments for overloaded function 'LocaleInfo_GetLocaleInfo'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    LocaleInfo::GetLocaleInfo(std::string const &) const\n"
+    "    LocaleInfo::GetLocaleInfo(size_t) const\n");
+  lua_error(L);return 0;
+}
+
+
+static int _wrap_LocaleInfo_GetSelectedLocale(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  LocaleItem result;
+  
+  SWIG_check_num_args("LocaleInfo::GetSelectedLocale",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::GetSelectedLocale",1,"LocaleInfo const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_GetSelectedLocale",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  result = ((LocaleInfo const *)arg1)->GetSelectedLocale();
+  {
+    LocaleItem * resultptr = new LocaleItem((const LocaleItem &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_LocaleItem,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_LocaleInfo_GetLocaleItemCount(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("LocaleInfo::GetLocaleItemCount",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LocaleInfo::GetLocaleItemCount",1,"LocaleInfo const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_LocaleInfo,0))){
+    SWIG_fail_ptr("LocaleInfo_GetLocaleItemCount",1,SWIGTYPE_p_LocaleInfo);
+  }
+  
+  result = ((LocaleInfo const *)arg1)->GetLocaleItemCount();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_LocaleInfo(lua_State* L) {
+  int SWIG_arg = 0;
+  LocaleInfo *result = 0 ;
+  
+  SWIG_check_num_args("LocaleInfo::LocaleInfo",0,0)
+  result = (LocaleInfo *)new LocaleInfo();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_LocaleInfo,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_LocaleInfo(void *obj) {
+LocaleInfo *arg1 = (LocaleInfo *) obj;
+delete arg1;
+}
+static int _proxy__wrap_new_LocaleInfo(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_LocaleInfo);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_LocaleInfo_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_method swig_LocaleInfo_methods[]= {
+    { "LoadLocaleListFromLoc", _wrap_LocaleInfo_LoadLocaleListFromLoc},
+    { "LoadLocaleListFromDB", _wrap_LocaleInfo_LoadLocaleListFromDB},
+    { "AddLocaleToList", _wrap_LocaleInfo_AddLocaleToList},
+    { "GetLocaleInfo", _wrap_LocaleInfo_GetLocaleInfo},
+    { "GetSelectedLocale", _wrap_LocaleInfo_GetSelectedLocale},
+    { "GetLocaleItemCount", _wrap_LocaleInfo_GetLocaleItemCount},
+    {0,0}
+};
+static swig_lua_method swig_LocaleInfo_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_LocaleInfo_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_LocaleInfo_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_LocaleInfo_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_LocaleInfo_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_LocaleInfo_Sf_SwigStatic = {
+    "LocaleInfo",
+    swig_LocaleInfo_Sf_SwigStatic_methods,
+    swig_LocaleInfo_Sf_SwigStatic_attributes,
+    swig_LocaleInfo_Sf_SwigStatic_constants,
+    swig_LocaleInfo_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_LocaleInfo_bases[] = {0};
+static const char *swig_LocaleInfo_base_names[] = {0};
+static swig_lua_class _wrap_class_LocaleInfo = { "LocaleInfo", "LocaleInfo", &SWIGTYPE_p_LocaleInfo,_proxy__wrap_new_LocaleInfo, swig_delete_LocaleInfo, swig_LocaleInfo_methods, swig_LocaleInfo_attributes, &swig_LocaleInfo_Sf_SwigStatic, swig_LocaleInfo_meta, swig_LocaleInfo_bases, swig_LocaleInfo_base_names };
 
 static int _wrap_new_ScreenInfo(lua_State* L) {
   int SWIG_arg = 0;
@@ -31054,8 +31850,8 @@ static swig_lua_namespace swig_GameInfo_Sf_SwigStatic = {
     swig_GameInfo_Sf_SwigStatic_classes,
     0
 };
-static swig_lua_class *swig_GameInfo_bases[] = {0,0,0,0};
-static const char *swig_GameInfo_base_names[] = {"ScreenInfo *","SoundInfo *","ExpansionInfo *",0};
+static swig_lua_class *swig_GameInfo_bases[] = {0,0,0,0,0};
+static const char *swig_GameInfo_base_names[] = {"ScreenInfo *","SoundInfo *","ExpansionInfo *","LocaleInfo *",0};
 static swig_lua_class _wrap_class_GameInfo = { "GameInfo", "GameInfo", &SWIGTYPE_p_GameInfo,_proxy__wrap_new_GameInfo, swig_delete_GameInfo, swig_GameInfo_methods, swig_GameInfo_attributes, &swig_GameInfo_Sf_SwigStatic, swig_GameInfo_meta, swig_GameInfo_bases, swig_GameInfo_base_names };
 
 static int _wrap_new_TriggerManager(lua_State* L) {
@@ -39111,12 +39907,16 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_TCPClient,
 &_wrap_class_NetNode,
 &_wrap_class_NetworkManager,
+&_wrap_class_LocaleNode,
+&_wrap_class_LocaleReader,
 &_wrap_class_IONode,
 &_wrap_class_IOManager,
 &_wrap_class_Layer,
 &_wrap_class_LayerSystem,
 &_wrap_class_ExpansionItem,
+&_wrap_class_LocaleItem,
 &_wrap_class_ExpansionInfo,
+&_wrap_class_LocaleInfo,
 &_wrap_class_ScreenInfo,
 &_wrap_class_SoundInfo,
 &_wrap_class_GameInfo,
@@ -39166,6 +39966,12 @@ static void *_p_GameInfoTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemor
 }
 static void *_p_GameTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ExpansionInfo *) (GameInfo *) ((Game *) x));
+}
+static void *_p_GameInfoTo_p_LocaleInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((LocaleInfo *)  ((GameInfo *) x));
+}
+static void *_p_GameTo_p_LocaleInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((LocaleInfo *) (GameInfo *) ((Game *) x));
 }
 static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundQueue *)  ((Game *) x));
@@ -39221,14 +40027,14 @@ static void *_p_GameTo_p_ScreenInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static void *_p_GameTo_p_GameInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((GameInfo *)  ((Game *) x));
 }
-static void *_p_GameTo_p_UIManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((UIManager *)  ((Game *) x));
-}
 static void *_p_GameTo_p_IOManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((IOManager *)  ((Game *) x));
 }
 static void *_p_GameTo_p_UnitManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UnitManager *)  ((Game *) x));
+}
+static void *_p_GameTo_p_UIManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((UIManager *)  ((Game *) x));
 }
 static void *_p_GameTo_p_NetworkManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((NetworkManager *)  ((Game *) x));
@@ -39267,6 +40073,10 @@ static swig_type_info _swigt__p_KeyNode = {"_p_KeyNode", "KeyNode *", 0, 0, (voi
 static swig_type_info _swigt__p_Layer = {"_p_Layer", "Layer *", 0, 0, (void*)&_wrap_class_Layer, 0};
 static swig_type_info _swigt__p_LayerSystem = {"_p_LayerSystem", "LayerSystem *", 0, 0, (void*)&_wrap_class_LayerSystem, 0};
 static swig_type_info _swigt__p_Level = {"_p_Level", "Level *", 0, 0, (void*)&_wrap_class_Level, 0};
+static swig_type_info _swigt__p_LocaleInfo = {"_p_LocaleInfo", "LocaleInfo *", 0, 0, (void*)&_wrap_class_LocaleInfo, 0};
+static swig_type_info _swigt__p_LocaleItem = {"_p_LocaleItem", "LocaleItem *", 0, 0, (void*)&_wrap_class_LocaleItem, 0};
+static swig_type_info _swigt__p_LocaleNode = {"_p_LocaleNode", "LocaleNode *", 0, 0, (void*)&_wrap_class_LocaleNode, 0};
+static swig_type_info _swigt__p_LocaleReader = {"_p_LocaleReader", "LocaleReader *", 0, 0, (void*)&_wrap_class_LocaleReader, 0};
 static swig_type_info _swigt__p_ModAdapter = {"_p_ModAdapter", "ModAdapter *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ModuleNode = {"_p_ModuleNode", "ModuleNode *|Module *", 0, 0, (void*)&_wrap_class_Module, 0};
 static swig_type_info _swigt__p_ModuleSystem = {"_p_ModuleSystem", "ModuleSystem *", 0, 0, (void*)&_wrap_class_ModuleSystem, 0};
@@ -39363,6 +40173,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Layer,
   &_swigt__p_LayerSystem,
   &_swigt__p_Level,
+  &_swigt__p_LocaleInfo,
+  &_swigt__p_LocaleItem,
+  &_swigt__p_LocaleNode,
+  &_swigt__p_LocaleReader,
   &_swigt__p_ModAdapter,
   &_swigt__p_ModuleNode,
   &_swigt__p_ModuleSystem,
@@ -39459,6 +40273,10 @@ static swig_cast_info _swigc__p_KeyNode[] = {  {&_swigt__p_KeyNode, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_Layer[] = {  {&_swigt__p_Layer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LayerSystem[] = {  {&_swigt__p_LayerSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_LayerSystem, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Level[] = {  {&_swigt__p_Level, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleInfo[] = {  {&_swigt__p_LocaleInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_LocaleInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_LocaleInfo, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleItem[] = {  {&_swigt__p_LocaleItem, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleNode[] = {  {&_swigt__p_LocaleNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleReader[] = {  {&_swigt__p_LocaleReader, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModAdapter[] = {  {&_swigt__p_ModAdapter, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModuleNode[] = {  {&_swigt__p_ModuleNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModuleSystem[] = {  {&_swigt__p_Game, _p_GameTo_p_ModuleSystem, 0, 0},  {&_swigt__p_ModuleSystem, 0, 0, 0},{0, 0, 0, 0}};
@@ -39555,6 +40373,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Layer,
   _swigc__p_LayerSystem,
   _swigc__p_Level,
+  _swigc__p_LocaleInfo,
+  _swigc__p_LocaleItem,
+  _swigc__p_LocaleNode,
+  _swigc__p_LocaleReader,
   _swigc__p_ModAdapter,
   _swigc__p_ModuleNode,
   _swigc__p_ModuleSystem,

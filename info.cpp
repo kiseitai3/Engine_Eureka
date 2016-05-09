@@ -330,5 +330,85 @@ void ExpansionInfo::LoadExpansionInfo(DataBase* db)
     }
 }
 
+/*Locales*/
+void LocaleInfo::LoadLocaleListFromLoc(const std::string& dir)
+{
+    data_base DOM;
+    std::string path = dir + "/localelist.txt";
+    DOM.OpenFile(path.c_str());
+
+    for(size_t i = 0; i < DOM.GetIntFromData("locale_count"); i++)
+    {
+        path = dir + DOM.GetStrFromData("locale_" + intToStr(i));
+        data_base localeF(path.c_str());
+        AddLocaleToList(localeF.GetStrFromData("name"), path);
+    }
+
+}
+
+void LocaleInfo::LoadLocaleListFromDB(DataBase* db)
+{
+    int rowCount = 0;
+    int selectedItem = 0;
+    LocaleItem tmp;
+
+    //First, we get the number of records in the database!
+    db->query(db->prepareStatement("locales", "id","","","",SELECT));
+    db->GetResult(rowCount);
+    //Now we go through every record until the end
+    for(int i = 0; i < rowCount; i++)
+    {
+        db->query(db->prepareStatement("locales", "name,path,selected","id=" + intToStr(i),"","",SELECT));
+        //extract record data
+        db->GetResult(tmp.name);
+        db->GetResult(tmp.path, 1);
+        db->GetResult(selectedItem, 2);
+        //copy this item into the list!
+        locales.push_back(tmp);
+
+        if(selectedItem)
+            selected = tmp;
+    }
+}
+
+void LocaleInfo::AddLocaleToList(const std::string& name, const std::string& path)
+{
+    LocaleItem i;
+    i.name = name;
+    i.path = path;
+    locales.push_back(i);
+}
+
+LocaleItem LocaleInfo::GetLocaleInfo(const std::string& name) const
+{
+    for(std::list<LocaleItem>::const_iterator itr = locales.begin(); itr != locales.end(); itr++)
+    {
+        if(itr->name == name)
+        {
+            return *itr;
+        }
+    }
+}
+
+LocaleItem LocaleInfo::GetLocaleInfo(size_t id) const
+{
+    std::list<LocaleItem>::const_iterator itr = locales.begin();
+    for(size_t i = 0; i != id || itr != locales.end(); i++)
+    {
+        itr++;
+    }
+    return *itr;
+}
+
+LocaleItem LocaleInfo::GetSelectedLocale() const
+{
+    return selected;
+}
+
+size_t LocaleInfo::GetLocaleItemCount() const
+{
+    return locales.size();
+}
+
 //End of namespace macro
 //ENGINE_NAMESPACE_END

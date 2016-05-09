@@ -22,7 +22,9 @@ SOURCES += main.cpp\
     layersettings.cpp \
     ui_elements.cpp \
     color_picker.cpp \
-    trigger_settings.cpp
+    trigger_settings.cpp \
+    locale_settings.cpp \
+    assetmenu.cpp
 
 HEADERS  += mainwindow.h \
     data_base.h \
@@ -34,7 +36,9 @@ HEADERS  += mainwindow.h \
     layersettings.h \
     ui_elements.h \
     color_picker.h \
-    trigger_settings.h
+    trigger_settings.h \
+    locale_settings.h \
+    assetmenu.h
 
 FORMS    += mainwindow.ui \
     unitsettings.ui \
@@ -43,7 +47,9 @@ FORMS    += mainwindow.ui \
     layersettings.ui \
     ui_elements.ui \
     color_picker.ui \
-    trigger_settings.ui
+    trigger_settings.ui \
+    locale_settings.ui \
+    assetmenu.ui
 
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2-2.0.0/include
 INCLUDEPATH += $$PWD/../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2

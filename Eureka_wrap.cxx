@@ -2956,82 +2956,86 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_Layer swig_types[16]
 #define SWIGTYPE_p_LayerSystem swig_types[17]
 #define SWIGTYPE_p_Level swig_types[18]
-#define SWIGTYPE_p_ModAdapter swig_types[19]
-#define SWIGTYPE_p_ModuleNode swig_types[20]
-#define SWIGTYPE_p_ModuleSystem swig_types[21]
-#define SWIGTYPE_p_NetNode swig_types[22]
-#define SWIGTYPE_p_NetworkManager swig_types[23]
-#define SWIGTYPE_p_Particle swig_types[24]
-#define SWIGTYPE_p_ParticleCluster swig_types[25]
-#define SWIGTYPE_p_ParticleNode swig_types[26]
-#define SWIGTYPE_p_ParticleSystem swig_types[27]
-#define SWIGTYPE_p_Physics swig_types[28]
-#define SWIGTYPE_p_Range swig_types[29]
-#define SWIGTYPE_p_Resolution swig_types[30]
-#define SWIGTYPE_p_SDL_BlendMode swig_types[31]
-#define SWIGTYPE_p_SDL_Event swig_types[32]
-#define SWIGTYPE_p_SDL_Rect swig_types[33]
-#define SWIGTYPE_p_SDL_Renderer swig_types[34]
-#define SWIGTYPE_p_SDL_Scancode swig_types[35]
-#define SWIGTYPE_p_SDL_Texture swig_types[36]
-#define SWIGTYPE_p_SQLGenerator swig_types[37]
-#define SWIGTYPE_p_ScreenInfo swig_types[38]
-#define SWIGTYPE_p_ScriptWrap swig_types[39]
-#define SWIGTYPE_p_SoundChunk swig_types[40]
-#define SWIGTYPE_p_SoundInfo swig_types[41]
-#define SWIGTYPE_p_SoundQueue swig_types[42]
-#define SWIGTYPE_p_SubFrame swig_types[43]
-#define SWIGTYPE_p_SynchData swig_types[44]
-#define SWIGTYPE_p_TCPClient swig_types[45]
-#define SWIGTYPE_p_TCPsocket swig_types[46]
-#define SWIGTYPE_p_TextureNode swig_types[47]
-#define SWIGTYPE_p_TextureStore swig_types[48]
-#define SWIGTYPE_p_ThreadSystem swig_types[49]
-#define SWIGTYPE_p_Timer swig_types[50]
-#define SWIGTYPE_p_TimerSystem swig_types[51]
-#define SWIGTYPE_p_Trigger swig_types[52]
-#define SWIGTYPE_p_TriggerManager swig_types[53]
-#define SWIGTYPE_p_UDPClient swig_types[54]
-#define SWIGTYPE_p_UDPsocket swig_types[55]
-#define SWIGTYPE_p_UI swig_types[56]
-#define SWIGTYPE_p_UIManager swig_types[57]
-#define SWIGTYPE_p_Uint8 swig_types[58]
-#define SWIGTYPE_p_Unit swig_types[59]
-#define SWIGTYPE_p_UnitManager swig_types[60]
-#define SWIGTYPE_p_UnitNode swig_types[61]
-#define SWIGTYPE_p_VideoFrame swig_types[62]
-#define SWIGTYPE_p_VideoPlayer swig_types[63]
-#define SWIGTYPE_p_bool swig_types[64]
-#define SWIGTYPE_p_char swig_types[65]
-#define SWIGTYPE_p_data_base swig_types[66]
-#define SWIGTYPE_p_double swig_types[67]
-#define SWIGTYPE_p_draw_base swig_types[68]
-#define SWIGTYPE_p_f_p_void__p_void swig_types[69]
-#define SWIGTYPE_p_int swig_types[70]
-#define SWIGTYPE_p_math_VECTOR swig_types[71]
-#define SWIGTYPE_p_math_point swig_types[72]
-#define SWIGTYPE_p_pChar swig_types[73]
-#define SWIGTYPE_p_p_ParticleNode swig_types[74]
-#define SWIGTYPE_p_p_char swig_types[75]
-#define SWIGTYPE_p_psudo_type swig_types[76]
-#define SWIGTYPE_p_pthread_cond_t swig_types[77]
-#define SWIGTYPE_p_pthread_mutex_t swig_types[78]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[79]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[80]
-#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[81]
-#define SWIGTYPE_p_raw_input swig_types[82]
-#define SWIGTYPE_p_size_t swig_types[83]
-#define SWIGTYPE_p_std__listT_size_t_t swig_types[84]
-#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[85]
-#define SWIGTYPE_p_std__string swig_types[86]
-#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[87]
-#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[88]
-#define SWIGTYPE_p_textbox swig_types[89]
-#define SWIGTYPE_p_unsigned_char swig_types[90]
-#define SWIGTYPE_p_unsigned_short swig_types[91]
-#define SWIGTYPE_p_void swig_types[92]
-static swig_type_info *swig_types[94];
-static swig_module_info swig_module = {swig_types, 93, 0, 0, 0, 0};
+#define SWIGTYPE_p_LocaleInfo swig_types[19]
+#define SWIGTYPE_p_LocaleItem swig_types[20]
+#define SWIGTYPE_p_LocaleNode swig_types[21]
+#define SWIGTYPE_p_LocaleReader swig_types[22]
+#define SWIGTYPE_p_ModAdapter swig_types[23]
+#define SWIGTYPE_p_ModuleNode swig_types[24]
+#define SWIGTYPE_p_ModuleSystem swig_types[25]
+#define SWIGTYPE_p_NetNode swig_types[26]
+#define SWIGTYPE_p_NetworkManager swig_types[27]
+#define SWIGTYPE_p_Particle swig_types[28]
+#define SWIGTYPE_p_ParticleCluster swig_types[29]
+#define SWIGTYPE_p_ParticleNode swig_types[30]
+#define SWIGTYPE_p_ParticleSystem swig_types[31]
+#define SWIGTYPE_p_Physics swig_types[32]
+#define SWIGTYPE_p_Range swig_types[33]
+#define SWIGTYPE_p_Resolution swig_types[34]
+#define SWIGTYPE_p_SDL_BlendMode swig_types[35]
+#define SWIGTYPE_p_SDL_Event swig_types[36]
+#define SWIGTYPE_p_SDL_Rect swig_types[37]
+#define SWIGTYPE_p_SDL_Renderer swig_types[38]
+#define SWIGTYPE_p_SDL_Scancode swig_types[39]
+#define SWIGTYPE_p_SDL_Texture swig_types[40]
+#define SWIGTYPE_p_SQLGenerator swig_types[41]
+#define SWIGTYPE_p_ScreenInfo swig_types[42]
+#define SWIGTYPE_p_ScriptWrap swig_types[43]
+#define SWIGTYPE_p_SoundChunk swig_types[44]
+#define SWIGTYPE_p_SoundInfo swig_types[45]
+#define SWIGTYPE_p_SoundQueue swig_types[46]
+#define SWIGTYPE_p_SubFrame swig_types[47]
+#define SWIGTYPE_p_SynchData swig_types[48]
+#define SWIGTYPE_p_TCPClient swig_types[49]
+#define SWIGTYPE_p_TCPsocket swig_types[50]
+#define SWIGTYPE_p_TextureNode swig_types[51]
+#define SWIGTYPE_p_TextureStore swig_types[52]
+#define SWIGTYPE_p_ThreadSystem swig_types[53]
+#define SWIGTYPE_p_Timer swig_types[54]
+#define SWIGTYPE_p_TimerSystem swig_types[55]
+#define SWIGTYPE_p_Trigger swig_types[56]
+#define SWIGTYPE_p_TriggerManager swig_types[57]
+#define SWIGTYPE_p_UDPClient swig_types[58]
+#define SWIGTYPE_p_UDPsocket swig_types[59]
+#define SWIGTYPE_p_UI swig_types[60]
+#define SWIGTYPE_p_UIManager swig_types[61]
+#define SWIGTYPE_p_Uint8 swig_types[62]
+#define SWIGTYPE_p_Unit swig_types[63]
+#define SWIGTYPE_p_UnitManager swig_types[64]
+#define SWIGTYPE_p_UnitNode swig_types[65]
+#define SWIGTYPE_p_VideoFrame swig_types[66]
+#define SWIGTYPE_p_VideoPlayer swig_types[67]
+#define SWIGTYPE_p_bool swig_types[68]
+#define SWIGTYPE_p_char swig_types[69]
+#define SWIGTYPE_p_data_base swig_types[70]
+#define SWIGTYPE_p_double swig_types[71]
+#define SWIGTYPE_p_draw_base swig_types[72]
+#define SWIGTYPE_p_f_p_void__p_void swig_types[73]
+#define SWIGTYPE_p_int swig_types[74]
+#define SWIGTYPE_p_math_VECTOR swig_types[75]
+#define SWIGTYPE_p_math_point swig_types[76]
+#define SWIGTYPE_p_pChar swig_types[77]
+#define SWIGTYPE_p_p_ParticleNode swig_types[78]
+#define SWIGTYPE_p_p_char swig_types[79]
+#define SWIGTYPE_p_psudo_type swig_types[80]
+#define SWIGTYPE_p_pthread_cond_t swig_types[81]
+#define SWIGTYPE_p_pthread_mutex_t swig_types[82]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_cond_t_t swig_types[83]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_mutex_t_t swig_types[84]
+#define SWIGTYPE_p_pthreads_opaqueT_pthread_t_p_t swig_types[85]
+#define SWIGTYPE_p_raw_input swig_types[86]
+#define SWIGTYPE_p_size_t swig_types[87]
+#define SWIGTYPE_p_std__listT_size_t_t swig_types[88]
+#define SWIGTYPE_p_std__mapT_unsigned_short_std__string_t swig_types[89]
+#define SWIGTYPE_p_std__string swig_types[90]
+#define SWIGTYPE_p_std__vectorT_psudo_type_t swig_types[91]
+#define SWIGTYPE_p_std__vectorT_size_t_t swig_types[92]
+#define SWIGTYPE_p_textbox swig_types[93]
+#define SWIGTYPE_p_unsigned_char swig_types[94]
+#define SWIGTYPE_p_unsigned_short swig_types[95]
+#define SWIGTYPE_p_void swig_types[96]
+static swig_type_info *swig_types[98];
+static swig_module_info swig_module = {swig_types, 97, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3450,6 +3454,7 @@ SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)
 #include "particlesystem.h"
 #include "threading.h"
 #include "networking.h"
+#include "localesystem.h"
 #include "iomanager.h"
 #include "layersystem.h"
 #include "info.h"
@@ -29876,6 +29881,296 @@ SWIGINTERN PyObject *NetworkManager_swigregister(PyObject *SWIGUNUSEDPARM(self),
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_LocaleNode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  LocaleNode *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_LocaleNode",&obj0)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_LocaleNode" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_LocaleNode" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  result = (LocaleNode *)new LocaleNode((std::string const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LocaleNode, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleNode_GetLocaleStringSize(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleNode_GetLocaleStringSize",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleNode_GetLocaleStringSize" "', argument " "1"" of type '" "LocaleNode const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleNode * >(argp1);
+  result = ((LocaleNode const *)arg1)->GetLocaleStringSize();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleNode_GetLocaleString(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleNode_GetLocaleString",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleNode_GetLocaleString" "', argument " "1"" of type '" "LocaleNode *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleNode * >(argp1);
+  result = (arg1)->GetLocaleString();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleNode___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleNode___eq__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleNode, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleNode___eq__" "', argument " "1"" of type '" "LocaleNode *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleNode * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleNode___eq__" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleNode___eq__" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (bool)(arg1)->operator ==((std::string const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_LocaleNode(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleNode *arg1 = (LocaleNode *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_LocaleNode",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleNode, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LocaleNode" "', argument " "1"" of type '" "LocaleNode *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleNode * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *LocaleNode_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_LocaleNode, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_new_LocaleReader(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  cstr arg1 = (cstr) 0 ;
+  int res1 ;
+  char *buf1 = 0 ;
+  int alloc1 = 0 ;
+  PyObject * obj0 = 0 ;
+  LocaleReader *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_LocaleReader",&obj0)) SWIG_fail;
+  res1 = SWIG_AsCharPtrAndSize(obj0, &buf1, NULL, &alloc1);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_LocaleReader" "', argument " "1"" of type '" "cstr""'");
+  }
+  arg1 = reinterpret_cast< cstr >(buf1);
+  result = (LocaleReader *)new LocaleReader(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LocaleReader, SWIG_POINTER_NEW |  0 );
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return resultobj;
+fail:
+  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleReader_ExpandInputString(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleReader_ExpandInputString",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleReader, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleReader_ExpandInputString" "', argument " "1"" of type '" "LocaleReader *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleReader * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleReader_ExpandInputString" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleReader_ExpandInputString" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (arg1)->ExpandInputString((std::string const &)*arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleReader_CondenseInputString(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleReader_CondenseInputString",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleReader, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleReader_CondenseInputString" "', argument " "1"" of type '" "LocaleReader *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleReader * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleReader_CondenseInputString" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleReader_CondenseInputString" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = (arg1)->CondenseInputString((std::string const &)*arg2);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleReader_GetLocaleName(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleReader_GetLocaleName",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleReader, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleReader_GetLocaleName" "', argument " "1"" of type '" "LocaleReader const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleReader * >(argp1);
+  result = ((LocaleReader const *)arg1)->GetLocaleName();
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_LocaleReader(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleReader *arg1 = (LocaleReader *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_LocaleReader",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleReader, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LocaleReader" "', argument " "1"" of type '" "LocaleReader *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleReader * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *LocaleReader_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_LocaleReader, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_IONode__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   bool arg1 ;
@@ -31554,6 +31849,165 @@ SWIGINTERN PyObject *ExpansionItem_swigregister(PyObject *SWIGUNUSEDPARM(self), 
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_LocaleItem_name_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleItem_name_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleItem_name_set" "', argument " "1"" of type '" "LocaleItem *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleItem * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleItem_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleItem_name_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->name = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleItem_name_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleItem_name_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleItem_name_get" "', argument " "1"" of type '" "LocaleItem *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleItem * >(argp1);
+  result = (std::string *) & ((arg1)->name);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleItem_path_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleItem_path_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleItem_path_set" "', argument " "1"" of type '" "LocaleItem *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleItem * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleItem_path_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleItem_path_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->path = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleItem_path_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleItem_path_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleItem, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleItem_path_get" "', argument " "1"" of type '" "LocaleItem *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleItem * >(argp1);
+  result = (std::string *) & ((arg1)->path);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_LocaleItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_LocaleItem")) SWIG_fail;
+  result = (LocaleItem *)new LocaleItem();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LocaleItem, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_LocaleItem(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleItem *arg1 = (LocaleItem *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_LocaleItem",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleItem, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LocaleItem" "', argument " "1"" of type '" "LocaleItem *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleItem * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *LocaleItem_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_LocaleItem, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_delete_ExpansionInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ExpansionInfo *arg1 = (ExpansionInfo *) 0 ;
@@ -31877,6 +32331,328 @@ SWIGINTERN PyObject *ExpansionInfo_swigregister(PyObject *SWIGUNUSEDPARM(self), 
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_ExpansionInfo, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_LoadLocaleListFromLoc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleInfo_LoadLocaleListFromLoc",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_LoadLocaleListFromLoc" "', argument " "1"" of type '" "LocaleInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleInfo_LoadLocaleListFromLoc" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleInfo_LoadLocaleListFromLoc" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  (arg1)->LoadLocaleListFromLoc((std::string const &)*arg2);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_LoadLocaleListFromDB(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  DataBase *arg2 = (DataBase *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleInfo_LoadLocaleListFromDB",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_LoadLocaleListFromDB" "', argument " "1"" of type '" "LocaleInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_DataBase, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleInfo_LoadLocaleListFromDB" "', argument " "2"" of type '" "DataBase *""'"); 
+  }
+  arg2 = reinterpret_cast< DataBase * >(argp2);
+  (arg1)->LoadLocaleListFromDB(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_AddLocaleToList(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  std::string *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:LocaleInfo_AddLocaleToList",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_AddLocaleToList" "', argument " "1"" of type '" "LocaleInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleInfo_AddLocaleToList" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleInfo_AddLocaleToList" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    std::string *ptr = (std::string *)0;
+    res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "LocaleInfo_AddLocaleToList" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleInfo_AddLocaleToList" "', argument " "3"" of type '" "std::string const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  (arg1)->AddLocaleToList((std::string const &)*arg2,(std::string const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_GetLocaleInfo__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  LocaleItem result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleInfo_GetLocaleInfo",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_GetLocaleInfo" "', argument " "1"" of type '" "LocaleInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "LocaleInfo_GetLocaleInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "LocaleInfo_GetLocaleInfo" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  result = ((LocaleInfo const *)arg1)->GetLocaleInfo((std::string const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new LocaleItem(static_cast< const LocaleItem& >(result))), SWIGTYPE_p_LocaleItem, SWIG_POINTER_OWN |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_GetLocaleInfo__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  LocaleItem result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:LocaleInfo_GetLocaleInfo",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_GetLocaleInfo" "', argument " "1"" of type '" "LocaleInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "LocaleInfo_GetLocaleInfo" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = ((LocaleInfo const *)arg1)->GetLocaleInfo(arg2);
+  resultobj = SWIG_NewPointerObj((new LocaleItem(static_cast< const LocaleItem& >(result))), SWIGTYPE_p_LocaleItem, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_GetLocaleInfo(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LocaleInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_size_t(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_LocaleInfo_GetLocaleInfo__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_LocaleInfo, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_AsPtr_std_string(argv[1], (std::string**)(0));
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_LocaleInfo_GetLocaleInfo__SWIG_0(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'LocaleInfo_GetLocaleInfo'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    LocaleInfo::GetLocaleInfo(std::string const &) const\n"
+    "    LocaleInfo::GetLocaleInfo(size_t) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_GetSelectedLocale(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  LocaleItem result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleInfo_GetSelectedLocale",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_GetSelectedLocale" "', argument " "1"" of type '" "LocaleInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  result = ((LocaleInfo const *)arg1)->GetSelectedLocale();
+  resultobj = SWIG_NewPointerObj((new LocaleItem(static_cast< const LocaleItem& >(result))), SWIGTYPE_p_LocaleItem, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_LocaleInfo_GetLocaleItemCount(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:LocaleInfo_GetLocaleItemCount",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "LocaleInfo_GetLocaleItemCount" "', argument " "1"" of type '" "LocaleInfo const *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  result = ((LocaleInfo const *)arg1)->GetLocaleItemCount();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_LocaleInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_LocaleInfo")) SWIG_fail;
+  result = (LocaleInfo *)new LocaleInfo();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LocaleInfo, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_LocaleInfo(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  LocaleInfo *arg1 = (LocaleInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_LocaleInfo",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LocaleInfo, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_LocaleInfo" "', argument " "1"" of type '" "LocaleInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< LocaleInfo * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *LocaleInfo_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_LocaleInfo, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -45857,6 +46633,18 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"NetworkManager_GetUDPClientInfo", _wrap_NetworkManager_GetUDPClientInfo, METH_VARARGS, NULL},
 	 { (char *)"NetworkManager_GetTCPClientInfo", _wrap_NetworkManager_GetTCPClientInfo, METH_VARARGS, NULL},
 	 { (char *)"NetworkManager_swigregister", NetworkManager_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_LocaleNode", _wrap_new_LocaleNode, METH_VARARGS, NULL},
+	 { (char *)"LocaleNode_GetLocaleStringSize", _wrap_LocaleNode_GetLocaleStringSize, METH_VARARGS, NULL},
+	 { (char *)"LocaleNode_GetLocaleString", _wrap_LocaleNode_GetLocaleString, METH_VARARGS, NULL},
+	 { (char *)"LocaleNode___eq__", _wrap_LocaleNode___eq__, METH_VARARGS, NULL},
+	 { (char *)"delete_LocaleNode", _wrap_delete_LocaleNode, METH_VARARGS, NULL},
+	 { (char *)"LocaleNode_swigregister", LocaleNode_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_LocaleReader", _wrap_new_LocaleReader, METH_VARARGS, NULL},
+	 { (char *)"LocaleReader_ExpandInputString", _wrap_LocaleReader_ExpandInputString, METH_VARARGS, NULL},
+	 { (char *)"LocaleReader_CondenseInputString", _wrap_LocaleReader_CondenseInputString, METH_VARARGS, NULL},
+	 { (char *)"LocaleReader_GetLocaleName", _wrap_LocaleReader_GetLocaleName, METH_VARARGS, NULL},
+	 { (char *)"delete_LocaleReader", _wrap_delete_LocaleReader, METH_VARARGS, NULL},
+	 { (char *)"LocaleReader_swigregister", LocaleReader_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_IONode", _wrap_new_IONode, METH_VARARGS, NULL},
 	 { (char *)"delete_IONode", _wrap_delete_IONode, METH_VARARGS, NULL},
 	 { (char *)"IONode_DecCount", _wrap_IONode_DecCount, METH_VARARGS, NULL},
@@ -45910,6 +46698,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_ExpansionItem", _wrap_new_ExpansionItem, METH_VARARGS, NULL},
 	 { (char *)"delete_ExpansionItem", _wrap_delete_ExpansionItem, METH_VARARGS, NULL},
 	 { (char *)"ExpansionItem_swigregister", ExpansionItem_swigregister, METH_VARARGS, NULL},
+	 { (char *)"LocaleItem_name_set", _wrap_LocaleItem_name_set, METH_VARARGS, NULL},
+	 { (char *)"LocaleItem_name_get", _wrap_LocaleItem_name_get, METH_VARARGS, NULL},
+	 { (char *)"LocaleItem_path_set", _wrap_LocaleItem_path_set, METH_VARARGS, NULL},
+	 { (char *)"LocaleItem_path_get", _wrap_LocaleItem_path_get, METH_VARARGS, NULL},
+	 { (char *)"new_LocaleItem", _wrap_new_LocaleItem, METH_VARARGS, NULL},
+	 { (char *)"delete_LocaleItem", _wrap_delete_LocaleItem, METH_VARARGS, NULL},
+	 { (char *)"LocaleItem_swigregister", LocaleItem_swigregister, METH_VARARGS, NULL},
 	 { (char *)"delete_ExpansionInfo", _wrap_delete_ExpansionInfo, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_LoadExpansionInfo", _wrap_ExpansionInfo_LoadExpansionInfo, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_GetExpansionName", _wrap_ExpansionInfo_GetExpansionName, METH_VARARGS, NULL},
@@ -45920,6 +46715,15 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ExpansionInfo_INVALID_get", _wrap_ExpansionInfo_INVALID_get, METH_VARARGS, NULL},
 	 { (char *)"new_ExpansionInfo", _wrap_new_ExpansionInfo, METH_VARARGS, NULL},
 	 { (char *)"ExpansionInfo_swigregister", ExpansionInfo_swigregister, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_LoadLocaleListFromLoc", _wrap_LocaleInfo_LoadLocaleListFromLoc, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_LoadLocaleListFromDB", _wrap_LocaleInfo_LoadLocaleListFromDB, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_AddLocaleToList", _wrap_LocaleInfo_AddLocaleToList, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_GetLocaleInfo", _wrap_LocaleInfo_GetLocaleInfo, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_GetSelectedLocale", _wrap_LocaleInfo_GetSelectedLocale, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_GetLocaleItemCount", _wrap_LocaleInfo_GetLocaleItemCount, METH_VARARGS, NULL},
+	 { (char *)"new_LocaleInfo", _wrap_new_LocaleInfo, METH_VARARGS, NULL},
+	 { (char *)"delete_LocaleInfo", _wrap_delete_LocaleInfo, METH_VARARGS, NULL},
+	 { (char *)"LocaleInfo_swigregister", LocaleInfo_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_ScreenInfo", _wrap_new_ScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenInfo", _wrap_ScreenInfo_SetScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenLoc", _wrap_ScreenInfo_SetScreenLoc, METH_VARARGS, NULL},
@@ -46254,6 +47058,12 @@ static void *_p_GameInfoTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemor
 static void *_p_GameTo_p_ExpansionInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((ExpansionInfo *) (GameInfo *) ((Game *) x));
 }
+static void *_p_GameInfoTo_p_LocaleInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((LocaleInfo *)  ((GameInfo *) x));
+}
+static void *_p_GameTo_p_LocaleInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((LocaleInfo *) (GameInfo *) ((Game *) x));
+}
 static void *_p_GameTo_p_SoundQueue(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((SoundQueue *)  ((Game *) x));
 }
@@ -46308,14 +47118,14 @@ static void *_p_GameTo_p_ScreenInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
 static void *_p_GameTo_p_GameInfo(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((GameInfo *)  ((Game *) x));
 }
-static void *_p_GameTo_p_UIManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((UIManager *)  ((Game *) x));
-}
 static void *_p_GameTo_p_IOManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((IOManager *)  ((Game *) x));
 }
 static void *_p_GameTo_p_UnitManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((UnitManager *)  ((Game *) x));
+}
+static void *_p_GameTo_p_UIManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((UIManager *)  ((Game *) x));
 }
 static void *_p_GameTo_p_NetworkManager(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((NetworkManager *)  ((Game *) x));
@@ -46354,6 +47164,10 @@ static swig_type_info _swigt__p_KeyNode = {"_p_KeyNode", "KeyNode *", 0, 0, (voi
 static swig_type_info _swigt__p_Layer = {"_p_Layer", "Layer *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_LayerSystem = {"_p_LayerSystem", "LayerSystem *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Level = {"_p_Level", "Level *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_LocaleInfo = {"_p_LocaleInfo", "LocaleInfo *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_LocaleItem = {"_p_LocaleItem", "LocaleItem *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_LocaleNode = {"_p_LocaleNode", "LocaleNode *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_LocaleReader = {"_p_LocaleReader", "LocaleReader *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ModAdapter = {"_p_ModAdapter", "ModAdapter *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ModuleNode = {"_p_ModuleNode", "ModuleNode *|Module *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ModuleSystem = {"_p_ModuleSystem", "ModuleSystem *", 0, 0, (void*)0, 0};
@@ -46449,6 +47263,10 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Layer,
   &_swigt__p_LayerSystem,
   &_swigt__p_Level,
+  &_swigt__p_LocaleInfo,
+  &_swigt__p_LocaleItem,
+  &_swigt__p_LocaleNode,
+  &_swigt__p_LocaleReader,
   &_swigt__p_ModAdapter,
   &_swigt__p_ModuleNode,
   &_swigt__p_ModuleSystem,
@@ -46544,6 +47362,10 @@ static swig_cast_info _swigc__p_KeyNode[] = {  {&_swigt__p_KeyNode, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_Layer[] = {  {&_swigt__p_Layer, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LayerSystem[] = {  {&_swigt__p_LayerSystem, 0, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_LayerSystem, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Level[] = {  {&_swigt__p_Level, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleInfo[] = {  {&_swigt__p_LocaleInfo, 0, 0, 0},  {&_swigt__p_GameInfo, _p_GameInfoTo_p_LocaleInfo, 0, 0},  {&_swigt__p_Game, _p_GameTo_p_LocaleInfo, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleItem[] = {  {&_swigt__p_LocaleItem, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleNode[] = {  {&_swigt__p_LocaleNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_LocaleReader[] = {  {&_swigt__p_LocaleReader, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModAdapter[] = {  {&_swigt__p_ModAdapter, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModuleNode[] = {  {&_swigt__p_ModuleNode, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ModuleSystem[] = {  {&_swigt__p_Game, _p_GameTo_p_ModuleSystem, 0, 0},  {&_swigt__p_ModuleSystem, 0, 0, 0},{0, 0, 0, 0}};
@@ -46639,6 +47461,10 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Layer,
   _swigc__p_LayerSystem,
   _swigc__p_Level,
+  _swigc__p_LocaleInfo,
+  _swigc__p_LocaleItem,
+  _swigc__p_LocaleNode,
+  _swigc__p_LocaleReader,
   _swigc__p_ModAdapter,
   _swigc__p_ModuleNode,
   _swigc__p_ModuleSystem,

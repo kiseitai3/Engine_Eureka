@@ -23809,7 +23809,7 @@
 	<stack>
 	"game.h"
 
-1461616995 c:\users\luis\documents\devcb\engine_eureka\game.h
+1461962341 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23824,10 +23824,11 @@
 	<SDL_net.h>
 	"typedefs.h"
 
-1455472714 c:\users\luis\documents\devcb\engine_eureka\info.h
+1461963969 c:\users\luis\documents\devcb\engine_eureka\info.h
 	<SDL.h>
 	<iostream>
 	<string>
+	<list>
 	"BST.h"
 	"typedefs.h"
 
@@ -24042,7 +24043,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1455477291 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1461962879 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24082,6 +24083,7 @@
 	"uimanager.h"
 	"level.h"
 	"soundqueue.h"
+	"localesystem.h"
 	"videoplayer.h"
 	"BST.h"
 	"Queue.h"
@@ -24111,7 +24113,7 @@
 	"BST.h"
 	"typedefs.h"
 
-1455477289 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1461962878 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -24136,6 +24138,7 @@
 	"particlesystem.h"
 	"threading.h"
 	"networking.h"
+	"localesystem.h"
 	"iomanager.h"
 	"layersystem.h"
 	"info.h"
@@ -24286,7 +24289,7 @@
 
 1422197357 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\iterator
 
-1455472785 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
+1461963987 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
 	"info.h"
 	"database.h"
 	"data_base.h"
@@ -27525,7 +27528,7 @@
 	"rand_generators.h"
 	"eureka.h"
 
-1461617244 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
+1461963969 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
 	"eureka.h"
 	"level.h"
 	<SDL_image.h>
@@ -28706,7 +28709,7 @@
 
 1448501975 source:c:\users\luis\documents\devcb\engine_eureka\locale.cpp
 
-1461262113 source:c:\users\luis\documents\devcb\engine_eureka\localesystem.cpp
+1461270115 source:c:\users\luis\documents\devcb\engine_eureka\localesystem.cpp
 	"localesystem.h"
 
 1461262185 c:\users\luis\documents\devcb\engine_eureka\localesystem.h

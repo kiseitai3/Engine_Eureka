@@ -137,16 +137,18 @@ public:
     QTreeWidget *tvRegisteredObjects;
     QWidget *tabDesigner;
     QGroupBox *gbObjects;
-    QPushButton *pushButton_4;
+    QPushButton *pbUndoObj;
     QTreeWidget *tvObjList;
+    QPushButton *pbRemoveObj;
     QGroupBox *gbGamePreview;
     QGraphicsView *gvGamePreview;
     QWidget *tabUIDesigner;
     QGroupBox *groupBox_4;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *pbClearUI;
     QPushButton *pushButton_3;
     QTreeWidget *tvUIElements;
+    QPushButton *pbRemovUI;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QMenuBar *menuBar;
@@ -497,18 +499,22 @@ public:
         gbObjects = new QGroupBox(tabDesigner);
         gbObjects->setObjectName(QStringLiteral("gbObjects"));
         gbObjects->setGeometry(QRect(0, 0, 281, 561));
-        pushButton_4 = new QPushButton(gbObjects);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(10, 530, 93, 28));
+        pbUndoObj = new QPushButton(gbObjects);
+        pbUndoObj->setObjectName(QStringLiteral("pbUndoObj"));
+        pbUndoObj->setGeometry(QRect(10, 530, 93, 28));
         tvObjList = new QTreeWidget(gbObjects);
         tvObjList->setObjectName(QStringLiteral("tvObjList"));
         tvObjList->setGeometry(QRect(0, 20, 271, 501));
+        pbRemoveObj = new QPushButton(gbObjects);
+        pbRemoveObj->setObjectName(QStringLiteral("pbRemoveObj"));
+        pbRemoveObj->setGeometry(QRect(120, 530, 93, 28));
         gbGamePreview = new QGroupBox(tabDesigner);
         gbGamePreview->setObjectName(QStringLiteral("gbGamePreview"));
         gbGamePreview->setGeometry(QRect(290, 0, 721, 561));
         gvGamePreview = new QGraphicsView(gbGamePreview);
         gvGamePreview->setObjectName(QStringLiteral("gvGamePreview"));
         gvGamePreview->setGeometry(QRect(0, 20, 711, 531));
+        gvGamePreview->setContextMenuPolicy(Qt::CustomContextMenu);
         gvGamePreview->setAcceptDrops(false);
         gvGamePreview->setRenderHints(QPainter::Antialiasing|QPainter::HighQualityAntialiasing|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing);
         twTabs->addTab(tabDesigner, QString());
@@ -521,15 +527,18 @@ public:
         pushButton = new QPushButton(groupBox_4);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(10, 490, 93, 28));
-        pushButton_2 = new QPushButton(groupBox_4);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(10, 520, 93, 28));
+        pbClearUI = new QPushButton(groupBox_4);
+        pbClearUI->setObjectName(QStringLiteral("pbClearUI"));
+        pbClearUI->setGeometry(QRect(10, 520, 93, 28));
         pushButton_3 = new QPushButton(groupBox_4);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(110, 490, 93, 28));
         tvUIElements = new QTreeWidget(groupBox_4);
         tvUIElements->setObjectName(QStringLiteral("tvUIElements"));
         tvUIElements->setGeometry(QRect(10, 20, 241, 461));
+        pbRemovUI = new QPushButton(groupBox_4);
+        pbRemovUI->setObjectName(QStringLiteral("pbRemovUI"));
+        pbRemovUI->setGeometry(QRect(110, 520, 93, 28));
         scrollArea = new QScrollArea(tabUIDesigner);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
         scrollArea->setGeometry(QRect(270, 20, 731, 541));
@@ -562,7 +571,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        twTabs->setCurrentIndex(2);
+        twTabs->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -704,18 +713,20 @@ public:
         tvRegisteredObjects->setSortingEnabled(__sortingEnabled1);
 
         twTabs->setTabText(twTabs->indexOf(tabAssets), QApplication::translate("MainWindow", "Assets", 0));
-        gbObjects->setTitle(QApplication::translate("MainWindow", "Objects Toolbox", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Undo", 0));
+        gbObjects->setTitle(QApplication::translate("MainWindow", "Objects ", 0));
+        pbUndoObj->setText(QApplication::translate("MainWindow", "Undo", 0));
         QTreeWidgetItem *___qtreewidgetitem15 = tvObjList->headerItem();
         ___qtreewidgetitem15->setText(0, QApplication::translate("MainWindow", "Name", 0));
+        pbRemoveObj->setText(QApplication::translate("MainWindow", "Remove", 0));
         gbGamePreview->setTitle(QApplication::translate("MainWindow", "Game World Preview (real time)", 0));
         twTabs->setTabText(twTabs->indexOf(tabDesigner), QApplication::translate("MainWindow", "Level Designer", 0));
-        groupBox_4->setTitle(QApplication::translate("MainWindow", "UI Toolbox", 0));
+        groupBox_4->setTitle(QApplication::translate("MainWindow", "UI Objects", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Undo", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Clear", 0));
+        pbClearUI->setText(QApplication::translate("MainWindow", "Clear", 0));
         pushButton_3->setText(QApplication::translate("MainWindow", "Save UI", 0));
         QTreeWidgetItem *___qtreewidgetitem16 = tvUIElements->headerItem();
         ___qtreewidgetitem16->setText(0, QApplication::translate("MainWindow", "Name", 0));
+        pbRemovUI->setText(QApplication::translate("MainWindow", "Remove", 0));
         twTabs->setTabText(twTabs->indexOf(tabUIDesigner), QApplication::translate("MainWindow", "UI Designer", 0));
         menu_File->setTitle(QApplication::translate("MainWindow", "&File", 0));
     } // retranslateUi

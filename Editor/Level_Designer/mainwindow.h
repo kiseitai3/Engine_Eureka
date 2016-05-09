@@ -10,6 +10,7 @@ class Game;
 class data_base;
 class QFileDialog;
 class QGraphicsScene;
+class QTimer;
 
 namespace Ui {
   class MainWindow;
@@ -24,9 +25,18 @@ public:
   ~MainWindow();
 
     void AddTreeViewItem(char treeView, const std::string& name, bool root = true, QTreeWidgetItem* parent = NULL);
-    void RegisterAsset(const std::string& name, const std::string& path, size_t type);
+    void RegisterAsset(const std::string& name, const std::string& path, size_t type, size_t subtype = BASEASSET);
+    void RegisterObject(AssetNode obj);
     void RemoveAsset(const std::string& name);
+    void RemoveObj(const std::string& name);
+    void RemoveLastObj();
+    void ResetTrees();
+
+    /*Getters*/
     QTreeWidgetItem* GetTreeViewRoot(char treeView, const std::string& rowName);
+    AssetNode GetAsset(const std::string& name);
+    AssetNode GetObjectInstance(const std::string& name) const;
+
 private slots:
   void on_action_Exit_triggered();
 
@@ -68,23 +78,36 @@ private slots:
 
   void on_sbWidth_valueChanged(int arg1);
 
+  void on_gvGamePreview_customContextMenuRequested(const QPoint &pos);
+
+  void on_pbClearUI_clicked();
+
+  void drawObjs();
+
 private:
   Ui::MainWindow *ui;
   data_base* DOM, *DOMWriter;
   QFileDialog *open;
   QGraphicsScene* textPrev, *worldPrev;
+  QTreeWidget* tvBaseAssets_bk, *tvRegisteredObjs_bk;
+  QTimer* frame;
   std::string modName, modDescription, modPath, modRootPath;
+  size_t tvBaseAssetsCount, tvRegisteredObjsCount, tvObjsListCount, tvUIElementsCount;
   Game* engine;
 
-  std::list<AssetNode> ojs;
+  std::list<AssetNode> objects;
   std::map<QString, AssetNode> assets;
+  std::stack<size_t> objOrder;
 
   //Methods
   bool modExists(size_t& index);
   void loadProjectObjects();
+  void loadVideoSettings();
   void registerProjectObjects(const QStringList& lst, const std::string& path, size_t type);
-  void clearTreeViews(size_t treeView, QTreeWidgetItem* root);
+  void clearAll(QTreeWidgetItem* root);
+  void clearAllNodes(QTreeWidgetItem* root);
   std::string getRelPath(const std::string& path);
+  size_t GetBlitOrderFromType(size_t type);
 };
 
 void build_new_directory_tree(const std::string source, const std::string &target);
@@ -93,5 +116,6 @@ std::string extract_correct_path(const std::string& fullPath, const std::string&
 void remove_asset_contents(const std::string& rootPath, const QString &path, size_t type);
 bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& index);
 std::string getType(char type);
+char getTreeByType(byte type, byte subtype);
 
 #endif // MAINWINDOW_H

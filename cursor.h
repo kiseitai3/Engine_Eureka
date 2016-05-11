@@ -29,6 +29,8 @@ public:
 
     //Setters
     size_t RegisterCursor(cstr file);
+    bool RemoveCursor(size_t id);
+    std::vector<size_t> LoadCursors(cstr file);
     void ChangeToCursor(size_t id);
     void ToggleMouseGrab();
 

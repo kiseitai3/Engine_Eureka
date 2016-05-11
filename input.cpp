@@ -83,21 +83,6 @@ Input::Input(Game* owner)
     script = NULL;
 }
 
-void Input::LoadCursors(cstr file)
-{
-    data_base DOM(file);
-    size_t cursorCount = DOM.GetIntFromData("cursor_count");
-    std::string path = "";
-    std::string name = "";
-
-    for(size_t i = 0; i < cursorCount; i++)
-    {
-        name = DOM.GetStrFromData("cursor_" + intToStr(i) + "_name");
-        path = DOM.GetStrFromData("cursor_" + intToStr(i) + "_file");
-        cursors[name] = owner_ref->RegisterCursor(path.c_str());
-    }
-}
-
 void Input::LoadKeyScript(cstr file)
 {
     deleteScript();

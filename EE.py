@@ -3653,6 +3653,12 @@ class Cursor(_object):
     def RegisterCursor(self, file):
         return _EE.Cursor_RegisterCursor(self, file)
 
+    def RemoveCursor(self, id):
+        return _EE.Cursor_RemoveCursor(self, id)
+
+    def LoadCursors(self, file):
+        return _EE.Cursor_LoadCursors(self, file)
+
     def ChangeToCursor(self, id):
         return _EE.Cursor_ChangeToCursor(self, id)
 
@@ -3884,9 +3890,6 @@ class Input(InputMouse, InputKeyboard):
             self.this = this
     __swig_destroy__ = _EE.delete_Input
     __del__ = lambda self: None
-
-    def LoadCursors(self, file):
-        return _EE.Input_LoadCursors(self, file)
 
     def LoadKeyScript(self, file):
         return _EE.Input_LoadKeyScript(self, file)

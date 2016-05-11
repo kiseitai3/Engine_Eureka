@@ -106,7 +106,7 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
 
 void MainWindow::RegisterObject(AssetNode obj)
 {
-    switch(itm.type)
+    switch(obj.type)
     {
     case CODETYPE|SCRIPT:
     //All unit kind of objects
@@ -131,7 +131,7 @@ void MainWindow::RegisterObject(AssetNode obj)
         break;
     case CURSORSET:
     case OBJTYPE|CURSORSET:
-        engine->LoadCursors(obj.path.toStdString().c_str());
+        obj.idlist = engine->LoadCursors(obj.path.toStdString().c_str());
         break;
     case LAYER:
     case OBJTYPE|LAYER:
@@ -144,11 +144,16 @@ void MainWindow::RegisterObject(AssetNode obj)
     case UITYPE:
     case UITYPE|BUTTON:
     case UITYPE|TEXTBOX:
+        obj.id = engine->RegisterUI(obj.path.toStdString().c_str());
+        break;
     case PHYSICS:
     case OBJTYPE|PHYSICS:
     default:
         break;
     }
+
+    //Flag object as an instance for propper removal
+    obj.subtype = INSTANCE;
 
     //Update the editor interface
     objects.push_back(obj);

@@ -41505,6 +41505,71 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Cursor_RemoveCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  size_t arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_RemoveCursor",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_RemoveCursor" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Cursor_RemoveCursor" "', argument " "2"" of type '" "size_t""'");
+  } 
+  arg2 = static_cast< size_t >(val2);
+  result = (bool)(arg1)->RemoveCursor(arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Cursor_LoadCursors(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 ;
+  char *buf2 = 0 ;
+  int alloc2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  std::vector< size_t > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Cursor_LoadCursors",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cursor, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cursor_LoadCursors" "', argument " "1"" of type '" "Cursor *""'"); 
+  }
+  arg1 = reinterpret_cast< Cursor * >(argp1);
+  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cursor_LoadCursors" "', argument " "2"" of type '" "cstr""'");
+  }
+  arg2 = reinterpret_cast< cstr >(buf2);
+  result = (arg1)->LoadCursors(arg2);
+  resultobj = SWIG_NewPointerObj((new std::vector< size_t >(static_cast< const std::vector< size_t >& >(result))), SWIGTYPE_p_std__vectorT_size_t_t, SWIG_POINTER_OWN |  0 );
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return resultobj;
+fail:
+  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_Cursor_ChangeToCursor(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Cursor *arg1 = (Cursor *) 0 ;
@@ -43379,39 +43444,6 @@ SWIGINTERN PyObject *_wrap_delete_Input(PyObject *SWIGUNUSEDPARM(self), PyObject
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Input_LoadCursors(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Input *arg1 = (Input *) 0 ;
-  cstr arg2 = (cstr) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Input_LoadCursors",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Input, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Input_LoadCursors" "', argument " "1"" of type '" "Input *""'"); 
-  }
-  arg1 = reinterpret_cast< Input * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(obj1, &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Input_LoadCursors" "', argument " "2"" of type '" "cstr""'");
-  }
-  arg2 = reinterpret_cast< cstr >(buf2);
-  (arg1)->LoadCursors(arg2);
-  resultobj = SWIG_Py_Void();
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return resultobj;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return NULL;
 }
 
@@ -46887,6 +46919,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"delete_Cursor", _wrap_delete_Cursor, METH_VARARGS, NULL},
 	 { (char *)"Cursor_initCursorSys", _wrap_Cursor_initCursorSys, METH_VARARGS, NULL},
 	 { (char *)"Cursor_RegisterCursor", _wrap_Cursor_RegisterCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_RemoveCursor", _wrap_Cursor_RemoveCursor, METH_VARARGS, NULL},
+	 { (char *)"Cursor_LoadCursors", _wrap_Cursor_LoadCursors, METH_VARARGS, NULL},
 	 { (char *)"Cursor_ChangeToCursor", _wrap_Cursor_ChangeToCursor, METH_VARARGS, NULL},
 	 { (char *)"Cursor_ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab, METH_VARARGS, NULL},
 	 { (char *)"Cursor_DrawCursor", _wrap_Cursor_DrawCursor, METH_VARARGS, NULL},
@@ -46962,7 +46996,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"InputKeyboard_swigregister", InputKeyboard_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_Input", _wrap_new_Input, METH_VARARGS, NULL},
 	 { (char *)"delete_Input", _wrap_delete_Input, METH_VARARGS, NULL},
-	 { (char *)"Input_LoadCursors", _wrap_Input_LoadCursors, METH_VARARGS, NULL},
 	 { (char *)"Input_LoadKeyScript", _wrap_Input_LoadKeyScript, METH_VARARGS, NULL},
 	 { (char *)"Input_LoadDefaultKeyBindings", _wrap_Input_LoadDefaultKeyBindings, METH_VARARGS, NULL},
 	 { (char *)"Input_LoadCurrentKeyBindings", _wrap_Input_LoadCurrentKeyBindings, METH_VARARGS, NULL},

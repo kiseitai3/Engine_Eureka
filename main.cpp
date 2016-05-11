@@ -6,7 +6,8 @@ void displayTest(const char* const input, int size);
 
 int main(int argc, char* argv[]){
     //Call runing function or test function here
-    Game g;
+    Game g(argc, argv));
+    g.LoadCursors();
     return 0;
 }
 void displayTest(const char* const input, int size)

@@ -35,6 +35,22 @@ size_t Cursor::RegisterCursor(cstr file)
     return id;
 }
 
+std::vector<size_t> Cursor::LoadCursors(cstr file)
+{
+    data_base DOM(file);
+    std::vector<size_t> ids;
+    size_t cursorCount = DOM.GetIntFromData("cursor_count");
+    std::string path = "";
+    std::string name = "";
+
+    for(size_t i = 0; i < cursorCount; i++)
+    {
+        ids.push_back(owner_ref->RegisterCursor(path.c_str()));
+    }
+
+    return ids;
+}
+
 void Cursor::ToggleMouseGrab()
 {
     //Lock mutex
@@ -72,6 +88,23 @@ void Cursor::ChangeToCursor(size_t id)
     cursors.search(id, selected);
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_cursor_id);
+}
+
+bool Cursor::RemoveCursor(size_t id)
+{
+    owner_ref->LockMutex(mutex_cursor_id);
+    CursorNode tmp;
+    cursors.search(id, tmp);
+    if(tmp.name != selected.name)
+    {
+        delete tmp.cursor;
+        cursors.remove(id);
+        owner_ref->UnlockMutex(mutex_cursor_id);
+        return true;
+    }
+
+    owner_ref->UnlockMutex(mutex_cursor_id);
+    return false;
 }
 
 size_t Cursor::generateID()

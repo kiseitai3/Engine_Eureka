@@ -35137,6 +35137,64 @@ fail:
 }
 
 
+static int _wrap_Cursor_RemoveCursor(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  size_t arg2 ;
+  bool result;
+  
+  SWIG_check_num_args("Cursor::RemoveCursor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::RemoveCursor",1,"Cursor *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Cursor::RemoveCursor",2,"size_t");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_RemoveCursor",1,SWIGTYPE_p_Cursor);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (size_t)lua_tonumber(L, 2);
+  result = (bool)(arg1)->RemoveCursor(arg2);
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Cursor_LoadCursors(lua_State* L) {
+  int SWIG_arg = 0;
+  Cursor *arg1 = (Cursor *) 0 ;
+  cstr arg2 = (cstr) 0 ;
+  SwigValueWrapper< std::vector< size_t > > result;
+  
+  SWIG_check_num_args("Cursor::LoadCursors",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Cursor::LoadCursors",1,"Cursor *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("Cursor::LoadCursors",2,"cstr");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Cursor,0))){
+    SWIG_fail_ptr("Cursor_LoadCursors",1,SWIGTYPE_p_Cursor);
+  }
+  
+  arg2 = (cstr)lua_tostring(L, 2);
+  result = (arg1)->LoadCursors(arg2);
+  {
+    std::vector< size_t > * resultptr = new std::vector< size_t >((const std::vector< size_t > &) result);
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_std__vectorT_size_t_t,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Cursor_ChangeToCursor(lua_State* L) {
   int SWIG_arg = 0;
   Cursor *arg1 = (Cursor *) 0 ;
@@ -35251,6 +35309,8 @@ static swig_lua_attribute swig_Cursor_attributes[] = {
 static swig_lua_method swig_Cursor_methods[]= {
     { "initCursorSys", _wrap_Cursor_initCursorSys},
     { "RegisterCursor", _wrap_Cursor_RegisterCursor},
+    { "RemoveCursor", _wrap_Cursor_RemoveCursor},
+    { "LoadCursors", _wrap_Cursor_LoadCursors},
     { "ChangeToCursor", _wrap_Cursor_ChangeToCursor},
     { "ToggleMouseGrab", _wrap_Cursor_ToggleMouseGrab},
     { "DrawCursor", _wrap_Cursor_DrawCursor},
@@ -37023,32 +37083,6 @@ fail:
 }
 
 
-static int _wrap_Input_LoadCursors(lua_State* L) {
-  int SWIG_arg = 0;
-  Input *arg1 = (Input *) 0 ;
-  cstr arg2 = (cstr) 0 ;
-  
-  SWIG_check_num_args("Input::LoadCursors",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Input::LoadCursors",1,"Input *");
-  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("Input::LoadCursors",2,"cstr");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Input,0))){
-    SWIG_fail_ptr("Input_LoadCursors",1,SWIGTYPE_p_Input);
-  }
-  
-  arg2 = (cstr)lua_tostring(L, 2);
-  (arg1)->LoadCursors(arg2);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Input_LoadKeyScript(lua_State* L) {
   int SWIG_arg = 0;
   Input *arg1 = (Input *) 0 ;
@@ -37351,7 +37385,6 @@ static swig_lua_attribute swig_Input_attributes[] = {
     {0,0,0}
 };
 static swig_lua_method swig_Input_methods[]= {
-    { "LoadCursors", _wrap_Input_LoadCursors},
     { "LoadKeyScript", _wrap_Input_LoadKeyScript},
     { "LoadDefaultKeyBindings", _wrap_Input_LoadDefaultKeyBindings},
     { "LoadCurrentKeyBindings", _wrap_Input_LoadCurrentKeyBindings},

@@ -14,10 +14,10 @@ CXX           = g++
 DEFINES       = -DUNICODE -D__STDC_CONSTANT_MACROS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -pipe -fno-keep-inline-dllexport -g -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -fno-keep-inline-dllexport -g -frtti -Wall -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I../Level_Designer -I'../../Dependencies/SDL2-2.0.0/include' -I'../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/libFFmpeg/include' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../../../../../Qt/5.2.0/mingw48_32/include' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore' -I'debug' -I'.' -I'.' -I'../../../../../../../Qt/5.2.0/mingw48_32/mkspecs/win32-g++'
+INCPATH       = -I../Level_Designer -I'../../Dependencies/SDL2-2.0.0/include' -I'../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2' -I'../../Dependencies/libFFmpeg/include' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../Engine_Eureka' -I'../../../../../../../Qt/5.2.0/mingw48_32/include' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui' -I'../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore' -I'debug' -I'.' -I'.' -I'../../../../../../../Qt/5.2.0/mingw48_32/mkspecs/win32-g++'
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
-LIBS        =        -lglu32 -lopengl32 -lgdi32 -luser32 -lmingw32 -lqtmaind -LC:/Users/Luis/Documents/DevCB/Engine_Eureka/Editor/Level_Designer/../../bin/engine/ -lEureka -lIO -lnetwork -lUnit -lUI -lFlags -lCore -LC:\Qt\5.2.0\mingw48_32\lib -lQt5Widgetsd -lQt5Guid -lQt5Cored 
+LIBS        =        -lglu32 -lopengl32 -lgdi32 -luser32 -lmingw32 -lqtmaind -LC:/Users/Luis/Documents/DevCB/Engine_Eureka/Editor/Level_Designer/../../bin/engine/ -lEureka -lIO -lnetwork -lUnit -lUI -lFlags -lCore -lInput -LC:\Qt\5.2.0\mingw48_32\lib -lQt5Widgetsd -lQt5Guid -lQt5Cored 
 QMAKE         = C:/Qt/5.2.0/mingw48_32/bin/qmake.exe
 IDC           = idc
 IDL           = midl
@@ -1815,6 +1815,128 @@ debug/moc_assetmenu.cpp: ../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidg
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtabwidget.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qrubberband.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		../Level_Designer/mainwindow.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QMainWindow \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qmainwindow.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QTreeWidgetItem \
+		../Level_Designer/mod_picker.h \
+		../Level_Designer/data_base.h \
+		../Level_Designer/conversion.h \
+		../Level_Designer/globals.h \
+		../../typedefs.h \
+		../../eureka.h \
+		../../unitmanager.h \
+		../../unit.h \
+		../../Timer.h \
+		../../ai_store.h \
+		../../scriptwrap.h \
+		../../BST.h \
+		../../BST.cc \
+		../../particlesystem.h \
+		../../draw_base.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_main.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_stdinc.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_config.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_platform.h \
+		../../Dependencies/SDL2-2.0.0/include/begin_code.h \
+		../../Dependencies/SDL2-2.0.0/include/close_code.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_assert.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_atomic.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_audio.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_error.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_endian.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_mutex.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_thread.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_rwops.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_clipboard.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_cpuinfo.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_events.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_video.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_pixels.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_rect.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_surface.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_blendmode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_keyboard.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_keycode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_scancode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_mouse.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_joystick.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_gamecontroller.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_quit.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_gesture.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_touch.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_filesystem.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_haptic.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_hints.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_loadso.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_log.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_messagebox.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_power.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_render.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_system.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_timer.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_version.h \
+		../../texture_store.h \
+		../../physics.h \
+		../../networking.h \
+		../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2/SDL_net.h \
+		../../threading.h \
+		../../iomanager.h \
+		../../data_base.h \
+		../../conversion.h \
+		../../config.h \
+		../../utf8.h \
+		../../utf8/checked.h \
+		../../utf8/core.h \
+		../../utf8/unchecked.h \
+		../../uimanager.h \
+		../../ui.h \
+		../../textbox.h \
+		../../Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2/SDL_ttf.h \
+		../../info.h \
+		../../modules.h \
+		../../timersystem.h \
+		../../triggermanager.h \
+		../../trigger.h \
+		../../layersystem.h \
+		../../rand_generators.h \
+		../../soundqueue.h \
+		../../Queue.h \
+		../../Queue.cc \
+		../../videoplayer.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/avcodec.h \
+		../../Dependencies/libFFmpeg/include/libavutil/samplefmt.h \
+		../../Dependencies/libFFmpeg/include/libavutil/avutil.h \
+		../../Dependencies/libFFmpeg/include/libavutil/common.h \
+		../../Dependencies/libFFmpeg/include/libavutil/attributes.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/version.h \
+		../../Dependencies/libFFmpeg/include/libavutil/version.h \
+		../../Dependencies/libFFmpeg/include/libavutil/macros.h \
+		../../Dependencies/libFFmpeg/include/libavutil/avconfig.h \
+		../../Dependencies/libFFmpeg/include/libavutil/mem.h \
+		../../Dependencies/libFFmpeg/include/libavutil/error.h \
+		../../Dependencies/libFFmpeg/include/libavutil/rational.h \
+		../../Dependencies/libFFmpeg/include/libavutil/mathematics.h \
+		../../Dependencies/libFFmpeg/include/libavutil/intfloat.h \
+		../../Dependencies/libFFmpeg/include/libavutil/log.h \
+		../../Dependencies/libFFmpeg/include/libavutil/pixfmt.h \
+		../../Dependencies/libFFmpeg/include/libavutil/old_pix_fmts.h \
+		../../Dependencies/libFFmpeg/include/libavutil/buffer.h \
+		../../Dependencies/libFFmpeg/include/libavutil/cpu.h \
+		../../Dependencies/libFFmpeg/include/libavutil/channel_layout.h \
+		../../Dependencies/libFFmpeg/include/libavutil/dict.h \
+		../../Dependencies/libFFmpeg/include/libavutil/frame.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/old_codec_ids.h \
+		../../Dependencies/libFFmpeg/include/libavformat/avformat.h \
+		../../Dependencies/libFFmpeg/include/libavformat/avio.h \
+		../../Dependencies/libFFmpeg/include/libavformat/version.h \
+		../../Dependencies/libFFmpeg/include/libswscale/swscale.h \
+		../../cursor.h \
+		../../input.h \
+		../../game.h \
+		../../Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2/SDL_mixer.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/QString \
 		../Level_Designer/assetmenu.h
 	C:/Qt/5.2.0/mingw48_32/bin/moc.exe $(DEFINES) -D__GNUC__ -DWIN32 $(INCPATH) ../Level_Designer/assetmenu.h -o debug/moc_assetmenu.cpp
 
@@ -2452,6 +2574,9 @@ debug/mainwindow.o: ../Level_Designer/mainwindow.cpp ../Level_Designer/mainwindo
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/QPixmap \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QGraphicsScene \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/QImage \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/QTimer \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qtimer.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qbasictimer.h \
 		../Level_Designer/cursorsettings.h \
 		../Level_Designer/unitsettings.h \
 		../Level_Designer/layersettings.h \
@@ -4491,7 +4616,39 @@ debug/locale_settings.o: ../Level_Designer/locale_settings.cpp ../Level_Designer
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qfiledevice.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qvector2d.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qtouchdevice.h \
-		ui_locale_settings.h
+		ui_locale_settings.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/QVariant \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QAction \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qaction.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qicon.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qactiongroup.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QApplication \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qinputmethod.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QButtonGroup \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qbuttongroup.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QHeaderView \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qheaderview.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qabstractitemview.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qframe.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qabstractitemmodel.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qitemselectionmodel.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qstyleoption.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qabstractspinbox.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qvalidator.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qregularexpression.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qslider.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qabstractslider.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qstyle.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtabbar.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtabwidget.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qrubberband.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/locale_settings.o ../Level_Designer/locale_settings.cpp
 
 debug/assetmenu.o: ../Level_Designer/assetmenu.cpp ../Level_Designer/assetmenu.h \
@@ -4625,7 +4782,144 @@ debug/assetmenu.o: ../Level_Designer/assetmenu.cpp ../Level_Designer/assetmenu.h
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtabwidget.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qrubberband.h \
 		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qtreewidgetitemiterator.h \
-		ui_assetmenu.h
+		../Level_Designer/mainwindow.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QMainWindow \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qmainwindow.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QTreeWidgetItem \
+		../Level_Designer/mod_picker.h \
+		../Level_Designer/data_base.h \
+		../Level_Designer/conversion.h \
+		../Level_Designer/globals.h \
+		../../typedefs.h \
+		../../eureka.h \
+		../../unitmanager.h \
+		../../unit.h \
+		../../Timer.h \
+		../../ai_store.h \
+		../../scriptwrap.h \
+		../../BST.h \
+		../../BST.cc \
+		../../particlesystem.h \
+		../../draw_base.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_main.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_stdinc.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_config.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_platform.h \
+		../../Dependencies/SDL2-2.0.0/include/begin_code.h \
+		../../Dependencies/SDL2-2.0.0/include/close_code.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_assert.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_atomic.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_audio.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_error.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_endian.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_mutex.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_thread.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_rwops.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_clipboard.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_cpuinfo.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_events.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_video.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_pixels.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_rect.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_surface.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_blendmode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_keyboard.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_keycode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_scancode.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_mouse.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_joystick.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_gamecontroller.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_quit.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_gesture.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_touch.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_filesystem.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_haptic.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_hints.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_loadso.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_log.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_messagebox.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_power.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_render.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_system.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_timer.h \
+		../../Dependencies/SDL2-2.0.0/include/SDL_version.h \
+		../../texture_store.h \
+		../../physics.h \
+		../../networking.h \
+		../../Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2/SDL_net.h \
+		../../threading.h \
+		../../iomanager.h \
+		../../data_base.h \
+		../../conversion.h \
+		../../config.h \
+		../../utf8.h \
+		../../utf8/checked.h \
+		../../utf8/core.h \
+		../../utf8/unchecked.h \
+		../../uimanager.h \
+		../../ui.h \
+		../../textbox.h \
+		../../Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2/SDL_ttf.h \
+		../../info.h \
+		../../modules.h \
+		../../timersystem.h \
+		../../triggermanager.h \
+		../../trigger.h \
+		../../layersystem.h \
+		../../rand_generators.h \
+		../../soundqueue.h \
+		../../Queue.h \
+		../../Queue.cc \
+		../../videoplayer.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/avcodec.h \
+		../../Dependencies/libFFmpeg/include/libavutil/samplefmt.h \
+		../../Dependencies/libFFmpeg/include/libavutil/avutil.h \
+		../../Dependencies/libFFmpeg/include/libavutil/common.h \
+		../../Dependencies/libFFmpeg/include/libavutil/attributes.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/version.h \
+		../../Dependencies/libFFmpeg/include/libavutil/version.h \
+		../../Dependencies/libFFmpeg/include/libavutil/macros.h \
+		../../Dependencies/libFFmpeg/include/libavutil/avconfig.h \
+		../../Dependencies/libFFmpeg/include/libavutil/mem.h \
+		../../Dependencies/libFFmpeg/include/libavutil/error.h \
+		../../Dependencies/libFFmpeg/include/libavutil/rational.h \
+		../../Dependencies/libFFmpeg/include/libavutil/mathematics.h \
+		../../Dependencies/libFFmpeg/include/libavutil/intfloat.h \
+		../../Dependencies/libFFmpeg/include/libavutil/log.h \
+		../../Dependencies/libFFmpeg/include/libavutil/pixfmt.h \
+		../../Dependencies/libFFmpeg/include/libavutil/old_pix_fmts.h \
+		../../Dependencies/libFFmpeg/include/libavutil/buffer.h \
+		../../Dependencies/libFFmpeg/include/libavutil/cpu.h \
+		../../Dependencies/libFFmpeg/include/libavutil/channel_layout.h \
+		../../Dependencies/libFFmpeg/include/libavutil/dict.h \
+		../../Dependencies/libFFmpeg/include/libavutil/frame.h \
+		../../Dependencies/libFFmpeg/include/libavcodec/old_codec_ids.h \
+		../../Dependencies/libFFmpeg/include/libavformat/avformat.h \
+		../../Dependencies/libFFmpeg/include/libavformat/avio.h \
+		../../Dependencies/libFFmpeg/include/libavformat/version.h \
+		../../Dependencies/libFFmpeg/include/libswscale/swscale.h \
+		../../cursor.h \
+		../../input.h \
+		../../game.h \
+		../../Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2/SDL_mixer.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/QString \
+		ui_assetmenu.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/QVariant \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QAction \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qaction.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qactiongroup.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QApplication \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qcoreapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtCore/qeventloop.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qdesktopwidget.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qguiapplication.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtGui/qinputmethod.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QButtonGroup \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qbuttongroup.h \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/QHeaderView \
+		../../../../../../../Qt/5.2.0/mingw48_32/include/QtWidgets/qheaderview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/assetmenu.o ../Level_Designer/assetmenu.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

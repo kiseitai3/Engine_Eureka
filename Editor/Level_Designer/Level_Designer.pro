@@ -94,3 +94,8 @@ win32: LIBS += -L$$PWD/../../bin/engine/ -lCore
 
 INCLUDEPATH += $$PWD/../../
 DEPENDPATH += $$PWD/../../
+
+win32: LIBS += -L$$PWD/../../bin/engine/ -lInput
+
+INCLUDEPATH += $$PWD/../../
+DEPENDPATH += $$PWD/../../

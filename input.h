@@ -81,7 +81,6 @@ public:
     ~Input();
 
     //Load
-    void LoadCursors(cstr file);
     void LoadKeyScript(cstr file);
     void LoadDefaultKeyBindings(cstr file);
     void LoadCurrentKeyBindings(size_t db_id);
@@ -103,7 +102,6 @@ private:
     ScriptWrap* script;
     Game* owner_ref;
     raw_input state;
-    std::map<std::string, size_t> cursors;
     BinarySearchTree<size_t, KeyNode> keys;
 
     size_t db_id, keybindingsCount;

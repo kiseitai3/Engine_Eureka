@@ -3056,6 +3056,9 @@ class ScreenInfo(_object):
     def SetScreenDeviceStr(self, gfx_card):
         return _EE.ScreenInfo_SetScreenDeviceStr(self, gfx_card)
 
+    def AutoDetectVideoCard(self):
+        return _EE.ScreenInfo_AutoDetectVideoCard(self)
+
     def GetMaxFramesPerSec(self):
         return _EE.ScreenInfo_GetMaxFramesPerSec(self)
 
@@ -3130,6 +3133,9 @@ class SoundInfo(_object):
 
     def SetSoundDeviceStr(self, sound_card):
         return _EE.SoundInfo_SetSoundDeviceStr(self, sound_card)
+
+    def AutoDetectSoundCard(self):
+        return _EE.SoundInfo_AutoDetectSoundCard(self)
 
     def GetSoundFrequency(self):
         return _EE.SoundInfo_GetSoundFrequency(self)
@@ -4119,6 +4125,12 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
     __swig_getmethods__["WINDOW_HEIGHT"] = _EE.Game_WINDOW_HEIGHT_get
     if _newclass:
         WINDOW_HEIGHT = _swig_property(_EE.Game_WINDOW_HEIGHT_get)
+    __swig_getmethods__["FRAME_FORMAT_SIZE"] = _EE.Game_FRAME_FORMAT_SIZE_get
+    if _newclass:
+        FRAME_FORMAT_SIZE = _swig_property(_EE.Game_FRAME_FORMAT_SIZE_get)
+    __swig_getmethods__["FRAME_FORMAT"] = _EE.Game_FRAME_FORMAT_get
+    if _newclass:
+        FRAME_FORMAT = _swig_property(_EE.Game_FRAME_FORMAT_get)
 Game_swigregister = _EE.Game_swigregister
 Game_swigregister(Game)
 

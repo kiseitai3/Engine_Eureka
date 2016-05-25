@@ -123,13 +123,13 @@ EXPORTS
     _ZNSt16allocator_traitsISaI4NodeEE12_S_constructIS0_IS0_EEENSt9enable_ifIXsrNS2_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS1_PS6_DpOS7_ @122
     _ZNSt16allocator_traitsISaI4NodeEE7destroyIS0_EEvRS1_PT_ @123
     _ZNSt16allocator_traitsISaI4NodeEE8max_sizeERKS1_ @124
-    _ZNSt16allocator_traitsISaI4NodeEE9constructIS0_IS0_EEEvRS1_PT_DpOT0_ @125
+    _ZNSt16allocator_traitsISaI4NodeEE9constructIS0_IS0_EEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS1_PT_DpOS4_ @125
     _ZNSt16allocator_traitsISaIP10ModuleNodeEE10_S_destroyIS1_EENSt9enable_ifIXsrNS3_16__destroy_helperIT_EE5valueEvE4typeERS2_PS7_ @126
     _ZNSt16allocator_traitsISaIP10ModuleNodeEE11_S_max_sizeIKS2_EENSt9enable_ifIXsrNS3_16__maxsize_helperIT_EE5valueEjE4typeERS8_ @127
     _ZNSt16allocator_traitsISaIP10ModuleNodeEE12_S_constructIS1_IRKS1_EEENSt9enable_ifIXsrNS3_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS2_PS9_DpOSA_ @128
     _ZNSt16allocator_traitsISaIP10ModuleNodeEE7destroyIS1_EEvRS2_PT_ @129
     _ZNSt16allocator_traitsISaIP10ModuleNodeEE8max_sizeERKS2_ @130
-    _ZNSt16allocator_traitsISaIP10ModuleNodeEE9constructIS1_IRKS1_EEEvRS2_PT_DpOT0_ @131
+    _ZNSt16allocator_traitsISaIP10ModuleNodeEE9constructIS1_IRKS1_EEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS2_PT_DpOS7_ @131
     _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIP4NodeES4_EET0_T_S7_S6_ @132
     _ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPP10ModuleNodeES5_EET0_T_S8_S7_ @133
     _ZNSt6vectorI4NodeSaIS0_EE12emplace_backIIS0_EEEvDpOT_ @134
@@ -183,5 +183,4 @@ EXPORTS
     _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EOS6_PKS3_ @182
     _ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_OS6_ @183
     _ZnwjPv @184
-    _get_output_format @185
-    _nm___ZN10ScriptWrap7NO_ARGSE @186 DATA
+    _nm___ZN10ScriptWrap7NO_ARGSE @185 DATA

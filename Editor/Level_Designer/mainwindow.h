@@ -10,6 +10,7 @@ class Game;
 class data_base;
 class QFileDialog;
 class QGraphicsScene;
+class QGraphicsPixmapItem;
 class QTimer;
 
 namespace Ui {
@@ -27,6 +28,7 @@ public:
     void AddTreeViewItem(char treeView, const std::string& name, bool root = true, QTreeWidgetItem* parent = NULL);
     void RegisterAsset(const std::string& name, const std::string& path, size_t type, size_t subtype = BASEASSET);
     void RegisterObject(AssetNode obj);
+    void UnregisterObject(const AssetNode& obj);
     void RemoveAsset(const std::string& name);
     void RemoveObj(const std::string& name);
     void RemoveLastObj();
@@ -89,6 +91,7 @@ private:
   data_base* DOM, *DOMWriter;
   QFileDialog *open;
   QGraphicsScene* textPrev, *worldPrev;
+  QGraphicsPixmapItem* worldItm;
   QTreeWidget* tvBaseAssets_bk, *tvRegisteredObjs_bk;
   QTimer* frame;
   std::string modName, modDescription, modPath, modRootPath;

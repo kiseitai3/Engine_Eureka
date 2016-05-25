@@ -33709,6 +33709,27 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_ScreenInfo_AutoDetectVideoCard(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:ScreenInfo_AutoDetectVideoCard",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_ScreenInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ScreenInfo_AutoDetectVideoCard" "', argument " "1"" of type '" "ScreenInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< ScreenInfo * >(argp1);
+  (arg1)->AutoDetectVideoCard();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_ScreenInfo_GetMaxFramesPerSec(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
@@ -34397,6 +34418,27 @@ SWIGINTERN PyObject *_wrap_SoundInfo_SetSoundDeviceStr(PyObject *SWIGUNUSEDPARM(
   return resultobj;
 fail:
   if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_SoundInfo_AutoDetectSoundCard(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:SoundInfo_AutoDetectSoundCard",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SoundInfo, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SoundInfo_AutoDetectSoundCard" "', argument " "1"" of type '" "SoundInfo *""'"); 
+  }
+  arg1 = reinterpret_cast< SoundInfo * >(argp1);
+  (arg1)->AutoDetectSoundCard();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
   return NULL;
 }
 
@@ -45725,6 +45767,50 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Game_FRAME_FORMAT_SIZE_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  size_t result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_FRAME_FORMAT_SIZE_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_FRAME_FORMAT_SIZE_get" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (size_t) ((arg1)->FRAME_FORMAT_SIZE);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Game_FRAME_FORMAT_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Game *arg1 = (Game *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Game_FRAME_FORMAT_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Game, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Game_FRAME_FORMAT_get" "', argument " "1"" of type '" "Game *""'"); 
+  }
+  arg1 = reinterpret_cast< Game * >(argp1);
+  result = (std::string *) & ((arg1)->FRAME_FORMAT);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *Game_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
@@ -46760,6 +46846,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"ScreenInfo_SetScreenInfo", _wrap_ScreenInfo_SetScreenInfo, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenLoc", _wrap_ScreenInfo_SetScreenLoc, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_SetScreenDeviceStr", _wrap_ScreenInfo_SetScreenDeviceStr, METH_VARARGS, NULL},
+	 { (char *)"ScreenInfo_AutoDetectVideoCard", _wrap_ScreenInfo_AutoDetectVideoCard, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_GetMaxFramesPerSec", _wrap_ScreenInfo_GetMaxFramesPerSec, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_GetScreenWidth", _wrap_ScreenInfo_GetScreenWidth, METH_VARARGS, NULL},
 	 { (char *)"ScreenInfo_GetScreenHeight", _wrap_ScreenInfo_GetScreenHeight, METH_VARARGS, NULL},
@@ -46782,6 +46869,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SoundInfo_SetSoundInfo", _wrap_SoundInfo_SetSoundInfo, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_SetSoundVolume", _wrap_SoundInfo_SetSoundVolume, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_SetSoundDeviceStr", _wrap_SoundInfo_SetSoundDeviceStr, METH_VARARGS, NULL},
+	 { (char *)"SoundInfo_AutoDetectSoundCard", _wrap_SoundInfo_AutoDetectSoundCard, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundFrequency", _wrap_SoundInfo_GetSoundFrequency, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundChannels", _wrap_SoundInfo_GetSoundChannels, METH_VARARGS, NULL},
 	 { (char *)"SoundInfo_GetSoundChunkSize", _wrap_SoundInfo_GetSoundChunkSize, METH_VARARGS, NULL},
@@ -47068,6 +47156,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Game_loadRate_get", _wrap_Game_loadRate_get, METH_VARARGS, NULL},
 	 { (char *)"Game_WINDOW_WIDTH_get", _wrap_Game_WINDOW_WIDTH_get, METH_VARARGS, NULL},
 	 { (char *)"Game_WINDOW_HEIGHT_get", _wrap_Game_WINDOW_HEIGHT_get, METH_VARARGS, NULL},
+	 { (char *)"Game_FRAME_FORMAT_SIZE_get", _wrap_Game_FRAME_FORMAT_SIZE_get, METH_VARARGS, NULL},
+	 { (char *)"Game_FRAME_FORMAT_get", _wrap_Game_FRAME_FORMAT_get, METH_VARARGS, NULL},
 	 { (char *)"Game_swigregister", Game_swigregister, METH_VARARGS, NULL},
 	 { (char *)"helperDrawFunction", _wrap_helperDrawFunction, METH_VARARGS, NULL},
 	 { (char *)"helperSoundFunction", _wrap_helperSoundFunction, METH_VARARGS, NULL},

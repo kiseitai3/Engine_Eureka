@@ -24,4 +24,3 @@ EXPORTS
     _ZNK5QueueIP10sound_baseE4fullEv @23
     _ZNK5QueueIP10sound_baseE5emptyEv @24
     _ZNK5QueueIP10sound_baseE5frontEv @25
-    _get_output_format @26

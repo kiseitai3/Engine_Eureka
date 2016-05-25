@@ -4,6 +4,8 @@
 #include "physics.h"
 #include "sound_base.h"
 
+#include <windows.h>
+
 SoundQueue::SoundQueue(Game* owner)
 {
     owner_ref = owner;

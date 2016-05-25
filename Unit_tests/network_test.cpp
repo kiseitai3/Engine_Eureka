@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+#include <windows.h>
+
 
 //prototypes
 void Send(Game& g, std::string& d, size_t socket_id, size_t client_id, bool server = true);

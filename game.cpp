@@ -5,9 +5,11 @@
 #include "database.h"
 #include <cmd_utils.h>
 
+#include <windows.h>
 
 //Engine name space macro
 //ENGINE_NAMESPACE
+
 
 //Threading entry points
 void_ptr helperSoundFunction(void_ptr game)
@@ -89,6 +91,7 @@ void_ptr helperUpdateFunction(void_ptr game)
 }
 
 const size_t Game::loadRate = 17;
+const std::string Game::FRAME_FORMAT = "RGBA8888";
 
 /*class EUREKA Game : public ParticleSystem, public ModuleSystem, public UnitManager, public IOManager,
     public UIManager, public NetworkManager, public TriggerManager, public LayerSystem, public Cursor, public TimerSystem,
@@ -162,7 +165,7 @@ Game::Game(cstr file, int argc, char* argv[], bool editor): ThreadSystem(), Game
 
 void Game::initEditorFrameBuffer()
 {
-    frameSize = GetScreenWidth() * GetScreenHeight() * 4;//Size of the buffer that will be exposed to the game editor. 4 = 4 basic components of a pixel!
+    frameSize = GetScreenWidth() * GetScreenHeight() * FRAME_FORMAT_SIZE;//Size of the buffer that will be exposed to the game editor.
     frameBuffer = new char[frameSize];
 }
 
@@ -767,7 +770,7 @@ void Game::drawWorld()
     if(requestFrame)
     {
         ClearEditorFrameBuffer();//clean the buffer
-        if(SDL_RenderReadPixels(screen, NULL, 0, (void*)frameBuffer, 0) != 0)//Read the pixels
+        if(SDL_RenderReadPixels(screen, NULL, SDL_PIXELFORMAT_RGBA8888, (void*)frameBuffer, 0) != 0)//Read the pixels
             std::cout << SDL_GetError() << std::endl;
     }
     //Present buffer

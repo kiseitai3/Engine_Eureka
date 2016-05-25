@@ -23736,7 +23736,7 @@
 	<SDL.h>
 	<vector>
 
-1455472199 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
+1464177792 c:\users\luis\documents\devcb\engine_eureka\typedefs.h
 	<string>
 	<inttypes.h>
 	<unistd.h>
@@ -23809,7 +23809,7 @@
 	<stack>
 	"game.h"
 
-1461962341 c:\users\luis\documents\devcb\engine_eureka\game.h
+1464123231 c:\users\luis\documents\devcb\engine_eureka\game.h
 	<iostream>
 	<queue>
 	<map>
@@ -23824,7 +23824,7 @@
 	<SDL_net.h>
 	"typedefs.h"
 
-1461963969 c:\users\luis\documents\devcb\engine_eureka\info.h
+1464133601 c:\users\luis\documents\devcb\engine_eureka\info.h
 	<SDL.h>
 	<iostream>
 	<string>
@@ -24043,7 +24043,7 @@
 	"draw_base.h"
 	"conversion.h"
 
-1462929122 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
+1464135680 source:c:\users\luis\documents\devcb\engine_eureka\eureka_lua.cxx
 	<string.h>
 	"lua.h"
 	"lauxlib.h"
@@ -24113,7 +24113,7 @@
 	"BST.h"
 	"typedefs.h"
 
-1462929120 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
+1464135678 source:c:\users\luis\documents\devcb\engine_eureka\eureka_wrap.cxx
 	<Python.h>
 	<Python.h>
 	<string.h>
@@ -24264,7 +24264,7 @@
 	"scriptwrap.h"
 	"trigger.h"
 
-1440117546 source:c:\users\luis\documents\devcb\engine_eureka\ui.cpp
+1462931612 source:c:\users\luis\documents\devcb\engine_eureka\ui.cpp
 	<list>
 	<string>
 	<SDL.h>
@@ -24289,10 +24289,11 @@
 
 1422197357 c:\program files (x86)\codeblocks\mingw\msys\1.0\local\include\boost\iterator
 
-1461963987 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
+1464177524 source:c:\users\luis\documents\devcb\engine_eureka\info.cpp
 	"info.h"
 	"database.h"
 	"data_base.h"
+	<GL/gl.h>
 
 1423977431 source:c:\users\luis\documents\devcb\engine_eureka\mysql.cpp
 	"mysql.h"
@@ -27523,17 +27524,19 @@
 	"trigger.h"
 	"BST.h"
 
-1440869097 source:c:\users\luis\documents\devcb\engine_eureka\networking.cpp
+1464177845 source:c:\users\luis\documents\devcb\engine_eureka\networking.cpp
 	"networking.h"
 	"rand_generators.h"
 	"eureka.h"
+	<windows.h>
 
-1461963969 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
+1464177941 source:c:\users\luis\documents\devcb\engine_eureka\game.cpp
 	"eureka.h"
 	"level.h"
 	<SDL_image.h>
 	"database.h"
 	<cmd_utils.h>
+	<windows.h>
 
 1440693881 c:\users\luis\documents\devcb\engine_eureka\timersystem.h
 	"Timer.h"
@@ -27893,12 +27896,13 @@
 	"Queue.h"
 	"typedefs.h"
 
-1440693655 source:c:\users\luis\documents\devcb\engine_eureka\soundqueue.cpp
+1464177792 source:c:\users\luis\documents\devcb\engine_eureka\soundqueue.cpp
 	"eureka.h"
 	"game.h"
 	"unit.h"
 	"physics.h"
 	"sound_base.h"
+	<windows.h>
 
 1440693276 c:\users\luis\documents\devcb\engine_eureka\videoplayer.h
 	<libavcodec/avcodec.h>

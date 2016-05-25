@@ -28448,6 +28448,29 @@ fail:
 }
 
 
+static int _wrap_ScreenInfo_AutoDetectVideoCard(lua_State* L) {
+  int SWIG_arg = 0;
+  ScreenInfo *arg1 = (ScreenInfo *) 0 ;
+  
+  SWIG_check_num_args("ScreenInfo::AutoDetectVideoCard",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ScreenInfo::AutoDetectVideoCard",1,"ScreenInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_ScreenInfo,0))){
+    SWIG_fail_ptr("ScreenInfo_AutoDetectVideoCard",1,SWIGTYPE_p_ScreenInfo);
+  }
+  
+  (arg1)->AutoDetectVideoCard();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_ScreenInfo_GetMaxFramesPerSec(lua_State* L) {
   int SWIG_arg = 0;
   ScreenInfo *arg1 = (ScreenInfo *) 0 ;
@@ -28857,6 +28880,7 @@ static swig_lua_method swig_ScreenInfo_methods[]= {
     { "SetScreenInfo", _wrap_ScreenInfo_SetScreenInfo},
     { "SetScreenLoc", _wrap_ScreenInfo_SetScreenLoc},
     { "SetScreenDeviceStr", _wrap_ScreenInfo_SetScreenDeviceStr},
+    { "AutoDetectVideoCard", _wrap_ScreenInfo_AutoDetectVideoCard},
     { "GetMaxFramesPerSec", _wrap_ScreenInfo_GetMaxFramesPerSec},
     { "GetScreenWidth", _wrap_ScreenInfo_GetScreenWidth},
     { "GetScreenHeight", _wrap_ScreenInfo_GetScreenHeight},
@@ -29189,6 +29213,29 @@ fail:
 }
 
 
+static int _wrap_SoundInfo_AutoDetectSoundCard(lua_State* L) {
+  int SWIG_arg = 0;
+  SoundInfo *arg1 = (SoundInfo *) 0 ;
+  
+  SWIG_check_num_args("SoundInfo::AutoDetectSoundCard",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SoundInfo::AutoDetectSoundCard",1,"SoundInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_SoundInfo,0))){
+    SWIG_fail_ptr("SoundInfo_AutoDetectSoundCard",1,SWIGTYPE_p_SoundInfo);
+  }
+  
+  (arg1)->AutoDetectSoundCard();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_SoundInfo_GetSoundFrequency(lua_State* L) {
   int SWIG_arg = 0;
   SoundInfo *arg1 = (SoundInfo *) 0 ;
@@ -29328,6 +29375,7 @@ static swig_lua_method swig_SoundInfo_methods[]= {
     { "SetSoundInfo", _wrap_SoundInfo_SetSoundInfo},
     { "SetSoundVolume", _wrap_SoundInfo_SetSoundVolume},
     { "SetSoundDeviceStr", _wrap_SoundInfo_SetSoundDeviceStr},
+    { "AutoDetectSoundCard", _wrap_SoundInfo_AutoDetectSoundCard},
     { "GetSoundFrequency", _wrap_SoundInfo_GetSoundFrequency},
     { "GetSoundChannels", _wrap_SoundInfo_GetSoundChannels},
     { "GetSoundChunkSize", _wrap_SoundInfo_GetSoundChunkSize},
@@ -39297,6 +39345,54 @@ fail:
 }
 
 
+static int _wrap_Game_FRAME_FORMAT_SIZE_get(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("Game::FRAME_FORMAT_SIZE",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::FRAME_FORMAT_SIZE",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_FRAME_FORMAT_SIZE_get",1,SWIGTYPE_p_Game);
+  }
+  
+  result = (size_t) ((arg1)->FRAME_FORMAT_SIZE);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Game_FRAME_FORMAT_get(lua_State* L) {
+  int SWIG_arg = 0;
+  Game *arg1 = (Game *) 0 ;
+  std::string *result = 0 ;
+  
+  SWIG_check_num_args("Game::FRAME_FORMAT",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Game::FRAME_FORMAT",1,"Game *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Game,0))){
+    SWIG_fail_ptr("Game_FRAME_FORMAT_get",1,SWIGTYPE_p_Game);
+  }
+  
+  result = (std::string *) & ((arg1)->FRAME_FORMAT);
+  lua_pushlstring(L,result->data(),result->size()); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static void swig_delete_Game(void *obj) {
 Game *arg1 = (Game *) obj;
 delete arg1;
@@ -39313,6 +39409,8 @@ static swig_lua_attribute swig_Game_attributes[] = {
     { "loadRate", _wrap_Game_loadRate_get, SWIG_Lua_set_immutable },
     { "WINDOW_WIDTH", _wrap_Game_WINDOW_WIDTH_get, SWIG_Lua_set_immutable },
     { "WINDOW_HEIGHT", _wrap_Game_WINDOW_HEIGHT_get, SWIG_Lua_set_immutable },
+    { "FRAME_FORMAT_SIZE", _wrap_Game_FRAME_FORMAT_SIZE_get, SWIG_Lua_set_immutable },
+    { "FRAME_FORMAT", _wrap_Game_FRAME_FORMAT_get, SWIG_Lua_set_immutable },
     {0,0,0}
 };
 static swig_lua_method swig_Game_methods[]= {

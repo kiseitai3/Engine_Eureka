@@ -130,6 +130,8 @@ public:
     static const size_t loadRate;
     static const size_t WINDOW_WIDTH = 640;
     static const size_t WINDOW_HEIGHT = 480;
+    static const size_t FRAME_FORMAT_SIZE = 32 * 4;//4 = 4 basic components of a pixel! 32 = 8bits per channel for 4 channels
+    static const std::string FRAME_FORMAT;//This is so outside programs can get some sort of hint as to what format to expect from the editor frame buffer
 private:
     //Renderer
     SDL_Renderer *screen;

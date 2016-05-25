@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QPixmap>
 #include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
 #include <QImage>
 #include <QTimer>
 
@@ -33,7 +34,11 @@ MainWindow::MainWindow(QWidget *parent) :
   DOM = NULL;
   DOMWriter = NULL;
   open = new QFileDialog();
-  worldPrev = NULL;
+  //Set up world preview image
+  worldPrev = new QGraphicsScene(this);
+  worldItm = new QGraphicsPixmapItem();
+  worldPrev->addItem(worldItm);
+  ui->gvGamePreview->setScene(worldPrev);
   frame = NULL;
   textPrev = new QGraphicsScene(this);
   ui->gvTexturePreview->setScene(textPrev);
@@ -106,6 +111,7 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
 
 void MainWindow::RegisterObject(AssetNode obj)
 {
+    size_t tree = OBJECTLIST;
     switch(obj.type)
     {
     case CODETYPE|SCRIPT:
@@ -145,6 +151,7 @@ void MainWindow::RegisterObject(AssetNode obj)
     case UITYPE|BUTTON:
     case UITYPE|TEXTBOX:
         obj.id = engine->RegisterUI(obj.path.toStdString().c_str());
+        tree = UIELEMENTS;
         break;
     case PHYSICS:
     case OBJTYPE|PHYSICS:
@@ -157,9 +164,71 @@ void MainWindow::RegisterObject(AssetNode obj)
 
     //Update the editor interface
     objects.push_back(obj);
-    AddTreeViewItem(OBJECTLIST, obj.name.toStdString());
+    AddTreeViewItem(tree, obj.name.toStdString());
     objOrder.push(obj.id);
 
+}
+
+void MainWindow::UnregisterObject(const AssetNode &obj)
+{
+    size_t tree = OBJECTLIST;
+    switch(obj.type)
+    {
+    case CODETYPE|SCRIPT:
+    //All unit kind of objects
+    case UNIT:
+    case OBJECT:
+    case PROJECTILE:
+    case OBJTYPE|UNIT:
+    case OBJTYPE|OBJECT:
+    case OBJTYPE|PROJECTILE:
+        //Load the object into the engine with the data!
+        engine->DeleteUnitByID(obj.id);
+        break;
+    //All triggers
+    case TRIGGER:
+    case OBJTYPE|TRIGGER:
+        engine->UnRegisterTrigger(obj.id);
+        break;
+    //All cursors
+    case CURSOR:
+    case OBJTYPE|CURSOR:
+        engine->RemoveCursor(obj.id);
+        break;
+    case CURSORSET:
+    case OBJTYPE|CURSORSET:
+        for(size_t i = 0; i < obj.idlist.size(); i++)
+        {
+            engine->RemoveCursor(obj.idlist[i]);
+        }
+        break;
+    case LAYER:
+    case OBJTYPE|LAYER:
+        engine->DeleteLayer(obj.id);
+        break;
+    case LAYERSET:
+    case OBJTYPE|LAYERSET:
+        for(size_t i = 0; i < obj.idlist.size(); i++)
+        {
+            engine->DeleteLayer(obj.idlist[i]);
+        }
+        break;
+    case UITYPE:
+    case UITYPE|BUTTON:
+    case UITYPE|TEXTBOX:
+        engine->UnregisterUI(obj.id);
+        tree = UIELEMENTS;
+        break;
+    case PHYSICS:
+    case OBJTYPE|PHYSICS:
+    default:
+        break;
+    }
+
+    //Update the editor interface
+    objects.remove(obj);
+    delete GetTreeViewRoot(tree, obj.name.toStdString());
+    removeValFromStack(objOrder, obj.id);
 }
 
 void MainWindow::RemoveAsset(const std::string &name)
@@ -328,6 +397,14 @@ void MainWindow::on_action_Exit_triggered()
 void MainWindow::on_pbModBrowse_clicked()
 {
     size_t tmpIndex = 0;
+    //Stop drawing timer
+    if(frame)
+    {
+        frame->stop();
+        delete frame;
+    }
+
+    //Proceed to loading data
     open->setFileMode(QFileDialog::Directory);
     if(ui->leMod->text().toStdString().empty())
         ui->leMod->setText(open->getExistingDirectory(this, "Open Folder Dialog", "."));
@@ -380,9 +457,11 @@ void MainWindow::on_pbModBrowse_clicked()
 
     //Load some basic video settings so we can get the engine drawing!
     loadVideoSettings();
-    frame = new QTimer(this);
+
+    //Start asynchronoush drawing of game objects
+    /*frame = new QTimer(this);
     connect(frame, SIGNAL(timeout()), this, SLOT(drawObjs()));
-    frame->start(17);
+    frame->start(17);*/
 
 
     //Finally, we enable the other tabs and allow the user to do his/her work
@@ -676,6 +755,7 @@ void MainWindow::loadVideoSettings()
     gameName = gameDOM->GetStrFromData("game_name");
     icon = gameDOM->GetStrFromData("icon");
     displayIndex = gameDOM->GetIntFromData("current_display");
+    displayCount = gameDOM->GetIntFromData("display_count");
     renderQuality = gameDOM->GetStrFromData("render_quality");
     fps = gameDOM->GetIntFromData("frames_per_second");
     width = gameDOM->GetIntFromData("screen_width");
@@ -1461,4 +1541,6 @@ void MainWindow::on_pbClearUI_clicked()
 void MainWindow::drawObjs()
 {
     engine->drawWorld();
+    worldItm->setPixmap(QPixmap::fromImage(QImage(( const uchar*)engine->GetFrameBuffer(),engine->GetScreenWidth(), engine->GetScreenHeight(), QImage::Format_RGBA8888)));
+    ui->gvGamePreview->update();
 }

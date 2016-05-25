@@ -15,6 +15,8 @@
 #include "../timersystem.h"
 #include "../Dependencies/CRC/crc.h"
 
+#include <windows.h>
+
 bool stop = false;
 size_t mutex_id;
 std::string msg3;

@@ -156,13 +156,13 @@ EXPORTS
     _ZNSt16allocator_traitsISaI9TCPClientEE12_S_constructIS0_IRKS0_EEENSt9enable_ifIXsrNS2_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS1_PS8_DpOS9_ @155
     _ZNSt16allocator_traitsISaI9TCPClientEE7destroyIS0_EEvRS1_PT_ @156
     _ZNSt16allocator_traitsISaI9TCPClientEE8max_sizeERKS1_ @157
-    _ZNSt16allocator_traitsISaI9TCPClientEE9constructIS0_IRKS0_EEEvRS1_PT_DpOT0_ @158
+    _ZNSt16allocator_traitsISaI9TCPClientEE9constructIS0_IRKS0_EEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS1_PT_DpOS6_ @158
     _ZNSt16allocator_traitsISaIP7NetNodeEE10_S_destroyIS1_EENSt9enable_ifIXsrNS3_16__destroy_helperIT_EE5valueEvE4typeERS2_PS7_ @159
     _ZNSt16allocator_traitsISaIP7NetNodeEE11_S_max_sizeIKS2_EENSt9enable_ifIXsrNS3_16__maxsize_helperIT_EE5valueEjE4typeERS8_ @160
     _ZNSt16allocator_traitsISaIP7NetNodeEE12_S_constructIS1_IRKS1_EEENSt9enable_ifIXsrNS3_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS2_PS9_DpOSA_ @161
     _ZNSt16allocator_traitsISaIP7NetNodeEE7destroyIS1_EEvRS2_PT_ @162
     _ZNSt16allocator_traitsISaIP7NetNodeEE8max_sizeERKS2_ @163
-    _ZNSt16allocator_traitsISaIP7NetNodeEE9constructIS1_IRKS1_EEEvRS2_PT_DpOT0_ @164
+    _ZNSt16allocator_traitsISaIP7NetNodeEE9constructIS1_IRKS1_EEEDTcl12_S_constructfp_fp0_spcl7forwardIT0_Efp1_EEERS2_PT_DpOS7_ @164
     _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIP9TCPClientES4_EET0_T_S7_S6_ @165
     _ZNSt20__uninitialized_copyILb1EE13__uninit_copyISt13move_iteratorIPP7NetNodeES5_EET0_T_S8_S7_ @166
     _ZNSt6vectorI9TCPClientSaIS0_EE19_M_emplace_back_auxIIRKS0_EEEvDpOT_ @167
@@ -208,4 +208,3 @@ EXPORTS
     _ZStneIP9TCPClientEbRKSt13move_iteratorIT_ES6_ @207
     _ZdlPvS_ @208
     _ZnwjPv @209
-    _get_output_format @210

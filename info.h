@@ -77,6 +77,7 @@ class ScreenInfo
                         size_t screenmode = ScreenInfo::FULLSCREEN);
      void SetScreenLoc(int x = 0, int y = 0);
      void SetScreenDeviceStr(const std::string& gfx_card);
+     void AutoDetectVideoCard();
      /*Getters*/
      size_t GetMaxFramesPerSec() const;
      size_t GetScreenWidth() const;
@@ -111,6 +112,7 @@ class SoundInfo
       void SetSoundInfo(size_t frequency = 22050, size_t channels = 2, size_t chunksize = 4096)  ;
       void SetSoundVolume(size_t vol);
       void SetSoundDeviceStr(const std::string& sound_card);
+      void AutoDetectSoundCard();
       /*Getter*/
       size_t GetSoundFrequency() const;
       size_t GetSoundChannels() const;

@@ -38,4 +38,3 @@ EXPORTS
     _ZNK5Timer10is_startedEv @37
     _ZNK5Timer9get_ticksEv @38
     _ZNK5Timer9is_pausedEv @39
-    _get_output_format @40

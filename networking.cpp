@@ -3,6 +3,8 @@
 #include "rand_generators.h"
 #include "eureka.h"
 
+#include <windows.h>
+
 //Engine name space macro
 //ENGINE_NAMESPACE
 

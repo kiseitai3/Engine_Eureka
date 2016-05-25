@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../mysql.h"
-#include "data_base.h"
+#include "../data_base.h"
 
 int main()
 {

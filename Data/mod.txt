@@ -9,6 +9,7 @@ root = Data;
 game_name = Campaign;
 icon = pm.ico;
 current_display = 0;
+display_count = 1;
 render_quality = best;
 frames_per_second = 60;
 screen_width = 1280;

@@ -1,7 +1,9 @@
 #include "info.h"
 #include "database.h"
 #include "data_base.h"
-
+#include <GL/gl.h>
+#undef LocaleInfo
+#undef GetLocaleInfo
 //Engine name space macro
 //ENGINE_NAMESPACE
 
@@ -44,6 +46,15 @@ void ScreenInfo::SetScreenLoc(int x, int y)
 void ScreenInfo::SetScreenDeviceStr(const std::string& gfx_card)
 {
     video_card = gfx_card;
+}
+
+void ScreenInfo::AutoDetectVideoCard()
+{
+    std::string gfx_str;
+    gfx_str = (char*)glGetString(GL_VENDOR);
+    gfx_str += " ";
+    gfx_str += (char*)glGetString(GL_RENDERER);
+    SetScreenDeviceStr(gfx_str);
 }
 
 math_point& ScreenInfo::GetScreenLoc()
@@ -122,6 +133,11 @@ void SoundInfo::SetSoundDeviceStr(const std::string& sound_card)
     card = sound_card;
 }
 
+void SoundInfo::AutoDetectSoundCard()
+{
+    SetSoundDeviceStr(SDL_GetAudioDeviceName(0,0));
+}
+
 size_t SoundInfo::GetSoundFrequency() const
 {
     return m_frequency;
@@ -152,7 +168,7 @@ std::string SoundInfo::GetSoundDeviceName() const
 /*GameInfo*/
 const std::string GameInfo::EMPTY = "";
 
-GameInfo::GameInfo():ScreenInfo(), SoundInfo()
+GameInfo::GameInfo():ScreenInfo(), SoundInfo(), ExpansionInfo(), LocaleInfo()
 {
     m_rootdata = "";
     m_mod = "";

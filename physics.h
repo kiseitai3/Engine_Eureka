@@ -1,24 +1,14 @@
 #ifndef PHYSICS_H_INCLUDED
 #define PHYSICS_H_INCLUDED
-#include "data_base.h"
+
+#include "typedefs.h"
 #include <string>
 #include <SDL.h>
 #include <vector>
 
- struct math_VECTOR// The math prefix will remind me this is a basic math unit
-    {
-         public:
-        int endX;
-        int endY;
-        double direction; //I'm gonna use the degrees in a circle as the general direction in the screen
-        int magnitude;
-    };
+//Engine name space macro
+//ENGINE_NAMESPACE
 
-  struct math_point
-  {
-      int X;
-      int Y;
-  };
 
  class Physics
 {
@@ -32,10 +22,10 @@
     void Impulse (math_VECTOR inputVector);//Basically, I want to take a vector, change its relative direction relative to an imaginary circle in the background, and use the new direction to update the point that describes its new position.
     double Friction(double targetMU, bool relativity);
     void Update_Velocity(double secondsPassed);
-    void UpdateForce(Physics* forceProducers, int force_type, bool relativity = false);//IndexSize should be simple to get.
+    void UpdateForce(Physics* forceProducer, int force_type, bool relativity = false, char axis = 'x');//IndexSize should be simple to get.
     void Update_Acceleration();
     double math_CalculateDirectionDegrees(int sourceX, int sourceY) const;
-    double GetDistance(math_point source) const;
+    double GetDistance(const math_point& source) const;
     math_point GetLoc() const;
     double GetMU() const;
     double GetMass() const;
@@ -44,8 +34,8 @@
     double GetGravity() const;
     double GetVelocity(char axis) const;
     double GetElasticity() const;
-    double math_CalculateForceFromChargedParticles(double Q2, math_point source) const;
-    double math_CalculateEField(math_point source) const;
+    double math_CalculateForceFromChargedParticles(double Q2, const math_point& source) const;
+    double math_CalculateEField(const math_point& source) const;
     double math_CalculateEField(int ForceCount) const;
     int math_Sign(Physics *forceProducer, bool x) const;
     int math_Sign(Physics *forceProducer, char axis) const;
@@ -56,6 +46,7 @@
     bool isUnmovable() const;
     void SetForceCount(int force, char axis);
     void SetForceCount(double force, char axis);
+    void SetLoc(const math_point& pos);
     void SetVelocity(double velocity, char axis);
     void AddForce(double force, char axis = 'x');
     Physics(const char* location = "");
@@ -79,7 +70,6 @@
     double C;
     double elasticity;
     double g;
-    data_base physDOM;
     math_point loc;
     std::string B;
     //Let's define some basic physics constants
@@ -94,5 +84,8 @@
     void rel_CalculateForce(char axis = 'x', bool relativity = false);
 };
 
-int CalculateDistance(math_point A, math_point B);
+size_t CalculateDistance(const math_point& A, const math_point& B);
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PHYSICS_H_INCLUDED

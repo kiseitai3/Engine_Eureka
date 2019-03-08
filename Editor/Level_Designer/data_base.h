@@ -21,7 +21,6 @@
 #include <fstream>
 #include <string>
 #include "conversion.h"
-#include "data_base.h"
 #include <iostream>
 
 class data_base
@@ -38,11 +37,13 @@ class data_base
     //methods
     bool LoadData(const char* location, bool readMode = true);
     void LoadStringBuffer(bool closeFile = true);
+    void LoadBuffer(const char* contents);
     void FlushData();
     int GetLineIndex(const std::string& search, int lineNum) const;
     void FileClear();
     void CleanFileContentsOfArtifacts();
     void TrimEndOfFile();
+
     public:
     //methods
     data_base(const char location[]="", bool read = true);
@@ -66,13 +67,18 @@ class data_base
     int GetNumInstances(const std::string& search) const;
     std::string GetLastOutput() const;
     bool isOutputOpen() const;
+    bool isTag(size_t pos) const;
     bool SearchTermExists(const std::string& search) const;
     void RestoreFileContents();
     void RefreshFile();
     void CreateNewFile(const char* location = "");
     static void CreateNewFile_static(const char* location);
     ~data_base();
+
+    //Constant directives
+    static const char* BUFFER;
 };
 
 bool copyfile(const std::string& source, const std::string& destination, bool binary = true);
+unsigned char* get_bin_buffer(const char* file, size_t& s);
 #endif // DATA_BASE_H_INCLUDED

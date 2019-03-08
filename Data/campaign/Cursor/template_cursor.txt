@@ -1,0 +1,4 @@
+cur_name = template_cursor;
+cur_sound_file = ;
+cur_texture = ;
+cur_fps = 1;

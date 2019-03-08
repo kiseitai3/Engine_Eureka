@@ -3,56 +3,506 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Eureka" />
-		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="gcc_qt_52" />
 		<Build>
 			<Target title="Release">
-				<Option output="bin/Eureka" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj" />
-				<Option external_deps="C:/Users/Kiseitai2/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL.dll;C:/Users/Kiseitai2/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL_mixer.dll;" />
-				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option output="bin/Release/Eureka" prefix_auto="1" extension_auto="1" />
+				<Option external_deps="C:/Users/luism/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL.dll;C:/Users/luism/Documents/Dev-Cpp Projects/Engine_Eureka/bin/SDL_mixer.dll;" />
+				<Option type="0" />
+				<Option compiler="gcc_qt_52" />
 				<Compiler>
 					<Add option="-O3" />
+					<Add option="-std=c++11" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="lib">
-				<Option output="Eureka" prefix_auto="1" extension_auto="1" />
+			<Target title="staticlib_all">
+				<Option output="bin/libs/Eureka" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option type="2" />
-				<Option compiler="gcc" />
+				<Option compiler="gcc_qt_52" />
 				<Option createDefFile="1" />
 				<Compiler>
 					<Add option="-Wall" />
-					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="avutil" />
+					<Add library="swscale" />
+					<Add library="avformat" />
+					<Add library="avdevice" />
+					<Add library="avcodec" />
+					<Add library="CMD_Processor" />
+					<Add library="crc" />
+					<Add library="winpthread" />
+				</Linker>
 			</Target>
 			<Target title="Debug">
 				<Option output="bin/Eureka" prefix_auto="1" extension_auto="1" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="gcc_qt_52" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+				</Linker>
+			</Target>
+			<Target title="IO">
+				<Option output="bin/engine/IO" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="threading" />
+				</Linker>
+			</Target>
+			<Target title="Threading">
+				<Option output="bin/engine/threading" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="winpthread" />
+				</Linker>
+			</Target>
+			<Target title="Unit">
+				<Option output="bin/engine/Unit" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="threading" />
+					<Add library="Flags" />
+					<Add library="Input" />
+				</Linker>
+			</Target>
+			<Target title="Core">
+				<Option output="bin/engine/Core" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Flags" />
+					<Add library="Timer" />
+					<Add library="CRC_d" />
+					<Add library="lua_wrap" />
+					<Add library="opengl32" />
+				</Linker>
+			</Target>
+			<Target title="UI">
+				<Option output="bin/engine/UI" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="threading" />
+					<Add library="Flags" />
+					<Add library="Input" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="Sound">
+				<Option output="bin/engine/Sound" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="threading" />
+					<Add library="Flags" />
+				</Linker>
+			</Target>
+			<Target title="Plugins">
+				<Option output="bin/engine/plugins" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="threading" />
+				</Linker>
+			</Target>
+			<Target title="Network">
+				<Option output="bin/engine/network" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="threading" />
+				</Linker>
+			</Target>
+			<Target title="Eureka">
+				<Option output="bin/engine/Eureka" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="plugins" />
+					<Add library="UI" />
+					<Add library="IO" />
+					<Add library="threading" />
+					<Add library="network" />
+					<Add library="Timer" />
+					<Add library="Flags" />
+					<Add library="Unit" />
+					<Add library="Sound" />
+					<Add library="avutil" />
+					<Add library="swscale" />
+					<Add library="avformat" />
+					<Add library="avdevice" />
+					<Add library="avcodec" />
+					<Add library="CMD_Processor" />
+					<Add library="Input" />
+					<Add directory="Dependencies/libFFmpeg/lib" />
+					<Add directory="Dependencies/cmd_processor/lib/Release" />
+				</Linker>
+			</Target>
+			<Target title="Flags">
+				<Option output="bin/engine/Flags" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Threading" />
+				</Linker>
+			</Target>
+			<Target title="Timer">
+				<Option output="bin/engine/Timer" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="threading" />
+				</Linker>
+			</Target>
+			<Target title="LuaWrap">
+				<Option output="bin/engine/lua_wrap" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="_EE" />
+				</Linker>
+			</Target>
+			<Target title="Input">
+				<Option output="bin/engine/Input" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="Flags" />
+					<Add library="threading" />
+					<Add library="IO" />
+					<Add library="Sound" />
+				</Linker>
+			</Target>
+			<Target title="Wrapper">
+				<Option output="bin/engine/_EE" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/engine" />
+				<Option type="3" />
+				<Option compiler="gcc_qt_52" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-fPIC" />
+				</Compiler>
+				<Linker>
+					<Add library="Core" />
+					<Add library="plugins" />
+					<Add library="UI" />
+					<Add library="IO" />
+					<Add library="threading" />
+					<Add library="network" />
+					<Add library="Timer" />
+					<Add library="Flags" />
+					<Add library="Unit" />
+					<Add library="Sound" />
+					<Add library="avutil" />
+					<Add library="swscale" />
+					<Add library="avformat" />
+					<Add library="avdevice" />
+					<Add library="avcodec" />
+					<Add library="Input" />
+					<Add library="Eureka" />
+				</Linker>
+			</Target>
+			<Target title="data_base_test">
+				<Option output="bin/tests/data_base_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+			</Target>
+			<Target title="c++11_test">
+				<Option output="bin/tests/c++11_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="plugin_test">
+				<Option output="bin/tests/plugin_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="plugins" />
+				</Linker>
+			</Target>
+			<Target title="lua_wrap_test">
+				<Option output="bin/tests/lua_wrap_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="lua_wrap" />
+				</Linker>
+			</Target>
+			<Target title="mysql_test">
+				<Option output="bin/tests/mysql_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="sqlite3_test">
+				<Option output="bin/tests/sqlite_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="scriptwrap_test">
+				<Option output="bin/tests/scriptwrap_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+				</Linker>
+			</Target>
+			<Target title="BST_test">
+				<Option output="bin/tests/modadapter_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+				</Linker>
+			</Target>
+			<Target title="Base_components_test">
+				<Option output="bin/tests/base_components_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="threading" />
+					<Add library="Core" />
+					<Add library="crc" />
+				</Linker>
+			</Target>
+			<Target title="database_test">
+				<Option output="bin/tests/database_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Linker>
+					<Add library="Core" />
+					<Add library="IO" />
+				</Linker>
+			</Target>
+			<Target title="network_test_tcp_server">
+				<Option output="bin/tests/net_test_server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-DSERVER_TEST" />
+					<Add option="-DTCP_TEST" />
+				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+					<Add library="Flags" />
+					<Add library="Network" />
+					<Add library="Threading" />
+					<Add directory="bin/engine" />
+				</Linker>
+			</Target>
+			<Target title="network_test_tcp_client">
+				<Option output="bin/tests/net_test_client" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-DTCP_TEST" />
+				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+					<Add library="Flags" />
+					<Add library="Network" />
+					<Add directory="bin/engine" />
+				</Linker>
+			</Target>
+			<Target title="network_test_udp_server">
+				<Option output="bin/tests/net_test_udp_server" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DSERVER_TEST" />
+				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+					<Add library="Flags" />
+					<Add library="Network" />
+					<Add library="Threading" />
+					<Add directory="bin/engine" />
+				</Linker>
+			</Target>
+			<Target title="network_test_udp_client">
+				<Option output="bin/tests/net_test_udp_client" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+					<Add library="Flags" />
+					<Add library="Network" />
+					<Add directory="bin/engine" />
+				</Linker>
+			</Target>
+			<Target title="locale_parser_test">
+				<Option output="bin/tests/locale_parser_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
+				<Option parameters='-locale &quot;es_locale.txt&quot; -file &quot;input_messages.txt.out&quot; -o &quot;input_messages.txt.es&quot; -E' />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="IO" />
+					<Add library="Core" />
+					<Add library="CMD_Processor" />
+				</Linker>
+			</Target>
+			<Target title="cmd_processor_driver">
+				<Option output="bin/tests/cmd_processor_driver" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option parameters='-t &quot;Hello World!&quot; -t &quot;Hello People!&quot;' />
+				<Compiler>
+					<Add option="-std=c99" />
+				</Compiler>
+				<Linker>
+					<Add library="CMD_Processor" />
+				</Linker>
+			</Target>
+			<Target title="world_draw_test">
+				<Option output="bin/tests/world_draw_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/tests" />
+				<Option type="1" />
+				<Option compiler="gcc_qt_52" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-std=c++0x" />
 					<Add option="-g" />
 				</Compiler>
+				<Linker>
+					<Add library="Eureka" />
+					<Add library="Core" />
+				</Linker>
+			</Target>
+			<Target title="Network_C">
+				<Option output="bin/engine/network_c" imp_lib="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).a" def_file="$(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).def" prefix_auto="1" extension_auto="1" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DC_NETWORK_INTERFACE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="threading" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add directory="C:/Program Files/CodeBlocks/MinGW/include" />
+			<Add option="-std=c++11" />
+			<Add option="-g" />
+			<Add option="-ftrapv" />
+			<Add option="-D__STDC_CONSTANT_MACROS" />
 			<Add directory="c:/Python27/include" />
+<<<<<<< HEAD
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/include" />
 			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
 			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
+=======
+			<Add directory="Dependencies/SDL2-2.0.0/include" />
+			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/include/SDL2" />
+>>>>>>> TheIllusiveMan
 			<Add directory="Dependencies/lua-5.2.3/src" />
 			<Add directory="Dependencies/sqlite3" />
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/include" />
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/include" />
+<<<<<<< HEAD
 			<Add directory="../../../../../MinGW/msys/1.0/local/include/boost" />
 			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
+=======
+			<Add directory="Dependencies/libFFmpeg/include" />
+			<Add directory="Dependencies/CRC" />
+			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/include/SDL2" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/include/boost" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/include" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include/boost" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/include" />
+			<Add directory="Dependencies/cmd_processor/include" />
+>>>>>>> TheIllusiveMan
 		</Compiler>
 		<Linker>
 			<Add library="libmingw32" />
@@ -60,21 +510,31 @@
 			<Add library="libSDL2.dll" />
 			<Add library="SDL2_mixer" />
 			<Add library="libpython27" />
-			<Add library="SDL_ttf" />
+			<Add library="SDL2_ttf" />
 			<Add library="SDL2_image" />
 			<Add library="lua" />
 			<Add library="sqlite3" />
 			<Add library="mysqlcppconn" />
+<<<<<<< HEAD
 			<Add directory="C:/Program Files/CodeBlocks/MinGW/lib" />
 			<Add directory="c:/Python27/libs" />
 			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies/SDL_ttf-2.0.11/SDL_ttf-2.0.11/lib/x86" />
 			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+=======
+			<Add library="SDL2_net" />
+			<Add directory="c:/Python27/libs" />
+			<Add directory="Dependencies/SDL2-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL2_image-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="Dependencies/SDL2_ttf-2.0.12/i686-w64-mingw32/lib" />
+>>>>>>> TheIllusiveMan
 			<Add directory="Dependencies/lua-5.2.3/src" />
 			<Add directory="Dependencies/sqlite3/win32_lib" />
 			<Add directory="Dependencies/mysql-connector-c-6.1.5-win32/lib" />
 			<Add directory="Dependencies/mysql-connector-c++-noinstall-1.1.4-win32/lib" />
+<<<<<<< HEAD
 			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
 		</Linker>
 		<Unit filename="Eureka_lua.cxx">
@@ -83,30 +543,192 @@
 		</Unit>
 		<Unit filename="Eureka_wrap.cxx" />
 		<Unit filename="Timer.cpp" />
+=======
+			<Add directory="Dependencies/libFFmpeg/lib" />
+			<Add directory="Dependencies/CRC" />
+			<Add directory="Dependencies/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
+			<Add directory="../../../../../MinGW/msys/1.0/local/lib" />
+			<Add directory="../../../../../Program Files (x86)/CodeBlocks/MinGW/msys/1.0/local/lib" />
+			<Add directory="bin/engine" />
+			<Add directory="Dependencies/cmd_processor/lib/Release" />
+		</Linker>
+		<Unit filename="BST.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="BST.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="Eureka_lua.cxx">
+			<Option target="staticlib_all" />
+			<Option target="Wrapper" />
+		</Unit>
+		<Unit filename="Eureka_wrap.cxx">
+			<Option target="staticlib_all" />
+			<Option target="Wrapper" />
+		</Unit>
+		<Unit filename="Queue.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Queue.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="Timer.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+			<Option target="Timer" />
+		</Unit>
+>>>>>>> TheIllusiveMan
 		<Unit filename="Timer.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="Timer" />
+			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="button.cpp" />
+		<Unit filename="Unit_tests/base_components_test.cpp">
+			<Option target="Base_components_test" />
+		</Unit>
+		<Unit filename="Unit_tests/bst_test.cpp">
+			<Option target="BST_test" />
+		</Unit>
+		<Unit filename="Unit_tests/c++11_test.cpp">
+			<Option target="c++11_test" />
+		</Unit>
+		<Unit filename="Unit_tests/cmd_processor_driver.c">
+			<Option compilerVar="CC" />
+			<Option target="cmd_processor_driver" />
+		</Unit>
+		<Unit filename="Unit_tests/data_base_test.cpp">
+			<Option target="data_base_test" />
+		</Unit>
+		<Unit filename="Unit_tests/database_test.cpp">
+			<Option target="database_test" />
+		</Unit>
+		<Unit filename="Unit_tests/game_managers_test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Unit_tests/locale_parser_test.cpp">
+			<Option target="locale_parser_test" />
+		</Unit>
+		<Unit filename="Unit_tests/lua_wrap_test.cpp">
+			<Option target="lua_wrap_test" />
+		</Unit>
+		<Unit filename="Unit_tests/modules_test.cpp">
+			<Option target="plugin_test" />
+		</Unit>
+		<Unit filename="Unit_tests/mysql_test.cpp">
+			<Option target="mysql_test" />
+		</Unit>
+		<Unit filename="Unit_tests/network_test.cpp">
+			<Option target="network_test_tcp_server" />
+			<Option target="network_test_tcp_client" />
+			<Option target="network_test_udp_server" />
+			<Option target="network_test_udp_client" />
+		</Unit>
+		<Unit filename="Unit_tests/scriptwrap_test.cpp">
+			<Option target="scriptwrap_test" />
+		</Unit>
+		<Unit filename="Unit_tests/sqlite3_test.cpp">
+			<Option target="sqlite3_test" />
+		</Unit>
+		<Unit filename="Unit_tests/video_player_test.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Unit_tests/world_draw_test.cpp">
+			<Option target="world_draw_test" />
+		</Unit>
+		<Unit filename="ai_store.cpp">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="ai_store.h">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="button.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="button.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="config.h">
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="conversion.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+			<Option target="Threading" />
+			<Option target="data_base_test" />
+		</Unit>
+<<<<<<< HEAD
 		<Unit filename="config.h" />
 		<Unit filename="conversion.cpp" />
+=======
+>>>>>>> TheIllusiveMan
 		<Unit filename="conversion.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="Threading" />
+			<Option target="staticlib_all" />
+			<Option target="data_base_test" />
 		</Unit>
-		<Unit filename="data_base.cpp" />
+		<Unit filename="core.cpp">
+			<Option target="Flags" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="cursor.cpp">
+			<Option target="Input" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="cursor.h">
+			<Option target="Input" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="data_base.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+			<Option target="data_base_test" />
+		</Unit>
 		<Unit filename="data_base.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+			<Option target="data_base_test" />
 		</Unit>
-		<Unit filename="draw_base.cpp" />
+		<Unit filename="database.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="database.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="draw_base.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="draw_base.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="eureka.h">
+			<Option target="staticlib_all" />
+			<Option target="c++11_test" />
+			<Option target="IO" />
+			<Option target="network_test_tcp_server" />
+			<Option target="network_test_tcp_client" />
+			<Option target="network_test_udp_server" />
+			<Option target="network_test_udp_client" />
+		</Unit>
+		<Unit filename="game.cpp">
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="game.h">
+			<Option target="Flags" />
+			<Option target="Timer" />
+			<Option target="staticlib_all" />
+			<Option target="Eureka" />
 		</Unit>
 		<Unit filename="game.cpp">
 			<Option target="Release" />
@@ -117,18 +739,65 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="globals.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="input.cpp" />
+		<Unit filename="info.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="info.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="input.cpp">
+			<Option target="staticlib_all" />
+			<Option target="UI" />
+			<Option target="Input" />
+		</Unit>
 		<Unit filename="input.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="UI" />
+			<Option target="Input" />
+			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="level.cpp" />
+		<Unit filename="iomanager.cpp">
+			<Option target="staticlib_all" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="iomanager.h">
+			<Option target="staticlib_all" />
+			<Option target="IO" />
+		</Unit>
+		<Unit filename="layersystem.cpp">
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="layersystem.h">
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="level.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Eureka" />
+		</Unit>
 		<Unit filename="level.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="localesystem.cpp">
+			<Option target="IO" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="localesystem.h">
+			<Option target="IO" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="luawrap.cpp">
+			<Option target="LuaWrap" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="luawrap.h">
+			<Option target="LuaWrap" />
+			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="luawrap.cpp">
 			<Option target="Release" />
@@ -139,10 +808,10 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="main.cpp">
-			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="modadapter.cpp">
+<<<<<<< HEAD
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
@@ -153,10 +822,72 @@
 		<Unit filename="mysql.cpp" />
 		<Unit filename="mysql.h" />
 		<Unit filename="physics.cpp" />
-		<Unit filename="physics.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+=======
+			<Option target="Plugins" />
+			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="modadapter.h">
+			<Option target="Plugins" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="modules.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Plugins" />
+		</Unit>
+		<Unit filename="modules.h">
+			<Option target="staticlib_all" />
+			<Option target="Plugins" />
+		</Unit>
+		<Unit filename="mysql.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="mysql.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="networking.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Network" />
+			<Option target="Network_C" />
+		</Unit>
+		<Unit filename="networking.h">
+			<Option target="staticlib_all" />
+			<Option target="Network" />
+			<Option target="Network_C" />
+		</Unit>
+		<Unit filename="particlesystem.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Unit" />
+			<Option target="Input" />
+		</Unit>
+		<Unit filename="particlesystem.h">
+			<Option target="staticlib_all" />
+			<Option target="Unit" />
+			<Option target="Input" />
+		</Unit>
+		<Unit filename="physics.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+>>>>>>> TheIllusiveMan
+		<Unit filename="physics.h">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="plugin.cpp">
+			<Option target="Plugins" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="plugin.h">
+			<Option target="Plugins" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="progressbar.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+<<<<<<< HEAD
 		<Unit filename="plugin.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -166,15 +897,43 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="progressbar.cpp" />
+=======
+>>>>>>> TheIllusiveMan
 		<Unit filename="progressbar.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="pywrap.cpp" />
+		<Unit filename="pywrap.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="pywrap.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="staticlib_all" />
+			<Option target="Core" />
 		</Unit>
+		<Unit filename="rand_generators.cpp">
+			<Option target="Threading" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="rand_generators.h">
+			<Option target="Threading" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="scriptwrap.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="scriptwrap.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sound_base.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+<<<<<<< HEAD
 		<Unit filename="scriptwrap.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />
@@ -184,10 +943,57 @@
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="sound_base.cpp" />
+=======
+>>>>>>> TheIllusiveMan
 		<Unit filename="sound_base.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="soundqueue.cpp">
+			<Option target="Sound" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="soundqueue.h">
+			<Option target="Sound" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="sqlite_error.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sqlite_error.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sqlite_row.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sqlite_row.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sqlitewrap.cpp">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="sqlitewrap.h">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="sqlkeywords.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="sqlkeywords.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="textbox.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+<<<<<<< HEAD
 		<Unit filename="sqlite_error.cpp" />
 		<Unit filename="sqlite_error.h" />
 		<Unit filename="sqlite_row.cpp" />
@@ -203,28 +1009,135 @@
 		<Unit filename="sqlkeywords.cpp" />
 		<Unit filename="sqlkeywords.h" />
 		<Unit filename="textbox.cpp" />
+=======
+>>>>>>> TheIllusiveMan
 		<Unit filename="textbox.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="trigger.cpp" />
+		<Unit filename="texture_store.cpp">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="texture_store.h">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="threading.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Threading" />
+		</Unit>
+		<Unit filename="threading.h">
+			<Option target="staticlib_all" />
+			<Option target="Threading" />
+		</Unit>
+		<Unit filename="timersystem.cpp">
+			<Option target="Timer" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="timersystem.h">
+			<Option target="Timer" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="trigger.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="trigger.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
+		<Unit filename="triggermanager.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Eureka" />
+		</Unit>
+		<Unit filename="triggermanager.h">
+			<Option target="staticlib_all" />
+			<Option target="Eureka" />
+		</Unit>
+		<Unit filename="typedefs.h">
+			<Option target="IO" />
+			<Option target="Threading" />
+			<Option target="Network" />
+			<Option target="LuaWrap" />
+			<Option target="Unit" />
+			<Option target="staticlib_all" />
+			<Option target="Input" />
+			<Option target="Network_C" />
+		</Unit>
+		<Unit filename="ui.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+<<<<<<< HEAD
 		<Unit filename="typedefs.h">
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
 		<Unit filename="ui.cpp" />
+=======
+>>>>>>> TheIllusiveMan
 		<Unit filename="ui.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="Core" />
+			<Option target="staticlib_all" />
 		</Unit>
-		<Unit filename="unit.cpp" />
+		<Unit filename="ui_list.cpp">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="ui_list.h">
+			<Option target="Core" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="uimanager.cpp">
+			<Option target="staticlib_all" />
+			<Option target="UI" />
+		</Unit>
+		<Unit filename="uimanager.h">
+			<Option target="staticlib_all" />
+			<Option target="UI" />
+		</Unit>
+		<Unit filename="unit.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
 		<Unit filename="unit.h">
-			<Option target="Release" />
-			<Option target="Debug" />
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="unitmanager.cpp">
+			<Option target="staticlib_all" />
+			<Option target="Unit" />
+			<Option target="Input" />
+		</Unit>
+		<Unit filename="unitmanager.h">
+			<Option target="staticlib_all" />
+			<Option target="Unit" />
+			<Option target="Input" />
+		</Unit>
+		<Unit filename="utf8.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="utf8/checked.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="utf8/core.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="utf8/unchecked.h">
+			<Option target="staticlib_all" />
+			<Option target="Core" />
+		</Unit>
+		<Unit filename="videoplayer.cpp">
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
+		</Unit>
+		<Unit filename="videoplayer.h">
+			<Option target="Eureka" />
+			<Option target="staticlib_all" />
 		</Unit>
 		<Unit filename="utf8.h" />
 		<Unit filename="utf8/checked.h" />
@@ -235,13 +1148,13 @@
 			<debugger />
 			<envvars />
 			<DoxyBlocks>
-				<comment_style block="0" line="0" />
+				<comment_style block="5" line="0" />
 				<doxyfile_project />
 				<doxyfile_build />
-				<doxyfile_warnings />
-				<doxyfile_output />
+				<doxyfile_warnings warn_if_undocumented="1" />
+				<doxyfile_output html_help="1" latex="1" rtf="1" man="1" xml="1" />
 				<doxyfile_dot />
-				<general />
+				<general use_at_in_tags="1" />
 			</DoxyBlocks>
 		</Extensions>
 	</Project>

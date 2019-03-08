@@ -1,0 +1,3 @@
+cursor_count = 1;
+cursor_0_name = template_cursor;
+cursor_0_file = /pokemeds/Cursor/template_cursor.txt;

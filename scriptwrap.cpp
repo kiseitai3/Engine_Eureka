@@ -1,10 +1,25 @@
+<<<<<<< HEAD
 #include "scriptwrap.h"
+=======
+//#define EUREKA_EXPORT
+#include "scriptwrap.h"
+#include "luawrap.h"
+#include "pywrap.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+>>>>>>> TheIllusiveMan
 
 
 //Static methods/ vars
 const std::vector<fuzzy_obj> ScriptWrap::NO_ARGS;
 
+<<<<<<< HEAD
 ScriptWrap::ScriptWrap(const char* file)
+=======
+ScriptWrap::ScriptWrap(cstr file)
+>>>>>>> TheIllusiveMan
 {
     //Set variables to propper default values
     pyScript = NULL;
@@ -15,19 +30,32 @@ ScriptWrap::ScriptWrap(const char* file)
 
     //Let's decide the kind of file we have to load and therefore the scripting mode!
     //The scripting mode is a flag to decide whether to execute the Pywrap or LuaWrap APIs.
+<<<<<<< HEAD
     if(File.rfind(".lua") || File.rfind(".luo"))
         scriptMode = LUA;
     else if(File.rfind(".py") || File.rfind(".pyc"))
+=======
+    if(File.rfind(".lua") < File.size() || File.rfind(".luo") < File.size())
+        scriptMode = LUA;
+    else if(File.rfind(".py")  < File.size()|| File.rfind(".pyc") < File.size())
+>>>>>>> TheIllusiveMan
         scriptMode = PYTHON;
 
     //Now, let's load the correct script object based on the scripting mode!
     switch(scriptMode)
     {
     case LUA:
+<<<<<<< HEAD
         luaScript = new LuaWrap(file);
         break;
     case PYTHON:
         pyScript = new Pywrap(file);
+=======
+        luaScript = new LuaWrap(File.c_str());
+        break;
+    case PYTHON:
+        pyScript = new Pywrap(File.c_str());
+>>>>>>> TheIllusiveMan
         break;
     default:
         //Throw an error to cout for later reference!
@@ -198,7 +226,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractInt(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractInt();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -298,7 +333,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractDouble(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractDouble();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -396,7 +438,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractChar(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractChar();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -494,7 +543,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractBool(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractBool();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -592,7 +648,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractStr(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractStr();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -692,7 +755,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name))
+<<<<<<< HEAD
             response = luaScript->lua_extractPtr(luaScript->GetInternalState());
+=======
+        {
+            response = luaScript->lua_extractPtr();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -792,7 +862,14 @@ int ScriptWrap::executeFunction(const std::string& name, const std::vector<fuzzy
             }
         }
         if(luaScript->executeFunction(name.c_str()))
+<<<<<<< HEAD
             response = luaScript->GenerateListFromLuaTable();
+=======
+        {
+            response = luaScript->GenerateListFromLuaTable();
+            break;
+        }
+>>>>>>> TheIllusiveMan
         std::cout << "Error: Function failed to execute! Check the logs for more information!" << std::endl;
         execStatus = ERROR_EXEC_FAILURE;
         break;
@@ -991,3 +1068,9 @@ ScriptWrap::~ScriptWrap()
         delete luaScript;
 }
 
+<<<<<<< HEAD
+=======
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan

@@ -1,9 +1,10 @@
+//#define EUREKA_EXPORT
 #include <list>
 #include <string>
 #include <SDL.h>
 #include "textbox.h"
 #include "button.h"
-#include "data_base.h"
+
 #include "physics.h"
 #include "conversion.h"
 #include "progressbar.h"
@@ -11,8 +12,12 @@
 #include <string>
 #include "ui.h"
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 //Constructor and destructor
-UI::UI(const char *file, SDL_Renderer& ren)
+UI::UI(cstr file, SDL_Renderer& ren)
 {
     screen = &ren;
     background = new draw_base();
@@ -24,16 +29,18 @@ UI::UI(const char *file, SDL_Renderer& ren)
     {
         //Send settings to background
         background->Load_Texture(file, *screen);
-        //Recycle the background's DOM object as it contains the settings for the UI in general.
-        //This prevents duplication of the same piece of memory! In other words, we save ourselves a couple of bytes.
-        uiDOM = background->GetDOM();
+        data_base uiDOM(file);
+
+        //Get name of this UI (optional)
+        if(uiDOM.SearchTermExists("ui_name"))
+            uiName = uiDOM.GetStrFromData("ui_name");
 
         //copy location on screen
-        loc.X = uiDOM->GetIntFromData("ui_x");
-        loc.Y = uiDOM->GetIntFromData("ui_y");
+        loc.X = uiDOM.GetIntFromData("ui_x");
+        loc.Y = uiDOM.GetIntFromData("ui_y");
 
         //Build exit button
-        exit = new Button("X", uiDOM->GetStrFromData("ui_exit_file").c_str(), *screen, 10);
+        exit = new Button("X", uiDOM.GetStrFromData("ui_exit_file").c_str(), *screen, 10);
         if(!exit)
         {
             std::cout<<"Error: Could not build Exit button for this UI!\n\r";
@@ -45,22 +52,22 @@ UI::UI(const char *file, SDL_Renderer& ren)
 
         //Build textboxes
         std::string name;
-        texts.resize(uiDOM->GetIntFromData("ui_text_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_text_num"); i++)
+        texts.resize(uiDOM.GetIntFromData("ui_text_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_text_num"); i++)
         {
             name = "ui_text_" + intToStr(i);
-            textbox *tmp = new textbox(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
+            textbox *tmp = new textbox(uiDOM.GetStrFromData(name + "_msg"), uiDOM.GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             texts.push_back(tmp);
         }
 
         //Build Buttons
-        buttons.resize(uiDOM->GetIntFromData("ui_button_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_button_num"); i++)
+        buttons.resize(uiDOM.GetIntFromData("ui_button_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_button_num"); i++)
         {
             name = "ui_button_" + intToStr(i);
-            Button *tmp = new Button(uiDOM->GetStrFromData(name + "_msg"), uiDOM->GetStrFromData(name + "_file").c_str(), *screen, 1);
+            Button *tmp = new Button(uiDOM.GetStrFromData(name + "_msg"), uiDOM.GetStrFromData(name + "_file").c_str(), *screen, 1);
             tmp->SetLoc(loc.X + tmp->GetLoc().Y, loc.Y + tmp->GetLoc().Y);
             tmp->SetOwner(this);
             buttons.push_back(tmp);
@@ -68,23 +75,21 @@ UI::UI(const char *file, SDL_Renderer& ren)
 
         //Build ProgressBars
         math_point tempPoint;
-        pBars.resize(uiDOM->GetIntFromData("ui_pb_num"));
-        for(int i = 0; i < uiDOM->GetIntFromData("ui_pb_num"); i++)
+        pBars.resize(uiDOM.GetIntFromData("ui_pb_num"));
+        for(int i = 0; i < uiDOM.GetIntFromData("ui_pb_num"); i++)
         {
             name = "ui_pb_" + intToStr(i);
-            pBNums[uiDOM->GetStrFromData(name + "name")] = 0;
-            tempPoint.X = uiDOM->GetIntFromData(name + "_x");
-            tempPoint.Y = uiDOM->GetIntFromData(name + "_y");
-            int tmpPB = pBNums[uiDOM->GetStrFromData(name + "name")];
-            ProgressBar *tmp = new ProgressBar(uiDOM->GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, *screen);
+            pBNums[uiDOM.GetStrFromData(name + "name")] = 0;
+            tempPoint.X = uiDOM.GetIntFromData(name + "_x");
+            tempPoint.Y = uiDOM.GetIntFromData(name + "_y");
+            int tmpPB = pBNums[uiDOM.GetStrFromData(name + "name")];
+            ProgressBar *tmp = new ProgressBar(uiDOM.GetStrFromData(name + "_file").c_str(), &tmpPB, tempPoint, *screen);
             pBars.push_back(tmp);
         }
 
         //Get beginning visibility state
-        visibility = bool(uiDOM->GetIntFromData("ui_visibility"));
+        visibility = bool(uiDOM.GetIntFromData("ui_visibility"));
     }
-    selectedText = 0;
-    keyDown = false;
 }
 
 //Draw
@@ -114,74 +119,19 @@ void UI::Draw()
     }
 }
 
-void UI::ProcessEvents(SDL_Event *event)
+void UI::ProcessEvents(size_t x, size_t y)
 {
-    //Process our events
-    Button *tmp;
-    textbox *tmpText;
-        //Mouse events
-        for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
-        {
-            tmp = *it;
-            if(event->button.state == SDL_PRESSED)
-            {
-                tmp->MouseClick(event->button.button, event->motion.x, event->motion.y,true);
-            }
-            else if(event->button.state == SDL_RELEASED)
-            {
-                tmp->MouseClick(event->button.button, event->button.x, event->button.y,false);
-            }
-            else
-            {
-                tmp->ProcessMouseLoc(event->motion.x, event->motion.y);
-            }
-        }
-
-        //Textbox events
-        for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
-        {
-            tmpText = *it;
-            if(event->button.state == SDL_PRESSED)
-            {
-                if(event->button.button == SDL_BUTTON_LEFT && tmpText->isInside(event->button.x, event->button.y))
-                {
-                    if(tmpText->isWritable())
-                    {
-                        selectedText = tmpText;
-                        msg = selectedText->GetText();
-                    }
-                }
-                if(event->button.button == SDL_BUTTON_RIGHT && tmpText->isInside(event->button.x, event->button.y))
-                {
-                    selectedText = 0;
-                }
-            }
-            if(event->key.state == SDL_KEYDOWN)
-            {
-                keyDown = true;
-            }
-            else if(event->key.state == SDL_KEYUP && keyDown)
-            {
-                msg = msg + SDL_GetKeyName(event->key.keysym.sym);
-                keyDown = false;
-            }
-        }
-        //Check exit button
-        if(exit->isInside(event->button.x, event->button.y))
-        {
-            toggleVisibility();
-        }
+    //Check exit button
+    if(exit->isInside(x, y))
+    {
+        toggleVisibility();
+    }
 }
 
 void UI::Update()
 {
     Button *tmp;
     textbox *tmpText;
-
-    if(selectedText)
-    {
-        selectedText->changeMsg(msg, screen);
-    }
 
     //Remove objects marked for removal (for whatever reason)
     for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
@@ -204,7 +154,7 @@ void UI::Update()
     }
 }
 
-void UI::AddNumToPBar(int num, std::string name)
+void UI::AddNumToPBar(int num, const std::string& name)
 {
     pBNums[name] = num;
 }
@@ -224,6 +174,67 @@ void UI::toggleVisibility()
 bool UI::isVisible() const
 {
     return visibility;
+}
+
+bool UI::isInside(size_t x, size_t y)
+{
+    /*Search textboxes and buttons to see if coordinate is inside of them. If it is, then we assume the coordinate is inside the UI.*/
+    for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return true;
+    }
+
+    for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return true;
+    }
+
+    //If not inside, then coordinate is not inside UI
+    return false;
+}
+
+Button* UI::GetButtonByLoc(size_t x, size_t y)
+{
+    for(std::list<Button*>::iterator it = buttons.begin(); it != buttons.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return *it;
+    }
+
+    return NULL;
+}
+
+textbox* UI::GetTextboxByLoc(size_t x, size_t y)
+{
+    for(std::list<textbox*>::iterator it = texts.begin(); it != texts.end(); it++)
+    {
+        if((*it)->isInside(x, y))
+            return *it;
+    }
+
+    return NULL;
+}
+
+std::string UI::GetName() const
+{
+    return uiName;
+}
+
+size_t UI::GetID() const
+{
+    return ui_id;
+}
+
+SDL_Renderer* UI::GetRenderer()
+{
+    return screen;
+}
+
+void UI::SetID(size_t id)
+{
+    ui_id = id;
 }
 
 UI::~UI()
@@ -256,5 +267,7 @@ UI::~UI()
     //Remove other objects
     delete(exit);
     exit = 0;
-    selectedText = 0;
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

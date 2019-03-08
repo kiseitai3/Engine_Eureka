@@ -4,9 +4,20 @@
 #include "conversion.h"
 #include <iostream>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
+bool Pywrap::initialized = false;
+
 void Pywrap::exec_pycode(const char* code)
 {
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     PyRun_SimpleString(code);
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
 }
 
 void Pywrap::SetFilePath(const char* file)
@@ -16,14 +27,22 @@ void Pywrap::SetFilePath(const char* file)
 
 Pywrap::Pywrap(const char* file, unsigned int arg_size)
 {
+    std::string File;
+    if(!initialized)
+    {
+        Py_Initialize();//Initialize the thread
+        PyEval_InitThreads();//Initialize Python's internal Threading system
+        initialized = true;
+    }
+
     if(file != "")
     {
         if(findString(".py",file)>= 0)
         {
-            file = sliceStr(file,0,std::string(file).size() - 3).c_str();
+            File = sliceStr(file,0,std::string(file).size() - 3).c_str();
         }
-        SetFilePath(file);
-        name_space = PyString_FromString(file);
+        SetFilePath(File.c_str());
+        name_space = PyString_FromString(File.c_str());
         module = PyImport_Import(name_space);
         PyErr_Print();//get error output if import fails :).
         Py_DECREF(name_space);
@@ -34,8 +53,11 @@ Pywrap::Pywrap(const char* file, unsigned int arg_size)
         fileLoaded = false;
     }
     args = PyTuple_New(arg_size);
+<<<<<<< HEAD
     sizeT = arg_size;
     index = 0;
+=======
+>>>>>>> TheIllusiveMan
 }
 
 bool Pywrap::isFileLoaded() const
@@ -122,19 +144,23 @@ void Pywrap::DisplayInternalVars()
 
 void Pywrap::executeNoReturnF(const char* funcName)//all arguments that will be passed to a Python function have to be added to a string literal with the type letter at the beginning and a ; ending each entry (i.e. i1;f23.4;sLove and Peace;)
 {
-    /*Like executeReturnF, this method extracts a function from the loaded python module and calls it thanks to the
-    defined () operator in boost*/
+    /*Like executeReturnF, this method extracts a function from the loaded python module and calls it. No return value is expected from the function!*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     func =  PyObject_GetAttrString(module, funcName);
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
     {
-        if(PyTuple_GET_SIZE(args) < 1)
+        if(!(PyTuple_GET_SIZE(args) == 0))
         {
-            std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
+            std::cout<<"Arguments were passed to this method. They will be ignored!" << std::endl;
         }
         PyObject_CallObject(func, args);//Execute function.
     }
     DecreaseRef(func);//Small cleanup.
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
 }
 
 PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
@@ -142,6 +168,9 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
     /*This method will take a filepath and a tuple containing the arguments, and will execute a main function
     within the script. I am assuming here that the module contains a main function that I can use as the
     entrypoint. I am not using the standard if __namespace__ == Python entrypoint!*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
     if(findString(".py",file)>= 0)//Check and delete the .py extension as it is not necessary and makes the Python API crash.
         {
             file = sliceStr(file,0,std::string(file).size() - 3).c_str();
@@ -154,9 +183,9 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
     PyErr_Print();//get error output if import fails :).
     if (funcI && PyCallable_Check(funcI))
     {
-        if(PyTuple_GET_SIZE(args) < 1)
+        if(!(PyTuple_GET_SIZE(args) == 0))
         {
-            std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
+            std::cout<<"Arguments were passed to this method. They will be ignored!" << std::endl;
         }
         result = PyObject_CallObject(funcI, argsI);//save the reference inside this class' object so we don't lose it for when we have to decrease its reference count. :)
         //Always remember to do some cleanup.
@@ -165,8 +194,12 @@ PyObject *Pywrap::exec_FullFile(const char file[], PyObject *argsI)
         Py_CLEAR(argsI);
         //return our internal reference. The final cleanup has to be done elsewhere. I assume in this function that
         //I can overwrite our internal copy of the pointer because the cleanup will occur at the caller side.
+        //Let's make sure other threads can use the interpreter
+        ReleaseInterpreter();
         return result;
     }
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
     return 0;
 }
 
@@ -178,8 +211,11 @@ void Pywrap::ClearArgs(unsigned arg_size)
     CleanCPyObjInArgs();
     Py_CLEAR(args);//Make sure the previous object had its reference count lowered (and hopefully the object was deleted altogether)
     args = PyTuple_New(arg_size);
+<<<<<<< HEAD
     sizeT = arg_size;
     index = 0;
+=======
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::IncreaseRef(PyObject *obj)
@@ -189,9 +225,16 @@ void Pywrap::IncreaseRef(PyObject *obj)
 
 PyObject *Pywrap::executeReturnF(const char* funcName)
 {
-    /*Like executeNoReturnF, this method extracts a function from the loaded python module and calls it thanks to the
-    defined () operator in boost. However, I return the resulting boost py object since it contains the results of the
-    function.*/
+    /*Like executeNoReturnF, this method extracts a function from the loaded python module and calls it.*/
+    //Let's guard this Py call!
+    LockInterpreter();
+    //Prepare for execution
+    if(func)
+    {
+        PyObject_Free(func);
+        func = NULL;
+    }
+    prepArgs();
     func =  PyObject_GetAttrString(module, funcName);
     PyErr_Print();//get error output if import fails :).
     if (func && PyCallable_Check(func))
@@ -201,8 +244,15 @@ PyObject *Pywrap::executeReturnF(const char* funcName)
             std::cout<<"Argument list is 0 items in size. Do not panic if you get an empty return!\n\r";
         }
         value = PyObject_CallObject(func, args);//Execute function
+        ClearArgs(0);
+        DecreaseRef(func);//Small cleanup.
+        //Let's make sure other threads can use the interpreter
+        ReleaseInterpreter();
         return value;
     }
+    ClearArgs(0);
+    //Let's make sure other threads can use the interpreter
+    ReleaseInterpreter();
     return func;
 }
 
@@ -270,7 +320,7 @@ Pywrap::~Pywrap()
 
 unsigned int Pywrap::GetSizeOfArgs() const
 {
-    return sizeT;
+    return argQueue.size();
 }
 
 PyObject *Pywrap::CreateObjFromPtr(void_ptr classT)
@@ -289,33 +339,100 @@ void Pywrap::CleanCPyObjInArgs()
         }
     }
 }
+
+void Pywrap::prepArgs()
+{
+    size_t index = 0;
+    //Create a new tupple for arguments
+    ClearArgs(argQueue.size());
+    //Now, I start adding args
+    while(!argQueue.empty())
+    {
+        fuzzy_obj tmp = argQueue.front();
+        switch(tmp.flag)
+        {
+        case 'i':
+            PyTuple_SetItem(args, index, PyInt_FromLong(tmp.number));
+            break;
+        case 'd':
+            PyTuple_SetItem(args, index, PyFloat_FromDouble(tmp.decimal));
+            break;
+        case 'u':
+            PyTuple_SetItem(args, index, PyInt_FromSize_t(tmp.uNumber));
+            break;
+        case 'c':
+            PyTuple_SetItem(args, index, PyString_FromString(&tmp.c));
+            break;
+        case 's':
+            PyTuple_SetItem(args, index, PyString_FromString(tmp.str.c_str()));
+            break;
+        case 'v':
+            PyTuple_SetItem(args, index, CreateObjFromPtr(tmp.ptr));
+            break;
+        default:
+            std::cerr << "Python: Type not recognized!" << std::endl;
+        }
+        argQueue.pop();
+        index++;
+    }
+}
+
 //Overloads
 void Pywrap::AddArgument (int argument)
 {
+<<<<<<< HEAD
     PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
     index++;
+=======
+    fuzzy_obj tmp;
+    tmp.flag = 'i';
+    tmp.number = argument;
+    argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (unsigned int argument)
 {
+<<<<<<< HEAD
     PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
     index++;
+=======
+    fuzzy_obj tmp;
+    tmp.flag = 'u';
+    tmp.uNumber = argument;
+    argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (std::string argument)
 {
+<<<<<<< HEAD
     PyTuple_SetItem(args, index, PyString_FromString(argument.c_str()));
     index++;
+=======
+    fuzzy_obj tmp;
+    tmp.flag = 's';
+    tmp.str = argument;
+    argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (char argument)
 {
+<<<<<<< HEAD
     PyTuple_SetItem(args, index, PyString_FromString(&argument));
     index++;
+=======
+    fuzzy_obj tmp;
+    tmp.flag = 'c';
+    tmp.c = argument;
+    argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (double argument)
 {
+<<<<<<< HEAD
     PyTuple_SetItem(args, index, PyFloat_FromDouble(argument));
     index++;
 }
@@ -329,6 +446,20 @@ void Pywrap::AddArgument (PyObject *argument)
 void Pywrap::AddArgument(void_ptr argument)
 {
     AddArgument(CreateObjFromPtr(argument));
+=======
+    fuzzy_obj tmp;
+    tmp.flag = 'd';
+    tmp.decimal = argument;
+    argQueue.push(tmp);
+}
+
+void Pywrap::AddArgument(void_ptr argument)
+{
+    fuzzy_obj tmp;
+    tmp.flag = 'v';
+    tmp.ptr = argument;
+    argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 //Py Conversion Functions with overloads
 int Pywrap::py_extractInt(PyObject *results) const
@@ -460,3 +591,18 @@ void *Pywrap::py_extractPtrFromList(PyObject *results, unsigned int index) const
             << std::endl;
     return 0;
 }
+
+void Pywrap::LockInterpreter()
+{
+    //Lock Interpreter
+    gstate = PyGILState_Ensure();
+}
+
+void Pywrap::ReleaseInterpreter()
+{
+    //Let go of the interpreter! Please don't crash! *Tears*
+    PyGILState_Release(gstate);
+}
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

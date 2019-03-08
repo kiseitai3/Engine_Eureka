@@ -1,0 +1,7 @@
+textbox_file = ;
+button_tex_enter = ;
+button_tex_clicking = ;
+button_tex_idle = ;
+button_tex_selected = ;
+button_tex_down = ;
+button_script = ;

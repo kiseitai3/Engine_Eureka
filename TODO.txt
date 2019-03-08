@@ -1,6 +1,7 @@
 --Implement accessibility options on the engine level!
 --Create crossplatform level designer project.
 <<<<<<< HEAD
+<<<<<<< HEAD
 --Create Launcher project.
 --Add a unifying database API that will consolidate
 the MySQL and SQLite3 APIs in the engine!
@@ -12,3 +13,8 @@ the MySQL and SQLite3 APIs in the engine!
    --Create unit and tile creation tabs
 --Create Launcher project.
 >>>>>>> 1003aa5886226098c82517f7ae9b6217c1a45b3b
+=======
+--Work on unit tests!
+--Move Event handling to the Game layer!
+--Add a cursor manager!
+>>>>>>> TheIllusiveMan

@@ -1,0 +1,6 @@
+sound_type =m;
+music_loc = pokemeds/Creatures//Crickets.wav.txt;
+effect_loc =;
+sound_x = 100;
+sound_y = 100;
+range = 1000;­ºîþ

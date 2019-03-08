@@ -3,6 +3,15 @@
 
 #include <sqlite3.h>
 #include <iostream>
+<<<<<<< HEAD
+=======
+#include "typedefs.h"
+
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+>>>>>>> TheIllusiveMan
 
 typedef sqlite3* sqlite3_ptr;
 
@@ -14,4 +23,9 @@ struct SQLiteError
 };
 
 
+<<<<<<< HEAD
+=======
+//End of namespace macro
+//ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan
 #endif // SQLITE_ERROR_H_INCLUDED

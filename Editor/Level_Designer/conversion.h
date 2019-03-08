@@ -27,7 +27,8 @@ int cStrToInt(const char buffer[]);//Get full numbers out of character strings
 std::string intToStr (const int num); //Converts a single number into a string equivalent
 double cStrToNum(const char buffer[]);
 std::string numToStr(const double num);
-const int searchCharIndex(const char character, std::string buffer, int start = 0);
+const size_t searchCharIndex(const char character, const std::string& buffer, int start = 0);
+const size_t searchCharIndexBefore(const char character, const char endC, const std::string& buffer, int start);
 bool searchChar(const char character, std::string buffer);
 int findString(const char target[], const char stringSource[], int pos = 0);
 pChar* slice(char* const input, int start, int end);

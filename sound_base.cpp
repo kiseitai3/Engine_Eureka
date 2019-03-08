@@ -9,6 +9,10 @@
 #include "sound_base.h"
 
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
   //Beginning of types related to usage of random streams as audio inputs
   /* The idea is to take a chunk of memory from the game and create a buffer that can be mistakenly
   interpreted by the SDL audio player as a sound stream. Thus, the objective is to use the games own
@@ -107,8 +111,9 @@ void sound_base::WriteWav(FILE *f, long int bytes)//I may use this to stick a he
     fwrite("data",sizeof(char),4,f); /* 36-39 */
     PutNum(bytes,f,1,4);             /* 40-43 */
 }
-unsigned char sound_base::WriteWav(unsigned char* buffer, long int bytes)
+unsigned char* sound_base::WriteWav(unsigned char* buffer, size_t bytes)
 {
+    indexCount = 0;
     /* quick and dirty */                   //index table
     addBuff_String("RIFF",0);               /*  0-3 */
     PutNum2(bytes+44-8,1,4);                /*  4-7 */
@@ -122,8 +127,10 @@ unsigned char sound_base::WriteWav(unsigned char* buffer, long int bytes)
     PutNum2(16,1,2);                        /* 34-35 */
     addBuff_String("data",36);              /* 36-39 */
     PutNum2(bytes,1,4);                     /* 40-43 */
-    unsigned char *buff = (headerBuffer+(*buffer)); //I don't want to duplicate memory for too long so I return it in the function so it can be used and quickly disposed.
-    return *buff;
+    unsigned char *buff = new unsigned char[43 + bytes];
+    strcpyn((char*)buff, (const char*)headerBuffer, 43);
+    strcpyn((char*)buff, (const char*)buffer, bytes, 43);
+    return buff;
 }
 //End of random stream input
 
@@ -134,82 +141,70 @@ sound_base::sound_base(bool random_blob)
     channel = -3;
     loopingEffect = false;
     type = 'a';
+    effect = NULL;
+    music = NULL;
+    s_range = 0;
+}
+
+void sound_base::clearSounds()
+{
+    if(effect)
+        Mix_FreeChunk(effect);
+    if(music)
+        Mix_FreeMusic(music);
+
+    effect = NULL;
+    music = NULL;
 }
 
 sound_base::~sound_base()
 {
-    if(AudioDOM > 0)
-    {
-        delete(AudioDOM);
-    }
+    clearSounds();
 }
 //Beginning of functions and types related to normal audio systems in games
 /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
 This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
 void sound_base::Load_Sound (const char* source)
 {
-    if (!AudioDOM)
+    clearSounds();
+    data_base AudioDOM(source);
+
+    type = AudioDOM.GetStrFromData("sound_type").c_str()[0];
+    if(type == 'm')
     {
-        AudioDOM = new data_base(source);
-        if(AudioDOM)
-        {
-            type = char(AudioDOM->GetStrFromData("sound_type").c_str()[0]);
-            if(type == 'm' || type == 'a')
-            {
-                music = Mix_LoadMUS(AudioDOM->GetStrFromData("music_loc").c_str());
-            }
-            if(type == 'e' || type == 'a')
-            {
-                effect = Mix_LoadWAV(AudioDOM->GetStrFromData("effect_loc").c_str());
-            }
-            SetPoint();
-        }
-        else
-        {
-            std::cout<<"ERROR:Failed to load this sound_base object's Document Object Model\n\r";
-        }
+        music = Mix_LoadMUS(AudioDOM.GetStrFromData("file_loc").c_str());
     }
-    else
+    if(type == 'e' || type == 'a')
     {
-        delete(AudioDOM);
-        AudioDOM = new data_base(source);
-        if(AudioDOM)
-        {
-            type = AudioDOM->GetStrFromData("sound_type").c_str()[0];
-            if(type == 'm' || type == 'a')
-            {
-                music = Mix_LoadMUS(AudioDOM->GetStrFromData("music_loc").c_str());
-            }
-            if(type == 'e' || type == 'a')
-            {
-                effect = Mix_LoadWAV(AudioDOM->GetStrFromData("effect_loc").c_str());
-            }
-            SetPoint();
-        }
-        else
-        {
-            std::cout<<"ERROR:Failed to load this sound_base object's Document Object Model\n\r";
-        }
+        effect = Mix_LoadWAV(AudioDOM.GetStrFromData("file_loc").c_str());
     }
+    // This point is to create the fading effect of an ambient sound as you move away from a place.
+    Location.X = AudioDOM.GetIntFromData("sound_x");
+    Location.Y = AudioDOM.GetIntFromData("sound_y");
+    //Load sound range
+    s_range = AudioDOM.GetIntFromData("range");
 }
 
-bool sound_base::Load_Sound(unsigned char* buffer)
+void sound_base::Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool headerlessWav)
 {
-    unsigned char buffer2 = WriteWav(buffer,(long int)(sizeof *buffer));
-    SDL_RWops* rwop = SDL_RWFromMem((void*)(&buffer2), sizeof buffer2);
-    if((music = Mix_LoadMUS_RW(rwop, 0)))
+    clearSounds();
+    if(headerlessWav)
     {
-        return true;
+        unsigned char* buff2  = new unsigned char[size + 43];
+        buff2 = WriteWav(buffer, size);
+        effect = Mix_QuickLoad_WAV(buff2);
+        delete[] buff2;
+        return;
     }
-    else
-    {
-        return false;
-    }
+    effect = Mix_QuickLoad_RAW(buffer, size);
 }
 
 void sound_base::Play(int loops)//if loops = -1, the loop is infinite!
 {
-    Mix_PlayMusic(music,loops); // Start playing the sound.
+    if(music)
+        Mix_PlayMusic(music,loops); // Start playing the sound.
+    else
+        PlayEffect(loops);
 }
 
 void sound_base::Stop()
@@ -219,7 +214,16 @@ void sound_base::Stop()
 
 void sound_base::FadeOut(int ms)
 {
-    Mix_FadeOutMusic(ms);
+    while(!Mix_FadeOutMusic(ms) && isPlaying())
+    {
+        SDL_Delay(100);
+    }
+}
+
+void sound_base::FadeIn(int ms)
+{
+    if(Mix_FadeInMusic(music, -1, ms) < 0)
+        std::clog << "Music FadeIn Failed: " << Mix_GetError() << std::endl;
 }
 
 void sound_base::Pause()
@@ -229,7 +233,10 @@ void sound_base::Pause()
 
 void sound_base::SetVol(int volume)
 {
-    Mix_VolumeMusic(volume);
+    if(music)
+        Mix_VolumeMusic(volume);
+    else
+        Mix_VolumeChunk(effect, volume);
 }
 
 bool sound_base::isPlaying() const
@@ -239,8 +246,18 @@ bool sound_base::isPlaying() const
 
 bool sound_base::PlayEffect(int soundLoops)
 {
+    if(music && !effect)
+    {
+        Play(soundLoops);
+        return true;
+    }
     if(loopingEffect == false && soundLoops == -1)
     {
+        channel = Mix_PlayChannel(-1, effect, soundLoops);
+        if(channel == -1)
+        {
+            return false;
+        }
         loopingEffect = true;
     }
     if(!loopingEffect)
@@ -259,18 +276,14 @@ bool sound_base::isLoopingEffect() const
     return loopingEffect;
 }
 
+bool sound_base::isEffectPlaying() const
+{
+    return Mix_Playing(channel);
+}
+
 const char sound_base::SoundType()
 {
     return type;
-}
-
-void sound_base::SetPoint()// This point is to create the fading effect of an ambient sound as you move away from a place.
-{
-    if(AudioDOM)
-    {
-        Location.X = AudioDOM->GetIntFromData("sound_x");
-        Location.Y = AudioDOM->GetIntFromData("sound_y");
-    }
 }
 
 void sound_base::Update_Sound_Position(int x, int y)
@@ -281,34 +294,15 @@ void sound_base::Update_Sound_Position(int x, int y)
     Location.X = x;
     Location.Y = y;
 }
-void sound_base::Update_Sound_Distance(math_point target, int range)// default minimum is 126
+void sound_base::Update_Sound_Distance(math_point target, int masterVol)
 {
     int distance = 0;
-    int multiplier = 0; // Basically, I will use the multiplier if a bigger range is especified. I know 126 pixels may be awkward since it will be in range of the display, but I was doing it for lazyness.
+    int multiplier = s_range / distance;
     distance = int (sqrt(((Location.X - target.X)^2)-((Location.Y-target.Y)^2)));
-    if(range <= 126)
-    {
-    if(distance > 126)
-    {
-        SetVol(0);
-    }
-    if(distance < 0)
-    {
-        SetVol(126);
-    }
-    if((distance > 0)&&(distance < 126))
-    {
-        SetVol(distance);
-    }
-    }
+    if(distance > s_range)
+        SetVol(multiplier * masterVol);
     else
-    {
-        multiplier = range/126;
-        if(range !=0&&range>126)
-        {
-            SetVol(distance/multiplier);
-        }
-    }
+        SetVol(masterVol);
 }
 
 //Private functions
@@ -322,3 +316,13 @@ void sound_base::addBuff_String(std::string input, int index)
     indexCount = (indexCount + input.size())-1;// there's a -1 offset when you count 0 as one item
 }
 
+void strcpyn(char* dest, const char* src, size_t bytes, size_t start)
+{
+    for(size_t i = 0; i < bytes; i++)
+    {
+        dest[start + i] = src[i];
+    }
+}
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

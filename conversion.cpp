@@ -33,7 +33,7 @@ void shiftLeadingExponentZeroes(char* source, size_t index);
 
 int charToInt(const char buffer)
 {
-    /*Base function that converts a single character into a number. This function is the heart of the string conversion functions.*/
+    /** \brief Base function that converts a single character into a number. This function is the heart of the string conversion functions.*/
     int answer = buffer - '0';
     return answer;
 }
@@ -47,13 +47,13 @@ std::string intToStr (const int num)
 
 int cStrToInt(const char buffer[])
 {
-    /*Same as cStrToNum but this one assumes the string yields an integer. The code is somewhat shorter and should execute much faster.*/
+    /** \brief Same as cStrToNum but this one assumes the string yields an integer. The code is somewhat shorter and should execute much faster.*/
     return atoi(buffer);
 }
 
 double cStrToNum(const char buffer[])
 {
-    /*Converts a string buffer into its number equivalent. A.k.a. "123" = 123 or "12.3" = 12.3. This function returns a number in floating point
+    /** \brief Converts a string buffer into its number equivalent. A.k.a. "123" = 123 or "12.3" = 12.3. This function returns a number in doubleing point
     because its purpose is general.*/
     return atof(buffer);
 }
@@ -68,21 +68,22 @@ int numToInt(double value)
     return int(value + extra);
 }
 
-const int searchCharIndex(char character, char buffer[]){
-  /*This function will search for a character and tell me where it exists in the buffer.*/
-for(unsigned int i =0; buffer[i] != '\0'; i++)
+const int searchCharIndex(char character, char buffer[])
 {
-    if(character == buffer[i])
+    /** \brief This function will search for a character and tell me where it exists in the buffer.*/
+    for(unsigned int i =0; buffer[i] != '\0'; i++)
     {
-        return i;
+        if(character == buffer[i])
+        {
+            return i;
+        }
     }
-}
-return ERROR;
+    return ERROR;
 }
 
 const int searchCharIndex(const char character, std::string buffer, int start)
 {
-      /*This function will search for a character and tell me where it exists in the buffer.*/
+    /** \brief This function will search for a character and tell me where it exists in the buffer.*/
     for(unsigned int i =start; i < buffer.length(); i++)
     {
         if(character == buffer[i])
@@ -93,28 +94,29 @@ const int searchCharIndex(const char character, std::string buffer, int start)
     return ERROR;
 }
 
-bool searchChar(const char character, std::string buffer){
-/*This function will search for a character and tell me if it exists.*/
-  for(unsigned int i =0; i < buffer.size() -1; i++)
+bool searchChar(const char character, std::string buffer)
 {
-    if(character == buffer[i])
+    /** \brief This function will search for a character and tell me if it exists.*/
+    for(unsigned int i =0; i < buffer.size() -1; i++)
     {
-        return true;
+        if(character == buffer[i])
+        {
+            return true;
+        }
     }
-}
-return false;
+    return false;
 }
 
 int findString(const char target[], const char stringSource[], int pos)
 {
-    /*This function searches for a string and returns the index of the first character in the target string.*/
+    /** \brief This function searches for a string and returns the index of the first character in the target string.*/
     std::string StringSource = stringSource;
     return StringSource.find(target, pos);
 }
 
 void transferStr(pChar* const input, char* const array)
 {
-    /*This function extracts the characters in the pBuffer field of input and save them in the array from the caller. */
+    /** \brief This function extracts the characters in the pBuffer field of input and save them in the array from the caller. */
     for(unsigned int i = 0; i < input->size; i++)
     {
         if(i < sizeof(array))
@@ -150,8 +152,8 @@ std::string removeMultipleCharFromStr(char target, const char cString[])
 }
 pChar* createPCharFromBuffer(char buffer[], int size)
 {
-    /*This function can create a simple pChar structure on the heap from a given C string and size.
-    The function checks the heap pointers to make sure they are not null.*/
+    /** \brief This function can create a simple pChar structure on the heap from a given C string and size.
+    The function checks the heap pointers to make sure they are not nullptr.*/
     pChar* holder = new pChar;
     holder->size = size;
     char* content = new char[holder->size + 1];
@@ -176,7 +178,7 @@ pChar* createPCharFromBuffer(char buffer[], int size)
 }
 pChar* slice(char* const input, int start, int end)
 {
-    /*Slices a c-string and returns the slice. This emulates the behavior of the python slice.
+    /** \brief Slices a c-string and returns the slice. This emulates the behavior of the python slice.
     Pretty handy for string manipulation and extraction. */
     char* answer = new char[end - start + 1];
     answer[end - start] = '0';
@@ -194,10 +196,10 @@ std::string sliceStr(std::string input, int start, int end)
 {
     if(input == "")
     {
-      return "";
+        return "";
     }
-    /*This function takes a string and returns a slice from the start position to the desired end position*/
-    char answer[end - start + 1];
+    /** \brief This function takes a string and returns a slice from the start position to the desired end position*/
+    char answer[end - start + 1];//Array not truly variable, array allocated early on with fixed size (end - start + 1)
     answer[end-start] = '\0'; //Append end of string character so the string is not misdisplayed or misused later on.
     if(end < 0)
     {
@@ -211,24 +213,24 @@ std::string sliceStr(std::string input, int start, int end)
 }
 pChar* shiftArrayLeft(char* input, int size)
 {
-    /*Default version of this function. It returns a slice of the original c-string that does
+    /** \brief Default version of this function. It returns a slice of the original c-string that does
     not contain the first element of the array.*/
     pChar* holder = slice(input, 1, size);
     if(!holder)
     {
-        return NULL;
+        return nullptr;
     }
     return holder;
 }
 
 pChar* shiftArrayLeft(char* input, int size, int elements)
 {
-    /*Overload version of this function. It returns a slice of the original c-string that does
+    /** \brief Overload version of this function. It returns a slice of the original c-string that does
     not contain the number of elements (elements) in the array. For example, "ABCDE" => "DE" if elements = 3*/
     pChar* holder = slice(input, elements, size);
     if(!holder)
     {
-        return NULL;
+        return nullptr;
     }
     return holder;
 }
@@ -262,35 +264,60 @@ std::string numToStr(const double num)
     return s.str();
 }
 
-bool changeProgramWorkingDirectory(char* newPath)
+bool changeProgramWorkingDirectory(const std::string& newPath)
 {
-    //This function allows the calling program to change the current working directory
-    if(chdir(newPath) == ERROR)
+    /** \brief This function allows the calling program to change the current working directory*/
+    if(chdir(newPath.c_str()) <= ERROR)
     {
-        std::cout <<"The program tried to change to this directory, but chdir returned an error!" << std::endl;
-        return false;
+        switch(errno)
+        {
+        case EACCES:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error! \
+        Search permission is denied for any component of the pathname." << std::endl;
+            return false;
+        case ELOOP:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error! \
+        A loop exists in symbolic links encountered during resolution of the path argument." << std::endl;
+            return false;
+        case ENAMETOOLONG:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error! \
+        The length of the path argument exceeds {PATH_MAX} or a pathname component is longer than {NAME_MAX}." << std::endl;
+            return false;
+        case ENOENT:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error! \
+        A component of path does not name an existing directory or path is an empty string." << std::endl;
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"Path : " << newPath << std::endl;
+            return false;
+        case ENOTDIR:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error! \
+        A component of the pathname is not a directory." << std::endl;
+            return false;
+        default:
+            std::cout << __FILE__ << ":" << __func__ << ":" << __LINE__ << ": " <<"The program tried to change to this directory, but chdir returned an error!" << std::endl;
+            return false;
+        }
     }
     return true;
 }
 
 char capitalizeChar(const char character)
 {
-  /*This function takes a character and returns the upper case version. This
-   *conversion is based on the ASCII table. Because it uses the symmetry of the
-   *table, you can actually input other characters and receive not the upper case,
-   *but another character (example, [ -> ;). Warning: it shouldn't work with
-   *other character standards unless they share the same symmetry as the ASCII
-   *table.
-   **/
-  return character - ('a' - 'A');
+    /** \brief This function takes a character and returns the upper case version. This
+     *conversion is based on the ASCII table. Because it uses the symmetry of the
+     *table, you can actually input other characters and receive not the upper case,
+     *but another character (example, [ -> ;). Warning: it shouldn't work with
+     *other character standards unless they share the same symmetry as the ASCII
+     *table.
+     **/
+    return character - ('a' - 'A');
 }
 
 char lowerCaseChar(const char character)
 {
-  /*This function takes a character and returns the lower case version. This
-   *conversion is based on the ASCII table.
-   **/
-  return character + ('a' - 'A');
+    /** \brief This function takes a character and returns the lower case version. This
+     *conversion is based on the ASCII table.
+     **/
+    return character + ('a' - 'A');
 }
 
 std::string capitalizeStr(const std::string& source)
@@ -305,7 +332,7 @@ std::string capitalizeStr(const std::string& source)
 
 char* getCharArrayFromConstArray(const std::string& s)
 {
-    char* tmp = new char(s.length());
+    char* tmp = new char[s.length() + 1];
     for(size_t i = 0; i < s.length(); i++)
         tmp[i] = s[i];
     return tmp;
@@ -313,7 +340,7 @@ char* getCharArrayFromConstArray(const std::string& s)
 
 std::string scientificFormat(const std::string& num, size_t precision)
 {
-    /* This function takes a string type of a floating point number and creates the scientific notation version of it!
+    /** \brief This function takes a string type of a doubleing point number and creates the scientific notation version of it!
     This was my own function and contains a bug I don't seem to be able to fix. Check out the overloaded version until
     the bug is fixed. */
     size_t dotLoc = num.find('.');
@@ -326,7 +353,7 @@ std::string scientificFormat(const std::string& num, size_t precision)
         return num;
     //Check wether index 0 is the negative sign or the actual start.
     if(num[start] == '-')
-            start++;
+        start++;
     //If the number is too small to begin with, return the unedited string!
     if(cStrToNum((num.c_str())) < 0 && dotLoc != std::string::npos)
         if(num.length() - 2 <= precision && num[0] != '0')
@@ -443,26 +470,25 @@ std::string scientificFormat(const std::string& num, size_t precision)
     return tmp;
 }
 
-std::string scientificFormat(float num, size_t precision)
+std::string scientificFormat(double num, size_t precision)
 {
-    /* Overloaded version of my scientific notation function. This one uses the standard c library!*/
-    size_t size = 10;
+    /** \brief Overloaded version of my scientific notation function. This one uses the standard c library!*/
     size_t exponentStart = 0;
-    char buff[size];
+    char buff[10];
     std::string formatPrecision = "%." + numToStr(precision) + "e";//Build the string format for the number
     /*if(numToStr(num).length() > precision)
     {
         //Create the scientific notation string*/
-        sprintf(buff, formatPrecision.c_str(), num);
-       /* //Grab the index of either - or + after e (in e+-00x)
-        if(searchCharIndex('-', buff, searchCharIndex('e', buff)) != ERROR)
-            exponentStart = searchCharIndex('-', buff, searchCharIndex('e', buff));
-        else if(searchCharIndex('+', buff, searchCharIndex('e', buff)) != ERROR)
-            exponentStart = searchCharIndex('+', buff, searchCharIndex('e', buff));
-        //Get rid of all leading zeroes
-        while(buff[exponentStart + 1] == '0')
-            shiftLeadingExponentZeroes(buff, exponentStart + 1);
-        return buff;
+    sprintf(buff, formatPrecision.c_str(), num);
+    /* //Grab the index of either - or + after e (in e+-00x)
+     if(searchCharIndex('-', buff, searchCharIndex('e', buff)) != ERROR)
+         exponentStart = searchCharIndex('-', buff, searchCharIndex('e', buff));
+     else if(searchCharIndex('+', buff, searchCharIndex('e', buff)) != ERROR)
+         exponentStart = searchCharIndex('+', buff, searchCharIndex('e', buff));
+     //Get rid of all leading zeroes
+     while(buff[exponentStart + 1] == '0')
+         shiftLeadingExponentZeroes(buff, exponentStart + 1);
+     return buff;
     }
     return numToStr(num);*/
     return buff;
@@ -470,7 +496,7 @@ std::string scientificFormat(float num, size_t precision)
 
 void shiftLeadingExponentZeroes(char* source, size_t index)
 {
-    /* This function shifts a c string with leading 0's such that you get rid of the leading 0's. Example,
+    /** \brief This function shifts a c string with leading 0's such that you get rid of the leading 0's. Example,
     "0001" -> "1".
     */
     if(source[index] == '\0')//Protection from misuse!
@@ -507,6 +533,65 @@ std::string replaceCharInStr(std::string source, char target, char replacement, 
     return source;
 }
 
+<<<<<<< HEAD
+=======
+std::string replaceStrInStr(std::string source, const std::string& target, const std::string& replacement, bool allInstances)
+{
+   size_t pos = 0;
+   pos = source.find(target, pos);//Look for the first instance of target
+   if(pos > source.size())//If we are at EOF, return the unmodified copy
+      return source;//The reason I didn't use npos in the if statement is because npos gets optimized out in Unix systems :(
+   if(allInstances)//Replace all instances of target
+   {
+      while(pos != std::string::npos || pos < source.size())
+      {
+         if(pos > source.size())//Redundant check in the first run. A safety check for all subsequent runs!
+            break;
+         source.replace(source.find(target), target.size(), replacement);
+	 pos = source.find(target, pos);
+      }
+   }
+   else //Replace the first instance of target
+   {
+      source.replace(source.find(target), target.size(), replacement);
+   }
+
+   return source;
+}
+
+std::string removeLeadingWhiteSpace(const std::string& source)
+{
+   size_t start = 0;
+   while(source[start] == ' ')
+   {
+      start++;
+   }
+
+   return source.substr(start);
+}
+
+bool isNum(std::string& strNum)
+{
+    std::string nums = "0123456789e-+.^";
+    char c;
+    size_t correctCount = 0;
+    for(size_t i = 0; i < strNum.size(); i++)
+    {
+        c = strNum[i];
+        for(size_t j = 0; j < nums.size(); j++)
+        {
+            if(strNum[i] == nums[j])
+            {
+                correctCount++;
+                break;
+            }
+        }
+    }
+
+    return correctCount == strNum.size();
+}
+
+>>>>>>> TheIllusiveMan
 #ifdef UTF8_NEEDED
 bool checkUTF8String(const std::string& buffer)
 {

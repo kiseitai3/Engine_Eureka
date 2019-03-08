@@ -1,0 +1,15 @@
+texture_file = ;
+textbox_colorbyte1 = 0;
+textbox_colorbyte2 = 0;
+textbox_colorbyte3 = 0;
+textbox_fontloc = arial.ttf;
+textbox_font_size = 10;
+textbox_x = 50;
+textbox_y = 50;
+textbox_txt_x = 15;
+textbox_txt_y = 10;
+textbox_txt_h = 50;
+textbox_txt_w = 100;
+textbox_type = textbox;
+textbox_writemode = 0;
+name = default;

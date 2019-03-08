@@ -1,0 +1,9 @@
+tex_texture = pokemeds/Textures/Firebd.png;
+tex_frames = 3;
+tex_height = 80;
+tex_width = 60;
+tex_anim_counter = 1;
+tex_anim_num = 0;
+tex_time_on_frames = 1;
+tex_noloop = 1;
+ºð­ºîþ

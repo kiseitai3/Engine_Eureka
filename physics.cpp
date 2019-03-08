@@ -7,6 +7,11 @@
 #include <vector>
 #include "conversion.h"
 #include "physics.h"
+#include "rand_generators.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 //Let's define some basic physics constants
 /*This part is a bit dirty, but such is the world of physics. I normally name my constants with upper case, but the scientist
@@ -25,7 +30,7 @@ const double Physics::k = 9*pow(10.0,9.0);
     bool Physics::Load_Physics(const char* location)// physData is the variable that will contain the name of the tag name in the xml file containing the physics details of especific objects (i.e. The hero's animation would have the tag name <hero>).
 {
     unmovable = 0;
-    physDOM.OpenFile(location);
+    data_base physDOM(location);
     if(physDOM.GetStateOfInternalBuffer())
     {
        mass = physDOM.GetValueFromData("mass");//in kilograms
@@ -106,98 +111,112 @@ const double Physics::k = 9*pow(10.0,9.0);
         accelerationY = (ForceCountY)/mass;//Update acceleration with the Net Force!
     }
 
-    void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativity)//0 magnetic, 1 contact force, 2 electric force, 3 friction
-    {
-        //vars for physics computations.
-        double magneticForce = 0;
-        double frictionForce = 0;
-        double electricForceX = 0;
-        double electricForceY = 0;
-        int signX = 0;
-        int signY = 0;
-        double tempForce = 0;
-        double degrees = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Y);
+void Physics::UpdateForce(Physics* forceProducer, int force_type, bool relativity, char axis)//0 magnetic, 1 contact force, 2 electric force, 3 friction
+{
+    //vars for physics computations.
+    double magneticForce = 0;
+    double frictionForce = 0;
+    double electricForceX = 0;
+    double electricForceY = 0;
+    int signX = 0;
+    int signY = 0;
+    double tempForce = 0;
+    double degrees = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Y);
+    //double degreesZ = math_CalculateDirectionDegrees(forceProducer->GetLoc().X, forceProducer->GetLoc().Z);
 
-        if(relativity == true && !unmovable)
+    if(relativity == true && !unmovable)
+    {
+        //Calculate Newtonian forces with relativity applied
+        if(force_type == 3)
         {
-            //Calculate Newtonian forces with relativity applied
-            if(force_type == 3)
+            if(GetForceCount(axis) < 0)
             {
-                if(GetForceCount('x') < 0)
-                {
-                    frictionForce = 1 * Friction(forceProducer->GetMU(), relativity) * Relativity('x');
-                }
-                else
-                {
-                    frictionForce = -1 * Friction(forceProducer->GetMU(), relativity) * Relativity('x');
-                }
+                frictionForce = 1 * Friction(forceProducer->GetMU(), relativity) * Relativity(axis);
             }
-            if(force_type == 2)
+            else
             {
-                tempForce = math_CalculateForceFromChargedParticles(forceProducer->GetCharge(), forceProducer->GetLoc());
-                signX = math_Sign(forceProducer, true);
-                signY = math_Sign(forceProducer, false);
-                electricForceX = tempForce * cos(degrees) * signX;
-                electricForceY = tempForce * sin(degrees) * signY;
+                frictionForce = -1 * Friction(forceProducer->GetMU(), relativity) * Relativity(axis);
             }
-            if(force_type == 1)
-            {
-                if(forceProducer->NewtonianForce('x') != 0)
-                {
-                    ForceCountX += forceProducer->rel_NewtonianForce('x');
-                }
-                if(forceProducer->NewtonianForce('y') != 0)
-                {
-                    ForceCountY += forceProducer->rel_NewtonianForce('y');
-                }
-            }
-            if(force_type == 0)
-            {
-                magneticForce = math_CalculateForceFromMagneticField(forceProducer->GetB2DDirection(), forceProducer->GetBMagnitude());
-            }
-            ForceCountX += electricForceX + frictionForce;
-            ForceCountY += electricForceY + magneticForce + (-1 * g * mass);
         }
-        else if(!unmovable)
+        if(force_type == 2)
         {
-            //Calculate Newtonian forces without relativity applied
-            if(force_type == 3)
-            {
-                if(GetForceCount('x') < 0)
-                {
-                    frictionForce = 1 * Friction(forceProducer->GetMU(), relativity);
-                }
-                else
-                {
-                    frictionForce = -1 * Friction(forceProducer->GetMU(), relativity);
-                }
-            }
-            if(force_type == 2)
-            {
-                tempForce = math_CalculateForceFromChargedParticles(forceProducer->GetCharge(), forceProducer->GetLoc());
-                signX = math_Sign(forceProducer, true);
-                signY = math_Sign(forceProducer, false);
-                electricForceX = tempForce * cos(degrees) * signX;
-                electricForceY = tempForce * sin(degrees) * signY;
-            }
-            if(force_type == 1)
-            {
-                if(forceProducer->NewtonianForce('x') != 0)
-                {
-                    ForceCountX += forceProducer->NewtonianForce('x');
-                }
-                if(forceProducer->NewtonianForce('y') != 0)
-                {
-                    ForceCountY += forceProducer->NewtonianForce('y');
-                }
-            }
-            if(force_type == 0)
-            {
-                magneticForce = math_CalculateForceFromMagneticField(forceProducer->GetB2DDirection(), forceProducer->GetBMagnitude());
-            }
-            ForceCountX += electricForceX + frictionForce;
-            ForceCountY += electricForceY + magneticForce + (-1 * g * mass);
+            tempForce = math_CalculateForceFromChargedParticles(forceProducer->GetCharge(), forceProducer->GetLoc());
+            signX = math_Sign(forceProducer, true);
+            signY = math_Sign(forceProducer, false);
+            electricForceX = tempForce * cos(degrees) * signX;
+            electricForceY = tempForce * sin(degrees) * signY;
         }
+        if(force_type == 1)
+        {
+            if(forceProducer->NewtonianForce('x') != 0)
+            {
+                ForceCountX += forceProducer->rel_NewtonianForce('x');
+            }
+            if(forceProducer->NewtonianForce('y') != 0)
+            {
+                ForceCountY += forceProducer->rel_NewtonianForce('y');
+            }
+        }
+        if(force_type == 0)
+        {
+            magneticForce = math_CalculateForceFromMagneticField(forceProducer->GetB2DDirection(), forceProducer->GetBMagnitude());
+        }
+    }
+    else if(!unmovable)
+    {
+        //Calculate Newtonian forces without relativity applied
+        if(force_type == 3)
+        {
+            if(GetForceCount('x') < 0)
+            {
+                frictionForce = 1 * Friction(forceProducer->GetMU(), relativity);
+            }
+            else
+            {
+                frictionForce = -1 * Friction(forceProducer->GetMU(), relativity);
+            }
+
+            if(GetForceCount('y') < 0)
+            {
+                frictionForce = 1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
+            }
+            else
+            {
+                frictionForce = -1 * Friction(forceProducer->GetMU(), relativity) * Relativity('y');
+            }
+        }
+        if(force_type == 2)
+        {
+            tempForce = math_CalculateForceFromChargedParticles(forceProducer->GetCharge(), forceProducer->GetLoc());
+            signX = math_Sign(forceProducer, true);
+            signY = math_Sign(forceProducer, false);
+            electricForceX = tempForce * cos(degrees) * signX;
+            electricForceY = tempForce * sin(degrees) * signY;
+        }
+        if(force_type == 1)
+        {
+            if(forceProducer->NewtonianForce('x') != 0)
+            {
+                ForceCountX += forceProducer->NewtonianForce('x');
+            }
+            if(forceProducer->NewtonianForce('y') != 0)
+            {
+                ForceCountY += forceProducer->NewtonianForce('y');
+            }
+        if(force_type == 0)
+        {
+            magneticForce = math_CalculateForceFromMagneticField(forceProducer->GetB2DDirection(), forceProducer->GetBMagnitude());
+        }
+    }
+    //Update forces based on axis
+    if(axis == 'x')
+        ForceCountX += frictionForce;
+    if(axis == 'y')
+        ForceCountY += frictionForce;
+    //Update other forces
+    ForceCountX += electricForceX;
+    ForceCountY += electricForceY + magneticForce + (-1 * g * mass);
+    }
 }
     void Physics::Update_Position(double secondsPassed)
     {
@@ -264,7 +283,7 @@ const double Physics::k = 9*pow(10.0,9.0);
         }
         return sign;
     }
-    double Physics::GetDistance(math_point source) const
+    double Physics::GetDistance(const math_point& source) const
     {
         return sqrt((pow((double)(loc.Y-source.Y),2))+(pow((double)(loc.X-source.X),2)));
     }
@@ -282,13 +301,13 @@ const double Physics::k = 9*pow(10.0,9.0);
         return unmovable;
     }
     //Electricity
-    double Physics::math_CalculateForceFromChargedParticles(double Q2, math_point source) const
+    double Physics::math_CalculateForceFromChargedParticles(double Q2, const math_point& source) const
     {
         int Force=0;
         Force = k*((Q2*C)/pow(GetDistance(source),2));
         return Force;
     }
-    double Physics::math_CalculateEField(math_point source) const
+    double Physics::math_CalculateEField(const math_point& source) const
     {
         return (k*(C))/pow(GetDistance(source), 2);
     }
@@ -371,9 +390,13 @@ const double Physics::k = 9*pow(10.0,9.0);
         {
             ForceCountX = force;
         }
-        else
+        else if(axis == 'y')
         {
             ForceCountY = force;
+        }
+        else
+        {
+            SetForceCount((double)force, axis);
         }
     }
     void Physics::SetForceCount(double force, const char axis)
@@ -382,9 +405,19 @@ const double Physics::k = 9*pow(10.0,9.0);
         {
             ForceCountX = (int)force;
         }
-        else
+        else if(axis == 'y')
         {
             ForceCountY = (int)force;
+        }
+        else if(axis == 'a')
+        {
+            //When the axis is a (aka all), I randomly generate the proportions of force assigned to each axis
+            float multiplier;
+            //This is saying I generate a random number from 0 to 100, which divided by 100 gives me proportionality
+            //constant.
+            multiplier = randNormal(Range(0, 100)) / 100.0f;
+            ForceCountX = (int)(force * multiplier);
+            ForceCountY = (int)(force * (1 - multiplier));
         }
     }
     void Physics::AddForce(double force, const char axis)
@@ -448,8 +481,16 @@ const double Physics::k = 9*pow(10.0,9.0);
         }
     }
 
-    int CalculateDistance(math_point A, math_point B)
+    void Physics::SetLoc(const math_point& pos)
     {
-        return (int)sqrt((pow((double)(A.Y-B.Y),2))+(pow((double)(A.X-B.X),2)));
+        loc = pos;
     }
 
+    size_t CalculateDistance(const math_point& A, const math_point& B)
+    {
+        return (size_t)sqrt((pow((double)(A.Y-B.Y),2))+(pow((double)(A.X-B.X),2)));
+    }
+
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

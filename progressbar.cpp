@@ -1,12 +1,17 @@
+//#define EUREKA_EXPORT
 #include "progressbar.h"
 #include "physics.h"
 #include "draw_base.h"
 #include <SDL.h>
 #include <SDL_image.h>
 
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
 ProgressBar::ProgressBar(const char *file, int *num, math_point loc, SDL_Renderer& ren, int blitOrderI)//file must be the texture path
 {
-    if(file > "")
+    if(file != "")
     {
         bar = LoadTexture(file, (SDL_Renderer&)ren);
     }
@@ -28,7 +33,7 @@ void ProgressBar::Update(int x, int y)
 
 void ProgressBar::Draw(const SDL_Renderer& ren)
 {
-    SDL_RenderCopy( (SDL_Renderer*)&ren, bar, &src, &target );
+    SDL_RenderCopy( (SDL_Renderer*)&ren, getTextureFromNode(bar), &src, &target );
 }
 
 void ProgressBar::SetRectangleDimensions(int w, int h)
@@ -53,6 +58,9 @@ ProgressBar::~ProgressBar()
 {
     if(bar > 0)
     {
-        SDL_DestroyTexture(bar);
+        draw_base::textures.DeleteUniqueTexture(bar);
     }
 }
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

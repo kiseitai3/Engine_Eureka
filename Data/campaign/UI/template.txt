@@ -1,0 +1,8 @@
+tex_texture = ;
+name = ;
+ui_x = 0;
+ui_y = 0;
+ui_exit_file = Data\\campaign\\textbox\\ui_template_exit_button.txt;
+ui_text_num = 1;
+ui_text_0_msg = Hi;
+ui_text_0_file = ;

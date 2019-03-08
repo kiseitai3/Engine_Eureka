@@ -1,5 +1,10 @@
 #ifndef TIMER_H_INCLUDED
 #define TIMER_H_INCLUDED
+#include "typedefs.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 //The timer
 class Timer
@@ -33,4 +38,6 @@ class Timer
     bool is_paused() const;
 };
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TIMER_H_INCLUDED

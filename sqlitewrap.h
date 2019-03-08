@@ -7,12 +7,23 @@
 #include <string>
 #include <vector>
 #include <stack>
+<<<<<<< HEAD
 #include "game.h"
 #include "data_base.h"
+=======
+
+>>>>>>> TheIllusiveMan
 #include "sqlkeywords.h"
 #include "sqlite_error.h"
 #include "sqlite_row.h"
 
+<<<<<<< HEAD
+=======
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
+>>>>>>> TheIllusiveMan
 class SQLiteWrap : public SQLGenerator, public SQLiteError
 {
 public:
@@ -28,12 +39,25 @@ public:
     void getResult(std::string& response, size_t col) const;
     void getResult(bool& response, size_t col) const;
     void getResult(double& response, size_t col) const;
+<<<<<<< HEAD
     std::vector<fuzzy_obj> getResults() const;
+=======
+    std::vector<fuzzy_obj> getResults();
+>>>>>>> TheIllusiveMan
     size_t getColCount();
     //Clearing methods
     void popRow();
     void popRows();
     void ClearResults();
+<<<<<<< HEAD
+=======
+    /*Ask for the validity of a database file!*/
+    static bool isSQLiteDB(const char* file);
+    //Getters
+    bool isError(size_t err) const;
+    //Debugging
+    void printRows();
+>>>>>>> TheIllusiveMan
     ~SQLiteWrap();
 private:
     sqlite3 *hDB; //Database handle!
@@ -49,5 +73,12 @@ private:
     size_t stepThroughRow(sqlite3_stmt* stmt);
 };
 
+<<<<<<< HEAD
 
+=======
+fuzzy_obj convert(const fuzzy_obj& src);
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan
 #endif // SQLITEWRAP_H_INCLUDED

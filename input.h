@@ -2,43 +2,112 @@
 #define INPUT_H_INCLUDED
 #include <SDL.h>
 #include <string>
-#include "physics.h"
-#include "input.h"
+#include <map>
+#include "BST.h"
+#include "typedefs.h"
 
-class inputMouse
+class Game;
+class Button;
+class textbox;
+class Unit;
+class ScriptWrap;
+
+typedef struct raw_input
 {
-    private:
-    math_point _2D_coordinates; //coordinates of mouse pointer
-    SDL_Event* event;
-    bool pressedButton;
-    int mouseButton;
+    size_t eventType, type;
+    size_t state;
+    size_t mx, my, mx2, my2, mb, clicks;
+    size_t txt_editing_len;
+    size_t key;
+    size_t winID;
+    double pressure, tx, ty, tdx, tdy;
+    std::string txtBuffer, txtEditing;
+}raw_input;
 
-    public:
-        inputMouse(SDL_Event* pEvent);
-        bool UpdateProcessedCoordinates();
-        bool ChangeCoordinates(int x, int y);
-        void buttonPress();
-        int getButtonState() const;
-        unsigned int GetButton() const;
+typedef struct KeyNode
+{
+    size_t key;
+    std::string val;
+    KeyNode(size_t id, const std::string& value)
+    {
+        key = id;
+        val = value;
+    }
+    KeyNode()
+    {
+        key = 0;
+        val = "";
+    }
+}KeyNode;
 
+enum EurekaEventTypes
+{
+    TEXTINPUT, KEYBOARD, MOUSE, TOUCH, CONTROLLER, MOUSEMOTION
 };
 
-class inputKeyboard
+class InputMouse
 {
-    private:
-    SDL_Event* event;
-    SDL_Keysym pressKey;
+private:
+    math_point coordinates; //coordinates of mouse pointer
+
+public:
+    InputMouse();
+    void ChangeCoordinates(int x, int y, int z = 0);
+    math_point GetCoordinates();
+};
+
+class InputKeyboard
+{
+private:
     std::string text;
     bool textMode;// flag that will change the context of key presses in the game
-    bool textReady;// flag to prevent string from getting erased prior to display. The getText function is the only function hat can reset the text vaiable to "".
+    bool textReady;// flag to prevent string from getting erased prior to display. The getText method is the only method that can reset the text variable to "".
 
-    public:
-    inputKeyboard(SDL_Event* pEvent);
-    void setInputText();
+public:
+    InputKeyboard();
+    void feedBuffer(std::string& buffer);
     void toggleTextMode();
-    std::string getText();
-    char GetKey() const;
+    const char* getText();//Get copy of string!
+    bool GetTextMode() const;
+    void StartTextInput();
+    void StopTextInput();
 };
 
+class Input : public InputMouse, public InputKeyboard
+{
+public:
+    //ctor and dtor
+    Input(Game* owner);
+    ~Input();
+
+    //Load
+    void LoadKeyScript(cstr file);
+    void LoadDefaultKeyBindings(cstr file);
+    void LoadCurrentKeyBindings(size_t db_id);
+
+    //Update status
+    void UpdateInput(SDL_Event* pEvent);
+    void ProcessUIInput(Button* bt, textbox* txt);
+    void ProcessUnitInput(Unit* unit);
+
+    //Setter
+    void ChangeKeyBinding(size_t previousKey, size_t newKey);
+    void SaveKeyBindings(size_t db_id);
+
+    //Getter
+    const raw_input& GetRawInput() const;
+    std::string GetKeyName(size_t key) const;
+
+private:
+    ScriptWrap* script;
+    Game* owner_ref;
+    raw_input state;
+    BinarySearchTree<size_t, KeyNode> keys;
+
+    size_t db_id, keybindingsCount;
+
+    void clearKeys();
+    void deleteScript();
+};
 
 #endif // INPUT_H_INCLUDED

@@ -22,6 +22,8 @@
 #include "conversion.h"
 #include "data_base.h"
 
+ const char* data_base::BUFFER = "b>>\0";
+
 //Reading section
     bool data_base::LoadData(const char* location, bool readMode)
     {
@@ -38,6 +40,14 @@
         }
         return file.is_open();
     }
+
+void data_base::LoadBuffer(const char* contents)
+{
+    //Contents must be a NULL terminated C string
+    buffer = contents;
+    isBufferLoaded = true;
+}
+
 void data_base::LoadStringBuffer(bool closeFile)
 {
     /*Loads file into internal string buffer line by line*/
@@ -60,6 +70,7 @@ void data_base::LoadStringBuffer(bool closeFile)
     char* buff = new char[s];
     file.seekg(0, std::ios::beg);
     file.read(buff, s);
+    buff[s-1] = '\0';
     buffer = buff;//Load the string to the internal buffer
     delete[] buff;// free the temporary buffer
     for(size_t i = 0; i <buffer.size(); i++)
@@ -235,11 +246,25 @@ bool data_base::SearchTermExists(const std::string& search) const
     void data_base::WriteValue(const std::string& value, const std::string& search)
     {
         /*Writes value into an specific 'tag' in file. i.e. value = 3; [search = value, value = 5] -> value = 5;*/
+        int start, a, b,end, size;
         if(buffer != "" && search != "")
         {
-            int start = findString(search.c_str(), buffer.c_str()) + search.length() + 3;//3 is the number of spaces in the line that form the string " = ". Check the syntax of files
-            int end = searchCharIndex(';', buffer, start);
-            int size = end - start;
+            //Make sure the start is for a tag and not for a value!
+            do
+            {
+                start = findString(search.c_str(), buffer.c_str()) + search.length() ;//Right before any = symbols
+                a = searchCharIndexBefore('=', ';', buffer, start);
+                b = searchCharIndexBefore('=', '\n', buffer, start);
+                if(a<b)
+                   start = a;
+                else
+                    start = b;
+            }while(!isTag(start));
+            //Now, correct the start index by 1 so it points after the = symbol.
+            start++;
+            //With the correct start index, we can move on to finalizing where to write the value
+            end = searchCharIndex(';', buffer, start);
+            size = end - start;
             buffer.replace(start, size, value);
             FlushData();
         }
@@ -358,6 +383,11 @@ bool data_base::SearchTermExists(const std::string& search) const
             return output.is_open();
         }
         return false;
+    }
+
+    bool data_base::isTag(size_t pos) const
+    {
+        return (searchCharIndexBefore('=', '\n', buffer, pos) + 1) || (searchCharIndexBefore('=', ';', buffer, pos) + 1);
     }
 
     void data_base::CloseFile(const std::string& streamsToClose)
@@ -511,6 +541,7 @@ bool data_base::SearchTermExists(const std::string& search) const
     {
         /*Constructor. This class will be used for reading files by default. However, changing the read flag to false will
         make the constructor prep the object for writing purposes instead*/
+        const char* buffToken = NULL;
         isBufferLoaded = false;
         writeMode = false;
         buffer = "";
@@ -528,6 +559,17 @@ bool data_base::SearchTermExists(const std::string& search) const
                 }
             break;
             default:
+            /*In the following part I ask to find the BUFFER string inside location.
+            I do this in order to create a way to use data_base as a char buffer
+            guard class. In other words, it will allow the programmer to load files
+            from a direct char buffer instead from a file on disk!*/
+            buffToken = strstr(location, BUFFER);
+            if(buffToken)//If we have a buffer file
+            {
+                LoadBuffer(location + strlen(BUFFER));//Load the contents of the buffer past the BUFFER directive
+                return;//End the loading stage here since we are not opening a file on disk!
+            }
+
             if(LoadData(location))//Checks if internal file buffer was properly started.
             {
                 LoadStringBuffer(false);//reads the file buffer into the internal string buffer
@@ -576,4 +618,30 @@ bool copyfile(const std::string& source, const std::string& destination, bool bi
         out.close();
     }
     return result;
+}
+
+unsigned char* get_bin_buffer(const char* file, size_t& s)
+{
+    FILE* f;
+    size_t size = 0;
+    unsigned char* buff = NULL;
+
+    //open file
+    f = fopen(file, "rb");
+
+    if(f)
+    {
+        fseek(f, 0, SEEK_END);
+        size = ftell(f);
+        //allocate buffer
+        buff = new unsigned char[size];
+        fseek(f, 0, SEEK_SET);
+        //Copy buffer
+        for(size_t i = 0; i < size; i++)
+        {
+            buff[i] = fgetc(f);
+        }
+    }
+    s = size;
+    return buff;
 }

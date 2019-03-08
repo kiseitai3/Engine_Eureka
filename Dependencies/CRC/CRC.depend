@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1430245154 source:c:\users\luis\documents\devcb\crc\crc.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"crc.h"
+
+1430243402 source:c:\users\luis\documents\devcb\crc\driver.c
+	<stdio.h>
+	"crc.h"
+
+1428632164 source:c:\users\luis\documents\devcb\crc\ints.c
+	"ints.h"
+
+1428606559 c:\users\luis\documents\devcb\crc\ints.h
+
+1429572097 c:\users\luis\documents\devcb\crc\crc.h
+	<stdint.h>
+

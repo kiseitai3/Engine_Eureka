@@ -24,6 +24,16 @@
 #include "data_base.h"
 #include <iostream>
 
+/** \brief data_base class. This class takes care of abstracting writing and reading from a file. Because I built it to be a general purpose I/O implementation,
+*   this class contains methods meant for both plain text and binary files. The plain text files are my quasi config file implementation. Although not an ini format,
+*   the plain text files should contain a [<name> = <value/text>;] format. Terms not explicitly searched for will be ignored. This effectively allows you to write
+*   comment lines in text files using the following format [<text>;] By the way, the class will check for new lines if no semicolon is provided in a file line.
+*
+*
+*   Example file:
+*   This is a comment line;
+*   file_name = cat.jpg;
+ */
 class data_base
 {
     private:
@@ -39,40 +49,41 @@ class data_base
     bool LoadData(const char* location, bool readMode = true);
     void LoadStringBuffer(bool closeFile = true);
     void FlushData();
-    int GetLineIndex(const std::string& search, int lineNum) const;
+    int GetLineIndex(std::string search, int lineNum) const;
     void FileClear();
     void CleanFileContentsOfArtifacts();
     void TrimEndOfFile();
+
     public:
     //methods
     data_base(const char location[]="", bool read = true);
     std::string GetStrBuffer() const;
-    double GetValueFromData(const std::string& search) const;
-    std::string GetStrFromData(const std::string& search) const;
-    int GetIntFromData(const std::string& search) const;
-    double GetValueFromDataWithLine(const std::string& search, int lineIndex) const;
-    std::string GetStrFromDataWithLine(const std::string& search, int lineIndex) const;
+    double GetValueFromData(std::string search) const;
+    std::string GetStrFromData(std::string search) const;
+    int GetIntFromData(std::string search) const;
+    double GetValueFromDataWithLine(std::string search, int lineIndex) const;
+    std::string GetStrFromDataWithLine(std::string search, int lineIndex) const;
     bool GetStateOfInternalBuffer() const;
-    std::string OpenFileAndGetBinBuffer(char* location);
+    std::string OpenFileAndGetBinBuffer(const char* location);
     void OpenFile(const char* location, bool readMode = true);
     void OpenFileForQuickWrite(const char* location);// Will open the output stream in append mode. It assumes you just want to ad some new stuff to the file immediately.
     void OpenBinFileForQuickWrite(const char* location); //Will open a file in binary mode
-    void CloseFile(const std::string& streamsToClose = "all");
+    void CloseFile(std::string streamsToClose = "all");
     bool GetMode() const;
-    void WriteValue(const std::string& value, const std::string& search = "");
-    void WriteValueWithLineIndex (const std::string& value, const std::string& search, int lineIndex);
-    void WriteValueAndFlush(const std::string& value);//Meant to be used with OpenFileForQuickWrite
+    void WriteValue(std::string value, std::string search = "");
+    void WriteValueWithLineIndex (std::string value, std::string search, int lineIndex);
+    void WriteValueAndFlush(std::string value);//Meant to be used with OpenFileForQuickWrite
     int GetLineCount() const;
-    int GetNumInstances(const std::string& search) const;
+    int GetNumInstances(std::string search) const;
     std::string GetLastOutput() const;
     bool isOutputOpen() const;
-    bool SearchTermExists(const std::string& search) const;
+    bool SearchTermExists(std::string search) const;
     void RestoreFileContents();
     void RefreshFile();
-    void CreateNewFile(const char* location = "");
+    void CreateNewFile(const char* location, size_t s);
     static void CreateNewFile_static(const char* location);
     ~data_base();
 };
 
-bool copyfile(const std::string& source, const std::string& destination, bool binary = true);
+bool copyfile(const std::string& source, const std::string destination, bool binary = true);
 #endif // DATA_BASE_H_INCLUDED

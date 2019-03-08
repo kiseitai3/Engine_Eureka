@@ -6,6 +6,11 @@
 #include "physics.h"
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include "data_base.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
 
 class UI;
 
@@ -14,6 +19,7 @@ class textbox
 private:
     SDL_Texture *message;
 	SDL_Renderer *screen;
+	SDL_Rect txt_rect;
     data_base *data;
     draw_base *background;
     math_point loc;
@@ -22,7 +28,7 @@ private:
     UI *owner;
     int fontSize;
     int blitOrder;
-    std::string type;
+    std::string type, name;
     std::string text;
     bool dead, writable;
 
@@ -32,6 +38,7 @@ public:
     void Draw(SDL_Renderer& ren);
     //Getters and setters
     void SetLoc(int x, int y);
+    std::string GetName() const;
     std::string GetType() const;
     bool GetDeath() const;
     int GetBlitOrder() const;//Gets the blit order assigned to this object. This number tells the renderer to draw this object only when it reaches the blit number in blitOrder.
@@ -54,4 +61,6 @@ public:
 //Global functions
 void grabText(textbox *pTextbox, const SDL_Event& e);
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // TEXTBOX_H_INCLUDED

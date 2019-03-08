@@ -38,12 +38,12 @@ Trigger::~Trigger()
 }
 
 //Getters and setters
-int Trigger::GetID() const
+size_t Trigger::GetID() const
 {
     return ID;
 }
 
-void Trigger::SetID(int id)
+void Trigger::SetID(size_t id)
 {
     ID = id;
 }

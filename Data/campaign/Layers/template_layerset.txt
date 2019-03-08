@@ -1,0 +1,2 @@
+layer_count = 1;
+layer_0_file = /campaign/Layers/template_layer.txt

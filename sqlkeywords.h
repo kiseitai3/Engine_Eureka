@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
     Copyright (C) 2014 Luis M. Santos
     Contact: luismigue1234@hotmail.com
@@ -15,6 +16,8 @@
     You should have received a copy of the GNU Lesser General Public License
     along with This program.  If not, see <http://www.gnu.org/licenses/>.
 */
+=======
+>>>>>>> TheIllusiveMan
 #ifndef SQLKEYWORDS_H_INCLUDED
 #define SQLKEYWORDS_H_INCLUDED
 
@@ -36,6 +39,7 @@ in the generator multiple keywords in the format x|y|z. Thus, the SQL statement 
 whether statementType = SELECT | FROM. Since this is a binary OR evaluation, you obtain a value that is a merged version of
 SELECT and FROM binary values! :D
 */
+<<<<<<< HEAD
 enum StatementTypes
 {
     CREATETABLE =   0b0000000000000001,
@@ -54,6 +58,29 @@ enum StatementTypes
     CREATEDATABASE =0b0010000000000000,
     INTO =          0b0100000000000000,
     IN =            0b1000000000000000,
+=======
+//To guard against defined macros
+#undef DELETE
+#undef IN
+enum StatementTypes
+{
+    CREATETABLE =   0x0001,
+    SELECT =        0x0002,
+    INSERT =        0x0004,
+    DELETE =        0x0008,
+    WHERE =         0x0010,
+    AS =            0x0020,
+    CALL =          0x0040,
+    FROM =          0x0080,
+    TO =            0x0100,
+    UPDATE =        0x0200,
+    AND =           0x0400,
+    OR =            0x0800,
+    LIKE =          0x1000,
+    CREATEDATABASE =0x2000,
+    INTO =          0x4000,
+    IN =            0x8000,
+>>>>>>> TheIllusiveMan
     ALL =           UPDATE | INSERT | AND | OR,
     AOR =           AND | OR, //Substitute for the AND OR keyword combination
     ORDERBY =       IN | TO | UPDATE,
@@ -112,12 +139,17 @@ static std::map<word, std::string> Keywords{
 
 typedef struct SQLGenerator//SQL Query Generator. It's a nice helping structure!
 {
+<<<<<<< HEAD
     enum DataTypes
     {
         INT, DOUBLE, BOOL, STRING, CHAR,
     };
     static const std::string WILDCARD;
     std::string prepareStatement(const std::string& table, const std::string& columns = WILDCARD, const std::string& criteria = WILDCARD, const std::string& pattern = WILDCARD, const std::string& pattern2 = WILDCARD, size_t statementType = SELECT);
+=======
+    static const std::string WILDCARD;
+    std::string prepareStatement(std::string table = WILDCARD, std::string columns = WILDCARD, std::string criteria = WILDCARD, std::string pattern = WILDCARD, std::string pattern2 = WILDCARD, size_t statementType = SELECT);
+>>>>>>> TheIllusiveMan
 }SQLQuery;
 
 #endif // SQLKEYWORDS_H_INCLUDED

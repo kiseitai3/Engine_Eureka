@@ -1,0 +1,8 @@
+EXPORTS
+    crc64 @1
+    crc64_on_file @2
+    crc64_on_file_fast @3
+    crc64_on_file_fastest @4
+    extract_int @5
+    get_file_chunk @6
+    get_file_size @7

@@ -1,3 +1,4 @@
+//#define EUREKA_EXPORT
 #include "textbox.h"
 #include "button.h"
 #include <string>
@@ -8,13 +9,20 @@
 #include <SDL_ttf.h>
 #include "scriptwrap.h"
 #include <map>
-#include "data_base.h"
-#include <SDL_image.h>
-#include "globals.h"
 
-Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, file, ren, blitOrderI)
+#include <SDL_image.h>
+<<<<<<< HEAD
+#include "globals.h"
+=======
+#include "eureka.h"
+
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+>>>>>>> TheIllusiveMan
+
+Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrderI): textbox(msg, data_base(file).GetStrFromData("textbox_file").c_str(), ren, blitOrderI)
 {
-    script = 0;
     if(!GetDOM())
     {
         std::cout<<"Error: DOM object for this button is NULL!\n\r";
@@ -26,32 +34,29 @@ Button::Button(std::string msg, const char *file, SDL_Renderer& ren, int blitOrd
         textures["idle"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_idle").c_str(), ren);
         textures["selected"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_selected").c_str(), ren);
         textures["down"] = LoadTexture(GetDOM()->GetStrFromData("button_tex_down").c_str(), ren);
+<<<<<<< HEAD
         script = new ScriptWrap(GetDOM()->GetStrFromData("button_script").c_str());
         if(!script)
         {
             std::cout<<"Error: Failed to load scripts for this button! :( \n\r";
         }
+=======
+>>>>>>> TheIllusiveMan
     }
-    buttonPressedBefore = false;
 }
 
 Button::~Button()
 {
     //Clean up the heap before losing the pointers! :)
-    SDL_DestroyTexture(textures["enter"]);
-    SDL_DestroyTexture(textures["clicking"]);
-    SDL_DestroyTexture(textures["idle"]);
-    SDL_DestroyTexture(textures["selected"]);
-    SDL_DestroyTexture(textures["down"]);
-    //Clean up additional heap objects
-    if(script > 0)
-    {
-        delete(script);
-    }
+    draw_base::textures.DeleteUniqueTexture(textures["enter"]);
+    draw_base::textures.DeleteUniqueTexture(textures["clicking"]);
+    draw_base::textures.DeleteUniqueTexture(textures["idle"]);
+    draw_base::textures.DeleteUniqueTexture(textures["selected"]);
+    draw_base::textures.DeleteUniqueTexture(textures["down"]);
 
 }
 
-void Button::ProcessMouseLoc(int x, int y)
+void Button::ProcessMouseLoc(size_t x, size_t y)
 {
     if(x >= GetLoc().X && x <= (GetLoc().X + GetDrawObject()->GetWidthOfMainRect()))
     {
@@ -66,8 +71,9 @@ void Button::ProcessMouseLoc(int x, int y)
     }
 }
 
-void Button::MouseClick(unsigned int button, int x, int y, bool down)
+void Button::SetTexture(const std::string& name)
 {
+<<<<<<< HEAD
     if(x >= GetLoc().X && x <= (GetLoc().X + GetDrawObject()->GetWidthOfMainRect()))
     {
         if(y <= GetLoc().Y && y >= (GetLoc().X - GetDrawObject()->GetHeightOfMainRect()))
@@ -93,4 +99,15 @@ void Button::MouseClick(unsigned int button, int x, int y, bool down)
             }
         }
     }
+=======
+    GetDrawObject()->SetTextureFromPointer(textures[name]);
+>>>>>>> TheIllusiveMan
 }
+
+void Button::ChangeMsg(const std::string& msg)
+{
+    changeMsg(msg, GetOwner()->GetRenderer());
+}
+
+//End of namespace macro
+//ENGINE_NAMESPACE_END

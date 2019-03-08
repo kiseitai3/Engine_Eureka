@@ -1,16 +1,22 @@
 #ifndef PROGRESSBAR_H_INCLUDED
 #define PROGRESSBAR_H_INCLUDED
 #include "physics.h"
+#include "draw_base.h"
 #include <SDL.h>
 
-class ProgressBar
+//Engine name space macro
+//ENGINE_NAMESPACE
+
+
+
+class  ProgressBar
 {
 private:
     math_point location;
     int maxVal;
     int *currentVal;
     int blitOrder;
-    SDL_Texture *bar;
+    TextureNode *bar;
     SDL_Rect src, target;
 
 public:
@@ -24,4 +30,6 @@ public:
 };
 
 
+//End of namespace macro
+//ENGINE_NAMESPACE_END
 #endif // PROGRESSBAR_H_INCLUDED

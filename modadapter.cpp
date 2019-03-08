@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+#include "modadapter.h"
+
+ModAdapter::ModAdapter(const char* file)
+=======
 #define EUREKA_EXPORT
 #include "modadapter.h"
 
@@ -6,6 +11,7 @@
 
 
 ModAdapter::ModAdapter(const char* file, Game* owner)
+>>>>>>> TheIllusiveMan
 {
     std::string tmp = file;
     dlModule = NULL;
@@ -14,9 +20,12 @@ ModAdapter::ModAdapter(const char* file, Game* owner)
         dlModule = new Plugin(file);//Initialize the plugin loader
     else
         sModule = new ScriptWrap(file);//Otherwise, initialize the plugin as a regular script. Good for scripted plugins.
+<<<<<<< HEAD
+=======
 
     if(!owner_ref && !(owner_ref == owner))
         owner_ref = owner;
+>>>>>>> TheIllusiveMan
 }
 
 bool ModAdapter::isFuncRegistered(const std::string& name) const
@@ -42,9 +51,15 @@ void ModAdapter::RegisterFunction(const std::string& name)
     }
 
     if(sModule)
+<<<<<<< HEAD
+        fList.push_back(func(name, NULL));
+    else if(dlModule)
+        fList.push_back(func(name, dlModule->GetFunction(name)));
+=======
         fList.push_back(Node(name, NULL));
     else if(dlModule)
         fList.push_back(Node(name, dlModule->GetFunction(name)));
+>>>>>>> TheIllusiveMan
 }
 
 void ModAdapter::RegisterFunctionFromFile(const char* file)
@@ -61,6 +76,9 @@ void ModAdapter::RegisterFunctionFromFile(const char* file)
     }
 }
 
+<<<<<<< HEAD
+int ModAdapter::RunFunctions(Game* owner) const
+=======
 void ModAdapter::UnregisterFunction(const std::string& name)
 {
     for(std::vector<Node>::iterator itr = fList.begin(); itr != fList.end(); itr++)
@@ -71,19 +89,28 @@ void ModAdapter::UnregisterFunction(const std::string& name)
 }
 
 int ModAdapter::RunFunctions() const
+>>>>>>> TheIllusiveMan
 {
     //Execute functions!
     for(size_t i = 0; i < fList.size(); i++)
     {
         if(sModule)
         {
+<<<<<<< HEAD
+            sModule->AddArgument(owner);
+=======
             sModule->AddArgument(owner_ref);
+>>>>>>> TheIllusiveMan
             sModule->executeFunction(fList[i].Name, ScriptWrap::NO_ARGS);
             return EXIT_SUCCESS;
         }
         else if(dlModule)
         {
+<<<<<<< HEAD
+            fList[i].Ptr(owner);
+=======
             fList[i].Ptr(owner_ref);
+>>>>>>> TheIllusiveMan
             return EXIT_SUCCESS;
         }
     }
@@ -105,6 +132,8 @@ Node::Node(const std::string& name, func_ptr ptr)
     Ptr = ptr;
 }
 
+<<<<<<< HEAD
+=======
 void_ptr helperModFunction(void_ptr obj)
 {
     ((ModAdapter*)obj)->RunFunctions();
@@ -112,3 +141,4 @@ void_ptr helperModFunction(void_ptr obj)
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan

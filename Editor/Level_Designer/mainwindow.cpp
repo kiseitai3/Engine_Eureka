@@ -16,6 +16,7 @@
 #include <QGraphicsPixmapItem>
 #include <QImage>
 #include <QTimer>
+#include <QThread>
 
 #include "cursorsettings.h"
 #include "unitsettings.h"
@@ -40,6 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
   worldPrev->addItem(worldItm);
   ui->gvGamePreview->setScene(worldPrev);
   frame = NULL;
+  frameThread = new QThread(this);
   textPrev = new QGraphicsScene(this);
   ui->gvTexturePreview->setScene(textPrev);
   engine = new Game(true);
@@ -112,6 +114,7 @@ void MainWindow::RegisterAsset(const std::string &name, const std::string &path,
 void MainWindow::RegisterObject(AssetNode obj)
 {
     size_t tree = OBJECTLIST;
+    math_point p;
     switch(obj.type)
     {
     case CODETYPE|SCRIPT:
@@ -124,11 +127,17 @@ void MainWindow::RegisterObject(AssetNode obj)
     case OBJTYPE|PROJECTILE:
         //Load the object into the engine with the data!
         obj.id = engine->SpawnUnitFromFile(obj.path.toStdString().c_str(), GetBlitOrderFromType(obj.type));
+        p.X = engine->GetScreenLoc().X + obj.offset.X;
+        p.Y = engine->GetScreenLoc().Y + obj.offset.Y;
+        engine->GetUnit(obj.id).GetPhysics()->SetLoc(p);
         break;
     //All triggers
     case TRIGGER:
     case OBJTYPE|TRIGGER:
         obj.id = engine->RegisterTrigger(obj.path.toStdString().c_str());
+        p.X = engine->GetScreenLoc().X + obj.offset.X;
+        p.Y = engine->GetScreenLoc().Y + obj.offset.Y;
+        engine->GetTrigger(obj.id).UpdateTriggerLoc(p.X, p.Y);
         break;
     //All cursors
     case CURSOR:
@@ -400,7 +409,8 @@ void MainWindow::on_pbModBrowse_clicked()
     //Stop drawing timer
     if(frame)
     {
-        frame->stop();
+        frameThread->quit();
+        frameThread->wait();
         delete frame;
     }
 
@@ -459,9 +469,12 @@ void MainWindow::on_pbModBrowse_clicked()
     loadVideoSettings();
 
     //Start asynchronoush drawing of game objects
-    /*frame = new QTimer(this);
+    frame = new QTimer(0);
     connect(frame, SIGNAL(timeout()), this, SLOT(drawObjs()));
-    frame->start(17);*/
+    frame->setInterval(100);
+    frame->moveToThread(frameThread);
+    connect(frameThread, SIGNAL(started()), frame, SLOT(start()));
+    frameThread->start();
 
 
     //Finally, we enable the other tabs and allow the user to do his/her work
@@ -774,6 +787,9 @@ void MainWindow::loadVideoSettings()
                     displayCount, displayIndex, fps, width, height, bpp,
                     blitlvls, screenmode, driver, freq, chan, chunksize);
     engine->SetSoundVolume(vol);
+    engine->initSubSys();
+    engine->init();
+    engine->ShowWindow(false);
 }
 
 void MainWindow::registerProjectObjects(const QStringList &lst, const std::string &path, size_t type)
@@ -1206,6 +1222,8 @@ bool pluginExists(const std::string& searchTerm, const data_base& file, size_t& 
 
 std::string extract_correct_path(const std::string& fullPath, const std::string& modName)
 {
+    if(fullPath.empty())
+        return fullPath;
     return fullPath.substr(fullPath.find(modName));
 }
 
@@ -1540,7 +1558,15 @@ void MainWindow::on_pbClearUI_clicked()
 
 void MainWindow::drawObjs()
 {
+    /*QRect r = ui->gvGamePreview->geometry();
+    QPoint p(this->window()->x() + r.x(),
+             this->window()->y() + r.y());
+    engine->SetWindowPosition(p.x(), p.y());
+    engine->ShowWindow(true);
+    engine->drawWorld();*/
+    worldPrev->clear();
     engine->drawWorld();
-    worldItm->setPixmap(QPixmap::fromImage(QImage(( const uchar*)engine->GetFrameBuffer(),engine->GetScreenWidth(), engine->GetScreenHeight(), QImage::Format_RGBA8888)));
+    worldItm = worldPrev->addPixmap(QPixmap::fromImage(QImage(( const uchar*)engine->GetFrameBuffer(),engine->GetScreenWidth(), engine->GetScreenHeight(), QImage::Format_RGBA8888)));
     ui->gvGamePreview->update();
+    ui->gvGamePreview->show();
 }

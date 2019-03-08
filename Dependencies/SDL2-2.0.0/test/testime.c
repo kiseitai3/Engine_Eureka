@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -80,7 +80,7 @@ char *utf8_advance(char *p, size_t distance)
 
 void usage()
 {
-    SDL_Log("usage: testime [--font fontfile]\n");
+    printf("usage: testime [--font fontfile]\n");
     exit(0);
 }
 
@@ -135,7 +135,7 @@ void _Redraw(SDL_Renderer * renderer) {
     markedRect.w = textRect.w - w;
     if (markedRect.w < 0)
     {
-        /* Stop text input because we cannot hold any more characters */
+        // Stop text input because we cannot hold any more characters
         SDL_StopTextInput();
         return;
     }
@@ -196,8 +196,6 @@ void Redraw() {
     int i;
     for (i = 0; i < state->num_windows; ++i) {
         SDL_Renderer *renderer = state->renderers[i];
-        if (state->windows[i] == NULL)
-            continue;
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
         SDL_RenderClear(renderer);
 
@@ -211,9 +209,6 @@ int main(int argc, char *argv[]) {
     int i, done;
     SDL_Event event;
     const char *fontname = DEFAULT_FONT;
-
-    /* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
 
     /* Initialize test framework */
     state = SDLTest_CommonCreateState(argv, SDL_INIT_VIDEO);
@@ -256,12 +251,12 @@ int main(int argc, char *argv[]) {
     font = TTF_OpenFont(fontname, DEFAULT_PTSIZE);
     if (! font)
     {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to find font: %s\n", TTF_GetError());
+        fprintf(stderr, "Failed to find font: %s\n", TTF_GetError());
         exit(-1);
     }
 #endif
 
-    SDL_Log("Using font: %s\n", fontname);
+    printf("Using font: %s\n", fontname);
     atexit(SDL_Quit);
 
     InitInput();
@@ -326,32 +321,33 @@ int main(int argc, char *argv[]) {
                         break;
                     }
 
-                    SDL_Log("Keyboard: scancode 0x%08X = %s, keycode 0x%08X = %s\n",
+                    fprintf(stderr,
+                            "Keyboard: scancode 0x%08X = %s, keycode 0x%08X = %s\n",
                             event.key.keysym.scancode,
                             SDL_GetScancodeName(event.key.keysym.scancode),
                             event.key.keysym.sym, SDL_GetKeyName(event.key.keysym.sym));
                     break;
 
                 case SDL_TEXTINPUT:
-                    if (event.text.text[0] == '\0' || event.text.text[0] == '\n' ||
+                    if (SDL_strlen(event.text.text) == 0 || event.text.text[0] == '\n' ||
                         markedRect.w < 0)
                         break;
 
-                    SDL_Log("Keyboard: text input \"%s\"\n", event.text.text);
+                    fprintf(stderr, "Keyboard: text input \"%s\"\n", event.text.text);
 
                     if (SDL_strlen(text) + SDL_strlen(event.text.text) < sizeof(text))
                         SDL_strlcat(text, event.text.text, sizeof(text));
 
-                    SDL_Log("text inputed: %s\n", text);
+                    fprintf(stderr, "text inputed: %s\n", text);
 
-                    /* After text inputed, we can clear up markedText because it */
-                    /* is committed */
+                    // After text inputed, we can clear up markedText because it
+                    // is committed
                     markedText[0] = 0;
                     Redraw();
                     break;
 
                 case SDL_TEXTEDITING:
-                    SDL_Log("text editing \"%s\", selected range (%d, %d)\n",
+                    fprintf(stderr, "text editing \"%s\", selected range (%d, %d)\n",
                             event.edit.text, event.edit.start, event.edit.length);
 
                     strcpy(markedText, event.edit.text);

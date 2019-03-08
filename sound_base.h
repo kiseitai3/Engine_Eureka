@@ -26,7 +26,11 @@ public:
 
     void PutNum2(long num,int endianness,int bytes);
     void WriteWav(FILE *f, long int bytes);
+<<<<<<< HEAD
+    unsigned char WriteWav(unsigned char* buffer, long int bytes);
+=======
     unsigned char* WriteWav(unsigned char* buffer, size_t bytes);
+>>>>>>> TheIllusiveMan
     typedef struct  wavHeaderInfo
     {
         char                RIFF[4];        /* RIFF Header      */ //Magic header
@@ -48,13 +52,24 @@ public:
     /*The previous code is an experiment. As a result, I don't want to rely on it for all my audio needs.
     This compells me to allow the program to load normal audio files. I also have to include some SDL components.*/
     void Load_Sound (const char* source);
+<<<<<<< HEAD
+    bool Load_Sound(unsigned char* buffer);
+=======
     void Load_SoundFromBuffer(unsigned char* buffer, size_t size, bool headerlessWav = false);
+>>>>>>> TheIllusiveMan
     void Play(int loops = 0);
     void Pause();
     void Stop();
     bool isPlaying() const;
     bool PlayEffect(int soundLoops);
     bool isLoopingEffect() const;
+<<<<<<< HEAD
+    void FadeOut(int ms);
+    void SetVol(int volume);
+    const char SoundType();
+    void SetPoint();// This point is to create the fading effect of an ambient sound as you move away from a place.
+    void Update_Sound_Distance(math_point target, int range=0);// default minimum is 126
+=======
     bool isEffectPlaying() const;
     void FadeOut(int ms);
     void FadeIn(int ms);
@@ -62,6 +77,7 @@ public:
     const char SoundType();
     void SetPoint();// This point is to create the fading effect of an ambient sound as you move away from a place.
     void Update_Sound_Distance(math_point target, int masterVol);
+>>>>>>> TheIllusiveMan
     void Update_Sound_Position(int x, int y);
     ~sound_base();
     sound_base(bool random_blob = false);
@@ -70,17 +86,27 @@ private:
 
     unsigned char headerBuffer[44];// I will first create a header buffer and then I will attempt to merge it with the sound buffer
     int indexCount, channel;
+<<<<<<< HEAD
+    bool blob_obj;// This flag will let me know if I should load regular audio files or the experimental audio buffer (see top functions).
+    bool loopingEffect;
+    char type;
+    data_base *AudioDOM;
+=======
     size_t s_range;
     bool blob_obj;// This flag will let me know if I should load regular audio files or the experimental audio buffer (see top functions).
     bool loopingEffect;
     char type;
+>>>>>>> TheIllusiveMan
     math_point Location;
     Mix_Music *music;
     Mix_Chunk *effect;
 
     //Private functions
     void addBuff_String(std::string input, int index);
+<<<<<<< HEAD
+=======
     void clearSounds();
+>>>>>>> TheIllusiveMan
 };
 static void PutNum(long num,FILE *f,int endianness,int bytes);
 void strcpyn(char* dest, const char* src, size_t bytes, size_t start = 0);

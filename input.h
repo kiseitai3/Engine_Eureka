@@ -22,7 +22,7 @@ typedef struct raw_input
     size_t winID;
     double pressure, tx, ty, tdx, tdy;
     std::string txtBuffer, txtEditing;
-};
+}raw_input;
 
 typedef struct KeyNode
 {
@@ -38,7 +38,7 @@ typedef struct KeyNode
         key = 0;
         val = "";
     }
-};
+}KeyNode;
 
 enum EurekaEventTypes
 {

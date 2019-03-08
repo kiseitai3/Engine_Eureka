@@ -19,7 +19,10 @@
 
 
 MySQL::cstr MySQL::DEFAULT_HOST = "localhost";
+<<<<<<< HEAD
+=======
 const int MySQL::DEFAULT_COL_INDEX = 1;
+>>>>>>> TheIllusiveMan
 
 MySQL::MySQL(cstr database, cstr username, cstr password, cstr host)
 {
@@ -28,12 +31,19 @@ MySQL::MySQL(cstr database, cstr username, cstr password, cstr host)
     statement = NULL;
     res = NULL;
     if(!database || !username || !password)
+<<<<<<< HEAD
+        std::cout << "Warning: One or more pieces of information is missing. The program can't connect to the database without its name, "
+=======
         std::cerr << "Warning: One or more pieces of information is missing. The program can't connect to the database without its name, "
+>>>>>>> TheIllusiveMan
             << "username, or password! Optionally, a host name should be specified for remote databases! Please, make sure this "
             << "information is present!" << std::endl;
     else
         connect(database, username, password, host);
+<<<<<<< HEAD
+=======
 
+>>>>>>> TheIllusiveMan
     status = false;//False = everything is fine
 }
 
@@ -53,12 +63,15 @@ void MySQL::connect(cstr database, cstr username, cstr password, cstr host)
     }
 }
 
+<<<<<<< HEAD
+=======
 void MySQL::reconnect(cstr database, cstr username, cstr password, cstr host)
 {
     disconnect();
     connect(database, username, password, host);
 }
 
+>>>>>>> TheIllusiveMan
 void MySQL::disconnect()
 {
     try
@@ -78,7 +91,11 @@ void MySQL::disconnect()
     }
 }
 
+<<<<<<< HEAD
+void MySQL::queryDB(const std::string& query)
+=======
 void MySQL::queryDB(const std::string& query, bool clearRes)
+>>>>>>> TheIllusiveMan
 {
     try
     {
@@ -89,8 +106,12 @@ void MySQL::queryDB(const std::string& query, bool clearRes)
         /*Let's set up an instance of statement!*/
         statement = conn->createStatement();
         //Reset results
+<<<<<<< HEAD
+        CleanResults();
+=======
         if(clearRes)
            CleanResults();
+>>>>>>> TheIllusiveMan
         //Execute query and get results!
         res = statement->executeQuery(query);
     }
@@ -104,6 +125,10 @@ void MySQL::CleanResults()
 {
     try
     {
+<<<<<<< HEAD
+        if(res)
+            delete res;
+=======
         if(res){
             delete res;
          }
@@ -166,16 +191,30 @@ bool MySQL::validConnection(const std::string& query)
         if(tmp_res)
            delete tmp_res;
         return true;
+>>>>>>> TheIllusiveMan
     }
     catch(sql::SQLException& e)
     {
         error_log(e);
+<<<<<<< HEAD
+=======
         return false;
+>>>>>>> TheIllusiveMan
     }
 }
 
 void MySQL::error_log(sql::SQLException& err)
 {
+<<<<<<< HEAD
+    std::cout << "# ERR: SQLException in " << __FILE__;
+    std::cout << "(" << __FUNCTION__ << ") on line "
+    << __LINE__ << std::endl;
+    std::cout << "# ERR: " << err.what();
+    std::cout << " (MySQL error code: " << err.getErrorCode();
+    std::cout << ", SQLState: " << err.getSQLState() << " )" << std::endl;
+    //Raise the status flag!
+    status = true; //Things are bad!
+=======
     std::cerr << "# ERR: SQLException in " << __FILE__;
     std::cerr << "(" << __FUNCTION__ << ") on line "
     << __LINE__ << std::endl;
@@ -185,6 +224,7 @@ void MySQL::error_log(sql::SQLException& err)
     //Raise the status flag!
     status = true; //Things are bad!
     res = NULL;
+>>>>>>> TheIllusiveMan
 }
 
 bool MySQL::getStatus() const
@@ -192,11 +232,23 @@ bool MySQL::getStatus() const
     return status;
 }
 
+<<<<<<< HEAD
+void MySQL::ClearStatus()
+{
+    status = false;
+}
+
+void MySQL::getResult(bool& response)
+=======
 void MySQL::getResult(bool& response, const std::string& col_name)
+>>>>>>> TheIllusiveMan
 {
     bool tmp;
     try
     {
+<<<<<<< HEAD
+        tmp = res->getBoolean("_reply");
+=======
         if(!res || !res->next())
         {
             std::cerr << "Error: Either the resultset is empty or something is wrong with the query string!"
@@ -204,6 +256,7 @@ void MySQL::getResult(bool& response, const std::string& col_name)
             return;
         }
         tmp = res->getBoolean(col_name);
+>>>>>>> TheIllusiveMan
     }
     catch (sql::SQLException& e)
     {
@@ -212,11 +265,18 @@ void MySQL::getResult(bool& response, const std::string& col_name)
     response = tmp;
 }
 
+<<<<<<< HEAD
+void MySQL::getResult(int& response)
+=======
 void MySQL::getResult(int& response, const std::string& col_name)
+>>>>>>> TheIllusiveMan
 {
     int tmp;
     try
     {
+<<<<<<< HEAD
+        tmp = res->getInt("_reply");
+=======
         if(!res || !res->next())
         {
             std::cerr << "Error: Either the resultset is empty or something is wrong with the query string!"
@@ -224,6 +284,7 @@ void MySQL::getResult(int& response, const std::string& col_name)
             return;
         }
         tmp = res->getInt(col_name);
+>>>>>>> TheIllusiveMan
     }
     catch (sql::SQLException& e)
     {
@@ -233,11 +294,18 @@ void MySQL::getResult(int& response, const std::string& col_name)
     response = tmp;
 }
 
+<<<<<<< HEAD
+void MySQL::getResult(std::string& response)
+=======
 void MySQL::getResult(std::string& response, const std::string& col_name)
+>>>>>>> TheIllusiveMan
 {
     std::string tmp;
     try
     {
+<<<<<<< HEAD
+        tmp = res->getString("_reply");
+=======
         if(!res || !res->next())
         {
             std::cerr << "Error: Either the resultset is empty or something is wrong with the query string!"
@@ -245,6 +313,7 @@ void MySQL::getResult(std::string& response, const std::string& col_name)
             return;
         }
         tmp = res->getString(col_name);
+>>>>>>> TheIllusiveMan
     }
     catch (sql::SQLException& e)
     {
@@ -254,11 +323,18 @@ void MySQL::getResult(std::string& response, const std::string& col_name)
     response = tmp;
 }
 
+<<<<<<< HEAD
+void MySQL::getResult(char& response)
+=======
 void MySQL::getResult(char& response, const std::string& col_name)
+>>>>>>> TheIllusiveMan
 {
     char tmp;
     try
     {
+<<<<<<< HEAD
+        tmp = res->getString("_reply")[0];
+=======
         if(!res || !res->next())
         {
             std::cerr << "Error: Either the resultset is empty or something is wrong with the query string!"
@@ -266,6 +342,7 @@ void MySQL::getResult(char& response, const std::string& col_name)
             return;
         }
         tmp = res->getString(col_name)[0];
+>>>>>>> TheIllusiveMan
     }
     catch (sql::SQLException& e)
     {
@@ -275,6 +352,41 @@ void MySQL::getResult(char& response, const std::string& col_name)
     response = tmp;
 }
 
+<<<<<<< HEAD
+std::vector<fuzzy_obj> MySQL::getResults(size_t dataType)
+{
+    std::vector<fuzzy_obj> resList;//Place holder
+    while(res->next())
+    {
+        fuzzy_obj tmp;
+        switch(dataType)
+        {
+        case INT:
+            getResult(tmp.number);
+            break;
+        case DOUBLE:
+            getResult(tmp.decimal);
+            break;
+        case STRING:
+            getResult(tmp.str);
+            break;
+        case BOOL:
+            getResult(tmp.answer);
+            break;
+        case CHAR:
+            getResult(tmp.c);
+            break;
+        default:
+            std::cout << "Error: MySQL object was asked to prepare a list of results, but the type specified is incorrect! ";
+            std::cout << "Error in getResults()." << std::endl;
+        }
+        resList.push_back(tmp);//Add result to the list
+    }
+    return resList; //Return the list of results
+}
+
+void MySQL::getResult(double& response)
+=======
 void MySQL::getResult(double& response, const std::string& col_name)
 {
     double tmp;
@@ -380,10 +492,14 @@ void MySQL::getResult(char& response, size_t col_index)
 }
 
 void MySQL::getResult(double& response, size_t col_index)
+>>>>>>> TheIllusiveMan
 {
     double tmp;
     try
     {
+<<<<<<< HEAD
+        tmp = res->getDouble("_reply");
+=======
         if(!res || !res->next())
         {
             std::cerr << "Error: Either the resultset is empty or something is wrong with the query string!"
@@ -391,6 +507,7 @@ void MySQL::getResult(double& response, size_t col_index)
             return;
         }
         tmp = res->getDouble(col_index);
+>>>>>>> TheIllusiveMan
     }
     catch (sql::SQLException& e)
     {
@@ -400,6 +517,8 @@ void MySQL::getResult(double& response, size_t col_index)
     response = tmp;
 }
 
+<<<<<<< HEAD
+=======
 std::vector<fuzzy_obj> MySQL::getResults()
 {
     fuzzy_obj tmp;
@@ -413,6 +532,7 @@ std::vector<fuzzy_obj> MySQL::getResults()
     return results;
 }
 
+>>>>>>> TheIllusiveMan
 MySQL::~MySQL()
 {
     disconnect();

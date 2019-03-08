@@ -72,6 +72,7 @@ public:
     //Getter
     pthread_mutex_t& GetMutex(size_t id);
     pthread_cond_t& GetConditionVariable(size_t id);
+    size_t GetErrorCode();
 
     //Lock
     void LockMutex(size_t mutex_id);
@@ -92,6 +93,7 @@ private:
     size_t mutex_mutex_id;
     size_t mutex_cond_id;
     size_t mutex_thread_id;
+    size_t err_code;
 
     //Methods
     size_t generateID(char target);

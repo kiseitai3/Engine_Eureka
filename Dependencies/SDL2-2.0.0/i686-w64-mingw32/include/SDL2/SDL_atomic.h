@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -64,6 +64,13 @@
 
 #include "begin_code.h"
 
+/* Need to do this here because intrin.h has C++ code in it */
+/* Visual Studio 2005 has a bug where intrin.h conflicts with winnt.h */
+#if defined(_MSC_VER) && (_MSC_VER >= 1500)
+#include <intrin.h>
+#define HAVE_MSC_ATOMICS 1
+#endif
+
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -84,7 +91,7 @@ extern "C" {
  * The spin lock functions and type are required and can not be
  * emulated because they are used in the atomic emulation code.
  */
-/* @{ */
+/*@{*/
 
 typedef int SDL_SpinLock;
 
@@ -111,7 +118,7 @@ extern DECLSPEC void SDLCALL SDL_AtomicLock(SDL_SpinLock *lock);
  */
 extern DECLSPEC void SDLCALL SDL_AtomicUnlock(SDL_SpinLock *lock);
 
-/* @} *//* SDL AtomicLock */
+/*@}*//*SDL AtomicLock*/
 
 
 /**
@@ -174,11 +181,57 @@ extern DECLSPEC void SDLCALL SDL_MemoryBarrierAcquire();
 #define SDL_MemoryBarrierAcquire()  SDL_CompilerBarrier()
 #endif
 
+
+/* Platform specific optimized versions of the atomic functions,
+ * you can disable these by defining SDL_DISABLE_ATOMIC_INLINE
+ */
+#if defined(SDL_ATOMIC_DISABLED) && SDL_ATOMIC_DISABLED
+#define SDL_DISABLE_ATOMIC_INLINE
+#endif
+#ifndef SDL_DISABLE_ATOMIC_INLINE
+
+#ifdef HAVE_MSC_ATOMICS
+
+#define SDL_AtomicSet(a, v)     _InterlockedExchange((long*)&(a)->value, (v))
+#define SDL_AtomicAdd(a, v)     _InterlockedExchangeAdd((long*)&(a)->value, (v))
+#define SDL_AtomicCAS(a, oldval, newval) (_InterlockedCompareExchange((long*)&(a)->value, (newval), (oldval)) == (oldval))
+#define SDL_AtomicSetPtr(a, v)  _InterlockedExchangePointer((a), (v))
+#if _M_IX86
+#define SDL_AtomicCASPtr(a, oldval, newval) (_InterlockedCompareExchange((long*)(a), (long)(newval), (long)(oldval)) == (long)(oldval))
+#else
+#define SDL_AtomicCASPtr(a, oldval, newval) (_InterlockedCompareExchangePointer((a), (newval), (oldval)) == (oldval))
+#endif
+
+#elif defined(__MACOSX__)
+#include <libkern/OSAtomic.h>
+
+#define SDL_AtomicCAS(a, oldval, newval) OSAtomicCompareAndSwap32Barrier((oldval), (newval), &(a)->value)
+#ifdef __LP64__
+#define SDL_AtomicCASPtr(a, oldval, newval) OSAtomicCompareAndSwap64Barrier((int64_t)(oldval), (int64_t)(newval), (int64_t*)(a))
+#else
+#define SDL_AtomicCASPtr(a, oldval, newval) OSAtomicCompareAndSwap32Barrier((int32_t)(oldval), (int32_t)(newval), (int32_t*)(a))
+#endif
+
+#elif defined(HAVE_GCC_ATOMICS)
+
+#define SDL_AtomicSet(a, v)     __sync_lock_test_and_set(&(a)->value, v)
+#define SDL_AtomicAdd(a, v)     __sync_fetch_and_add(&(a)->value, v)
+#define SDL_AtomicSetPtr(a, v)  __sync_lock_test_and_set(a, v)
+#define SDL_AtomicCAS(a, oldval, newval) __sync_bool_compare_and_swap(&(a)->value, oldval, newval)
+#define SDL_AtomicCASPtr(a, oldval, newval) __sync_bool_compare_and_swap(a, oldval, newval)
+
+#endif
+
+#endif /* !SDL_DISABLE_ATOMIC_INLINE */
+
+
 /**
  * \brief A type representing an atomic integer value.  It is a struct
  *        so people don't accidentally use numeric operations on it.
  */
+#ifndef SDL_atomic_t_defined
 typedef struct { int value; } SDL_atomic_t;
+#endif
 
 /**
  * \brief Set an atomic variable to a new value if it is currently an old value.
@@ -187,19 +240,37 @@ typedef struct { int value; } SDL_atomic_t;
  *
  * \note If you don't know what this function is for, you shouldn't use it!
 */
+#ifndef SDL_AtomicCAS
 extern DECLSPEC SDL_bool SDLCALL SDL_AtomicCAS(SDL_atomic_t *a, int oldval, int newval);
+#endif
 
 /**
  * \brief Set an atomic variable to a value.
  *
  * \return The previous value of the atomic variable.
  */
-extern DECLSPEC int SDLCALL SDL_AtomicSet(SDL_atomic_t *a, int v);
+#ifndef SDL_AtomicSet
+SDL_FORCE_INLINE int SDL_AtomicSet(SDL_atomic_t *a, int v)
+{
+    int value;
+    do {
+        value = a->value;
+    } while (!SDL_AtomicCAS(a, value, v));
+    return value;
+}
+#endif
 
 /**
  * \brief Get the value of an atomic variable
  */
-extern DECLSPEC int SDLCALL SDL_AtomicGet(SDL_atomic_t *a);
+#ifndef SDL_AtomicGet
+SDL_FORCE_INLINE int SDL_AtomicGet(SDL_atomic_t *a)
+{
+    int value = a->value;
+    SDL_CompilerBarrier();
+    return value;
+}
+#endif
 
 /**
  * \brief Add to an atomic variable.
@@ -208,7 +279,16 @@ extern DECLSPEC int SDLCALL SDL_AtomicGet(SDL_atomic_t *a);
  *
  * \note This same style can be used for any number operation
  */
-extern DECLSPEC int SDLCALL SDL_AtomicAdd(SDL_atomic_t *a, int v);
+#ifndef SDL_AtomicAdd
+SDL_FORCE_INLINE int SDL_AtomicAdd(SDL_atomic_t *a, int v)
+{
+    int value;
+    do {
+        value = a->value;
+    } while (!SDL_AtomicCAS(a, value, (value + v)));
+    return value;
+}
+#endif
 
 /**
  * \brief Increment an atomic variable used as a reference count.
@@ -234,19 +314,38 @@ extern DECLSPEC int SDLCALL SDL_AtomicAdd(SDL_atomic_t *a, int v);
  *
  * \note If you don't know what this function is for, you shouldn't use it!
 */
-extern DECLSPEC SDL_bool SDLCALL SDL_AtomicCASPtr(void **a, void *oldval, void *newval);
+#ifndef SDL_AtomicCASPtr
+extern DECLSPEC SDL_bool SDLCALL SDL_AtomicCASPtr(void* *a, void *oldval, void *newval);
+#endif
 
 /**
  * \brief Set a pointer to a value atomically.
  *
  * \return The previous value of the pointer.
  */
-extern DECLSPEC void* SDLCALL SDL_AtomicSetPtr(void **a, void* v);
+#ifndef SDL_AtomicSetPtr
+SDL_FORCE_INLINE void* SDL_AtomicSetPtr(void* *a, void* v)
+{
+    void* value;
+    do {
+        value = *a;
+    } while (!SDL_AtomicCASPtr(a, value, v));
+    return value;
+}
+#endif
 
 /**
  * \brief Get the value of a pointer atomically.
  */
-extern DECLSPEC void* SDLCALL SDL_AtomicGetPtr(void **a);
+#ifndef SDL_AtomicGetPtr
+SDL_FORCE_INLINE void* SDL_AtomicGetPtr(void* *a)
+{
+    void* value = *a;
+    SDL_CompilerBarrier();
+    return value;
+}
+#endif
+
 
 /* Ends C function definitions when using C++ */
 #ifdef __cplusplus

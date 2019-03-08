@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -80,7 +80,8 @@ main(int argc, char *argv[])
             }
         }
         if (consumed < 0) {
-            SDL_Log("Usage: %s %s [--iterations #] [--execKey #] [--seed string] [--filter suite_name|test_name]\n",
+            fprintf(stderr,
+                    "Usage: %s %s [--iterations #] [--execKey #] [--seed string] [--filter suite_name|test_name]\n",
                     argv[0], SDLTest_CommonUsage(state));
             quit(1);
         }
@@ -113,8 +114,12 @@ main(int argc, char *argv[])
     }
 
     /* Clean up */
-    SDL_free(userRunSeed);
-    SDL_free(filter);
+    if (userRunSeed != NULL) {
+        SDL_free(userRunSeed);
+    }
+    if (filter != NULL) {
+        SDL_free(filter);
+    }
 
     /* Shutdown everything */
     quit(result);

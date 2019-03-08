@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -45,39 +45,39 @@ void RunBasicTest()
     SDL_atomic_t v;
     SDL_bool tfret = SDL_FALSE;
 
-    SDL_Log("\nspin lock---------------------------------------\n\n");
+    printf("\nspin lock---------------------------------------\n\n");
 
     SDL_AtomicLock(&lock);
-    SDL_Log("AtomicLock                   lock=%d\n", lock);
+    printf("AtomicLock                   lock=%d\n", lock);
     SDL_AtomicUnlock(&lock);
-    SDL_Log("AtomicUnlock                 lock=%d\n", lock);
+    printf("AtomicUnlock                 lock=%d\n", lock);
 
-    SDL_Log("\natomic -----------------------------------------\n\n");
+    printf("\natomic -----------------------------------------\n\n");
 
     SDL_AtomicSet(&v, 0);
-    tfret = SDL_AtomicSet(&v, 10) == 0 ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicSet(10)        tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
-    tfret = SDL_AtomicAdd(&v, 10) == 10 ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicAdd(10)        tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = SDL_AtomicSet(&v, 10) == 0;
+    printf("AtomicSet(10)        tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = SDL_AtomicAdd(&v, 10) == 10;
+    printf("AtomicAdd(10)        tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
 
     SDL_AtomicSet(&v, 0);
     SDL_AtomicIncRef(&v);
-    tfret = (SDL_AtomicGet(&v) == 1) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicIncRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicGet(&v) == 1);
+    printf("AtomicIncRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
     SDL_AtomicIncRef(&v);
-    tfret = (SDL_AtomicGet(&v) == 2) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicIncRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
-    tfret = (SDL_AtomicDecRef(&v) == SDL_FALSE) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicDecRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
-    tfret = (SDL_AtomicDecRef(&v) == SDL_TRUE) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicDecRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicGet(&v) == 2);
+    printf("AtomicIncRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicDecRef(&v) == SDL_FALSE);
+    printf("AtomicDecRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicDecRef(&v) == SDL_TRUE);
+    printf("AtomicDecRef()       tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
 
     SDL_AtomicSet(&v, 10);
-    tfret = (SDL_AtomicCAS(&v, 0, 20) == SDL_FALSE) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicCAS()          tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicCAS(&v, 0, 20) == SDL_FALSE);
+    printf("AtomicCAS()          tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
     value = SDL_AtomicGet(&v);
-    tfret = (SDL_AtomicCAS(&v, value, 20) == SDL_TRUE) ? SDL_TRUE : SDL_FALSE;
-    SDL_Log("AtomicCAS()          tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
+    tfret = (SDL_AtomicCAS(&v, value, 20) == SDL_TRUE);
+    printf("AtomicCAS()          tfret=%s val=%d\n", tf(tfret), SDL_AtomicGet(&v));
 }
 
 /**************************************************************************/
@@ -120,7 +120,7 @@ static
 int adder(void* junk)
 {
     unsigned long N=NInter;
-    SDL_Log("Thread subtracting %d %lu times\n",CountInc,N);
+    printf("Thread subtracting %d %lu times\n",CountInc,N);
     while (N--) {
         SDL_AtomicAdd(&good, -CountInc);
         bad-=CountInc;
@@ -152,7 +152,7 @@ void runAdder(void)
 
     end = SDL_GetTicks();
 
-    SDL_Log("Finished in %f sec\n", (end - start) / 1000.f);
+    printf("Finished in %f sec\n", (end - start) / 1000.f);
 }
 
 static
@@ -161,28 +161,28 @@ void RunEpicTest()
     int b;
     atomicValue v;
 
-    SDL_Log("\nepic test---------------------------------------\n\n");
+    printf("\nepic test---------------------------------------\n\n");
 
-    SDL_Log("Size asserted to be >= 32-bit\n");
+    printf("Size asserted to be >= 32-bit\n");
     SDL_assert(sizeof(atomicValue)>=4);
 
-    SDL_Log("Check static initializer\n");
+    printf("Check static initializer\n");
     v=SDL_AtomicGet(&good);
     SDL_assert(v==42);
 
     SDL_assert(bad==42);
 
-    SDL_Log("Test negative values\n");
+    printf("Test negative values\n");
     SDL_AtomicSet(&good, -5);
     v=SDL_AtomicGet(&good);
     SDL_assert(v==-5);
 
-    SDL_Log("Verify maximum value\n");
+    printf("Verify maximum value\n");
     SDL_AtomicSet(&good, CountTo);
     v=SDL_AtomicGet(&good);
     SDL_assert(v==CountTo);
 
-    SDL_Log("Test compare and exchange\n");
+    printf("Test compare and exchange\n");
 
     b=SDL_AtomicCAS(&good, 500, 43);
     SDL_assert(!b); /* no swap since CountTo!=500 */
@@ -194,7 +194,7 @@ void RunEpicTest()
     v=SDL_AtomicGet(&good);
     SDL_assert(v==44);
 
-    SDL_Log("Test Add\n");
+    printf("Test Add\n");
 
     v=SDL_AtomicAdd(&good, 1);
     SDL_assert(v==44);
@@ -206,7 +206,7 @@ void RunEpicTest()
     v=SDL_AtomicGet(&good);
     SDL_assert(v==55);
 
-    SDL_Log("Test Add (Negative values)\n");
+    printf("Test Add (Negative values)\n");
 
     v=SDL_AtomicAdd(&good, -20);
     SDL_assert(v==55);
@@ -223,7 +223,7 @@ void RunEpicTest()
     v=SDL_AtomicGet(&good);
     SDL_assert(v==15);
 
-    SDL_Log("Reset before count down test\n");
+    printf("Reset before count down test\n");
     SDL_AtomicSet(&good, CountTo);
     v=SDL_AtomicGet(&good);
     SDL_assert(v==CountTo);
@@ -231,11 +231,11 @@ void RunEpicTest()
     bad=CountTo;
     SDL_assert(bad==CountTo);
 
-    SDL_Log("Counting down from %d, Expect %d remaining\n",CountTo,Expect);
+    printf("Counting down from %d, Expect %d remaining\n",CountTo,Expect);
     runAdder();
 
     v=SDL_AtomicGet(&good);
-    SDL_Log("Atomic %d Non-Atomic %d\n",v,bad);
+    printf("Atomic %d Non-Atomic %d\n",v,bad);
     SDL_assert(v==Expect);
     SDL_assert(bad!=Expect);
 }
@@ -429,7 +429,7 @@ static SDL_bool EnqueueEvent_Mutex(SDL_EventQueue *queue, const SDL_Event *event
     } else if (delta < 0) {
         /* We ran into an old queue entry, which means it still needs to be dequeued */
     } else {
-        SDL_Log("ERROR: mutex failed!\n");
+        printf("ERROR: mutex failed!\n");
     }
 
     SDL_UnlockMutex(queue->mutex);
@@ -462,7 +462,7 @@ static SDL_bool DequeueEvent_Mutex(SDL_EventQueue *queue, SDL_Event *event)
     } else if (delta < 0) {
         /* We ran into an old queue entry, which means we've hit empty */
     } else {
-        SDL_Log("ERROR: mutex failed!\n");
+        printf("ERROR: mutex failed!\n");
     }
 
     SDL_UnlockMutex(queue->mutex);
@@ -598,11 +598,9 @@ static void RunFIFOTest(SDL_bool lock_free)
     Uint32 start, end;
     int i, j;
     int grand_total;
-	char textBuffer[1024];
-	int len;
 
-    SDL_Log("\nFIFO test---------------------------------------\n\n");
-    SDL_Log("Mode: %s\n", lock_free ? "LockFree" : "Mutex");
+    printf("\nFIFO test---------------------------------------\n\n");
+    printf("Mode: %s\n", lock_free ? "LockFree" : "Mutex");
 
     readersDone = SDL_CreateSemaphore(0);
     writersDone = SDL_CreateSemaphore(0);
@@ -624,7 +622,7 @@ static void RunFIFOTest(SDL_bool lock_free)
 #endif
 
     /* Start the readers first */
-    SDL_Log("Starting %d readers\n", NUM_READERS);
+    printf("Starting %d readers\n", NUM_READERS);
     SDL_zero(readerData);
     SDL_AtomicSet(&readersRunning, NUM_READERS);
     for (i = 0; i < NUM_READERS; ++i) {
@@ -636,7 +634,7 @@ static void RunFIFOTest(SDL_bool lock_free)
     }
 
     /* Start up the writers */
-    SDL_Log("Starting %d writers\n", NUM_WRITERS);
+    printf("Starting %d writers\n", NUM_WRITERS);
     SDL_zero(writerData);
     SDL_AtomicSet(&writersRunning, NUM_WRITERS);
     for (i = 0; i < NUM_WRITERS; ++i) {
@@ -670,16 +668,16 @@ static void RunFIFOTest(SDL_bool lock_free)
         SDL_DestroyMutex(queue.mutex);
     }
 
-    SDL_Log("Finished in %f sec\n", (end - start) / 1000.f);
+    printf("Finished in %f sec\n", (end - start) / 1000.f);
 
-    SDL_Log("\n");
+    printf("\n");
     for (i = 0; i < NUM_WRITERS; ++i) {
-        SDL_Log("Writer %d wrote %d events, had %d waits\n", i, EVENTS_PER_WRITER, writerData[i].waits);
+        printf("Writer %d wrote %d events, had %d waits\n", i, EVENTS_PER_WRITER, writerData[i].waits);
     }
-    SDL_Log("Writers wrote %d total events\n", NUM_WRITERS*EVENTS_PER_WRITER);
+    printf("Writers wrote %d total events\n", NUM_WRITERS*EVENTS_PER_WRITER);
 
     /* Print a breakdown of which readers read messages from which writer */
-    SDL_Log("\n");
+    printf("\n");
     grand_total = 0;
     for (i = 0; i < NUM_READERS; ++i) {
         int total = 0;
@@ -687,21 +685,17 @@ static void RunFIFOTest(SDL_bool lock_free)
             total += readerData[i].counters[j];
         }
         grand_total += total;
-        SDL_Log("Reader %d read %d events, had %d waits\n", i, total, readerData[i].waits);
-		SDL_snprintf(textBuffer, sizeof(textBuffer), "  { ");
+        printf("Reader %d read %d events, had %d waits\n", i, total, readerData[i].waits);
+        printf("  { ");
         for (j = 0; j < NUM_WRITERS; ++j) {
             if (j > 0) {
-				len = SDL_strlen(textBuffer);
-                SDL_snprintf(textBuffer + len, sizeof(textBuffer) - len, ", ");
+                printf(", ");
             }
-            len = SDL_strlen(textBuffer);
-            SDL_snprintf(textBuffer + len, sizeof(textBuffer) - len, "%d", readerData[i].counters[j]);
+            printf("%d", readerData[i].counters[j]);
         }
-        len = SDL_strlen(textBuffer);
-        SDL_snprintf(textBuffer + len, sizeof(textBuffer) - len, " }\n");
-		SDL_Log(textBuffer);
+        printf(" }\n");
     }
-    SDL_Log("Readers read %d total events\n", grand_total);
+    printf("Readers read %d total events\n", grand_total);
 }
 
 /* End FIFO test */
@@ -710,9 +704,6 @@ static void RunFIFOTest(SDL_bool lock_free)
 int
 main(int argc, char *argv[])
 {
-	/* Enable standard application logging */
-	SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
-
     RunBasicTest();
     RunEpicTest();
 /* This test is really slow, so don't run it by default */

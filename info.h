@@ -124,7 +124,7 @@ class SoundInfo
     std::string card;
 };
 
-class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo, public LocaleInfo
+class GameInfo : public ScreenInfo, public SoundInfo, public ExpansionInfo, public LocaleInfo, public SDL_RendererInfo
 {
 public:
     GameInfo();

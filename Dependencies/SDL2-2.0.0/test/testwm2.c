@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -48,9 +48,6 @@ main(int argc, char *argv[])
     int system_cursor = -1;
     SDL_Cursor *cursor = NULL;
 
-	/* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
-
     SDL_assert(SDL_arraysize(cursorNames) == SDL_NUM_SYSTEM_CURSORS);
 
     /* Initialize test framework */
@@ -67,7 +64,7 @@ main(int argc, char *argv[])
             consumed = -1;
         }
         if (consumed < 0) {
-            SDL_Log("Usage: %s %s\n", argv[0], SDLTest_CommonUsage(state));
+            fprintf(stderr, "Usage: %s %s\n", argv[0], SDLTest_CommonUsage(state));
             quit(1);
         }
         i += consumed;
@@ -87,7 +84,7 @@ main(int argc, char *argv[])
                 if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
                     SDL_Window *window = SDL_GetWindowFromID(event.window.windowID);
                     if (window) {
-                        SDL_Log("Window %d resized to %dx%d\n",
+                        printf("Window %d resized to %dx%d\n",
                             event.window.windowID,
                             event.window.data1,
                             event.window.data2);
@@ -96,7 +93,7 @@ main(int argc, char *argv[])
                 if (event.window.event == SDL_WINDOWEVENT_MOVED) {
                     SDL_Window *window = SDL_GetWindowFromID(event.window.windowID);
                     if (window) {
-                        SDL_Log("Window %d moved to %d,%d (display %s)\n",
+                        printf("Window %d moved to %d,%d (display %s)\n",
                             event.window.windowID,
                             event.window.data1,
                             event.window.data2,
@@ -132,7 +129,7 @@ main(int argc, char *argv[])
     SDL_FreeCursor(cursor);
 
     quit(0);
-    /* keep the compiler happy ... */
+    // keep the compiler happy ...
     return(0);
 }
 

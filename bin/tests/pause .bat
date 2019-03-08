@@ -1,2 +1,2 @@
-net_test_server.exe
+data_base_test.exe
 pause

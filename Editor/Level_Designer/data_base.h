@@ -67,6 +67,7 @@ class data_base
     int GetNumInstances(const std::string& search) const;
     std::string GetLastOutput() const;
     bool isOutputOpen() const;
+    bool isTag(size_t pos) const;
     bool SearchTermExists(const std::string& search) const;
     void RestoreFileContents();
     void RefreshFile();

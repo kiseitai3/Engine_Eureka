@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -52,13 +52,13 @@ WatchJoystick(SDL_Joystick * joystick)
                               SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
                               SCREEN_HEIGHT, 0);
     if (window == NULL) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't create window: %s\n", SDL_GetError());
+        fprintf(stderr, "Couldn't create window: %s\n", SDL_GetError());
         return SDL_FALSE;
     }
 
     screen = SDL_CreateRenderer(window, -1, 0);
     if (screen == NULL) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't create renderer: %s\n", SDL_GetError());
+        fprintf(stderr, "Couldn't create renderer: %s\n", SDL_GetError());
         SDL_DestroyWindow(window);
         return SDL_FALSE;
     }
@@ -70,9 +70,9 @@ WatchJoystick(SDL_Joystick * joystick)
 
     /* Print info about the joystick we are watching */
     name = SDL_JoystickName(joystick);
-    SDL_Log("Watching joystick %d: (%s)\n", SDL_JoystickInstanceID(joystick),
+    printf("Watching joystick %d: (%s)\n", SDL_JoystickInstanceID(joystick),
            name ? name : "Unknown Joystick");
-    SDL_Log("Joystick has %d axes, %d hats, %d balls, and %d buttons\n",
+    printf("Joystick has %d axes, %d hats, %d balls, and %d buttons\n",
            SDL_JoystickNumAxes(joystick), SDL_JoystickNumHats(joystick),
            SDL_JoystickNumBalls(joystick), SDL_JoystickNumButtons(joystick));
 
@@ -85,36 +85,36 @@ WatchJoystick(SDL_Joystick * joystick)
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
             case SDL_JOYAXISMOTION:
-                SDL_Log("Joystick %d axis %d value: %d\n",
+                printf("Joystick %d axis %d value: %d\n",
                        event.jaxis.which,
                        event.jaxis.axis, event.jaxis.value);
                 break;
             case SDL_JOYHATMOTION:
-                SDL_Log("Joystick %d hat %d value:",
+                printf("Joystick %d hat %d value:",
                        event.jhat.which, event.jhat.hat);
                 if (event.jhat.value == SDL_HAT_CENTERED)
-                    SDL_Log(" centered");
+                    printf(" centered");
                 if (event.jhat.value & SDL_HAT_UP)
-                    SDL_Log(" up");
+                    printf(" up");
                 if (event.jhat.value & SDL_HAT_RIGHT)
-                    SDL_Log(" right");
+                    printf(" right");
                 if (event.jhat.value & SDL_HAT_DOWN)
-                    SDL_Log(" down");
+                    printf(" down");
                 if (event.jhat.value & SDL_HAT_LEFT)
-                    SDL_Log(" left");
-                SDL_Log("\n");
+                    printf(" left");
+                printf("\n");
                 break;
             case SDL_JOYBALLMOTION:
-                SDL_Log("Joystick %d ball %d delta: (%d,%d)\n",
+                printf("Joystick %d ball %d delta: (%d,%d)\n",
                        event.jball.which,
                        event.jball.ball, event.jball.xrel, event.jball.yrel);
                 break;
             case SDL_JOYBUTTONDOWN:
-                SDL_Log("Joystick %d button %d down\n",
+                printf("Joystick %d button %d down\n",
                        event.jbutton.which, event.jbutton.button);
                 break;
             case SDL_JOYBUTTONUP:
-                SDL_Log("Joystick %d button %d up\n",
+                printf("Joystick %d button %d up\n",
                        event.jbutton.which, event.jbutton.button);
                 break;
             case SDL_KEYDOWN:
@@ -211,34 +211,31 @@ main(int argc, char *argv[])
     int i;
     SDL_Joystick *joystick;
 
-    /* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);	
-
     /* Initialize SDL (Note: video is required to start event loop) */
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s\n", SDL_GetError());
+        fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
         exit(1);
     }
 
     /* Print information about the joysticks */
-    SDL_Log("There are %d joysticks attached\n", SDL_NumJoysticks());
+    printf("There are %d joysticks attached\n", SDL_NumJoysticks());
     for (i = 0; i < SDL_NumJoysticks(); ++i) {
         name = SDL_JoystickNameForIndex(i);
-        SDL_Log("Joystick %d: %s\n", i, name ? name : "Unknown Joystick");
+        printf("Joystick %d: %s\n", i, name ? name : "Unknown Joystick");
         joystick = SDL_JoystickOpen(i);
         if (joystick == NULL) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_JoystickOpen(%d) failed: %s\n", i,
+            fprintf(stderr, "SDL_JoystickOpen(%d) failed: %s\n", i,
                     SDL_GetError());
         } else {
             char guid[64];
             SDL_JoystickGetGUIDString(SDL_JoystickGetGUID(joystick),
                                       guid, sizeof (guid));
-            SDL_Log("       axes: %d\n", SDL_JoystickNumAxes(joystick));
-            SDL_Log("      balls: %d\n", SDL_JoystickNumBalls(joystick));
-            SDL_Log("       hats: %d\n", SDL_JoystickNumHats(joystick));
-            SDL_Log("    buttons: %d\n", SDL_JoystickNumButtons(joystick));
-            SDL_Log("instance id: %d\n", SDL_JoystickInstanceID(joystick));
-            SDL_Log("       guid: %s\n", guid);
+            printf("       axes: %d\n", SDL_JoystickNumAxes(joystick));
+            printf("      balls: %d\n", SDL_JoystickNumBalls(joystick));
+            printf("       hats: %d\n", SDL_JoystickNumHats(joystick));
+            printf("    buttons: %d\n", SDL_JoystickNumButtons(joystick));
+            printf("instance id: %d\n", SDL_JoystickInstanceID(joystick));
+            printf("       guid: %s\n", guid);
             SDL_JoystickClose(joystick);
         }
     }
@@ -251,18 +248,15 @@ main(int argc, char *argv[])
         SDL_bool reportederror = SDL_FALSE;
         SDL_bool keepGoing = SDL_TRUE;
         SDL_Event event;
-        int device;
 #ifdef ANDROID
-        device = 0;
+        joystick = SDL_JoystickOpen(0);
 #else
-        device = atoi(argv[1]);
+        joystick = SDL_JoystickOpen(atoi(argv[1]));
 #endif
-        joystick = SDL_JoystickOpen(device);
-
         while ( keepGoing ) {
             if (joystick == NULL) {
                 if ( !reportederror ) {
-                    SDL_Log("Couldn't open joystick %d: %s\n", device, SDL_GetError());
+                    printf("Couldn't open joystick %d: %s\n", atoi(argv[1]), SDL_GetError());
                     keepGoing = SDL_FALSE;
                     reportederror = SDL_TRUE;
                 }
@@ -274,7 +268,7 @@ main(int argc, char *argv[])
 
             joystick = NULL;
             if (keepGoing) {
-                SDL_Log("Waiting for attach\n");
+                printf("Waiting for attach\n");
             }
             while (keepGoing) {
                 SDL_WaitEvent(&event);
@@ -282,7 +276,7 @@ main(int argc, char *argv[])
                     || (event.type == SDL_MOUSEBUTTONDOWN)) {
                     keepGoing = SDL_FALSE;
                 } else if (event.type == SDL_JOYDEVICEADDED) {
-                    joystick = SDL_JoystickOpen(device);
+                    joystick = SDL_JoystickOpen(atoi(argv[1]));
                     break;
                 }
             }
@@ -290,7 +284,11 @@ main(int argc, char *argv[])
     }
     SDL_QuitSubSystem(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
 
+#ifdef ANDROID
+    exit(0);
+#else
     return 0;
+#endif
 }
 
 #else
@@ -298,7 +296,7 @@ main(int argc, char *argv[])
 int
 main(int argc, char *argv[])
 {
-    SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL compiled without Joystick support.\n");
+    fprintf(stderr, "SDL compiled without Joystick support.\n");
     exit(1);
 }
 

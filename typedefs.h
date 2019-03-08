@@ -1,6 +1,12 @@
 #ifndef TYPEDEFS_H_INCLUDED
 #define TYPEDEFS_H_INCLUDED
 
+<<<<<<< HEAD
+typedef unsigned char byte;
+typedef void* void_ptr;
+typedef void (*func_ptr)(...);
+
+=======
 #include <string>
 #include <inttypes.h>
 
@@ -64,6 +70,7 @@ typedef void (*func)(void* data);
 
 
 //Struct
+>>>>>>> TheIllusiveMan
 typedef struct psudo_type{
         char flag; //use the flags i, d, b, s, c, u, v, l, n for int, double, bool, string, char, unsigned (int or char), void pointer, blob and empty respectively.
         int number;//can store an integer
@@ -81,6 +88,8 @@ typedef struct psudo_type{
         }
     }unknown_return, fuzzy_obj;//The purpose of this struct is to have a type in which I can store an unknown return from a python or lua function without having to write overloads for each c++ functions that will handle a return from python.
 
+<<<<<<< HEAD
+=======
 //mathy structs
  struct math_VECTOR// The math prefix will remind me this is a basic math unit
     {
@@ -134,4 +143,5 @@ static int maxConn = 2000;
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan
 #endif // TYPEDEFS_H_INCLUDED

@@ -1,5 +1,15 @@
 //#define EUREKA_EXPORT
 #include "networking.h"
+#ifdef C_NETWORK_INTERFACE
+#include <iostream>
+#include <string>
+#include <list>
+#include <SDL_net.h>
+#include "BST.h"
+#include "typedefs.h"
+#include "threading.h"
+class Game;
+#endif
 #include "rand_generators.h"
 #include "eureka.h"
 
@@ -8,12 +18,19 @@
 //Engine name space macro
 //ENGINE_NAMESPACE
 
+unsigned int ip_to_int(const char* ip);
 
-NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool p_udp, int maxConn)
+NetNode::NetNode(size_t id, const std::string& host, size_t portValue, bool p_udp, int maxConn, bool hostIP)
 {
     nodeID = id;
     if(SDLNet_ResolveHost(&ip, host.c_str(), portValue) == -1)
         std::cerr << "NetNode Error: Failed to resolve address! SDL_Net: " << SDLNet_GetError() << std::endl;
+    if(hostIP)
+    {
+        uint32_t newIp = ip_to_int(host.c_str());
+        SetNodeIP(newIp);
+        SetNodePort(portValue);
+    }
     badNode = false;
     if(p_udp)
     {
@@ -287,7 +304,19 @@ void NetNode::UnRegisterUDPClient(int channel)
     SDLNet_UDP_Unbind(usocket, channel);
 }
 
-NetworkManager::NetworkManager(Game* owner)
+void NetNode::SetNodeIP(uint32_t newip)
+{
+    SDLNet_Write32(newip, &newip);
+    ip.host = newip;
+}
+
+void NetNode::SetNodePort(uint16_t newPort)
+{
+    SDLNet_Write16(newPort, &newPort);
+    ip.port = newPort;
+}
+
+NetworkManager::NetworkManager(ThreadSystem* owner)
 {
     owner_ref = owner;
     mtu = 1;
@@ -326,6 +355,27 @@ size_t NetworkManager::CreateClientConnection(const std::string& host, size_t po
     }
 
     tmp = new NetNode(id, host, port, udp);
+    if(tmp && !tmp->isBad())//If allocation was successful
+        connections.insert(id, tmp);//Add to our connections storage tree.
+    //Unlock mutex
+    owner_ref->UnlockMutex(mutex_net_id);
+    return id;
+}
+
+size_t NetworkManager::CreateClientConnectionIP(const std::string& ip, size_t port, bool udp)
+{
+    size_t id = hasher();
+    uint32_t intIp = ip_to_int(ip.c_str());
+    NetNode* tmp = NULL;
+    //Lock mutex
+    owner_ref->LockMutex(mutex_net_id);
+    while(hasNetNode(id))//Renew id if it already exists in the connections container
+    {
+        id = hasher();
+    }
+
+    tmp = new NetNode(id, ip, port, udp, 100, true);
+    tmp->SetNodeIP(intIp);
     if(tmp && !tmp->isBad())//If allocation was successful
         connections.insert(id, tmp);//Add to our connections storage tree.
     //Unlock mutex
@@ -710,5 +760,160 @@ void NetworkManager::SetMTU(size_t max)
     mtu = max;
 }
 
+#ifdef C_NETWORK_INTERFACE
+//C interface
+//vars
+NetworkManager* mngr = NULL;
+ThreadSystem* thrd = NULL;
+void* initNetwork()
+{
+    thrd = new ThreadSystem();
+    mngr = new NetworkManager(thrd);
+    mngr->initNetSys();
+    SDLNet_Init();
+    return mngr;
+}
+//Setters
+size_t CreateClientConnection(void* network, const char* host, size_t port, int udp)
+{
+    return ((NetworkManager*)network)->CreateClientConnection(host, port, udp);
+}
+
+size_t CreateClientConnectionIP(void* network, const char* ip, size_t port, int udp)
+{
+    return ((NetworkManager*)network)->CreateClientConnectionIP(ip, port, udp);
+}
+
+size_t CreateServer(void* network, size_t port, int udp)
+{
+    return ((NetworkManager*)network)->CreateServer(port, udp);
+}
+size_t AcceptTCPClient(void* network, size_t socket_id)
+{
+    return ((NetworkManager*)network)->AcceptTCPClient(socket_id);
+}
+int AcceptUDPClient(void* network, size_t socket_id)
+{
+    return ((NetworkManager*)network)->AcceptUDPClient(socket_id);
+}
+void CloseUDPClient(void* network, size_t socket_id, int channel)
+{
+    ((NetworkManager*)network)->CloseUDPClient(socket_id, channel);
+}
+void SetMTU(void* network, size_t max)
+{
+    ((NetworkManager*)network)->SetMTU(max);
+}
+
+//Sockets stuff
+void SendData(void* network, void_ptr data, size_t len, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->SendData(data, len, socket_id, client_id);
+}
+void SendDataStr(void* network, const char* data, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->SendDataStr(data, socket_id, client_id);
+}
+void SendDataInt(void* network, const int data, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->SendDataInt(data, socket_id, client_id);
+}
+void SendDataDouble(void* network, const double data, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->SendDataDouble(data, socket_id, client_id);
+}
+void SendDataChar(void* network, const char data, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->SendDataChar(data, socket_id, client_id);
+}
+void SendUDPSignal(void* network, size_t socket_id, const char* sig_data)
+{
+    ((NetworkManager*)network)->SendUDPSignal(socket_id, sig_data);
+}
+void RecvData(void* network, void_ptr data, size_t maxlen, size_t socket_id, int client_id)
+{
+    ((NetworkManager*)network)->RecvData(data, maxlen, socket_id, client_id);
+}
+char* RecvDataStr(void* network, size_t maxlen, size_t socket_id, int client_id)
+{
+    char* tmp = new char[maxlen];
+    ((NetworkManager*)network)->RecvData(tmp, maxlen, socket_id, client_id);
+    return tmp;
+}
+int RecvDataInt(void* network, size_t socket_id, int client_id)
+{
+    int data;
+    ((NetworkManager*)network)->RecvDataInt(data, socket_id, client_id);
+    return data;
+}
+char RecvDataChar(void* network, size_t socket_id, int client_id)
+{
+    char data;
+    ((NetworkManager*)network)->RecvDataChar(data, socket_id, client_id);
+    return data;
+}
+
+double RecvDataDouble(void* network, size_t socket_id, int client_id)
+{
+    double data;
+    ((NetworkManager*)network)->RecvDataDouble(data, socket_id, client_id);
+    return data;
+}
+void PingUDPClient(void* network, size_t socket_id, int channel, size_t timeout)
+{
+    ((NetworkManager*)network)->PingUDPClient(socket_id, channel, timeout);
+}
+
+//Getters
+size_t GetMaxNumUDPChannels(void* network)
+{
+    return ((NetworkManager*)network)->GetMaxNumUDPChannels();
+}
+UDPClient GetUDPClientInfo(void* network, size_t socket_id, int channel)
+{
+    return((NetworkManager*)network)->GetUDPClientInfo(socket_id, channel);
+}
+TCPClient GetTCPClientInfo(void* network, size_t socket_id, size_t client_id)
+{
+    return ((NetworkManager*)network)->GetTCPClientInfo(socket_id, client_id);
+}
+
+unsigned int ip_to_int(const char* ip)
+{
+    unsigned v = 0;
+    int i;
+    const char* start = ip;
+
+    for(i = 0; i < 4; i++)
+    {
+        char c;
+        int n = 0;
+        while(1)
+        {
+            c = *start;
+            start++;
+            if(c >= '0' && c <= '9')
+            {
+                n *= 10;
+                n += c - '0';
+            }
+            else if((i < 3 && c == '.') || i == 3)
+                break;
+            else
+            {
+                return 0;
+            }
+        }
+        if(n >= 256)
+        {
+            return 0;
+        }
+        v *= 256;
+        v += n;
+    }
+    return v;
+}
+
+#endif
 //End of namespace macro
 //ENGINE_NAMESPACE_END

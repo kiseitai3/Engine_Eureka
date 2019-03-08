@@ -1,9 +1,12 @@
 #include "sqlite_row.h"
 
+<<<<<<< HEAD
+=======
 //Engine name space macro
 //ENGINE_NAMESPACE
 
 
+>>>>>>> TheIllusiveMan
 fuzzy_obj SQLiteRow::GetResultFromCol(size_t col) const
 {
     return row[col];
@@ -28,6 +31,9 @@ void SQLiteRow::CleanData()
 {
     row.clear();
 }
+<<<<<<< HEAD
+=======
 
 //End of namespace macro
 //ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan

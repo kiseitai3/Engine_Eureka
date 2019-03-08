@@ -5,10 +5,13 @@
 #include <iostream>
 #include "typedefs.h"
 
+<<<<<<< HEAD
+=======
 //Engine name space macro
 //ENGINE_NAMESPACE
 
 
+>>>>>>> TheIllusiveMan
 class SQLiteRow
 {
 public:
@@ -22,6 +25,9 @@ private:
 };
 
 
+<<<<<<< HEAD
+=======
 //End of namespace macro
 //ENGINE_NAMESPACE_END
+>>>>>>> TheIllusiveMan
 #endif // SQLITE_ROW_H_INCLUDED

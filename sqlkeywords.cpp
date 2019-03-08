@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+/*
+    Copyright (C) 2014 Luis M. Santos
+    Contact: luismigue1234@hotmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with This program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+#include "sqlkeywords.h"
+
+const std::string SQLGenerator::WILDCARD = "*";
+
+std::string SQLGenerator::prepareStatement(const std::string& table, const std::string& columns, const std::string& criteria, const std::string& pattern, const std::string& pattern2, size_t statementType)
+{
+    std::string query;
+=======
 #include "sqlkeywords.h"
 
 const std::string SQLGenerator::WILDCARD = "* ";
@@ -27,6 +53,7 @@ std::string SQLGenerator::prepareStatement(std::string table, std::string column
         pattern2 += " ";
     }
     /*With that check out of the way, we can start producing the query!*/
+>>>>>>> TheIllusiveMan
     switch(statementType)
     {
     /*SELECT column_name,column_name FROM table_name; */
@@ -102,7 +129,11 @@ std::string SQLGenerator::prepareStatement(std::string table, std::string column
     case INSERT:
     case INSERT | INTO:
     case INSERT | INTO | VALUES:
+<<<<<<< HEAD
+        query = Keywords[INSERT] + Keywords[INTO] + table + "(" + columns + ")" + Keywords[VALUES] + criteria;
+=======
         query = Keywords[INSERT] + Keywords[INTO] + table + "(" + columns + ")" + Keywords[VALUES] + "(" + criteria + ")";
+>>>>>>> TheIllusiveMan
         break;
     /*UPDATE table_name
     SET column1=value1,column2=value2,...

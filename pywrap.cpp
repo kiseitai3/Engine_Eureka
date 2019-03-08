@@ -53,6 +53,11 @@ Pywrap::Pywrap(const char* file, unsigned int arg_size)
         fileLoaded = false;
     }
     args = PyTuple_New(arg_size);
+<<<<<<< HEAD
+    sizeT = arg_size;
+    index = 0;
+=======
+>>>>>>> TheIllusiveMan
 }
 
 bool Pywrap::isFileLoaded() const
@@ -206,6 +211,11 @@ void Pywrap::ClearArgs(unsigned arg_size)
     CleanCPyObjInArgs();
     Py_CLEAR(args);//Make sure the previous object had its reference count lowered (and hopefully the object was deleted altogether)
     args = PyTuple_New(arg_size);
+<<<<<<< HEAD
+    sizeT = arg_size;
+    index = 0;
+=======
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::IncreaseRef(PyObject *obj)
@@ -370,38 +380,73 @@ void Pywrap::prepArgs()
 //Overloads
 void Pywrap::AddArgument (int argument)
 {
+<<<<<<< HEAD
+    PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
+    index++;
+=======
     fuzzy_obj tmp;
     tmp.flag = 'i';
     tmp.number = argument;
     argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (unsigned int argument)
 {
+<<<<<<< HEAD
+    PyTuple_SetItem(args, index, PyInt_FromSize_t(argument));
+    index++;
+=======
     fuzzy_obj tmp;
     tmp.flag = 'u';
     tmp.uNumber = argument;
     argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (std::string argument)
 {
+<<<<<<< HEAD
+    PyTuple_SetItem(args, index, PyString_FromString(argument.c_str()));
+    index++;
+=======
     fuzzy_obj tmp;
     tmp.flag = 's';
     tmp.str = argument;
     argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (char argument)
 {
+<<<<<<< HEAD
+    PyTuple_SetItem(args, index, PyString_FromString(&argument));
+    index++;
+=======
     fuzzy_obj tmp;
     tmp.flag = 'c';
     tmp.c = argument;
     argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 
 void Pywrap::AddArgument (double argument)
 {
+<<<<<<< HEAD
+    PyTuple_SetItem(args, index, PyFloat_FromDouble(argument));
+    index++;
+}
+
+void Pywrap::AddArgument (PyObject *argument)
+{
+    PyTuple_SetItem(args, index, argument);
+    index++;
+}
+
+void Pywrap::AddArgument(void_ptr argument)
+{
+    AddArgument(CreateObjFromPtr(argument));
+=======
     fuzzy_obj tmp;
     tmp.flag = 'd';
     tmp.decimal = argument;
@@ -414,6 +459,7 @@ void Pywrap::AddArgument(void_ptr argument)
     tmp.flag = 'v';
     tmp.ptr = argument;
     argQueue.push(tmp);
+>>>>>>> TheIllusiveMan
 }
 //Py Conversion Functions with overloads
 int Pywrap::py_extractInt(PyObject *results) const

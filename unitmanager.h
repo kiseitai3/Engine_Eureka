@@ -7,7 +7,7 @@
 //Engine name space macro
 //ENGINE_NAMESPACE
 
-
+class Game;
 
 struct UnitNode
 {

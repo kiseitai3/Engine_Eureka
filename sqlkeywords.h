@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+/*
+    Copyright (C) 2014 Luis M. Santos
+    Contact: luismigue1234@hotmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with This program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+=======
+>>>>>>> TheIllusiveMan
 #ifndef SQLKEYWORDS_H_INCLUDED
 #define SQLKEYWORDS_H_INCLUDED
 
@@ -19,6 +39,26 @@ in the generator multiple keywords in the format x|y|z. Thus, the SQL statement 
 whether statementType = SELECT | FROM. Since this is a binary OR evaluation, you obtain a value that is a merged version of
 SELECT and FROM binary values! :D
 */
+<<<<<<< HEAD
+enum StatementTypes
+{
+    CREATETABLE =   0b0000000000000001,
+    SELECT =        0b0000000000000010,
+    INSERT =        0b0000000000000100,
+    DELETE =        0b0000000000001000,
+    WHERE =         0b0000000000010000,
+    AS =            0b0000000000100000,
+    CALL =          0b0000000001000000,
+    FROM =          0b0000000010000000,
+    TO =            0b0000000100000000,
+    UPDATE =        0b0000001000000000,
+    AND =           0b0000010000000000,
+    OR =            0b0000100000000000,
+    LIKE =          0b0001000000000000,
+    CREATEDATABASE =0b0010000000000000,
+    INTO =          0b0100000000000000,
+    IN =            0b1000000000000000,
+=======
 //To guard against defined macros
 #undef DELETE
 #undef IN
@@ -40,6 +80,7 @@ enum StatementTypes
     CREATEDATABASE =0x2000,
     INTO =          0x4000,
     IN =            0x8000,
+>>>>>>> TheIllusiveMan
     ALL =           UPDATE | INSERT | AND | OR,
     AOR =           AND | OR, //Substitute for the AND OR keyword combination
     ORDERBY =       IN | TO | UPDATE,
@@ -98,8 +139,17 @@ static std::map<word, std::string> Keywords{
 
 typedef struct SQLGenerator//SQL Query Generator. It's a nice helping structure!
 {
+<<<<<<< HEAD
+    enum DataTypes
+    {
+        INT, DOUBLE, BOOL, STRING, CHAR,
+    };
+    static const std::string WILDCARD;
+    std::string prepareStatement(const std::string& table, const std::string& columns = WILDCARD, const std::string& criteria = WILDCARD, const std::string& pattern = WILDCARD, const std::string& pattern2 = WILDCARD, size_t statementType = SELECT);
+=======
     static const std::string WILDCARD;
     std::string prepareStatement(std::string table = WILDCARD, std::string columns = WILDCARD, std::string criteria = WILDCARD, std::string pattern = WILDCARD, std::string pattern2 = WILDCARD, size_t statementType = SELECT);
+>>>>>>> TheIllusiveMan
 }SQLQuery;
 
 #endif // SQLKEYWORDS_H_INCLUDED

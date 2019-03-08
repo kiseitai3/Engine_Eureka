@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -26,6 +26,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
  * includes
  */
 #include <stdlib.h>
+#include <stdio.h>              /* printf */
 #include <string.h>             /* strstr */
 #include <ctype.h>              /* isdigit */
 
@@ -61,15 +62,12 @@ main(int argc, char **argv)
     int nefx;
     unsigned int supported;
 
-    /* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
-
     name = NULL;
     index = -1;
     if (argc > 1) {
         name = argv[1];
         if ((strcmp(name, "--help") == 0) || (strcmp(name, "-h") == 0)) {
-            SDL_Log("USAGE: %s [device]\n"
+            printf("USAGE: %s [device]\n"
                    "If device is a two-digit number it'll use it as an index, otherwise\n"
                    "it'll use it as if it were part of the device's name.\n",
                    argv[0]);
@@ -86,7 +84,7 @@ main(int argc, char **argv)
     /* Initialize the force feedbackness */
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_JOYSTICK |
              SDL_INIT_HAPTIC);
-    SDL_Log("%d Haptic devices detected.\n", SDL_NumHaptics());
+    printf("%d Haptic devices detected.\n", SDL_NumHaptics());
     if (SDL_NumHaptics() > 0) {
         /* We'll just use index or the first force feedback device found */
         if (name == NULL) {
@@ -100,7 +98,7 @@ main(int argc, char **argv)
             }
 
             if (i >= SDL_NumHaptics()) {
-                SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Unable to find device matching '%s', aborting.\n",
+                printf("Unable to find device matching '%s', aborting.\n",
                        name);
                 return 1;
             }
@@ -108,14 +106,14 @@ main(int argc, char **argv)
 
         haptic = SDL_HapticOpen(i);
         if (haptic == NULL) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Unable to create the haptic device: %s\n",
+            printf("Unable to create the haptic device: %s\n",
                    SDL_GetError());
             return 1;
         }
-        SDL_Log("Device: %s\n", SDL_HapticName(i));
+        printf("Device: %s\n", SDL_HapticName(i));
         HapticPrintSupported(haptic);
     } else {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "No Haptic devices found!\n");
+        printf("No Haptic devices found!\n");
         return 1;
     }
 
@@ -127,10 +125,10 @@ main(int argc, char **argv)
     nefx = 0;
     supported = SDL_HapticQuery(haptic);
 
-    SDL_Log("\nUploading effects\n");
+    printf("\nUploading effects\n");
     /* First we'll try a SINE effect. */
     if (supported & SDL_HAPTIC_SINE) {
-        SDL_Log("   effect %d: Sine Wave\n", nefx);
+        printf("   effect %d: Sine Wave\n", nefx);
         efx[nefx].type = SDL_HAPTIC_SINE;
         efx[nefx].periodic.period = 1000;
         efx[nefx].periodic.magnitude = 0x4000;
@@ -139,14 +137,14 @@ main(int argc, char **argv)
         efx[nefx].periodic.fade_length = 1000;
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
     }
     /* Now we'll try a SAWTOOTHUP */
     if (supported & SDL_HAPTIC_SAWTOOTHUP) {
-        SDL_Log("   effect %d: Sawtooth Up\n", nefx);
+        printf("   effect %d: Sawtooth Up\n", nefx);
         efx[nefx].type = SDL_HAPTIC_SAWTOOTHUP;
         efx[nefx].periodic.period = 500;
         efx[nefx].periodic.magnitude = 0x5000;
@@ -155,14 +153,14 @@ main(int argc, char **argv)
         efx[nefx].periodic.fade_length = 1000;
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
     }
     /* Now the classical constant effect. */
     if (supported & SDL_HAPTIC_CONSTANT) {
-        SDL_Log("   effect %d: Constant Force\n", nefx);
+        printf("   effect %d: Constant Force\n", nefx);
         efx[nefx].type = SDL_HAPTIC_CONSTANT;
         efx[nefx].constant.direction.type = SDL_HAPTIC_POLAR;
         efx[nefx].constant.direction.dir[0] = 20000;    /* Force comes from the south-west. */
@@ -172,14 +170,14 @@ main(int argc, char **argv)
         efx[nefx].constant.fade_length = 1000;
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
     }
     /* The cute spring effect. */
     if (supported & SDL_HAPTIC_SPRING) {
-        SDL_Log("   effect %d: Condition Spring\n", nefx);
+        printf("   effect %d: Condition Spring\n", nefx);
         efx[nefx].type = SDL_HAPTIC_SPRING;
         efx[nefx].condition.length = 5000;
         for (i = 0; i < SDL_HapticNumAxes(haptic); i++) {
@@ -191,14 +189,14 @@ main(int argc, char **argv)
         }
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
     }
     /* The pretty awesome inertia effect. */
     if (supported & SDL_HAPTIC_INERTIA) {
-        SDL_Log("   effect %d: Condition Inertia\n", nefx);
+        printf("   effect %d: Condition Inertia\n", nefx);
         efx[nefx].type = SDL_HAPTIC_SPRING;
         efx[nefx].condition.length = 5000;
         for (i = 0; i < SDL_HapticNumAxes(haptic); i++) {
@@ -209,7 +207,7 @@ main(int argc, char **argv)
         }
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
@@ -217,24 +215,24 @@ main(int argc, char **argv)
 
     /* Finally we'll try a left/right effect. */
     if (supported & SDL_HAPTIC_LEFTRIGHT) {
-        SDL_Log("   effect %d: Left/Right\n", nefx);
+        printf("   effect %d: Left/Right\n", nefx);
         efx[nefx].type = SDL_HAPTIC_LEFTRIGHT;
         efx[nefx].leftright.length = 5000;
         efx[nefx].leftright.large_magnitude = 0x3000;
         efx[nefx].leftright.small_magnitude = 0xFFFF;
         id[nefx] = SDL_HapticNewEffect(haptic, &efx[nefx]);
         if (id[nefx] < 0) {
-            SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
+            printf("UPLOADING EFFECT ERROR: %s\n", SDL_GetError());
             abort_execution();
         }
         nefx++;
     }
 
 
-    SDL_Log
+    printf
         ("\nNow playing effects for 5 seconds each with 1 second delay between\n");
     for (i = 0; i < nefx; i++) {
-        SDL_Log("   Playing effect %d\n", i);
+        printf("   Playing effect %d\n", i);
         SDL_HapticRunEffect(haptic, id[i], 1);
         SDL_Delay(6000);        /* Effects only have length 5000 */
     }
@@ -254,7 +252,7 @@ main(int argc, char **argv)
 static void
 abort_execution(void)
 {
-    SDL_Log("\nAborting program execution.\n");
+    printf("\nAborting program execution.\n");
 
     SDL_HapticClose(haptic);
     SDL_Quit();
@@ -272,42 +270,42 @@ HapticPrintSupported(SDL_Haptic * haptic)
     unsigned int supported;
 
     supported = SDL_HapticQuery(haptic);
-    SDL_Log("   Supported effects [%d effects, %d playing]:\n",
+    printf("   Supported effects [%d effects, %d playing]:\n",
            SDL_HapticNumEffects(haptic), SDL_HapticNumEffectsPlaying(haptic));
     if (supported & SDL_HAPTIC_CONSTANT)
-        SDL_Log("      constant\n");
+        printf("      constant\n");
     if (supported & SDL_HAPTIC_SINE)
-        SDL_Log("      sine\n");
+        printf("      sine\n");
     /* !!! FIXME: put this back when we have more bits in 2.1 */
-    /* if (supported & SDL_HAPTIC_SQUARE)
-        SDL_Log("      square\n"); */
+    /*if (supported & SDL_HAPTIC_SQUARE)
+        printf("      square\n");*/
     if (supported & SDL_HAPTIC_TRIANGLE)
-        SDL_Log("      triangle\n");
+        printf("      triangle\n");
     if (supported & SDL_HAPTIC_SAWTOOTHUP)
-        SDL_Log("      sawtoothup\n");
+        printf("      sawtoothup\n");
     if (supported & SDL_HAPTIC_SAWTOOTHDOWN)
-        SDL_Log("      sawtoothdown\n");
+        printf("      sawtoothdown\n");
     if (supported & SDL_HAPTIC_RAMP)
-        SDL_Log("      ramp\n");
+        printf("      ramp\n");
     if (supported & SDL_HAPTIC_FRICTION)
-        SDL_Log("      friction\n");
+        printf("      friction\n");
     if (supported & SDL_HAPTIC_SPRING)
-        SDL_Log("      spring\n");
+        printf("      spring\n");
     if (supported & SDL_HAPTIC_DAMPER)
-        SDL_Log("      damper\n");
+        printf("      damper\n");
     if (supported & SDL_HAPTIC_INERTIA)
-        SDL_Log("      inertia\n");
+        printf("      intertia\n");
     if (supported & SDL_HAPTIC_CUSTOM)
-        SDL_Log("      custom\n");
+        printf("      custom\n");
     if (supported & SDL_HAPTIC_LEFTRIGHT)
-        SDL_Log("      left/right\n");
-    SDL_Log("   Supported capabilities:\n");
+        printf("      left/right\n");
+    printf("   Supported capabilities:\n");
     if (supported & SDL_HAPTIC_GAIN)
-        SDL_Log("      gain\n");
+        printf("      gain\n");
     if (supported & SDL_HAPTIC_AUTOCENTER)
-        SDL_Log("      autocenter\n");
+        printf("      autocenter\n");
     if (supported & SDL_HAPTIC_STATUS)
-        SDL_Log("      status\n");
+        printf("      status\n");
 }
 
 #else
@@ -315,7 +313,7 @@ HapticPrintSupported(SDL_Haptic * haptic)
 int
 main(int argc, char *argv[])
 {
-    SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL compiled without Haptic support.\n");
+    fprintf(stderr, "SDL compiled without Haptic support.\n");
     exit(1);
 }
 

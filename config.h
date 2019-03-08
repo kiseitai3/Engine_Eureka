@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 /*
     Copyright (C) 2014 Luis M. Santos
     Contact: luismigue1234@hotmail.com
@@ -15,6 +17,7 @@
     You should have received a copy of the GNU Lesser General Public License
     along with This program.  If not, see <http://www.gnu.org/licenses/>.
 */
+>>>>>>> TheIllusiveMan
 #ifndef CONFIG_H_INCLUDED
 #define CONFIG_H_INCLUDED
 

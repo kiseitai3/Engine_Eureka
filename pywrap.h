@@ -4,8 +4,12 @@
 #include <Python.h>
 #include <string>
 #include <vector>
+<<<<<<< HEAD
+#include "game.h"
+=======
 #include <queue>
 #include "typedefs.h"
+>>>>>>> TheIllusiveMan
 
 //class
 class Pywrap
@@ -14,13 +18,22 @@ class Pywrap
         //vars
     PyObject *module, *name_space, *dict, *func;
     PyObject *args, *value, *result;
+<<<<<<< HEAD
+    unsigned int sizeT;
+    size_t index;
+=======
     PyGILState_STATE gstate;
+>>>>>>> TheIllusiveMan
     std::string path;
     std::queue<fuzzy_obj> argQueue;
     bool fileLoaded;
     static bool initialized;
     //methods
+<<<<<<< HEAD
+
+=======
     void prepArgs();
+>>>>>>> TheIllusiveMan
 
     public:
         //methods
@@ -50,12 +63,18 @@ class Pywrap
     void AddArgument (std::string argument);
     void AddArgument (char argument);
     void AddArgument (double argument);
+<<<<<<< HEAD
+    void AddArgument (PyObject *argument);
+    void AddArgument(unsigned int argument);
+    void AddArgument (void_ptr argument);
+=======
     void AddArgument(unsigned int argument);
     void AddArgument (void_ptr argument);
 
     //Thread Protection
     void LockInterpreter();
     void ReleaseInterpreter();
+>>>>>>> TheIllusiveMan
 
     //Py Conversion Functions with overloads
     /*All functions in this block take care of the extraction of a C type from a generalized object

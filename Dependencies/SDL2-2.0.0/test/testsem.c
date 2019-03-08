@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -30,15 +30,17 @@ ThreadFunc(void *data)
     int threadnum = (int) (uintptr_t) data;
     while (alive) {
         SDL_SemWait(sem);
-        SDL_Log("Thread number %d has got the semaphore (value = %d)!\n",
+        fprintf(stderr,
+                "Thread number %d has got the semaphore (value = %d)!\n",
                 threadnum, SDL_SemValue(sem));
         SDL_Delay(200);
         SDL_SemPost(sem);
-        SDL_Log("Thread number %d has released the semaphore (value = %d)!\n",
+        fprintf(stderr,
+                "Thread number %d has released the semaphore (value = %d)!\n",
                 threadnum, SDL_SemValue(sem));
         SDL_Delay(1);           /* For the scheduler */
     }
-    SDL_Log("Thread number %d exiting.\n", threadnum);
+    printf("Thread number %d exiting.\n", threadnum);
     return 0;
 }
 
@@ -57,7 +59,7 @@ TestWaitTimeout(void)
     int retval;
 
     sem = SDL_CreateSemaphore(0);
-    SDL_Log("Waiting 2 seconds on semaphore\n");
+    printf("Waiting 2 seconds on semaphore\n");
 
     start_ticks = SDL_GetTicks();
     retval = SDL_SemWaitTimeout(sem, 2000);
@@ -67,13 +69,13 @@ TestWaitTimeout(void)
 
     /* Accept a little offset in the effective wait */
     if (duration > 1900 && duration < 2050)
-        SDL_Log("Wait done.\n");
+        printf("Wait done.\n");
     else
-        SDL_Log("Wait took %d milliseconds\n", duration);
+        fprintf(stderr, "Wait took %d milliseconds\n", duration);
 
     /* Check to make sure the return value indicates timed out */
     if (retval != SDL_MUTEX_TIMEDOUT)
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_SemWaitTimeout returned: %d; expected: %d\n", retval, SDL_MUTEX_TIMEDOUT);
+        fprintf(stderr, "SDL_SemWaitTimeout returned: %d; expected: %d\n", retval, SDL_MUTEX_TIMEDOUT);
 }
 
 int
@@ -83,17 +85,14 @@ main(int argc, char **argv)
     uintptr_t i;
     int init_sem;
 
-	/* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
-
     if (argc < 2) {
-        SDL_Log("Usage: %s init_value\n", argv[0]);
+        fprintf(stderr, "Usage: %s init_value\n", argv[0]);
         return (1);
     }
 
     /* Load the SDL library */
     if (SDL_Init(0) < 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't initialize SDL: %s\n", SDL_GetError());
+        fprintf(stderr, "Couldn't initialize SDL: %s\n", SDL_GetError());
         return (1);
     }
     signal(SIGTERM, killed);
@@ -102,7 +101,7 @@ main(int argc, char **argv)
     init_sem = atoi(argv[1]);
     sem = SDL_CreateSemaphore(init_sem);
 
-    SDL_Log("Running %d threads, semaphore value = %d\n", NUM_THREADS,
+    printf("Running %d threads, semaphore value = %d\n", NUM_THREADS,
            init_sem);
     /* Create all the threads */
     for (i = 0; i < NUM_THREADS; ++i) {
@@ -115,12 +114,12 @@ main(int argc, char **argv)
     SDL_Delay(10 * 1000);
 
     /* Wait for all threads to finish */
-    SDL_Log("Waiting for threads to finish\n");
+    printf("Waiting for threads to finish\n");
     alive = 0;
     for (i = 0; i < NUM_THREADS; ++i) {
         SDL_WaitThread(threads[i], NULL);
     }
-    SDL_Log("Finished waiting for threads\n");
+    printf("Finished waiting for threads\n");
 
     SDL_DestroySemaphore(sem);
 

@@ -177,7 +177,11 @@ void Unit::LoadAI(const char *file)
 {
     if(strcmp(file, ""))
     {
+<<<<<<< HEAD
+        AI = new ScriptWrap(file);
+=======
         ai.LoadUniqueAI(file);
+>>>>>>> TheIllusiveMan
         if(!AI)
         {
             hasAI = false;
@@ -316,9 +320,77 @@ void Unit::ExecuteAI(Unit *target, const char axis)
 
 }
 
+<<<<<<< HEAD
+void Unit::SetTimer(Timer *timerI)
+{
+    gameTime = timerI;
+}
+
+//Player Controls and Behavior
+void Unit::ProcessKeyEvent(std::string key)
+{
+    if(KeyDOM->SearchTermExists(key))
+    {
+        KeyScripts->ClearArgs(1);
+        KeyScripts->AddArgument(this);
+        KeyScripts->executeFunction(KeyDOM->GetStrFromData(key).c_str(), KeyScripts->NO_ARGS);
+    }
+}
+
+void Unit::LoadKeyScript(const char *file)
+{
+    if(file != "")
+    {
+        KeyScripts = new ScriptWrap(file);
+        if(!KeyScripts)
+        {
+            std::cout<<"Error: Keyboard scripts file for this object was unable to load!\n\r";
+        }
+    }
+}
+
+void Unit::LoadKeyBindings(const char *file)
+{
+    KeyDOM = new data_base(file);
+    if(!KeyDOM)
+    {
+        std::cout<<"Error: Could not load keybindings file into Unit class!";
+    }
+}
+
+void Unit::ProcessMouseMovement(int x, int y)
+{
+    KeyScripts->ClearArgs(3);
+    KeyScripts->AddArgument(this);
+    KeyScripts->AddArgument(x);
+    KeyScripts->AddArgument(y);
+    KeyScripts->executeFunction("ProcessMouseMovement", KeyScripts->NO_ARGS);
+}
+
+void Unit::ProcessMouseKey(unsigned int mouseButton, int x, int y)
+{
+    if(KeyDOM->SearchTermExists(intToStr(mouseButton)))
+    {
+        KeyScripts->ClearArgs(3);
+        KeyScripts->AddArgument(this);
+        KeyScripts->AddArgument(x);
+        KeyScripts->AddArgument(y);
+        KeyScripts->executeFunction(KeyDOM->GetStrFromData(intToStr(mouseButton)).c_str(), KeyScripts->NO_ARGS);
+    }
+    else
+    {
+        KeyScripts->ClearArgs(4);
+        KeyScripts->AddArgument(this);
+        KeyScripts->AddArgument(mouseButton);
+        KeyScripts->AddArgument(x);
+        KeyScripts->AddArgument(y);
+        KeyScripts->executeFunction("ProcessMouseKey", KeyScripts->NO_ARGS);
+    }
+=======
 void Unit::SetTimer(size_t timer_id)
 {
     gameTime = timer_id;
+>>>>>>> TheIllusiveMan
 }
 
 //General getters and Setters
@@ -559,11 +631,29 @@ void Unit::Update_Physics(Unit *target)
 void Unit::OnCollision(Unit *target, std::string side)
 {
     GeneralScripts->ClearArgs(3);
+<<<<<<< HEAD
+=======
     GeneralScripts->AddArgument(owner_ref);
+>>>>>>> TheIllusiveMan
     GeneralScripts->AddArgument(this);
     GeneralScripts->AddArgument(target);
     GeneralScripts->AddArgument(side);
     GeneralScripts->executeFunction("OnCollision", GeneralScripts->NO_ARGS);
+<<<<<<< HEAD
+}
+
+void Unit::LoadScript(ScriptWrap* script, const char *file)
+{
+    if(file != "")
+    {
+        script = new ScriptWrap(file);
+        if(!script)
+        {
+            std::cout<<"Error: Scripts file for this object was unable to load!\n\r";
+        }
+    }
+=======
+>>>>>>> TheIllusiveMan
 }
 
 //Handle buffs like spells that add extra damage or defenses
@@ -592,14 +682,23 @@ bool Unit::BuffExists(std::string buffName)
 
 void Unit::ApplyBuffs()
 {
+<<<<<<< HEAD
+    BuffScripts->ClearArgs(1);
+    BuffScripts->AddArgument(this);
+=======
+>>>>>>> TheIllusiveMan
     for(std::list<std::string>::iterator it = buffs.begin(); it != buffs.end(); it++)
     {
         BuffScripts->ClearArgs(3);
         BuffScripts->AddArgument(owner_ref);
         BuffScripts->AddArgument(this);
         std::string names = *it;
+<<<<<<< HEAD
+        BuffScripts->executeFunction(names.c_str(), BuffScripts->NO_ARGS);
+=======
         BuffScripts->AddArgument(names);
         BuffScripts->executeFunction("HandleBuffs", BuffScripts->NO_ARGS);
+>>>>>>> TheIllusiveMan
     }
 }
 

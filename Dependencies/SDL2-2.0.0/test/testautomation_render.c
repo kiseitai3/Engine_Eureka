@@ -190,8 +190,10 @@ int render_testPrimitives (void *arg)
    _compare(referenceSurface, ALLOWABLE_ERROR_OPAQUE );
 
    /* Clean up. */
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -331,8 +333,10 @@ int render_testPrimitivesBlend (void *arg)
    _compare(referenceSurface, ALLOWABLE_ERROR_BLENDED );
 
    /* Clean up. */
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -396,8 +400,10 @@ render_testBlit(void *arg)
 
    /* Clean up. */
    SDL_DestroyTexture( tface );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -464,8 +470,10 @@ render_testBlitColor (void *arg)
 
    /* Clean up. */
    SDL_DestroyTexture( tface );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -535,8 +543,10 @@ render_testBlitAlpha (void *arg)
 
    /* Clean up. */
    SDL_DestroyTexture( tface );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -645,29 +655,37 @@ render_testBlitBlend (void *arg)
    _testBlitBlendMode( tface, SDL_BLENDMODE_NONE );
    referenceSurface = SDLTest_ImageBlitBlendNone();
    _compare(referenceSurface, ALLOWABLE_ERROR_OPAQUE );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    /* Test Blend. */
    _testBlitBlendMode( tface, SDL_BLENDMODE_BLEND );
    referenceSurface = SDLTest_ImageBlitBlend();
    _compare(referenceSurface, ALLOWABLE_ERROR_BLENDED );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    /* Test Add. */
    _testBlitBlendMode( tface, SDL_BLENDMODE_ADD );
    referenceSurface = SDLTest_ImageBlitBlendAdd();
    _compare(referenceSurface, ALLOWABLE_ERROR_BLENDED );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    /* Test Mod. */
    _testBlitBlendMode( tface, SDL_BLENDMODE_MOD);
    referenceSurface = SDLTest_ImageBlitBlendMod();
    _compare(referenceSurface, ALLOWABLE_ERROR_BLENDED );
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    /* Clear surface. */
    _clearScreen();
@@ -715,8 +733,10 @@ render_testBlitBlend (void *arg)
    /* Check to see if final image matches. */
    referenceSurface = SDLTest_ImageBlitBlendAll();
    _compare(referenceSurface, ALLOWABLE_ERROR_BLENDED);
-   SDL_FreeSurface(referenceSurface);
-   referenceSurface = NULL;
+   if (referenceSurface != NULL) {
+      SDL_FreeSurface(referenceSurface);
+      referenceSurface = NULL;
+   }
 
    return TEST_COMPLETED;
 }
@@ -975,8 +995,12 @@ _compare(SDL_Surface *referenceSurface, int allowable_error)
    SDLTest_AssertCheck(result == 0, "Validate result from SDLTest_CompareSurfaces, expected: 0, got: %i", result);
 
    /* Clean up. */
-   SDL_free(pixels);
-   SDL_FreeSurface(testSurface);
+   if (pixels != NULL) {
+       SDL_free(pixels);
+   }
+   if (testSurface != NULL) {
+       SDL_FreeSurface(testSurface);
+   }
 }
 
 /**

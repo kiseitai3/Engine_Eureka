@@ -88,12 +88,17 @@ pthread_cond_t& ThreadSystem::GetConditionVariable(size_t id)
     return tmp->var;
 }
 
+size_t ThreadSystem::GetErrorCode()
+{
+    return err_code;
+}
+
 void ThreadSystem::LockMutex(size_t mutex_id)
 {
     pthread_mutex_lock(&mutexes[mutex_mutex_id].var);
     pthread_mutex_lock(&mutexes[mutex_id].var);
-    if(pthread_mutex_unlock(&mutexes[mutex_mutex_id].var) != 0)
-        std::cout << "Unable to unlock mutex!" << std::endl;
+    err_code = pthread_mutex_unlock(&mutexes[mutex_mutex_id].var);
+    std::cout << GetErrorCode() << std::endl;
 }
 
 void ThreadSystem::WaitForCond(size_t mutex_id, size_t cond_id)
@@ -103,7 +108,8 @@ void ThreadSystem::WaitForCond(size_t mutex_id, size_t cond_id)
 
 void ThreadSystem::UnlockMutex(size_t mutex_id)
 {
-    pthread_mutex_unlock(&mutexes[mutex_id].var);
+    err_code = pthread_mutex_unlock(&mutexes[mutex_id].var);
+    std::cout << GetErrorCode() << std::endl;
 }
 
 void ThreadSystem::SignalCond(size_t cond_id)
@@ -128,7 +134,11 @@ void ThreadSystem::CloseThread(size_t id)
         for(std::list<pthread>::iterator itr = threads.begin(); itr != threads.end(); itr++)
         {
             if(threads[id] == *itr)
+            {
+                delete threads[id].var;
                 threads.erase(itr);
+                break;
+            }
         }
     }
     UnlockMutex(mutex_thread_id);
@@ -140,20 +150,28 @@ void ThreadSystem::DeleteConditionVariable(size_t id)
     for(std::list<pcond_var>::iterator itr = cond_vars.begin(); itr != cond_vars.end(); itr++)
     {
         if(cond_vars[id] == *itr)
+        {
+            pthread_cond_destroy(&cond_vars[id].var);
             cond_vars.erase(itr);
+            break;
+        }
+
     }
     UnlockMutex(mutex_cond_id);
 }
 
 void ThreadSystem::DeleteMutex(size_t id)
 {
-    LockMutex(mutex_mutex_id);
     for(std::list<pmutex>::iterator itr = mutexes.begin(); itr != mutexes.end(); itr++)
     {
         if(mutexes[id] == *itr)
+        {
+            pthread_mutex_destroy(&mutexes[id].var);
             mutexes.erase(itr);
+            break;
+        }
+
     }
-    UnlockMutex(mutex_mutex_id);
 }
 
 size_t ThreadSystem::generateID(char target)

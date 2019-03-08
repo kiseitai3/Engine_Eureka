@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -12,7 +12,7 @@
 
 /* sanity tests on SDL_rwops.c (usefull for alternative implementations of stdio rwops) */
 
-/* quiet windows compiler warnings */
+// quiet windows compiler warnings
 #define _CRT_NONSTDC_NO_WARNINGS
 
 #include <stdlib.h>
@@ -44,6 +44,7 @@
 static void
 cleanup(void)
 {
+
     unlink(FBASENAME1);
     unlink(FBASENAME2);
 }
@@ -51,7 +52,8 @@ cleanup(void)
 static void
 rwops_error_quit(unsigned line, SDL_RWops * rwops)
 {
-    SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "testfile.c(%d): failed\n", line);
+
+    printf("testfile.c(%d): failed\n", line);
     if (rwops) {
         rwops->close(rwops);    /* This calls SDL_FreeRW(rwops); */
     }
@@ -68,9 +70,6 @@ main(int argc, char *argv[])
 {
     SDL_RWops *rwops = NULL;
     char test_buf[30];
-
-    /* Enable standard application logging */
-	SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
 
     cleanup();
 
@@ -91,7 +90,7 @@ main(int argc, char *argv[])
     rwops = SDL_RWFromFile("something", NULL);
     if (rwops)
         RWOP_ERR_QUIT(rwops);
-    SDL_Log("test1 OK\n");
+    printf("test1 OK\n");
 
 /* test 2 : check that inexistent file is not successfully opened/created when required */
 /* modes : r, r+ imply that file MUST exist
@@ -124,7 +123,7 @@ main(int argc, char *argv[])
         RWOP_ERR_QUIT(rwops);
     rwops->close(rwops);
     unlink(FBASENAME2);
-    SDL_Log("test2 OK\n");
+    printf("test2 OK\n");
 
 /* test 3 : creation, writing , reading, seeking,
             test : w mode, r mode, w+ mode
@@ -202,7 +201,7 @@ main(int argc, char *argv[])
     if (SDL_memcmp(test_buf, "12345678901234567890", 20))
         RWOP_ERR_QUIT(rwops);
     rwops->close(rwops);
-    SDL_Log("test3 OK\n");
+    printf("test3 OK\n");
 
 /* test 4: same in r+ mode */
     rwops = SDL_RWFromFile(FBASENAME1, "rb+");  /* write + read + file must exists, no truncation */
@@ -237,7 +236,7 @@ main(int argc, char *argv[])
     if (SDL_memcmp(test_buf, "12345678901234567890", 20))
         RWOP_ERR_QUIT(rwops);
     rwops->close(rwops);
-    SDL_Log("test4 OK\n");
+    printf("test4 OK\n");
 
 /* test5 : append mode */
     rwops = SDL_RWFromFile(FBASENAME1, "ab+");  /* write + read + append */
@@ -278,7 +277,7 @@ main(int argc, char *argv[])
     if (SDL_memcmp(test_buf, "123456789012345678901234567123", 30))
         RWOP_ERR_QUIT(rwops);
     rwops->close(rwops);
-    SDL_Log("test5 OK\n");
+    printf("test5 OK\n");
     cleanup();
     return 0;                   /* all ok */
 }

@@ -168,7 +168,7 @@ std::string SoundInfo::GetSoundDeviceName() const
 /*GameInfo*/
 const std::string GameInfo::EMPTY = "";
 
-GameInfo::GameInfo():ScreenInfo(), SoundInfo(), ExpansionInfo(), LocaleInfo()
+GameInfo::GameInfo():ScreenInfo(), SoundInfo(), ExpansionInfo(), LocaleInfo(), SDL_RendererInfo()
 {
     m_rootdata = "";
     m_mod = "";

@@ -1,5 +1,10 @@
 #ifndef TRIGGER_H_INCLUDED
 #define TRIGGER_H_INCLUDED
+<<<<<<< HEAD
+#include "data_base.h"
+#include "scriptwrap.h"
+#include "unit.h"
+=======
 #include "typedefs.h"
 
 //Engine name space macro
@@ -9,6 +14,7 @@
 class ScriptWrap;
 class Game;
 class Unit;
+>>>>>>> TheIllusiveMan
 
 class Trigger
 {
@@ -17,7 +23,11 @@ private:
     size_t ID;
     bool death;
     ScriptWrap *Scripts;
+<<<<<<< HEAD
+=======
     math_point loc;
+    data_base *TriggerDOM;
+>>>>>>> TheIllusiveMan
 
 public:
     Trigger();
@@ -31,7 +41,7 @@ public:
     void ToggleDeath();
     //Behavior
     bool isUnitOnTrigger(Unit *target) const;
-    void ConsumeTrigger(Game* owner, Unit *target);
+    void ConsumeTrigger(Unit *target);
     void UpdateTriggerLoc(int X, int Y, int Z = 0);
 };
 

@@ -49,5 +49,7 @@ void AssetMenu::createChildChain(QTreeWidgetItem *parent, QTreeWidgetItem * chai
 void AssetMenu::on_tvItemsMenu_doubleClicked(const QModelIndex &index)
 {
     AssetNode itm = win->GetAsset(ui->tvItemsMenu->currentItem()->text(0).toStdString());
+    itm.offset.X = win->mapFromParent(pos()).x();
+    itm.offset.Y = win->mapFromParent(pos()).y();
     win->RegisterObject(itm);
 }

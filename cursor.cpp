@@ -66,8 +66,11 @@ void Cursor::DrawCursor()
     size_t id;
     //Lock mutex
     owner_ref->LockMutex(mutex_cursor_id);
-    selected.cursor->apply_surface(owner_ref->GetRawInput().mx, owner_ref->GetRawInput().my, owner_ref->GetRenderer(id));
-    owner_ref->UnlockRenderer(id);
+    if(selected.cursor)
+    {
+        selected.cursor->apply_surface(owner_ref->GetRawInput().mx, owner_ref->GetRawInput().my, owner_ref->GetRenderer(id));
+        owner_ref->UnlockRenderer(id);
+    }
     //Unlock mutex
     owner_ref->UnlockMutex(mutex_cursor_id);
 }

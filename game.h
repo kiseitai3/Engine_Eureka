@@ -1,6 +1,24 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+#include <iostream>
+#include "typedefs.h"
 
+<<<<<<< HEAD
+enum FileTypes
+{
+    NONE, VAR, XML, LUA, PYTHON
+};
+
+
+class Game
+{
+public:
+
+private:
+
+};
+//Global functions
+=======
 #include <iostream>
 #include <queue>
 #include <map>
@@ -13,6 +31,7 @@
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 #include <SDL_net.h>
+>>>>>>> TheIllusiveMan
 
 //Game includes
 //#include <cmath>//Fixes ::hypot not declared error. Must be included before game.h. MySQL undefines ::hypot for some bizarre reason
@@ -86,6 +105,9 @@ public:
     /*Setters*/
     void PauseGame();
     void ResumeGame();
+    void SetWindowPosition(size_t x, size_t y);
+    void SetWindowSize(size_t h, size_t w);
+    void SetWindowBorderless(bool borderless);
 
     /*Save methods*/
     void LoadSaveData(const std::string& file);
@@ -126,11 +148,12 @@ public:
     void ShowVideoHUD();
     void HideVideoHUD();
     void ReplaceVideoHUD(cstr file);
+    void ShowWindow(bool visible);
 
     static const size_t loadRate;
     static const size_t WINDOW_WIDTH = 640;
     static const size_t WINDOW_HEIGHT = 480;
-    static const size_t FRAME_FORMAT_SIZE = 32 * 4;//4 = 4 basic components of a pixel! 32 = 8bits per channel for 4 channels
+    static const size_t FRAME_FORMAT_SIZE = 4;//4 = 4 basic components of a pixel! 8bits per channel for the 4 channels = 32bits
     static const std::string FRAME_FORMAT;//This is so outside programs can get some sort of hint as to what format to expect from the editor frame buffer
 private:
     //Renderer

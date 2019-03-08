@@ -251,10 +251,10 @@ void UnitSettings::on_pbCreateUnit_clicked()
         }
 
         //Now we create the file on disk
-        copyfile((ModPath + "/Creatures/template.txt").c_str(),(ModPath + "/Creatures/" + unit_descriptor.name.toStdString()).c_str());
+        copyfile((ModPath + "/Creatures/template.txt").c_str(),(ModPath + "/Creatures/" + unit_descriptor.name.toStdString() + ".txt").c_str());
         //Update file
-        data_base reader((ModPath + "/Creatures/" + unit_descriptor.name.toStdString()).c_str());
-        data_base writer((ModPath + "/Creatures/" + unit_descriptor.name.toStdString()).c_str(), false);
+        data_base reader((ModPath + "/Creatures/" + unit_descriptor.name.toStdString() + ".txt").c_str());
+        data_base writer((ModPath + "/Creatures/" + unit_descriptor.name.toStdString() + ".txt").c_str(), false);
         //Update script and bar paths
         writer.WriteValue(ui->leUnitName->text().toStdString(), "unit_name");
         writer.WriteValue(extract_correct_path(ui->lePhysicsLoc->text().toStdString(), ModName), "unit_physics");
@@ -333,37 +333,53 @@ void UnitSettings::on_pbCreateUnit_clicked()
             std::string searchTerm = "unit_texture_" + intToStr(i) + "_name";
             if(reader.SearchTermExists(searchTerm))
             {
-                writer.WriteValue(tmp.name.toStdString(), searchTerm);
-                writer.WriteValue(tmp.path.toStdString(), "unit_texture_" + intToStr(i));
+                if(reader.GetStrFromData("unit_texture_default") == searchTerm)
+                {
+                    writer.WriteValueWithLineIndex(tmp.name.toStdString(), searchTerm, 1);
+                    writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_texture_" + intToStr(i));
+                }
+                else
+                {
+                    writer.WriteValue(tmp.name.toStdString(), searchTerm);
+                    writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_texture_" + intToStr(i));
+                }
             }
             else
             {
                 writer.WriteValue(searchTerm + " = ;\n");
                 writer.WriteValue("unit_texture_" + intToStr(i) + " = ;\n");
                 writer.WriteValue(tmp.name.toStdString(), searchTerm);
-                writer.WriteValue(tmp.path.toStdString(), "unit_texture_" + intToStr(i));
+                writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_texture_" + intToStr(i));
             }
             i++;
         }
 
         //Update sounds
         i = 0;
-        writer.WriteValue(intToStr(textures.size()), "unit_sound_counter");
-        for(std::list<AssetNode>::iterator itr = textures.begin(); itr != textures.end(); itr++)
+        writer.WriteValue(intToStr(sounds.size()), "unit_sound_counter");
+        for(std::list<AssetNode>::iterator itr = sounds.begin(); itr != sounds.end(); itr++)
         {
             AssetNode& tmp = *itr;
             std::string searchTerm = "unit_sound_" + intToStr(i) + "_name";
             if(reader.SearchTermExists(searchTerm))
             {
-                writer.WriteValue(tmp.name.toStdString(), searchTerm);
-                writer.WriteValue(tmp.path.toStdString(), "unit_sound_" + intToStr(i));
+                if(reader.GetStrFromData("unit_sound_default") == searchTerm)
+                {
+                    writer.WriteValueWithLineIndex(tmp.name.toStdString(), searchTerm, 1);
+                    writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_sound_" + intToStr(i));
+                }
+                else
+                {
+                    writer.WriteValue(tmp.name.toStdString(), searchTerm);
+                    writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_sound_" + intToStr(i));
+                }
             }
             else
             {
                 writer.WriteValue(searchTerm + " = ;\n");
                 writer.WriteValue("unit_sound_" + intToStr(i) + " = ;\n");
                 writer.WriteValue(tmp.name.toStdString(), searchTerm);
-                writer.WriteValue(tmp.path.toStdString(), "unit_sound_" + intToStr(i));
+                writer.WriteValue(extract_correct_path(tmp.path.toStdString(), ModName), "unit_sound_" + intToStr(i));
             }
             i++;
         }
@@ -373,6 +389,7 @@ void UnitSettings::on_pbCreateUnit_clicked()
         win->RegisterAsset(ui->leUnitName->text().toStdString(), ModPath + "/Creatures/" + unit_descriptor.name.toStdString(), OBJTYPE|UNIT);
 
         //Save file
+        reader.CloseFile();
         writer.CloseFile();
     }
 }

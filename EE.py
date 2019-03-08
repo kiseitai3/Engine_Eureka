@@ -4116,6 +4116,9 @@ class Game(ThreadSystem, GameInfo, ModuleSystem, UnitManager, IOManager, UIManag
 
     def ReplaceVideoHUD(self, file):
         return _EE.Game_ReplaceVideoHUD(self, file)
+
+    def ShowWindow(self, visible):
+        return _EE.Game_ShowWindow(self, visible)
     __swig_getmethods__["loadRate"] = _EE.Game_loadRate_get
     if _newclass:
         loadRate = _swig_property(_EE.Game_loadRate_get)

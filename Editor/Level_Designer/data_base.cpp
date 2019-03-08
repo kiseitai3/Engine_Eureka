@@ -246,11 +246,25 @@ bool data_base::SearchTermExists(const std::string& search) const
     void data_base::WriteValue(const std::string& value, const std::string& search)
     {
         /*Writes value into an specific 'tag' in file. i.e. value = 3; [search = value, value = 5] -> value = 5;*/
+        int start, a, b,end, size;
         if(buffer != "" && search != "")
         {
-            int start = findString(search.c_str(), buffer.c_str()) + search.length() + 3;//3 is the number of spaces in the line that form the string " = ". Check the syntax of files
-            int end = searchCharIndex(';', buffer, start);
-            int size = end - start;
+            //Make sure the start is for a tag and not for a value!
+            do
+            {
+                start = findString(search.c_str(), buffer.c_str()) + search.length() ;//Right before any = symbols
+                a = searchCharIndexBefore('=', ';', buffer, start);
+                b = searchCharIndexBefore('=', '\n', buffer, start);
+                if(a<b)
+                   start = a;
+                else
+                    start = b;
+            }while(!isTag(start));
+            //Now, correct the start index by 1 so it points after the = symbol.
+            start++;
+            //With the correct start index, we can move on to finalizing where to write the value
+            end = searchCharIndex(';', buffer, start);
+            size = end - start;
             buffer.replace(start, size, value);
             FlushData();
         }
@@ -369,6 +383,11 @@ bool data_base::SearchTermExists(const std::string& search) const
             return output.is_open();
         }
         return false;
+    }
+
+    bool data_base::isTag(size_t pos) const
+    {
+        return (searchCharIndexBefore('=', '\n', buffer, pos) + 1) || (searchCharIndexBefore('=', ';', buffer, pos) + 1);
     }
 
     void data_base::CloseFile(const std::string& streamsToClose)

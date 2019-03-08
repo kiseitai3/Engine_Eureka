@@ -191,8 +191,6 @@ void Game::LoadGame(cstr file)
     //Save actual initial path
     std::string filePath = SDL_GetBasePath();
     filePath += file;
-    //Create a timer
-    mainTimer = CreateTimer();
     //First, load save database
     LoadSaveData(filePath.c_str());
     //Second, load constants as they are important values for the bootloading process
@@ -577,6 +575,7 @@ bool Game::init()
         screen = SDL_CreateRenderer(win, -1, SDL_RENDERER_ACCELERATED);
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, GetRenderQuality().c_str());  // make the scaled rendering look smoother.
         SDL_RenderSetLogicalSize(screen, GetScreenWidth(), GetScreenHeight());
+        SDL_GetRendererInfo(screen, this);
     }
 
     //Initialize SDL_ttf
@@ -590,6 +589,8 @@ bool Game::init()
     {
         return false;
     }
+    //Create a timer
+    mainTimer = CreateTimer();
     //Start timer(s)
     StartTimer(mainTimer);
 
@@ -769,10 +770,12 @@ void Game::drawWorld()
     //If the game is being run from a game editor, make sure the editor can obtain a copy of the pixels. Warning: this operation may be slow!
     if(requestFrame)
     {
-        ClearEditorFrameBuffer();//clean the buffer
-        if(SDL_RenderReadPixels(screen, NULL, SDL_PIXELFORMAT_RGBA8888, (void*)frameBuffer, 0) != 0)//Read the pixels
+        //ClearEditorFrameBuffer();//clean the buffer
+        if(SDL_RenderReadPixels(screen, NULL, SDL_PIXELFORMAT_RGBA8888, (void*)frameBuffer, max_texture_width) != 0)//Read the pixels
+        {
             std::cout << SDL_GetError() << std::endl;
-    }
+        }
+    }/**/ //Causes memory leak for some bizzarre reason
     //Present buffer
     SDL_RenderPresent(screen);
 }
@@ -948,6 +951,14 @@ void Game::ReplaceVideoHUD(cstr file)
     videoHUD_ID = RegisterUI(file);
 }
 
+void Game::ShowWindow(bool visible)
+{
+    if(visible)
+        SDL_ShowWindow(win);
+    else
+        SDL_HideWindow(win);
+}
+
 void Game::mainGC()
 {
     //check ui ids
@@ -993,6 +1004,21 @@ char* Game::GetFrameBuffer() const
 size_t Game::GetSizeOfFrameBuffer() const
 {
     return frameSize;
+}
+
+void Game::SetWindowPosition(size_t x, size_t y)
+{
+    SDL_SetWindowPosition(win, x, y);
+}
+
+void Game::SetWindowSize(size_t h, size_t w)
+{
+    SDL_SetWindowSize(win, w, h);
+}
+
+void Game::SetWindowBorderless(bool borderless)
+{
+    SDL_SetWindowBordered(win, (SDL_bool)!borderless);
 }
 
 Game::~Game()

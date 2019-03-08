@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 1997-2014 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -21,7 +21,7 @@ report_power(void)
     const SDL_PowerState state = SDL_GetPowerInfo(&seconds, &percent);
     char *statestr = NULL;
 
-    SDL_Log("SDL-reported power info...\n");
+    printf("SDL-reported power info...\n");
     switch (state) {
     case SDL_POWERSTATE_UNKNOWN:
         statestr = "Unknown";
@@ -43,18 +43,18 @@ report_power(void)
         break;
     }
 
-    SDL_Log("State: %s\n", statestr);
+    printf("State: %s\n", statestr);
 
     if (percent == -1) {
-        SDL_Log("Percent left: unknown\n");
+        printf("Percent left: unknown\n");
     } else {
-        SDL_Log("Percent left: %d%%\n", percent);
+        printf("Percent left: %d%%\n", percent);
     }
 
     if (seconds == -1) {
-        SDL_Log("Time left: unknown\n");
+        printf("Time left: unknown\n");
     } else {
-        SDL_Log("Time left: %d minutes, %d seconds\n", (int) (seconds / 60),
+        printf("Time left: %d minutes, %d seconds\n", (int) (seconds / 60),
                (int) (seconds % 60));
     }
 }
@@ -63,11 +63,8 @@ report_power(void)
 int
 main(int argc, char *argv[])
 {
-    /* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
-
     if (SDL_Init(0) == -1) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init() failed: %s\n", SDL_GetError());
+        fprintf(stderr, "SDL_Init() failed: %s\n", SDL_GetError());
         return 1;
     }
 

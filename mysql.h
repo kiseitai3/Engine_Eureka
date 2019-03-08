@@ -27,15 +27,42 @@
 #include "sqlkeywords.h"
 #include "typedefs.h"
 
+<<<<<<< HEAD
+=======
 #define SQL_COMA ","
 #define SQL_NULL "NULL"
 #define SQL_NULL_STR "'NULL'"
 #define SQL_ZERO "'0'"
 #define SQL_NONE "None"
+>>>>>>> TheIllusiveMan
 
 class MySQL : public SQLGenerator
 {
 public:
+<<<<<<< HEAD
+    typedef const char* cstr;
+    static cstr DEFAULT_HOST;
+    MySQL(cstr database = NULL, cstr username = NULL, cstr password = NULL, cstr host = MySQL::DEFAULT_HOST);
+    /*Connection methods*/
+    void connect(cstr database, cstr username, cstr password, cstr host);
+    void disconnect();
+    void queryDB(const std::string& query);
+    void CleanResults();
+    void ClearStatus();
+    /*Getter methods. These methods are used to extract the result
+    from the query. Each method calls the appropriate conversion
+    function from the MySQL API!*/
+    void getResult(int& response);
+    void getResult(char& response);
+    void getResult(std::string& response);
+    void getResult(bool& response);
+    void getResult(double& response);
+    std::vector<fuzzy_obj> getResults(size_t dataType = STRING);
+    /*Status of the class.*/
+    bool getStatus() const;
+    ~MySQL();
+
+=======
     //Typedefs and static vars
     typedef const char* cstr;
     static cstr DEFAULT_HOST;
@@ -66,6 +93,7 @@ public:
     bool getStatus() const;
     //Dtors
     ~MySQL();
+>>>>>>> TheIllusiveMan
 private:
     bool status;
     sql::Connection* conn;
@@ -74,8 +102,15 @@ private:
     sql::Statement* statement;
 
     //methods
+<<<<<<< HEAD
+    void error_log(sql::SQLException& err);// This method outputs the specific error.
+};
+
+#endif // MYSQL_H_INCLUDED
+=======
     void error_log(sql::SQLException& err);
 };
 
 #endif // MYSQL_H_INCLUDED
 
+>>>>>>> TheIllusiveMan

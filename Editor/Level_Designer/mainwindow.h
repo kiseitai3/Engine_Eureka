@@ -94,6 +94,7 @@ private:
   QGraphicsPixmapItem* worldItm;
   QTreeWidget* tvBaseAssets_bk, *tvRegisteredObjs_bk;
   QTimer* frame;
+  QThread* frameThread;
   std::string modName, modDescription, modPath, modRootPath;
   size_t tvBaseAssetsCount, tvRegisteredObjsCount, tvObjsListCount, tvUIElementsCount;
   Game* engine;

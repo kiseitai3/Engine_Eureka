@@ -64,6 +64,7 @@ typedef struct NodeObj
     QString name, path;
     void_ptr obj_ptr;
     std::vector<size_t> idlist;
+    math_point offset;
 
     inline bool operator==(const NodeObj& other)
     {

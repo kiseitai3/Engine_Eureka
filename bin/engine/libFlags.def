@@ -1,0 +1,12 @@
+EXPORTS
+    _ZN4Game10ResumeGameEv @1
+    _ZN4Game11GetRendererERj @2
+    _ZN4Game14UnlockRendererEj @3
+    _ZN4Game9GetEventsEv @4
+    _ZN4Game9PauseGameEv @5
+    _ZNK4Game12GetMainTimerEv @6
+    _ZNK4Game12isGamePausedEv @7
+    _ZNK4Game13GetRelativityEv @8
+    _ZNK4Game15isEngineClosingEv @9
+    _ZNK4Game15isMultithreadedEv @10
+    _ZNK4Game8GetWinIDEv @11

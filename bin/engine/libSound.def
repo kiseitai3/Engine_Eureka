@@ -1,0 +1,26 @@
+EXPORTS
+    _ZN10SoundQueue10ClearQueueEv @1
+    _ZN10SoundQueue12initSoundSysEv @2
+    _ZN10SoundQueue13PlayNextSoundEv @3
+    _ZN10SoundQueue13SetFadeInTimeEj @4
+    _ZN10SoundQueue14PlayMusicSoundEv @5
+    _ZN10SoundQueue14StopMusicSoundEv @6
+    _ZN10SoundQueue15AddSoundToQueueEPKcb @7
+    _ZN10SoundQueue17SetRangeOfEffectsEi @8
+    _ZN10SoundQueue21AddSoundBufferToQueueEPKcjbb @9
+    _ZN10SoundQueue21UpdateMusicAroundHeroEP4Unit @10
+    _ZN10SoundQueue8GCSoundsEv @11
+    _ZN10SoundQueue9FlipMusicEv @12
+    _ZN10SoundQueueC1EP4Game @13
+    _ZN10SoundQueueC2EP4Game @14
+    _ZN10SoundQueueD1Ev @15
+    _ZN10SoundQueueD2Ev @16
+    _ZN5QueueIP10sound_baseE7dequeueEv @17
+    _ZN5QueueIP10sound_baseE7enqueueERKS1_ @18
+    _ZN5QueueIP10sound_baseE7reserveEj @19
+    _ZN5QueueIP10sound_baseEC1Ej @20
+    _ZNK10SoundQueue12channelsBusyEv @21
+    _ZNK10SoundQueue17waitForEmptyQueueEv @22
+    _ZNK5QueueIP10sound_baseE4fullEv @23
+    _ZNK5QueueIP10sound_baseE5emptyEv @24
+    _ZNK5QueueIP10sound_baseE5frontEv @25

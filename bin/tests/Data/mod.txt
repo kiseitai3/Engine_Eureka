@@ -1,0 +1,39 @@
+//Main constants;
+mod_number = 1;
+selected_mod = campaign;
+mod_1_name = campaign;
+mod_1_path = campaign;
+root = Data;
+game_name = Pokemeds;
+icon = pm.ico;
+current_display = 0;
+render_quality = best;
+frames_per_second = 60;
+screen_width = 1280;
+screen_height = 800;
+screen_bpp = 32;
+blit_levels = 20;
+screen_mode = 1;
+video_driver = opengl;
+frequency = 22050;
+channels = 2;
+chunk_size = 4096;
+auto_video = 1;
+multithreaded = 1;
+
+
+//Global Modules file;
+plugins = plugins/plugins.txt;
+
+//UIs;
+ui = UI/gameUI.txt
+
+//Save file;
+save = save/save;
+save_destination = LOCALAPPDATA\Pokemeds\save;
+
+//Initial level
+initial_lvl = menu/lvl.txt
+
+//keybinding default files
+keybindings_file = key_bindings.txt;

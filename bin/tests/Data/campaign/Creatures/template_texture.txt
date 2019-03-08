@@ -1,0 +1,7 @@
+tex_texture = Textures/;
+tex_frames = 1;
+tex_height = 50;
+tex_width = 100;
+tex_anim_num = 0;
+tex_anim_counter = 1;
+tex_noloop = 0;

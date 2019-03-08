@@ -1,0 +1,12 @@
+tex_texture = ;
+tex_frames = 1;
+tex_height = 50;
+tex_width = 100;
+tex_anim_num = 0;
+tex_anim_counter = 1;
+ui_x = 0;
+ui_y = 0;
+ui_exit_file = Data\\campaign\\textbox\\ui_template_exit_button.txt;
+ui_text_num = 1;
+ui_text_0_msg = Hi;
+ui_text_0_file = ;

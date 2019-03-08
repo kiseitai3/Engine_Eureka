@@ -1,0 +1,5 @@
+sound_type =a;
+music_loc = ;
+effect_loc =;
+sound_x = 0;
+sound_y = 0;

@@ -1,6 +1,0 @@
-lvl_name = TitleScreen;
-next_lvl = 1;
-previous_lvl = TitleScreen;
-trigger_number = 1;
-map_height = 5000;
-map_width = 5000;

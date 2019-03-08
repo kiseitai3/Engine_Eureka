@@ -1,4 +1,0 @@
-tex_texture = ;
-tex_frames = 1;
-tex_height = 50;
-tex_width = 100;
